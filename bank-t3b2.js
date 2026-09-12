@@ -1,17 +1,9 @@
-/* Bank soalan — Sains KSSM Tingkatan 3, Bidang 2.0 Respirasi.
-   Fail ini kandungan sahaja. Aplikasi tidak tahu apa-apa tentang respirasi;
-   ia hanya memainkan apa yang didaftarkan di sini. Untuk menambah bab baharu,
-   salin fail ini, tukar id dan isinya, dan muatkan bersama halaman.
+/* Bank soalan — Sains Ting. 3 · Bab 2 Respirasi.
+   DIJANA. Jangan sunting fail ini terus; sunting sumber/t3b2.js
+   kemudian jalankan: node bina.js t3b2
 
-   Standard Prestasi disalin kata demi kata daripada DSKP KSSM Sains Tingkatan 3
-   terbitan Bahagian Pembangunan Kurikulum, April 2017.
-
-   Bentuk soalan:
-     j:"pilih"  satu jawapan betul, b = indeks
-     j:"banyak" beberapa jawapan betul, b = senarai indeks
-     j:"susun"  urutan betul, b = senarai indeks mengikut turutan
-     j:"nombor" jawapan berangka, b = nilai, tol = toleransi
-     j:"buka"   tugasan bertulis, dinilai guru, tiada jawapan mesin
+   Standard Prestasi disalin kata demi kata daripada DSKP KSSM Sains
+   Tingkatan 3, Bahagian Pembangunan Kurikulum.
 */
 window.BANK = window.BANK || {};
 window.BANK["t3b2"] =
@@ -21,10 +13,6 @@ window.BANK["t3b2"] =
  "kod": "2.0 Respirasi",
  "tajuk": "Laluan Oksigen",
  "subtajuk": "Sains Ting. 3 · Bab 2 Respirasi",
- "jenama": {
-  "ikon": "🫁",
-  "ringkas": "Laluan Oksigen"
- },
  "spi": [
   "Mengingat kembali pengetahuan dan kemahiran sains mengenai respirasi.",
   "Memahami respirasi serta dapat menjelaskan kefahaman tersebut.",
