@@ -1,0 +1,14 @@
+{
+  "name": "Laluan Oksigen — Sains Tingkatan 3",
+  "short_name": "Laluan Oksigen",
+  "description": "Pentaksiran bilik darjah bagi Bidang 2.0 Respirasi, KSSM Sains Tingkatan 3.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EDF0F5",
+  "theme_color": "#0D1B2E",
+  "lang": "ms",
+  "icons": [
+    { "src": "ikon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
