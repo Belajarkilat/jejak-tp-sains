@@ -1,0 +1,2691 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Permainan pentaksiran bilik darjah untuk Sains KSSM Tingkatan 3, Bidang 2.0 Respirasi. Murid mengembara sebagai molekul oksigen melalui enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
+<meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070D18" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex">
+<title>Laluan Oksigen</title>
+<style>
+  :root{color-scheme:light}
+  html,body{margin:0;padding:0}
+  img{max-width:100%}
+  [hidden]{display:none !important}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#EDF0F5;
+  --surface:#FFFFFF;
+  --surface2:#F6F8FC;
+  --ink:#0D1B2E;
+  --ink2:#3D5068;
+  --ink3:#6C7F96;
+  --line:#DBE2EC;
+  --line2:#C3CFDE;
+  --arteri:#C8102E;
+  --arteri-soft:#FBE8EB;
+  --vena:#25395C;
+  --teal:#0E8C7F;
+  --teal-soft:#DFF2EF;
+  --amber:#B07208;
+  --amber-soft:#FBF0DB;
+  --shadow:0 1px 2px rgba(13,27,46,.06),0 8px 24px -14px rgba(13,27,46,.22);
+  --shadow-lift:0 2px 6px rgba(13,27,46,.10),0 20px 44px -20px rgba(13,27,46,.34);
+  --r:15px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#070D18;--surface:#0F1A2B;--surface2:#16243A;--ink:#E8EEF8;--ink2:#AABCD3;
+    --ink3:#7B8EA8;--line:#1E2D45;--line2:#2B3E5B;--arteri:#FF6068;--arteri-soft:#2B1620;
+    --vena:#8AA3CC;--teal:#2FC2AE;--teal-soft:#0C2B29;--amber:#F0B255;--amber-soft:#2A2013;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 8px 24px -14px rgba(0,0,0,.8);
+    --shadow-lift:0 2px 6px rgba(0,0,0,.55),0 20px 44px -20px rgba(0,0,0,.9);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#070D18;--surface:#0F1A2B;--surface2:#16243A;--ink:#E8EEF8;--ink2:#AABCD3;
+  --ink3:#7B8EA8;--line:#1E2D45;--line2:#2B3E5B;--arteri:#FF6068;--arteri-soft:#2B1620;
+  --vena:#8AA3CC;--teal:#2FC2AE;--teal-soft:#0C2B29;--amber:#F0B255;--amber-soft:#2A2013;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 8px 24px -14px rgba(0,0,0,.8);
+  --shadow-lift:0 2px 6px rgba(0,0,0,.55),0 20px 44px -20px rgba(0,0,0,.9);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  background:var(--ground);color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+button,input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,.07)}
+button{touch-action:manipulation;font:inherit;color:inherit}
+h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",sans-serif;margin:0;text-wrap:balance;line-height:1.12;letter-spacing:-.018em}
+p{margin:0}
+.mono{font-family:"DM Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+:focus-visible{outline:2px solid var(--arteri);outline-offset:3px;border-radius:8px}
+.hidden{display:none !important}
+.shell{max-width:940px;margin:0 auto;padding-inline:16px;padding-block:0 60px}
+
+/* ---------- bar atas ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:var(--ground);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .topbar{background:color-mix(in srgb,var(--ground) 86%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+}
+.topbar-in{max-width:940px;margin:0 auto;display:flex;align-items:center;gap:10px;min-height:58px;padding-block:8px}
+.brand{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+.brand b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.02em;display:block}
+.brand span{display:block;font-size:11px;color:var(--ink3);line-height:1.1;margin-top:1px}
+.seg{display:flex;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;padding:9px 15px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink3);white-space:nowrap;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.icon-btn{border:1px solid var(--line);background:var(--surface);width:42px;height:42px;border-radius:999px;cursor:pointer;display:grid;place-items:center;font-size:16px;flex:none}
+
+/* ---------- meter nafas ---------- */
+.hud{
+  position:sticky;top:58px;z-index:30;
+  background:var(--vena);border-radius:var(--r);padding:13px 15px;margin-top:16px;box-shadow:var(--shadow-lift);
+  display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;color:#fff;
+}
+:root[data-theme="dark"] .hud{background:#14243D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hud{background:#14243D}}
+.hud .lbl{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.68;display:block}
+.hud .val{font-family:"DM Mono",monospace;font-size:21px;line-height:1.15;font-weight:500}
+.nafasbar{height:13px;border-radius:999px;background:rgba(255,255,255,.16);overflow:hidden;margin-top:6px;position:relative}
+.nafasbar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#4FD1C5,#7BE8D4);transition:width .28s ease}
+.nafasbar.lemas i{background:linear-gradient(90deg,#FF7A5C,#FFB088)}
+.nafasbar.lemas{animation:berdenyut .55s ease-in-out infinite}
+@keyframes berdenyut{0%,100%{opacity:1}50%{opacity:.55}}
+.hud .kombo{text-align:right}
+.hud .kombo .val{color:#FFD48A}
+@media (max-width:560px){
+  .hud{grid-template-columns:1fr auto;gap:10px;padding:11px 13px}
+  .hud .kombo{grid-row:1;grid-column:2}
+  .hud .skor{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,.14);padding-top:8px}
+  .hud .skor .val{font-size:17px}
+}
+
+/* ---------- kad panel ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;margin-top:16px}
+.panel-hd{padding:17px 19px 15px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.panel-hd .grow{flex:1 1 220px;min-width:0}
+.panel-hd h2{font-size:23px}
+.panel-bd{padding:19px}
+.tp-chip{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.07em;padding:5px 10px;border-radius:999px;background:var(--arteri-soft);color:var(--arteri);white-space:nowrap;font-weight:500}
+.tp-chip.t{background:var(--teal-soft);color:var(--teal)}
+.tp-chip.a{background:var(--amber-soft);color:var(--amber)}
+
+/* ---------- peta kanvas ---------- */
+#peta{display:block;width:100%;height:auto;aspect-ratio:900/210;max-width:100%}
+@media (max-width:600px){#peta{aspect-ratio:520/230}}
+.stopgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:9px;margin-top:16px}
+.stop{
+  border:1.5px solid var(--line);background:var(--surface2);border-radius:12px;padding:11px 12px;
+  cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:5px;min-height:74px;
+}
+.stop:hover{border-color:var(--line2)}
+.stop .top{display:flex;align-items:center;gap:7px}
+.stop .dot{width:26px;height:26px;border-radius:999px;display:grid;place-items:center;flex:none;border:2px solid var(--line2);background:var(--surface);font-family:"DM Mono",monospace;font-size:12px;color:var(--ink3)}
+.stop[data-s="aktif"]{border-color:var(--arteri)}
+.stop[data-s="aktif"] .dot{border-color:var(--arteri);background:var(--arteri);color:#fff}
+.stop[data-s="lulus"]{border-color:var(--teal)}
+.stop[data-s="lulus"] .dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.stop .nm{font-weight:650;font-size:13.5px;line-height:1.25}
+.stop .tp{font-family:"DM Mono",monospace;font-size:10.5px;color:var(--ink3)}
+
+/* ---------- soalan ---------- */
+.qtext{font-size:19px;line-height:1.4;font-weight:600;letter-spacing:-.01em}
+.qnote{font-size:13.5px;color:var(--ink3);margin-top:7px}
+.opts{display:flex;flex-direction:column;gap:9px;margin-top:15px}
+.opt{
+  display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
+  border:1.5px solid var(--line);background:var(--surface);border-radius:11px;padding:12px 14px;cursor:pointer;
+  font-size:15px;line-height:1.4;min-height:48px;transition:border-color .12s,background .12s;
+}
+.opt:hover:not(:disabled){border-color:var(--line2);background:var(--surface2)}
+.opt .key{flex:none;width:23px;height:23px;border-radius:7px;border:1.5px solid var(--line2);display:grid;place-items:center;font-family:"DM Mono",monospace;font-size:11px;color:var(--ink3);margin-top:1px}
+.opt[data-pick="1"]{border-color:var(--vena);background:var(--surface2)}
+.opt[data-pick="1"] .key{border-color:var(--vena);background:var(--vena);color:#fff}
+.opt[data-mark="ok"]{border-color:var(--teal);background:var(--teal-soft)}
+.opt[data-mark="ok"] .key{border-color:var(--teal);background:var(--teal);color:#fff}
+.opt[data-mark="no"]{border-color:var(--arteri);background:var(--arteri-soft)}
+.opt[data-mark="no"] .key{border-color:var(--arteri);background:var(--arteri);color:#fff}
+.opt[data-mark="miss"]{border-color:var(--teal);border-style:dashed}
+.opt:disabled{cursor:default}
+.opt .ord{flex:none;width:23px;height:23px;border-radius:999px;background:var(--vena);color:#fff;display:grid;place-items:center;font-family:"DM Mono",monospace;font-size:11px;margin-top:1px}
+.numrow{display:flex;gap:10px;align-items:center;margin-top:15px;flex-wrap:wrap}
+.numrow input{font-family:"DM Mono",monospace;font-size:22px;width:130px;padding:11px 13px;border:1.5px solid var(--line2);border-radius:11px;background:var(--surface);color:var(--ink)}
+textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface2);color:var(--ink);padding:13px;font:inherit;font-size:16px;line-height:1.5}
+
+.datatable{width:100%;border-collapse:collapse;font-size:14px}
+.datatable th,.datatable td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left}
+.datatable th{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:500;background:var(--surface2)}
+.datatable td.n,.datatable th.n{text-align:right}
+.datatable td.n{font-family:"DM Mono",monospace;font-variant-numeric:tabular-nums}
+.datatable tbody tr:last-child td{border-bottom:0}
+.scrollx{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin-top:14px;-webkit-overflow-scrolling:touch}
+.figure{margin-top:14px;border:1px solid var(--line);border-radius:11px;padding:13px;background:var(--surface2)}
+.figure svg{display:block;width:100%;height:auto}
+.figure figcaption{font-size:11.5px;color:var(--ink3);margin-top:7px;font-family:"DM Mono",monospace}
+
+.fb{margin-top:15px;border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;border:1.5px solid}
+.fb.ok{background:var(--teal-soft);border-color:var(--teal)}
+.fb.no{background:var(--arteri-soft);border-color:var(--arteri)}
+.fb b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:15.5px;margin-bottom:2px}
+
+.actions{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap;align-items:center}
+.btn{border:0;border-radius:11px;padding:12px 21px;font-size:15px;font-weight:650;cursor:pointer;background:var(--arteri);color:#fff;box-shadow:var(--shadow);min-height:46px}
+.btn:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}
+.btn.ghost{background:transparent;color:var(--ink2);border:1.5px solid var(--line2);box-shadow:none}
+.btn.teal{background:var(--teal)}
+.btn.sm{padding:9px 15px;font-size:13.5px;min-height:40px}
+
+/* pips */
+.pips{display:flex;gap:5px}
+.pip{width:24px;height:5px;border-radius:3px;background:var(--line2)}
+.pip.on{background:var(--vena)}
+.pip.ok{background:var(--teal)}
+.pip.no{background:var(--arteri)}
+
+/* bos */
+.bospanel{border-color:var(--arteri);box-shadow:0 0 0 3px var(--arteri-soft),var(--shadow-lift)}
+.bostimer{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin-top:12px}
+.bostimer i{display:block;height:100%;background:var(--arteri);transition:width .95s linear}
+
+/* hasil */
+.result{text-align:center;padding:30px 18px}
+.result h2{font-size:26px;margin-bottom:7px}
+.result p{color:var(--ink2);max-width:44ch;margin:0 auto;font-size:15px}
+.kadbesar{
+  width:190px;margin:0 auto 18px;border-radius:16px;padding:18px 15px;
+  background:linear-gradient(160deg,var(--vena),#0C1729);color:#fff;box-shadow:var(--shadow-lift);
+}
+.kadbesar .em{font-size:38px;line-height:1}
+.kadbesar .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;margin-top:8px}
+.kadbesar .ft{font-size:12px;opacity:.78;margin-top:6px;line-height:1.4}
+.badbig{width:88px;height:88px;border-radius:999px;margin:0 auto 16px;display:grid;place-items:center;font-size:38px;background:var(--arteri-soft);border:2px solid var(--arteri)}
+
+/* koleksi kad */
+.kadgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:11px}
+.kad{border-radius:14px;padding:14px 13px;background:linear-gradient(160deg,var(--vena),#0C1729);color:#fff;min-height:132px;display:flex;flex-direction:column;gap:5px}
+.kad.kunci{background:var(--surface2);color:var(--ink3);border:1px dashed var(--line2)}
+.kad .em{font-size:26px;line-height:1}
+.kad .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:14.5px}
+.kad .ft{font-size:11.5px;opacity:.8;line-height:1.4}
+.kad.kunci .ft{opacity:1}
+
+/* papan pendahulu */
+.papan{display:flex;flex-direction:column}
+.prow{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:11px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line);font-size:14.5px}
+.prow:last-child{border-bottom:0}
+.prow .rk{font-family:"DM Mono",monospace;color:var(--ink3);font-size:13px}
+.prow.saya{font-weight:700}
+.prow.saya .rk{color:var(--arteri)}
+.prow .sk{font-family:"DM Mono",monospace;font-variant-numeric:tabular-nums}
+
+/* cabaran harian */
+.harian{
+  display:flex;gap:13px;align-items:center;border:1.5px solid var(--amber);background:var(--amber-soft);
+  border-radius:13px;padding:13px 15px;margin-top:16px;flex-wrap:wrap;
+}
+.harian .txt{flex:1 1 190px;min-width:0}
+.harian .t{font-weight:700;font-size:15px}
+.harian .d{font-size:13px;color:var(--ink2)}
+
+/* cikgu */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);padding:0 16px;background:var(--surface2);overflow-x:auto}
+.tabs button{border:0;background:transparent;padding:13px 12px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink3);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--arteri)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:12px 2px;border-bottom:1px solid var(--line);cursor:pointer;text-align:left;border-left:0;border-right:0;border-top:0;background:transparent;width:100%;min-height:56px}
+.row:last-of-type{border-bottom:0}
+.row:hover{background:var(--surface2)}
+.row>span:first-child{min-width:0}
+.row .nm{font-weight:600;font-size:15px}
+.row .meta{font-size:12px;color:var(--ink3);font-family:"DM Mono",monospace}
+.tpbar{display:flex;gap:3px}
+.tpbar i{width:9px;height:20px;border-radius:2px;background:var(--line2);display:block}
+.tpbar i.on{background:var(--teal)}
+.tpbig{font-family:"DM Mono",monospace;font-size:18px;min-width:44px;text-align:right}
+.ulasan{margin:10px 0 4px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ulasan-hd{background:var(--surface2);padding:11px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ulasan-hd .nm{font-weight:700;font-size:14px}
+.ulasan textarea{width:100%;border:0;background:var(--surface);color:var(--ink);padding:14px;font:inherit;font-size:16px;line-height:1.55;min-height:120px;resize:vertical;display:block}
+.ladder{display:flex;flex-direction:column;gap:10px;margin-top:13px}
+.rung{border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.rung-hd{display:flex;gap:9px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.rung-hd .k{font-weight:700;font-size:15px}
+.rung-hd .n{font-family:"DM Mono",monospace;font-size:12px;color:var(--ink3)}
+.rung p{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.note{font-size:13px;color:var(--ink3);line-height:1.55;margin-top:15px}
+
+/* ---------- juice ---------- */
+#flash{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0;transition:opacity .2s ease}
+#flash.on{opacity:1}
+#flash.ok{box-shadow:inset 0 0 0 4px var(--teal),inset 0 0 70px -12px var(--teal)}
+#flash.no{box-shadow:inset 0 0 0 4px var(--arteri),inset 0 0 70px -12px var(--arteri)}
+.apung{
+  position:fixed;z-index:61;pointer-events:none;white-space:nowrap;
+  font-family:"DM Mono",monospace;font-weight:500;font-size:19px;
+  text-shadow:0 1px 3px rgba(0,0,0,.35);animation:naik 1s cubic-bezier(.2,.7,.3,1) forwards;
+}
+@keyframes naik{
+  0%{opacity:0;transform:translate(-50%,6px) scale(.86)}
+  18%{opacity:1;transform:translate(-50%,-6px) scale(1.08)}
+  100%{opacity:0;transform:translate(-50%,-52px) scale(1)}
+}
+@keyframes pop{0%{transform:scale(.82)}55%{transform:scale(1.13)}100%{transform:scale(1)}}
+.pop{animation:pop .45s ease}
+.opt[data-mark="ok"]{animation:pop .45s ease}
+
+/* ---------- kuasa ---------- */
+.kuasa{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.kuasa .tajuk{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);width:100%}
+.kbtn{
+  display:flex;align-items:center;gap:8px;border:1.5px solid var(--line2);background:var(--surface2);
+  border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:650;cursor:pointer;min-height:42px;
+}
+.kbtn:hover:not(:disabled){border-color:var(--teal)}
+.kbtn:disabled{opacity:.38;cursor:not-allowed}
+.kbtn em{font-style:normal;font-size:16px;line-height:1}
+.kbtn .n{font-family:"DM Mono",monospace;color:var(--ink3);font-weight:400}
+
+/* ---------- grid diagnostik ---------- */
+.diag{overflow:auto;max-height:66vh;border:1px solid var(--line);border-radius:12px;margin-top:13px;-webkit-overflow-scrolling:touch}
+.diag table{border-collapse:separate;border-spacing:0;font-size:12.5px;width:100%}
+.diag th,.diag td{padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
+.diag thead th{position:sticky;top:0;background:var(--surface2);z-index:2;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);font-weight:500;text-align:center}
+.diag .soal{position:sticky;left:0;background:var(--surface);z-index:1;min-width:210px;max-width:250px;white-space:normal;border-right:1px solid var(--line);line-height:1.35;text-align:left}
+.diag thead .soal{z-index:3;background:var(--surface2)}
+.diag tbody tr:last-child td{border-bottom:0}
+.sel{width:24px;height:21px;border-radius:5px;display:block;margin:0 auto}
+.sel.ok{background:var(--teal)}
+.sel.no{background:var(--arteri)}
+.sel.kosong{background:var(--line2);opacity:.45}
+.diag .kira{font-family:"DM Mono",monospace;text-align:right;color:var(--ink2)}
+.diag tr.bahaya .soal{box-shadow:inset 3px 0 0 0 var(--arteri)}
+.diag tr.bahaya .kira{color:var(--arteri);font-weight:600}
+.petunjuk{display:flex;gap:14px;flex-wrap:wrap;margin-top:11px;font-size:12.5px;color:var(--ink3);align-items:center}
+.petunjuk span{display:inline-flex;align-items:center;gap:6px}
+.petunjuk i{width:14px;height:14px;border-radius:4px;display:block}
+
+/* ---------- tindih TP ---------- */
+.tindih{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 14px;border-top:1px solid var(--line);background:var(--surface2)}
+.tindih label{font-size:13px;color:var(--ink2);font-weight:600}
+.tindih select{font:inherit;font-size:15px;padding:9px 11px;border-radius:9px;border:1.5px solid var(--line2);background:var(--surface);color:var(--ink);min-height:42px}
+.cubtab{width:100%;border-collapse:collapse;font-size:13px;margin:0}
+.cubtab th,.cubtab td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left}
+.cubtab th{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.cubtab td.n{font-family:"DM Mono",monospace;text-align:right}
+.cubtab th.n{text-align:right}
+.cubtab tr:last-child td{border-bottom:0}
+.tandaT{color:var(--arteri);font-weight:700}
+
+/* ---------- rentetan ---------- */
+.api{display:inline-flex;align-items:center;gap:5px;font-family:"DM Mono",monospace;font-size:12.5px;font-weight:500}
+.api em{font-style:normal;font-size:15px}
+
+@media (max-width:560px){
+  .brand span{display:none}
+  .topbar-in{min-height:54px;gap:9px}
+  .seg button{padding:9px 12px;font-size:12.5px}
+  .icon-btn{width:38px;height:38px}
+  .hud{top:54px}
+  .panel-hd h2{font-size:20px}
+  .panel-bd,.panel-hd{padding:15px}
+  .qtext{font-size:17.5px}
+  .result{padding:25px 15px}
+  .result h2{font-size:22px}
+  .row{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}
+  .row .tpbar{grid-column:1;justify-self:start}
+  .row .tpbig{grid-row:1;grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+
+/* ---------- tambahan: identiti bernombor, mod tenang, penanda bukan warna ---------- */
+h3{font-family:"Bricolage Grotesque","Figtree",sans-serif;font-size:19px;margin:0 0 6px}
+
+/* grid nombor murid */
+.nomgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:9px;margin-top:15px}
+.nom{
+  border:1.5px solid var(--line);background:var(--surface2);border-radius:12px;padding:11px 8px;
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:70px;justify-content:center;
+}
+.nom:hover{border-color:var(--line2)}
+.nom .n{font-family:"DM Mono",monospace;font-size:22px;font-weight:500;line-height:1}
+.nom .s{font-size:11px;color:var(--ink3);line-height:1.2}
+
+/* kotak kod */
+input.pin{
+  font-family:"DM Mono",monospace;font-size:24px;letter-spacing:.32em;width:150px;text-align:center;
+  padding:11px 13px;border:1.5px solid var(--line2);border-radius:11px;background:var(--surface);color:var(--ink);
+}
+
+/* mod tenang */
+.tenangrow{
+  display:flex;gap:13px;align-items:center;border:1.5px solid var(--line2);background:var(--surface2);
+  border-radius:13px;padding:12px 14px;margin-top:15px;flex-wrap:wrap;
+}
+.tenangrow .txt{flex:1 1 200px;min-width:0}
+.tenangrow .t{font-weight:700;font-size:14.5px}
+.tenangrow .d{font-size:13px;color:var(--ink2);line-height:1.45}
+.hud.tenang .nafasbar i{background:linear-gradient(90deg,#7B8EA8,#AABCD3)}
+.hud.tenang .nafasbar{animation:none}
+
+/* hentian menunggu pertimbangan cikgu */
+.stop[data-s="tunggu"]{border-color:var(--amber)}
+.stop[data-s="tunggu"] .dot{border-color:var(--amber);background:var(--amber);color:#fff}
+
+/* soalan ulangan */
+.chip-ulang{
+  display:inline-block;font-size:12px;color:var(--amber);background:var(--amber-soft);
+  border:1px solid var(--amber);border-radius:999px;padding:5px 11px;margin-top:12px;line-height:1.35;
+}
+.qnote.cukup{color:var(--teal)}
+.pip.hantar{background:var(--amber)}
+
+/* karangan murid dalam mod cikgu */
+.karangan{
+  padding:13px 15px;font-size:14.5px;line-height:1.6;white-space:pre-wrap;
+  background:var(--surface2);border-bottom:1px solid var(--line);
+}
+
+/* penanda diagnostik: simbol, bukan warna sahaja */
+.sel{
+  width:24px;height:21px;border-radius:5px;display:grid;place-items:center;margin:0 auto;
+  font-family:"DM Mono",monospace;font-size:12px;line-height:1;color:#fff;
+}
+.sel.kosong{background:var(--line2);opacity:.55;color:var(--ink2)}
+.amaran{
+  display:inline-grid;place-items:center;width:16px;height:16px;border-radius:5px;
+  background:var(--arteri);color:#fff;font-family:"DM Mono",monospace;font-size:11px;font-style:normal;
+}
+.petunjuk .sel{display:inline-grid;width:20px;height:18px;margin:0}
+
+/* penunjuk talian: murid perlu tahu jawapannya sudah sampai atau belum */
+.talian{
+  font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.04em;padding:5px 9px;
+  border-radius:999px;white-space:nowrap;flex:none;border:1px solid transparent;
+}
+.talian.ok{color:var(--teal);background:var(--teal-soft);border-color:var(--teal)}
+.talian.tunggu{color:var(--amber);background:var(--amber-soft);border-color:var(--amber)}
+.talian.luar{color:var(--ink3);background:var(--surface2);border-color:var(--line2)}
+@media (max-width:680px){ .talian{display:none} }
+
+.qnote.gagal{color:var(--arteri);font-weight:600}
+
+/* sasaran kad seterusnya */
+.sasaran{
+  display:flex;gap:13px;align-items:center;border:1.5px solid var(--line2);
+  background:var(--surface2);border-radius:13px;padding:12px 14px;margin-top:15px;flex-wrap:wrap;
+}
+.sasaran .em{font-size:26px;line-height:1;flex:none;filter:grayscale(1);opacity:.55}
+.sasaran .txt{flex:1 1 200px;min-width:0}
+.sasaran .t{font-weight:700;font-size:14.5px}
+.sasaran .d{font-size:13px;color:var(--ink2);line-height:1.45}
+.sasaran.siap .em{filter:none;opacity:1}
+
+/* apa yang murid belajar, dipaparkan selepas satu hentian */
+.pelajaran{margin-top:20px;text-align:left;border-top:1px solid var(--line);padding-top:16px}
+.pelajaran h3{font-size:15px;margin-bottom:9px}
+.pelajaran ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.pelajaran li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.pelajaran .tanda{
+  flex:none;width:19px;height:19px;border-radius:6px;display:grid;place-items:center;margin-top:1px;
+  font-family:"DM Mono",monospace;font-size:11px;color:#fff;
+}
+.pelajaran .tanda.ok{background:var(--teal)}
+.pelajaran .tanda.no{background:var(--arteri)}
+.pelajaran .tanda.hantar{background:var(--amber)}
+.pelajaran b{color:var(--ink);font-weight:650;display:block;font-size:13.5px}
+.pelajaran p{max-width:none;margin:12px 0 0;text-align:left}
+
+/* baris ringkasan di skrin keputusan: cip pendek, bukan satu ayat panjang
+   bercetak besar yang pecah tiga baris pada telefon */
+.metahasil{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:14px}
+.metahasil span{
+  font-family:"DM Mono",monospace;font-size:11.5px;color:var(--ink2);
+  background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:5px 11px;
+  white-space:nowrap;font-variant-numeric:tabular-nums;
+}
+.result .note{max-width:40ch;margin:11px auto 0;font-size:12.5px}
+
+/* papan mingguan */
+.papantab{display:flex;gap:4px;margin-bottom:12px}
+.papantab button{
+  border:1.5px solid var(--line);background:var(--surface2);border-radius:999px;
+  padding:7px 14px;font-size:12.5px;font-weight:650;cursor:pointer;color:var(--ink3);min-height:38px;
+}
+.papantab button[aria-pressed="true"]{background:var(--surface);color:var(--ink);border-color:var(--line2)}
+.prow .sub{font-size:11.5px;color:var(--ink3);font-family:"DM Mono",monospace}
+</style>
+</head>
+<body>
+<!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
+<script src="konfig.js"></script>
+<script src="bank-t3b2.js"></script>
+
+<div id="flash" aria-hidden="true"></div>
+
+<div class="shell">
+  <header class="topbar">
+    <div class="topbar-in">
+      <div class="brand">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+          <circle cx="13" cy="13" r="12" fill="none" stroke="var(--arteri)" stroke-width="1.5"></circle>
+          <circle cx="9.5" cy="13" r="3.6" fill="var(--arteri)"></circle>
+          <circle cx="16.5" cy="13" r="3.6" fill="var(--vena)"></circle>
+        </svg>
+        <div>
+          <b>Laluan Oksigen</b>
+          <span>Sains Ting. 3 &middot; Bab 2 Respirasi</span>
+        </div>
+      </div>
+      <div class="seg" role="group" aria-label="Tukar mod">
+        <button id="btnMurid" aria-pressed="true">Main</button>
+        <button id="btnCikgu" aria-pressed="false">Cikgu</button>
+      </div>
+      <span class="talian" id="talian" role="status" aria-live="polite"></span>
+      <button class="icon-btn" id="btnBunyi" title="Bunyi" aria-label="Hidup atau matikan bunyi">&#9834;</button>
+      <button class="icon-btn" id="btnTema" title="Tema" aria-label="Tukar tema">&#9680;</button>
+    </div>
+  </header>
+
+  <main id="murid">
+    <section class="hud" id="hud" aria-label="Paras nafas dan skor">
+      <div>
+        <span class="lbl">Nafas</span>
+        <span class="val" id="vNafas">100</span>
+        <div class="nafasbar" id="bar"><i style="width:100%"></i></div>
+      </div>
+      <div class="kombo"><span class="lbl">Kombo</span><span class="val" id="vKombo">&times;1</span></div>
+      <div class="skor" style="text-align:right"><span class="lbl">Skor</span><span class="val" id="vSkor">0</span></div>
+    </section>
+    <div id="stage"></div>
+  </main>
+
+  <main id="cikgu" class="hidden">
+    <div class="panel">
+      <div class="panel-hd">
+        <div class="grow">
+          <p class="eyebrow">Sains &middot; Tingkatan 3 &middot; 2.0 Respirasi</p>
+          <h2>Rekod tahap penguasaan</h2>
+        </div>
+        <span class="tp-chip a" id="pillSumber">Data contoh</span>
+      </div>
+      <div class="tabs hidden" role="tablist" id="tabsGuru">
+        <button id="tabKelas" role="tab" aria-selected="true">Kelas</button>
+        <button id="tabDiag" role="tab" aria-selected="false">Diagnostik</button>
+        <button id="tabSenarai" role="tab" aria-selected="false">Senarai kelas</button>
+        <button id="tabTangga" role="tab" aria-selected="false">Tangga TP</button>
+      </div>
+      <div class="panel-bd">
+        <div id="paneKunci"></div>
+        <div id="paneKelas" class="hidden"></div>
+        <div id="paneDiag" class="hidden"></div>
+        <div id="paneSenarai" class="hidden"></div>
+        <div id="paneTangga" class="hidden"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* Bab yang dimainkan oleh salinan halaman ini. Satu baris ini sahaja yang
+   perlu ditukar untuk menerbitkan bab lain dengan aplikasi yang sama. */
+var BAB_ID="t3b2";
+
+/* ============================================================
+   KANDUNGAN — dimuatkan daripada fail bank yang berasingan.
+   Aplikasi ini tidak tahu apa-apa tentang respirasi. Ia hanya pemain
+   bagi mana-mana bab yang mendaftar dirinya dalam window.BANK.
+   ============================================================ */
+var BAB = (window.BANK && window.BANK[BAB_ID]) || null;
+if(!BAB){
+  var kotakRalat=document.getElementById("stage");
+  if(kotakRalat) kotakRalat.innerHTML=
+    '<div class="panel"><div class="panel-bd">'+
+    '<p class="qtext">Bank soalan tidak dapat dimuatkan.</p>'+
+    '<p class="qnote">Fail kandungan bab tidak sampai ke halaman ini. Cuba muat semula. '+
+    'Jika ia berulang, beritahu cikgu supaya pautan boleh disemak.</p>'+
+    '</div></div>';
+  return;
+}
+
+var SPI=BAB.spi, KKO=BAB.kko;
+var ARAS=BAB.aras.map(function(a){
+  var o={}; for(var k in a) o[k]=a[k];
+  o.lampiran = a.lampiran ? (BAB.lampiran[a.lampiran]||null) : null;
+  return o;
+});
+
+(function pasangJenama(){
+  function tulis(pilih,teks){ var e=document.querySelector(pilih); if(e&&teks) e.textContent=teks; }
+  tulis(".brand b", BAB.tajuk);
+  tulis(".brand span", BAB.subtajuk);
+  var ge=document.getElementById("guruEyebrow");
+  if(ge) ge.textContent="Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
+  if(BAB.tajuk) document.title=BAB.tajuk;
+})();
+
+/* ============================================================
+   KEADAAN
+   ============================================================ */
+var SKEMA=2;                       /* versi skema setiap dokumen tersimpan */
+var NAFAS_MAX=100, SUSUT=2.0, GANJARAN=28, DENDA=24, SOALAN_SET=4;
+var MIN_HANTAR=150;                /* aksara minimum sebelum tugasan reka cipta boleh dihantar */
+var AMBANG=0.8;                    /* nisbah betul minimum untuk dikira menguasai satu hentian */
+function ambangItem(n){ return Math.ceil(AMBANG*n); }
+
+var S={
+  skrin:"nombor", aras:1, set:[], qi:0,
+  nafas:NAFAS_MAX, kombo:0, skor:0, betulBiasa:0, jumlahBiasa:0, bosBetul:false, bosHantar:false,
+  pilihan:null, disemak:false, mati:false,
+  lulus:{}, kad:{}, salah:[],
+  inhaler:0, hemo:0, buang:[],
+  rentetan:0, rentetanTarikh:null,
+  molPos:null,
+  harianTarikh:null, harianSkor:0, modHarian:false,
+  masaBos:0, senyap:false, tenang:false,
+  no:null, kod:"", kelasId:null, latihan:false,
+  minggu:null, mingguSkor:0,
+  tabCikgu:"kelas", muridPilih:null, arasDiag:1, papan:"minggu",
+  guruBuka:false, fokus:null
+};
+
+/* ============================================================
+   DATA
+   Nama penuh murid TIDAK PERNAH disimpan di jalan yang murid boleh baca.
+   Awam  : tetapan/nombor  -> senarai kelas + nombor murid + cap kod
+   Cikgu : guru/senarai    -> nombor kepada nama (peraturan db: admin sahaja)
+           guru/tetapan    -> cap kod cikgu
+           guru/tp-<kelas>-<no> -> pertimbangan TP guru
+   Murid : cubaan/<kelas>-<no>-a<n> -> satu dokumen bagi satu hentian,
+           percubaan pertama ditulis sekali sahaja dan tidak pernah ditindih
+   ============================================================ */
+var KELASES=[];        /* [{id,nama,contoh}] */
+var NOMBOR={};         /* kelasId -> [{no,cap}] */
+var NAMA={};           /* kelasId -> {no: nama penuh}  (mod cikgu sahaja) */
+var CUBAAN={};         /* "kelas|no|aras" -> dokumen cubaan */
+var GURU={};           /* "kelas|no" -> {tp,sebab} */
+var KOD_GURU=null;     /* kod cikgu mentah, hanya dalam ingatan selepas dibuka */
+var KOD_ADA=false;     /* adakah kod cikgu sudah pernah ditetapkan */
+var KOD_LUAR=null;     /* cap kod cikgu untuk mod tanpa pelayan */
+var DB=null, ADA_GURU=false, SUMBER="tempatan";
+
+function pad2(n){ return (n<10?"0":"")+n; }
+function cap(s){
+  var h=2166136261;
+  s=String(s);
+  for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); }
+  return (h>>>0).toString(36);
+}
+function pseudo(s){
+  var h=2166136261;
+  for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); }
+  return ((h>>>0)%1000)/1000;
+}
+function tarikhTempatan(d){
+  d=d||new Date();
+  return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate());
+}
+function tarikhSemalam(){
+  var d=new Date(); d.setDate(d.getDate()-1); return tarikhTempatan(d);
+}
+function kunciC(kelas,no,a){ return kelas+"|"+no+"|"+a; }
+
+/* Minggu bermula hari Isnin waktu tempatan. Papan mingguan menetapkan
+   semula setiap minggu supaya murid yang mula lambat tidak kekal di bawah
+   selama-lamanya, dan murid yang sudah jauh di hadapan tidak boleh berehat. */
+function kunciMinggu(d){
+  d=d?new Date(d):new Date();
+  d.setHours(0,0,0,0);
+  var isnin=(d.getDay()+6)%7;
+  d.setDate(d.getDate()-isnin);
+  return tarikhTempatan(d);
+}
+function kemasMinggu(){
+  var m=kunciMinggu();
+  if(S.minggu!==m){ S.minggu=m; S.mingguSkor=0; }
+}
+function dalamMingguIni(ms){ return ms && kunciMinggu(ms)===kunciMinggu(); }
+/* Papan mingguan mengira HENTIAN DILEPASI minggu ini, bukan jumlah markah
+   seumur hidup. Ia mengukur kemajuan, bukan siapa paling lama bermain. */
+function mingguMurid(kelas,no){
+  var lulus=0, skor=0;
+  for(var i=1;i<=6;i++){
+    var c=cubaanMurid(kelas,no,i);
+    if(!c||!c.terbaik) continue;
+    if(!dalamMingguIni(c.terbaik.masa)) continue;
+    skor+=(c.terbaik.skor||0);
+    if(c.terbaik.lulus) lulus++;
+  }
+  return {lulus:lulus, skor:skor};
+}
+function kunciG(kelas,no){ return kelas+"|"+no; }
+function jalanCubaan(kelas,no,a){ return "cubaan/"+kelas+"-"+no+"-a"+a; }
+function jalanTp(kelas,no){ return "guru/tp-"+kelas+"-"+no; }
+function kelasKini(){
+  for(var i=0;i<KELASES.length;i++) if(KELASES[i].id===S.kelasId) return KELASES[i];
+  return KELASES[0]||{id:"contoh",nama:"Kelas contoh",contoh:true};
+}
+function nomborKelas(id){ return NOMBOR[id]||[]; }
+function namaMurid(kelas,no){
+  var m=NAMA[kelas]; return (m&&m[no])?m[no]:("Murid No. "+no);
+}
+function labelMurid(no){ return "No. "+no; }
+
+/* ============================================================
+   KELAS CONTOH — supaya skrin cikgu berfungsi sebelum kelas sebenar
+   dimasukkan. Kelas ini tidak pernah ditulis ke pangkalan data.
+   ============================================================ */
+function benihContoh(){
+  var namaContoh=["Aisyah binti Rahman","Muhammad Irfan bin Zaidi","Tan Mei Ling",
+                  "Arvind a/l Kumaran","Danial Haiqal bin Suhaimi","Nur Batrisyia binti Azman"];
+  var tahap=[4,5,5,3,2,1];
+  KELASES.push({id:"contoh",nama:"3 Amanah (contoh)",contoh:true});
+  NOMBOR.contoh=[]; NAMA.contoh={};
+  namaContoh.forEach(function(n,i){
+    var no=pad2(i+1);
+    NOMBOR.contoh.push({no:no,cap:null});
+    NAMA.contoh[no]=n;
+    var hingga=Math.min(5,tahap[i]+1);
+    for(var a=1;a<=hingga;a++){
+      var kolam=ARAS[a-1].soalan.map(function(q,k){ return {q:q,w:pseudo(no+"-p"+a+"-"+k)}; })
+                 .sort(function(x,y){ return x.w-y.w; })
+                 .slice(0,4).map(function(x){ return x.q; });
+      var kuasai = a<=tahap[i];
+      var senaraiS=[], betul=0;
+      kolam.forEach(function(q,k){
+        /* hentian yang dikuasai sentiasa cukup betul, yang belum sentiasa tidak,
+           supaya kelas contoh membaca sebagai satu cerita yang munasabah */
+        var ok = kuasai ? (k<3 || pseudo(no+"-"+a+"-"+k)<0.7)
+                        : (pseudo(no+"-"+a+"-"+k)<0.3);
+        if(ok) betul++;
+        senaraiS.push({qid:q.id,betul:ok});
+      });
+      var bosOk = kuasai;
+      senaraiS.push({qid:ARAS[a-1].bos.id,betul:bosOk});
+      var jum=kolam.length+1;
+      var satu={masa:Date.now()-(8-a)*86400000, betul:betul, jumlah:kolam.length,
+                bos:bosOk, lulus:((betul+(bosOk?1:0))>=ambangItem(jum)),
+                skor:betul*145, mod:"masa", soalan:senaraiS};
+      CUBAAN[kunciC("contoh",no,a)]={v:SKEMA,kelas:"contoh",no:no,aras:a,contoh:true,
+        pertama:satu, terbaik:satu, kali:1, akhir:satu.masa};
+    }
+  });
+}
+
+/* ============================================================
+   KIRAAN TP
+   ============================================================ */
+/* Cadangan automatik dikira daripada PERCUBAAN PERTAMA setiap hentian.
+   TP6 tidak pernah automatik: tugasan reka cipta mesti dibaca guru. */
+function tpAuto(kelas,no){
+  var t=0;
+  for(var i=1;i<=5;i++){
+    var c=CUBAAN[kunciC(kelas,no,i)];
+    if(c&&c.pertama&&c.pertama.lulus) t=i; else break;
+  }
+  return t;
+}
+function guruUntuk(kelas,no){ return GURU[kunciG(kelas,no)]||null; }
+function tpDilapor(kelas,no){
+  var g=guruUntuk(kelas,no);
+  if(g&&g.tp!==null&&g.tp!==undefined&&g.tp!=="") return Number(g.tp);
+  return tpAuto(kelas,no);
+}
+function cubaanMurid(kelas,no,a){ return CUBAAN[kunciC(kelas,no,a)]||null; }
+function skorMurid(kelas,no){
+  var s=0;
+  for(var i=1;i<=6;i++){ var c=cubaanMurid(kelas,no,i); if(c&&c.terbaik) s+=(c.terbaik.skor||0); }
+  return s;
+}
+function bilCubaan(kelas,no){
+  var n=0;
+  for(var i=1;i<=6;i++){ var c=cubaanMurid(kelas,no,i); if(c) n+=(c.kali||0); }
+  return n;
+}
+function adaKarangan(kelas,no){
+  var c=cubaanMurid(kelas,no,6);
+  return (c&&c.karangan&&c.karangan.teks) ? c.karangan : null;
+}
+function jawapanPertama(kelas,no,qid){
+  for(var a=1;a<=6;a++){
+    var c=cubaanMurid(kelas,no,a);
+    if(!c||!c.pertama||!c.pertama.soalan) continue;
+    for(var k=0;k<c.pertama.soalan.length;k++)
+      if(c.pertama.soalan[k].qid===qid) return c.pertama.soalan[k].betul;
+  }
+  return null;
+}
+function senaraiMurid(kelas){
+  return nomborKelas(kelas).map(function(m){ return m.no; });
+}
+
+/* ============================================================
+   UTIL
+   ============================================================ */
+function $(i){return document.getElementById(i);}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function eq(a,b){if(a.length!==b.length)return false;for(var i=0;i<a.length;i++)if(a[i]!==b[i])return false;return true;}
+function eqSet(a,b){return eq(a.slice().sort(),b.slice().sort());}
+function rnd(n){return Math.floor(Math.random()*n);}
+function ambilRawak(arr,n){
+  var c=arr.slice(),out=[];
+  while(out.length<n && c.length) out.push(c.splice(rnd(c.length),1)[0]);
+  return out;
+}
+function tpDicapai(m){var t=0;for(var i=1;i<=6;i++){if(m[i])t=i;else break;}return t;}
+function ringkas(t){
+  var s=String(t).replace(/<[^>]*>/g,"").replace(/&[a-z#0-9]+;/gi,"");
+  return s.length>52 ? s.slice(0,50)+"…" : s;
+}
+function duaDigit(x){ return (x<10?"0":"")+x; }
+function tarikhPendek(ms){
+  var d=new Date(ms);
+  return duaDigit(d.getDate())+"/"+duaDigit(d.getMonth()+1);
+}
+/* Sel CSV: nilai yang bermula dengan tanda formula didahului petik tunggal
+   supaya Excel tidak melaksanakannya sebagai formula. */
+function selCsv(v){
+  var s=String(v==null?"":v);
+  if(/^[=+\-@\t\r]/.test(s)) s="'"+s;
+  return '"'+s.replace(/"/g,'""')+'"';
+}
+
+/* Kocok kedudukan pilihan sekali semasa mula.
+   Bagi soalan satu jawapan, kedudukan jawapan betul diagihkan secara
+   BERLAPIS, bukan rawak semata: dalam satu hentian, setiap kedudukan
+   dipakai hampir sama banyak, kemudian urutan agihan itu sendiri dikocok.
+   Kocokan rawak tulen boleh menghasilkan empat soalan berturut-turut yang
+   jawapannya sama-sama A, dan murid cepat perasan corak begitu. */
+function kocokSemua(){
+  ARAS.forEach(function(a){
+    a.soalan.forEach(function(q,i){
+      q._lam=a.lampiran||null; q.id="a"+a.n+"q"+(i+1); q.tp=a.n; q.sk=a.sk;
+      q.label=ringkas(q.t);
+    });
+    if(a.bos){ a.bos._lam=a.lampiran||null; a.bos.id="a"+a.n+"bos"; a.bos.tp=a.n; a.bos.sk=a.sk; a.bos.label="BOS · "+ringkas(a.bos.t); }
+  });
+  ARAS.forEach(function(a){
+    var semua=a.soalan.concat([a.bos]).filter(Boolean);
+    var ikutBil={};
+    semua.forEach(function(q){
+      if(q.j!=="pilih") return;
+      (ikutBil[q.p.length]=ikutBil[q.p.length]||[]).push(q);
+    });
+    Object.keys(ikutBil).forEach(function(bil){
+      var n=Number(bil), senarai=ikutBil[bil], sasaran=[], mula=rnd(n);
+      for(var i=0;i<senarai.length;i++) sasaran.push((mula+i)%n);
+      for(var k=sasaran.length-1;k>0;k--){ var j=rnd(k+1),t=sasaran[k];sasaran[k]=sasaran[j];sasaran[j]=t; }
+      senarai.forEach(function(q,idx){ letakJawapan(q,sasaran[idx]); });
+    });
+    semua.forEach(function(q){
+      if(q.j==="banyak"||q.j==="susun") kocokBiasa(q);
+    });
+  });
+}
+/* Pindahkan jawapan betul ke kedudukan yang ditetapkan, pengganggu dikocok. */
+function letakJawapan(q,sasaran){
+  var betul=q.p[q.b];
+  var lain=q.p.filter(function(_,i){ return i!==q.b; });
+  for(var k=lain.length-1;k>0;k--){ var j=rnd(k+1),t=lain[k];lain[k]=lain[j];lain[j]=t; }
+  var baru=[],c=0;
+  for(var i=0;i<q.p.length;i++) baru.push(i===sasaran?betul:lain[c++]);
+  q.p=baru; q.b=sasaran;
+}
+/* Soalan pelbagai jawapan dan soalan susunan tiada satu kedudukan betul,
+   jadi ia dikocok biasa, cuma dielakkan daripada kekal pada susunan asal. */
+function kocokBiasa(q){
+  var n=q.p.length,idx,cuba=0,ident;
+  do{
+    idx=[];for(var i=0;i<n;i++)idx.push(i);
+    for(var k=n-1;k>0;k--){var j=rnd(k+1),t=idx[k];idx[k]=idx[j];idx[j]=t;}
+    ident=true;for(var m=0;m<n;m++)if(idx[m]!==m)ident=false;
+    cuba++;
+  }while(ident&&cuba<12);
+  var peta={};idx.forEach(function(l,b){peta[l]=b;});
+  q.b=q.b.map(function(l){return peta[l];});
+  var pl=q.p;q.p=idx.map(function(l){return pl[l];});
+}
+
+/* ============================================================
+   JUICE — kilat tepi, teks terapung, skor bergolek
+   ============================================================ */
+var kurangGerak = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function kilat(jenis){
+  if(kurangGerak) return;
+  var f=$("flash"); if(!f)return;
+  f.className=jenis; void f.offsetWidth;
+  f.classList.add("on");
+  setTimeout(function(){ f.classList.remove("on"); },200);
+}
+function apung(teks,warna,sasaran){
+  if(kurangGerak||!sasaran)return;
+  var r=sasaran.getBoundingClientRect();
+  var d=el("div","apung",teks);
+  d.style.color=warna;
+  d.style.left=(r.left+r.width/2)+"px";
+  d.style.top=(r.top-4)+"px";
+  document.body.appendChild(d);
+  setTimeout(function(){ if(d.parentNode)d.parentNode.removeChild(d); },1050);
+}
+var animSkor=false;
+function bergolek(dari,ke){
+  var e=$("vSkor"); if(!e)return;
+  if(kurangGerak){e.textContent=ke;return;}
+  animSkor=true;
+  var t0=null, dur=620;
+  requestAnimationFrame(function step(t){
+    if(t0===null)t0=t;
+    var p=Math.min(1,(t-t0)/dur);
+    e.textContent=Math.round(dari+(ke-dari)*(1-Math.pow(1-p,3)));
+    if(p<1) requestAnimationFrame(step); else animSkor=false;
+  });
+}
+function denyut(e){ if(!e||kurangGerak)return; e.classList.remove("pop"); void e.offsetWidth; e.classList.add("pop"); }
+function warnaTok(nama,ganti){
+  var v=getComputedStyle(document.documentElement).getPropertyValue(nama).trim();
+  return v||ganti;
+}
+
+/* ---------- fokus papan kekunci kekal selepas skrin dibina semula ---------- */
+document.addEventListener("focusin",function(e){
+  var t=e.target;
+  if(t&&t.getAttribute&&t.getAttribute("data-f")) S.fokus=t.getAttribute("data-f");
+});
+function pulihFokus(){
+  if(!S.fokus)return;
+  var e=document.querySelector('[data-f="'+S.fokus+'"]');
+  if(!e||e.disabled){ e=document.querySelector('[data-f="aksi"]'); }
+  if(e&&e.focus){ try{ e.focus({preventScroll:true}); }catch(_){ e.focus(); } }
+}
+
+/* ============================================================
+   BUNYI
+   ============================================================ */
+var AC=null, degupTimer=null;
+function ac(){ if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){AC=null;}} return AC; }
+function nada(f,dur,jenis,vol){
+  if(S.senyap)return; var c=ac(); if(!c)return;
+  try{
+    var o=c.createOscillator(),g=c.createGain();
+    o.type=jenis||"sine"; o.frequency.value=f;
+    g.gain.setValueAtTime(vol||0.10,c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0008,c.currentTime+dur);
+    o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+dur);
+  }catch(e){}
+}
+function bunyi(k){
+  if(k==="betul"){nada(660,0.12,"sine",0.10);setTimeout(function(){nada(990,0.16,"sine",0.09);},95);}
+  else if(k==="salah"){nada(170,0.24,"square",0.07);}
+  else if(k==="degup"){nada(58,0.13,"sine",0.22);}
+  else if(k==="kad"){nada(520,0.1);setTimeout(function(){nada(784,0.1);},90);setTimeout(function(){nada(1046,0.22);},180);}
+  else if(k==="mati"){nada(300,0.5,"sawtooth",0.08);setTimeout(function(){nada(140,0.7,"sawtooth",0.09);},220);}
+}
+function aturDegup(){
+  if(degupTimer){clearInterval(degupTimer);degupTimer=null;}
+  if(S.tenang||S.skrin!=="main"||S.senyap||S.nafas>35||S.mati)return;
+  degupTimer=setInterval(function(){bunyi("degup");},S.nafas<20?360:520);
+}
+
+/* ============================================================
+   PETA KANVAS — molekul menyusur salur udara
+   ============================================================ */
+var petaCv=null,petaCtx=null,petaAnim=null,bob=0;
+function nodPos(i,w,h){
+  var t=i/5;
+  return {x:w*0.08+t*w*0.84, y:h*0.52+Math.sin(t*Math.PI*1.35)*h*0.26};
+}
+function lukisPeta(){
+  if(!petaCv)return;
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  var w=petaCv.clientWidth,h=petaCv.clientHeight;
+  if(!w||!h)return;
+  if(petaCv.width!==Math.round(w*dpr)){petaCv.width=Math.round(w*dpr);petaCv.height=Math.round(h*dpr);}
+  var c=petaCtx; c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,w,h);
+  var cs=getComputedStyle(document.documentElement);
+  var cLine=cs.getPropertyValue("--line2").trim()||"#C3CFDE";
+  var cTeal=cs.getPropertyValue("--teal").trim()||"#0E8C7F";
+  var cArt=cs.getPropertyValue("--arteri").trim()||"#C8102E";
+  var cAmb=cs.getPropertyValue("--amber").trim()||"#B07208";
+  var cInk3=cs.getPropertyValue("--ink3").trim()||"#6C7F96";
+  var cSurf=cs.getPropertyValue("--surface").trim()||"#fff";
+  var tunggu=menungguCikgu();
+
+  var pts=[];for(var i=0;i<6;i++)pts.push(nodPos(i,w,h));
+  for(var s=0;s<5;s++){
+    var a=pts[s],b=pts[s+1];
+    var lebar1=26-s*3.4, lebar2=26-(s+1)*3.4;
+    c.beginPath();
+    c.moveTo(a.x,a.y-lebar1/2); c.lineTo(b.x,b.y-lebar2/2);
+    c.lineTo(b.x,b.y+lebar2/2); c.lineTo(a.x,a.y+lebar1/2); c.closePath();
+    c.fillStyle = S.lulus[s+1] ? cTeal+"26" : cLine+"3A";
+    c.fill();
+    c.strokeStyle = S.lulus[s+1] ? cTeal : cLine;
+    c.lineWidth=1.4; c.stroke();
+  }
+  for(var k=0;k<6;k++){
+    var p=pts[k],lulus=!!S.lulus[k+1],aktif=(k+1===S.aras);
+    var menunggu=(k===5&&!lulus&&tunggu);
+    c.beginPath(); c.arc(p.x,p.y,aktif?15:12,0,Math.PI*2);
+    c.fillStyle = lulus?cTeal:(menunggu?cAmb:(aktif?cArt:cSurf));
+    c.fill();
+    c.lineWidth=2; c.strokeStyle = lulus?cTeal:(menunggu?cAmb:(aktif?cArt:cLine));
+    c.stroke();
+    c.fillStyle = (lulus||aktif||menunggu)?"#fff":cInk3;
+    c.font="500 11px 'DM Mono', monospace"; c.textAlign="center"; c.textBaseline="middle";
+    c.fillText(lulus?"✓":(menunggu?"…":String(k+1)),p.x,p.y+0.5);
+  }
+  var sasar=Math.min(S.aras,6)-1;
+  if(S.molPos===null||S.molPos===undefined) S.molPos=sasar;
+  S.molPos += (sasar-S.molPos)*0.075;
+  if(Math.abs(sasar-S.molPos)<0.002) S.molPos=sasar;
+  var lo=Math.max(0,Math.floor(S.molPos)), hi=Math.min(5,lo+1), fr=S.molPos-lo;
+  var mp={x:pts[lo].x+(pts[hi].x-pts[lo].x)*fr, y:pts[lo].y+(pts[hi].y-pts[lo].y)*fr};
+  var oy=Math.sin(bob)*3.6;
+  c.beginPath(); c.arc(mp.x-6,mp.y-24+oy,5.6,0,Math.PI*2); c.fillStyle=cArt; c.fill();
+  c.beginPath(); c.arc(mp.x+6,mp.y-24+oy,5.6,0,Math.PI*2); c.fillStyle=cArt; c.fill();
+  c.globalAlpha=0.28;
+  c.beginPath(); c.arc(mp.x,mp.y-24+oy,15,0,Math.PI*2); c.strokeStyle=cArt; c.lineWidth=1.5; c.stroke();
+  c.globalAlpha=1;
+}
+function mulaPetaAnim(){
+  if(petaAnim)cancelAnimationFrame(petaAnim);
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce){lukisPeta();return;}
+  (function loop(){ bob+=0.055; lukisPeta(); petaAnim=requestAnimationFrame(loop); })();
+}
+function hentiPetaAnim(){ if(petaAnim){cancelAnimationFrame(petaAnim);petaAnim=null;} }
+
+/* Kad seterusnya yang boleh dibuka, supaya sentiasa ada sebab yang jelas
+   untuk main sekali lagi, bukan sekadar nombor skor yang naik. */
+function kadSeterusnya(){
+  for(var i=0;i<ARAS.length;i++){
+    var a=ARAS[i];
+    if(!S.kad[a.n+"a"]) return {em:a.kadEm,nama:a.kadNama,aras:a.n,
+      cara:"Lepasi hentian "+a.n+", "+a.tempat+"."};
+    if(!S.kad[a.n+"b"]) return {em:a.bosKadEm,nama:a.bosKadNama,aras:a.n,
+      cara:(a.n===6?"Hantar tugasan reka cipta di hentian 6.":"Kalahkan soalan bos di hentian "+a.n+", "+a.tempat+".")};
+  }
+  return null;
+}
+
+function menungguCikgu(){
+  if(!S.no) return false;
+  return !!adaKarangan(S.kelasId,S.no) && !S.lulus[6];
+}
+
+/* ============================================================
+   JAM NAFAS
+   ============================================================ */
+var jam=null;
+function mulaJam(){
+  hentiJam();
+  if(S.tenang) return;                     /* mod tenang: meter dimatikan */
+  jam=setInterval(function(){
+    if(S.skrin!=="main"||S.disemak||S.mati)return;
+    S.nafas=Math.max(0,S.nafas-SUSUT/10);
+    if(S.masaBos>0){
+      S.masaBos=Math.max(0,S.masaBos-0.1);
+      var bt=$("bosbar"); if(bt)bt.style.width=(S.masaBos/20*100)+"%";
+      if(S.masaBos===0){ S.pilihan=null; semak(true); return; }
+    }
+    kemasHud();
+    if(S.nafas<=0) pengsan();
+  },100);
+}
+function hentiJam(){ if(jam){clearInterval(jam);jam=null;} }
+
+function kemasHud(){
+  var hud=$("hud");
+  hud.classList.toggle("tenang",S.tenang);
+  $("vNafas").textContent=S.tenang?"∞":Math.ceil(S.nafas);
+  var bar=$("bar");
+  bar.firstChild.style.width=(S.tenang?100:Math.max(0,S.nafas))+"%";
+  bar.classList.toggle("lemas",!S.tenang&&S.nafas<35);
+  $("vKombo").textContent="×"+ganda();
+  if(!animSkor) $("vSkor").textContent=S.skor;
+}
+function ganda(){ return S.kombo>=6?3:(S.kombo>=3?2:1); }
+
+function pengsan(){
+  S.mati=true; hentiJam(); aturDegup(); bunyi("mati");
+  var st=$("stage"); st.innerHTML="";
+  var p=el("div","panel");
+  var b=el("div","result");
+  b.appendChild(el("div","badbig","\u{1F635}"));
+  b.appendChild(el("h2",null,"Habis nafas"));
+  b.appendChild(el("p",null,"Awak pengsan sebelum sampai ke hentian seterusnya. Setiap jawapan betul beri awak satu tarikan nafas. Kalau meter ini mengganggu, hidupkan Mod tenang di peta."));
+  var a=el("div","actions");a.style.justifyContent="center";
+  var b1=el("button","btn");b1.textContent="Cuba hentian ini semula";b1.setAttribute("data-f","aksi");
+  b1.onclick=function(){ mulaAras(S.aras); };
+  var b2=el("button","btn ghost");b2.textContent="Balik ke peta";
+  b2.onclick=function(){ S.skrin="peta"; render(); };
+  a.appendChild(b1);a.appendChild(b2);
+  b.appendChild(a);
+  p.appendChild(b); st.appendChild(p);
+  pulihFokus();
+}
+
+/* ============================================================
+   ALIRAN PERMAINAN
+   ============================================================ */
+function binaSet(n){
+  var a=ARAS[n-1];
+  var jum=Math.min(SOALAN_SET,a.soalan.length);
+  var pilih=ambilRawak(a.soalan,jum);
+  pilih.forEach(function(q){ q._ulang=false; });
+  /* Ulangan pintar: satu soalan yang pernah salah dari hentian terdahulu.
+     Ia latihan sahaja — tidak dikira dalam keputusan hentian ini dan
+     tidak direkod sebagai bukti hentian ini. */
+  if(S.salah.length && n>1 && Math.random()<0.8){
+    var s=S.salah[rnd(S.salah.length)];
+    if(s && s.aras<n){ s.q._ulang=true; pilih.splice(rnd(pilih.length),0,s.q); }
+  }
+  a.bos._ulang=false;
+  pilih.push(a.bos);
+  return pilih;
+}
+function mulaAras(n){
+  S.aras=n; S.set=binaSet(n); S.qi=0;
+  S.nafas=NAFAS_MAX; S.kombo=0; S.skor=0; S.mati=false; S.modHarian=false;
+  S.betulBiasa=0; S.bosBetul=false; S.bosHantar=false;
+  S.jumlahBiasa=S.set.filter(function(q){ return !q._ulang && q!==ARAS[n-1].bos; }).length;
+  reset(); S.skrin="main"; render(); mulaJam();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function mulaHarian(){
+  var semua=[];
+  ARAS.forEach(function(a){ a.soalan.forEach(function(q){ if(q.j!=="buka"){ q._ulang=false; semua.push(q); } }); });
+  S.set=ambilRawak(semua,5); S.qi=0;
+  S.nafas=NAFAS_MAX; S.kombo=0; S.skor=0; S.mati=false; S.modHarian=true;
+  S.betulBiasa=0; S.jumlahBiasa=S.set.length; S.bosBetul=false; S.bosHantar=false;
+  reset(); S.skrin="main"; render(); mulaJam();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function reset(){ S.pilihan=null; S.disemak=false; S.masaBos=0; S.buang=[]; }
+
+function adaJawapan(q){
+  if(q.j==="pilih")return S.pilihan!==null&&S.pilihan>=0;
+  if(q.j==="banyak"||q.j==="susun")return S.pilihan&&S.pilihan.length>0;
+  if(q.j==="nombor")return S.pilihan!==null&&S.pilihan!=="";
+  if(q.j==="buka")return S.pilihan&&S.pilihan.trim().length>=MIN_HANTAR;
+  return false;
+}
+
+function semak(masaHabis){
+  var q=S.set[S.qi];
+  var bos=(q===ARAS[S.aras-1].bos)&&!S.modHarian;
+
+  /* Tugasan reka cipta tidak pernah dinilai oleh mesin.
+     Panjang teks bukan ukuran mereka cipta — ia dihantar kepada guru. */
+  if(q.j==="buka"){
+    q._betul=null; q._hantar=true; S.bosHantar=true; S.disemak=true;
+    S.nafas=Math.min(NAFAS_MAX,S.nafas+GANJARAN);
+    S.karangan=S.pilihan;
+    bunyi("kad"); aturDegup(); render();
+    return;
+  }
+
+  var betul=false;
+  if(!masaHabis){
+    if(q.j==="pilih")betul=S.pilihan===q.b;
+    else if(q.j==="banyak")betul=eqSet(S.pilihan,q.b);
+    else if(q.j==="susun")betul=eq(S.pilihan,q.b);
+    else if(q.j==="nombor")betul=Math.abs(parseFloat(S.pilihan)-q.b)<=(q.tol||0.05);
+  }
+  q._betul=betul; S.disemak=true;
+
+  var skorLama=S.skor, kuasaBaru=null;
+
+  if(betul){
+    if(bos) S.bosBetul=true;
+    else if(!q._ulang) S.betulBiasa++;
+    S.kombo++;
+    S.skor += (bos?300:100)*ganda();
+    S.nafas=Math.min(NAFAS_MAX,S.nafas+GANJARAN);
+    bunyi("betul");
+    S.salah=S.salah.filter(function(x){return x.q!==q;});
+    if(S.kombo%3===0){
+      if(S.kombo%6===0){ if(S.hemo<3){S.hemo++;kuasaBaru="hemo";} }
+      else { if(S.inhaler<3){S.inhaler++;kuasaBaru="inhaler";} }
+    }
+  } else {
+    S.kombo=0;
+    if(!S.tenang) S.nafas=Math.max(0,S.nafas-DENDA);
+    bunyi("salah");
+    if(!S.modHarian && !S.salah.some(function(x){return x.q===q;})) S.salah.push({aras:S.aras,q:q});
+  }
+  aturDegup(); render();
+
+  kilat(betul?"ok":"no");
+  var bar=$("bar"), skorEl=$("vSkor");
+  if(betul){
+    apung("+"+GANJARAN+" nafas",warnaTok("--teal","#0E8C7F"),bar);
+    bergolek(skorLama,S.skor);
+    setTimeout(function(){ apung("+"+(S.skor-skorLama),"#FFD48A",skorEl); },120);
+    if(ganda()>1) denyut($("vKombo"));
+  } else if(!S.tenang){
+    apung("−"+DENDA+" nafas",warnaTok("--arteri","#C8102E"),bar);
+  }
+  if(kuasaBaru){
+    setTimeout(function(){
+      bunyi("kad");
+      var kb=$(kuasaBaru==="hemo"?"btnHemo":"btnInhaler");
+      denyut(kb);
+      apung(kuasaBaru==="hemo"?"Hemoglobin!":"Inhaler!",warnaTok("--teal","#0E8C7F"),kb||bar);
+    },260);
+  }
+  if(!S.tenang && S.nafas<=0) setTimeout(pengsan,700);
+}
+
+/* ---------- kuasa ---------- */
+function gunaInhaler(){
+  if(S.inhaler<1||S.disemak)return;
+  S.inhaler--;
+  var sebelum=S.nafas;
+  S.nafas=Math.min(NAFAS_MAX,S.nafas+40);
+  bunyi("betul"); aturDegup(); render();
+  apung("+"+Math.round(S.nafas-sebelum)+" nafas",warnaTok("--teal","#0E8C7F"),$("bar"));
+}
+function gunaHemo(){
+  var q=S.set[S.qi];
+  if(S.hemo<1||S.disemak)return;
+  if(q.j!=="pilih"&&q.j!=="banyak")return;
+  var salahIdx=[];
+  q.p.forEach(function(_,i){
+    var bt = q.j==="banyak" ? q.b.indexOf(i)>=0 : q.b===i;
+    if(!bt && S.buang.indexOf(i)<0) salahIdx.push(i);
+  });
+  if(salahIdx.length<1)return;
+  S.hemo--;
+  S.buang=S.buang.concat(ambilRawak(salahIdx,Math.min(2,salahIdx.length)));
+  if(S.pilihan!==null){
+    if(q.j==="banyak") S.pilihan=S.pilihan.filter(function(i){return S.buang.indexOf(i)<0;});
+    else if(S.buang.indexOf(S.pilihan)>=0) S.pilihan=-1;
+  }
+  bunyi("betul"); render();
+}
+
+/* ---------- rentetan hari (tarikh tempatan, bukan UTC) ---------- */
+function kemasRentetan(){
+  var hariIni=tarikhTempatan();
+  if(S.rentetanTarikh===hariIni) return;
+  S.rentetan = (S.rentetanTarikh===tarikhSemalam()) ? (S.rentetan||0)+1 : 1;
+  S.rentetanTarikh=hariIni;
+}
+
+function seterusnya(){
+  S.qi++;
+  if(S.qi>=S.set.length){ return S.modHarian?hasilHarian():hasilAras(); }
+  reset(); render(); window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function render(){
+  kemasHud();
+  var luar=(S.skrin==="nombor"||S.skrin==="kod"||S.skrin==="kelas");
+  $("hud").classList.toggle("hidden",luar);
+  if(luar){ hentiJam(); hentiPetaAnim(); aturDegup();
+    if(S.skrin==="kelas") return renderPilihKelas();
+    if(S.skrin==="kod") return renderKod();
+    return renderNombor(); }
+  if(S.skrin==="peta"){ hentiJam(); aturDegup(); return renderPeta(); }
+  hentiPetaAnim();
+  if(S.skrin==="main") return renderSoalan();
+  if(S.skrin==="kad") return renderKad();
+}
+
+function panelMula(tajuk,eyebrow){
+  var p=el("div","panel");
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(eyebrow)+'</p><h2>'+esc(tajuk)+'</h2></div>'));
+  return p;
+}
+
+function renderPilihKelas(){
+  var st=$("stage"); st.innerHTML="";
+  var p=panelMula("Kelas mana?","Laluan Oksigen");
+  var bd=el("div","panel-bd");
+  var g=el("div","stopgrid");
+  KELASES.forEach(function(k){
+    var b=el("button","stop");b.type="button";b.setAttribute("data-f","kelas-"+k.id);
+    b.innerHTML='<span class="nm">'+esc(k.nama)+'</span><span class="tp">'+nomborKelas(k.id).length+' nombor</span>';
+    b.onclick=function(){ S.kelasId=k.id; S.skrin="nombor"; render(); };
+    g.appendChild(b);
+  });
+  bd.appendChild(g);
+  p.appendChild(bd); st.appendChild(p);
+  pulihFokus();
+}
+
+function renderNombor(){
+  var st=$("stage"); st.innerHTML="";
+  var k=kelasKini();
+  if(!S.kelasId) S.kelasId=k.id;
+  var senarai=nomborKelas(S.kelasId);
+
+  var p=panelMula("Nombor awak yang mana?",k.nama);
+  var bd=el("div","panel-bd");
+  bd.appendChild(el("p","qnote","Ketik nombor awak dalam senarai kelas. Nama penuh awak tidak dipaparkan di skrin ini, dan tidak disimpan bersama jawapan awak."));
+
+  if(senarai.length){
+    var g=el("div","nomgrid");
+    senarai.forEach(function(m){
+      var b=el("button","nom");b.type="button";b.setAttribute("data-f","no-"+m.no);
+      var sudah=bilCubaan(S.kelasId,m.no)>0;
+      b.innerHTML='<span class="n">'+esc(m.no)+'</span><span class="s">'+(sudah?"ada rekod":"belum mula")+'</span>';
+      b.onclick=function(){ S.noPilih=m.no; if(m.cap){ S.skrin="kod"; render(); } else { masukMurid(m.no); } };
+      g.appendChild(b);
+    });
+    bd.appendChild(g);
+  } else {
+    bd.appendChild(el("p","note","Cikgu belum memasukkan senarai nombor untuk kelas ini pada peranti ini."));
+  }
+
+  var act=el("div","actions");
+  if(KELASES.length>1){
+    var bk=el("button","btn ghost sm");bk.textContent="Tukar kelas";
+    bk.onclick=function(){ S.skrin="kelas"; render(); };
+    act.appendChild(bk);
+  }
+  var bl=el("button","btn"+(senarai.length?" ghost":"")); bl.textContent="Main tanpa rekod";
+  bl.setAttribute("data-f","aksi");
+  bl.title="Latihan sahaja. Tiada apa-apa disimpan sebagai bukti PBD.";
+  bl.onclick=function(){ S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); render(); };
+  act.appendChild(bl);
+  bd.appendChild(act);
+  p.appendChild(bd); st.appendChild(p);
+  pulihFokus();
+}
+
+function renderKod(){
+  var st=$("stage"); st.innerHTML="";
+  var no=S.noPilih;
+  var p=panelMula("Kod awak","No. "+no+" · "+kelasKini().nama);
+  var bd=el("div","panel-bd");
+  bd.appendChild(el("p","qnote","Masukkan kod empat angka yang cikgu beri kepada awak. Tanpa kod itu, jawapan awak tidak boleh ditulis ke dalam rekod sesiapa, termasuk rekod awak sendiri."));
+  var row=el("div","numrow");
+  var inp=el("input");inp.type="text";inp.inputMode="numeric";inp.maxLength=6;inp.id="kodInp";
+  inp.className="pin";inp.placeholder="0000";inp.setAttribute("data-f","kod");
+  row.appendChild(inp);
+  var bt=el("button","btn");bt.textContent="Masuk";bt.setAttribute("data-f","aksi");
+  var msg=el("p","qnote","");
+  function gagal(t){ msg.textContent=t; msg.className="qnote gagal"; inp.value=""; bt.disabled=false; bt.textContent="Masuk"; inp.focus(); }
+  function cuba(){
+    var v=inp.value.trim();
+    if(!v) return gagal("Masukkan kod awak dahulu.");
+    bt.disabled=true; bt.textContent="Menyemak..."; msg.className="qnote"; msg.textContent="";
+    if(!AWAN){
+      var rec=nomborKelas(S.kelasId).filter(function(m){return m.no===no;})[0];
+      if(rec&&rec.cap&&cap(no+":"+v)!==rec.cap) return gagal("Kod itu tidak sepadan. Tanya cikgu.");
+      S.kod=v; return masukMurid(no);
+    }
+    rpc("lo_masuk",{p_kelas:S.kelasId,p_no:no,p_kod:v}).then(function(ok){
+      if(!ok) return gagal("Kod itu tidak sepadan. Tanya cikgu.");
+      S.kod=v; masukMurid(no);
+    }).catch(function(){ gagal("Tidak dapat menghubungi pelayan. Cuba lagi sebentar."); });
+  }
+  bt.onclick=cuba;
+  inp.onkeydown=function(e){ if(e.key==="Enter") cuba(); };
+  row.appendChild(bt);
+  bd.appendChild(row); bd.appendChild(msg);
+  var kembali=el("button","btn ghost sm");kembali.textContent="Pilih nombor lain";
+  kembali.onclick=function(){ S.skrin="nombor"; render(); };
+  var act=el("div","actions");act.appendChild(kembali);bd.appendChild(act);
+  p.appendChild(bd); st.appendChild(p);
+  setTimeout(function(){ var e=$("kodInp"); if(e)e.focus(); },30);
+}
+
+function masukMurid(no){
+  S.no=no; S.latihan=false;
+  S.lulus=kiraLulus();
+  var t=tpDicapai(S.lulus);
+  S.aras=(t>0&&t<6)?t+1:(t===6?6:1);
+  simpanDiri();
+  S.skrin="peta"; render();
+}
+function kiraLulus(){
+  var L={};
+  if(!S.no) return L;
+  for(var i=1;i<=6;i++){
+    var c=cubaanMurid(S.kelasId,S.no,i);
+    if(c&&c.terbaik&&c.terbaik.lulus) L[i]=true;
+  }
+  var g=guruUntuk(S.kelasId,S.no);
+  if(g&&Number(g.tp)>=6) L[6]=true;
+  return L;
+}
+
+function renderPeta(){
+  var st=$("stage"); st.innerHTML="";
+  var tunggu=menungguCikgu();
+
+  var p=el("div","panel");
+  var hd=el("div","panel-hd");
+  hd.appendChild(el("div","grow",'<p class="eyebrow">'+
+    esc(S.latihan?"Mod latihan · tiada rekod":(labelMurid(S.no)+" · "+kelasKini().nama))+
+    '</p><h2>Peta perjalanan</h2>'));
+  if(S.rentetan>0) hd.appendChild(el("span","tp-chip a",'<span class="api"><em>\u{1F525}</em>'+S.rentetan+' hari</span>'));
+  hd.appendChild(el("span","tp-chip t",Object.keys(S.kad).length+" / 12 kad"));
+  if(S.inhaler>0||S.hemo>0)
+    hd.appendChild(el("span","tp-chip",'\u{1F489} '+S.inhaler+'  \u{1FA78} '+S.hemo));
+  p.appendChild(hd);
+  var bd=el("div","panel-bd");
+  bd.innerHTML='<canvas id="peta" aria-label="Peta laluan oksigen dari hidung ke sel badan"></canvas>';
+  var grid=el("div","stopgrid");
+  ARAS.forEach(function(a){
+    var menunggu=(a.n===6&&!S.lulus[6]&&tunggu);
+    var s=S.lulus[a.n]?"lulus":(menunggu?"tunggu":(a.n===S.aras?"aktif":"buka"));
+    var b=el("button","stop");b.type="button";b.setAttribute("data-s",s);b.setAttribute("data-f","stop-"+a.n);
+    b.innerHTML='<span class="top"><span class="dot">'+(S.lulus[a.n]?"✓":(menunggu?"…":a.n))+'</span><span class="nm">'+esc(a.tempat)+'</span></span>'+
+                '<span class="tp">TP'+a.n+' · '+KKO[a.n-1]+(menunggu?" · menunggu cikgu":"")+'</span>';
+    b.onclick=function(){ mulaAras(a.n); };
+    grid.appendChild(b);
+  });
+  bd.appendChild(grid);
+
+  /* mod tenang */
+  var tg=el("div","tenangrow");
+  tg.appendChild(el("div","txt",'<div class="t">Mod tenang</div><div class="d">'+
+    (S.tenang
+      ? "Meter nafas dimatikan. Awak boleh baca selama yang perlu. Cikgu nampak tanda ini pada rekod awak."
+      : "Hidupkan jika meter nafas membuat awak tergesa-gesa. Soalan dan markah tetap sama.")+'</div>'));
+  var tb=el("button","btn sm"+(S.tenang?"":" ghost"));
+  tb.textContent=S.tenang?"Tenang: hidup":"Tenang: mati";
+  tb.setAttribute("aria-pressed",S.tenang?"true":"false");
+  tb.onclick=function(){ S.tenang=!S.tenang; simpanDiri(); render(); };
+  tg.appendChild(tb);
+  bd.appendChild(tg);
+
+  var ks=kadSeterusnya();
+  var sa=el("div","sasaran"+(ks?"":" siap"));
+  if(ks){
+    sa.appendChild(el("span","em",ks.em));
+    sa.appendChild(el("div","txt",'<div class="t">Kad seterusnya: '+esc(ks.nama)+'</div>'+
+      '<div class="d">'+esc(ks.cara)+'</div>'));
+    var kb2=el("button","btn sm ghost"); kb2.textContent="Pergi";
+    kb2.onclick=function(){ mulaAras(ks.aras); };
+    sa.appendChild(kb2);
+  } else {
+    sa.appendChild(el("span","em","\u{1F3C6}"));
+    sa.appendChild(el("div","txt",'<div class="t">Kesemua dua belas kad sudah dikumpul</div>'+
+      '<div class="d">Tiada lagi kad untuk dibuka. Ulang mana-mana hentian untuk menajamkan lagi jawapan awak.</div>'));
+  }
+  bd.appendChild(sa);
+
+  p.appendChild(bd);
+  st.appendChild(p);
+
+  if(tunggu){
+    var nt=el("div","fb ok");nt.style.marginTop="16px";
+    nt.innerHTML="<b>Tugasan reka cipta sudah dihantar</b>Cikgu akan membaca dan memutuskan TP6. Hentian enam akan bertanda siap selepas itu.";
+    st.appendChild(nt);
+  }
+
+  /* cabaran harian */
+  var hariIni=tarikhTempatan();
+  var sudah=(S.harianTarikh===hariIni);
+  var h=el("div","harian");
+  var garisApi = S.rentetan>0
+    ? (" Rentetan awak "+S.rentetan+" hari. Main hari ini untuk kekalkannya.")
+    : " Main hari ini untuk mula rentetan awak.";
+  h.appendChild(el("div","txt",'<div class="t">Cabaran harian</div><div class="d">'+
+    (sudah?("Sudah selesai hari ini. Skor awak "+S.harianSkor+"."):"Lima soalan campur semua aras.")+
+    esc(garisApi)+'</div>'));
+  var hb=el("button","btn sm"+(sudah?" ghost":""));
+  hb.textContent=sudah?"Main lagi (tak dikira)":"Mula cabaran";
+  hb.onclick=mulaHarian;
+  h.appendChild(hb);
+  st.appendChild(h);
+
+  /* Papan pendahulu — nombor sahaja, tiada nama.
+     Dua paparan: minggu ini (menetapkan semula setiap Isnin, jadi murid yang
+     mula lambat masih boleh naik) dan sepanjang bab (untuk gambaran penuh). */
+  var p2=el("div","panel");
+  p2.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(kelasKini().nama)+'</p><h2>Papan pendahulu</h2></div>'));
+  var bd2=el("div","panel-bd");
+
+  var tabP=el("div","papantab");
+  [["minggu","Minggu ini"],["semua","Sepanjang bab"]].forEach(function(x){
+    var b=el("button"); b.type="button"; b.textContent=x[1];
+    b.setAttribute("aria-pressed", S.papan===x[0] ? "true":"false");
+    b.onclick=function(){ S.papan=x[0]; render(); };
+    tabP.appendChild(b);
+  });
+  bd2.appendChild(tabP);
+
+  var mingguan=(S.papan==="minggu");
+  var baris=senaraiMurid(S.kelasId).map(function(no){
+    var m=mingguMurid(S.kelasId,no);
+    return mingguan ? {no:no,utama:m.lulus,skor:m.skor} : {no:no,utama:null,skor:skorMurid(S.kelasId,no)};
+  }).filter(function(x){ return mingguan ? (x.utama>0||x.skor>0) : x.skor>0; })
+    .sort(function(a,b){ return mingguan ? ((b.utama-a.utama)||(b.skor-a.skor)) : (b.skor-a.skor); })
+    .slice(0,6);
+
+  if(baris.length){
+    var pap=el("div","papan");
+    baris.forEach(function(m,i){
+      var r=el("div","prow"+((S.no&&m.no===S.no)?" saya":""));
+      var kanan = mingguan
+        ? (m.utama+" hentian")
+        : (m.skor+"");
+      r.innerHTML='<span class="rk">'+(i+1)+'</span>'+
+        '<span>'+esc(labelMurid(m.no))+((S.no&&m.no===S.no)?" (awak)":"")+
+        (mingguan?'<br><span class="sub">'+m.skor+' mata minggu ini</span>':'')+'</span>'+
+        '<span class="sk">'+kanan+'</span>';
+      pap.appendChild(r);
+    });
+    bd2.appendChild(pap);
+    bd2.appendChild(el("p","note", mingguan
+      ? "Papan ini mengira hentian yang dilepasi minggu ini sahaja dan bermula semula setiap Isnin. Murid yang baru mula tidak tertinggal kekal."
+      : "Jumlah mata terbaik bagi setiap hentian sepanjang bab ini."));
+  } else {
+    bd2.appendChild(el("p","note", mingguan
+      ? "Belum ada sesiapa melepasi hentian minggu ini. Awak boleh jadi yang pertama."
+      : "Belum ada skor direkod untuk kelas ini."));
+  }
+
+  var ab=el("div","actions");
+  var kb=el("button","btn ghost sm");kb.textContent="Lihat koleksi kad";
+  kb.onclick=function(){ S.skrin="kad"; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+  ab.appendChild(kb);
+  var tb2=el("button","btn ghost sm");tb2.textContent="Bukan saya";
+  tb2.onclick=function(){ S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri(); S.skrin=(KELASES.length>1?"kelas":"nombor"); render(); };
+  ab.appendChild(tb2);
+  bd2.appendChild(ab);
+  p2.appendChild(bd2);
+  st.appendChild(p2);
+
+  petaCv=$("peta"); petaCtx=petaCv.getContext("2d");
+  requestAnimationFrame(function(){ mulaPetaAnim(); });
+  pulihFokus();
+}
+
+function renderKad(){
+  var st=$("stage"); st.innerHTML="";
+  var p=el("div","panel");
+  var hd=el("div","panel-hd");
+  hd.appendChild(el("div","grow",'<p class="eyebrow">'+Object.keys(S.kad).length+' daripada 12 dikumpul</p><h2>Koleksi kad</h2>'));
+  var kembali=el("button","btn ghost sm");kembali.textContent="Balik ke peta";kembali.setAttribute("data-f","aksi");
+  kembali.onclick=function(){S.skrin="peta";render();};
+  hd.appendChild(kembali);
+  p.appendChild(hd);
+  var bd=el("div","panel-bd");
+  var g=el("div","kadgrid");
+  ARAS.forEach(function(a){
+    [[a.n+"a",a.kadNama,a.kadEm,a.kadFakta],[a.n+"b",a.bosKadNama,a.bosKadEm,a.bosKadFakta]].forEach(function(k){
+      var ada=!!S.kad[k[0]];
+      var c=el("div","kad"+(ada?"":" kunci"));
+      c.innerHTML= ada
+        ? '<span class="em">'+k[2]+'</span><span class="nm">'+esc(k[1])+'</span><span class="ft">'+esc(k[3])+'</span>'
+        : '<span class="em">\u{1F512}</span><span class="nm">Belum dibuka</span><span class="ft">Hentian '+a.n+'</span>';
+      g.appendChild(c);
+    });
+  });
+  bd.appendChild(g);
+  p.appendChild(bd); st.appendChild(p);
+  pulihFokus();
+}
+
+function renderSoalan(){
+  var a=ARAS[S.aras-1];
+  var q=S.set[S.qi];
+  var bos=(q===a.bos)&&!S.modHarian;
+  var st=$("stage"); st.innerHTML="";
+
+  var p=el("div","panel"+(bos?" bospanel":""));
+  var hd=el("div","panel-hd");
+  hd.appendChild(el("div","grow",
+    '<p class="eyebrow">'+(S.modHarian?"Cabaran harian":("Hentian "+a.n+" · "+esc(a.sk)))+'</p>'+
+    '<h2>'+(bos?"Bos: "+esc(a.tempat):(S.modHarian?"Campur semua aras":esc(a.tempat)))+'</h2>'));
+  hd.appendChild(el("span","tp-chip"+(bos?"":" t"), S.modHarian?"Campur":("TP"+a.n)));
+  p.appendChild(hd);
+
+  var bd=el("div","panel-bd");
+
+  var top=el("div","actions");top.style.marginTop="0";
+  var pips=el("div","pips");
+  S.set.forEach(function(qq,i){
+    var cls="pip"+(i<S.qi?(qq._betul===true?" ok":(qq._betul===null?" hantar":" no")):(i===S.qi?" on":""));
+    pips.appendChild(el("span",cls));
+  });
+  top.appendChild(pips);
+  top.appendChild(el("span","eyebrow",(S.qi+1)+" / "+S.set.length));
+  bd.appendChild(top);
+
+  if(q._ulang) bd.appendChild(el("p","chip-ulang","Ulangan dari hentian "+q.tp+". Latihan sahaja, tidak dikira dalam keputusan hentian ini."));
+
+  bd.appendChild(el("p","qtext",q.t));
+  if(q.arahan) bd.appendChild(el("p","qnote",q.arahan));
+
+  if(bos&&!S.disemak&&!S.tenang&&q.j!=="buka"){
+    if(S.masaBos===0) S.masaBos=20;
+    var bt=el("div","bostimer",'<i id="bosbar" style="width:'+(S.masaBos/20*100)+'%"></i>');
+    bd.appendChild(bt);
+    bd.appendChild(el("p","qnote","Soalan bos. Dua puluh saat, markah tiga kali ganda."));
+  }
+
+  var lam = S.modHarian ? q._lam : a.lampiran;
+  if(lam){ var lf=el("div"); lf.innerHTML=lam; bd.appendChild(lf); }
+
+  var body=el("div"); bd.appendChild(body);
+  var act=el("div","actions"); bd.appendChild(act);
+  p.appendChild(bd); st.appendChild(p);
+
+  if(q.j==="pilih"||q.j==="banyak"){
+    var many=q.j==="banyak";
+    if(many&&!S.disemak) body.appendChild(el("p","qnote","Boleh pilih lebih daripada satu."));
+    if(S.pilihan===null) S.pilihan=many?[]:-1;
+    var box=el("div","opts");
+    q.p.forEach(function(txt,i){
+      if(S.buang.indexOf(i)>=0 && !S.disemak) return;
+      var o=el("button","opt");o.type="button";o.setAttribute("data-f","opt-"+i);
+      o.innerHTML='<span class="key">'+"ABCDEF"[i]+'</span><span>'+txt+'</span>';
+      var dip=many?S.pilihan.indexOf(i)>=0:S.pilihan===i;
+      if(dip)o.setAttribute("data-pick","1");
+      if(S.disemak){
+        o.disabled=true;
+        var bt2=many?q.b.indexOf(i)>=0:q.b===i;
+        if(dip&&bt2)o.setAttribute("data-mark","ok");
+        else if(dip&&!bt2)o.setAttribute("data-mark","no");
+        else if(!dip&&bt2)o.setAttribute("data-mark","miss");
+      } else {
+        o.onclick=function(){
+          if(many){var k=S.pilihan.indexOf(i);if(k>=0)S.pilihan.splice(k,1);else S.pilihan.push(i);}
+          else S.pilihan=i;
+          render();
+        };
+      }
+      box.appendChild(o);
+    });
+    body.appendChild(box);
+  }
+  else if(q.j==="susun"){
+    if(S.pilihan===null)S.pilihan=[];
+    if(!S.disemak) body.appendChild(el("p","qnote","Ketik mengikut urutan betul. Ketik semula untuk buang."));
+    var box2=el("div","opts");
+    q.p.forEach(function(txt,i){
+      var pos=S.pilihan.indexOf(i);
+      var o=el("button","opt");o.type="button";o.setAttribute("data-f","opt-"+i);
+      o.innerHTML=(pos>=0?'<span class="ord">'+(pos+1)+'</span>':'<span class="key">&middot;</span>')+'<span>'+txt+'</span>';
+      if(pos>=0)o.setAttribute("data-pick","1");
+      if(S.disemak){o.disabled=true;if(pos>=0)o.setAttribute("data-mark",q.b[pos]===i?"ok":"no");}
+      else o.onclick=function(){
+        var k=S.pilihan.indexOf(i);if(k>=0)S.pilihan.splice(k,1);else S.pilihan.push(i);
+        render();
+      };
+      box2.appendChild(o);
+    });
+    body.appendChild(box2);
+  }
+  else if(q.j==="nombor"){
+    var row=el("div","numrow");
+    var inp=el("input");inp.type="number";inp.step="0.1";inp.id="numJwp";inp.placeholder="0";
+    inp.setAttribute("data-f","num");
+    inp.value=(S.pilihan===null||S.pilihan==="")?"":S.pilihan;
+    inp.disabled=S.disemak;
+    inp.oninput=function(){S.pilihan=inp.value;var b=$("btnSemak");if(b)b.disabled=inp.value==="";};
+    row.appendChild(inp); row.appendChild(el("span",null,q.suf||""));
+    body.appendChild(row);
+  }
+  else if(q.j==="buka"){
+    var ta=el("textarea","free");ta.id="jwpBuka";ta.setAttribute("data-f","buka");
+    ta.placeholder="Tulis cadangan reka cipta awak di sini...";
+    ta.value=S.pilihan||"";
+    ta.disabled=S.disemak;
+    var kira=el("p","qnote","");
+    function kemasKira(){
+      var n=(ta.value||"").trim().length;
+      kira.textContent = n>=MIN_HANTAR
+        ? ("Panjang cukup untuk dihantar. "+n+" aksara. Cikgu yang akan menilai isinya, bukan panjangnya.")
+        : ("Tulis sekurang-kurangnya "+MIN_HANTAR+" aksara sebelum boleh hantar. Setakat ini "+n+".");
+      kira.className="qnote"+(n>=MIN_HANTAR?" cukup":"");
+    }
+    ta.oninput=function(){
+      S.pilihan=ta.value;
+      var b=$("btnSemak"); if(b)b.disabled=ta.value.trim().length<MIN_HANTAR;
+      kemasKira();
+    };
+    body.appendChild(ta); body.appendChild(kira); kemasKira();
+  }
+
+  if(!S.disemak && (S.inhaler>0||S.hemo>0) && q.j!=="buka"){
+    var kw=el("div","kuasa");
+    kw.appendChild(el("div","tajuk","Kuasa dikutip"));
+    var bi=el("button","kbtn");bi.type="button";bi.id="btnInhaler";
+    bi.innerHTML='<em>\u{1F489}</em>Inhaler <span class="n">×'+S.inhaler+'</span>';
+    bi.disabled=S.inhaler<1||S.nafas>=NAFAS_MAX||S.tenang;
+    bi.title=S.tenang?"Tidak perlu dalam mod tenang":"Isi semula 40 nafas";
+    bi.onclick=gunaInhaler;
+    kw.appendChild(bi);
+    var bh=el("button","kbtn");bh.type="button";bh.id="btnHemo";
+    bh.innerHTML='<em>\u{1FA78}</em>Hemoglobin <span class="n">×'+S.hemo+'</span>';
+    bh.disabled=S.hemo<1||(q.j!=="pilih"&&q.j!=="banyak")||S.buang.length>0;
+    bh.title="Buang dua pilihan yang salah";
+    bh.onclick=gunaHemo;
+    kw.appendChild(bh);
+    bd.insertBefore(kw,act);
+  }
+
+  if(S.disemak){
+    var hantar=(q._betul===null);
+    var f=el("div","fb "+(hantar?"ok":(q._betul?"ok":"no")));
+    f.innerHTML='<b>'+(hantar?"Dihantar kepada cikgu.":(q._betul?"Betul. Tarik nafas.":"Belum tepat."))+'</b>'+
+      (hantar?"Tugasan reka cipta tidak dinilai oleh mesin. Cikgu akan membacanya dan memutuskan TP6.":(q.u||""));
+    bd.insertBefore(f,act);
+  }
+
+  if(!S.disemak){
+    var bs=el("button","btn");bs.id="btnSemak";bs.setAttribute("data-f","aksi");
+    bs.textContent=(q.j==="buka")?"Hantar kepada cikgu":"Semak";
+    bs.disabled=!adaJawapan(q);
+    bs.onclick=function(){semak(false);};
+    act.appendChild(bs);
+    var bk=el("button","btn ghost sm");bk.textContent="Balik ke peta";
+    bk.onclick=function(){S.skrin="peta";hentiJam();render();};
+    act.appendChild(bk);
+  } else {
+    var bn=el("button","btn");bn.setAttribute("data-f","aksi");
+    bn.textContent=(S.qi+1<S.set.length)?"Teruskan":"Lihat keputusan";
+    bn.onclick=seterusnya;
+    act.appendChild(bn);
+  }
+  pulihFokus();
+}
+
+function hasilAras(){
+  hentiJam(); aturDegup(); kemasRentetan();
+  var a=ARAS[S.aras-1];
+  var terbukaTP6=(a.n===6);
+  var jumItem=S.jumlahBiasa+1, betulItem=S.betulBiasa+(S.bosBetul?1:0), perlu=ambangItem(jumItem);
+  var lulus = terbukaTP6 ? false : (betulItem>=perlu);
+  var kadBaru=[];
+  if((lulus||(terbukaTP6&&S.bosHantar)) && !S.kad[a.n+"a"]){ S.kad[a.n+"a"]=1; kadBaru.push([a.kadNama,a.kadEm,a.kadFakta]); }
+  if((S.bosBetul||(terbukaTP6&&S.bosHantar)) && !S.kad[a.n+"b"]){ S.kad[a.n+"b"]=1; kadBaru.push([a.bosKadNama,a.bosKadEm,a.bosKadFakta]); }
+  if(lulus) S.lulus[a.n]=true;
+  if(kadBaru.length) bunyi("kad");
+
+  var sebelum=cubaanMurid(S.kelasId,S.no,a.n);
+  var kaliKe=(sebelum?(sebelum.kali||0):0)+1;
+  rekodCubaan(a.n,lulus);
+  simpanDiri();
+
+  var st=$("stage"); st.innerHTML="";
+  var p=el("div","panel"); var b=el("div","result");
+  if(kadBaru.length){
+    var k=kadBaru[0];
+    b.appendChild(el("div","kadbesar",'<div class="em">'+k[1]+'</div><div class="nm">'+esc(k[0])+'</div><div class="ft">'+esc(k[2])+'</div>'));
+  } else {
+    b.appendChild(el("div","badbig",lulus?"✓":(terbukaTP6&&S.bosHantar?"✉":"\u{1F501}")));
+  }
+
+  if(terbukaTP6){
+    b.appendChild(el("h2",null,S.bosHantar?"Tugasan reka cipta dihantar":"Hentian akhir belum selesai"));
+    b.appendChild(el("p",null,S.bosHantar
+      ? ("Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+" soalan aneka pilihan, dan cadangan reka cipta awak sudah dihantar. TP6 diputuskan oleh cikgu selepas membaca cadangan itu, bukan oleh mesin.")
+      : ("Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+". Tugasan reka cipta belum dihantar, jadi TP6 belum boleh dinilai.")));
+  } else {
+    b.appendChild(el("h2",null,lulus?("Hentian "+a.n+" dilepasi"):"Belum cukup konsisten"));
+    b.appendChild(el("p",null,lulus
+      ? ("Awak betul "+betulItem+" daripada "+jumItem+" item termasuk soalan bos. Itu dikira bukti penguasaan TP"+a.n+"."+(kadBaru.length>1?" Dua kad baharu dibuka.":""))
+      : ("Awak betul "+betulItem+" daripada "+jumItem+" item. Perlu "+perlu+" untuk dikira menguasai TP"+a.n+
+         ", supaya tekaan bertuah tidak lepas. Soalan yang awak salah akan datang balik nanti.")));
+  }
+  var meta=el("div","metahasil");
+  function kepil(t){ meta.appendChild(el("span",null,t)); }
+  kepil("Skor pusingan "+S.skor);
+  kepil(S.tenang?"Mod tenang":"Nafas tinggal "+Math.ceil(S.nafas));
+  kepil(S.no?("Percubaan ke-"+kaliKe):"Tidak direkod");
+  b.appendChild(meta);
+  if(S.no&&kaliKe===1) b.appendChild(el("p","note","Percubaan pertama inilah yang dikira sebagai bukti TP. Ulangan selepas ini untuk latihan, dan tidak akan menindihnya."));
+
+  /* Apa yang murid sebenarnya belajar dalam pusingan ini.
+     Skor sahaja tidak memberitahu sesiapa apa-apa; baris ini memberi
+     sebab kepada setiap jawapan, terutamanya yang salah. */
+  var pel=el("div","pelajaran");
+  pel.appendChild(el("h3",null,"Apa yang awak baru pelajari"));
+  var ul=el("ul");
+  S.set.forEach(function(q){
+    var li=el("li");
+    var jenis = q._betul===true ? "ok" : (q._betul===null ? "hantar" : "no");
+    var tanda = jenis==="ok" ? "✓" : (jenis==="hantar" ? "✉" : "✗");
+    li.appendChild(el("span","tanda "+jenis,tanda));
+    var isi=el("div");
+    isi.appendChild(el("b",null,esc(ringkas(q.t))));
+    isi.appendChild(el("span",null, q._betul===null
+      ? "Dihantar kepada cikgu untuk dinilai."
+      : (q.u||"")));
+    li.appendChild(isi);
+    ul.appendChild(li);
+  });
+  pel.appendChild(ul);
+  if(S.salah.length){
+    pel.appendChild(el("p","note","Soalan yang awak salah akan muncul semula dalam hentian seterusnya sebagai latihan. Ia tidak dikira dalam keputusan hentian itu."));
+  }
+  b.appendChild(pel);
+
+  var act=el("div","actions");act.style.justifyContent="center";
+  if(a.n<6){
+    var b1=el("button","btn teal");b1.textContent="Hentian "+(a.n+1)+": "+ARAS[a.n].tempat;
+    b1.setAttribute("data-f","aksi");
+    b1.onclick=function(){mulaAras(a.n+1);};
+    act.appendChild(b1);
+  }
+  var b2=el("button","btn ghost");b2.textContent="Ulang hentian ini";
+  b2.onclick=function(){mulaAras(a.n);};
+  act.appendChild(b2);
+  var b3=el("button","btn ghost");b3.textContent="Peta";
+  b3.onclick=function(){S.skrin="peta";render();window.scrollTo({top:0,behavior:"smooth"});};
+  act.appendChild(b3);
+  b.appendChild(act);
+  p.appendChild(b); st.appendChild(p);
+  pulihFokus();
+}
+
+function hasilHarian(){
+  hentiJam(); aturDegup(); kemasRentetan();
+  var hariIni=tarikhTempatan();
+  if(S.harianTarikh!==hariIni){ S.harianTarikh=hariIni; S.harianSkor=S.skor; }
+  simpanDiri();
+  var st=$("stage"); st.innerHTML="";
+  var p=el("div","panel"); var b=el("div","result");
+  b.appendChild(el("div","badbig","\u{1F3C1}"));
+  b.appendChild(el("h2",null,"Cabaran harian selesai"));
+  b.appendChild(el("p",null,"Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+" dengan skor "+S.skor+". Cabaran harian tidak dikira sebagai bukti TP. Balik esok untuk set baharu."));
+  var act=el("div","actions");act.style.justifyContent="center";
+  var b1=el("button","btn");b1.textContent="Balik ke peta";b1.setAttribute("data-f","aksi");
+  b1.onclick=function(){S.skrin="peta";render();};
+  act.appendChild(b1);
+  b.appendChild(act); p.appendChild(b); st.appendChild(p);
+  pulihFokus();
+}
+
+/* Semakan sendiri dengan AI dahulunya disediakan oleh pelayan artifact.
+   Halaman ini kini berdiri sendiri, jadi ciri itu ditanggalkan. Tugasan
+   reka cipta dibaca oleh cikgu, dan itu memang cara yang lebih betul. */
+
+/* ============================================================
+   SIMPANAN
+   Tempatan dahulu, pelayan kemudian. Setiap tulisan yang gagal sampai
+   ke pelayan masuk ke peti keluar dan dicuba semula, supaya bukti PBD
+   tidak hilang hanya kerana wifi sekolah tersekat seketika.
+
+   Tiada satu pun jadual boleh ditulis terus dari sini. Semua tulisan
+   melalui fungsi pangkalan data yang menyemak kod dahulu, jadi kod
+   murid dan kod cikgu ialah sempadan sebenar, bukan sekadar skrin.
+   ============================================================ */
+var AWAN = (window.LO_AWAN && window.LO_AWAN.url && window.LO_AWAN.kunci) ? window.LO_AWAN : null;
+var TALIAN = { ada:!!AWAN, sihat:!!AWAN, tertunggak:0 };
+
+function rpc(nama,badan){
+  if(!AWAN) return Promise.reject(new Error("luar talian"));
+  return fetch(AWAN.url+"/rest/v1/rpc/"+nama,{
+    method:"POST",
+    headers:{"apikey":AWAN.kunci,"Authorization":"Bearer "+AWAN.kunci,"Content-Type":"application/json"},
+    body:JSON.stringify(badan||{})
+  }).then(function(r){
+    return r.json().catch(function(){return null;}).then(function(j){
+      if(!r.ok){ var e=new Error((j&&j.message)||("HTTP "+r.status)); e.badan=j; throw e; }
+      TALIAN.sihat=true; return j;
+    });
+  }).catch(function(e){ if(!e.badan) TALIAN.sihat=false; throw e; });
+}
+function bacaJadual(jadual,soal){
+  if(!AWAN) return Promise.reject(new Error("luar talian"));
+  return fetch(AWAN.url+"/rest/v1/"+jadual+"?"+soal,{
+    headers:{"apikey":AWAN.kunci,"Authorization":"Bearer "+AWAN.kunci}
+  }).then(function(r){
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    TALIAN.sihat=true; return r.json();
+  }).catch(function(e){ TALIAN.sihat=false; throw e; });
+}
+
+/* ---------- peti keluar ---------- */
+function petiBaca(){ try{ return JSON.parse(localStorage.getItem("lo2-peti")||"[]"); }catch(e){ return []; } }
+function petiTulis(p){ try{ localStorage.setItem("lo2-peti",JSON.stringify(p.slice(-60))); }catch(e){} TALIAN.tertunggak=p.length; lukisTalian(); }
+function petiTambah(surat){ var p=petiBaca(); p.push(surat); petiTulis(p); }
+function petiHantar(){
+  if(!AWAN) return Promise.resolve();
+  var p=petiBaca(); if(!p.length) return Promise.resolve();
+  var baki=[];
+  return p.reduce(function(rantai,surat){
+    return rantai.then(function(){
+      return rpc(surat.f,surat.b).then(function(hasil){
+        if(surat.f==="lo_simpan_cubaan"&&hasil) terimaBarisCubaan(hasil);
+      }).catch(function(e){
+        /* ralat kod atau data tidak akan berjaya walau dicuba seribu kali,
+           jadi ia dibuang. Hanya kegagalan rangkaian yang disimpan semula. */
+        if(!e.badan) baki.push(surat);
+      });
+    });
+  },Promise.resolve()).then(function(){ petiTulis(baki); });
+}
+
+/* ---------- keadaan peranti ---------- */
+function simpanDiri(){
+  try{ localStorage.setItem("lo2-diri",JSON.stringify({
+    v:SKEMA, kelasId:S.kelasId, no:S.no, kod:S.kod, latihan:S.latihan,
+    kad:S.kad, inhaler:S.inhaler, hemo:S.hemo, tenang:S.tenang,
+    rentetan:S.rentetan, rentetanTarikh:S.rentetanTarikh,
+    harianTarikh:S.harianTarikh, harianSkor:S.harianSkor, senyap:S.senyap,
+    minggu:S.minggu, mingguSkor:S.mingguSkor
+  })); }catch(e){}
+}
+
+/* ---------- cubaan ---------- */
+function rekodCubaan(a,lulus){
+  if(!S.no||S.modHarian||S.latihan) return;
+  var senaraiS=S.set.filter(function(q){ return !q._ulang; })
+    .map(function(q){ return {qid:q.id, betul:(q._betul===true)}; });
+  var kini={
+    masa:Date.now(), betul:S.betulBiasa, jumlah:S.jumlahBiasa,
+    bos:S.bosBetul, lulus:!!lulus, skor:S.skor,
+    mod:S.tenang?"tenang":"masa", soalan:senaraiS
+  };
+  var karangan=(a===6&&S.bosHantar&&S.karangan)?{teks:String(S.karangan).slice(0,4000),masa:Date.now()}:null;
+  simpanCubaan(S.kelasId,S.no,a,kini,karangan);
+  S.karangan=null;
+}
+function gabungCubaan(lama,kelas,no,a,kini,karangan){
+  var out = (lama&&lama.v===SKEMA)
+    ? {v:SKEMA,kelas:kelas,no:no,aras:a,pertama:lama.pertama||null,terbaik:lama.terbaik||null,
+       kali:lama.kali||0,karangan:lama.karangan||null}
+    : {v:SKEMA,kelas:kelas,no:no,aras:a,pertama:null,terbaik:null,kali:0,karangan:null};
+  if(kini){
+    if(!out.pertama) out.pertama=kini;
+    if(!out.terbaik||kini.betul>out.terbaik.betul||(kini.lulus&&!out.terbaik.lulus)) out.terbaik=kini;
+    out.kali=out.kali+1;
+    out.akhir=kini.masa;
+  }
+  if(karangan) out.karangan=karangan;
+  return out;
+}
+function terimaBarisCubaan(baris){
+  if(!baris||!baris.kelas) return;
+  var c={v:SKEMA,kelas:baris.kelas,no:baris.no,aras:baris.aras,
+         pertama:baris.pertama,terbaik:baris.terbaik,kali:baris.kali,
+         karangan:baris.karangan,akhir:baris.akhir};
+  CUBAAN[kunciC(c.kelas,c.no,c.aras)]=c;
+  simpanSalinan(c);
+}
+function simpanSalinan(c){
+  try{ localStorage.setItem("lo2-cubaan-"+c.kelas+"-"+c.no+"-a"+c.aras,JSON.stringify(c)); }catch(e){}
+}
+function simpanCubaan(kelas,no,a,kini,karangan){
+  var kunci=kunciC(kelas,no,a);
+  var badan=gabungCubaan(CUBAAN[kunci],kelas,no,a,kini,karangan);
+  CUBAAN[kunci]=badan;
+  simpanSalinan(badan);
+  if(!AWAN) return;
+  var surat={f:"lo_simpan_cubaan",b:{p_kelas:kelas,p_no:no,p_kod:S.kod||"",
+             p_aras:a,p_kini:kini,p_karangan:karangan}};
+  rpc(surat.f,surat.b)
+    .then(function(hasil){ terimaBarisCubaan(hasil); segar(); })
+    .catch(function(e){ if(!e.badan){ petiTambah(surat); } lukisTalian(); });
+}
+function paduCubaan(x,y){
+  if(!x) return y; if(!y) return x;
+  var out={v:SKEMA,kelas:x.kelas||y.kelas,no:x.no||y.no,aras:x.aras||y.aras};
+  var px=x.pertama, py=y.pertama;
+  out.pertama=(px&&py)?(px.masa<=py.masa?px:py):(px||py);
+  var tx=x.terbaik, ty=y.terbaik;
+  out.terbaik=(tx&&ty)?(((ty.betul>tx.betul)||(ty.lulus&&!tx.lulus))?ty:tx):(tx||ty);
+  out.kali=Math.max(x.kali||0,y.kali||0);
+  out.akhir=Math.max(x.akhir||0,y.akhir||0);
+  var kx=x.karangan, ky=y.karangan;
+  out.karangan=(kx&&ky)?((ky.masa>kx.masa)?ky:kx):(kx||ky);
+  if(x.contoh||y.contoh) out.contoh=true;
+  return out;
+}
+function letakCubaan(c){
+  if(!c||!c.kelas||!c.no||!c.aras) return;
+  if(c.v===undefined) c.v=SKEMA;
+  if(c.v!==SKEMA) return;
+  var k=kunciC(c.kelas,c.no,c.aras);
+  CUBAAN[k]=paduCubaan(CUBAAN[k],c);
+}
+
+/* ---------- tulisan cikgu ---------- */
+function simpanKelasGuru(id){
+  var k=null;
+  for(var i=0;i<KELASES.length;i++) if(KELASES[i].id===id) k=KELASES[i];
+  if(!k||k.contoh) return;
+  try{
+    localStorage.setItem("lo2-kelas-"+id,JSON.stringify({v:SKEMA,id:id,nama:k.nama,nombor:NOMBOR[id]||[]}));
+    localStorage.setItem("lo2-nama-"+id,JSON.stringify({v:SKEMA,kelas:id,nama:NAMA[id]||{}}));
+  }catch(e){}
+  if(!AWAN||!KOD_GURU) return;
+  rpc("lo_guru_simpan_kelas",{p_kod:KOD_GURU,p_id:id,p_nama:k.nama,
+      p_nombor:NOMBOR[id]||[],p_nama_murid:NAMA[id]||{}})
+    .then(function(){
+      /* pelayan yang mencincang kod, jadi ambil semula bentuk sebenarnya */
+      return bacaJadual("lo_kelas","select=id,nombor&id=eq."+encodeURIComponent(id));
+    })
+    .then(function(rows){
+      if(rows&&rows[0]){ NOMBOR[id]=rows[0].nombor||[]; segar(); }
+    })
+    .catch(function(){ lukisTalian(); });
+}
+function buangKelasGuru(id){
+  try{ localStorage.removeItem("lo2-kelas-"+id); localStorage.removeItem("lo2-nama-"+id); }catch(e){}
+  if(AWAN&&KOD_GURU) rpc("lo_guru_buang_kelas",{p_kod:KOD_GURU,p_id:id}).catch(function(){});
+}
+function simpanTp(kelas,no){
+  var g=GURU[kunciG(kelas,no)]||{};
+  try{ localStorage.setItem("lo2-tp-"+kelas+"-"+no,JSON.stringify({v:SKEMA,kelas:kelas,no:no,tp:g.tp,sebab:g.sebab||""})); }catch(e){}
+  if(!AWAN||!KOD_GURU) return;
+  rpc("lo_guru_simpan_tp",{p_kod:KOD_GURU,p_kelas:kelas,p_no:no,
+      p_tp:(g.tp===undefined||g.tp===""?null:g.tp),p_sebab:g.sebab||""})
+    .catch(function(){ lukisTalian(); });
+}
+
+/* ---------- muat ---------- */
+/* Buang simpanan versi lama yang mengandungi nama penuh murid. */
+function bersihLama(){
+  try{
+    var buang=["laluan-oksigen","lo-senarai","lo2-awam","lo2-guru-senarai","lo2-guru-tetapan"];
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      if(k&&k.indexOf("lo-rekod-")===0) buang.push(k);
+    }
+    buang.forEach(function(k){ try{ localStorage.removeItem(k); }catch(e){} });
+  }catch(e){}
+}
+
+function muatTempatan(){
+  try{
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i); if(!k) continue;
+      var o=null;
+      try{ o=JSON.parse(localStorage.getItem(k)); }catch(e){ continue; }
+      if(!o||o.v!==SKEMA) continue;
+      if(k.indexOf("lo2-kelas-")===0){
+        if(!KELASES.some(function(x){return x.id===o.id;})) KELASES.unshift({id:o.id,nama:o.nama});
+        NOMBOR[o.id]=o.nombor||[];
+      } else if(k.indexOf("lo2-nama-")===0){
+        NAMA[o.kelas]=o.nama||{};
+      } else if(k.indexOf("lo2-cubaan-")===0){
+        letakCubaan(o);
+      } else if(k.indexOf("lo2-tp-")===0){
+        GURU[kunciG(o.kelas,o.no)]={tp:o.tp,sebab:o.sebab||""};
+      }
+    }
+    var dr=localStorage.getItem("lo2-diri");
+    if(dr){
+      var d=JSON.parse(dr);
+      if(d&&d.v===SKEMA){
+        S.kelasId=d.kelasId||null; S.no=d.no||null; S.kod=d.kod||""; S.latihan=!!d.latihan;
+        S.kad=d.kad||{}; S.inhaler=d.inhaler||0; S.hemo=d.hemo||0; S.tenang=!!d.tenang;
+        S.rentetan=d.rentetan||0; S.rentetanTarikh=d.rentetanTarikh||null;
+        S.harianTarikh=d.harianTarikh||null; S.harianSkor=d.harianSkor||0;
+        S.senyap=!!d.senyap; S.minggu=d.minggu||null; S.mingguSkor=d.mingguSkor||0;
+        if(S.rentetanTarikh&&S.rentetanTarikh!==tarikhTempatan()&&S.rentetanTarikh!==tarikhSemalam()) S.rentetan=0;
+      }
+    }
+  }catch(e){}
+  TALIAN.tertunggak=petiBaca().length;
+}
+
+function muatJauh(){
+  if(!AWAN) return;
+  bacaJadual("lo_kelas","select=id,nama,nombor&order=id").then(function(rows){
+    if(!rows||!rows.length) return;
+    rows.forEach(function(r){
+      if(!KELASES.some(function(x){return x.id===r.id;})) KELASES.unshift({id:r.id,nama:r.nama});
+      else KELASES.forEach(function(x){ if(x.id===r.id) x.nama=r.nama; });
+      NOMBOR[r.id]=r.nombor||[];
+    });
+    SUMBER="kelas sebenar";
+    segar();
+  }).catch(function(){ lukisTalian(); });
+
+  bacaJadual("lo_cubaan","select=*").then(function(rows){
+    if(!rows||!rows.length) return;
+    rows.forEach(function(r){ letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
+      pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir}); });
+    if(S.no) S.lulus=kiraLulus();
+    segar();
+  }).catch(function(){ lukisTalian(); });
+
+  petiHantar();
+}
+
+/* Data cikgu hanya boleh diambil dengan kod cikgu, dan hanya di sinilah
+   nama penuh murid pernah masuk ke dalam pelayar. */
+function muatGuru(kod){
+  return rpc("lo_guru_data",{p_kod:kod}).then(function(d){
+    if(!d) return false;
+    (d.kelas||[]).forEach(function(r){
+      if(!KELASES.some(function(x){return x.id===r.id;})) KELASES.unshift({id:r.id,nama:r.nama});
+      else KELASES.forEach(function(x){ if(x.id===r.id) x.nama=r.nama; });
+      NOMBOR[r.id]=r.nombor||[];
+    });
+    Object.keys(d.nama||{}).forEach(function(id){ NAMA[id]=d.nama[id]; });
+    (d.cubaan||[]).forEach(function(r){ letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
+      pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir}); });
+    (d.tp||[]).forEach(function(t){ GURU[kunciG(t.kelas,t.no)]={tp:t.tp,sebab:t.sebab||""}; });
+    SUMBER="kelas sebenar";
+    return true;
+  });
+}
+
+function segar(){
+  var pl=$("pillSumber"); if(pl) pl.textContent=(SUMBER==="kelas sebenar")?"Kelas sebenar":"Data contoh";
+  lukisTalian();
+  if(!$("cikgu").classList.contains("hidden")) renderCikgu();
+  if(!$("murid").classList.contains("hidden")){
+    if(S.no) S.lulus=kiraLulus();
+    if(S.skrin==="peta"||S.skrin==="nombor"||S.skrin==="kelas") render();
+  }
+}
+
+/* Penunjuk talian: murid perlu tahu jika jawapannya belum sampai ke cikgu. */
+function lukisTalian(){
+  var e=$("talian"); if(!e) return;
+  if(!AWAN){ e.className="talian luar"; e.textContent="Tanpa pelayan"; e.title="Rekod disimpan pada peranti ini sahaja."; return; }
+  if(TALIAN.tertunggak>0){ e.className="talian tunggu"; e.textContent=TALIAN.tertunggak+" belum dihantar";
+    e.title="Jawapan disimpan pada peranti ini dan akan dihantar apabila talian pulih."; return; }
+  if(!TALIAN.sihat){ e.className="talian luar"; e.textContent="Luar talian"; e.title="Tidak dapat menghubungi pelayan."; return; }
+  e.className="talian ok"; e.textContent="Tersimpan"; e.title="Semua jawapan sudah sampai ke pelayan.";
+}
+
+/* ============================================================
+   MOD CIKGU
+   ============================================================ */
+function ulasanUntuk(nama,tp){
+  var n=String(nama).split(" ")[0];
+  var t={
+   1:n+" dapat mengingat kembali struktur sistem respirasi manusia dan istilah asas bab ini. Langkah seterusnya ialah menerangkan sebab di sebalik setiap struktur, bukan sekadar menamakannya.",
+   2:n+" memahami mekanisme pernafasan serta ciri alveolus dan dapat menjelaskan kefahaman tersebut. Perlu lebih banyak latihan mentafsir data gas sebelum bergerak ke TP3.",
+   3:n+" boleh mengaplikasikan pengetahuan respirasi untuk menerangkan fenomena harian seperti kenaikan kadar pernafasan selepas bersenam. Galakkan membaca graf dan mengaitkan dua pemboleh ubah.",
+   4:n+" mampu menganalisis graf isi padu toraks melawan tekanan udara dan mengenal pasti punca apabila satu komponen sistem gagal. Seterusnya latih menimbang bukti untuk membuat keputusan.",
+   5:n+" dapat menilai data klinikal tiga individu, memilih kes berisiko tinggi dan menyokongnya dengan bukti berangka daripada jadual. Sudah bersedia untuk tugasan reka cipta.",
+   6:n+" berjaya mereka cipta penyelesaian kualiti udara yang praktikal untuk murid asma di sekolah, lengkap dengan pertimbangan kos dan penerimaan komuniti setempat. Pencapaian cemerlang bagi bab ini."
+  };
+  return t[tp]||n+" belum menunjukkan bukti penguasaan yang mencukupi bagi bab Respirasi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya.";
+}
+
+function renderCikgu(){
+  var terbuka=S.guruBuka;
+  $("tabsGuru").classList.toggle("hidden",!terbuka);
+  $("paneKunci").classList.toggle("hidden",terbuka);
+  ["paneKelas","paneDiag","paneSenarai","paneTangga"].forEach(function(id){
+    if(!terbuka) $(id).classList.add("hidden");
+  });
+  if(!terbuka) return paneKunci();
+
+  var tab=S.tabCikgu;
+  [["tabKelas","kelas","paneKelas"],["tabDiag","diag","paneDiag"],
+   ["tabSenarai","senarai","paneSenarai"],["tabTangga","tangga","paneTangga"]].forEach(function(x){
+    $(x[0]).setAttribute("aria-selected",tab===x[1]);
+    $(x[2]).classList.toggle("hidden",tab!==x[1]);
+  });
+  if(tab==="kelas") paneKelas();
+  else if(tab==="diag") paneDiag();
+  else if(tab==="senarai") paneSenarai();
+  else paneTangga();
+}
+
+/* ---------------- Kunci mod cikgu ---------------- */
+function paneKunci(){
+  var p=$("paneKunci"); p.innerHTML="";
+  var baharu=!KOD_ADA;
+  p.appendChild(el("h3",null,baharu?"Tetapkan kod cikgu":"Kod cikgu"));
+  p.appendChild(el("p","note",baharu
+    ? "Skrin ini memaparkan nama penuh murid dan tahap penguasaan mereka. Tetapkan satu kod sekarang, sekurang-kurangnya empat aksara. Selepas ini hanya sesiapa yang tahu kod itu boleh melihat nama murid."
+    : "Masukkan kod cikgu untuk melihat nama dan rekod murid."));
+  var row=el("div","numrow");
+  var inp=el("input");inp.type="password";inp.id="kodGuru";inp.className="pin";inp.placeholder="••••";
+  inp.setAttribute("data-f","kodguru");
+  row.appendChild(inp);
+  var bt=el("button","btn");bt.textContent=baharu?"Simpan kod":"Buka";
+  var msg=el("p","qnote","");
+  function gagal(t){ msg.textContent=t; msg.className="qnote gagal"; inp.value=""; bt.disabled=false; bt.textContent=baharu?"Simpan kod":"Buka"; }
+  function cuba(){
+    var v=inp.value.trim();
+    /* kod cikgu membuka nama penuh semua murid, jadi ia lebih panjang
+       daripada kod murid. Pelayan menguatkuasakan had yang sama. */
+    if(v.length<8) return gagal("Kod cikgu perlu sekurang-kurangnya lapan aksara, kerana ia membuka nama semua murid.");
+    bt.disabled=true; bt.textContent="Menyemak...";
+    msg.className="qnote"; msg.textContent="";
+    if(!AWAN){
+      /* tanpa pelayan, kod disemak pada peranti ini sahaja */
+      var capV=cap("guru:"+v);
+      if(baharu){ KOD_LUAR=capV; KOD_ADA=true; try{localStorage.setItem("lo2-kodluar",capV);}catch(e){} }
+      else if(capV!==KOD_LUAR) return gagal("Kod tidak sepadan.");
+      KOD_GURU=v; S.guruBuka=true; return renderCikgu();
+    }
+    var langkah = baharu
+      ? rpc("lo_guru_tetap_kod",{p_kod_lama:null,p_kod_baru:v}).then(function(ok){
+          if(!ok) throw new Error("Kod itu tidak dapat ditetapkan. Mungkin sudah ada kod cikgu untuk pautan ini.");
+          KOD_ADA=true; return true;
+        })
+      : Promise.resolve(true);
+    langkah.then(function(){ return muatGuru(v); })
+      .then(function(){ KOD_GURU=v; S.guruBuka=true; renderCikgu(); })
+      .catch(function(e){
+        gagal(/kod cikgu tidak sah/i.test(e.message||"") ? "Kod tidak sepadan." :
+              (e.badan ? (e.message||"Tidak berjaya.") : "Tidak dapat menghubungi pelayan. Cuba lagi."));
+      });
+  }
+  bt.onclick=cuba;
+  inp.onkeydown=function(e){ if(e.key==="Enter") cuba(); };
+  row.appendChild(bt);
+  p.appendChild(row); p.appendChild(msg);
+  p.appendChild(el("p","note",AWAN
+    ? "Nama murid tidak pernah dihantar ke pelayar tanpa kod ini. Peraturan pangkalan data menyekatnya di pelayan, jadi murid yang membuka pautan yang sama tidak dapat membacanya walau apa pun yang mereka cuba."
+    : "Pelayan tidak dapat dihubungi, jadi kod ini dan semua rekod hanya wujud pada peranti ini."));
+  setTimeout(function(){ var e=$("kodGuru"); if(e) e.focus(); },30);
+}
+
+/* ---------------- Kelas ---------------- */
+function pilihKelasGuru(p){
+  var row=el("div","actions"); row.style.marginTop="0";
+  KELASES.forEach(function(k){
+    var b=el("button","kbtn"); b.type="button";
+    b.innerHTML=esc(k.nama)+' <span class="n">'+nomborKelas(k.id).length+'</span>';
+    if(S.kelasId===k.id){ b.style.borderColor="var(--arteri)"; b.style.background="var(--arteri-soft)"; }
+    b.onclick=function(){ S.kelasId=k.id; S.muridPilih=null; renderCikgu(); };
+    row.appendChild(b);
+  });
+  p.appendChild(row);
+}
+
+function paneKelas(){
+  var p=$("paneKelas"); p.innerHTML="";
+  if(!S.kelasId) S.kelasId=kelasKini().id;
+  pilihKelasGuru(p);
+  var kelas=S.kelasId;
+  var senarai=senaraiMurid(kelas);
+
+  var kira=[0,0,0,0,0,0,0];
+  senarai.forEach(function(no){ kira[tpDilapor(kelas,no)]++; });
+  var ring=el("div","actions");
+  for(var t=1;t<=6;t++) ring.appendChild(el("span","tp-chip"+(kira[t]?" t":""),"TP"+t+" · "+kira[t]));
+  if(kira[0]) ring.appendChild(el("span","tp-chip a","Tiada bukti · "+kira[0]));
+  p.appendChild(ring);
+
+  if(!senarai.length){
+    p.appendChild(el("p","note","Kelas ini belum ada senarai murid. Buka tab Senarai kelas untuk memasukkannya."));
+    return;
+  }
+
+  var lst=el("div");
+  senarai.forEach(function(no){
+    var auto=tpAuto(kelas,no), lapor=tpDilapor(kelas,no), tindih=(lapor!==auto);
+    var kar=adaKarangan(kelas,no);
+    var b=el("button","row"); b.type="button";
+    var bar='<span class="tpbar">';
+    for(var i=1;i<=6;i++) bar+='<i class="'+(i<=lapor?"on":"")+'"></i>';
+    bar+='</span>';
+    b.innerHTML='<span><span class="nm">'+esc(no)+' · '+esc(namaMurid(kelas,no))+'</span><br><span class="meta">'+
+      bilCubaan(kelas,no)+' percubaan'+
+      (kar&&lapor<6?' · <span class="tandaT">tugasan TP6 menunggu</span>':'')+
+      (tindih?' · <span class="tandaT">TP ditindih</span>':'')+'</span></span>'+
+      bar+'<span class="tpbig">TP'+lapor+(tindih?'<span class="tandaT">*</span>':'')+'</span>';
+    b.onclick=function(){ S.muridPilih=(S.muridPilih===no)?null:no; renderCikgu(); };
+    lst.appendChild(b);
+    if(S.muridPilih===no) lst.appendChild(butiranMurid(kelas,no,auto,lapor));
+  });
+  p.appendChild(lst);
+
+  var act=el("div","actions");
+  var be=el("button","btn"); be.textContent="Eksport untuk SPPB"; be.onclick=eksport;
+  act.appendChild(be); p.appendChild(act);
+  p.appendChild(el("div",null,'<div id="kotakEksport"></div>'));
+  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik dikira daripada percubaan PERTAMA setiap hentian sahaja, dan percubaan pertama itu ditulis sekali lalu tidak pernah ditindih oleh ulangan. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
+}
+
+function butiranMurid(kelas,no,auto,lapor){
+  var w=el("div","ulasan");
+  var hd=el("div","ulasan-hd");
+  hd.appendChild(el("span","nm",esc(namaMurid(kelas,no))));
+  hd.appendChild(el("span","meta","Cadangan automatik: TP"+auto));
+  w.appendChild(hd);
+
+  var tb=el("table","cubtab");
+  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Terbaik</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
+  var ada=false;
+  for(var a=1;a<=6;a++){
+    var c=cubaanMurid(kelas,no,a);
+    if(!c||!c.pertama) continue;
+    ada=true;
+    th+='<tr><td>'+a+' · '+esc(ARAS[a-1].tempat)+'</td>'+
+        '<td class="n">'+c.pertama.betul+' / '+c.pertama.jumlah+'</td>'+
+        '<td class="n">'+(c.pertama.bos?"✓":"✗")+'</td>'+
+        '<td class="n">'+(c.terbaik?c.terbaik.betul+' / '+c.terbaik.jumlah:"—")+'</td>'+
+        '<td class="n">'+(c.kali||0)+'</td>'+
+        '<td class="n">'+(c.pertama.mod==="tenang"?"tenang":"masa")+'</td>'+
+        '<td class="n">'+tarikhPendek(c.pertama.masa)+'</td></tr>';
+  }
+  th+='</tbody>';
+  if(ada){ tb.innerHTML=th; w.appendChild(tb); }
+  else { var kos=el("div"); kos.style.padding="12px 14px"; kos.className="note"; kos.textContent="Belum ada percubaan direkod."; w.appendChild(kos); }
+
+  var kar=adaKarangan(kelas,no);
+  if(kar){
+    var kh=el("div","ulasan-hd");
+    kh.appendChild(el("span","nm","Tugasan reka cipta (TP6)"));
+    kh.appendChild(el("span","meta",tarikhPendek(kar.masa)));
+    w.appendChild(kh);
+    var kt=el("div","karangan"); kt.textContent=kar.teks;
+    w.appendChild(kt);
+  }
+
+  var td=el("div","tindih");
+  td.appendChild(el("label",null,"TP dilapor"));
+  var sel=el("select"); sel.id="tindih-"+kelas+"-"+no;
+  var g=guruUntuk(kelas,no);
+  var opt=el("option"); opt.value=""; opt.textContent="Ikut cadangan (TP"+auto+")";
+  sel.appendChild(opt);
+  for(var i=0;i<=6;i++){
+    var o=el("option"); o.value=String(i); o.textContent=(i===0?"TP0 (tiada bukti)":("TP"+i));
+    if(g&&g.tp!==null&&g.tp!==undefined&&g.tp!==""&&Number(g.tp)===i) o.selected=true;
+    sel.appendChild(o);
+  }
+  sel.onchange=function(ev){
+    ev.stopPropagation();
+    var kk=kunciG(kelas,no);
+    GURU[kk]=GURU[kk]||{tp:null,sebab:""};
+    GURU[kk].tp=(sel.value===""?null:Number(sel.value));
+    simpanTp(kelas,no); renderCikgu();
+  };
+  sel.onclick=function(ev){ev.stopPropagation();};
+  td.appendChild(sel);
+  w.appendChild(td);
+
+  var lbl=el("div","ulasan-hd");
+  lbl.appendChild(el("span","nm","Sebab penindihan"));
+  lbl.appendChild(el("span","meta","isi jika TP ditindih"));
+  w.appendChild(lbl);
+  var sb=el("textarea"); sb.style.minHeight="64px";
+  sb.placeholder="Contoh: pemerhatian semasa amali dan soal jawab lisan menunjukkan penguasaan lebih tinggi daripada rekod bertulis.";
+  sb.value=(g&&g.sebab)||"";
+  sb.onclick=function(ev){ev.stopPropagation();};
+  sb.onchange=function(){
+    var kk=kunciG(kelas,no);
+    GURU[kk]=GURU[kk]||{tp:null,sebab:""};
+    GURU[kk].sebab=sb.value; simpanTp(kelas,no);
+  };
+  w.appendChild(sb);
+
+  var uh=el("div","ulasan-hd");
+  uh.appendChild(el("span","nm","Ulasan PBD"));
+  var bs=el("button","btn ghost sm"); bs.textContent="Salin";
+  var idUl="ul-"+kelas+"-"+no;
+  bs.onclick=function(ev){
+    ev.stopPropagation();
+    var t=$(idUl); t.select();
+    try{ document.execCommand("copy"); bs.textContent="Disalin"; setTimeout(function(){bs.textContent="Salin";},1400); }catch(e){}
+  };
+  uh.appendChild(bs); w.appendChild(uh);
+  var ta=el("textarea"); ta.id=idUl; ta.value=ulasanUntuk(namaMurid(kelas,no),lapor);
+  ta.onclick=function(ev){ev.stopPropagation();};
+  w.appendChild(ta);
+  return w;
+}
+
+/* ---------------- Diagnostik ---------------- */
+function paneDiag(){
+  var p=$("paneDiag"); p.innerHTML="";
+  pilihKelasGuru(p);
+  var kelas=S.kelasId;
+
+  var pilih=el("div","actions");
+  for(var a=1;a<=6;a++){
+    (function(n){
+      var b=el("button","kbtn"); b.type="button";
+      b.innerHTML='TP'+n+' <span class="n">'+esc(ARAS[n-1].tempat)+'</span>';
+      if(S.arasDiag===n){ b.style.borderColor="var(--arteri)"; b.style.background="var(--arteri-soft)"; }
+      b.onclick=function(){ S.arasDiag=n; renderCikgu(); };
+      pilih.appendChild(b);
+    })(a);
+  }
+  p.appendChild(pilih);
+
+  var a2=ARAS[S.arasDiag-1];
+  var soalan=a2.soalan.concat([a2.bos]);
+  var murid=senaraiMurid(kelas);
+  if(!murid.length){ p.appendChild(el("p","note","Kelas ini belum ada senarai murid.")); return; }
+
+  var wrap=el("div","diag");
+  var t=el("table");
+  var head='<thead><tr><th class="soal">Soalan &middot; '+esc(a2.sk)+'</th>';
+  murid.forEach(function(no){ head+='<th title="'+esc(namaMurid(kelas,no))+'">'+esc(no)+'</th>'; });
+  head+='<th class="kira">Betul</th></tr></thead><tbody>';
+
+  var body="", lemah=[];
+  soalan.forEach(function(q){
+    var betul=0, cuba=0, sel="";
+    murid.forEach(function(no){
+      var j=jawapanPertama(kelas,no,q.id);
+      if(j===null) sel+='<td><span class="sel kosong" title="Belum cuba">–</span></td>';
+      else { cuba++; if(j)betul++; sel+='<td><span class="sel '+(j?"ok":"no")+'" title="'+(j?"Betul":"Salah")+'">'+(j?"✓":"✗")+'</span></td>'; }
+    });
+    var bahaya=(cuba>0 && betul/cuba<0.5);
+    if(bahaya) lemah.push({label:q.label,betul:betul,cuba:cuba});
+    body+='<tr class="'+(bahaya?"bahaya":"")+'"><td class="soal">'+(bahaya?'<span class="amaran">!</span> ':'')+esc(q.label)+'</td>'+sel+
+          '<td class="kira">'+betul+' / '+cuba+'</td></tr>';
+  });
+  t.innerHTML=head+body+'</tbody>';
+  wrap.appendChild(t);
+  p.appendChild(wrap);
+
+  var pet=el("div","petunjuk");
+  pet.innerHTML='<span><i class="sel ok">✓</i>Betul</span>'+
+                '<span><i class="sel no">✗</i>Salah</span>'+
+                '<span><i class="sel kosong">–</i>Belum cuba</span>'+
+                '<span><i class="amaran">!</i>Kurang separuh kelas betul</span>';
+  p.appendChild(pet);
+
+  if(lemah.length){
+    var nota=el("div","fb no"); nota.style.marginTop="14px";
+    var li=lemah.map(function(x){
+      return '<li style="margin-top:5px">'+esc(x.label)+' <span class="mono">'+x.betul+' / '+x.cuba+'</span></li>';
+    }).join("");
+    nota.innerHTML='<b>Ajar semula esok</b>Tajuk berikut gagal dikuasai lebih separuh kelas.<ul style="margin:8px 0 0;padding-left:18px">'+li+'</ul>';
+    p.appendChild(nota);
+  } else {
+    p.appendChild(el("p","note","Tiada soalan yang gagal dikuasai lebih separuh kelas pada hentian ini."));
+  }
+  p.appendChild(el("p","note","Setiap sel ialah jawapan PERTAMA murid bagi soalan itu, diambil daripada percubaan pertama hentian berkenaan. Sel kosong bermakna soalan itu belum pernah keluar untuk murid berkenaan, kerana setiap pusingan mengambil soalan secara rawak daripada bank. Soalan ulangan daripada hentian terdahulu tidak direkod di sini."));
+}
+
+/* ---------------- Senarai kelas ---------------- */
+function kodRawak(){ return String(1000+Math.floor(Math.random()*9000)); }
+
+function paneSenarai(){
+  var p=$("paneSenarai"); p.innerHTML="";
+  pilihKelasGuru(p);
+
+  var act0=el("div","actions");
+  var bbaru=el("button","btn ghost sm"); bbaru.textContent="Tambah kelas baharu";
+  bbaru.onclick=function(){
+    var id="k"+(Date.now().toString(36));
+    KELASES.push({id:id,nama:"Kelas baharu"});
+    NOMBOR[id]=[]; NAMA[id]={};
+    S.kelasId=id; simpanKelasGuru(id); renderCikgu();
+  };
+  act0.appendChild(bbaru);
+  if(KELASES.length>1){
+    var bbuang=el("button","btn ghost sm"); bbuang.textContent="Buang kelas ini";
+    bbuang.onclick=function(){
+      var id=S.kelasId;
+      KELASES=KELASES.filter(function(k){return k.id!==id;});
+      delete NOMBOR[id]; delete NAMA[id];
+      S.kelasId=KELASES[0].id; S.muridPilih=null;
+      buangKelasGuru(id); renderCikgu();
+    };
+    act0.appendChild(bbuang);
+  }
+  p.appendChild(act0);
+
+  var k=kelasKini();
+  p.appendChild(el("p","note","Tampal senarai nama kelas anda, satu nama satu baris. Setiap murid diberi nombor mengikut urutan senarai serta satu kod empat angka. Murid hanya nampak nombor, tidak pernah nama. Cetak jadual di bawah dan berikan kepada murid."));
+
+  var row=el("div","numrow");
+  row.appendChild(el("span",null,"Nama kelas"));
+  var nk=el("input"); nk.type="text"; nk.id="namaKelas"; nk.value=k.nama;
+  nk.style.maxWidth="240px"; nk.style.fontSize="16px"; nk.style.width="100%";
+  row.appendChild(nk);
+  p.appendChild(row);
+
+  var ta=el("textarea","free"); ta.id="senaraiTeks";
+  var petaNama=NAMA[k.id]||{};
+  ta.value=nomborKelas(k.id).map(function(m){ return petaNama[m.no]||""; }).join("\n");
+  ta.placeholder="Aisyah binti Rahman\nMuhammad Irfan bin Zaidi\nTan Mei Ling";
+  p.appendChild(ta);
+
+  var act=el("div","actions");
+  var bs=el("button","btn"); bs.textContent="Simpan senarai";
+  bs.onclick=function(){
+    var kk=kelasKini();
+    kk.nama=nk.value.trim()||kk.nama;
+    var baris=ta.value.split("\n").map(function(x){return x.trim();}).filter(function(x){return x.length>1;});
+    var lamaNo=nomborKelas(kk.id), lamaNama=NAMA[kk.id]||{};
+    var nomborBaru=[], namaBaru={};
+    baris.forEach(function(n,i){
+      var no=pad2(i+1);
+      /* kekalkan kod sedia ada jika nama pada nombor itu tidak berubah */
+      var sedia=lamaNo.filter(function(m){return m.no===no;})[0];
+      var kodSedia=(KOD_MENTAH[kk.id]||{})[no];
+      var samaOrang=(sedia&&lamaNama[no]===n);
+      if(samaOrang&&(sedia.cap||kodSedia)){
+        /* orang yang sama pada nombor yang sama: kekalkan kodnya */
+        nomborBaru.push(kodSedia?{no:no,kod:kodSedia}:{no:no,cap:sedia.cap});
+      } else {
+        var kod=kodRawak();
+        namaBaru["_kod"+no]=kod;
+        nomborBaru.push({no:no,kod:kod});
+      }
+      namaBaru[no]=n;
+    });
+    /* kod mentah disimpan di jalan cikgu sahaja supaya boleh dicetak semula */
+    var kodMentah={};
+    Object.keys(namaBaru).forEach(function(x){ if(x.indexOf("_kod")===0){ kodMentah[x.slice(4)]=namaBaru[x]; delete namaBaru[x]; } });
+    NOMBOR[kk.id]=nomborBaru; NAMA[kk.id]=namaBaru;
+    KOD_MENTAH[kk.id]=KOD_MENTAH[kk.id]||{};
+    Object.keys(kodMentah).forEach(function(no){ KOD_MENTAH[kk.id][no]=kodMentah[no]; });
+    simpanKelasGuru(kk.id); simpanKodMentah();
+    bs.textContent="Disimpan · "+baris.length+" murid";
+    setTimeout(function(){ bs.textContent="Simpan senarai"; },1800);
+    renderCikgu();
+  };
+  act.appendChild(bs);
+  var bj=el("button","btn ghost"); bj.textContent="Jana semula semua kod";
+  bj.onclick=function(){
+    var kk=kelasKini();
+    KOD_MENTAH[kk.id]={};
+    NOMBOR[kk.id]=nomborKelas(kk.id).map(function(m){
+      var kod=kodRawak(); KOD_MENTAH[kk.id][m.no]=kod;
+      return {no:m.no,kod:kod};
+    });
+    simpanKelasGuru(kk.id); simpanKodMentah(); renderCikgu();
+  };
+  act.appendChild(bj);
+  p.appendChild(act);
+
+  /* jadual nombor, nama dan kod untuk dicetak */
+  var senarai=nomborKelas(k.id);
+  if(senarai.length){
+    var w=el("div","ulasan");
+    w.appendChild(el("div","ulasan-hd",'<span class="nm">Nombor, nama dan kod</span><span class="meta">'+esc(k.nama)+'</span>'));
+    var tb=el("table","cubtab");
+    var h='<thead><tr><th>No.</th><th>Nama</th><th class="n">Kod</th></tr></thead><tbody>';
+    senarai.forEach(function(m){
+      var kod=(KOD_MENTAH[k.id]||{})[m.no];
+      h+='<tr><td class="mono">'+esc(m.no)+'</td><td>'+esc(namaMurid(k.id,m.no))+'</td>'+
+         '<td class="n">'+(kod?esc(kod):((m.cap||m.kod)?"disimpan":"—"))+'</td></tr>';
+    });
+    tb.innerHTML=h+'</tbody>';
+    w.appendChild(tb);
+    p.appendChild(w);
+    p.appendChild(el("p","note","Kod hanya dipaparkan penuh pada peranti yang menjananya. Jika ia tertulis disimpan, jana semula untuk mendapat senarai baharu yang boleh dicetak."));
+  }
+
+  /* tukar kod cikgu */
+  var tk=el("div","ulasan");
+  tk.appendChild(el("div","ulasan-hd",'<span class="nm">Kod cikgu</span><span class="meta">lapan aksara atau lebih</span>'));
+  var tkb=el("div","tindih");
+  var tki=el("input"); tki.type="password"; tki.className="pin"; tki.placeholder="kod baharu";
+  tki.style.letterSpacing="normal"; tki.style.fontSize="16px"; tki.style.width="190px";
+  tkb.appendChild(tki);
+  var tkbt=el("button","btn sm"); tkbt.textContent="Tukar kod";
+  var tkm=el("span","meta","");
+  tkbt.onclick=function(){
+    var v=tki.value.trim();
+    if(v.length<8){ tkm.textContent="Perlu lapan aksara atau lebih."; return; }
+    tkbt.disabled=true; tkm.textContent="Menukar...";
+    if(!AWAN){
+      KOD_LUAR=cap("guru:"+v); KOD_GURU=v;
+      try{ localStorage.setItem("lo2-kodluar",KOD_LUAR); }catch(e){}
+      tki.value=""; tkbt.disabled=false; tkm.textContent="Kod ditukar pada peranti ini."; return;
+    }
+    rpc("lo_guru_tetap_kod",{p_kod_lama:KOD_GURU,p_kod_baru:v}).then(function(ok){
+      tkbt.disabled=false; tki.value="";
+      if(ok){ KOD_GURU=v; tkm.textContent="Kod ditukar. Guna kod baharu lain kali."; }
+      else tkm.textContent="Tidak berjaya menukar kod.";
+    }).catch(function(){ tkbt.disabled=false; tkm.textContent="Tidak dapat menghubungi pelayan."; });
+  };
+  tkb.appendChild(tkbt); tkb.appendChild(tkm);
+  tk.appendChild(tkb);
+  p.appendChild(tk);
+  p.appendChild(el("p","note","Kod cikgu membuka nama penuh semua murid dalam semua kelas. Tukar ia jika sesiapa selain awak pernah melihatnya."));
+
+  if(KELASES.some(function(x){return x.contoh;})){
+    var bh=el("button","btn ghost sm"); bh.textContent="Buang kelas contoh";
+    bh.onclick=function(){
+      KELASES=KELASES.filter(function(x){return !x.contoh;});
+      delete NOMBOR.contoh; delete NAMA.contoh;
+      Object.keys(CUBAAN).forEach(function(kk){ if(kk.indexOf("contoh|")===0) delete CUBAAN[kk]; });
+      if(S.kelasId==="contoh") S.kelasId=(KELASES[0]||{id:null}).id;
+      S.muridPilih=null; renderCikgu();
+    };
+    var a2=el("div","actions"); a2.appendChild(bh); p.appendChild(a2);
+    p.appendChild(el("p","note","Kelas contoh hanya wujud dalam ingatan pelayar ini dan tidak pernah ditulis ke pangkalan data."));
+  }
+}
+
+var KOD_MENTAH={};
+function simpanKodMentah(){
+  try{ localStorage.setItem("lo2-kod",JSON.stringify({v:SKEMA,kod:KOD_MENTAH})); }catch(e){}
+}
+function muatKodMentah(){
+  try{
+    var s=localStorage.getItem("lo2-kod");
+    if(s){ var o=JSON.parse(s); if(o&&o.v===SKEMA) KOD_MENTAH=o.kod||{}; }
+  }catch(e){}
+}
+
+/* ---------------- Tangga TP ---------------- */
+function paneTangga(){
+  var q=$("paneTangga"); q.innerHTML="";
+  q.appendChild(el("p","note","Standard Prestasi 2.0 Respirasi, disalin kata demi kata daripada DSKP KSSM Sains Tingkatan 3. Setiap hentian menyasarkan satu tahap sahaja."));
+  var lad=el("div","ladder");
+  ARAS.forEach(function(a,i){
+    var r=el("div","rung");
+    var cara=(i===5)
+      ? "Tugasan reka cipta bertulis, dinilai oleh guru sahaja"
+      : "Perlu "+ambangItem(5)+" daripada 5 item betul, termasuk soalan bos dalam kiraan";
+    r.innerHTML='<div class="rung-hd"><span class="tp-chip">TP'+(i+1)+'</span><span class="k">'+KKO[i]+'</span><span class="n">'+esc(a.tempat)+'</span></div>'+
+      '<p>'+esc(SPI[i])+'</p><p class="note" style="margin-top:7px">'+esc(a.sk)+' · '+(a.soalan.length+1)+' item termasuk bos · '+esc(cara)+'</p>';
+    lad.appendChild(r);
+  });
+  q.appendChild(lad);
+  q.appendChild(el("p","note","Aneka pilihan sahaja bukan ukuran band yang lengkap. Rekod ini paling kukuh apabila dibaca bersama pemerhatian kelas dan hasil kerja bertulis, dan itulah sebabnya ruang penindihan TP serta sebabnya disediakan."));
+}
+
+/* ---------------- Eksport ---------------- */
+function eksport(){
+  var kelas=S.kelasId, k=kelasKini();
+  var baris=[["Bil","No. Murid","Nama Murid","Kelas","Mata Pelajaran","Bab","Tahap Penguasaan",
+              "TP Cadangan Sistem","Ditindih Guru","Sebab Penindihan","Bilangan Percubaan",
+              "Tugasan TP6 Dihantar","Jenis Rekod","Ulasan"]];
+  senaraiMurid(kelas).forEach(function(no,i){
+    var auto=tpAuto(kelas,no), lapor=tpDilapor(kelas,no), g=guruUntuk(kelas,no);
+    baris.push([i+1,no,namaMurid(kelas,no),k.nama,"Sains","2.0 Respirasi","TP"+lapor,
+      "TP"+auto,(lapor!==auto?"Ya":"Tidak"),(g&&g.sebab)||"",
+      bilCubaan(kelas,no), (adaKarangan(kelas,no)?"Ya":"Tidak"),
+      (k.contoh?"CONTOH":"Sebenar"),
+      ulasanUntuk(namaMurid(kelas,no),lapor)]);
+  });
+  var csv=baris.map(function(r){return r.map(selCsv).join(",");}).join("\r\n");
+  var kotak=$("kotakEksport"); if(!kotak) return; kotak.innerHTML="";
+  function papar(){
+    var w=el("div","ulasan");
+    w.appendChild(el("div","ulasan-hd",'<span class="nm">CSV susunan SPPB</span><span class="meta">Salin ke Excel</span>'));
+    var ta=el("textarea"); ta.value=csv; ta.style.minHeight="150px";
+    ta.style.fontFamily="'DM Mono',monospace"; ta.style.fontSize="13px";
+    w.appendChild(ta); kotak.appendChild(w);
+    if(window.innerWidth>700){ ta.focus(); ta.select(); }
+  }
+  papar();
+  try{
+    var nama="pbd-"+BAB_ID+"-"+String(k.nama).replace(/\s+/g,"-").toLowerCase()+".csv";
+    var blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=el("a"); a.href=url; a.download=nama; a.className="btn sm"; a.textContent="Muat turun "+nama;
+    a.style.display="inline-block"; a.style.textDecoration="none"; a.style.lineHeight="22px";
+    var bar=el("div","actions"); bar.appendChild(a); kotak.insertBefore(bar,kotak.firstChild);
+    setTimeout(function(){ URL.revokeObjectURL(url); },120000);
+  }catch(e){}
+}
+
+/* ============================================================
+   KAWALAN
+   ============================================================ */
+function tukarMod(m){
+  var murid=m==="murid";
+  $("murid").classList.toggle("hidden",!murid);
+  $("cikgu").classList.toggle("hidden",murid);
+  $("btnMurid").setAttribute("aria-pressed",murid);
+  $("btnCikgu").setAttribute("aria-pressed",!murid);
+  if(murid){ render(); } else { hentiJam(); hentiPetaAnim(); aturDegup(); renderCikgu(); }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$("btnMurid").onclick=function(){tukarMod("murid");};
+$("btnCikgu").onclick=function(){tukarMod("cikgu");};
+$("tabKelas").onclick=function(){S.tabCikgu="kelas";renderCikgu();};
+$("tabDiag").onclick=function(){S.tabCikgu="diag";renderCikgu();};
+$("tabSenarai").onclick=function(){S.tabCikgu="senarai";renderCikgu();};
+$("tabTangga").onclick=function(){S.tabCikgu="tangga";renderCikgu();};
+$("btnBunyi").onclick=function(){
+  S.senyap=!S.senyap;
+  $("btnBunyi").innerHTML=S.senyap?"&#9633;":"&#9834;";
+  $("btnBunyi").setAttribute("aria-label",S.senyap?"Hidupkan bunyi":"Matikan bunyi");
+  aturDegup(); simpanDiri();
+};
+$("btnTema").onclick=function(){
+  var r=document.documentElement,k=r.getAttribute("data-theme");
+  if(!k){var g=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;r.setAttribute("data-theme",g?"light":"dark");}
+  else r.setAttribute("data-theme",k==="dark"?"light":"dark");
+  lukisPeta();
+};
+window.addEventListener("resize",function(){ if(S.skrin==="peta")lukisPeta(); });
+
+/* ============================================================
+   MULA
+   ============================================================ */
+function mula(){
+  kocokSemua();
+  bersihLama();
+  benihContoh();
+  muatKodMentah();
+  try{ KOD_LUAR=localStorage.getItem("lo2-kodluar")||null; }catch(e){}
+  if(!AWAN) KOD_ADA=!!KOD_LUAR;
+  muatTempatan();
+  if(!S.kelasId) S.kelasId=kelasKini().id;
+  if(S.senyap)$("btnBunyi").innerHTML="&#9633;";
+  kemasMinggu();
+  if(S.no){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
+  else if(S.latihan) S.skrin="peta";
+  else S.skrin=(KELASES.length>1?"kelas":"nombor");
+  render();
+  lukisTalian();
+  muatJauh();
+  if(AWAN) rpc("lo_guru_ada",{}).then(function(a){ KOD_ADA=!!a; }).catch(function(){});
+}
+mula();
+
+})();
+</script>
+
+</body>
+</html>
