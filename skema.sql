@@ -29,7 +29,11 @@ create table if not exists lo_nama (
 
 -- Satu baris = satu murid, satu hentian. Percubaan pertama ditulis
 -- sekali sahaja; fungsi simpan tidak akan menyentuhnya lagi selepas itu.
+-- `bab` memisahkan rekod setiap bidang pembelajaran. Tahap Penguasaan
+-- dalam DSKP ditentukan bagi setiap bidang secara berasingan, jadi rekod
+-- pun mesti berasingan.
 create table if not exists lo_cubaan (
+  bab       text not null,
   kelas     text not null,
   no        text not null,
   aras      int  not null check (aras between 1 and 6),
@@ -38,16 +42,17 @@ create table if not exists lo_cubaan (
   kali      int not null default 0,
   karangan  jsonb,
   akhir     bigint,
-  primary key (kelas, no, aras)
+  primary key (bab, kelas, no, aras)
 );
 
 create table if not exists lo_tp (
+  bab     text not null,
   kelas   text not null,
   no      text not null,
   tp      int check (tp between 0 and 6),
   sebab   text not null default '',
   masa    timestamptz not null default now(),
-  primary key (kelas, no)
+  primary key (bab, kelas, no)
 );
 
 create table if not exists lo_rahsia (
@@ -145,7 +150,7 @@ $$;
 -- Simpan satu percubaan. Percubaan pertama tidak pernah ditindih.
 -- Tulisan cikgu berada dalam jadual lain, jadi ia tidak boleh berlanggar.
 create or replace function lo_simpan_cubaan(
-  p_kelas text, p_no text, p_kod text, p_aras int,
+  p_bab text, p_kelas text, p_no text, p_kod text, p_aras int,
   p_kini jsonb, p_karangan jsonb default null)
 returns jsonb language plpgsql security definer set search_path = public as $$
 declare ada lo_cubaan%rowtype; hasil lo_cubaan%rowtype;
@@ -157,12 +162,14 @@ begin
     raise exception 'aras tidak sah';
   end if;
 
+  if coalesce(p_bab,'') = '' then raise exception 'bab tidak dinyatakan'; end if;
+
   select * into ada from lo_cubaan
-    where kelas = p_kelas and no = p_no and aras = p_aras for update;
+    where bab = p_bab and kelas = p_kelas and no = p_no and aras = p_aras for update;
 
   if ada.kelas is null then
-    insert into lo_cubaan(kelas, no, aras, pertama, terbaik, kali, karangan, akhir)
-      values (p_kelas, p_no, p_aras, p_kini, p_kini, 1, p_karangan,
+    insert into lo_cubaan(bab, kelas, no, aras, pertama, terbaik, kali, karangan, akhir)
+      values (p_bab, p_kelas, p_no, p_aras, p_kini, p_kini, 1, p_karangan,
               (p_kini->>'masa')::bigint)
       returning * into hasil;
   else
@@ -178,7 +185,7 @@ begin
       kali     = ada.kali + 1,
       karangan = coalesce(p_karangan, ada.karangan),
       akhir    = (p_kini->>'masa')::bigint
-      where kelas = p_kelas and no = p_no and aras = p_aras
+      where bab = p_bab and kelas = p_kelas and no = p_no and aras = p_aras
       returning * into hasil;
   end if;
 
@@ -238,13 +245,13 @@ begin
 end $$;
 
 create or replace function lo_guru_simpan_tp(
-  p_kod text, p_kelas text, p_no text, p_tp int, p_sebab text)
+  p_kod text, p_bab text, p_kelas text, p_no text, p_tp int, p_sebab text)
 returns boolean language plpgsql security definer set search_path = public as $$
 begin
   if not lo_kod_guru_betul(p_kod) then raise exception 'kod cikgu tidak sah'; end if;
-  insert into lo_tp(kelas, no, tp, sebab, masa)
-    values (p_kelas, p_no, p_tp, coalesce(p_sebab,''), now())
-    on conflict (kelas, no) do update
+  insert into lo_tp(bab, kelas, no, tp, sebab, masa)
+    values (p_bab, p_kelas, p_no, p_tp, coalesce(p_sebab,''), now())
+    on conflict (bab, kelas, no) do update
       set tp = excluded.tp, sebab = excluded.sebab, masa = now();
   return true;
 end $$;
@@ -261,8 +268,8 @@ revoke all on function lo_kod_murid_betul(text, text, text) from anon, authentic
 grant execute on function lo_guru_ada() to anon, authenticated;
 grant execute on function lo_guru_tetap_kod(text, text) to anon, authenticated;
 grant execute on function lo_masuk(text, text, text) to anon, authenticated;
-grant execute on function lo_simpan_cubaan(text, text, text, int, jsonb, jsonb) to anon, authenticated;
+grant execute on function lo_simpan_cubaan(text, text, text, text, int, jsonb, jsonb) to anon, authenticated;
 grant execute on function lo_guru_data(text) to anon, authenticated;
 grant execute on function lo_guru_simpan_kelas(text, text, text, jsonb, jsonb) to anon, authenticated;
 grant execute on function lo_guru_buang_kelas(text, text) to anon, authenticated;
-grant execute on function lo_guru_simpan_tp(text, text, text, int, text) to anon, authenticated;
+grant execute on function lo_guru_simpan_tp(text, text, text, text, int, text) to anon, authenticated;

@@ -1,8 +1,14 @@
 # Laluan Oksigen
 
-Permainan pentaksiran bilik darjah untuk **Sains KSSM Tingkatan 3, Bidang 2.0 Respirasi**.
-Murid mengembara sebagai molekul oksigen melalui enam hentian anatomi yang dipetakan
-satu lawan satu kepada Tahap Penguasaan 1 hingga 6 dalam DSKP.
+Permainan pentaksiran bilik darjah untuk **Sains KSSM Tingkatan 3**. Setiap bidang
+pembelajaran menjadi satu perjalanan enam hentian yang dipetakan satu lawan satu
+kepada Tahap Penguasaan 1 hingga 6 dalam DSKP.
+
+| Bab | Perjalanan | Item |
+|---|---|---|
+| 1.0 Rangsangan dan Gerak Balas | Laluan Impuls, reseptor hingga tindakan | 54 |
+| 2.0 Respirasi | Laluan Oksigen, hidung hingga sel badan | 54 |
+| 3.0 Pengangkutan | Laluan Darah, jantung hingga seluruh organisma | 54 |
 
 Standard Prestasi disalin kata demi kata daripada DSKP KSSM Sains Tingkatan 3,
 terbitan Bahagian Pembangunan Kurikulum, April 2017.
@@ -12,7 +18,9 @@ terbitan Bahagian Pembangunan Kurikulum, April 2017.
 | Fail | Isi |
 |---|---|
 | `index.html` | Aplikasi. Tidak mengandungi sebarang soalan. |
-| `bank-t3b2.js` | Kandungan bab: 54 item, standard prestasi, lampiran. |
+| `sumber/*.js` | Kandungan bab yang disunting tangan. |
+| `bank-*.js` | Bank soalan yang dijana. Jangan sunting terus. |
+| `bina.js` | Menyemak sumber dan menjana bank. |
 | `konfig.js` | Alamat pelayan dan kunci awam Supabase. |
 | `skema.sql` | Jadual, peraturan baris dan fungsi pangkalan data. |
 | `dskp/` | DSKP KSSM Sains Tingkatan 1 hingga 3 (rujukan, tidak diterbitkan). |
@@ -30,6 +38,8 @@ Sempadan itu ditegakkan di pelayan, bukan di skrin:
   yang menyemak kod murid atau kod cikgu terlebih dahulu.
 - Percubaan **pertama** setiap murid bagi setiap hentian ditulis sekali sahaja
   dan tidak pernah ditindih, walaupun oleh murid itu sendiri. Itulah bukti PBD.
+- Rekod dan Tahap Penguasaan diasingkan mengikut bab, kerana DSKP menentukan
+  TP bagi setiap bidang pembelajaran secara berasingan.
 - Percubaan gagal pada kod dilengahkan, supaya tekaan automatik jadi mahal.
 
 Yang **boleh** dibaca umum: nombor murid, skor, dan teks tugasan reka cipta.
@@ -47,25 +57,31 @@ jadi ia perlu lapan aksara atau lebih.
 
 ## Menambah bab baharu
 
-Aplikasi tidak tahu apa-apa tentang respirasi. Ia hanya memainkan apa yang
-didaftarkan dalam `window.BANK`.
+Aplikasi tidak tahu apa-apa tentang respirasi atau mana-mana tajuk. Ia hanya
+memainkan apa yang didaftarkan dalam `window.BANK`.
 
-1. Salin `bank-t3b2.js`, tukar `id`, tajuk, standard prestasi, lampiran dan soalan.
-2. Tukar `BAB_ID` di bahagian atas skrip dalam `index.html`.
-3. Tukar `<script src="...">` supaya menunjuk kepada fail bank yang baharu.
+1. Salin `sumber/t3b2.js` kepada `sumber/<id baharu>.js` dan tulis kandungannya.
+   Tulis jawapan betul pada indeks 0; pembina akan mengagihkannya.
+2. Jalankan `node bina.js <id baharu>`. Ia gagal jika mana-mana semakan tidak lulus,
+   supaya bank yang rosak tidak pernah sampai kepada murid.
+3. Tambah id itu ke dalam `BAB_TERSEDIA` dan satu `<script src="bank-<id>.js">`
+   dalam `index.html`.
 
-Bentuk soalan yang disokong: `pilih` satu jawapan, `banyak` beberapa jawapan,
-`susun` urutan, `nombor` jawapan berangka dengan toleransi, dan `buka` tugasan
-bertulis yang **tidak pernah** dinilai oleh mesin.
+Setiap bab perlukan tepat enam hentian dan lapan soalan campur satu soalan bos
+bagi setiap hentian. Bentuk soalan: `pilih` satu jawapan, `banyak` beberapa
+jawapan, `susun` urutan, `nombor` jawapan berangka dengan toleransi, dan `buka`
+tugasan bertulis yang **tidak pernah** dinilai oleh mesin dan hanya dibenarkan
+sebagai soalan bos pada hentian TP6.
 
-Skrip `_bina-bank.js` menyemak bank (indeks jawapan, pilihan berulang, penjelasan
-yang tertinggal) dan mengimbangi kedudukan jawapan. `_uji-imbang.js` mengukur
-taburan kedudukan jawapan merentas ratusan muatan halaman.
+`_uji-imbang.js` mengukur taburan kedudukan jawapan merentas ratusan muatan
+halaman, supaya murid tidak dapat meneka corak.
 
 ## Apa yang belum ada
 
 - Cikgu belum boleh menulis soalan sendiri melalui skrin. Bank masih disunting
-  sebagai fail.
+  sebagai fail sumber.
+- Tiga daripada tiga puluh dua bidang Sains menengah rendah sudah siap. Bidang
+  Tingkatan 1 dan 2 belum dimulakan.
 - Tiada pra atau pasca ujian, jadi permainan ini belum boleh membuktikan bahawa
   murid benar-benar belajar, hanya bahawa mereka terlibat.
 - Tiada mod luar talian penuh. Jawapan yang gagal dihantar disimpan pada peranti

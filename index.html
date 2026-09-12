@@ -469,12 +469,32 @@ input.pin{
 }
 .papantab button[aria-pressed="true"]{background:var(--surface);color:var(--ink);border-color:var(--line2)}
 .prow .sub{font-size:11.5px;color:var(--ink3);font-family:"DM Mono",monospace}
+
+/* pemilih bab pada peta murid */
+.babrow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:15px}
+.babrow .tajuk{
+  font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);width:100%;
+}
+.babbtn{
+  flex:1 1 150px;min-width:0;text-align:left;cursor:pointer;
+  border:1.5px solid var(--line);background:var(--surface2);border-radius:12px;padding:10px 12px;
+  display:flex;flex-direction:column;gap:2px;min-height:60px;justify-content:center;
+}
+.babbtn:hover{border-color:var(--line2)}
+.babbtn[aria-pressed="true"]{border-color:var(--arteri);background:var(--surface)}
+.babbtn .k{font-family:"DM Mono",monospace;font-size:11px;color:var(--ink3)}
+.babbtn[aria-pressed="true"] .k{color:var(--arteri)}
+.babbtn .n{font-weight:650;font-size:13.5px;line-height:1.25}
+.babbtn .s{font-family:"DM Mono",monospace;font-size:10.5px;color:var(--teal)}
 </style>
 </head>
 <body>
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
 <script src="konfig.js"></script>
+<script src="bank-t3b1.js"></script>
 <script src="bank-t3b2.js"></script>
+<script src="bank-t3b3.js"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -545,9 +565,12 @@ input.pin{
 (function(){
 "use strict";
 
-/* Bab yang dimainkan oleh salinan halaman ini. Satu baris ini sahaja yang
-   perlu ditukar untuk menerbitkan bab lain dengan aplikasi yang sama. */
-var BAB_ID="t3b2";
+/* Bab yang tersedia, mengikut urutan paparan. Menambah bab bermakna
+   menambah satu fail bank dan satu id di sini. */
+var BAB_TERSEDIA=["t3b1","t3b2","t3b3"];
+var BAB_ID=null;
+try{ BAB_ID=localStorage.getItem("lo2-bab"); }catch(e){}
+if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID=BAB_TERSEDIA[0];
 
 /* ============================================================
    KANDUNGAN — dimuatkan daripada fail bank yang berasingan.
@@ -566,21 +589,49 @@ if(!BAB){
   return;
 }
 
-var SPI=BAB.spi, KKO=BAB.kko;
-var ARAS=BAB.aras.map(function(a){
-  var o={}; for(var k in a) o[k]=a[k];
-  o.lampiran = a.lampiran ? (BAB.lampiran[a.lampiran]||null) : null;
-  return o;
-});
+var SPI=BAB.spi, KKO=BAB.kko, ARAS=[];
 
-(function pasangJenama(){
+function pasangBab(id){
+  var b=window.BANK[id];
+  if(!b) return false;
+  BAB_ID=id; BAB=b; SPI=b.spi; KKO=b.kko;
+  ARAS=b.aras.map(function(a){
+    var o={}; for(var k in a) o[k]=a[k];
+    o.lampiran = a.lampiran ? (b.lampiran[a.lampiran]||null) : null;
+    return o;
+  });
+  kocokSemua();
+  try{ localStorage.setItem("lo2-bab",id); }catch(e){}
+  pasangJenama();
+  return true;
+}
+function pasangJenama(){
   function tulis(pilih,teks){ var e=document.querySelector(pilih); if(e&&teks) e.textContent=teks; }
   tulis(".brand b", BAB.tajuk);
   tulis(".brand span", BAB.subtajuk);
   var ge=document.getElementById("guruEyebrow");
   if(ge) ge.textContent="Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
   if(BAB.tajuk) document.title=BAB.tajuk;
-})();
+}
+function senaraiBab(){
+  return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]; })
+    .map(function(x){ return window.BANK[x]; });
+}
+/* Tukar bab: kemajuan setiap bab berasingan, jadi keadaan permainan
+   dikosongkan dan rekod bab baharu dikira semula. */
+function tukarBab(id){
+  if(id===BAB_ID) return;
+  if(!pasangBab(id)) return;
+  S.aras=1; S.salah=[]; S.kad={}; S.lulus={}; S.skrin="peta";
+  CUBAAN={}; GURU={};
+  benihContohBab();
+  muatTempatan();
+  if(S.no){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); }
+  simpanDiri();
+  muatBabJauh();
+  render();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 
 /* ============================================================
    KEADAAN
@@ -646,7 +697,7 @@ function tarikhTempatan(d){
 function tarikhSemalam(){
   var d=new Date(); d.setDate(d.getDate()-1); return tarikhTempatan(d);
 }
-function kunciC(kelas,no,a){ return kelas+"|"+no+"|"+a; }
+function kunciC(kelas,no,a){ return BAB_ID+"|"+kelas+"|"+no+"|"+a; }
 
 /* Minggu bermula hari Isnin waktu tempatan. Papan mingguan menetapkan
    semula setiap minggu supaya murid yang mula lambat tidak kekal di bawah
@@ -676,7 +727,7 @@ function mingguMurid(kelas,no){
   }
   return {lulus:lulus, skor:skor};
 }
-function kunciG(kelas,no){ return kelas+"|"+no; }
+function kunciG(kelas,no){ return BAB_ID+"|"+kelas+"|"+no; }
 function jalanCubaan(kelas,no,a){ return "cubaan/"+kelas+"-"+no+"-a"+a; }
 function jalanTp(kelas,no){ return "guru/tp-"+kelas+"-"+no; }
 function kelasKini(){
@@ -693,28 +744,40 @@ function labelMurid(no){ return "No. "+no; }
    KELAS CONTOH — supaya skrin cikgu berfungsi sebelum kelas sebenar
    dimasukkan. Kelas ini tidak pernah ditulis ke pangkalan data.
    ============================================================ */
+var CONTOH_NAMA=["Aisyah binti Rahman","Muhammad Irfan bin Zaidi","Tan Mei Ling",
+                 "Arvind a/l Kumaran","Danial Haiqal bin Suhaimi","Nur Batrisyia binti Azman"];
+var CONTOH_TAHAP=[4,5,5,3,2,1];
+
+/* Senarai kelas contoh. Bebas daripada bab, jadi ia dibina sekali sahaja. */
 function benihContoh(){
-  var namaContoh=["Aisyah binti Rahman","Muhammad Irfan bin Zaidi","Tan Mei Ling",
-                  "Arvind a/l Kumaran","Danial Haiqal bin Suhaimi","Nur Batrisyia binti Azman"];
-  var tahap=[4,5,5,3,2,1];
+  if(KELASES.some(function(k){ return k.id==="contoh"; })) return;
   KELASES.push({id:"contoh",nama:"3 Amanah (contoh)",contoh:true});
   NOMBOR.contoh=[]; NAMA.contoh={};
-  namaContoh.forEach(function(n,i){
+  CONTOH_NAMA.forEach(function(n,i){
     var no=pad2(i+1);
     NOMBOR.contoh.push({no:no,cap:null});
     NAMA.contoh[no]=n;
-    var hingga=Math.min(5,tahap[i]+1);
+  });
+}
+
+/* Cubaan contoh bagi bab yang sedang dipaparkan. Dijana semula setiap kali
+   bab ditukar kerana id soalan berbeza bagi setiap bab. */
+function benihContohBab(){
+  CONTOH_NAMA.forEach(function(n,i){
+    var no=pad2(i+1), tahap=CONTOH_TAHAP[i];
+    var hingga=Math.min(5,tahap+1);
     for(var a=1;a<=hingga;a++){
-      var kolam=ARAS[a-1].soalan.map(function(q,k){ return {q:q,w:pseudo(no+"-p"+a+"-"+k)}; })
+      var benih=BAB_ID+"-"+no;
+      var kolam=ARAS[a-1].soalan.map(function(q,k){ return {q:q,w:pseudo(benih+"-p"+a+"-"+k)}; })
                  .sort(function(x,y){ return x.w-y.w; })
                  .slice(0,4).map(function(x){ return x.q; });
-      var kuasai = a<=tahap[i];
+      var kuasai = a<=tahap;
       var senaraiS=[], betul=0;
       kolam.forEach(function(q,k){
         /* hentian yang dikuasai sentiasa cukup betul, yang belum sentiasa tidak,
            supaya kelas contoh membaca sebagai satu cerita yang munasabah */
-        var ok = kuasai ? (k<3 || pseudo(no+"-"+a+"-"+k)<0.7)
-                        : (pseudo(no+"-"+a+"-"+k)<0.3);
+        var ok = kuasai ? (k<3 || pseudo(benih+"-"+a+"-"+k)<0.7)
+                        : (pseudo(benih+"-"+a+"-"+k)<0.3);
         if(ok) betul++;
         senaraiS.push({qid:q.id,betul:ok});
       });
@@ -1434,6 +1497,25 @@ function renderPeta(){
   tg.appendChild(tb);
   bd.appendChild(tg);
 
+  /* pemilih bab: kemajuan setiap bab dikira berasingan */
+  var babs=senaraiBab();
+  if(babs.length>1){
+    var pb=el("div","babrow");
+    pb.appendChild(el("div","tajuk","Bab"));
+    babs.forEach(function(b){
+      var t=el("button","babbtn"); t.type="button";
+      t.setAttribute("aria-pressed", b.id===BAB_ID ? "true":"false");
+      var siap=0;
+      if(S.no&&b.id===BAB_ID){ for(var i=1;i<=6;i++) if(S.lulus[i]) siap++; }
+      t.innerHTML='<span class="k">'+esc(b.kod.split(" ")[0])+'</span><span class="n">'+
+        esc(b.kod.replace(/^[0-9.]+\s*/,""))+'</span>'+
+        (b.id===BAB_ID&&S.no?'<span class="s">'+siap+' / 6 hentian</span>':'');
+      t.onclick=function(){ tukarBab(b.id); };
+      pb.appendChild(t);
+    });
+    bd.appendChild(pb);
+  }
+
   var ks=kadSeterusnya();
   var sa=el("div","sasaran"+(ks?"":" siap"));
   if(ks){
@@ -1939,6 +2021,7 @@ function gabungCubaan(lama,kelas,no,a,kini,karangan){
 }
 function terimaBarisCubaan(baris){
   if(!baris||!baris.kelas) return;
+  if(baris.bab&&baris.bab!==BAB_ID) return;   /* bab lain, bukan urusan skrin ini */
   var c={v:SKEMA,kelas:baris.kelas,no:baris.no,aras:baris.aras,
          pertama:baris.pertama,terbaik:baris.terbaik,kali:baris.kali,
          karangan:baris.karangan,akhir:baris.akhir};
@@ -1946,7 +2029,7 @@ function terimaBarisCubaan(baris){
   simpanSalinan(c);
 }
 function simpanSalinan(c){
-  try{ localStorage.setItem("lo2-cubaan-"+c.kelas+"-"+c.no+"-a"+c.aras,JSON.stringify(c)); }catch(e){}
+  try{ localStorage.setItem("lo2-cubaan-"+BAB_ID+"-"+c.kelas+"-"+c.no+"-a"+c.aras,JSON.stringify(c)); }catch(e){}
 }
 function simpanCubaan(kelas,no,a,kini,karangan){
   var kunci=kunciC(kelas,no,a);
@@ -1954,7 +2037,7 @@ function simpanCubaan(kelas,no,a,kini,karangan){
   CUBAAN[kunci]=badan;
   simpanSalinan(badan);
   if(!AWAN) return;
-  var surat={f:"lo_simpan_cubaan",b:{p_kelas:kelas,p_no:no,p_kod:S.kod||"",
+  var surat={f:"lo_simpan_cubaan",b:{p_bab:BAB_ID,p_kelas:kelas,p_no:no,p_kod:S.kod||"",
              p_aras:a,p_kini:kini,p_karangan:karangan}};
   rpc(surat.f,surat.b)
     .then(function(hasil){ terimaBarisCubaan(hasil); segar(); })
@@ -2009,9 +2092,9 @@ function buangKelasGuru(id){
 }
 function simpanTp(kelas,no){
   var g=GURU[kunciG(kelas,no)]||{};
-  try{ localStorage.setItem("lo2-tp-"+kelas+"-"+no,JSON.stringify({v:SKEMA,kelas:kelas,no:no,tp:g.tp,sebab:g.sebab||""})); }catch(e){}
+  try{ localStorage.setItem("lo2-tp-"+BAB_ID+"-"+kelas+"-"+no,JSON.stringify({v:SKEMA,bab:BAB_ID,kelas:kelas,no:no,tp:g.tp,sebab:g.sebab||""})); }catch(e){}
   if(!AWAN||!KOD_GURU) return;
-  rpc("lo_guru_simpan_tp",{p_kod:KOD_GURU,p_kelas:kelas,p_no:no,
+  rpc("lo_guru_simpan_tp",{p_kod:KOD_GURU,p_bab:BAB_ID,p_kelas:kelas,p_no:no,
       p_tp:(g.tp===undefined||g.tp===""?null:g.tp),p_sebab:g.sebab||""})
     .catch(function(){ lukisTalian(); });
 }
@@ -2041,9 +2124,9 @@ function muatTempatan(){
         NOMBOR[o.id]=o.nombor||[];
       } else if(k.indexOf("lo2-nama-")===0){
         NAMA[o.kelas]=o.nama||{};
-      } else if(k.indexOf("lo2-cubaan-")===0){
+      } else if(k.indexOf("lo2-cubaan-"+BAB_ID+"-")===0){
         letakCubaan(o);
-      } else if(k.indexOf("lo2-tp-")===0){
+      } else if(k.indexOf("lo2-tp-"+BAB_ID+"-")===0){
         GURU[kunciG(o.kelas,o.no)]={tp:o.tp,sebab:o.sebab||""};
       }
     }
@@ -2076,15 +2159,20 @@ function muatJauh(){
     segar();
   }).catch(function(){ lukisTalian(); });
 
-  bacaJadual("lo_cubaan","select=*").then(function(rows){
+  muatBabJauh();
+  petiHantar();
+}
+
+/* Rekod bab semasa sahaja. Dipanggil semula setiap kali bab ditukar. */
+function muatBabJauh(){
+  if(!AWAN) return;
+  bacaJadual("lo_cubaan","select=*&bab=eq."+encodeURIComponent(BAB_ID)).then(function(rows){
     if(!rows||!rows.length) return;
     rows.forEach(function(r){ letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
       pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir}); });
     if(S.no) S.lulus=kiraLulus();
     segar();
   }).catch(function(){ lukisTalian(); });
-
-  petiHantar();
 }
 
 /* Data cikgu hanya boleh diambil dengan kod cikgu, dan hanya di sinilah
@@ -2098,9 +2186,13 @@ function muatGuru(kod){
       NOMBOR[r.id]=r.nombor||[];
     });
     Object.keys(d.nama||{}).forEach(function(id){ NAMA[id]=d.nama[id]; });
-    (d.cubaan||[]).forEach(function(r){ letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
-      pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir}); });
-    (d.tp||[]).forEach(function(t){ GURU[kunciG(t.kelas,t.no)]={tp:t.tp,sebab:t.sebab||""}; });
+    (d.cubaan||[]).forEach(function(r){
+      if(r.bab!==BAB_ID) return;
+      letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
+        pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir}); });
+    (d.tp||[]).forEach(function(t){
+      if(t.bab!==BAB_ID) return;
+      GURU[kunciG(t.kelas,t.no)]={tp:t.tp,sebab:t.sebab||""}; });
     SUMBER="kelas sebenar";
     return true;
   });
@@ -2216,6 +2308,31 @@ function paneKunci(){
 }
 
 /* ---------------- Kelas ---------------- */
+function pilihBabGuru(p){
+  var babs=senaraiBab();
+  if(babs.length<2) return;
+  var row=el("div","actions"); row.style.marginTop="0";
+  babs.forEach(function(b){
+    var t=el("button","kbtn"); t.type="button";
+    t.innerHTML="\u{1F4D8} "+esc(b.kod);
+    if(b.id===BAB_ID){ t.style.borderColor="var(--vena)"; t.style.background="var(--surface)"; t.style.fontWeight="700"; }
+    t.onclick=function(){
+      if(b.id===BAB_ID) return;
+      pasangBab(b.id);
+      CUBAAN={}; GURU={};
+      benihContohBab();
+      muatTempatan();
+      S.muridPilih=null;
+      renderCikgu();
+      if(KOD_GURU) muatGuru(KOD_GURU).then(renderCikgu).catch(function(){});
+      else muatBabJauh();
+    };
+    row.appendChild(t);
+  });
+  p.appendChild(row);
+  p.appendChild(el("p","note","Tahap Penguasaan direkod berasingan bagi setiap bidang pembelajaran, seperti yang dikehendaki DSKP. Menukar bab di sini menukar rekod yang dipaparkan."));
+}
+
 function pilihKelasGuru(p){
   var row=el("div","actions"); row.style.marginTop="0";
   KELASES.forEach(function(k){
@@ -2231,6 +2348,7 @@ function pilihKelasGuru(p){
 function paneKelas(){
   var p=$("paneKelas"); p.innerHTML="";
   if(!S.kelasId) S.kelasId=kelasKini().id;
+  pilihBabGuru(p);
   pilihKelasGuru(p);
   var kelas=S.kelasId;
   var senarai=senaraiMurid(kelas);
@@ -2365,6 +2483,7 @@ function butiranMurid(kelas,no,auto,lapor){
 /* ---------------- Diagnostik ---------------- */
 function paneDiag(){
   var p=$("paneDiag"); p.innerHTML="";
+  pilihBabGuru(p);
   pilihKelasGuru(p);
   var kelas=S.kelasId;
 
@@ -2684,9 +2803,10 @@ window.addEventListener("resize",function(){ if(S.skrin==="peta")lukisPeta(); })
    MULA
    ============================================================ */
 function mula(){
-  kocokSemua();
+  pasangBab(BAB_ID);
   bersihLama();
   benihContoh();
+  benihContohBab();
   muatKodMentah();
   try{ KOD_LUAR=localStorage.getItem("lo2-kodluar")||null; }catch(e){}
   if(!AWAN) KOD_ADA=!!KOD_LUAR;
