@@ -1373,7 +1373,24 @@ function kiraLulus(){
   }
   var g=guruUntuk(S.kelasId,S.no);
   if(g&&Number(g.tp)>=6) L[6]=true;
+  kiraKad();
   return L;
+}
+/* Kad milik murid, bukan milik peranti. Murid yang bertukar telefon atau
+   membersihkan pelayar patut mendapat semula kad yang rekodnya sudah
+   membuktikan, jadi ia dibina semula daripada rekod dan bukan hanya
+   daripada permainan pada peranti ini. */
+function kiraKad(){
+  if(!S.no) return;
+  for(var i=1;i<=6;i++){
+    var c=cubaanMurid(S.kelasId,S.no,i);
+    if(!c||!c.terbaik) continue;
+    if(c.terbaik.lulus) S.kad[i+"a"]=1;
+    if(c.terbaik.bos) S.kad[i+"b"]=1;
+    if(i===6&&c.karangan&&c.karangan.teks){ S.kad["6a"]=1; S.kad["6b"]=1; }
+  }
+  var g=guruUntuk(S.kelasId,S.no);
+  if(g&&Number(g.tp)>=6){ S.kad["6a"]=1; S.kad["6b"]=1; }
 }
 
 function renderPeta(){
