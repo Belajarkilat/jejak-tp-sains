@@ -1,5 +1,5 @@
 -- ============================================================
--- Laluan Oksigen — skema rekod PBD
+-- Cikgu Nani — skema rekod PBD
 --
 -- Prinsip: tiada satu pun jadual boleh ditulis terus oleh pelayar.
 -- Semua tulisan melalui fungsi SECURITY DEFINER yang menyemak kod dahulu.

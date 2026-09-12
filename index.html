@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Permainan pentaksiran bilik darjah untuk Sains KSSM Tingkatan 3, Bidang 2.0 Respirasi. Murid mengembara sebagai molekul oksigen melalui enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
+<meta name="description" content="Cikgu Nani: pentaksiran bilik darjah untuk Sains KSSM Tingkatan 3. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
 <meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#070D18" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,7 +11,7 @@
 <link rel="icon" href="ikon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="ikon.svg">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Laluan Oksigen</title>
+<title>Cikgu Nani</title>
 <style>
   :root{color-scheme:light}
   html,body{margin:0;padding:0}
@@ -508,7 +508,7 @@ input.pin{
           <circle cx="16.5" cy="13" r="3.6" fill="var(--vena)"></circle>
         </svg>
         <div>
-          <b>Laluan Oksigen</b>
+          <b>Cikgu Nani</b>
           <span>Sains Ting. 3 &middot; Bab 2 Respirasi</span>
         </div>
       </div>
@@ -569,7 +569,7 @@ input.pin{
    menambah satu fail bank dan satu id di sini. */
 var BAB_TERSEDIA=["t3b1","t3b2","t3b3"];
 var BAB_ID=null;
-try{ BAB_ID=localStorage.getItem("lo2-bab"); }catch(e){}
+try{ BAB_ID=localStorage.getItem("cn-bab"); }catch(e){}
 if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID=BAB_TERSEDIA[0];
 
 /* ============================================================
@@ -601,17 +601,19 @@ function pasangBab(id){
     return o;
   });
   kocokSemua();
-  try{ localStorage.setItem("lo2-bab",id); }catch(e){}
+  try{ localStorage.setItem("cn-bab",id); }catch(e){}
   pasangJenama();
   return true;
 }
+/* Jenama produk kekal "Cikgu Nani". Nama perjalanan setiap bab
+   (Laluan Impuls, Laluan Oksigen, Laluan Darah) muncul pada tajuk peta,
+   bukan menggantikan jenama di bar atas. */
 function pasangJenama(){
   function tulis(pilih,teks){ var e=document.querySelector(pilih); if(e&&teks) e.textContent=teks; }
-  tulis(".brand b", BAB.tajuk);
   tulis(".brand span", BAB.subtajuk);
   var ge=document.getElementById("guruEyebrow");
   if(ge) ge.textContent="Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
-  if(BAB.tajuk) document.title=BAB.tajuk;
+  document.title = BAB.tajuk ? ("Cikgu Nani · "+BAB.tajuk) : "Cikgu Nani";
 }
 function senaraiBab(){
   return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]; })
@@ -1327,7 +1329,7 @@ function panelMula(tajuk,eyebrow){
 
 function renderPilihKelas(){
   var st=$("stage"); st.innerHTML="";
-  var p=panelMula("Kelas mana?","Laluan Oksigen");
+  var p=panelMula("Kelas mana?","Cikgu Nani");
   var bd=el("div","panel-bd");
   var g=el("div","stopgrid");
   KELASES.forEach(function(k){
@@ -1464,14 +1466,14 @@ function renderPeta(){
   var hd=el("div","panel-hd");
   hd.appendChild(el("div","grow",'<p class="eyebrow">'+
     esc(S.latihan?"Mod latihan · tiada rekod":(labelMurid(S.no)+" · "+kelasKini().nama))+
-    '</p><h2>Peta perjalanan</h2>'));
+    '</p><h2>'+esc(BAB.tajuk)+'</h2>'));
   if(S.rentetan>0) hd.appendChild(el("span","tp-chip a",'<span class="api"><em>\u{1F525}</em>'+S.rentetan+' hari</span>'));
   hd.appendChild(el("span","tp-chip t",Object.keys(S.kad).length+" / 12 kad"));
   if(S.inhaler>0||S.hemo>0)
     hd.appendChild(el("span","tp-chip",'\u{1F489} '+S.inhaler+'  \u{1FA78} '+S.hemo));
   p.appendChild(hd);
   var bd=el("div","panel-bd");
-  bd.innerHTML='<canvas id="peta" aria-label="Peta laluan oksigen dari hidung ke sel badan"></canvas>';
+  bd.innerHTML='<canvas id="peta" aria-label="Peta perjalanan enam hentian bagi bab ini"></canvas>';
   var grid=el("div","stopgrid");
   ARAS.forEach(function(a){
     var menunggu=(a.n===6&&!S.lulus[6]&&tunggu);
@@ -1933,7 +1935,7 @@ function hasilHarian(){
    melalui fungsi pangkalan data yang menyemak kod dahulu, jadi kod
    murid dan kod cikgu ialah sempadan sebenar, bukan sekadar skrin.
    ============================================================ */
-var AWAN = (window.LO_AWAN && window.LO_AWAN.url && window.LO_AWAN.kunci) ? window.LO_AWAN : null;
+var AWAN = (window.CN_AWAN && window.CN_AWAN.url && window.CN_AWAN.kunci) ? window.CN_AWAN : null;
 var TALIAN = { ada:!!AWAN, sihat:!!AWAN, tertunggak:0 };
 
 function rpc(nama,badan){
@@ -1960,8 +1962,8 @@ function bacaJadual(jadual,soal){
 }
 
 /* ---------- peti keluar ---------- */
-function petiBaca(){ try{ return JSON.parse(localStorage.getItem("lo2-peti")||"[]"); }catch(e){ return []; } }
-function petiTulis(p){ try{ localStorage.setItem("lo2-peti",JSON.stringify(p.slice(-60))); }catch(e){} TALIAN.tertunggak=p.length; lukisTalian(); }
+function petiBaca(){ try{ return JSON.parse(localStorage.getItem("cn-peti")||"[]"); }catch(e){ return []; } }
+function petiTulis(p){ try{ localStorage.setItem("cn-peti",JSON.stringify(p.slice(-60))); }catch(e){} TALIAN.tertunggak=p.length; lukisTalian(); }
 function petiTambah(surat){ var p=petiBaca(); p.push(surat); petiTulis(p); }
 function petiHantar(){
   if(!AWAN) return Promise.resolve();
@@ -1982,7 +1984,7 @@ function petiHantar(){
 
 /* ---------- keadaan peranti ---------- */
 function simpanDiri(){
-  try{ localStorage.setItem("lo2-diri",JSON.stringify({
+  try{ localStorage.setItem("cn-diri",JSON.stringify({
     v:SKEMA, kelasId:S.kelasId, no:S.no, kod:S.kod, latihan:S.latihan,
     kad:S.kad, inhaler:S.inhaler, hemo:S.hemo, tenang:S.tenang,
     rentetan:S.rentetan, rentetanTarikh:S.rentetanTarikh,
@@ -2029,7 +2031,7 @@ function terimaBarisCubaan(baris){
   simpanSalinan(c);
 }
 function simpanSalinan(c){
-  try{ localStorage.setItem("lo2-cubaan-"+BAB_ID+"-"+c.kelas+"-"+c.no+"-a"+c.aras,JSON.stringify(c)); }catch(e){}
+  try{ localStorage.setItem("cn-cubaan-"+BAB_ID+"-"+c.kelas+"-"+c.no+"-a"+c.aras,JSON.stringify(c)); }catch(e){}
 }
 function simpanCubaan(kelas,no,a,kini,karangan){
   var kunci=kunciC(kelas,no,a);
@@ -2071,8 +2073,8 @@ function simpanKelasGuru(id){
   for(var i=0;i<KELASES.length;i++) if(KELASES[i].id===id) k=KELASES[i];
   if(!k||k.contoh) return;
   try{
-    localStorage.setItem("lo2-kelas-"+id,JSON.stringify({v:SKEMA,id:id,nama:k.nama,nombor:NOMBOR[id]||[]}));
-    localStorage.setItem("lo2-nama-"+id,JSON.stringify({v:SKEMA,kelas:id,nama:NAMA[id]||{}}));
+    localStorage.setItem("cn-kelas-"+id,JSON.stringify({v:SKEMA,id:id,nama:k.nama,nombor:NOMBOR[id]||[]}));
+    localStorage.setItem("cn-nama-"+id,JSON.stringify({v:SKEMA,kelas:id,nama:NAMA[id]||{}}));
   }catch(e){}
   if(!AWAN||!KOD_GURU) return;
   rpc("lo_guru_simpan_kelas",{p_kod:KOD_GURU,p_id:id,p_nama:k.nama,
@@ -2087,12 +2089,12 @@ function simpanKelasGuru(id){
     .catch(function(){ lukisTalian(); });
 }
 function buangKelasGuru(id){
-  try{ localStorage.removeItem("lo2-kelas-"+id); localStorage.removeItem("lo2-nama-"+id); }catch(e){}
+  try{ localStorage.removeItem("cn-kelas-"+id); localStorage.removeItem("cn-nama-"+id); }catch(e){}
   if(AWAN&&KOD_GURU) rpc("lo_guru_buang_kelas",{p_kod:KOD_GURU,p_id:id}).catch(function(){});
 }
 function simpanTp(kelas,no){
   var g=GURU[kunciG(kelas,no)]||{};
-  try{ localStorage.setItem("lo2-tp-"+BAB_ID+"-"+kelas+"-"+no,JSON.stringify({v:SKEMA,bab:BAB_ID,kelas:kelas,no:no,tp:g.tp,sebab:g.sebab||""})); }catch(e){}
+  try{ localStorage.setItem("cn-tp-"+BAB_ID+"-"+kelas+"-"+no,JSON.stringify({v:SKEMA,bab:BAB_ID,kelas:kelas,no:no,tp:g.tp,sebab:g.sebab||""})); }catch(e){}
   if(!AWAN||!KOD_GURU) return;
   rpc("lo_guru_simpan_tp",{p_kod:KOD_GURU,p_bab:BAB_ID,p_kelas:kelas,p_no:no,
       p_tp:(g.tp===undefined||g.tp===""?null:g.tp),p_sebab:g.sebab||""})
@@ -2103,10 +2105,12 @@ function simpanTp(kelas,no){
 /* Buang simpanan versi lama yang mengandungi nama penuh murid. */
 function bersihLama(){
   try{
-    var buang=["laluan-oksigen","lo-senarai","lo2-awam","lo2-guru-senarai","lo2-guru-tetapan"];
+    var buang=["laluan-oksigen","lo-senarai","cn-awam","cn-guru-senarai","cn-guru-tetapan"];
     for(var i=0;i<localStorage.length;i++){
       var k=localStorage.key(i);
-      if(k&&k.indexOf("lo-rekod-")===0) buang.push(k);
+      /* lo-rekod ialah bentuk pertama yang menyimpan nama penuh murid.
+         lo2 ialah awalan sebelum produk dinamakan Cikgu Nani. */
+      if(k&&(k.indexOf("lo-rekod-")===0||k.indexOf("lo2-")===0)) buang.push(k);
     }
     buang.forEach(function(k){ try{ localStorage.removeItem(k); }catch(e){} });
   }catch(e){}
@@ -2119,18 +2123,18 @@ function muatTempatan(){
       var o=null;
       try{ o=JSON.parse(localStorage.getItem(k)); }catch(e){ continue; }
       if(!o||o.v!==SKEMA) continue;
-      if(k.indexOf("lo2-kelas-")===0){
+      if(k.indexOf("cn-kelas-")===0){
         if(!KELASES.some(function(x){return x.id===o.id;})) KELASES.unshift({id:o.id,nama:o.nama});
         NOMBOR[o.id]=o.nombor||[];
-      } else if(k.indexOf("lo2-nama-")===0){
+      } else if(k.indexOf("cn-nama-")===0){
         NAMA[o.kelas]=o.nama||{};
-      } else if(k.indexOf("lo2-cubaan-"+BAB_ID+"-")===0){
+      } else if(k.indexOf("cn-cubaan-"+BAB_ID+"-")===0){
         letakCubaan(o);
-      } else if(k.indexOf("lo2-tp-"+BAB_ID+"-")===0){
+      } else if(k.indexOf("cn-tp-"+BAB_ID+"-")===0){
         GURU[kunciG(o.kelas,o.no)]={tp:o.tp,sebab:o.sebab||""};
       }
     }
-    var dr=localStorage.getItem("lo2-diri");
+    var dr=localStorage.getItem("cn-diri");
     if(dr){
       var d=JSON.parse(dr);
       if(d&&d.v===SKEMA){
@@ -2280,7 +2284,7 @@ function paneKunci(){
     if(!AWAN){
       /* tanpa pelayan, kod disemak pada peranti ini sahaja */
       var capV=cap("guru:"+v);
-      if(baharu){ KOD_LUAR=capV; KOD_ADA=true; try{localStorage.setItem("lo2-kodluar",capV);}catch(e){} }
+      if(baharu){ KOD_LUAR=capV; KOD_ADA=true; try{localStorage.setItem("cn-kodluar",capV);}catch(e){} }
       else if(capV!==KOD_LUAR) return gagal("Kod tidak sepadan.");
       KOD_GURU=v; S.guruBuka=true; return renderCikgu();
     }
@@ -2674,7 +2678,7 @@ function paneSenarai(){
     tkbt.disabled=true; tkm.textContent="Menukar...";
     if(!AWAN){
       KOD_LUAR=cap("guru:"+v); KOD_GURU=v;
-      try{ localStorage.setItem("lo2-kodluar",KOD_LUAR); }catch(e){}
+      try{ localStorage.setItem("cn-kodluar",KOD_LUAR); }catch(e){}
       tki.value=""; tkbt.disabled=false; tkm.textContent="Kod ditukar pada peranti ini."; return;
     }
     rpc("lo_guru_tetap_kod",{p_kod_lama:KOD_GURU,p_kod_baru:v}).then(function(ok){
@@ -2704,11 +2708,11 @@ function paneSenarai(){
 
 var KOD_MENTAH={};
 function simpanKodMentah(){
-  try{ localStorage.setItem("lo2-kod",JSON.stringify({v:SKEMA,kod:KOD_MENTAH})); }catch(e){}
+  try{ localStorage.setItem("cn-kod",JSON.stringify({v:SKEMA,kod:KOD_MENTAH})); }catch(e){}
 }
 function muatKodMentah(){
   try{
-    var s=localStorage.getItem("lo2-kod");
+    var s=localStorage.getItem("cn-kod");
     if(s){ var o=JSON.parse(s); if(o&&o.v===SKEMA) KOD_MENTAH=o.kod||{}; }
   }catch(e){}
 }
@@ -2808,7 +2812,7 @@ function mula(){
   benihContoh();
   benihContohBab();
   muatKodMentah();
-  try{ KOD_LUAR=localStorage.getItem("lo2-kodluar")||null; }catch(e){}
+  try{ KOD_LUAR=localStorage.getItem("cn-kodluar")||null; }catch(e){}
   if(!AWAN) KOD_ADA=!!KOD_LUAR;
   muatTempatan();
   if(!S.kelasId) S.kelasId=kelasKini().id;

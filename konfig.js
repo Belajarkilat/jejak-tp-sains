@@ -7,7 +7,7 @@
    ke mana-mana jadual tanpa melalui fungsi yang menyemak kod dahulu.
 
    Kunci service_role TIDAK BOLEH SEKALI-KALI diletakkan di sini. */
-window.LO_AWAN = {
+window.CN_AWAN = {
   url: "https://cqokowzzgseuvhcgpktj.supabase.co",
   kunci: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxb2tvd3p6Z3NldXZoY2dwa3RqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NzE5MDgsImV4cCI6MjEwMjU0NzkwOH0.AjFtow8RscN0KpIrWNrHCQu-cztcjd_ojTKZyY5GTg8"
 };

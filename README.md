@@ -1,4 +1,4 @@
-# Laluan Oksigen
+# Cikgu Nani
 
 Permainan pentaksiran bilik darjah untuk **Sains KSSM Tingkatan 3**. Setiap bidang
 pembelajaran menjadi satu perjalanan enam hentian yang dipetakan satu lawan satu
@@ -9,6 +9,8 @@ kepada Tahap Penguasaan 1 hingga 6 dalam DSKP.
 | 1.0 Rangsangan dan Gerak Balas | Laluan Impuls, reseptor hingga tindakan | 54 |
 | 2.0 Respirasi | Laluan Oksigen, hidung hingga sel badan | 54 |
 | 3.0 Pengangkutan | Laluan Darah, jantung hingga seluruh organisma | 54 |
+
+Nama perjalanan itu milik babnya. Jenama produk ialah Cikgu Nani.
 
 Standard Prestasi disalin kata demi kata daripada DSKP KSSM Sains Tingkatan 3,
 terbitan Bahagian Pembangunan Kurikulum, April 2017.
@@ -22,7 +24,7 @@ terbitan Bahagian Pembangunan Kurikulum, April 2017.
 | `bank-*.js` | Bank soalan yang dijana. Jangan sunting terus. |
 | `bina.js` | Menyemak sumber dan menjana bank. |
 | `konfig.js` | Alamat pelayan dan kunci awam Supabase. |
-| `skema.sql` | Jadual, peraturan baris dan fungsi pangkalan data. |
+| `skema.sql` | Jadual, peraturan baris dan fungsi pangkalan data. Nama jadual masih berawalan `lo_` daripada nama projek yang terdahulu. |
 | `dskp/` | DSKP KSSM Sains Tingkatan 1 hingga 3 (rujukan, tidak diterbitkan). |
 
 ## Cara ia menjaga data murid

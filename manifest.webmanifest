@@ -1,7 +1,7 @@
 {
-  "name": "Laluan Oksigen — Sains Tingkatan 3",
-  "short_name": "Laluan Oksigen",
-  "description": "Pentaksiran bilik darjah bagi Bidang 2.0 Respirasi, KSSM Sains Tingkatan 3.",
+  "name": "Cikgu Nani — Sains Tingkatan 3",
+  "short_name": "Cikgu Nani",
+  "description": "Pentaksiran bilik darjah bagi Sains KSSM Tingkatan 3, mengikut Tahap Penguasaan DSKP.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
