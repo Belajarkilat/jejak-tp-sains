@@ -382,6 +382,9 @@ input.pin{
 .tenangrow .d{font-size:13px;color:var(--ink2);line-height:1.45}
 .hud.tenang .nafasbar i{background:linear-gradient(90deg,#7B8EA8,#AABCD3)}
 .hud.tenang .nafasbar{animation:none}
+.nafasbar.baca i{background:linear-gradient(90deg,#8AA3CC,#C3D2E8)}
+.nafasbar.baca{animation:none}
+.qnote.baca{color:var(--vena);font-weight:600}
 
 /* hentian menunggu pertimbangan cikgu */
 .stop[data-s="tunggu"]{border-color:var(--amber)}
@@ -421,7 +424,16 @@ input.pin{
 .talian.ok{color:var(--teal);background:var(--teal-soft);border-color:var(--teal)}
 .talian.tunggu{color:var(--amber);background:var(--amber-soft);border-color:var(--amber)}
 .talian.luar{color:var(--ink3);background:var(--surface2);border-color:var(--line2)}
+/* Pada telefon, lencana di bar atas tidak muat. Tanda "Tersimpan" tidak
+   perlu dilihat, tetapi amaran jawapan tertunggak mesti dilihat, jadi ia
+   dipaparkan sebagai jalur di atas soalan. */
 @media (max-width:680px){ .talian{display:none} }
+.talian-jalur{
+  margin-top:12px;border-radius:11px;padding:9px 13px;font-size:13px;line-height:1.45;
+  border:1.5px solid var(--amber);background:var(--amber-soft);color:var(--ink);
+}
+.talian-jalur.luar{border-color:var(--line2);background:var(--surface2)}
+@media (min-width:681px){ .talian-jalur{display:none !important} }
 
 .qnote.gagal{color:var(--arteri);font-weight:600}
 
@@ -491,10 +503,10 @@ input.pin{
 </head>
 <body>
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
-<script src="konfig.js"></script>
-<script src="bank-t3b1.js"></script>
-<script src="bank-t3b2.js"></script>
-<script src="bank-t3b3.js"></script>
+<script src="konfig.js?v=20260914"></script>
+<script src="bank-t3b1.js?v=20260914"></script>
+<script src="bank-t3b2.js?v=20260914"></script>
+<script src="bank-t3b3.js?v=20260914"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -509,7 +521,7 @@ input.pin{
         </svg>
         <div>
           <b>Cikgu Nani</b>
-          <span>Sains Ting. 3 &middot; Bab 2 Respirasi</span>
+          <span>Sains Tingkatan 3</span>
         </div>
       </div>
       <div class="seg" role="group" aria-label="Tukar mod">
@@ -532,6 +544,7 @@ input.pin{
       <div class="kombo"><span class="lbl">Kombo</span><span class="val" id="vKombo">&times;1</span></div>
       <div class="skor" style="text-align:right"><span class="lbl">Skor</span><span class="val" id="vSkor">0</span></div>
     </section>
+    <div class="talian-jalur" id="talianJalur" role="status" aria-live="polite" hidden></div>
     <div id="stage"></div>
   </main>
 
@@ -737,6 +750,16 @@ function kelasKini(){
   return KELASES[0]||{id:"contoh",nama:"Kelas contoh",contoh:true};
 }
 function nomborKelas(id){ return NOMBOR[id]||[]; }
+/* Kelas contoh hanya untuk demo dalam mod cikgu. Rekodnya tidak pernah
+   disimpan di pelayan, jadi murid tidak boleh memilihnya: kalau boleh,
+   mereka akan bermain sepanjang kelas tanpa satu pun jawapan direkod. */
+function kelasMurid(){ return KELASES.filter(function(k){ return !k.contoh; }); }
+function kelasMuridKini(){
+  var ks=kelasMurid();
+  for(var i=0;i<ks.length;i++) if(ks[i].id===S.kelasId) return ks[i];
+  return ks[0]||null;
+}
+var KELAS_DIMUAT=false;   /* senarai kelas dari pelayan sudah sampai atau gagal */
 function namaMurid(kelas,no){
   var m=NAMA[kelas]; return (m&&m[no])?m[no]:("Murid No. "+no);
 }
@@ -1107,10 +1130,11 @@ function mulaJam(){
   if(S.tenang) return;                     /* mod tenang: meter dimatikan */
   jam=setInterval(function(){
     if(S.skrin!=="main"||S.disemak||S.mati)return;
+    if(S.tenggang>0){ S.tenggang=Math.max(0,S.tenggang-0.1); kemasHud(); return; }
     S.nafas=Math.max(0,S.nafas-SUSUT/10);
     if(S.masaBos>0){
       S.masaBos=Math.max(0,S.masaBos-0.1);
-      var bt=$("bosbar"); if(bt)bt.style.width=(S.masaBos/20*100)+"%";
+      var bt=$("bosbar"); if(bt)bt.style.width=(S.masaBos/(S.masaBosPenuh||20)*100)+"%";
       if(S.masaBos===0){ S.pilihan=null; semak(true); return; }
     }
     kemasHud();
@@ -1125,7 +1149,8 @@ function kemasHud(){
   $("vNafas").textContent=S.tenang?"∞":Math.ceil(S.nafas);
   var bar=$("bar");
   bar.firstChild.style.width=(S.tenang?100:Math.max(0,S.nafas))+"%";
-  bar.classList.toggle("lemas",!S.tenang&&S.nafas<35);
+  bar.classList.toggle("lemas",!S.tenang&&S.nafas<35&&!(S.tenggang>0));
+  bar.classList.toggle("baca",!S.tenang&&S.skrin==="main"&&!S.disemak&&S.tenggang>0);
   $("vKombo").textContent="×"+ganda();
   if(!animSkor) $("vSkor").textContent=S.skor;
 }
@@ -1186,7 +1211,27 @@ function mulaHarian(){
   reset(); S.skrin="main"; render(); mulaJam();
   window.scrollTo({top:0,behavior:"smooth"});
 }
-function reset(){ S.pilihan=null; S.disemak=false; S.masaBos=0; S.buang=[]; }
+/* Masa membaca yang adil.
+   Meter nafas tidak berkurang sehingga murid sempat membaca soalan,
+   pilihan dan lampirannya, pada kira-kira dua setengah perkataan sesaat.
+   Tanpa ini, soalan analisis yang ada jadual menghukum murid yang membaca
+   dengan teliti, dan meter itu mengukur kelajuan membaca, bukan sains. */
+function bilPerkataan(teks){
+  return String(teks||"").replace(/<[^>]*>/g," ").replace(/&[a-z#0-9]+;/gi," ")
+    .split(/\s+/).filter(Boolean).length;
+}
+function masaBaca(q){
+  if(!q) return 0;
+  var n=bilPerkataan(q.t)+bilPerkataan(q.arahan);
+  (q.p||[]).forEach(function(x){ n+=bilPerkataan(x); });
+  var a=ARAS[S.aras-1];
+  n+=bilPerkataan(S.modHarian ? q._lam : (a&&a.lampiran));
+  return Math.max(6, Math.min(45, Math.round(n/2.5)));
+}
+function reset(){
+  S.pilihan=null; S.disemak=false; S.masaBos=0; S.masaBosPenuh=0; S.buang=[];
+  S.tenggangPenuh=masaBaca(S.set[S.qi]); S.tenggang=S.tenggangPenuh;
+}
 
 function adaJawapan(q){
   if(q.j==="pilih")return S.pilihan!==null&&S.pilihan>=0;
@@ -1332,7 +1377,7 @@ function renderPilihKelas(){
   var p=panelMula("Kelas mana?","Cikgu Nani");
   var bd=el("div","panel-bd");
   var g=el("div","stopgrid");
-  KELASES.forEach(function(k){
+  kelasMurid().forEach(function(k){
     var b=el("button","stop");b.type="button";b.setAttribute("data-f","kelas-"+k.id);
     b.innerHTML='<span class="nm">'+esc(k.nama)+'</span><span class="tp">'+nomborKelas(k.id).length+' nombor</span>';
     b.onclick=function(){ S.kelasId=k.id; S.skrin="nombor"; render(); };
@@ -1343,10 +1388,34 @@ function renderPilihKelas(){
   pulihFokus();
 }
 
+function renderTiadaKelas(){
+  var st=$("stage"); st.innerHTML="";
+  var menunggu = AWAN && !KELAS_DIMUAT;
+  var p=panelMula(menunggu?"Memuatkan kelas":"Kelas belum disediakan","Cikgu Nani");
+  var bd=el("div","panel-bd");
+  bd.appendChild(el("p","qnote", menunggu
+    ? "Sedang mengambil senarai kelas daripada pelayan. Ini biasanya sesaat dua."
+    : "Cikgu belum memasukkan senarai kelas untuk pautan ini. Beritahu cikgu, atau main dahulu tanpa rekod sementara menunggu."));
+  var act=el("div","actions");
+  if(!menunggu){
+    var bu=el("button","btn"); bu.textContent="Cuba semula"; bu.setAttribute("data-f","aksi");
+    bu.onclick=function(){ KELAS_DIMUAT=false; render(); muatJauh(); };
+    act.appendChild(bu);
+  }
+  var bl=el("button","btn ghost"); bl.textContent="Main tanpa rekod";
+  bl.title="Latihan sahaja. Tiada apa-apa disimpan sebagai bukti PBD.";
+  bl.onclick=function(){ S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); render(); };
+  act.appendChild(bl);
+  bd.appendChild(act);
+  p.appendChild(bd); st.appendChild(p);
+  pulihFokus();
+}
+
 function renderNombor(){
   var st=$("stage"); st.innerHTML="";
-  var k=kelasKini();
-  if(!S.kelasId) S.kelasId=k.id;
+  var k=kelasMuridKini();
+  if(!k) return renderTiadaKelas();
+  S.kelasId=k.id;
   var senarai=nomborKelas(S.kelasId);
 
   var p=panelMula("Nombor awak yang mana?",k.nama);
@@ -1368,7 +1437,7 @@ function renderNombor(){
   }
 
   var act=el("div","actions");
-  if(KELASES.length>1){
+  if(kelasMurid().length>1){
     var bk=el("button","btn ghost sm");bk.textContent="Tukar kelas";
     bk.onclick=function(){ S.skrin="kelas"; render(); };
     act.appendChild(bk);
@@ -1611,7 +1680,7 @@ function renderPeta(){
   kb.onclick=function(){ S.skrin="kad"; render(); window.scrollTo({top:0,behavior:"smooth"}); };
   ab.appendChild(kb);
   var tb2=el("button","btn ghost sm");tb2.textContent="Bukan saya";
-  tb2.onclick=function(){ S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri(); S.skrin=(KELASES.length>1?"kelas":"nombor"); render(); };
+  tb2.onclick=function(){ S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri(); S.skrin=(kelasMurid().length>1?"kelas":"nombor"); render(); };
   ab.appendChild(tb2);
   bd2.appendChild(ab);
   p2.appendChild(bd2);
@@ -1678,12 +1747,16 @@ function renderSoalan(){
 
   bd.appendChild(el("p","qtext",q.t));
   if(q.arahan) bd.appendChild(el("p","qnote",q.arahan));
+  if(!S.tenang&&!S.disemak&&S.tenggangPenuh>=12&&S.tenggang>0)
+    bd.appendChild(el("p","qnote baca","Masa membaca: nafas awak tidak berkurang selama "+Math.round(S.tenggangPenuh)+" saat pertama."));
 
   if(bos&&!S.disemak&&!S.tenang&&q.j!=="buka"){
-    if(S.masaBos===0) S.masaBos=20;
-    var bt=el("div","bostimer",'<i id="bosbar" style="width:'+(S.masaBos/20*100)+'%"></i>');
+    /* dua puluh saat untuk berfikir, ditambah sedikit bagi setiap pilihan,
+       dan hanya bermula selepas masa membaca tamat */
+    if(S.masaBos===0){ S.masaBosPenuh=20+2*((q.p||[]).length); S.masaBos=S.masaBosPenuh; }
+    var bt=el("div","bostimer",'<i id="bosbar" style="width:'+(S.masaBos/S.masaBosPenuh*100)+'%"></i>');
     bd.appendChild(bt);
-    bd.appendChild(el("p","qnote","Soalan bos. Dua puluh saat, markah tiga kali ganda."));
+    bd.appendChild(el("p","qnote","Soalan bos. "+Math.round(S.masaBosPenuh)+" saat untuk menjawab selepas masa membaca, markah tiga kali ganda."));
   }
 
   var lam = S.modHarian ? q._lam : a.lampiran;
@@ -1965,9 +2038,14 @@ function bacaJadual(jadual,soal){
 function petiBaca(){ try{ return JSON.parse(localStorage.getItem("cn-peti")||"[]"); }catch(e){ return []; } }
 function petiTulis(p){ try{ localStorage.setItem("cn-peti",JSON.stringify(p.slice(-60))); }catch(e){} TALIAN.tertunggak=p.length; lukisTalian(); }
 function petiTambah(surat){ var p=petiBaca(); p.push(surat); petiTulis(p); }
+/* Hanya satu penghantaran peti berjalan pada satu masa. Tanpa kunci ini,
+   dua cubaan serentak boleh menghantar surat yang sama dua kali dan
+   menambah kiraan percubaan murid secara palsu. */
+var PETI_SIBUK=false;
 function petiHantar(){
-  if(!AWAN) return Promise.resolve();
+  if(!AWAN||PETI_SIBUK) return Promise.resolve();
   var p=petiBaca(); if(!p.length) return Promise.resolve();
+  PETI_SIBUK=true;
   var baki=[];
   return p.reduce(function(rantai,surat){
     return rantai.then(function(){
@@ -1979,8 +2057,17 @@ function petiHantar(){
         if(!e.badan) baki.push(surat);
       });
     });
-  },Promise.resolve()).then(function(){ petiTulis(baki); });
+  },Promise.resolve()).then(function(){
+    petiTulis(baki); PETI_SIBUK=false;
+    if(!baki.length) segar();
+  },function(){ PETI_SIBUK=false; });
 }
+
+/* Peti keluar pulih sendiri semasa sesi, bukan hanya apabila halaman dibuka
+   semula: apabila pelayar kembali dalam talian, selepas mana-mana tulisan
+   berjaya, dan setiap 30 saat selagi masih ada jawapan tertunggak. */
+window.addEventListener("online",function(){ petiHantar(); });
+setInterval(function(){ if(AWAN&&petiBaca().length) petiHantar(); },30000);
 
 /* ---------- keadaan peranti ---------- */
 function simpanDiri(){
@@ -2042,7 +2129,7 @@ function simpanCubaan(kelas,no,a,kini,karangan){
   var surat={f:"lo_simpan_cubaan",b:{p_bab:BAB_ID,p_kelas:kelas,p_no:no,p_kod:S.kod||"",
              p_aras:a,p_kini:kini,p_karangan:karangan}};
   rpc(surat.f,surat.b)
-    .then(function(hasil){ terimaBarisCubaan(hasil); segar(); })
+    .then(function(hasil){ terimaBarisCubaan(hasil); segar(); petiHantar(); })
     .catch(function(e){ if(!e.badan){ petiTambah(surat); } lukisTalian(); });
 }
 function paduCubaan(x,y){
@@ -2153,7 +2240,8 @@ function muatTempatan(){
 function muatJauh(){
   if(!AWAN) return;
   bacaJadual("lo_kelas","select=id,nama,nombor&order=id").then(function(rows){
-    if(!rows||!rows.length) return;
+    KELAS_DIMUAT=true;
+    if(!rows||!rows.length){ segar(); return; }
     rows.forEach(function(r){
       if(!KELASES.some(function(x){return x.id===r.id;})) KELASES.unshift({id:r.id,nama:r.nama});
       else KELASES.forEach(function(x){ if(x.id===r.id) x.nama=r.nama; });
@@ -2161,7 +2249,7 @@ function muatJauh(){
     });
     SUMBER="kelas sebenar";
     segar();
-  }).catch(function(){ lukisTalian(); });
+  }).catch(function(){ KELAS_DIMUAT=true; lukisTalian(); segar(); });
 
   muatBabJauh();
   petiHantar();
@@ -2214,6 +2302,19 @@ function segar(){
 
 /* Penunjuk talian: murid perlu tahu jika jawapannya belum sampai ke cikgu. */
 function lukisTalian(){
+  var j=$("talianJalur");
+  if(j){
+    if(AWAN&&TALIAN.tertunggak>0){
+      j.hidden=false; j.className="talian-jalur";
+      j.textContent=(TALIAN.tertunggak===1?"1 jawapan":TALIAN.tertunggak+" jawapan")+
+        " belum sampai kepada cikgu. Ia disimpan pada telefon ini dan akan dihantar sendiri apabila talian pulih. Teruskan bermain.";
+    } else if(AWAN&&!TALIAN.sihat){
+      j.hidden=false; j.className="talian-jalur luar";
+      j.textContent="Telefon ini tidak dapat menghubungi pelayan. Jawapan akan disimpan dan dihantar apabila talian pulih.";
+    } else {
+      j.hidden=true;
+    }
+  }
   var e=$("talian"); if(!e) return;
   if(!AWAN){ e.className="talian luar"; e.textContent="Tanpa pelayan"; e.title="Rekod disimpan pada peranti ini sahaja."; return; }
   if(TALIAN.tertunggak>0){ e.className="talian tunggu"; e.textContent=TALIAN.tertunggak+" belum dihantar";
@@ -2225,17 +2326,13 @@ function lukisTalian(){
 /* ============================================================
    MOD CIKGU
    ============================================================ */
+/* Ulasan PBD datang daripada bank bab yang sedang dipaparkan, kerana cikgu
+   menyalinnya terus ke SPPB. Ulasan satu bab tidak boleh muncul pada bab lain. */
 function ulasanUntuk(nama,tp){
   var n=String(nama).split(" ")[0];
-  var t={
-   1:n+" dapat mengingat kembali struktur sistem respirasi manusia dan istilah asas bab ini. Langkah seterusnya ialah menerangkan sebab di sebalik setiap struktur, bukan sekadar menamakannya.",
-   2:n+" memahami mekanisme pernafasan serta ciri alveolus dan dapat menjelaskan kefahaman tersebut. Perlu lebih banyak latihan mentafsir data gas sebelum bergerak ke TP3.",
-   3:n+" boleh mengaplikasikan pengetahuan respirasi untuk menerangkan fenomena harian seperti kenaikan kadar pernafasan selepas bersenam. Galakkan membaca graf dan mengaitkan dua pemboleh ubah.",
-   4:n+" mampu menganalisis graf isi padu toraks melawan tekanan udara dan mengenal pasti punca apabila satu komponen sistem gagal. Seterusnya latih menimbang bukti untuk membuat keputusan.",
-   5:n+" dapat menilai data klinikal tiga individu, memilih kes berisiko tinggi dan menyokongnya dengan bukti berangka daripada jadual. Sudah bersedia untuk tugasan reka cipta.",
-   6:n+" berjaya mereka cipta penyelesaian kualiti udara yang praktikal untuk murid asma di sekolah, lengkap dengan pertimbangan kos dan penerimaan komuniti setempat. Pencapaian cemerlang bagi bab ini."
-  };
-  return t[tp]||n+" belum menunjukkan bukti penguasaan yang mencukupi bagi bab Respirasi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya.";
+  var u=(BAB&&BAB.ulasan)||{};
+  var templat=u[String(tp)]||u.tiada||"{n} belum mempunyai ulasan bagi tahap ini.";
+  return templat.split("{n}").join(n);
 }
 
 function renderCikgu(){
@@ -2720,7 +2817,7 @@ function muatKodMentah(){
 /* ---------------- Tangga TP ---------------- */
 function paneTangga(){
   var q=$("paneTangga"); q.innerHTML="";
-  q.appendChild(el("p","note","Standard Prestasi 2.0 Respirasi, disalin kata demi kata daripada DSKP KSSM Sains Tingkatan 3. Setiap hentian menyasarkan satu tahap sahaja."));
+  q.appendChild(el("p","note","Standard Prestasi "+BAB.kod+", disalin kata demi kata daripada DSKP KSSM Sains Tingkatan "+BAB.tingkatan+". Setiap hentian menyasarkan satu tahap sahaja."));
   var lad=el("div","ladder");
   ARAS.forEach(function(a,i){
     var r=el("div","rung");
@@ -2743,7 +2840,7 @@ function eksport(){
               "Tugasan TP6 Dihantar","Jenis Rekod","Ulasan"]];
   senaraiMurid(kelas).forEach(function(no,i){
     var auto=tpAuto(kelas,no), lapor=tpDilapor(kelas,no), g=guruUntuk(kelas,no);
-    baris.push([i+1,no,namaMurid(kelas,no),k.nama,"Sains","2.0 Respirasi","TP"+lapor,
+    baris.push([i+1,no,namaMurid(kelas,no),k.nama,"Sains",BAB.kod,"TP"+lapor,
       "TP"+auto,(lapor!==auto?"Ya":"Tidak"),(g&&g.sebab)||"",
       bilCubaan(kelas,no), (adaKarangan(kelas,no)?"Ya":"Tidak"),
       (k.contoh?"CONTOH":"Sebenar"),
@@ -2815,12 +2912,13 @@ function mula(){
   try{ KOD_LUAR=localStorage.getItem("cn-kodluar")||null; }catch(e){}
   if(!AWAN) KOD_ADA=!!KOD_LUAR;
   muatTempatan();
+  if(S.kelasId==="contoh"){ S.kelasId=null; S.no=null; S.kod=""; }
   if(!S.kelasId) S.kelasId=kelasKini().id;
   if(S.senyap)$("btnBunyi").innerHTML="&#9633;";
   kemasMinggu();
   if(S.no){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
   else if(S.latihan) S.skrin="peta";
-  else S.skrin=(KELASES.length>1?"kelas":"nombor");
+  else S.skrin=(kelasMurid().length>1?"kelas":"nombor");
   render();
   lukisTalian();
   muatJauh();

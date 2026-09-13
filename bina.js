@@ -17,6 +17,13 @@ function semak(bab){
   lihat(bab.id && /^[a-z0-9]+$/.test(bab.id), "id bab tidak sah");
   lihat(Array.isArray(bab.spi) && bab.spi.length === 6, "perlu tepat enam Standard Prestasi");
   lihat(Array.isArray(bab.aras) && bab.aras.length === 6, "perlu tepat enam hentian");
+  /* Ulasan PBD disalin cikgu terus ke SPPB, jadi setiap bab mesti ada
+     ulasannya sendiri. Ulasan bab lain yang tertinggal di sini akan
+     masuk ke rekod rasmi murid. */
+  const ul = bab.ulasan || {};
+  ["1","2","3","4","5","6","tiada"].forEach(k =>
+    lihat(typeof ul[k] === "string" && ul[k].includes("{n}") && ul[k].length > 60,
+      `ulasan "${k}" tiada, terlalu pendek, atau tidak mengandungi {n}`));
   if(m.length) return m;
 
   const idDilihat = new Set();
@@ -70,6 +77,52 @@ function semak(bab){
   return m;
 }
 
+/* Petunjuk panjang jawapan.
+   Jika jawapan betul selalunya pilihan yang paling panjang dan paling
+   terperinci, murid boleh lulus dengan memilih ayat terpanjang tanpa
+   memahami sains. Itu memusnahkan nilai rekod sebagai bukti PBD, jadi
+   pembinaan gagal jika coraknya terlalu kuat.
+
+   Had setiap bab:
+   - jawapan betul ialah pilihan paling panjang dalam <= 35% soalan satu
+     jawapan (peluang rawak bagi empat pilihan ialah 25%)
+   - purata panjang jawapan betul <= 1.20 kali purata pengganggu
+   Had setiap soalan:
+   - jawapan betul tidak boleh melebihi 1.5 kali pengganggu terpanjang
+   - bagi soalan pelbagai jawapan, purata pilihan betul <= 1.3 kali
+     purata pilihan salah */
+function semakPetunjuk(bab, butiran){
+  const m = [];
+  let n = 0, terpanjang = 0, nisbahJumlah = 0;
+  bab.aras.forEach(a => {
+    a.soalan.concat([a.bos]).forEach((q, k) => {
+      const id = `H${a.n} item ${k+1}`;
+      if(q.j === "pilih"){
+        const len = q.p.map(x => x.length);
+        const betul = len[q.b];
+        const lain = len.filter((_, i) => i !== q.b);
+        const purataLain = lain.reduce((x, y) => x + y, 0) / lain.length;
+        n++;
+        if(betul > Math.max(...lain)) terpanjang++;
+        nisbahJumlah += betul / purataLain;
+        /* pilihan sangat pendek seperti "AB" lawan "O" tidak membawa petunjuk */
+        if(Math.max(...lain) >= 15 && betul > 1.5 * Math.max(...lain))
+          m.push(`${id}: jawapan betul ${betul} aksara, pengganggu terpanjang ${Math.max(...lain)} — terlalu ketara`);
+        if(butiran) butiran.push({id, betul, lain, nisbah: +(betul / purataLain).toFixed(2), t: q.t.slice(0, 60)});
+      } else if(q.j === "banyak"){
+        const b = q.b.map(i => q.p[i].length), s = q.p.filter((_, i) => q.b.indexOf(i) < 0).map(x => x.length);
+        const mb = b.reduce((x, y) => x + y, 0) / b.length, ms = s.reduce((x, y) => x + y, 0) / s.length;
+        if(ms >= 15 && mb > 1.3 * ms) m.push(`${id}: pilihan betul purata ${Math.round(mb)} aksara, pilihan salah ${Math.round(ms)} — terlalu ketara`);
+      }
+    });
+  });
+  const peratus = n ? terpanjang / n : 0;
+  const purataNisbah = n ? nisbahJumlah / n : 0;
+  if(peratus > 0.35) m.push(`jawapan betul paling panjang dalam ${Math.round(100*peratus)}% soalan satu jawapan (had 35%)`);
+  if(purataNisbah > 1.20) m.push(`purata panjang jawapan betul ${purataNisbah.toFixed(2)} kali pengganggu (had 1.20)`);
+  return { masalah: m, peratus, purataNisbah };
+}
+
 /* Kedudukan jawapan dipusing merentas keseluruhan bab supaya fail sumber
    sendiri sudah seimbang. Pengocok dalam aplikasi mengagihkannya semula
    pada setiap muatan halaman. */
@@ -98,7 +151,7 @@ function tulis(bab){
   const keluar = {
     id: bab.id, tingkatan: bab.tingkatan, kod: bab.kod,
     tajuk: bab.tajuk, subtajuk: bab.subtajuk,
-    spi: bab.spi, kko: KKO,
+    spi: bab.spi, kko: KKO, ulasan: bab.ulasan,
     lampiran: bab.lampiran || {},
     aras: bab.aras.map(a => ({
       n: a.n, tempat: a.tempat, sk: a.sk, lampiran: a.lampiran || null,
@@ -123,14 +176,26 @@ window.BANK[${JSON.stringify(bab.id)}] =
   return fail;
 }
 
-const minta = process.argv.slice(2);
+const hujah = process.argv.slice(2);
+const laporan = hujah.includes("--laporan");
+const minta = hujah.filter(x => !x.startsWith("--"));
 const senarai = minta.length ? minta
-  : fs.readdirSync("sumber").filter(f => f.endsWith(".js")).map(f => path.basename(f, ".js"));
+  : fs.readdirSync("sumber").filter(f => f.endsWith(".js") && !f.startsWith("_")).map(f => path.basename(f, ".js"));
 
 let gagal = 0;
 senarai.forEach(id => {
   const bab = require(path.resolve("sumber", id + ".js"));
   const masalah = semak(bab);
+  if(!masalah.length){
+    const butiran = laporan ? [] : null;
+    const p = semakPetunjuk(bab, butiran);
+    masalah.push(...p.masalah);
+    if(laporan){
+      console.log(`\n${id}: jawapan betul paling panjang ${Math.round(100*p.peratus)}%, nisbah purata ${p.purataNisbah.toFixed(2)}`);
+      butiran.filter(x => x.nisbah > 1.2 || x.betul > Math.max(...x.lain))
+        .forEach(x => console.log(`   ${x.id.padEnd(12)} betul ${String(x.betul).padStart(3)} | lain ${x.lain.join("/")} | ${x.nisbah}x | ${x.t}`));
+    }
+  }
   if(masalah.length){
     gagal++;
     console.log(`\n✗ ${id} — ${masalah.length} masalah`);

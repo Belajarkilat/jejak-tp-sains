@@ -29,6 +29,15 @@ window.BANK["t3b3"] =
   "Menilai",
   "Mereka cipta"
  ],
+ "ulasan": {
+  "1": "{n} dapat mengingat kembali struktur jantung, salur darah dan komponen darah serta istilah asas sistem pengangkutan. Langkah seterusnya ialah menerangkan fungsi setiap struktur, bukan sekadar menamakannya.",
+  "2": "{n} memahami perbezaan struktur dan fungsi arteri, vena dan kapilari serta peredaran pulmonari dan sistemik. Perlu lebih banyak latihan mentafsir data kadar nadi sebelum bergerak ke TP3.",
+  "3": "{n} boleh mengaplikasikan pengetahuan sistem pengangkutan untuk menerangkan fenomena harian seperti kenaikan kadar nadi selepas bersenam dan tumbuhan yang layu. Galakkan membaca jadual dan mengaitkan pemboleh ubah.",
+  "4": "{n} mampu menganalisis keserasian kumpulan darah dan bacaan klinikal untuk mengenal pasti punca masalah. Seterusnya latih menimbang bukti untuk membuat keputusan.",
+  "5": "{n} dapat menilai kesahan eksperimen transpirasi dan membuat keputusan yang wajar berkaitan kesihatan jantung dan derma darah, disokong bukti daripada data. Sudah bersedia untuk tugasan reka cipta.",
+  "6": "{n} berjaya mereka cipta penyelesaian pengangkutan air yang praktikal untuk kebun sekolah, lengkap dengan pertimbangan kos dan siapa yang akan menjaganya. Pencapaian cemerlang bagi bab ini.",
+  "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Pengangkutan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
+ },
  "lampiran": {
   "nadi": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Murid</th><th class=\"n\">Nadi rehat (min&#8315;&#185;)</th><th class=\"n\">Sejurus selepas 3 minit berlari</th><th class=\"n\">Selepas 5 minit rehat</th><th>Latar</th></tr></thead><tbody><tr><td>Farid</td><td class=\"n\">72</td><td class=\"n\">150</td><td class=\"n\">78</td><td>Bersukan tiga kali seminggu</td></tr><tr><td>Gayathri</td><td class=\"n\">88</td><td class=\"n\">168</td><td class=\"n\">126</td><td>Jarang bersenam</td></tr><tr><td>Hakim</td><td class=\"n\">58</td><td class=\"n\">140</td><td class=\"n\">64</td><td>Ahli pasukan olahraga sekolah</td></tr></tbody></table></div><p class=\"qnote\">Masa pemulihan ialah tempoh nadi kembali menghampiri bacaan rehat. Pemulihan yang lebih cepat menunjukkan kecergasan jantung yang lebih baik.</p>",
   "darah": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Kumpulan darah</th><th>Antigen pada sel darah merah</th><th>Antibodi dalam plasma</th><th>Boleh menderma kepada</th><th>Boleh menerima daripada</th></tr></thead><tbody><tr><td>A</td><td>A</td><td>anti-B</td><td>A, AB</td><td>A, O</td></tr><tr><td>B</td><td>B</td><td>anti-A</td><td>B, AB</td><td>B, O</td></tr><tr><td>AB</td><td>A dan B</td><td>tiada</td><td>AB</td><td>A, B, AB, O</td></tr><tr><td>O</td><td>tiada</td><td>anti-A dan anti-B</td><td>A, B, AB, O</td><td>O</td></tr></tbody></table></div><p class=\"qnote\">Penggumpalan berlaku apabila antibodi dalam plasma penerima bertemu antigen yang sepadan pada sel darah merah penderma.</p>",
@@ -51,10 +60,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Apakah fungsi utama sistem pengangkutan dalam organisma?",
      "p": [
-      "Mengangkut bahan seperti nutrien, gas dan bahan kumuh ke dan dari setiap sel",
-      "Menghasilkan tenaga untuk pergerakan otot",
-      "Melindungi organ dalaman daripada kecederaan",
-      "Mengawal suhu badan sahaja"
+      "Mengangkut nutrien, gas dan bahan kumuh ke dan dari setiap sel",
+      "Menghasilkan tenaga yang diperlukan untuk semua pergerakan otot",
+      "Melindungi organ dalaman daripada kecederaan dan jangkitan kuman",
+      "Mengawal suhu badan dengan mengeluarkan peluh melalui kulit"
      ],
      "b": 0,
      "u": "Sel yang jauh dari permukaan badan tidak dapat bergantung pada resapan sahaja."
@@ -142,10 +151,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Apakah fungsi injap dalam jantung dan vena?",
      "p": [
-      "Menapis bahan kumuh daripada darah",
-      "Menambah tekanan darah",
+      "Menapis bahan kumuh daripada darah sebelum ke ginjal",
+      "Menambah tekanan darah supaya sampai ke hujung badan",
       "Memastikan darah mengalir dalam satu arah sahaja",
-      "Menukar darah terdeoksigen kepada beroksigen"
+      "Menukar darah terdeoksigen kepada darah beroksigen"
      ],
      "b": 2,
      "u": "Tanpa injap, darah akan mengalir semula ke belakang apabila tekanan turun."
@@ -155,12 +164,12 @@ window.BANK["t3b3"] =
     "j": "banyak",
     "t": "Pilih SEMUA yang merupakan bahan yang diangkut oleh darah manusia.",
     "p": [
-     "Oksigen",
+     "Oksigen dari peparu",
      "Nutrien yang telah dicerna",
-     "Hormon",
+     "Hormon daripada kelenjar",
      "Bahan kumuh seperti urea",
-     "Cahaya matahari",
-     "Bunyi"
+     "Cahaya matahari dari kulit",
+     "Gelombang bunyi dari telinga"
     ],
     "b": [
      0,
@@ -187,9 +196,9 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah dinding arteri lebih tebal dan lebih berotot berbanding vena?",
      "p": [
-      "Arteri membawa darah yang lebih pekat",
-      "Arteri terletak lebih dekat dengan kulit",
-      "Arteri perlu menyimpan oksigen berlebihan",
+      "Arteri membawa darah yang lebih pekat dan lebih berat",
+      "Arteri terletak lebih dekat dengan permukaan kulit badan",
+      "Arteri perlu menyimpan oksigen berlebihan untuk kecemasan",
       "Arteri menahan tekanan tinggi setiap kali jantung mengecut"
      ],
      "b": 3,
@@ -199,10 +208,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah vena mempunyai injap tetapi kebanyakan arteri tidak?",
      "p": [
-      "Tekanan darah dalam vena rendah, jadi injap diperlukan untuk menghalang aliran balik",
-      "Vena membawa darah yang lebih berat",
-      "Injap dalam arteri akan pecah kerana tekanan tinggi",
-      "Vena perlu menapis bahan kumuh"
+      "Tekanan darah vena rendah, jadi injap menghalang aliran balik",
+      "Tekanan darah vena tinggi, jadi injap mengurangkan tekanan itu",
+      "Vena membawa darah yang lebih berat kerana tiada oksigen",
+      "Injap dalam arteri akan pecah akibat tekanan darah yang tinggi"
      ],
      "b": 0,
      "u": "Pengecutan otot rangka di sekeliling vena membantu menolak darah kembali ke jantung."
@@ -211,10 +220,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah dinding kapilari setebal satu sel sahaja?",
      "p": [
-      "Supaya kapilari lebih ringan",
-      "Supaya jarak resapan pendek dan bahan cepat bertukar dengan sel di sekeliling",
-      "Supaya darah mengalir lebih laju di dalamnya",
-      "Supaya kapilari mudah pecah apabila perlu"
+      "Supaya darah mengalir lebih laju tanpa geseran dinding tebal",
+      "Supaya jarak resapan pendek dan bahan cepat bertukar dengan sel",
+      "Supaya kapilari mudah pecah untuk membebaskan sel darah putih",
+      "Supaya kapilari lebih ringan dan tidak membebankan jantung"
      ],
      "b": 1,
      "u": "Kapilari ialah satu-satunya tempat pertukaran bahan benar-benar berlaku."
@@ -224,9 +233,9 @@ window.BANK["t3b3"] =
      "t": "Mengapakah arteri pulmonari dikira pengecualian kepada peraturan biasa?",
      "p": [
       "Ia vena tetapi membawa darah beroksigen",
-      "Ia tidak mempunyai dinding berotot",
+      "Ia arteri tetapi tidak mempunyai dinding berotot",
       "Ia arteri tetapi membawa darah terdeoksigen",
-      "Ia mengalir dalam dua arah"
+      "Ia arteri tetapi darahnya mengalir dalam dua arah"
      ],
      "b": 2,
      "u": "Peraturan sebenar ialah arteri membawa darah keluar dari jantung, bukan bahawa arteri sentiasa beroksigen."
@@ -235,10 +244,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Apakah beza antara peredaran pulmonari dan peredaran sistemik?",
      "p": [
-      "Pulmonari berlaku waktu siang, sistemik waktu malam",
-      "Pulmonari hanya pada haiwan, sistemik hanya pada manusia",
-      "Tiada perbezaan, kedua-duanya sama",
-      "Pulmonari antara jantung dan peparu, sistemik antara jantung dan seluruh badan"
+      "Pulmonari antara jantung dan badan, sistemik antara jantung dan peparu",
+      "Pulmonari membawa darah beroksigen sahaja, sistemik terdeoksigen sahaja",
+      "Pulmonari berlaku semasa rehat, sistemik hanya berlaku semasa bersenam",
+      "Pulmonari antara jantung dan peparu, sistemik antara jantung dan badan"
      ],
      "b": 3,
      "u": "Sebab itu jantung manusia mempunyai empat ruang, iaitu dua laluan berasingan."
@@ -247,10 +256,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah organisma ringkas seperti amoeba tidak memerlukan sistem pengangkutan?",
      "p": [
-      "Setiap bahagian selnya cukup dekat dengan permukaan luar untuk bergantung pada resapan",
-      "Ia tidak memerlukan oksigen langsung",
-      "Ia mengangkut bahan menggunakan angin",
-      "Ia menyimpan semua nutrien dalam nukleus"
+      "Semua bahagian selnya dekat dengan permukaan, jadi resapan mencukupi",
+      "Amoeba tidak memerlukan oksigen kerana ia hidup di dalam air",
+      "Amoeba menyimpan semua nutrien yang diperlukan di dalam nukleus",
+      "Amoeba bergerak cukup pantas untuk mengambil bahan dari persekitaran"
      ],
      "b": 0,
      "u": "Apabila organisma bertambah besar, nisbah luas permukaan kepada isi padu jatuh dan resapan tidak lagi mencukupi."
@@ -259,10 +268,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Apakah perbezaan utama antara xilem dan floem?",
      "p": [
-      "Xilem mengangkut makanan, floem mengangkut air",
-      "Xilem mengangkut air ke atas sahaja, floem mengangkut hasil fotosintesis ke atas dan ke bawah",
-      "Xilem hidup, floem mati",
-      "Kedua-duanya mengangkut air dalam arah yang sama"
+      "Xilem mengangkut hasil fotosintesis, floem mengangkut air ke atas",
+      "Xilem mengangkut air ke atas, floem mengangkut hasil fotosintesis",
+      "Xilem terdiri daripada sel hidup, floem terdiri daripada sel mati",
+      "Kedua-duanya mengangkut air, cuma xilem terletak lebih ke dalam"
      ],
      "b": 1,
      "u": "Sel xilem sudah mati dan berongga, manakala sel floem masih hidup."
@@ -271,10 +280,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah sel darah merah manusia tidak mempunyai nukleus?",
      "p": [
-      "Supaya ia tidak boleh membiak dalam salur darah",
-      "Supaya ia lebih berat dan mudah tenggelam",
+      "Supaya sel itu tidak membiak tanpa kawalan di dalam salur darah",
+      "Supaya sel itu lebih berat dan mudah tenggelam ke kapilari",
       "Ruang itu digunakan untuk memuatkan lebih banyak hemoglobin",
-      "Kerana nukleusnya dipindahkan ke plasma"
+      "Kerana nukleusnya dipindahkan ke plasma untuk menghasilkan antibodi"
      ],
      "b": 2,
      "u": "Bentuk cakera dwicekungnya juga menambah luas permukaan untuk pertukaran gas."
@@ -284,10 +293,10 @@ window.BANK["t3b3"] =
     "j": "pilih",
     "t": "Apakah yang berlaku jika injap antara atrium kiri dan ventrikel kiri bocor?",
     "p": [
-     "Darah akan mengalir lebih laju ke seluruh badan",
-     "Peparu akan menerima darah beroksigen dua kali ganda",
-     "Tiada kesan kerana injap lain akan mengambil alih",
-     "Sebahagian darah mengalir semula ke atrium, jadi jumlah darah yang sampai ke badan berkurang"
+     "Darah akan mengalir lebih laju ke seluruh badan kerana injap sentiasa terbuka",
+     "Peparu akan menerima darah beroksigen dua kali ganda daripada biasa",
+     "Tiada kesan kerana injap di bahagian kanan jantung akan mengambil alih",
+     "Sebahagian darah mengalir balik ke atrium, jadi kurang darah sampai ke badan"
     ],
     "b": 3,
     "u": "Jantung terpaksa bekerja lebih kuat untuk menghantar jumlah darah yang sama, dan lama kelamaan ia keletihan."
@@ -309,10 +318,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Berdasarkan jadual, mengapakah kadar nadi semua murid meningkat sejurus selepas berlari?",
      "p": [
-      "Otot memerlukan lebih banyak oksigen dan pengeluaran karbon dioksida perlu dipercepatkan",
-      "Suhu badan yang naik menyebabkan darah mengembang",
-      "Jantung menjadi lebih besar semasa bersenam",
-      "Darah menjadi lebih pekat dan sukar mengalir"
+      "Otot perlukan lebih oksigen dan karbon dioksida perlu dibuang lebih cepat",
+      "Suhu badan yang naik menyebabkan isi padu darah mengembang dengan cepat",
+      "Jantung membesar semasa bersenam dan perlu berdenyut dengan lebih kerap",
+      "Darah menjadi lebih pekat, jadi jantung perlu menolak dengan lebih kerap"
      ],
      "b": 0,
      "u": "Kadar nadi ialah cara badan menambah kadar penghantaran, bukan menambah jumlah darah."
@@ -329,10 +338,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Berdasarkan jadual, siapakah yang menunjukkan kecergasan jantung paling baik?",
      "p": [
-      "Gayathri, kerana kenaikan nadinya paling tinggi",
-      "Hakim, kerana nadi rehatnya paling rendah dan pulih paling hampir kepada bacaan rehat",
-      "Farid, kerana bacaannya berada di tengah-tengah",
-      "Ketiga-tiganya sama kerana semua nadi meningkat"
+      "Gayathri, kerana kenaikan nadinya selepas berlari paling tinggi",
+      "Hakim, kerana nadi rehat paling rendah dan pulih paling cepat",
+      "Farid, kerana semua bacaannya berada di tengah-tengah julat",
+      "Ketiga-tiganya sama, kerana nadi semua murid naik selepas berlari"
      ],
      "b": 1,
      "u": "Nadi rehat rendah dan pemulihan cepat ialah dua petanda kecergasan jantung."
@@ -341,10 +350,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah luka kecil pada jari berhenti berdarah dengan sendirinya?",
      "p": [
-      "Sel darah merah menutup luka itu",
-      "Plasma mengeras apabila terkena udara",
-      "Platelet berkumpul di tempat luka dan memulakan pembekuan darah",
-      "Kapilari menutup secara kekal"
+      "Sel darah merah melekat bersama dan membentuk kulit baharu",
+      "Plasma mengeras dengan sendirinya apabila terkena udara",
+      "Platelet berkumpul di tempat luka dan memulakan pembekuan",
+      "Sel darah putih menutup luka untuk menghalang kuman masuk"
      ],
      "b": 2,
      "u": "Tanpa platelet, luka kecil pun boleh menjadi bahaya, dan itulah masalah pesakit hemofilia."
@@ -353,22 +362,22 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah muka menjadi merah semasa bersenam kuat?",
      "p": [
-      "Darah kehabisan oksigen dan bertukar warna",
-      "Sel darah putih berkumpul di permukaan kulit",
-      "Tekanan darah menolak sel darah merah keluar dari salur",
-      "Kapilari di kulit melebar untuk membuang haba berlebihan"
+      "Darah kehabisan oksigen lalu bertukar warna menjadi merah terang",
+      "Sel darah putih berkumpul di permukaan kulit untuk melawan kuman",
+      "Tekanan darah menolak sel darah merah keluar dari salur ke kulit",
+      "Salur darah di kulit melebar untuk membebaskan haba berlebihan"
      ],
      "b": 3,
-     "u": "Sistem peredaran juga berfungsi mengawal suhu badan."
+     "u": "Salur darah kecil di bawah kulit melebar supaya lebih banyak haba dibebaskan. Sistem peredaran juga membantu mengawal suhu badan."
     },
     {
      "j": "pilih",
      "t": "Mengapakah pesakit yang berdiri terlalu lama boleh pengsan?",
      "p": [
-      "Darah berkumpul di kaki kerana graviti dan bekalan darah ke otak berkurang",
-      "Kaki menggunakan semua oksigen dalam badan",
-      "Jantung berhenti berdenyut sementara",
-      "Otak menghasilkan terlalu banyak karbon dioksida"
+      "Darah berkumpul di kaki akibat graviti, jadi kurang darah ke otak",
+      "Kaki menggunakan hampir semua oksigen dalam darah sepanjang berdiri",
+      "Jantung berhenti berdenyut buat seketika apabila badan tidak bergerak",
+      "Otak menghasilkan terlalu banyak karbon dioksida semasa berdiri lama"
      ],
      "b": 0,
      "u": "Sebab itu askar dalam perbarisan dinasihatkan menggerakkan otot betis sedikit demi sedikit."
@@ -377,10 +386,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah daun tumbuhan layu pada tengah hari yang panas walaupun tanahnya lembap?",
      "p": [
-      "Akar berhenti berfungsi apabila panas",
-      "Kadar transpirasi melebihi kadar air diserap oleh akar pada waktu itu",
-      "Xilem tersumbat oleh udara panas",
-      "Floem mengalirkan air keluar dari daun"
+      "Akar berhenti menyerap air apabila suhu tanah menjadi panas",
+      "Kadar transpirasi melebihi kadar air diserap oleh akar",
+      "Xilem tersumbat oleh udara panas yang masuk melalui stoma",
+      "Floem mengalirkan air keluar dari daun ke akar pada tengah hari"
      ],
      "b": 1,
      "u": "Tumbuhan itu selalunya pulih pada waktu petang apabila suhu turun."
@@ -389,10 +398,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Seorang pesakit anemia cepat letih walaupun bernafas dengan normal. Mengapa?",
      "p": [
-      "Peparunya tidak dapat mengembang sepenuhnya",
-      "Jantungnya berdenyut terlalu perlahan",
-      "Bilangan sel darah merah atau hemoglobin yang rendah mengurangkan oksigen yang sampai ke sel",
-      "Salur darahnya terlalu lebar"
+      "Peparunya tidak dapat mengembang sepenuhnya semasa menarik nafas",
+      "Jantungnya berdenyut terlalu perlahan untuk mengepam darah ke otak",
+      "Kurang sel darah merah atau hemoglobin, jadi kurang oksigen sampai ke sel",
+      "Salur darahnya terlalu lebar sehingga tekanan darah menjadi rendah"
      ],
      "b": 2,
      "u": "Masalahnya bukan pada pengambilan oksigen, tetapi pada pengangkutannya."
@@ -463,9 +472,9 @@ window.BANK["t3b3"] =
      "t": "Mengapakah penggumpalan berlaku apabila darah yang tidak sepadan dipindahkan?",
      "p": [
       "Sel darah merah penderma terlalu besar untuk kapilari penerima",
-      "Antibodi dalam plasma penerima bertemu antigen sepadan pada sel darah merah penderma",
-      "Plasma penderma membekukan darah penerima",
-      "Hemoglobin kedua-dua kumpulan bercampur dan mengeras"
+      "Antibodi plasma penerima bertemu antigen sepadan pada sel penderma",
+      "Plasma penderma membekukan darah penerima secara serta-merta",
+      "Hemoglobin daripada dua kumpulan bercampur lalu mengeras"
      ],
      "b": 1,
      "u": "Antibodi mengikat banyak sel serentak sehingga membentuk ketulan."
@@ -474,10 +483,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Seorang pesakit berkumpul darah A diberi darah kumpulan B secara tersilap. Kesan paling langsung?",
      "p": [
-      "Tiada kesan kerana kedua-duanya darah manusia",
-      "Kumpulan darahnya bertukar menjadi AB",
-      "Anti-B dalam plasmanya menyerang sel darah B dan menyebabkan penggumpalan",
-      "Sel darah putihnya bertambah dua kali ganda"
+      "Anti-A dalam plasmanya menyerang sel darah B lalu berlaku penggumpalan",
+      "Tiada kesan kerana kedua-dua kumpulan tetap darah manusia yang sama",
+      "Anti-B dalam plasmanya menyerang sel darah B lalu berlaku penggumpalan",
+      "Kumpulan darahnya bertukar menjadi AB selepas beberapa hari"
      ],
      "b": 2,
      "u": "Ketulan yang terbentuk boleh menyumbat salur darah kecil di ginjal dan otak."
@@ -503,10 +512,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Sebuah hospital kehabisan stok darah kumpulan AB. Mengapa keadaan ini kurang mendesak berbanding kehabisan kumpulan O?",
      "p": [
-      "Kumpulan AB jarang digunakan dalam pembedahan",
-      "Kumpulan AB boleh dihasilkan semula di makmal",
-      "Pesakit AB tidak memerlukan pemindahan darah",
-      "Pesakit AB boleh menerima daripada mana-mana kumpulan, manakala pesakit O hanya boleh menerima O"
+      "Pesakit AB hanya boleh menerima O, jadi stok O sudah cukup untuk mereka",
+      "Darah AB boleh dihasilkan semula dengan cepat di makmal hospital",
+      "Pesakit kumpulan AB jarang memerlukan pemindahan darah semasa pembedahan",
+      "Pesakit AB boleh menerima semua kumpulan, pesakit O hanya boleh menerima O"
      ],
      "b": 3,
      "u": "Itulah sebabnya bank darah paling risau apabila stok O menyusut."
@@ -515,10 +524,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Bacaan tekanan darah seorang pesakit ialah 150 per 95 pada tiga lawatan berturut-turut. Tafsiran paling munasabah?",
      "p": [
-      "Bacaan tinggi yang berulang menunjukkan tekanan darah tinggi yang perlu disiasat, bukan bacaan tersasar",
-      "Alat pengukur itu rosak kerana bacaannya tidak berubah",
-      "Pesakit itu sihat kerana bacaan konsisten",
-      "Bacaan 95 bermakna nadinya 95 denyutan seminit"
+      "Bacaan tinggi yang berulang ialah corak yang perlu disiasat doktor",
+      "Alat pengukur itu rosak kerana bacaannya langsung tidak berubah",
+      "Pesakit itu sihat kerana bacaan tekanan darahnya konsisten",
+      "Bacaan 95 bermakna nadi pesakit ialah 95 denyutan seminit"
      ],
      "b": 0,
      "u": "Satu bacaan tinggi boleh disebabkan keresahan, tetapi tiga bacaan berulang ialah corak."
@@ -532,7 +541,7 @@ window.BANK["t3b3"] =
      "Dalam kecemasan tiada masa untuk menentukan kumpulan darah pesakit",
      "Pesakit kumpulan O sendiri hanya boleh menerima darah O",
      "Darah O bertahan lebih lama dalam simpanan berbanding kumpulan lain",
-     "Darah O mengandungi lebih banyak hemoglobin"
+     "Darah O mengandungi lebih banyak hemoglobin daripada kumpulan lain"
     ],
     "b": [
      0,
@@ -587,10 +596,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah kadar transpirasi jatuh kepada 5 apabila kelembapan dinaikkan kepada 95 peratus?",
      "p": [
-      "Stoma pecah apabila kelembapan terlalu tinggi",
-      "Air dalam xilem membeku pada kelembapan tinggi",
-      "Udara di luar daun sudah hampir tepu, jadi kecerunan resapan wap air menjadi kecil",
-      "Akar berhenti menyerap air apabila udara lembap"
+      "Stoma pecah apabila kelembapan udara terlalu tinggi di sekeliling daun",
+      "Air dalam xilem menjadi terlalu sejuk untuk bergerak naik ke daun",
+      "Udara luar hampir tepu, jadi kecerunan resapan wap air menjadi kecil",
+      "Akar berhenti menyerap air apabila udara di sekeliling terlalu lembap"
      ],
      "b": 2,
      "u": "Transpirasi bergantung pada perbezaan kelembapan antara ruang dalam daun dan udara luar."
@@ -599,10 +608,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Nilaikan kesahan dapatan ini jika setiap set dijalankan sekali sahaja.",
      "p": [
-      "Sudah kukuh, kerana perbezaan antara set jelas besar",
-      "Sudah kukuh, kerana fotometer sentiasa tepat",
+      "Sudah kukuh, kerana perbezaan antara setiap set jelas besar",
+      "Sudah kukuh, kerana fotometer ialah alat yang sentiasa tepat",
       "Belum kukuh, kerana transpirasi tidak boleh diukur di makmal",
-      "Belum kukuh, kerana setiap set perlu diulang untuk memastikan bacaan bukan kebetulan"
+      "Belum kukuh, kerana setiap set perlu diulang beberapa kali"
      ],
      "b": 3,
      "u": "Perbezaan yang besar tetap boleh terhasil daripada satu ralat besar dalam satu bacaan."
@@ -611,22 +620,22 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Seorang petani mahu mengurangkan kehilangan air anak benihnya yang baru dipindahkan. Langkah paling wajar berdasarkan data ini?",
      "p": [
-      "Sediakan teduhan dan pengadang angin, kerana kedua-duanya menyerang faktor yang paling meningkatkan transpirasi",
-      "Siram lebih kerap pada tengah hari",
-      "Buang sebahagian besar akar supaya kurang air diserap",
-      "Tanam semula anak benih pada kawasan berangin"
+      "Sediakan teduhan dan pengadang angin di sekeliling anak benih",
+      "Siram anak benih dengan lebih kerap tepat pada waktu tengah hari",
+      "Buang sebahagian akar supaya kurang air diserap oleh anak benih",
+      "Pindahkan anak benih ke kawasan terbuka yang lebih berangin"
      ],
      "b": 0,
-     "u": "Mengurangkan kehilangan lebih murah dan lebih berkesan daripada menambah bekalan."
+     "u": "Dalam data ini angin dan suhu tinggi paling meningkatkan transpirasi, jadi teduhan dan pengadang angin menyerang kedua-duanya. Mengurangkan kehilangan lebih berkesan daripada menambah siraman."
     },
     {
      "j": "pilih",
      "t": "Sebatang pokok dikelar kulitnya sekeliling batang sehingga floem terputus tetapi xilem masih utuh. Apakah yang akan berlaku?",
      "p": [
-      "Pokok itu mati serta-merta kerana air tidak dapat naik",
-      "Daun masih menerima air, tetapi akar akhirnya mati kerana tidak menerima hasil fotosintesis",
-      "Tiada kesan kerana xilem boleh menggantikan fungsi floem",
-      "Akar akan tumbuh lebih cepat kerana kurang beban"
+      "Pokok mati serta-merta kerana air tidak lagi dapat naik ke daun",
+      "Daun masih menerima air, tetapi akar mati kerana tidak menerima makanan",
+      "Tiada kesan kerana xilem boleh mengambil alih fungsi floem sepenuhnya",
+      "Akar tumbuh lebih cepat kerana tidak lagi perlu menghantar makanan"
      ],
      "b": 1,
      "u": "Inilah sebabnya kulit pokok yang dikelar sekeliling batang membunuh pokok secara perlahan."
@@ -635,10 +644,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Nilaikan dakwaan bahawa titisan air pada hujung daun rumput pada waktu pagi ialah embun.",
      "p": [
-      "Betul, kerana semua air pada daun berasal dari udara",
+      "Betul, kerana semua titisan air pada daun berasal daripada udara",
       "Salah, kerana embun tidak pernah terbentuk di kawasan tropika",
-      "Belum tentu, kerana titisan pada hujung daun selalunya gutasi yang keluar dari dalam tumbuhan",
-      "Tidak boleh dinilai kerana kedua-duanya kelihatan sama"
+      "Belum tentu, kerana titisan di hujung daun selalunya gutasi",
+      "Tidak boleh dinilai, kerana embun dan gutasi kelihatan sama"
      ],
      "b": 2,
      "u": "Embun terbentuk merata pada permukaan daun, manakala gutasi keluar pada titik tertentu di tepi atau hujung daun."
@@ -647,11 +656,11 @@ window.BANK["t3b3"] =
      "j": "banyak",
      "t": "Pilih SEMUA ciri kempen derma darah sekolah yang berkemungkinan besar berjaya.",
      "p": [
-      "Sediakan maklumat jelas tentang kriteria kelayakan sebelum hari kempen",
-      "Libatkan bekas penerima darah untuk berkongsi pengalaman",
-      "Sediakan tempat rehat dan minuman selepas menderma",
-      "Umumkan nama mereka yang enggan menderma",
-      "Sasarkan murid bawah umur tanpa kebenaran ibu bapa"
+      "Maklumat kriteria kelayakan diedar sebelum hari kempen",
+      "Bekas penerima darah dijemput berkongsi pengalaman",
+      "Tempat rehat dan minuman disediakan selepas menderma",
+      "Nama mereka yang enggan menderma diumumkan di perhimpunan",
+      "Murid bawah umur disasarkan tanpa kebenaran ibu bapa"
      ],
      "b": [
       0,
@@ -666,12 +675,12 @@ window.BANK["t3b3"] =
     "t": "Sekolah hanya mampu menjalankan SATU program kesihatan jantung tahun ini. Pilihan paling wajar?",
     "p": [
      "Saringan tekanan darah sekali sahaja untuk semua murid",
-     "Ceramah sehari oleh pakar jantung",
-     "Membeli mesin tekanan darah untuk bilik rawatan",
-     "Program senaman berkala untuk semua murid, kerana kesihatan jantung terbina daripada tabiat harian dan ia melindungi semua"
+     "Ceramah sehari oleh pakar jantung dari hospital negeri",
+     "Membeli mesin tekanan darah baharu untuk bilik rawatan",
+     "Program senaman berkala untuk semua murid sepanjang tahun"
     ],
     "b": 3,
-    "u": "Saringan mengesan masalah, tetapi hanya perubahan tabiat yang mengurangkan risiko itu sendiri."
+    "u": "Saringan dan ceramah hanya berlaku sekali, tetapi kesihatan jantung terbina daripada tabiat harian. Program berkala sampai kepada semua murid dan mengurangkan risiko itu sendiri."
    }
   },
   {
@@ -690,10 +699,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Awak mereka cipta sistem pengairan mudah untuk kebun sekolah. Ciri manakah paling menentukan sama ada ia benar-benar menjimatkan air?",
      "p": [
-      "Air dihantar terus ke pangkal akar pada waktu pagi atau petang, bukan disembur pada tengah hari",
-      "Paip yang digunakan berwarna cerah dan menarik",
-      "Sistem itu boleh menyiram seluruh kebun dalam masa lima minit",
-      "Tangki air diletakkan setinggi mungkin"
+      "Air dihantar terus ke pangkal akar pada waktu pagi atau petang",
+      "Air disembur ke seluruh daun supaya daun sentiasa kelihatan segar",
+      "Sistem itu dapat menyiram seluruh kebun dalam masa lima minit",
+      "Tangki air diletakkan setinggi mungkin supaya aliran lebih kuat"
      ],
      "b": 0,
      "u": "Air yang tersejat sebelum sampai ke akar ialah air yang terbuang."
@@ -702,10 +711,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Kos bahan sistem awak RM220 tetapi kelab alam sekitar hanya ada RM90. Tindakan paling kreatif dan praktikal?",
      "p": [
-      "Batalkan projek kerana dana tidak mencukupi",
-      "Guna botol plastik terpakai sebagai penitis dan hos lama dari bilik pekerja, kekalkan fungsi menghantar air ke akar",
-      "Siram separuh kebun sahaja supaya muat dengan bajet",
-      "Minta setiap murid membawa air dari rumah"
+      "Batalkan projek kerana dana kelab tidak mencukupi tahun ini",
+      "Guna botol plastik terpakai sebagai penitis dan hos lama sekolah",
+      "Siram separuh kebun sahaja supaya kos bahan muat dengan bajet",
+      "Minta setiap murid membawa sebotol air dari rumah setiap hari"
      ],
      "b": 1,
      "u": "Kekangan kos menguji kreativiti, bukan menamatkan projek."
@@ -714,10 +723,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Awak mahu membuktikan sistem awak benar-benar menjimatkan air. Cara paling meyakinkan?",
      "p": [
-      "Tanya ahli kelab sama ada mereka rasa air berkurang",
-      "Kira berapa lama sistem itu boleh berjalan tanpa rosak",
-      "Ukur jumlah air digunakan dan tinggi pokok pada dua petak serupa, satu dengan sistem dan satu tanpa, dalam tempoh sama",
-      "Bandingkan dengan kebun sekolah lain yang tanahnya berbeza"
+      "Tanya ahli kelab sama ada mereka rasa penggunaan air berkurang",
+      "Kira berapa lama sistem dapat berjalan tanpa sebarang kerosakan",
+      "Bandingkan air digunakan pada dua petak serupa, satu tanpa sistem",
+      "Bandingkan dengan kebun sekolah lain yang jenis tanahnya berbeza"
      ],
      "b": 2,
      "u": "Petak kawalan yang serupa ialah satu-satunya cara memisahkan kesan sistem awak daripada cuaca."
@@ -726,10 +735,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Kelas awak mahu menganjurkan kempen derma darah. Langkah pertama paling wajar?",
      "p": [
-      "Cetak poster secantik mungkin dan tampal di seluruh sekolah",
-      "Tetapkan sasaran seratus penderma dahulu",
-      "Kumpul nama semua murid tingkatan tiga sebagai penderma",
-      "Berhubung dengan Pusat Darah Negara untuk mengetahui kriteria penderma dan keperluan logistik sebenar"
+      "Cetak poster secantik mungkin dan tampal di seluruh kawasan sekolah",
+      "Tetapkan sasaran seratus orang penderma sebelum membuat perancangan",
+      "Kumpul nama semua murid tingkatan tiga sebagai calon penderma",
+      "Berhubung dengan Pusat Darah Negara tentang kriteria penderma"
      ],
      "b": 3,
      "u": "Ramai murid tingkatan tiga belum cukup umur, dan itu perlu diketahui sebelum sebarang janji dibuat."
@@ -738,10 +747,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Kempen awak menarik ramai orang tetapi ramai ditolak kerana berat badan atau umur tidak layak. Pembetulan paling wajar untuk kali seterusnya?",
      "p": [
-      "Sediakan semakan kelayakan ringkas sebelum hari kempen supaya masa dan harapan orang tidak terbuang",
-      "Turunkan syarat kelayakan supaya lebih ramai layak",
+      "Sediakan semakan kelayakan ringkas sebelum hari kempen bermula",
+      "Turunkan syarat kelayakan supaya lebih ramai orang layak menderma",
       "Terima semua orang dan biarkan pihak klinik menolak di tempat",
-      "Hentikan kempen kerana terlalu sukar"
+      "Hentikan kempen kerana terlalu ramai orang yang tidak layak"
      ],
      "b": 0,
      "u": "Syarat kelayakan wujud untuk melindungi penderma dan penerima, jadi ia diuruskan lebih awal, bukan dilonggarkan."
@@ -750,22 +759,22 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Sekolah luar bandar mahu meniru sistem pengairan awak tetapi tiada bekalan air paip yang tetap. Pengubahsuaian paling wajar?",
      "p": [
-      "Minta mereka memasang paip baharu terlebih dahulu",
-      "Tambah tong menuai air hujan sebagai sumber, kerana ia bebas dan sesuai dengan keadaan mereka",
-      "Kekalkan rekaan asal kerana ia sudah terbukti berkesan",
-      "Cadangkan mereka menanam pokok yang tidak perlukan air"
+      "Minta sekolah itu memasang paip air baharu terlebih dahulu",
+      "Tambah tong menuai air hujan sebagai sumber air utama sistem",
+      "Kekalkan rekaan asal kerana ia sudah terbukti berkesan di sini",
+      "Cadangkan mereka menanam pokok yang langsung tidak perlukan air"
      ],
      "b": 1,
      "u": "Reka cipta yang baik menyesuaikan diri dengan keadaan penggunanya."
     },
     {
      "j": "pilih",
-     "t": "Awak akan tamat persekolahan tahun ini. Langkah paling penting supaya kebun dan sistem itu terus hidup?",
+     "t": "Awak akan naik ke tingkatan empat dan meninggalkan kelab ini tahun depan. Langkah paling penting supaya kebun dan sistem itu terus hidup?",
      "p": [
-      "Pasang sistem yang lebih besar sebelum awak pergi",
-      "Simpan semua reka bentuk dalam telefon awak",
-      "Latih kelab tingkatan bawah dan tinggalkan jadual penyelenggaraan yang ringkas dan bertulis",
-      "Minta guru menjaga kebun itu sendiri"
+      "Pasang sistem yang lebih besar sebelum awak meninggalkan kelab",
+      "Simpan semua lakaran reka bentuk dalam telefon awak sendiri",
+      "Latih kelab tingkatan bawah dan tinggalkan jadual penyelenggaraan",
+      "Minta seorang guru menjaga kebun itu seorang diri selepas ini"
      ],
      "b": 2,
      "u": "Penyelesaian yang bergantung pada seorang individu akan berhenti bersama orang itu."
@@ -774,10 +783,10 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Jiran sekolah mengadu air dari sistem awak membanjiri laluan mereka. Pendekatan paling wajar mengambil kira nilai masyarakat?",
      "p": [
-      "Abaikan aduan kerana kebun itu di dalam kawasan sekolah",
-      "Hentikan sistem itu terus tanpa berbincang",
-      "Salahkan hujan dan teruskan seperti biasa",
-      "Berbincang dengan mereka, alihkan penitis dan tambah parit kecil, kerana kos pembetulannya rendah dan hubungan itu berbaloi dijaga"
+      "Abaikan aduan itu kerana kebun berada di dalam kawasan sekolah",
+      "Hentikan sistem itu serta-merta tanpa berbincang dengan sesiapa",
+      "Salahkan hujan lebat dan teruskan penggunaan sistem seperti biasa",
+      "Berbincang dengan jiran, alihkan penitis dan tambah parit kecil"
      ],
      "b": 3,
      "u": "Penyelesaian yang menang ialah yang murah bagi awak dan menghormati pihak sebelah."

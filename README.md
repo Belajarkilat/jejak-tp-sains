@@ -78,6 +78,28 @@ sebagai soalan bos pada hentian TP6.
 `_uji-imbang.js` mengukur taburan kedudukan jawapan merentas ratusan muatan
 halaman, supaya murid tidak dapat meneka corak.
 
+`_ganti.py` menukar pilihan, teks atau penjelasan soalan tertentu dalam fail
+sumber tanpa menyunting tangan, berdasarkan senarai pembetulan dalam JSON.
+
+### Semakan petunjuk panjang jawapan
+
+Pembina menolak bab di mana jawapan betul terlalu kerap menjadi pilihan yang
+paling panjang. Tanpa semakan ini, murid yang sentiasa memilih ayat terpanjang
+boleh lulus tanpa memahami sains. Sebelum semakan ini diperkenalkan, strategi
+itu mendapat 79 hingga 90 peratus betul. Selepasnya, 21 hingga 34 peratus,
+iaitu hampir sama dengan meneka.
+
+- Jawapan betul paling panjang dalam tidak lebih 35% soalan satu jawapan.
+- Purata panjang jawapan betul tidak lebih 1.20 kali purata pengganggu.
+- Tiada jawapan betul melebihi 1.5 kali pengganggu terpanjangnya.
+
+Cara membetulkan bab yang ditolak: pendekkan jawapan betul yang berlebihan,
+dan jadikan setiap pengganggu satu salah faham yang lengkap dan munasabah,
+dengan alasan yang salah jika jawapan betul mempunyai alasan.
+
+Setiap bab juga mesti ada ulasan PBD sendiri bagi TP1 hingga TP6, kerana cikgu
+menyalinnya terus ke SPPB.
+
 ## Apa yang belum ada
 
 - Cikgu belum boleh menulis soalan sendiri melalui skrin. Bank masih disunting
@@ -86,5 +108,18 @@ halaman, supaya murid tidak dapat meneka corak.
   Tingkatan 1 dan 2 belum dimulakan.
 - Tiada pra atau pasca ujian, jadi permainan ini belum boleh membuktikan bahawa
   murid benar-benar belajar, hanya bahawa mereka terlibat.
-- Tiada mod luar talian penuh. Jawapan yang gagal dihantar disimpan pada peranti
-  dan dicuba semula, tetapi halaman itu sendiri perlukan talian untuk dibuka.
+- Tiada mod luar talian penuh. Halaman perlukan talian untuk dibuka kali pertama.
+
+## Keadilan dan ketahanan semasa kelas
+
+- **Masa membaca.** Meter nafas tidak berkurang sehingga murid sempat membaca
+  soalan, pilihan dan lampirannya, pada kira-kira dua setengah perkataan sesaat.
+  Soalan ingatan ringkas mendapat 6 saat, soalan berjadual sehingga 45 saat.
+  Pemasa soalan bos hanya bermula selepas itu.
+- **Wifi tersekat.** Jawapan yang gagal dihantar disimpan pada telefon dan
+  dihantar sendiri sebaik talian pulih, tanpa perlu memuat semula halaman.
+  Pada telefon, jalur amaran muncul di atas soalan selagi ada jawapan tertunggak.
+- **Kelas contoh** hanya kelihatan dalam mod cikgu. Rekodnya tidak pernah
+  disimpan, jadi murid tidak boleh memilihnya.
+- **Seluruh kelas serentak.** Diuji dengan 40 penghantaran serentak; kesemuanya
+  berjaya dan sampai ke pangkalan data dalam kira-kira dua setengah saat.

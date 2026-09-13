@@ -29,6 +29,15 @@ window.BANK["t3b1"] =
   "Menilai",
   "Mereka cipta"
  ],
+ "ulasan": {
+  "1": "{n} dapat mengingat kembali struktur sistem saraf dan organ deria manusia serta istilah asas bab ini. Langkah seterusnya ialah menerangkan bagaimana impuls bergerak, bukan sekadar menamakan bahagiannya.",
+  "2": "{n} memahami laluan impuls dalam tindakan terkawal dan luar kawal serta mekanisme penglihatan dan pendengaran. Perlu lebih banyak latihan mengaitkan konsep ini dengan kejadian harian sebelum bergerak ke TP3.",
+  "3": "{n} boleh mengaplikasikan pengetahuan gerak balas untuk menerangkan fenomena harian seperti tindakan refleks dan pembetulan rabun menggunakan kanta. Galakkan mentafsir data eksperimen masa gerak balas.",
+  "4": "{n} mampu menganalisis data masa gerak balas, mengesan bacaan ganjil dan mengenal pasti bahagian sistem saraf yang terjejas. Seterusnya latih menimbang bukti untuk membuat keputusan.",
+  "5": "{n} dapat menilai kesahan eksperimen dan memilih tindakan yang wajar bagi individu yang mengalami kecacatan deria, disokong bukti daripada data. Sudah bersedia untuk tugasan reka cipta.",
+  "6": "{n} berjaya mereka cipta penyelesaian yang praktikal untuk membantu rakan yang mengalami masalah deria, lengkap dengan pertimbangan kos dan penerimaan sosial dalam kelas. Pencapaian cemerlang bagi bab ini.",
+  "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Rangsangan dan Gerak Balas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
+ },
  "lampiran": {
   "pembaris": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Murid</th><th class=\"n\">Cubaan 1 (cm)</th><th class=\"n\">Cubaan 2 (cm)</th><th class=\"n\">Cubaan 3 (cm)</th><th class=\"n\">Purata (cm)</th><th>Catatan</th></tr></thead><tbody><tr><td>Aiman</td><td class=\"n\">19</td><td class=\"n\">17</td><td class=\"n\">18</td><td class=\"n\">18.0</td><td>Tidur 8 jam</td></tr><tr><td>Bella</td><td class=\"n\">13</td><td class=\"n\">12</td><td class=\"n\">11</td><td class=\"n\">12.0</td><td>Tidur 8 jam</td></tr><tr><td>Chandran</td><td class=\"n\">25</td><td class=\"n\">27</td><td class=\"n\">26</td><td class=\"n\">26.0</td><td>Tidur 4 jam</td></tr><tr><td>Damia</td><td class=\"n\">12</td><td class=\"n\">20</td><td class=\"n\">13</td><td class=\"n\">15.0</td><td>Tidur 8 jam, bunyi bising semasa cubaan 2</td></tr></tbody></table></div><p class=\"qnote\">Ujian pembaris jatuh. Jarak pembaris jatuh sebelum ditangkap diukur. Jarak lebih pendek bermakna gerak balas lebih pantas.</p>",
   "deria": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Individu</th><th>Aduan</th><th class=\"n\">Ujian penglihatan</th><th class=\"n\">Ujian pendengaran</th></tr></thead><tbody><tr><td>Puan Salmah, 62</td><td>Perlu menjauhkan surat khabar untuk membaca</td><td class=\"n\">Kanta +2.00 D</td><td class=\"n\">Normal</td></tr><tr><td>Rajesh, 15</td><td>Papan putih kabur dari barisan belakang</td><td class=\"n\">Kanta &minus;1.50 D</td><td class=\"n\">Normal</td></tr><tr><td>Mei Yin, 17</td><td>Tidak dengar bunyi bernada tinggi</td><td class=\"n\">Normal</td><td class=\"n\">Kehilangan 45 dB</td></tr></tbody></table></div><p class=\"qnote\">Kanta bernilai positif ialah kanta cembung. Kanta bernilai negatif ialah kanta cekung. Kehilangan pendengaran melebihi 40 dB dikira sederhana.</p>"
@@ -51,9 +60,9 @@ window.BANK["t3b1"] =
      "t": "Sistem saraf manusia terdiri daripada:",
      "p": [
       "Otak, saraf tunjang dan saraf periferi",
-      "Otak, jantung dan saraf tunjang",
-      "Saraf tunjang, otot dan kelenjar",
-      "Otak, mata dan telinga"
+      "Otak, jantung dan saraf tunjang sahaja",
+      "Saraf tunjang, otot rangka dan kelenjar",
+      "Otak, organ deria dan saraf motor"
      ],
      "b": 0,
      "u": "Otak dan saraf tunjang membentuk sistem saraf pusat, selebihnya saraf periferi."
@@ -188,10 +197,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah tindakan luar kawal berlaku lebih pantas daripada tindakan terkawal?",
      "p": [
-      "Impuls bergerak melalui saluran darah yang lebih laju",
-      "Otot bertindak sebelum menerima sebarang impuls",
-      "Reseptor menghantar impuls terus kepada efektor tanpa neuron",
-      "Impuls tidak perlu sampai ke otak, ia diproses terus di saraf tunjang"
+      "Impuls bergerak melalui salur darah yang lebih laju daripada saraf",
+      "Otot mengecut dahulu, kemudian barulah impuls dihantar ke otak",
+      "Reseptor menghantar impuls terus kepada efektor tanpa sebarang neuron",
+      "Impuls diproses di saraf tunjang tanpa perlu sampai ke otak"
      ],
      "b": 3,
      "u": "Laluan yang lebih pendek bermakna masa yang lebih singkat."
@@ -219,10 +228,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah manusia mempunyai dua mata di hadapan kepala?",
      "p": [
-      "Medan penglihatan kedua-dua mata bertindih dan memberi persepsi kedalaman",
-      "Supaya boleh melihat ke belakang tanpa memusing kepala",
-      "Supaya satu mata boleh berehat sementara satu lagi berfungsi",
-      "Supaya boleh melihat dua warna berbeza serentak"
+      "Medan penglihatan bertindih lalu memberi persepsi kedalaman",
+      "Supaya dapat melihat ke belakang tanpa perlu memusingkan kepala",
+      "Supaya satu mata boleh berehat sementara mata yang satu lagi bekerja",
+      "Supaya setiap mata dapat mengesan warna berbeza pada masa yang sama"
      ],
      "b": 0,
      "u": "Ini dipanggil penglihatan stereoskopik, biasa pada haiwan pemangsa."
@@ -231,10 +240,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Apakah fungsi kanta mata?",
      "p": [
-      "Menukar cahaya kepada impuls saraf",
+      "Menukarkan cahaya kepada impuls saraf untuk dihantar ke otak",
       "Memfokuskan cahaya supaya imej jatuh tepat pada retina",
-      "Mengawal saiz pupil",
-      "Melindungi retina daripada habuk"
+      "Mengawal saiz pupil mengikut keamatan cahaya yang masuk",
+      "Melindungi retina daripada habuk dan jangkitan kuman"
      ],
      "b": 1,
      "u": "Kanta berubah bentuk untuk memfokus objek dekat dan jauh."
@@ -243,10 +252,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah makanan terasa hambar ketika hidung tersumbat?",
      "p": [
-      "Lidah berhenti berfungsi apabila seseorang demam",
-      "Tunas rasa ditutup oleh mukus dari hidung",
-      "Deria rasa banyak bergantung pada deria bau, dan kedua-duanya bekerja bersama",
-      "Otak mematikan deria rasa semasa sakit"
+      "Lidah berhenti menghasilkan air liur apabila seseorang demam",
+      "Mukus dari hidung menutup semua tunas rasa pada permukaan lidah",
+      "Deria rasa bergantung pada deria bau untuk mengecam perisa",
+      "Otak mematikan deria rasa untuk menjimatkan tenaga semasa sakit"
      ],
      "b": 2,
      "u": "Inilah contoh kepekaan kombinasi organ deria."
@@ -255,10 +264,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Apakah perbezaan utama antara sel rod dan sel kon?",
      "p": [
-      "Sel rod berada di kornea, sel kon di retina",
-      "Sel rod mengesan bunyi, sel kon mengesan cahaya",
-      "Tiada perbezaan, kedua-duanya sama fungsi",
-      "Sel rod peka pada cahaya malap tanpa mengesan warna, sel kon mengesan warna pada cahaya terang"
+      "Rod mengesan warna dalam cahaya terang, kon peka cahaya malap",
+      "Rod terletak pada kornea, manakala kon terletak pada retina",
+      "Rod mengesan bunyi bernada tinggi, manakala kon mengesan cahaya",
+      "Rod peka cahaya malap, kon mengesan warna dalam cahaya terang"
      ],
      "b": 3,
      "u": "Sebab itu warna sukar dibezakan dalam bilik yang gelap."
@@ -267,10 +276,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Apakah titik buta pada mata?",
      "p": [
-      "Tempat saraf optik meninggalkan retina, di mana tiada fotoreseptor",
-      "Kawasan retina yang paling banyak sel kon",
-      "Bahagian kanta yang tidak jernih",
-      "Kawasan iris yang tidak berwarna"
+      "Tempat saraf optik keluar dari retina, tanpa sebarang fotoreseptor",
+      "Kawasan retina yang mempunyai sel kon paling banyak dan padat",
+      "Bahagian kanta yang menjadi keruh apabila seseorang meningkat usia",
+      "Kawasan iris yang tidak berpigmen dan tidak menyerap sebarang cahaya"
      ],
      "b": 0,
      "u": "Otak mengisi ruang itu, jadi kita tidak perasan kehadirannya."
@@ -279,10 +288,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah akar tumbuhan tumbuh ke arah bawah?",
      "p": [
-      "Akar mencari kegelapan di dalam tanah",
-      "Akar menunjukkan geotropisme positif, iaitu bergerak balas ke arah graviti",
-      "Berat akar menariknya ke bawah",
-      "Akar menolak diri menjauhi udara"
+      "Akar menunjukkan hidrotropisme negatif, iaitu menjauhi air tanah",
+      "Akar menunjukkan geotropisme positif, iaitu ke arah graviti",
+      "Berat akar yang semakin bertambah menariknya jatuh ke dalam tanah",
+      "Akar menjauhi udara kerana sel akar tidak memerlukan oksigen"
      ],
      "b": 1,
      "u": "Pucuk pula geotropisme negatif, tumbuh menjauhi graviti."
@@ -292,10 +301,10 @@ window.BANK["t3b1"] =
     "j": "pilih",
     "t": "Apakah yang membezakan gerak balas nastik daripada tropisme?",
     "p": [
-     "Gerak balas nastik hanya berlaku pada waktu malam",
-     "Gerak balas nastik berlaku pada akar sahaja",
+     "Gerak balas nastik hanya berlaku pada waktu malam tanpa cahaya",
+     "Gerak balas nastik berlaku pada akar, tropisme pada pucuk sahaja",
      "Arah gerak balas nastik tidak bergantung pada arah rangsangan",
-     "Gerak balas nastik tidak memerlukan sebarang rangsangan"
+     "Gerak balas nastik berlaku tanpa sebarang rangsangan dari luar"
     ],
     "b": 2,
     "u": "Daun semalu menguncup dengan cara yang sama tidak kira dari arah mana ia disentuh."
@@ -317,10 +326,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Tangan Farah menyentuh cerek panas dan terus ditarik, tetapi dia hanya rasa sakit sesaat kemudian. Mengapa?",
      "p": [
-      "Kulit tangan tidak mempunyai reseptor sakit",
-      "Otak sengaja melambatkan rasa sakit untuk melindungi badan",
-      "Otot lengan bergerak sendiri tanpa sebarang impuls",
-      "Gerak balas refleks melalui saraf tunjang berlaku dahulu, isyarat sakit ke otak tiba kemudian"
+      "Kulit tangan tiada reseptor sakit, jadi otak hanya meneka rasa sakit selepas itu",
+      "Otak sengaja melambatkan rasa sakit supaya Farah tidak panik dan terjatuh",
+      "Otot lengan bergerak sendiri tanpa impuls, dan otak hanya diberitahu kemudian",
+      "Refleks melalui saraf tunjang berlaku dahulu, isyarat sakit sampai ke otak kemudian"
      ],
      "b": 3,
      "u": "Melindungi tisu lebih penting daripada menyedari kesakitan, jadi refleks didahulukan."
@@ -337,10 +346,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah pemandu dinasihatkan berhenti berehat apabila mengantuk?",
      "p": [
-      "Masa gerak balas memanjang, jadi jarak brek menjadi lebih jauh",
-      "Enjin kereta menjadi panas apabila pemandu mengantuk",
-      "Mata tidak dapat melihat warna pada waktu malam",
-      "Saraf tunjang berhenti berfungsi ketika mengantuk"
+      "Masa gerak balas memanjang, jadi kereta bergerak lebih jauh sebelum brek",
+      "Mata yang mengantuk tidak dapat membezakan warna lampu isyarat merah",
+      "Saraf tunjang berhenti berfungsi sepenuhnya apabila seseorang mengantuk",
+      "Otot kaki menjadi terlalu lemah untuk menekan pedal brek dengan kuat"
      ],
      "b": 0,
      "u": "Setiap sepersepuluh saat kelewatan bermakna beberapa meter tambahan pada kelajuan tinggi."
@@ -351,8 +360,8 @@ window.BANK["t3b1"] =
      "p": [
       "Rabun dekat, dibetulkan dengan kanta cembung",
       "Rabun jauh, dibetulkan dengan kanta cekung",
-      "Astigmatisme, dibetulkan dengan kanta silinder",
-      "Buta warna, dibetulkan dengan kanta berwarna"
+      "Rabun jauh, dibetulkan dengan kanta cembung",
+      "Rabun dekat, dibetulkan dengan kanta cekung"
      ],
      "b": 1,
      "u": "Pada rabun jauh, imej objek jauh terbentuk di hadapan retina."
@@ -361,10 +370,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah lampu panggung wayang diredupkan secara perlahan-lahan, bukan terus dipadamkan?",
      "p": [
-      "Supaya penonton sempat menghabiskan makanan mereka",
-      "Kerana lampu akan rosak jika dipadamkan terus",
-      "Memberi masa kepada pupil mengembang dan sel rod menyesuaikan diri dengan cahaya malap",
-      "Supaya sel kon dapat berehat sepenuhnya"
+      "Memberi masa pupil mengecil supaya mata tidak silau apabila gelap",
+      "Memberi masa sel kon berehat sebelum filem yang terang bermula",
+      "Memberi masa pupil mengembang dan sel rod menyesuaikan diri",
+      "Mengelakkan mentol rosak kerana arus elektrik berubah mendadak"
      ],
      "b": 2,
      "u": "Penyesuaian gelap mengambil beberapa minit untuk sempurna."
@@ -373,10 +382,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Anak pokok kacang di tepi tingkap membengkok ke arah tingkap. Apakah yang berlaku?",
      "p": [
-      "Angin dari tingkap menolak batang pokok",
-      "Pokok itu mencari udara yang lebih segar",
-      "Akarnya tumbuh tidak seimbang pada satu sisi",
-      "Pucuk menunjukkan fototropisme positif ke arah punca cahaya"
+      "Pucuk menunjukkan geotropisme positif ke arah tingkap",
+      "Angin dari tingkap menolak batang lembut itu sedikit demi sedikit",
+      "Pokok itu bergerak ke arah udara yang lebih kaya dengan oksigen",
+      "Pucuk menunjukkan fototropisme positif ke arah cahaya"
      ],
      "b": 3,
      "u": "Sel pada sisi yang gelap memanjang lebih cepat, jadi batang membengkok ke arah cahaya."
@@ -397,10 +406,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah orang berumur lewat empat puluhan mula memegang surat khabar lebih jauh untuk membaca?",
      "p": [
-      "Retina mereka semakin nipis",
-      "Kanta mata hilang keanjalan, jadi ia sukar memfokus objek dekat",
-      "Pupil mereka tidak lagi boleh mengecil",
-      "Saraf optik mereka bertambah panjang"
+      "Retina menjadi semakin nipis, jadi imej dekat tidak dapat dikesan",
+      "Kanta mata hilang keanjalan, jadi sukar memfokus objek dekat",
+      "Pupil tidak lagi dapat mengecil, jadi terlalu banyak cahaya masuk",
+      "Bola mata memanjang dengan usia, jadi imej jatuh di hadapan retina"
      ],
      "b": 1,
      "u": "Keadaan ini dipanggil presbiopia dan dibetulkan dengan kanta cembung."
@@ -459,22 +468,22 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah setiap murid diuji sebanyak tiga kali dan bukan sekali sahaja?",
      "p": [
-      "Supaya murid berpeluang memilih bacaan terbaiknya",
-      "Kerana pembaris perlu dipanaskan dahulu sebelum digunakan",
-      "Untuk mengurangkan kesan ralat rawak dan mengesan bacaan yang luar biasa",
-      "Supaya jumlah data kelihatan lebih banyak dalam laporan"
+      "Memberi murid peluang memilih bacaan terbaik untuk direkodkan",
+      "Membiasakan murid dengan pembaris supaya bacaan ketiga paling tepat",
+      "Mengurangkan kesan ralat rawak dan mengesan bacaan yang ganjil",
+      "Memastikan purata sentiasa lebih rendah daripada bacaan pertama"
      ],
      "b": 2,
      "u": "Ulangan mendedahkan bacaan ganjil yang satu ujian tunggal akan sembunyikan."
     },
     {
      "j": "pilih",
-     "t": "Cubaan kedua Damia ialah 20 cm sedangkan dua cubaan lain 12 cm dan 13 cm. Apakah tafsiran terbaik?",
+     "t": "Berdasarkan catatan dalam jadual, cubaan kedua Damia ialah 20 cm sedangkan dua cubaan lain 12 cm dan 13 cm. Apakah tafsiran terbaik?",
      "p": [
-      "Damia sengaja melambatkan tangannya pada cubaan kedua",
-      "Pembaris menjadi lebih berat pada cubaan kedua",
-      "Damia bertambah pantas selepas cubaan kedua kerana sudah biasa",
-      "Gangguan bunyi menjejaskan tumpuannya pada cubaan itu, jadi bacaan itu bukan gambaran sebenar"
+      "Damia letih selepas cubaan pertama, kemudian pulih semula pada cubaan ketiga",
+      "Damia sebenarnya paling perlahan, dan dua cubaan lain hanyalah nasib baik",
+      "Damia sengaja melambatkan tangan pada cubaan kedua untuk menguji alat itu",
+      "Bunyi bising mengganggu tumpuannya, jadi bacaan itu ialah bacaan ganjil"
      ],
      "b": 3,
      "u": "Catatan dalam jadual memberi sebab yang munasabah untuk bacaan tersasar itu."
@@ -491,22 +500,22 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Pemboleh ubah manakah yang WAJIB dimalarkan supaya perbandingan ini adil?",
      "p": [
-      "Kedudukan tangan dan jenis pembaris yang sama untuk semua murid",
-      "Warna baju yang dipakai semasa ujian",
-      "Bilangan penonton di dalam bilik",
-      "Masa makan tengah hari setiap murid"
+      "Jenis pembaris dan kedudukan tangan semasa menangkap",
+      "Jarak pembaris jatuh sebelum ditangkap oleh murid",
+      "Bilangan jam tidur setiap murid pada malam sebelumnya",
+      "Warna baju yang dipakai oleh murid semasa ujian"
      ],
      "b": 0,
-     "u": "Pemboleh ubah dimalarkan ialah yang boleh mengubah keputusan jika dibiarkan berbeza."
+     "u": "Jarak jatuh ialah pemboleh ubah bergerak balas dan jam tidur ialah pemboleh ubah dimanipulasi. Kedua-duanya memang sepatutnya berubah."
     },
     {
      "j": "pilih",
      "t": "Mengapakah data Chandran belum cukup untuk membuktikan kurang tidur melambatkan gerak balas?",
      "p": [
-      "Chandran mungkin berbohong tentang jam tidurnya",
-      "Hanya seorang murid yang kurang tidur, jadi sampel terlalu kecil untuk membuat kesimpulan",
-      "Ujian pembaris tidak boleh mengukur kesan tidur langsung",
-      "Purata 26.0 cm masih dalam julat normal"
+      "Purata 26.0 cm masih berada dalam julat masa gerak balas normal",
+      "Hanya seorang murid kurang tidur, jadi sampel terlalu kecil",
+      "Ujian pembaris jatuh tidak sesuai untuk mengukur kesan kurang tidur",
+      "Chandran diuji paling akhir, jadi dia sudah letih menunggu giliran"
      ],
      "b": 1,
      "u": "Satu kes menunjukkan corak yang menarik, tetapi ia belum menjadi bukti."
@@ -515,10 +524,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Seorang pesakit tidak dapat merasa sentuhan pada kakinya, tetapi otot kakinya masih mengecut apabila dirangsang terus. Bahagian manakah yang rosak?",
      "p": [
-      "Neuron motor yang membawa impuls ke otot",
-      "Otot kaki itu sendiri",
+      "Neuron motor yang membawa impuls dari saraf tunjang ke otot",
+      "Otot kaki yang sepatutnya mengecut apabila menerima impuls",
       "Neuron deria yang membawa impuls dari kulit ke saraf tunjang",
-      "Reseptor cahaya pada retina"
+      "Reseptor cahaya pada retina yang memproses maklumat sentuhan"
      ],
      "b": 2,
      "u": "Efektor masih berfungsi, jadi kerosakan berada pada laluan masuk, bukan laluan keluar."
@@ -583,10 +592,10 @@ window.BANK["t3b1"] =
      "t": "Pilih SEMUA bukti daripada jadual yang menyokong bahawa Puan Salmah mengalami masalah melihat objek dekat.",
      "p": [
       "Beliau perlu menjauhkan surat khabar untuk membaca",
-      "Kanta yang diperlukan bernilai positif, iaitu kanta cembung",
-      "Umurnya 62 tahun, iaitu julat biasa presbiopia bermula",
-      "Ujian pendengarannya normal",
-      "Beliau tidak dapat mendengar bunyi bernada tinggi"
+      "Kanta yang diperlukan bernilai positif",
+      "Umurnya berada dalam julat presbiopia biasa",
+      "Ujian pendengaran beliau menunjukkan keputusan normal",
+      "Beliau mengadu tidak dapat mendengar bunyi bernada tinggi"
      ],
      "b": [
       0,
@@ -599,10 +608,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Kelas Mei Yin mahu membantunya mengikuti pelajaran. Langkah paling wajar sebelum apa-apa pembelian?",
      "p": [
-      "Kumpul derma untuk membeli alat bantuan pendengaran termahal",
-      "Alihkan tempat duduknya ke hadapan dan minta guru menghadap kelas semasa bercakap, kerana kosnya sifar dan boleh dilakukan esok",
-      "Minta semua murid bercakap dengan kuat sepanjang masa",
-      "Tunggu sehingga pihak sekolah mendapat peruntukan khas"
+      "Kumpul derma untuk membeli alat bantuan pendengaran yang paling mahal di pasaran",
+      "Alihkan tempat duduknya ke hadapan dan minta guru menghadap kelas ketika bercakap",
+      "Minta semua murid bercakap sekuat mungkin setiap kali berbual dengan Mei Yin",
+      "Tunggu sehingga sekolah menerima peruntukan khas untuk murid berkeperluan"
      ],
      "b": 1,
      "u": "Penyelesaian yang boleh dilaksanakan serta-merta patut dicuba dahulu sebelum yang mahal."
@@ -611,10 +620,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Seorang murid menjalankan eksperimen fototropisme menggunakan SATU pasu sahaja. Nilaikan kesahan dapatannya.",
      "p": [
-      "Sah, kerana fototropisme sentiasa berlaku pada semua tumbuhan",
-      "Sah, asalkan pokok itu disiram setiap hari",
-      "Tidak sah, kerana tiada pasu kawalan untuk dibandingkan dan satu pokok boleh membengkok atas sebab lain",
-      "Tidak sah, kerana fototropisme tidak boleh diuji di dalam kelas"
+      "Sah, kerana fototropisme sentiasa berlaku pada semua tumbuhan hijau",
+      "Sah, asalkan pasu itu disiram dengan jumlah air yang sama setiap hari",
+      "Tidak sah, kerana tiada pasu kawalan sebagai perbandingan",
+      "Tidak sah, kerana fototropisme hanya boleh diuji di makmal universiti"
      ],
      "b": 2,
      "u": "Tanpa kawalan, tiada apa yang boleh dibandingkan dengan keputusan itu."
@@ -623,10 +632,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Sekolah mempunyai RM300 untuk membantu murid yang bermasalah penglihatan. Pilihan memberi kesan paling luas?",
      "p": [
-      "Beli sepasang cermin mata mahal untuk seorang murid",
-      "Beli projektor baharu untuk satu bilik darjah",
-      "Simpan wang itu untuk tahun hadapan",
-      "Adakan saringan penglihatan percuma untuk semua murid, kerana ramai yang belum tahu mereka bermasalah"
+      "Beli sepasang cermin mata berjenama untuk seorang murid yang rabun",
+      "Beli projektor baharu supaya tulisan lebih besar dalam satu kelas",
+      "Simpan wang itu untuk membeli peralatan yang lebih mahal tahun depan",
+      "Adakan saringan penglihatan percuma untuk semua murid"
      ],
      "b": 3,
      "u": "Mengesan masalah yang belum diketahui memberi pulangan lebih besar daripada merawat satu kes yang sudah dikenal pasti."
@@ -635,10 +644,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Nilaikan dakwaan bahawa memakai cermin mata menjadikan mata semakin lemah.",
      "p": [
-      "Tidak berasas, kerana cermin mata membetulkan fokus dan tidak mengubah bentuk bola mata",
-      "Betul, kerana mata menjadi malas apabila dibantu",
-      "Betul, tetapi hanya untuk kanta cekung",
-      "Tidak dapat dinilai kerana tiada cara mengukur kekuatan mata"
+      "Tidak berasas, kerana cermin mata tidak mengubah bentuk bola mata",
+      "Betul, kerana otot mata menjadi malas apabila fokus dibantu kanta",
+      "Betul, tetapi hanya berlaku pada kanta cekung dan bukan kanta cembung",
+      "Tidak dapat dinilai, kerana tiada cara untuk mengukur kekuatan mata"
      ],
      "b": 0,
      "u": "Rabun jauh memang bertambah semasa remaja walaupun tanpa cermin mata, dan itu yang sering disalah anggap."
@@ -647,11 +656,11 @@ window.BANK["t3b1"] =
      "j": "banyak",
      "t": "Pilih SEMUA ciri kempen kesihatan mata di sekolah yang berkemungkinan besar berjaya.",
      "p": [
-      "Saringan dijalankan semasa waktu persekolahan supaya semua murid hadir",
+      "Saringan dijalankan semasa waktu persekolahan",
       "Ibu bapa diberi keputusan bertulis berserta langkah seterusnya",
       "Ada rujukan ke klinik untuk murid yang gagal saringan",
       "Keputusan diumumkan di perhimpunan supaya murid rasa malu",
-      "Hanya murid yang mengadu sahaja disaring"
+      "Hanya murid yang mengadu sakit mata sahaja yang disaring"
      ],
      "b": [
       0,
@@ -664,10 +673,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Data manakah paling kukuh untuk menguji sama ada masa skrin menjejaskan penglihatan remaja?",
      "p": [
-      "Tinjauan dalam talian bertanya remaja sama ada mereka rasa mata mereka lemah",
-      "Kajian mengikuti kumpulan besar remaja selama beberapa tahun sambil merekod masa skrin dan ujian mata berkala",
-      "Pendapat seorang pakar mata yang terkenal",
-      "Satu kes remaja yang banyak bermain telefon dan rabun jauh"
+      "Tinjauan dalam talian bertanya remaja sama ada mata mereka rasa lemah",
+      "Susulan bertahun-tahun ke atas ramai remaja dengan ujian mata berkala",
+      "Pendapat seorang pakar mata terkenal yang pernah menulis buku tentangnya",
+      "Kisah seorang remaja yang banyak bermain telefon lalu menjadi rabun jauh"
      ],
      "b": 1,
      "u": "Susulan jangka panjang ke atas kumpulan besar memisahkan kesan sebenar daripada kebetulan."
@@ -677,10 +686,10 @@ window.BANK["t3b1"] =
     "j": "pilih",
     "t": "Klinik bergerak hanya dapat menyaring 40 murid daripada 800. Kriteria pemilihan paling wajar?",
     "p": [
-     "Murid yang paling awal mendaftar pada pagi itu",
-     "Murid daripada kelas hadapan sahaja",
-     "Murid yang mengadu penglihatan kabur atau yang keputusan akademiknya jatuh mendadak",
-     "Empat puluh nama dipilih secara rawak daripada senarai"
+     "Empat puluh murid pertama yang sampai ke sekolah pada pagi itu",
+     "Murid daripada kelas hadapan kerana keputusan mereka paling penting",
+     "Murid yang mengadu penglihatan kabur atau prestasinya jatuh mendadak",
+     "Empat puluh nama yang dipilih secara rawak daripada senarai sekolah"
     ],
     "b": 2,
     "u": "Prestasi yang jatuh mendadak selalunya petanda awal masalah deria yang belum dikesan."
@@ -702,10 +711,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Awak mereka cipta alat amaran untuk murid pekak dalam kelas. Ciri manakah paling menentukan sama ada ia benar-benar digunakan?",
      "p": [
-      "Rekaan yang paling menarik perhatian seluruh kelas",
-      "Bunyi amaran yang paling kuat dalam bilik",
-      "Laporan penggunaan yang dihantar kepada guru besar setiap bulan",
-      "Isyarat yang dapat dilihat atau dirasa dari tempat duduknya tanpa perlu memandang guru sepanjang masa"
+      "Rekaan paling menarik yang mendapat perhatian seluruh kelas",
+      "Bunyi amaran paling kuat supaya didengar dari hujung bilik darjah",
+      "Laporan penggunaan bulanan yang dihantar kepada pengetua sekolah",
+      "Isyarat yang dapat dilihat atau dirasa dari tempat duduknya sendiri"
      ],
      "b": 3,
      "u": "Reka cipta yang baik dinilai pada sama ada orang yang memerlukannya benar-benar menggunakannya."
@@ -714,10 +723,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Kos prototaip awak RM150 tetapi kelas hanya mengumpul RM60. Tindakan paling kreatif dan praktikal?",
      "p": [
-      "Guna motor bergetar daripada alat lama dan bekas kitar semula, kekalkan fungsi amaran yang utama",
-      "Batalkan projek kerana bajet tidak mencukupi",
-      "Kurangkan fungsi amaran supaya muat dengan bajet",
-      "Minta murid pekak itu membayar bakinya sendiri"
+      "Guna motor bergetar daripada alat lama dan kekalkan fungsi utama",
+      "Batalkan projek dan tunggu sehingga cukup wang dikumpul semula",
+      "Buang fungsi amaran utama supaya kos bahan muat dengan bajet",
+      "Minta murid pekak itu menanggung baki kos kerana alat itu miliknya"
      ],
      "b": 0,
      "u": "Kekangan kos menguji kreativiti, bukan menamatkan projek."
@@ -726,10 +735,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Rakan sekelas awak buta warna merah dan hijau. Pembetulan paling wajar untuk poster projek kelas?",
      "p": [
-      "Tukar semua merah kepada oren",
-      "Tambah label teks dan corak berbeza pada setiap bahagian, bukan bergantung pada warna sahaja",
-      "Cetak poster itu hitam putih sepenuhnya",
-      "Minta dia menghafal kedudukan setiap warna"
+      "Tukar semua warna merah kepada oren supaya lebih mudah dilihat",
+      "Tambah label teks dan corak berbeza, bukan bergantung pada warna",
+      "Cetak keseluruhan poster dalam hitam putih tanpa sebarang warna",
+      "Minta rakan itu menghafal kedudukan setiap warna sebelum membentang"
      ],
      "b": 1,
      "u": "Maklumat yang dibawa oleh warna sahaja hilang sepenuhnya bagi sesetengah pembaca."
@@ -738,10 +747,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Awak mahu menguji sama ada reka cipta awak benar-benar membantu. Cara paling meyakinkan?",
      "p": [
-      "Tanya tiga orang rakan sama ada mereka suka rekaan itu",
-      "Kira berapa lama bateri alat itu bertahan",
-      "Rekod berapa kali murid itu terlepas arahan sebelum dan selepas alat digunakan, dalam tempoh yang sama panjang",
-      "Bandingkan dengan kelas lain yang tiada murid pekak"
+      "Tanya tiga orang rakan rapat sama ada mereka menyukai rekaan itu",
+      "Kira berapa jam bateri alat itu dapat bertahan dalam sehari",
+      "Rekod kekerapan dia terlepas arahan sebelum dan selepas alat digunakan",
+      "Bandingkan dengan kelas lain yang tidak mempunyai murid pekak"
      ],
      "b": 2,
      "u": "Perbandingan sebelum dan selepas pada orang yang sama mengasingkan kesan alat awak."
@@ -750,10 +759,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Sekolah lain mahu meniru reka cipta awak tetapi murid mereka tidak dibenarkan membawa telefon. Pengubahsuaian paling wajar?",
      "p": [
-      "Minta sekolah itu menukar peraturan telefon mereka",
-      "Kekalkan rekaan asal kerana ia sudah terbukti berkesan",
-      "Batalkan cadangan untuk sekolah tersebut",
-      "Tukar kepada isyarat lampu di hadapan kelas yang tidak memerlukan telefon langsung"
+      "Minta sekolah itu menukar peraturan supaya telefon dibenarkan",
+      "Kekalkan rekaan asal kerana ia sudah terbukti berkesan di sekolah awak",
+      "Batalkan cadangan kerana rekaan itu tidak sesuai untuk sekolah tersebut",
+      "Tukar kepada isyarat lampu di hadapan kelas yang tidak perlukan telefon"
      ],
      "b": 3,
      "u": "Reka cipta yang baik menyesuaikan diri dengan keadaan penggunanya."
@@ -762,10 +771,10 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Projek awak berjaya tetapi awak akan naik tingkatan empat tahun depan. Langkah paling penting supaya ia kekal berfungsi?",
      "p": [
-      "Tulis panduan ringkas dan tunjukkan kepada murid tingkatan bawah cara menyelenggarakannya",
-      "Simpan semua rekaan dalam telefon awak sendiri",
-      "Minta guru mengumumkan kejayaan projek di perhimpunan",
-      "Bina seberapa banyak unit sebelum awak berpindah"
+      "Latih murid tingkatan bawah dan tinggalkan panduan ringkas bertulis",
+      "Simpan semua lakaran dan fail rekaan dalam telefon awak sendiri",
+      "Minta guru mengumumkan kejayaan projek di perhimpunan sekolah",
+      "Bina seberapa banyak unit yang mampu sebelum awak berpindah kelas"
      ],
      "b": 0,
      "u": "Penyelesaian yang bergantung pada seorang individu akan berhenti bersama orang itu."
@@ -774,22 +783,22 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Ada dua rekaan. Rekaan A berharga RM40 dengan bateri sekali guna RM8 sebulan. Rekaan B berharga RM120 dan boleh dicas semula. Pilihan paling wajar untuk kegunaan setahun?",
      "p": [
-      "Rekaan A, kerana harga permulaannya paling rendah",
-      "Rekaan B, kerana RM40 campur RM96 setahun sudah melebihi RM120 dan ia tidak bergantung pada bekalan bateri",
-      "Rekaan A, kerana bateri baharu sentiasa lebih dipercayai",
-      "Kedua-duanya sama kerana fungsinya serupa"
+      "Rekaan A, kerana harga belian awalnya paling rendah",
+      "Rekaan B, kerana jumlah kos A setahun mencecah RM136",
+      "Rekaan A, kerana bateri baharu lebih dipercayai daripada dicas",
+      "Kedua-duanya sama, kerana fungsi kedua-dua rekaan serupa"
      ],
      "b": 1,
-     "u": "Kos jangka panjang selalunya menentukan pilihan yang wajar, bukan harga pada hari pertama."
+     "u": "RM40 campur RM8 darab 12 bulan bersamaan RM136, sudah melebihi RM120 bagi Rekaan B. Kos jangka panjang selalunya menentukan pilihan yang wajar."
     },
     {
      "j": "pilih",
      "t": "Awak mahu murid lain menerima alat itu tanpa membuat rakan awak berasa terasing. Pendekatan paling wajar?",
      "p": [
-      "Letakkan nama rakan awak pada alat itu supaya semua tahu ia miliknya",
-      "Umumkan keadaan rakan awak di perhimpunan supaya semua faham",
-      "Reka ia supaya kelihatan biasa dan berguna kepada sesiapa sahaja dalam kelas, bukan seperti alat khas untuk seorang",
-      "Simpan alat itu di bilik guru dan keluarkan hanya bila perlu"
+      "Letakkan nama rakan awak pada alat itu supaya semua tahu miliknya",
+      "Umumkan keadaan rakan awak di perhimpunan supaya semua memahaminya",
+      "Reka supaya kelihatan biasa dan berguna kepada sesiapa dalam kelas",
+      "Simpan alat itu di bilik guru dan hanya dikeluarkan apabila perlu"
      ],
      "b": 2,
      "u": "Reka cipta yang mengambil kira nilai sosial menghormati maruah penggunanya, bukan hanya fungsinya."

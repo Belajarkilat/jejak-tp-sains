@@ -29,6 +29,15 @@ window.BANK["t3b2"] =
   "Menilai",
   "Mereka cipta"
  ],
+ "ulasan": {
+  "1": "{n} dapat mengingat kembali struktur sistem respirasi manusia dan istilah asas bab ini. Langkah seterusnya ialah menerangkan sebab di sebalik setiap struktur, bukan sekadar menamakannya.",
+  "2": "{n} memahami mekanisme pernafasan serta ciri alveolus dan dapat menjelaskan kefahaman tersebut. Perlu lebih banyak latihan mentafsir data gas sebelum bergerak ke TP3.",
+  "3": "{n} boleh mengaplikasikan pengetahuan respirasi untuk menerangkan fenomena harian seperti kenaikan kadar pernafasan selepas bersenam. Galakkan membaca graf dan mengaitkan dua pemboleh ubah.",
+  "4": "{n} mampu menganalisis graf isi padu toraks melawan tekanan udara dan mengenal pasti punca apabila satu komponen sistem gagal. Seterusnya latih menimbang bukti untuk membuat keputusan.",
+  "5": "{n} dapat menilai data klinikal tiga individu, memilih kes berisiko tinggi dan menyokongnya dengan bukti berangka daripada jadual. Sudah bersedia untuk tugasan reka cipta.",
+  "6": "{n} berjaya mereka cipta penyelesaian kualiti udara yang praktikal untuk murid asma di sekolah, lengkap dengan pertimbangan kos dan penerimaan komuniti setempat. Pencapaian cemerlang bagi bab ini.",
+  "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Respirasi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
+ },
  "lampiran": {
   "gas": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Gas</th><th class=\"n\">Disedut (%)</th><th class=\"n\">Dihembus (%)</th></tr></thead><tbody><tr><td>Nitrogen</td><td class=\"n\">78.0</td><td class=\"n\">78.0</td></tr><tr><td>Oksigen</td><td class=\"n\">21.0</td><td class=\"n\">16.0</td></tr><tr><td>Karbon dioksida</td><td class=\"n\">0.04</td><td class=\"n\">4.0</td></tr><tr><td>Wap air</td><td class=\"n\">sedikit</td><td class=\"n\">tepu</td></tr></tbody></table></div>",
   "klinik": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Individu</th><th class=\"n\">Kapasiti vital (L)</th><th class=\"n\">Nafas rehat (min&#8315;&#185;)</th><th class=\"n\">PEFR (L min&#8315;&#185;)</th><th>Latar</th></tr></thead><tbody><tr><td>En. Fauzi, 45</td><td class=\"n\">2.6</td><td class=\"n\">22</td><td class=\"n\">290</td><td>Merokok 20 tahun</td></tr><tr><td>Mei Ling, 16</td><td class=\"n\">4.1</td><td class=\"n\">14</td><td class=\"n\">480</td><td>Atlet olahraga</td></tr><tr><td>Suriani, 15</td><td class=\"n\">3.0</td><td class=\"n\">18</td><td class=\"n\">340</td><td>Asma terkawal</td></tr></tbody></table></div><p class=\"qnote\">Julat sihat: kapasiti vital 3.5&ndash;4.8 L &middot; nafas rehat 12&ndash;18 &middot; PEFR 400&ndash;550.</p>",
@@ -82,10 +91,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Apakah fungsi silia pada dinding trakea?",
      "p": [
-      "Menyerap oksigen terus ke dalam darah",
+      "Menyerap oksigen terus ke dalam aliran darah",
       "Menyapu mukus berhabuk keluar dari salur udara",
-      "Menghasilkan tenaga untuk pergerakan udara",
-      "Menapis karbon dioksida daripada darah"
+      "Menghasilkan tenaga untuk menggerakkan udara",
+      "Menapis karbon dioksida keluar daripada darah"
      ],
      "b": 1,
      "u": "Mukus memerangkap, silia menyapu."
@@ -130,7 +139,7 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Hasil buangan respirasi sel ialah:",
      "p": [
-      "Oksigen dan glukosa",
+      "Oksigen dan karbon dioksida",
       "Karbon dioksida dan air",
       "Nitrogen dan air",
       "Glukosa dan tenaga"
@@ -142,10 +151,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Rambut halus dalam rongga hidung berfungsi untuk:",
      "p": [
-      "Memanaskan darah",
-      "Menghasilkan oksigen",
+      "Memanaskan darah dalam hidung",
+      "Menghasilkan mukus pelembap",
       "Menapis zarah habuk yang besar",
-      "Mengecut semasa tarik nafas"
+      "Mengecut semasa menarik nafas"
      ],
      "b": 2,
      "u": "Hidung menapis, memanaskan dan melembapkan udara."
@@ -206,9 +215,9 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah dinding alveolus setebal satu sel sahaja?",
      "p": [
-      "Supaya alveolus lebih ringan",
-      "Supaya darah boleh masuk ke dalam alveolus",
-      "Supaya lebih banyak mukus terhasil",
+      "Supaya darah boleh mengalir terus ke dalam alveolus",
+      "Supaya alveolus lebih ringan dan mudah mengembang",
+      "Supaya lebih banyak mukus dapat dihasilkan di situ",
       "Supaya jarak resapan pendek dan pertukaran gas cepat"
      ],
      "b": 3,
@@ -219,9 +228,9 @@ window.BANK["t3b2"] =
      "t": "Apakah maksud respirasi sel?",
      "p": [
       "Pengoksidaan glukosa dalam sel untuk bebaskan tenaga",
-      "Pergerakan udara masuk dan keluar peparu",
-      "Resapan oksigen dari alveolus ke kapilari",
-      "Pengangkutan oksigen oleh hemoglobin"
+      "Pergerakan udara masuk dan keluar dari peparu",
+      "Resapan oksigen dari alveolus ke dalam kapilari darah",
+      "Pengangkutan oksigen oleh hemoglobin ke seluruh badan"
      ],
      "b": 0,
      "u": "Pernafasan ialah pergerakan udara, respirasi sel ialah tindak balas kimia."
@@ -230,10 +239,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah alveolus banyak dan kecil, bukan satu kantung besar?",
      "p": [
-      "Supaya peparu lebih ringan",
-      "Untuk memberi jumlah luas permukaan yang jauh lebih besar",
-      "Supaya udara bergerak lebih perlahan",
-      "Supaya mukus mudah terkumpul"
+      "Supaya peparu lebih ringan dan mudah mengembang",
+      "Memberi jumlah luas permukaan yang jauh lebih besar",
+      "Supaya udara bergerak lebih perlahan di dalam peparu",
+      "Supaya mukus mudah terkumpul dan memerangkap habuk"
      ],
      "b": 1,
      "u": "Jumlah luas permukaan alveolus manusia hampir sebesar gelanggang badminton."
@@ -242,10 +251,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah permukaan dalam alveolus sentiasa lembap?",
      "p": [
-      "Supaya bakteria tidak dapat hidup",
-      "Supaya udara jadi lebih sejuk",
+      "Supaya bakteria tidak dapat hidup di permukaan alveolus",
+      "Supaya udara yang disedut menjadi lebih sejuk dan segar",
       "Supaya gas larut dahulu sebelum meresap merentasi dinding",
-      "Supaya alveolus tidak pecah"
+      "Supaya dinding alveolus tidak pecah apabila mengembang"
      ],
      "b": 2,
      "u": "Gas mesti larut dahulu baru boleh meresap."
@@ -254,10 +263,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Apakah perbezaan utama antara pernafasan dan respirasi?",
      "p": [
-      "Pernafasan berlaku waktu siang, respirasi waktu malam",
-      "Pernafasan hanya pada manusia, respirasi hanya pada tumbuhan",
-      "Tiada perbezaan, kedua-duanya sama",
-      "Pernafasan ialah pergerakan udara, respirasi ialah tindak balas kimia dalam sel"
+      "Pernafasan ialah tindak balas dalam sel, respirasi ialah pergerakan udara",
+      "Pernafasan berlaku waktu siang, respirasi berlaku pada waktu malam",
+      "Pernafasan hanya pada manusia, respirasi hanya berlaku pada tumbuhan",
+      "Pernafasan ialah pergerakan udara, respirasi ialah tindak balas dalam sel"
      ],
      "b": 3,
      "u": "Ini istilah yang paling kerap tertukar dalam bab ini."
@@ -285,10 +294,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah alveolus dikelilingi rangkaian kapilari darah yang padat?",
      "p": [
-      "Supaya oksigen cepat dibawa pergi dan kecerunan kepekatan kekal tinggi",
-      "Supaya alveolus mendapat bekalan makanan",
-      "Supaya suhu alveolus kekal rendah",
-      "Supaya alveolus tidak kembang berlebihan"
+      "Oksigen cepat dibawa pergi, jadi kecerunan kepekatan kekal tinggi",
+      "Alveolus memerlukan bekalan makanan yang banyak daripada darah",
+      "Darah menyejukkan alveolus supaya suhunya kekal rendah",
+      "Kapilari menghalang alveolus daripada mengembang secara berlebihan"
      ],
      "b": 0,
      "u": "Darah yang sentiasa mengalir menjaga kecerunan supaya resapan tak berhenti."
@@ -300,8 +309,8 @@ window.BANK["t3b2"] =
     "p": [
      "Kadar resapan oksigen bertambah kerana gas lebih mudah larut",
      "Kadar resapan oksigen berkurang kerana jarak resapan bertambah",
-     "Tiada kesan kerana oksigen meresap melalui darah",
-     "Alveolus akan mengembang lebih besar"
+     "Tiada kesan kerana oksigen meresap terus melalui dinding darah",
+     "Alveolus mengembang lebih besar untuk menampung lapisan mukus"
     ],
     "b": 1,
     "u": "Inilah sebabnya jangkitan peparu menyebabkan sesak nafas."
@@ -331,10 +340,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah peratus nitrogen tidak berubah?",
      "p": [
-      "Nitrogen terlalu besar untuk meresap",
-      "Nitrogen dihasilkan semula oleh sel",
+      "Nitrogen terlalu besar untuk meresap ke darah",
+      "Nitrogen dihasilkan semula oleh sel badan",
       "Nitrogen tidak digunakan dalam respirasi sel",
-      "Nitrogen bergabung dengan hemoglobin"
+      "Nitrogen bergabung terus dengan hemoglobin"
      ],
      "b": 2,
      "u": "Nitrogen hanya penumpang, masuk dan keluar sama banyak."
@@ -343,10 +352,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Selepas berlari 100 m, Danial bernafas lebih laju dan dalam. Mengapa?",
      "p": [
-      "Suhu badan naik menyebabkan alveolus mengembang",
-      "Otot memerlukan lebih banyak nitrogen",
-      "Darah jadi pekat dan perlu wap air",
-      "Respirasi sel meningkat, lebih banyak karbon dioksida perlu disingkirkan"
+      "Suhu badan naik lalu menyebabkan semua alveolus mengembang serentak",
+      "Otot memerlukan lebih banyak nitrogen untuk membina semula tisu",
+      "Darah menjadi pekat, jadi badan perlu menyedut lebih banyak wap air",
+      "Respirasi sel meningkat, lebih banyak karbon dioksida perlu dibuang"
      ],
      "b": 3,
      "u": "Otak mengesan kenaikan karbon dioksida, bukan kekurangan oksigen."
@@ -363,10 +372,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah udara yang dihembus lebih panas dan lembap?",
      "p": [
-      "Udara menyerap haba dan wap air dari permukaan alveolus yang lembap",
-      "Karbon dioksida sendiri bersifat panas",
-      "Udara termampat semasa hembusan",
-      "Silia menghasilkan haba semasa bergerak"
+      "Udara menyerap haba dan wap air dari permukaan alveolus",
+      "Karbon dioksida dalam udara hembus bersifat panas dan lembap",
+      "Udara termampat semasa hembusan lalu menjadi panas dan basah",
+      "Silia menghasilkan haba dan wap air semasa bergerak menyapu"
      ],
      "b": 0,
      "u": "Sebab itu cermin berkabus bila awak hembus nafas padanya."
@@ -375,10 +384,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Udara hembus ditiup ke dalam air kapur dan air kapur menjadi keruh. Ini membuktikan:",
      "p": [
-      "Udara hembus mengandungi lebih banyak oksigen",
+      "Udara hembus mengandungi lebih banyak wap air dan oksigen",
       "Udara hembus mengandungi lebih banyak karbon dioksida",
-      "Udara hembus lebih panas",
-      "Udara hembus mengandungi bakteria"
+      "Udara hembus jauh lebih panas daripada udara sedutan",
+      "Udara hembus mengandungi bakteria dari dalam peparu"
      ],
      "b": 1,
      "u": "Air kapur ialah ujian khusus untuk karbon dioksida."
@@ -387,10 +396,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Pendaki di puncak gunung tinggi cepat tercungap walaupun sihat. Mengapa?",
      "p": [
-      "Suhu sejuk menyekat pergerakan diafragma",
-      "Angin kencang menolak udara keluar dari peparu",
-      "Tekanan udara rendah, jadi kurang oksigen meresap masuk setiap nafas",
-      "Nitrogen di kawasan tinggi lebih pekat"
+      "Suhu yang sejuk menyekat pergerakan diafragma dan otot rusuk",
+      "Angin kencang menolak udara keluar dari peparu dengan cepat",
+      "Tekanan udara rendah, jadi kurang oksigen meresap setiap nafas",
+      "Nitrogen di kawasan tinggi lebih pekat dan menghalang oksigen"
      ],
      "b": 2,
      "u": "Peratus oksigen sama, tetapi tekanan separanya jauh lebih rendah."
@@ -399,10 +408,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah bayi baru lahir perlu menangis kuat pada kali pertama?",
      "p": [
-      "Untuk membersihkan mukus dari mata",
-      "Untuk memanaskan badan",
-      "Untuk menguji pita suara",
-      "Untuk mengembangkan alveolus supaya pertukaran gas boleh bermula"
+      "Untuk membersihkan mukus dan cecair daripada kedua-dua matanya",
+      "Untuk memanaskan badan selepas keluar dari rahim yang panas",
+      "Untuk menguji sama ada pita suaranya berfungsi dengan baik",
+      "Untuk mengembangkan alveolus supaya pertukaran gas bermula"
      ],
      "b": 3,
      "u": "Tangisan pertama membuka alveolus yang sebelum ini kuncup."
@@ -451,9 +460,9 @@ window.BANK["t3b2"] =
      "t": "Seorang pesakit alami kecederaan saraf frenik sehingga diafragma tak boleh mengecut. Kesan paling langsung?",
      "p": [
       "Isi padu udara setiap tarikan nafas berkurang",
-      "Alveolus pecah kerana tekanan tinggi",
-      "Hemoglobin tak dapat bergabung dengan oksigen",
-      "Karbon dioksida keluar melalui kulit"
+      "Alveolus pecah kerana tekanan dalam peparu naik",
+      "Hemoglobin tidak dapat bergabung dengan oksigen",
+      "Karbon dioksida mula keluar melalui kulit badan"
      ],
      "b": 0,
      "u": "Hilang diafragma bermakna hilang kedalaman nafas."
@@ -463,10 +472,10 @@ window.BANK["t3b2"] =
      "t": "Asap rokok mengandungi tar, nikotina dan karbon monoksida. Pilih SEMUA kesan yang betul.",
      "p": [
       "Tar melumpuhkan silia sehingga mukus terkumpul",
-      "Karbon monoksida bergabung dengan hemoglobin membentuk karboksihemoglobin",
-      "Dinding alveolus pecah sehingga luas permukaan berkurang",
-      "Nikotina melebarkan salur darah",
-      "Karbon monoksida menambah keupayaan darah membawa oksigen"
+      "Karbon monoksida bergabung dengan hemoglobin",
+      "Dinding alveolus pecah dan luas permukaan berkurang",
+      "Nikotina melebarkan salur darah ke seluruh badan",
+      "Karbon monoksida menambah oksigen yang dibawa darah"
      ],
      "b": [
       0,
@@ -479,10 +488,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Dalam serangan asma, otot pada dinding bronkiol mengecut. Kesannya?",
      "p": [
-      "Luas permukaan alveolus bertambah",
+      "Luas permukaan alveolus bertambah, jadi PEFR meningkat",
       "Rintangan aliran udara meningkat, jadi PEFR menurun",
-      "Kapasiti vital meningkat serta-merta",
-      "Hemoglobin membawa lebih banyak oksigen"
+      "Kapasiti vital meningkat serta-merta semasa serangan",
+      "Hemoglobin membawa lebih banyak oksigen ke bronkiol"
      ],
      "b": 1,
      "u": "Salur menyempit bermakna udara sukar keluar dengan laju."
@@ -491,10 +500,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah karbon monoksida bahaya walaupun kepekatannya rendah?",
      "p": [
-      "Ia melarutkan dinding alveolus",
-      "Ia menghalang diafragma daripada mengecut",
+      "Ia melarutkan dinding alveolus sedikit demi sedikit",
+      "Ia menghalang diafragma daripada mengecut dengan sepenuhnya",
       "Ia terikat pada hemoglobin jauh lebih kuat daripada oksigen",
-      "Ia menukar oksigen kepada nitrogen"
+      "Ia menukar oksigen dalam darah menjadi gas nitrogen"
      ],
      "b": 2,
      "u": "Ikatan itu hampir 200 kali lebih kuat daripada ikatan oksigen."
@@ -503,22 +512,22 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Bacaan PEFR seorang pesakit asma: pagi 310, tengah hari 420, malam 300. Apakah tafsirannya?",
      "p": [
-      "Alat pengukur rosak kerana bacaan tidak tetap",
-      "Pesakit sudah sembuh sepenuhnya",
+      "Alat pengukur itu rosak kerana bacaannya tidak tetap",
+      "Pesakit sudah sembuh kerana bacaan tengah hari tinggi",
       "Pesakit bersenam terlalu banyak pada waktu tengah hari",
-      "Gejala lebih teruk pada waktu pagi dan malam, jadi ubat pencegah patut diambil sebelum tidur"
+      "Aliran udaranya paling terhad pada waktu pagi dan malam"
      ],
      "b": 3,
-     "u": "Corak bacaan sepanjang hari memberitahu bila perlindungan paling diperlukan."
+     "u": "Bacaan PEFR yang lebih rendah bermakna saluran udara lebih sempit. Corak sepanjang hari menunjukkan bila gejala paling teruk, dan maklumat itulah yang doktor gunakan untuk merancang rawatan."
     },
     {
      "j": "pilih",
      "t": "Seorang murid bernafas berulang kali ke dalam beg kertas. Apa yang berlaku?",
      "p": [
-      "Kepekatan karbon dioksida udara yang disedut naik, jadi kadar pernafasan bertambah laju",
-      "Oksigen bertambah, jadi dia rasa segar",
-      "Tiada perubahan kerana udara sama",
-      "Nitrogen dalam beg habis digunakan"
+      "Karbon dioksida dalam udara sedutan naik, jadi pernafasan bertambah laju",
+      "Oksigen dalam beg bertambah, jadi dia berasa lebih segar dan bertenaga",
+      "Tiada perubahan kerana udara yang disedut dan dihembus adalah sama",
+      "Nitrogen dalam beg habis digunakan, jadi pernafasan menjadi perlahan"
      ],
      "b": 0,
      "u": "Karbon dioksida yang terkumpul itulah pencetus pusat pernafasan."
@@ -527,10 +536,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Mengapakah kapasiti vital perokok lama lebih rendah walaupun peparunya bersaiz sama?",
      "p": [
-      "Rusuknya menjadi lebih pendek",
-      "Dinding alveolus rosak, jadi peparu kurang kenyal dan kurang udara dapat ditukar",
-      "Diafragmanya bertukar menjadi tulang",
-      "Darahnya mengandungi lebih sedikit nitrogen"
+      "Tulang rusuknya menjadi lebih pendek dan kaku",
+      "Dinding alveolus rosak, jadi peparu kurang kenyal",
+      "Diafragmanya mengeras dan bertukar menjadi tulang",
+      "Darahnya membawa lebih sedikit gas nitrogen"
      ],
      "b": 1,
      "u": "Kekenyalan peparu yang hilang tidak boleh dipulihkan."
@@ -600,9 +609,9 @@ window.BANK["t3b2"] =
      "t": "Sekolah hanya mampu jalankan SATU program kesihatan respirasi. Pilihan paling wajar?",
      "p": [
       "Kelas senaman pagi, kerana semua murid akan capai kapasiti vital atlet",
-      "Pemeriksaan PEFR sahaja, kerana ia mengesan semua penyakit",
-      "Tiada program, kerana hanya seorang menunjukkan bacaan rendah",
-      "Kempen bebas rokok, kerana kerosakan alveolus tidak boleh dipulihkan manakala asma boleh dikawal"
+      "Pemeriksaan PEFR sahaja, kerana ia dapat mengesan semua penyakit peparu",
+      "Tiada program, kerana hanya seorang menunjukkan bacaan yang rendah",
+      "Kempen bebas rokok, kerana kerosakan alveolus tidak boleh dipulihkan"
      ],
      "b": 3,
      "u": "Keputusan yang baik menimbang mana satu memberi pulangan terbesar bagi kos yang sama."
@@ -611,34 +620,34 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Suriani mahu sertai merentas desa sekolah. Keputusan paling wajar?",
      "p": [
-      "Benarkan dengan syarat bawa inhaler dan buat pemanasan badan, kerana asma terkawal tidak menghalang senaman",
-      "Halang terus, kerana semua pesakit asma tidak boleh bersenam",
-      "Benarkan tanpa sebarang persediaan",
-      "Benarkan hanya jika dia berhenti guna inhaler"
+      "Benarkan dengan syarat membawa inhaler dan membuat pemanasan badan",
+      "Halang terus, kerana semua pesakit asma dilarang bersenam berat",
+      "Benarkan tanpa sebarang persediaan kerana asmanya sudah terkawal",
+      "Benarkan hanya jika dia berhenti menggunakan inhaler sebelum itu"
      ],
      "b": 0,
-     "u": "Senaman berkala sebenarnya membantu pesakit asma terkawal."
+     "u": "Asma yang terkawal tidak menghalang senaman. Persediaan yang betul menjadikannya selamat, dan senaman berkala sebenarnya membantu."
     },
     {
      "j": "pilih",
      "t": "Sekolah ada RM500 untuk kurangkan habuk pada waktu petang. Pilihan memberi kesan paling luas?",
      "p": [
-      "Beli satu penapis udara untuk satu bilik darjah sahaja",
-      "Pindahkan aktiviti luar ke waktu pagi dan tutup tingkap petang, kerana kosnya hampir sifar dan melindungi semua murid",
-      "Beli topeng muka untuk tiga murid asma sahaja",
-      "Simpan wang itu untuk tahun depan"
+      "Beli satu penapis udara berkuasa tinggi untuk satu bilik darjah",
+      "Pindahkan aktiviti luar ke waktu pagi dan tutup tingkap petang",
+      "Beli topeng muka khas untuk tiga orang murid asma sahaja",
+      "Simpan wang itu untuk membeli peralatan lebih besar tahun depan"
      ],
      "b": 1,
-     "u": "Penyelesaian terbaik bukan selalu yang paling mahal."
+     "u": "Langkah pertama hampir tidak menggunakan wang dan melindungi setiap murid. Penyelesaian terbaik bukan selalu yang paling mahal."
     },
     {
      "j": "pilih",
      "t": "Seorang murid mengukur kapasiti vitalnya sekali sahaja. Nilaikan kesahan datanya.",
      "p": [
-      "Sah, kerana alat sudah ditentukur",
-      "Sah, kerana kapasiti vital tidak pernah berubah",
-      "Tidak sah, ukuran perlu diulang sekurang-kurangnya tiga kali dan bacaan tertinggi diambil",
-      "Tidak sah, kerana kapasiti vital tidak boleh diukur"
+      "Sah, kerana alat pengukur itu sudah ditentukur oleh pihak makmal",
+      "Sah, kerana kapasiti vital seseorang tidak pernah berubah langsung",
+      "Tidak sah, kerana ukuran perlu diulang dan bacaan tertinggi diambil",
+      "Tidak sah, kerana kapasiti vital tidak boleh diukur di sekolah"
      ],
      "b": 2,
      "u": "Satu bacaan tunggal tidak boleh membezakan prestasi sebenar daripada percubaan yang lemah."
@@ -664,10 +673,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Data manakah paling kukuh untuk membuktikan merokok merosakkan peparu?",
      "p": [
-      "Pendapat seorang doktor terkenal",
-      "Satu kes seorang perokok yang meninggal dunia",
-      "Tinjauan dalam talian tentang perasaan orang terhadap rokok",
-      "Kajian jangka panjang membandingkan kapasiti vital perokok dan bukan perokok yang sama umur dan jantina"
+      "Pendapat seorang doktor pakar peparu yang sangat terkenal",
+      "Kisah seorang perokok tegar yang meninggal akibat kanser",
+      "Tinjauan dalam talian tentang perasaan orang ramai terhadap rokok",
+      "Kajian jangka panjang ke atas perokok dan bukan perokok seusia"
      ],
      "b": 3,
      "u": "Perbandingan terkawal jangka panjang mengasingkan kesan sebenar merokok."
@@ -677,10 +686,10 @@ window.BANK["t3b2"] =
     "j": "pilih",
     "t": "Klinik hanya boleh menyaring 50 murid daripada 900. Kriteria pemilihan paling wajar?",
     "p": [
-     "Murid yang melaporkan sesak nafas atau tinggal berdekatan sumber pencemaran",
-     "Murid yang paling awal mendaftar",
-     "Murid daripada kelas terbaik sahaja",
-     "Pilih 50 nama secara rawak daripada senarai"
+     "Murid yang sesak nafas atau tinggal dekat sumber pencemaran",
+     "Lima puluh murid yang paling awal mendaftar pada hari itu",
+     "Murid daripada kelas terbaik kerana keputusan mereka penting",
+     "Lima puluh nama yang dipilih secara rawak daripada senarai"
     ],
     "b": 0,
     "u": "Saringan bersumber terhad patut disasarkan pada kumpulan berisiko tertinggi."
@@ -702,10 +711,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Awak reka alat amaran kualiti udara untuk sekolah. Ciri mana paling penting supaya murid asma benar-benar menggunakannya?",
      "p": [
-      "Rekaan yang paling cantik",
-      "Amaran yang boleh dilihat dari koridor tanpa perlu buka telefon",
+      "Rekaan yang paling cantik supaya dapat menarik perhatian semua murid",
+      "Amaran yang boleh dilihat dari koridor tanpa perlu membuka telefon",
       "Bacaan angka yang paling tepat sehingga tiga titik perpuluhan",
-      "Laporan bulanan yang dihantar kepada guru besar"
+      "Laporan bulanan yang dihantar terus kepada guru besar sekolah"
      ],
      "b": 1,
      "u": "Reka cipta yang baik dinilai pada sama ada orang benar-benar menggunakannya."
@@ -714,10 +723,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Kos bahan awak RM180 tetapi PIBG hanya luluskan RM100. Tindakan paling kreatif dan praktikal?",
      "p": [
-      "Batalkan projek terus",
-      "Kurangkan fungsi utama supaya muat bajet",
-      "Guna penderia terpakai dari bengkel Reka Bentuk dan Teknologi serta kotak kitar semula, kekalkan fungsi utama",
-      "Minta murid asma bayar sendiri bakinya"
+      "Batalkan projek terus kerana bajet PIBG tidak mencukupi",
+      "Buang fungsi amaran utama supaya kos bahan muat dengan bajet",
+      "Guna penderia terpakai dan kotak kitar semula, kekalkan fungsi utama",
+      "Minta murid asma membayar sendiri baki kos kerana alat itu untuk mereka"
      ],
      "b": 2,
      "u": "Kekangan kos menguji kreativiti, bukan menamatkan projek."
@@ -726,10 +735,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Kontraktor tapak pembinaan enggan berhenti kerja. Pendekatan paling wajar mengambil kira nilai masyarakat?",
      "p": [
-      "Buat aduan ke media sosial tanpa berbincang dahulu",
-      "Halang lori masuk dengan menghalang jalan",
-      "Abaikan sahaja kerana sekolah tiada kuasa",
-      "Berbincang meminta mereka menyiram tanah waktu petang dan menutup lori, kerana ia murah bagi mereka dan mengurangkan habuk"
+      "Buat aduan di media sosial tanpa berbincang dengan mereka dahulu",
+      "Halang lori daripada masuk dengan menutup jalan ke tapak bina",
+      "Abaikan sahaja kerana pihak sekolah tiada kuasa ke atas kontraktor",
+      "Berbincang supaya mereka menyiram tanah dan menutup muatan lori"
      ],
      "b": 3,
      "u": "Penyelesaian yang menang ialah yang murah bagi pihak satu lagi dan berkesan bagi awak."
@@ -738,10 +747,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Awak reka topeng penapis habuk mudah untuk murid asma menggunakan bahan yang ada di sekolah. Kriteria reka bentuk mana paling menentukan sama ada ia benar-benar membantu?",
      "p": [
-      "Ia menapis zarah halus tetapi masih membenarkan murid bernafas tanpa rasa sesak",
-      "Ia dibuat daripada bahan yang paling murah di pasaran",
-      "Ia boleh dibasuh dan diguna semula seratus kali",
-      "Ia mempunyai logo sekolah yang jelas di hadapan"
+      "Ia menapis zarah halus tetapi murid masih bernafas dengan selesa",
+      "Ia dibuat daripada bahan paling murah yang ada di pasaran",
+      "Ia boleh dibasuh dan digunakan semula sekurang-kurangnya seratus kali",
+      "Ia mempunyai logo sekolah yang jelas di bahagian hadapan topeng"
      ],
      "b": 0,
      "u": "Penapis yang terlalu rapat menambah rintangan aliran udara. Reka bentuk yang berjaya mengimbangi penapisan dengan kemudahan bernafas."
@@ -750,9 +759,9 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Selepas memasang penyelesaian awak, bagaimana awak buktikan ia benar-benar berkesan dan bukan sekadar nampak berguna?",
      "p": [
-      "Tanya tiga orang kawan sama ada mereka suka reka cipta itu",
-      "Rekod bilangan episod sesak nafas dan bacaan PEFR murid asma sebelum dan selepas, dalam tempoh yang sama panjang",
-      "Kira berapa banyak habuk melekat pada penapis selepas seminggu",
+      "Tanya tiga orang kawan sama ada mereka menyukai reka cipta itu",
+      "Rekod episod sesak nafas dan bacaan PEFR sebelum dan selepas",
+      "Kira berapa banyak habuk yang melekat pada penapis seminggu sekali",
       "Bandingkan dengan sekolah lain yang memang tiada masalah habuk"
      ],
      "b": 1,
@@ -762,22 +771,22 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Sekolah luar bandar mahu meniru reka cipta awak tetapi bekalan elektrik di sana kerap terputus. Pengubahsuaian paling wajar?",
      "p": [
-      "Beri arahan supaya mereka membeli janakuasa sendiri",
+      "Beri arahan supaya mereka membeli janakuasa mudah alih sendiri",
       "Kekalkan reka bentuk asal kerana ia sudah terbukti berkesan di sini",
-      "Tukar kepada penunjuk yang tidak memerlukan kuasa, seperti kain penanda habuk yang diperiksa dua kali sehari",
-      "Batalkan cadangan itu untuk sekolah tersebut"
+      "Tukar kepada penunjuk tanpa kuasa, seperti kain penanda habuk",
+      "Batalkan cadangan itu kerana sekolah tersebut tiada bekalan elektrik"
      ],
      "b": 2,
      "u": "Reka cipta yang baik menyesuaikan diri dengan keadaan penggunanya, bukan menuntut pengguna menyesuaikan diri dengannya."
     },
     {
      "j": "pilih",
-     "t": "Projek awak berjaya, tetapi awak akan tamat Tingkatan 3 hujung tahun ini. Langkah paling penting supaya ia kekal berfungsi?",
+     "t": "Projek awak berjaya, tetapi awak akan naik ke tingkatan empat dan meninggalkan kelab ini tahun depan. Langkah paling penting supaya ia kekal berfungsi?",
      "p": [
-      "Simpan semua maklumat projek dalam telefon awak sendiri",
+      "Simpan semua maklumat projek di dalam telefon bimbit awak sendiri",
       "Minta guru besar mengumumkan kejayaan projek dalam perhimpunan",
-      "Pasang seberapa banyak unit yang mampu sebelum awak tamat sekolah",
-      "Tulis panduan penyelenggaraan ringkas dan latih ahli kelab sains Tingkatan 1 untuk mengambil alih"
+      "Pasang seberapa banyak unit yang mampu sebelum awak meninggalkan kelab",
+      "Tulis panduan penyelenggaraan dan latih ahli kelab tingkatan satu"
      ],
      "b": 3,
      "u": "Penyelesaian yang bergantung pada seorang individu akan mati bersama penglibatan orang itu."
@@ -786,10 +795,10 @@ window.BANK["t3b2"] =
      "j": "pilih",
      "t": "Dua reka bentuk memberi perlindungan yang sama. Reka bentuk A berharga RM90 dan perlu penapis baharu setiap bulan pada RM15. Reka bentuk B berharga RM250 dan penapisnya boleh dibasuh. Pilihan paling wajar untuk sekolah?",
      "p": [
-      "Reka bentuk B, kerana selepas kira-kira setahun jumlah kosnya lebih rendah dan ia tidak bergantung pada bekalan penapis",
+      "Reka bentuk B, kerana jumlah kos A dalam setahun mencecah RM270",
       "Reka bentuk A, kerana harga permulaannya paling murah",
       "Reka bentuk A, kerana penapis sekali guna sentiasa lebih bersih",
-      "Kedua-duanya sama sahaja kerana perlindungan yang diberi sama"
+      "Kedua-duanya sama, kerana perlindungan yang diberi adalah sama"
      ],
      "b": 0,
      "u": "A menelan RM90 campur RM180 dalam tahun pertama, iaitu RM270, sudah melebihi RM250 bagi B. Kos jangka panjang selalunya menentukan pilihan yang wajar."
