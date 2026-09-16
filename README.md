@@ -36,11 +36,18 @@ menggunakan pautan yang sama.
 ### Menyediakan kelas
 
 1. Buka aplikasi, tekan **Cikgu**, daftar atau log masuk.
-2. Tekan **Tambah kelas** dan beri nama. Pelayan menjana **kod kelas** 6 aksara.
-3. Tab **Nama & PIN**: tampal nama murid, satu nama satu baris. Setiap murid
-   mendapat PIN 4 nombor.
-4. **Kongsi di WhatsApp** (pautan `?k=KOD`) dan **Cetak slip PIN**.
-5. Murid buka pautan, ketik namanya, masukkan PIN pada pad nombor.
+2. Tekan **Import dari Excel** dan pilih fail senarai nama (xlsx, xls, csv,
+   atau tampal jadual dari Excel). Lajur **Nama** dan **Kelas** dikenal pasti
+   sendiri; jika tiada lajur Kelas, setiap helaian dijadikan satu kelas.
+   Nama HURUF BESAR (APDM) ditukar kepada huruf nama biasa. Semua kelas,
+   kod kelas dan PIN dijana sekali gus. Nama yang sudah ada dilangkau, jadi
+   fail yang sama boleh dimuat naik semula.
+   Tanpa fail: **Tambah kelas**, kemudian tampal nama dalam tab **Nama & PIN**.
+3. **Cetak slip PIN semua kelas**, dan **Kongsi di WhatsApp** (pautan `?k=KOD`)
+   bagi setiap kelas.
+4. Murid buka pautan, ketik namanya, masukkan PIN pada pad nombor.
+
+Pembaca Excel (SheetJS) hanya dimuatkan apabila guru memilih fail Excel.
 
 Tab lain dalam satu kelas: **Keputusan murid** (TP setiap murid mengikut nama,
 tindih TP, ulasan PBD, eksport SPPB), **Papan skor** (bernama, dengan suis sorok

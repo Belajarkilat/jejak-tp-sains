@@ -607,6 +607,8 @@ input.kodkelas::placeholder{opacity:.3}
 }
 .kadkelas.tambah .plus{font-size:34px;line-height:1;color:var(--arteri)}
 .kadkelas.contoh{border-style:dashed}
+.kadkelas.import{border-style:solid;border-color:var(--vena);background:var(--surface)}
+.kadkelas.tambah small{display:block;font-weight:500;color:var(--ink3);font-size:12.5px;margin-top:2px}
 .langkah{margin:14px 0 0;padding-left:20px;color:var(--ink2);font-size:14.5px;line-height:1.7}
 .kembali{border:0;background:none;cursor:pointer;color:var(--ink2);font-weight:650;font-size:14px;padding:8px 0;display:inline-flex;gap:6px;align-items:center}
 .kodbesar{
@@ -626,7 +628,7 @@ input.kodkelas::placeholder{opacity:.3}
 .btnkecil{border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:5px 9px;font-size:12px;cursor:pointer;color:var(--ink2);min-height:32px}
 .btnkecil.bahaya{color:var(--arteri)}
 .suis{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);cursor:pointer}
-.suis input{width:18px;height:18px}
+.suis input[type=checkbox]{width:18px;height:18px;flex:none}
 .papanbesar .prow{font-size:16px;padding:11px 4px}
 .papanbesar .prow .rk{font-size:15px}
 .pingat{font-size:18px}
@@ -3237,8 +3239,14 @@ function paneRumah(ak){
   }
   if(!GURU_DIMUAT){ ak.appendChild(el("p","note","Memuatkan kelas...")); return; }
 
+  if(S.imp) return paneImport(ak);
+
   var g=el("div","kelasgrid");
   KELAS_GURU.forEach(function(k){ g.appendChild(kadKelas(k)); });
+  var bi=el("button","kadkelas tambah import"); bi.type="button";
+  bi.innerHTML='<span class="plus" aria-hidden="true">\u{1F4C4}</span><span>Import dari Excel<br><small>Semua kelas sekali gus</small></span>';
+  bi.onclick=function(){ S.imp={tahap:"pilih"}; S.tambahKelas=false; renderCikgu(); window.scrollTo({top:0}); };
+  g.appendChild(bi);
   g.appendChild(kadTambah());
   if(!KELAS_GURU.length) g.appendChild(kadKelas(KELAS_CONTOH));
   ak.appendChild(g);
@@ -3246,11 +3254,11 @@ function paneRumah(ak){
   if(!KELAS_GURU.length){
     var p=el("div","panel");
     p.innerHTML='<div class="panel-bd"><h3>Cara bermula</h3><ol class="langkah">'+
-      '<li>Tekan <b>Tambah kelas</b> dan beri nama, contohnya 3 Amanah.</li>'+
-      '<li>Tampal nama murid. Setiap murid mendapat PIN 4 nombor.</li>'+
-      '<li>Kongsi pautan kelas di WhatsApp dan cetak slip PIN untuk murid.</li>'+
-      '<li>Murid buka pautan, pilih nama, masukkan PIN, dan terus bermain.</li>'+
-      '</ol><p class="note">Buka <b>kelas contoh</b> untuk melihat rupa keputusan murid dahulu.</p></div>';
+      '<li>Tekan <b>Import dari Excel</b> dan pilih fail senarai nama (contohnya eksport APDM). Semua kelas dan PIN murid dijana sendiri.</li>'+
+      '<li>Tekan <b>Cetak slip PIN semua kelas</b> dan beri slip kepada murid.</li>'+
+      '<li>Buka setiap kelas dan kongsi pautannya di WhatsApp.</li>'+
+      '<li>Murid buka pautan, ketik nama, masukkan PIN, dan terus bermain.</li>'+
+      '</ol><p class="note">Tiada fail Excel? Tekan <b>Tambah kelas</b> dan tampal nama murid. Buka <b>kelas contoh</b> untuk melihat rupa keputusan murid dahulu.</p></div>';
     ak.appendChild(p);
   }
 }
@@ -3669,25 +3677,328 @@ function kotakKongsi(k){
   return w;
 }
 
-function cetakSlip(k){
+/* Satu kelas atau senarai kelas. Setiap kelas bermula pada halaman baharu. */
+function cetakSlip(kelas){
+  var senarai=Array.isArray(kelas)?kelas:[kelas];
   var w=window.open("","_blank");
   if(!w){ alert("Benarkan tetingkap timbul (pop-up) untuk mencetak slip."); return; }
-  var url=urlKelas(k.kod);
-  var html='<!doctype html><html lang="ms"><head><meta charset="utf-8"><title>Slip PIN '+esc(k.nama)+'</title>'+
+  var tajuk=senarai.length===1?senarai[0].nama:(senarai.length+" kelas");
+  var html='<!doctype html><html lang="ms"><head><meta charset="utf-8"><title>Slip PIN '+esc(tajuk)+'</title>'+
     '<style>body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;margin:10mm;color:#111}'+
     'h1{font-size:15px;margin:0 0 8px}.g{display:grid;grid-template-columns:repeat(3,1fr)}'+
     '.s{border:1px dashed #888;padding:9px 11px;break-inside:avoid;font-size:11.5px;line-height:1.5}'+
     '.s b{font-size:13.5px;display:block;margin-bottom:3px}.k{font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.12em;font-weight:700}'+
     '.u{font-size:9px;color:#555;word-break:break-all;margin-top:3px}.np{margin-bottom:10px}'+
+    '.hal+.hal{break-before:page;margin-top:14px}'+
     '@media print{.np{display:none}}</style></head><body>'+
-    '<div class="np"><button onclick="print()">Cetak</button> Gunting setiap slip dan beri kepada murid.</div>'+
-    '<h1>'+esc(k.nama)+' &middot; Cikgu Nani &middot; Sains</h1><div class="g">';
-  nomborKelas(k.id).forEach(function(m){
-    html+='<div class="s"><b>'+esc(NAMA[k.id][m.no])+'</b>Kod kelas: <span class="k">'+esc(k.kod)+'</span><br>'+
-      'PIN saya: <span class="k">'+esc(PIN[k.id][m.no])+'</span><div class="u">'+esc(url)+'</div></div>';
+    '<div class="np"><button onclick="print()">Cetak</button> Gunting setiap slip dan beri kepada murid.</div>';
+  senarai.forEach(function(k){
+    var url=urlKelas(k.kod);
+    html+='<div class="hal"><h1>'+esc(k.nama)+' &middot; Cikgu Nani &middot; Sains</h1><div class="g">';
+    nomborKelas(k.id).forEach(function(m){
+      html+='<div class="s"><b>'+esc(NAMA[k.id][m.no])+'</b>Kod kelas: <span class="k">'+esc(k.kod)+'</span><br>'+
+        'PIN saya: <span class="k">'+esc(PIN[k.id][m.no])+'</span><div class="u">'+esc(url)+'</div></div>';
+    });
+    html+='</div></div>';
   });
-  html+='</div><script>setTimeout(function(){print()},400)<\/script></body></html>';
+  html+='<script>setTimeout(function(){print()},400)<\/script></body></html>';
   w.document.open(); w.document.write(html); w.document.close();
+}
+
+/* ---------------- Import senarai murid ----------------
+   Guru boleh memuat naik fail Excel, CSV atau teks (termasuk eksport APDM),
+   atau menampal jadual terus dari Excel. Lajur Nama dan Kelas dikenal pasti
+   sendiri. Jika fail mempunyai satu helaian bagi setiap kelas, nama helaian
+   dijadikan nama kelas. PIN setiap murid dijana di sini. */
+var XLSX_SKRIP="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js";
+var XLSX_JANJI=null;
+function muatXlsx(){
+  if(window.XLSX) return Promise.resolve(window.XLSX);
+  if(XLSX_JANJI) return XLSX_JANJI;
+  XLSX_JANJI=new Promise(function(ok,gagal){
+    var s=document.createElement("script"); s.src=XLSX_SKRIP; s.async=true;
+    s.onload=function(){ ok(window.XLSX); };
+    s.onerror=function(){ XLSX_JANJI=null; s.remove(); gagal(new Error("Failed to fetch")); };
+    document.head.appendChild(s);
+  });
+  return XLSX_JANJI;
+}
+function huraiCsv(t){
+  t=String(t||"").replace(/^\uFEFF/,"");
+  var baris1=t.split(/\r?\n/)[0]||"";
+  var sep=(baris1.split(";").length>baris1.split(",").length)?";":(baris1.indexOf("\t")>=0?"\t":",");
+  var out=[],row=[],f="",q=false;
+  for(var i=0;i<t.length;i++){
+    var c=t[i];
+    if(q){ if(c==='"'){ if(t[i+1]==='"'){ f+='"'; i++; } else q=false; } else f+=c; }
+    else if(c==='"') q=true;
+    else if(c===sep){ row.push(f); f=""; }
+    else if(c==="\n"){ row.push(f); out.push(row); row=[]; f=""; }
+    else if(c!=="\r") f+=c;
+  }
+  if(f||row.length){ row.push(f); out.push(row); }
+  return out;
+}
+/* Teks tampal: lajur dipisah tab (dari Excel). Satu lajur jika tiada tab. */
+function huraiTampal(t){
+  return String(t||"").replace(/^\uFEFF/,"").split(/\r?\n/).map(function(b){ return b.split("\t"); });
+}
+function bacaFail(fail){
+  var ext=(fail.name.split(".").pop()||"").toLowerCase();
+  if(ext==="csv"||ext==="txt"||ext==="tsv"){
+    return fail.text().then(function(t){ return [{nama:null,baris:huraiCsv(t)}]; });
+  }
+  if(["xlsx","xls","xlsm","ods"].indexOf(ext)<0)
+    return Promise.reject(new Error("Jenis fail tidak disokong. Guna Excel (.xlsx, .xls) atau CSV."));
+  return muatXlsx().then(function(X){
+    return fail.arrayBuffer().then(function(buf){
+      var wb=X.read(buf,{type:"array"});
+      return wb.SheetNames.map(function(n){
+        return {nama:n,baris:X.utils.sheet_to_json(wb.Sheets[n],{header:1,raw:false,defval:"",blankrows:false})};
+      });
+    });
+  });
+}
+
+var PENYAMBUNG_KECIL=/^(bin|binti|bt|bte|b\.|bt\.|a\/l|a\/p|s\/o|d\/o|anak|ak)$/;
+/* APDM menulis nama dalam HURUF BESAR. Tukar kepada huruf nama biasa. */
+function hurufNama(s){
+  if(s!==s.toUpperCase()||!/[A-Z]/.test(s)) return s;
+  return s.toLowerCase().split(" ").map(function(w){
+    if(PENYAMBUNG_KECIL.test(w)) return w;
+    return w.replace(/(^|[-'’(@])([a-z])/g,function(m,a,b){ return a+b.toUpperCase(); });
+  }).join(" ");
+}
+function bersihNama(v){
+  var s=String(v==null?"":v).replace(/\u00A0/g," ").replace(/^\s*\d+\s*[\.\)\-:]?\s+/,"").replace(/\s+/g," ").trim();
+  if(s.length<2||s.length>120) return "";
+  if(!/[A-Za-zÀ-ɏ一-鿿]/.test(s)) return "";
+  if(/^\d{6}-?\d{2}-?\d{4}$/.test(s)||/@/.test(s)) return "";
+  if(/^(nama|name|nama murid|nama pelajar|bil|no)$/i.test(s)) return "";
+  return hurufNama(s);
+}
+function tajukLajur(baris){
+  for(var r=0;r<Math.min(12,baris.length);r++){
+    var row=baris[r]||[], nc=-1, kc=-1;
+    for(var i=0;i<row.length;i++){
+      var c=String(row[i]||"").trim().toLowerCase();
+      if(!c||c.length>30||/\d/.test(c)||c.split(/\s+/).length>4) continue;
+      if(nc<0&&/nama|name/.test(c)&&!/kelas|class|sekolah|bapa|ibu|penjaga|guru|waris|senarai/.test(c)) nc=i;
+      else if(kc<0&&/^(kelas|class|nama kelas|kelas murid|tingkatan\s*\/\s*kelas|ting\.?\s*\/\s*kelas)$/.test(c)) kc=i;
+    }
+    if(nc>=0) return {r:r,nama:nc,kelas:kc};
+  }
+  return null;
+}
+/* Tiada tajuk: dalam setiap baris, ambil sel yang paling mirip nama orang
+   (ada huruf, tiada nombor selepas nombor giliran dibuang, paling banyak
+   perkataan). Ini tahan terhadap tampalan yang bercampur format. */
+function namaDalamBaris(row){
+  var terbaik="", nilai=0;
+  (row||[]).forEach(function(c){
+    var n=bersihNama(c);
+    if(!n||/\d/.test(n)) return;
+    /* baris tajuk dokumen, bukan nama murid */
+    if(/\b(senarai|sekolah|smk|kelas|tingkatan|jumlah|guru|murid|pelajar)\b/i.test(n)) return;
+    var v=n.split(" ").length*10+Math.min(n.length,40);
+    if(v>nilai){ nilai=v; terbaik=n; }
+  });
+  return terbaik;
+}
+function kiraRupaNama(baris){
+  var n=0;
+  (baris||[]).forEach(function(row){ (row||[]).forEach(function(c){ if(bersihNama(c)&&String(c).trim().split(/\s+/).length>=2) n++; }); });
+  return n;
+}
+/* -> [{kelas:"3 Amanah" atau "", nama:[...]}] */
+function kenalSenarai(helaian){
+  var kump={}, susunan=[];
+  function tambah(k,n){ k=hurufNama(String(k||"").replace(/\s+/g," ").trim()); if(!kump[k]){ kump[k]=[]; susunan.push(k); } kump[k].push(n); }
+  var berisi=helaian.filter(function(h){ return kiraRupaNama(h.baris)>=3; });
+  var ikutHelaian=berisi.length>1;
+  helaian.forEach(function(h){
+    var baris=h.baris||[]; if(!baris.length) return;
+    if(ikutHelaian&&berisi.indexOf(h)<0) return;
+    var t=tajukLajur(baris), mula=0, nc=-1, kc=-1;
+    if(t){ mula=t.r+1; nc=t.nama; kc=t.kelas; }
+    for(var r=mula;r<baris.length;r++){
+      var row=baris[r]||[];
+      var n=nc>=0?bersihNama(row[nc]):namaDalamBaris(row);
+      if(!n) continue;
+      var k=kc>=0?row[kc]:(ikutHelaian?h.nama:"");
+      tambah(k,n);
+    }
+  });
+  return susunan.map(function(k){ return {kelas:k,nama:kump[k]}; });
+}
+
+function kuncinama(s){ return String(s||"").toLowerCase().replace(/\s+/g," ").trim(); }
+function cariKelasGuru(nama){
+  var k=kuncinama(nama).replace(/\s/g,"");
+  if(!k) return null;
+  for(var i=0;i<KELAS_GURU.length;i++) if(kuncinama(KELAS_GURU[i].nama).replace(/\s/g,"")===k) return KELAS_GURU[i];
+  return null;
+}
+/* Tambah nama ke kelas. Nama yang sudah ada dalam kelas dilangkau, supaya
+   fail yang sama boleh dimuat naik semula tanpa murid berganda. */
+function tambahMurid(kelas,senarai){
+  var sedia=senaraiSemasa(kelas), ada={};
+  sedia.forEach(function(m){ ada[kuncinama(m.nama)]=1; });
+  var baru=senarai.filter(function(n){ return !ada[kuncinama(n)]; });
+  if(!baru.length) return Promise.resolve({baru:0,langkau:senarai.length});
+  if(sedia.length+baru.length>60) return Promise.reject(new Error("had 60 murid"));
+  return noSeterusnya(kelas).then(function(mula){
+    var list=sedia.concat(baru.map(function(n,i){ return {no:String(mula+i),nama:n,pin:pinRawak()}; }));
+    return simpanMurid(kelas,list);
+  }).then(function(){ return {baru:baru.length,langkau:senarai.length-baru.length}; });
+}
+function ciptaKelas(nama){
+  return SB.from("lo_kelas").insert({nama:nama}).select("id,nama,kod").single().then(function(r){
+    if(r.error) throw r.error;
+    var k={id:r.data.id,nama:r.data.nama,kod:r.data.kod};
+    KELAS_GURU.push(k); NOMBOR[k.id]=[]; NAMA[k.id]={}; PIN[k.id]={};
+    return k;
+  });
+}
+
+function templatCsv(){
+  var t="Kelas,Nama\r\n3 Amanah,Aisyah binti Rahman\r\n3 Amanah,Muhammad Irfan bin Zaidi\r\n3 Bestari,Tan Mei Ling\r\n3 Bestari,Arvind a/l Kumaran\r\n";
+  return "data:text/csv;charset=utf-8,"+encodeURIComponent("\uFEFF"+t);
+}
+
+/* Panel import pada papan pemuka guru. S.imp = {tahap, kump, hasil, ralat} */
+function paneImport(ak){
+  var imp=S.imp;
+  var p=el("div","panel"); p.style.marginTop="16px";
+  var hd=el("div","panel-hd");
+  hd.appendChild(el("div","grow",'<h2>Import senarai murid</h2>'));
+  var tutup=el("button","btn ghost sm"); tutup.type="button"; tutup.textContent="Tutup";
+  tutup.onclick=function(){ S.imp=null; renderCikgu(); };
+  hd.appendChild(tutup);
+  p.appendChild(hd);
+  var bd=el("div","panel-bd");
+  var msg=el("p","ralat",""); msg.hidden=!imp.ralat; msg.textContent=imp.ralat||"";
+
+  if(imp.tahap==="pilih"){
+    bd.appendChild(el("p","qnote","Muat naik fail Excel atau CSV yang ada lajur <b>Nama</b>. Jika ada lajur <b>Kelas</b>, atau satu helaian bagi setiap kelas, semua kelas dicipta sekali gus. Kod kelas dan PIN murid dijana sendiri."));
+    var lbl=el("label","btn"); lbl.style.cssText="display:inline-flex;align-items:center;gap:8px;margin-top:14px;cursor:pointer";
+    lbl.innerHTML='<span aria-hidden="true">\u{1F4C4}</span>Pilih fail Excel / CSV';
+    var fi=el("input"); fi.type="file"; fi.accept=".xlsx,.xls,.xlsm,.ods,.csv,.txt"; fi.hidden=true;
+    lbl.appendChild(fi);
+    fi.onchange=function(){
+      var f=fi.files&&fi.files[0]; if(!f) return;
+      lbl.textContent="Membaca "+f.name+"...";
+      bacaFail(f).then(function(h){ siapBaca(kenalSenarai(h),f.name); })
+        .catch(function(e){ S.imp={tahap:"pilih",ralat:/Failed to fetch/.test(e.message)?"Tidak dapat memuatkan pembaca Excel. Semak internet, atau simpan fail sebagai CSV.":(e.message||"Fail tidak dapat dibaca.")}; renderCikgu(); });
+    };
+    var a=el("div","actions"); a.appendChild(lbl);
+    var tp=el("a","pautan"); tp.href=templatCsv(); tp.download="templat-senarai-murid.csv"; tp.textContent="Muat turun templat";
+    a.appendChild(tp);
+    bd.appendChild(a);
+    bd.appendChild(msg);
+    bd.appendChild(el("p","qnote","Atau salin jadual dari Excel dan tampal di sini (termasuk baris tajuk):")).style.marginTop="18px";
+    var ta=el("textarea","free"); ta.placeholder="Kelas\tNama\n3 Amanah\tAISYAH BINTI RAHMAN\n3 Amanah\tMUHAMMAD IRFAN BIN ZAIDI";
+    bd.appendChild(ta);
+    var a2=el("div","actions");
+    var bt=el("button","btn ghost"); bt.type="button"; bt.textContent="Semak teks yang ditampal";
+    bt.onclick=function(){
+      if(!ta.value.trim()) return;
+      siapBaca(kenalSenarai([{nama:null,baris:huraiTampal(ta.value)}]),"teks tampal");
+    };
+    a2.appendChild(bt); bd.appendChild(a2);
+  }
+
+  else if(imp.tahap==="semak"){
+    var jum=0; imp.kump.forEach(function(g){ jum+=g.nama.length; });
+    bd.appendChild(el("p","qnote","Dijumpai <b>"+jum+" murid</b> dalam <b>"+imp.kump.length+" kumpulan</b> daripada "+esc(imp.sumber)+". Semak nama kelas, kemudian tekan butang di bawah."));
+    imp.kump.forEach(function(g,gi){
+      var w=el("div","ulasan"); w.style.marginTop="12px";
+      var h=el("div","ulasan-hd");
+      var kiri=el("label","suis");
+      var cb=el("input"); cb.type="checkbox"; cb.checked=g.pilih!==false;
+      cb.onchange=function(){ g.pilih=cb.checked; };
+      kiri.appendChild(cb);
+      var ni=el("input"); ni.type="text"; ni.value=g.kelas; ni.maxLength=60; ni.placeholder="Nama kelas, cth. 3 Amanah";
+      ni.setAttribute("aria-label","Nama kelas kumpulan "+(gi+1));
+      ni.style.cssText="font:inherit;font-size:15px;font-weight:700;padding:7px 10px;border-radius:9px;border:1.5px solid var(--line2);background:var(--surface);color:var(--ink);min-width:0;width:200px";
+      var nota=el("span","meta","");
+      function kemasNota(){
+        var ada=cariKelasGuru(ni.value);
+        nota.textContent=g.nama.length+" murid · "+(ada?"ditambah ke kelas sedia ada":(ni.value.trim()?"kelas baharu":"perlukan nama kelas"));
+      }
+      ni.oninput=function(){ g.kelas=ni.value; kemasNota(); };
+      kemasNota();
+      kiri.appendChild(ni);
+      h.appendChild(kiri); h.appendChild(nota);
+      w.appendChild(h);
+      var cth=el("div","karangan");
+      cth.style.whiteSpace="normal";
+      cth.textContent=g.nama.slice(0,6).join(", ")+(g.nama.length>6?", dan "+(g.nama.length-6)+" lagi":"");
+      w.appendChild(cth);
+      if(g.nama.length>60){ var ra=el("p","ralat","Lebih 60 nama. Setiap kelas boleh ada sehingga 60 murid; semak lajur Kelas dalam fail."); ra.style.padding="0 14px 10px"; w.appendChild(ra); }
+      bd.appendChild(w);
+    });
+    var a3=el("div","actions");
+    var bc=el("button","btn"); bc.type="button"; bc.textContent="Cipta kelas dan jana PIN";
+    bc.setAttribute("data-f","aksi");
+    bc.onclick=function(){
+      var dipilih=imp.kump.filter(function(g){ return g.pilih!==false; });
+      if(!dipilih.length){ msg.hidden=false; msg.textContent="Pilih sekurang-kurangnya satu kumpulan."; return; }
+      for(var i=0;i<dipilih.length;i++){
+        if(!String(dipilih[i].kelas||"").trim()){ msg.hidden=false; msg.textContent="Beri nama kelas bagi setiap kumpulan."; return; }
+        if(dipilih[i].nama.length>60){ msg.hidden=false; msg.textContent="Kumpulan "+dipilih[i].kelas+" melebihi 60 murid."; return; }
+      }
+      bc.disabled=true; bc.textContent="Mencipta...";
+      var hasil=[];
+      dipilih.reduce(function(rantai,g){
+        return rantai.then(function(){
+          var ada=cariKelasGuru(g.kelas);
+          return (ada?Promise.resolve(ada):ciptaKelas(String(g.kelas).trim())).then(function(k){
+            return tambahMurid(k.id,g.nama).then(function(r){ hasil.push({kelas:k,baru:r.baru,langkau:r.langkau,sedia:!!ada}); });
+          });
+        });
+      },Promise.resolve()).then(function(){
+        S.imp={tahap:"siap",hasil:hasil}; renderCikgu(); window.scrollTo({top:0});
+      }).catch(function(e){
+        S.imp.ralat=pesanRalat(e)+(hasil.length?" ("+hasil.length+" kelas sudah siap sebelum ralat ini.)":"");
+        renderCikgu();
+      });
+    };
+    var bb=el("button","btn ghost"); bb.type="button"; bb.textContent="Pilih fail lain";
+    bb.onclick=function(){ S.imp={tahap:"pilih"}; renderCikgu(); };
+    a3.appendChild(bc); a3.appendChild(bb);
+    bd.appendChild(a3);
+    bd.appendChild(msg);
+  }
+
+  else if(imp.tahap==="siap"){
+    var tb=el("table","muridtab");
+    var h2='<thead><tr><th>Kelas</th><th>Kod kelas</th><th>Murid baharu</th></tr></thead><tbody>';
+    imp.hasil.forEach(function(r){
+      h2+='<tr><td><b>'+esc(r.kelas.nama)+'</b>'+(r.sedia?' <span class="meta">(sedia ada)</span>':'')+'</td>'+
+        '<td class="pinsel">'+esc(r.kelas.kod)+'</td><td>'+r.baru+(r.langkau?' <span class="meta">('+r.langkau+' sudah ada)</span>':'')+'</td></tr>';
+    });
+    tb.innerHTML=h2+'</tbody>';
+    var sx=el("div","scrollx"); sx.appendChild(tb);
+    bd.appendChild(el("p","berjaya","Siap! Kod kelas dan PIN setiap murid sudah dijana."));
+    bd.appendChild(sx);
+    var a4=el("div","actions");
+    var bp=el("button","btn"); bp.type="button"; bp.textContent="\u{1F5A8}️ Cetak slip PIN semua kelas";
+    bp.onclick=function(){ cetakSlip(imp.hasil.map(function(r){ return r.kelas; })); };
+    var bt2=el("button","btn ghost"); bt2.type="button"; bt2.textContent="Selesai";
+    bt2.onclick=function(){ S.imp=null; renderCikgu(); };
+    a4.appendChild(bp); a4.appendChild(bt2);
+    bd.appendChild(a4);
+    bd.appendChild(el("p","note","Buka setiap kelas untuk berkongsi pautan kelas di WhatsApp."));
+  }
+
+  p.appendChild(bd);
+  ak.appendChild(p);
+
+  function siapBaca(kump,sumber){
+    if(!kump.length){ S.imp={tahap:"pilih",ralat:"Tiada nama murid dijumpai. Pastikan fail ada lajur bertajuk Nama."}; renderCikgu(); return; }
+    S.imp={tahap:"semak",kump:kump,sumber:sumber}; renderCikgu();
+  }
 }
 
 function paneSenarai(){
@@ -3742,7 +4053,22 @@ function paneSenarai(){
   }
 
   p.appendChild(el("h3",null,murid.length?"Tambah murid":"Masukkan nama murid")).style.marginTop="22px";
-  p.appendChild(el("p","qnote","Tampal nama murid, satu nama satu baris. Boleh salin terus dari Excel atau APDM."+(murid.length?" Murid sedia ada tidak berubah.":"")));
+  p.appendChild(el("p","qnote","Muat naik fail Excel/CSV, atau tampal nama murid satu nama satu baris (boleh salin terus dari Excel atau APDM)."+(murid.length?" Murid sedia ada tidak berubah, dan nama yang sudah ada dilangkau.":"")));
+  var bf=el("label","btn ghost"); bf.style.cssText="display:inline-flex;align-items:center;gap:8px;margin-top:12px;cursor:pointer";
+  bf.innerHTML='<span aria-hidden="true">\u{1F4C4}</span>Muat naik fail Excel / CSV';
+  var fi=el("input"); fi.type="file"; fi.accept=".xlsx,.xls,.xlsm,.ods,.csv,.txt"; fi.hidden=true;
+  bf.appendChild(fi);
+  fi.onchange=function(){
+    var f=fi.files&&fi.files[0]; if(!f) return;
+    papar("Membaca "+f.name+"...",true);
+    bacaFail(f).then(function(h){
+      var semua=[]; kenalSenarai(h).forEach(function(g){ semua=semua.concat(g.nama); });
+      if(!semua.length){ papar("Tiada nama murid dijumpai dalam fail itu. Pastikan ada lajur bertajuk Nama."); return; }
+      ta.value=semua.join("\n"); S.drafNama={kelas:kelas,teks:ta.value};
+      papar(semua.length+" nama dibaca daripada "+f.name+". Semak di bawah, kemudian tekan butang simpan.",true);
+    }).catch(function(e){ papar(/Failed to fetch/.test(e.message)?"Tidak dapat memuatkan pembaca Excel. Semak internet, atau simpan fail sebagai CSV.":(e.message||"Fail tidak dapat dibaca.")); });
+  };
+  p.appendChild(bf);
   var ta=el("textarea","free"); ta.id="senaraiTeks";
   ta.placeholder="Aisyah binti Rahman\nMuhammad Irfan bin Zaidi\nTan Mei Ling";
   if(S.drafNama&&S.drafNama.kelas===kelas) ta.value=S.drafNama.teks;
@@ -3752,22 +4078,18 @@ function paneSenarai(){
   var labelBs=murid.length?"Tambah ke kelas":"Simpan nama murid";
   var bs=el("button","btn"); bs.type="button"; bs.textContent=labelBs;
   bs.onclick=function(){
-    var baru=ta.value.split(/\r?\n/).map(function(x){
-      /* buang nombor giliran di hadapan, cth "1. Ali" atau "12\tAli" */
-      return x.replace(/^\s*\d+[\.\)\t ]+\s*/,"").replace(/\t.*$/,"").replace(/\s+/g," ").trim();
-    }).filter(function(x){ return x.length>1; });
+    /* pembaca yang sama dengan import fail: kenal tajuk, nombor giliran,
+       lajur tambahan dan nama HURUF BESAR */
+    var baru=[];
+    kenalSenarai([{nama:null,baris:huraiTampal(ta.value)}]).forEach(function(g){ baru=baru.concat(g.nama); });
     if(!baru.length){ papar("Tampal sekurang-kurangnya satu nama."); return; }
-    var sedia=senaraiSemasa(kelas);
-    if(sedia.length+baru.length>60){ papar("Setiap kelas boleh ada sehingga 60 murid."); return; }
     bs.disabled=true; bs.textContent="Menyimpan...";
-    noSeterusnya(kelas).then(function(mula){
-      var list=sedia.concat(baru.map(function(n,i){ return {no:String(mula+i),nama:n,pin:pinRawak()}; }));
-      return simpanMurid(kelas,list);
-    }).then(function(){
+    tambahMurid(kelas,baru).then(function(r){
       S.drafNama=null;
       renderCikgu();
       var m2=$("paneSenarai").querySelector(".ralat,.berjaya");
-      if(m2){ m2.hidden=false; m2.className="berjaya"; m2.textContent=baru.length+" murid ditambah."; }
+      if(m2){ m2.hidden=false; m2.className="berjaya";
+        m2.textContent=r.baru+" murid ditambah dan PIN dijana."+(r.langkau?" "+r.langkau+" nama sudah ada dan dilangkau.":""); }
     }).catch(function(e){ bs.disabled=false; bs.textContent=labelBs; gagal(e); });
   };
   act.appendChild(bs);
@@ -3855,7 +4177,7 @@ function eksport(){
   papar();
   try{
     var nama="pbd-"+BAB_ID+"-"+String(k.nama).replace(/\s+/g,"-").toLowerCase()+".csv";
-    var blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"});
+    var blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"});
     var url=URL.createObjectURL(blob);
     var a=el("a"); a.href=url; a.download=nama; a.className="btn sm"; a.textContent="Muat turun "+nama;
     a.style.display="inline-block"; a.style.textDecoration="none"; a.style.lineHeight="22px";
