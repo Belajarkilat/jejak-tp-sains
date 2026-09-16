@@ -62,7 +62,14 @@ create table lo_guru (
   id       uuid primary key references auth.users(id) on delete cascade,
   nama     text not null default '' check (length(nama) <= 80),
   sekolah  text not null default '' check (length(sekolah) <= 120),
-  dicipta  timestamptz not null default now()
+  dicipta  timestamptz not null default now(),
+  -- Nombor telefon guru dalam bentuk antarabangsa tanpa tanda (cth. 60123456789).
+  -- Hanya guru itu sendiri (RLS) dan admin (kunci service_role) boleh membacanya.
+  telefon  text not null default '' check (telefon = '' or telefon ~ '^[0-9]{9,15}$'),
+  -- Persetujuan BERASINGAN untuk menerima tawaran produk (PDPA 2010).
+  -- Tanpa persetujuan ini, nombor hanya untuk urusan akaun dan sokongan.
+  setuju_pemasaran boolean not null default false,
+  setuju_masa      timestamptz
 );
 
 create table lo_kelas (

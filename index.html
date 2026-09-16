@@ -575,6 +575,10 @@ input.kodkelas:focus{border-color:var(--arteri);outline:none}
 .atau{display:flex;align-items:center;gap:10px;color:var(--ink3);font-size:12px;margin-top:16px}
 .atau::before,.atau::after{content:"";flex:1;height:1px;background:var(--line)}
 .btn.penuh{width:100%}
+.setuju{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;line-height:1.45;color:var(--ink2);cursor:pointer}
+.setuju input{width:20px;height:20px;flex:none;margin-top:1px}
+.setuju em{color:var(--ink3);font-style:normal}
+.note.privasi{font-size:12px;margin-top:10px}
 .pautan{background:none;border:0;padding:6px 0;color:var(--vena);font-weight:650;cursor:pointer;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guruhd{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px}
 .guruhd .grow{flex:1 1 220px;min-width:0}
@@ -2913,23 +2917,59 @@ function tetapSesi(sesi){
     .then(segarGuru);
 }
 
+/* Nombor telefon disimpan dalam bentuk antarabangsa tanpa tanda.
+   012-345 6789 -> 60123456789. Pulangkan "" jika tidak sah. */
+function normTelefon(v){
+  var d=String(v||"").replace(/[^\d+]/g,"");
+  var antarabangsa=d.charAt(0)==="+";
+  d=d.replace(/\D/g,"");
+  if(!antarabangsa){
+    if(/^0/.test(d)) d="6"+d;
+    else if(/^1\d{8,9}$/.test(d)) d="60"+d;
+  }
+  if(/^60/.test(d)) return /^601\d{8,9}$/.test(d)?d:"";
+  return /^\d{9,15}$/.test(d)?d:"";
+}
+function paparTelefon(d){
+  var m=/^60(1\d)(\d{3,4})(\d{4})$/.exec(d||"");
+  return m?("0"+m[1]+"-"+m[2]+" "+m[3]):(d?"+"+d:"");
+}
+/* Profil lengkap memerlukan nama, sekolah dan nombor telefon. Guru yang
+   mendaftar sebelum medan telefon wujud diminta mengisinya sekali. */
 function muatProfil(){
   var uid=SESI.user.id;
-  return SB.from("lo_guru").select("nama,sekolah").eq("id",uid).maybeSingle().then(function(r){
+  return SB.from("lo_guru").select("nama,sekolah,telefon,setuju_pemasaran").eq("id",uid).maybeSingle().then(function(r){
     if(r.error) throw r.error;
     if(!SESI||SESI.user.id!==uid) return;
-    var md=SESI.user.user_metadata||{};
-    if(r.data&&r.data.nama){ PROFIL={nama:r.data.nama,sekolah:r.data.sekolah||"",ada:true}; return; }
-    PROFIL={nama:(r.data&&r.data.nama)||md.nama||md.full_name||md.name||"",
-            sekolah:(r.data&&r.data.sekolah)||md.sekolah||"",ada:false};
-    if(md.nama&&md.sekolah) return simpanProfil(md.nama,md.sekolah);
+    var md=SESI.user.user_metadata||{}, d=r.data||{};
+    PROFIL={nama:d.nama||md.nama||md.full_name||md.name||"",
+            sekolah:d.sekolah||md.sekolah||"",
+            telefon:d.telefon||normTelefon(md.telefon),
+            setuju:r.data?!!d.setuju_pemasaran:!!md.setuju_pemasaran,
+            simpanan:r.data?!!d.setuju_pemasaran:null};
+    PROFIL.ada=!!(d.nama&&d.telefon);
+    if(!PROFIL.ada&&PROFIL.nama&&PROFIL.sekolah&&PROFIL.telefon)
+      return simpanProfil(PROFIL.nama,PROFIL.sekolah,PROFIL.telefon,PROFIL.setuju);
   });
 }
-function simpanProfil(nama,sekolah){
-  return SB.from("lo_guru").upsert({id:SESI.user.id,nama:nama,sekolah:sekolah}).then(function(r){
+function simpanProfil(nama,sekolah,telefon,setuju){
+  var baris={id:SESI.user.id,nama:nama,sekolah:sekolah,telefon:telefon,setuju_pemasaran:!!setuju};
+  /* masa persetujuan direkod setiap kali persetujuan berubah */
+  if(!PROFIL||PROFIL.simpanan!==!!setuju) baris.setuju_masa=new Date().toISOString();
+  return SB.from("lo_guru").upsert(baris).then(function(r){
     if(r.error) throw r.error;
-    PROFIL={nama:nama,sekolah:sekolah,ada:true};
+    PROFIL={nama:nama,sekolah:sekolah,telefon:telefon,setuju:!!setuju,simpanan:!!setuju,ada:true};
   });
+}
+var NOTIS_PRIVASI="Nombor telefon digunakan untuk urusan akaun dan sokongan Jejak TP Sains. "+
+  "Ia tidak dipaparkan kepada guru lain atau murid, dan tidak dijual kepada pihak ketiga. "+
+  "Anda boleh menukar atau menarik balik persetujuan tawaran bila-bila masa di halaman Akaun.";
+function kotakSetuju(nilai){
+  var w=el("label","setuju");
+  var cb=el("input"); cb.type="checkbox"; cb.checked=!!nilai; cb.name="setuju";
+  w.appendChild(cb);
+  w.appendChild(el("span",null,"Saya setuju menerima maklumat dan tawaran produk pendidikan BelajarKilat melalui WhatsApp atau e-mel. <em>(Pilihan)</em>"));
+  return w;
 }
 
 function muatGuru(){
@@ -3073,11 +3113,12 @@ function paneLogMasuk(ak){
   }
 
   var f=el("form"); f.noValidate=true;
-  var fNama,fSekolah,fEmel,fKata;
+  var fNama,fSekolah,fTel,fSetuju,fEmel,fKata;
   if(mod==="daftar"){
     fNama=medan("Nama (dipaparkan kepada murid)","text","nama","",{placeholder:"cth. Cikgu Aminah",maxlength:"80",autocomplete:"name"});
     fSekolah=medan("Sekolah","text","sekolah","",{placeholder:"cth. SMK Taman Maluri",maxlength:"120",autocomplete:"organization"});
-    f.appendChild(fNama); f.appendChild(fSekolah);
+    fTel=medan("No. telefon (WhatsApp)","tel","telefon","",{placeholder:"cth. 012-345 6789",autocomplete:"tel",inputmode:"tel",maxlength:"20"});
+    f.appendChild(fNama); f.appendChild(fSekolah); f.appendChild(fTel);
   }
   fEmel=medan("E-mel","email","emel",S.authEmel||"",{autocomplete:"email",inputmode:"email",placeholder:"nama@moe-dl.edu.my"});
   f.appendChild(fEmel);
@@ -3085,6 +3126,11 @@ function paneLogMasuk(ak){
     fKata=medan(mod==="daftar"?"Kata laluan (sekurang-kurangnya 8 aksara)":"Kata laluan","password","kata","",
       {autocomplete:mod==="daftar"?"new-password":"current-password",minlength:"8"});
     f.appendChild(fKata);
+  }
+  if(mod==="daftar"){
+    fSetuju=kotakSetuju(false);
+    f.appendChild(fSetuju);
+    f.appendChild(el("p","note privasi",esc(NOTIS_PRIVASI)));
   }
   var bs=el("button","btn penuh"); bs.type="submit"; bs.style.marginTop="18px";
   var labelBs={masuk:"Log masuk",daftar:"Daftar dan mula",lupa:"Hantar pautan"}[mod];
@@ -3100,6 +3146,7 @@ function paneLogMasuk(ak){
     if(mod==="daftar"){
       if(nilai(fNama).length<2) return papar("Masukkan nama anda.");
       if(nilai(fSekolah).length<3) return papar("Masukkan nama sekolah.");
+      if(!normTelefon(nilai(fTel))) return papar("Masukkan nombor telefon yang sah, cth. 012-345 6789.");
     }
     if(mod!=="lupa"&&kata.length<8) return papar("Kata laluan perlu sekurang-kurangnya 8 aksara.");
     bs.disabled=true; bs.textContent="Sila tunggu..."; papar("");
@@ -3108,7 +3155,8 @@ function paneLogMasuk(ak){
       if(r.error) throw r.error;
     });
     else if(mod==="daftar") kerja=SB.auth.signUp({email:emel,password:kata,options:{
-        data:{nama:nilai(fNama),sekolah:nilai(fSekolah)},emailRedirectTo:asasUrl()}}).then(function(r){
+        data:{nama:nilai(fNama),sekolah:nilai(fSekolah),telefon:normTelefon(nilai(fTel)),
+              setuju_pemasaran:fSetuju.querySelector("input").checked},emailRedirectTo:asasUrl()}}).then(function(r){
       if(r.error) throw r.error;
       if(r.data&&r.data.user&&r.data.user.identities&&r.data.user.identities.length===0)
         throw new Error("already registered");
@@ -3169,20 +3217,27 @@ function paneProfil(ak){
   var p=el("div","panel authkad");
   p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(SESI.user.email||"")+'</p><h2>'+(baru?"Lengkapkan profil":"Akaun saya")+'</h2></div>'));
   var bd=el("div","panel-bd");
-  if(baru) bd.appendChild(el("p","qnote","Nama anda dipaparkan kepada murid semasa mereka memilih kelas."));
+  if(baru) bd.appendChild(el("p","qnote",PROFIL.nama
+    ? "Satu langkah lagi: lengkapkan nombor telefon anda supaya kami boleh membantu jika ada masalah dengan akaun atau kelas."
+    : "Nama anda dipaparkan kepada murid semasa mereka memilih kelas."));
   var f=el("form"); f.noValidate=true;
   var fn=medan("Nama (dipaparkan kepada murid)","text","pnama",PROFIL.nama,{placeholder:"cth. Cikgu Aminah",maxlength:"80"});
   var fs=medan("Sekolah","text","psekolah",PROFIL.sekolah,{placeholder:"cth. SMK Taman Maluri",maxlength:"120"});
-  f.appendChild(fn); f.appendChild(fs);
+  var ft=medan("No. telefon (WhatsApp)","tel","ptelefon",paparTelefon(PROFIL.telefon),{placeholder:"cth. 012-345 6789",autocomplete:"tel",inputmode:"tel",maxlength:"20"});
+  var fsj=kotakSetuju(PROFIL.setuju);
+  f.appendChild(fn); f.appendChild(fs); f.appendChild(ft); f.appendChild(fsj);
+  f.appendChild(el("p","note privasi",esc(NOTIS_PRIVASI)));
   var bs=el("button","btn penuh"); bs.type="submit"; bs.textContent=baru?"Simpan dan teruskan":"Simpan"; bs.style.marginTop="18px";
   var msg=el("p","ralat",""); msg.hidden=!RALAT_GURU; msg.textContent=RALAT_GURU;
   f.appendChild(bs); f.appendChild(msg);
   f.onsubmit=function(ev){
     ev.preventDefault();
     var n=fn.querySelector("input").value.trim(), s=fs.querySelector("input").value.trim();
+    var t=normTelefon(ft.querySelector("input").value);
     if(n.length<2||s.length<3){ msg.hidden=false; msg.textContent="Isi nama dan sekolah."; return; }
+    if(!t){ msg.hidden=false; msg.textContent="Masukkan nombor telefon yang sah, cth. 012-345 6789."; return; }
     bs.disabled=true;
-    simpanProfil(n,s).then(function(){ return GURU_DIMUAT?null:muatGuru(); })
+    simpanProfil(n,s,t,fsj.querySelector("input").checked).then(function(){ return GURU_DIMUAT?null:muatGuru(); })
       .then(function(){ RALAT_GURU=""; S.guruSkrin=null; renderCikgu(); })
       .catch(function(e){ bs.disabled=false; msg.hidden=false; msg.textContent=pesanRalat(e); });
   };
