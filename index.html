@@ -20,7 +20,7 @@
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
 :root{
   --ground:#EDF0F5;
@@ -630,11 +630,259 @@ input.kodkelas::placeholder{opacity:.3}
 .papanbesar .prow{font-size:16px;padding:11px 4px}
 .papanbesar .prow .rk{font-size:15px}
 .pingat{font-size:18px}
+/* ============================================================
+   ZON MURID — "pengembaraan dalam badan"
+   Setiap bab ialah satu dunia berwarna. Butang pelekat tebal ialah
+   satu-satunya unsur berani; yang lain kekal tenang.
+   ============================================================ */
+body.zon-murid{
+  --ground:#F4F2FB;
+  --tinta:#1C1B3A; --kad:#FFFFFF; --kad2:#EEEBFA; --garis:#1C1B3A;
+  --lulus:#1DB36B; --lulus-lembut:#DDF6E8; --silap:#F2545B; --silap-lembut:#FDE4E5;
+  --emas:#FFC83D; --lembut:#6B6890;
+  --dunia:#6D3BFF; --dunia-lembut:#ECE5FF; --dunia-gelap:#4B22C9;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) body.zon-murid{
+    --ground:#15142C; --tinta:#F1EFFF; --kad:#221F42; --kad2:#2C2952; --garis:#07061A;
+    --lulus-lembut:#113A28; --silap-lembut:#3E1A22; --lembut:#A9A6CF; --dunia-lembut:#2A2256;
+  }
+}
+:root[data-theme="dark"] body.zon-murid{
+  --ground:#15142C; --tinta:#F1EFFF; --kad:#221F42; --kad2:#2C2952; --garis:#07061A;
+  --lulus-lembut:#113A28; --silap-lembut:#3E1A22; --lembut:#A9A6CF; --dunia-lembut:#2A2256;
+}
+body.zon-murid{color:var(--tinta)}
+#murid h1,#murid h2,#murid h3,.bulat{font-family:"Baloo 2","Figtree",sans-serif;letter-spacing:-.01em;line-height:1.08}
+#murid .panel{
+  background:var(--kad);border:2px solid var(--garis);border-radius:22px;
+  box-shadow:0 5px 0 var(--garis);
+}
+#murid .panel-hd{border-bottom:2px dashed color-mix(in srgb,var(--tinta) 18%,transparent)}
+#murid .panel-hd h2{font-size:27px;font-weight:800}
+#murid .eyebrow{font-family:"Figtree",sans-serif;text-transform:none;letter-spacing:0;font-size:13px;font-weight:700;color:var(--dunia)}
+#murid .qnote,#murid .note{color:var(--lembut)}
+#murid .btn{
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:17px;letter-spacing:.01em;
+  background:var(--dunia);color:#fff;border:2px solid var(--garis);border-radius:16px;
+  box-shadow:0 4px 0 var(--garis);min-height:52px;padding:10px 22px;
+  transition:transform .06s,box-shadow .06s;
+}
+#murid .btn:active:not(:disabled){transform:translateY(4px);box-shadow:0 0 0 var(--garis)}
+#murid .btn.ghost{background:var(--kad);color:var(--tinta)}
+#murid .btn.teal,#murid .btn.hijau{background:var(--lulus)}
+#murid .btn.sm{font-size:15px;min-height:44px;padding:7px 15px;border-radius:13px;box-shadow:0 3px 0 var(--garis)}
+#murid .btn:disabled{opacity:.45;box-shadow:0 4px 0 var(--garis)}
+#murid .pautan{color:var(--dunia)}
+
+/* bar permainan */
+#murid .hud{
+  background:var(--kad);color:var(--tinta);border:2px solid var(--garis);border-radius:20px;
+  box-shadow:0 4px 0 var(--garis);grid-template-columns:auto 1fr auto auto;gap:12px;padding:10px 14px;
+}
+#murid .hud .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#murid .hud .ikonhud{font-size:24px;line-height:1}
+#murid .hud .val{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:22px}
+#murid .nafasbar{height:16px;background:var(--kad2);border:2px solid var(--garis);margin-top:0}
+#murid .nafasbar i{background:linear-gradient(90deg,#3FD39A,#1DB36B)}
+#murid .nafasbar.lemas i{background:linear-gradient(90deg,#FF8A5B,#F2545B)}
+#murid .hud .kombo{display:flex;align-items:center;gap:3px;background:var(--emas);color:#3B2A00;border:2px solid var(--garis);border-radius:999px;padding:0 10px}
+#murid .hud .kombo .val{color:#3B2A00;font-size:18px}
+#murid .hud .skor{display:flex;align-items:center;gap:4px;border:0;padding:0}
+#murid .hud .skor .val{font-size:22px}
+#murid .hud.tenang .nafasbar i{background:linear-gradient(90deg,#A9A6CF,#CFCDEA)}
+#murid .nafasbar.baca i{background:linear-gradient(90deg,#8FB8FF,#C3D8FF)}
+@media (max-width:560px){
+  #murid .hud{grid-template-columns:auto 1fr auto auto;gap:8px;padding:9px 11px}
+  #murid .hud .kombo{grid-row:auto;grid-column:auto}
+  #murid .hud .skor{grid-column:auto;border:0;padding:0}
+  #murid .hud .skor .val,#murid .hud .val{font-size:18px}
+}
+
+/* soalan */
+#murid .qtext{font-size:20px;font-weight:700;line-height:1.38}
+#murid .opt{
+  border:2px solid var(--garis);background:var(--kad);border-radius:16px;min-height:56px;
+  box-shadow:0 3px 0 var(--garis);font-size:16px;padding:12px 14px;align-items:center;
+  transition:transform .06s,box-shadow .06s,background .1s;
+}
+#murid .opt:hover:not(:disabled){background:var(--dunia-lembut);border-color:var(--garis)}
+#murid .opt:active:not(:disabled){transform:translateY(3px);box-shadow:0 0 0 var(--garis)}
+#murid .opt .key{width:30px;height:30px;border-radius:9px;border:2px solid var(--garis);font-family:"Baloo 2",sans-serif;font-weight:800;font-size:15px;color:var(--tinta);margin-top:0;background:var(--kad2)}
+#murid .opt .ord{width:30px;height:30px;background:var(--dunia);font-family:"Baloo 2",sans-serif;font-size:15px;margin-top:0}
+#murid .opt[data-pick="1"]{background:var(--dunia-lembut);border-color:var(--garis)}
+#murid .opt[data-pick="1"] .key{background:var(--dunia);color:#fff;border-color:var(--garis)}
+#murid .opt[data-mark="ok"]{background:var(--lulus-lembut)}
+#murid .opt[data-mark="ok"] .key{background:var(--lulus);color:#fff}
+#murid .opt[data-mark="no"]{background:var(--silap-lembut)}
+#murid .opt[data-mark="no"] .key{background:var(--silap);color:#fff}
+#murid .opt[data-mark="miss"]{border-style:dashed;border-color:var(--lulus)}
+#murid .opt:disabled{box-shadow:0 3px 0 var(--garis)}
+#murid .pips{gap:6px;flex:1}
+#murid .pip{flex:1;max-width:none;height:12px;border-radius:999px;background:var(--kad2);border:2px solid var(--garis)}
+#murid .pip.on{background:var(--dunia)}
+#murid .pip.ok{background:var(--lulus)}
+#murid .pip.no{background:var(--silap)}
+#murid .pip.hantar{background:var(--emas)}
+#murid .fb{border:2px solid var(--garis);border-radius:18px;box-shadow:0 4px 0 var(--garis);display:flex;gap:12px;align-items:flex-start;padding:14px 16px}
+#murid .fb .emo{font-size:36px;line-height:1;flex:none}
+#murid .fb b{font-family:"Baloo 2",sans-serif;font-size:22px;font-weight:800;margin-bottom:1px}
+#murid .fb.ok{background:var(--lulus-lembut)}
+#murid .fb.no{background:var(--silap-lembut)}
+#murid .bospanel{border-color:var(--garis);box-shadow:0 5px 0 var(--garis),0 0 0 5px color-mix(in srgb,var(--silap) 35%,transparent)}
+#murid .bostimer{height:12px;border:2px solid var(--garis);background:var(--kad2)}
+#murid .bostimer i{background:var(--silap)}
+#murid .tajukbos{display:inline-flex;align-items:center;gap:8px}
+#murid .kbtn{border:2px solid var(--garis);background:var(--kad);box-shadow:0 3px 0 var(--garis)}
+#murid .kuasa .tajuk{font-family:"Figtree",sans-serif;text-transform:none;letter-spacing:0;font-size:13px;font-weight:700}
+#murid .chip-ulang{border:2px solid var(--garis);color:var(--tinta);background:var(--emas)}
+#murid textarea.free,#murid .numrow input{border:2px solid var(--garis);background:var(--kad);color:var(--tinta)}
+
+/* peta dunia */
+.wira{
+  position:relative;overflow:hidden;margin-top:16px;border:2px solid var(--garis);border-radius:24px;
+  background:var(--dunia);color:#fff;box-shadow:0 5px 0 var(--garis);padding:20px 20px 18px;
+}
+.wira::after{
+  content:"";position:absolute;right:-40px;top:-40px;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,#fff 22%,transparent) 0 38%,transparent 39% 55%,color-mix(in srgb,#fff 12%,transparent) 56% 70%,transparent 71%);
+  pointer-events:none;
+}
+.wira .ikonbesar{position:absolute;right:18px;top:14px;font-size:54px;line-height:1;transform:rotate(-8deg);filter:drop-shadow(0 3px 0 rgba(0,0,0,.25))}
+.wira .siapa{font-weight:700;font-size:14px;opacity:.92;padding-right:70px}
+.wira h2{font-family:"Baloo 2",sans-serif;font-size:38px;font-weight:800;line-height:1;margin-top:4px;padding-right:60px}
+.wira .cerita{margin-top:6px;font-size:15px;opacity:.95;max-width:34ch}
+.wira .statbaris{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.wira .stat{
+  display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);
+  border:2px solid rgba(0,0,0,.25);border-radius:999px;padding:4px 12px 4px 8px;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:16px;
+}
+.wira .kemajuan{display:flex;gap:6px;margin-top:14px}
+.wira .kemajuan i{flex:1;height:12px;border-radius:999px;background:rgba(255,255,255,.25);border:2px solid rgba(0,0,0,.25)}
+.wira .kemajuan i.on{background:var(--emas)}
+.wira .latihan{display:inline-block;margin-top:10px;background:rgba(0,0,0,.25);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:700}
+
+.babpilih{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.babpilih::-webkit-scrollbar{display:none}
+.babpilih button{
+  flex:none;display:flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;
+  border:2px solid var(--garis);background:var(--kad);color:var(--tinta);border-radius:999px;
+  padding:6px 14px 6px 8px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:15px;
+  box-shadow:0 3px 0 var(--garis);min-height:44px;
+}
+.babpilih button[aria-pressed="true"]{background:var(--tinta);color:var(--kad)}
+.babpilih .ik{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;border:2px solid var(--garis)}
+
+.laluan{position:relative;margin:44px auto 10px;max-width:560px}
+.laluan svg.jalan{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.laluan .jalan path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hentian{position:relative;height:118px;display:flex;align-items:center}
+.nod{
+  position:absolute;top:50%;width:80px;height:80px;margin:-40px 0 0 -40px;border-radius:50%;
+  border:3px solid var(--garis);background:var(--kad);box-shadow:0 6px 0 var(--garis);
+  display:grid;place-items:center;font-size:36px;line-height:1;cursor:pointer;
+  transition:transform .08s,box-shadow .08s;
+}
+.nod:active{transform:translateY(5px);box-shadow:0 1px 0 var(--garis)}
+.nod .lencana{
+  position:absolute;right:-6px;bottom:-4px;min-width:30px;height:30px;border-radius:999px;
+  border:2px solid var(--garis);background:var(--kad);display:grid;place-items:center;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:15px;color:var(--tinta);padding:0 5px;
+}
+.nod[data-s="lulus"]{background:var(--lulus)}
+.nod[data-s="lulus"] .lencana{background:var(--emas);color:#3B2A00}
+.nod[data-s="aktif"]{background:var(--dunia);width:92px;height:92px;margin:-46px 0 0 -46px;font-size:42px}
+.nod[data-s="aktif"]::before{
+  content:"";position:absolute;inset:-12px;border-radius:50%;border:3px solid var(--dunia);
+  animation:gelombang 1.8s ease-out infinite;
+}
+@keyframes gelombang{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.25);opacity:0}}
+.nod[data-s="tunggu"]{background:var(--emas)}
+.nod[data-s="buka"]{filter:saturate(.35)}
+.nod[data-s="buka"]:hover{filter:none}
+.labelnod{position:absolute;top:50%;transform:translateY(-50%);max-width:44%;line-height:1.15}
+.labelnod b{display:block;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:18px}
+.labelnod span{font-size:12.5px;color:var(--lembut);font-weight:600}
+.gelembung{
+  position:absolute;left:50%;top:-38px;transform:translateX(-50%);white-space:nowrap;
+  background:var(--tinta);color:var(--kad);font-family:"Baloo 2",sans-serif;font-weight:800;font-size:15px;
+  border-radius:12px;padding:3px 12px;animation:lompat 1.2s ease-in-out infinite;
+}
+.gelembung::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:var(--tinta)}
+@keyframes lompat{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-5px)}}
+
+.kotakmain{
+  display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:14px;
+  border:2px solid var(--garis);border-radius:20px;background:var(--kad);box-shadow:0 4px 0 var(--garis);padding:13px 15px;
+}
+.kotakmain .em{font-size:34px;line-height:1;flex:none}
+.kotakmain .txt{flex:1 1 180px;min-width:0}
+.kotakmain .t{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:18px;line-height:1.15}
+.kotakmain .d{font-size:13.5px;color:var(--lembut)}
+.kotakmain.harian{background:#FFF1C9;color:#2B2200}
+.kotakmain.harian .d{color:#5E4E1C}
+.alat{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;align-items:center}
+.suisbesar{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:2px solid var(--garis);
+  background:var(--kad);border-radius:999px;padding:6px 14px 6px 6px;font-weight:700;font-size:14px;
+  box-shadow:0 3px 0 var(--garis);min-height:44px;color:var(--tinta);
+}
+.suisbesar .trek{width:40px;height:24px;border-radius:999px;background:var(--kad2);border:2px solid var(--garis);position:relative;flex:none}
+.suisbesar .trek::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--tinta);transition:left .15s}
+.suisbesar[aria-pressed="true"] .trek{background:var(--lulus)}
+.suisbesar[aria-pressed="true"] .trek::after{left:18px;background:#fff}
+
+#murid .papan .prow{border-bottom:2px dashed color-mix(in srgb,var(--tinta) 14%,transparent);font-size:16px}
+#murid .prow.saya{background:var(--dunia-lembut);border-radius:12px;padding-inline:8px}
+#murid .prow .sk{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:17px}
+#murid .prow .sub{font-family:"Figtree",sans-serif}
+#murid .papantab button{border:2px solid var(--garis);background:var(--kad);color:var(--tinta);font-weight:700}
+#murid .papantab button[aria-pressed="true"]{background:var(--tinta);color:var(--kad)}
+
+/* keputusan */
+#murid .result h2{font-size:32px;font-weight:800}
+.bintang{display:flex;justify-content:center;gap:6px;margin:4px 0 12px}
+.bintang span{font-size:54px;line-height:1;filter:drop-shadow(0 3px 0 var(--garis));opacity:.2;transform:scale(.6)}
+.bintang span.on{opacity:1;transform:scale(1);animation:bintangmasuk .45s cubic-bezier(.3,1.6,.5,1) both}
+.bintang span:nth-child(2){transform:translateY(-10px) scale(.6);font-size:64px}
+.bintang span.on:nth-child(2){transform:translateY(-10px);animation-delay:.18s}
+.bintang span.on:nth-child(3){animation-delay:.36s}
+@keyframes bintangmasuk{0%{opacity:0;transform:scale(.2) rotate(-40deg)}100%{opacity:1}}
+.skorbesar{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:44px;line-height:1;color:var(--dunia);margin-top:4px}
+#murid .metahasil span{font-family:"Figtree",sans-serif;font-weight:700;border:2px solid var(--garis);background:var(--kad2);color:var(--tinta)}
+#murid .kadbesar{border:3px solid var(--garis);box-shadow:0 6px 0 var(--garis);background:linear-gradient(160deg,var(--dunia),var(--dunia-gelap));transform:rotate(-3deg)}
+#murid .kad{border:2px solid var(--garis);box-shadow:0 4px 0 var(--garis);background:linear-gradient(160deg,var(--dunia),var(--dunia-gelap))}
+#murid .kad.kunci{background:var(--kad2);color:var(--lembut);border-style:dashed;box-shadow:none}
+#murid .badbig{border:3px solid var(--garis);background:var(--kad2);box-shadow:0 5px 0 var(--garis)}
+#murid .pelajaran{border-top:2px dashed color-mix(in srgb,var(--tinta) 18%,transparent)}
+#murid .pelajaran .tanda{border:2px solid var(--garis);width:22px;height:22px}
+#murid .pelajaran .tanda.ok{background:var(--lulus)}
+#murid .pelajaran .tanda.no{background:var(--silap)}
+.konfeti{position:fixed;inset:0;pointer-events:none;z-index:70;overflow:hidden}
+.konfeti i{position:absolute;top:-20px;width:10px;height:16px;border:1.5px solid rgba(0,0,0,.35);border-radius:3px;animation:jatuh 1.9s cubic-bezier(.25,.6,.5,1) forwards}
+@keyframes jatuh{to{transform:translate(var(--dx),110vh) rotate(var(--r));opacity:.9}}
+
+/* masuk */
+#murid .namabtn{border:2px solid var(--garis);background:var(--kad);box-shadow:0 3px 0 var(--garis);border-radius:16px}
+#murid .namabtn .av{border:2px solid var(--garis)}
+#murid .pinpad button{border:2px solid var(--garis);background:var(--kad);box-shadow:0 4px 0 var(--garis);font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--tinta)}
+#murid .pinpad button:active{transform:translateY(4px);box-shadow:none}
+#murid .pinpad button.aksi{font-family:"Figtree",sans-serif;font-size:14px}
+#murid .pinpapar i{border:2px solid var(--garis);background:var(--kad)}
+#murid .pinpapar i.isi{background:var(--dunia-lembut)}
+#murid .pinpapar i.isi::after{background:var(--dunia)}
+#murid input.kodkelas,#murid .cari{border:2px solid var(--garis);background:var(--kad);color:var(--tinta);box-shadow:inset 0 3px 0 color-mix(in srgb,var(--tinta) 10%,transparent)}
+#murid .sambut h2{font-size:34px;font-weight:800}
+#murid .ralat{color:var(--silap)}
+#murid .talian-jalur{border:2px solid var(--garis)}
+@media (prefers-reduced-motion:reduce){.nod[data-s="aktif"]::before,.gelembung{animation:none}}
+
 .ralat{color:var(--arteri);font-weight:600;font-size:14px;margin-top:10px}
 .berjaya{color:var(--teal);font-weight:600;font-size:14px;margin-top:10px}
 </style>
 </head>
-<body>
+<body class="zon-murid">
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
 <script src="konfig.js?v=20260914"></script>
 <script src="bank-t3b1.js?v=20260914"></script>
@@ -669,13 +917,13 @@ input.kodkelas::placeholder{opacity:.3}
 
   <main id="murid">
     <section class="hud" id="hud" aria-label="Paras nafas dan skor">
+      <span class="ikonhud" aria-hidden="true">&#x1FAC1;</span>
       <div>
-        <span class="lbl">Nafas</span>
-        <span class="val" id="vNafas">100</span>
+        <span class="lbl">Nafas <span id="vNafas">100</span></span>
         <div class="nafasbar" id="bar"><i style="width:100%"></i></div>
       </div>
-      <div class="kombo"><span class="lbl">Kombo</span><span class="val" id="vKombo">&times;1</span></div>
-      <div class="skor" style="text-align:right"><span class="lbl">Skor</span><span class="val" id="vSkor">0</span></div>
+      <div class="kombo"><span class="lbl">Kombo</span><span aria-hidden="true">&#x1F525;</span><span class="val" id="vKombo">&times;1</span></div>
+      <div class="skor"><span class="lbl">Skor</span><span aria-hidden="true">&#x2B50;</span><span class="val" id="vSkor">0</span></div>
     </section>
     <div class="talian-jalur" id="talianJalur" role="status" aria-live="polite" hidden></div>
     <div id="stage"></div>
@@ -759,7 +1007,30 @@ function pasangBab(id){
 /* Jenama produk kekal "Cikgu Nani". Nama perjalanan setiap bab
    (Laluan Impuls, Laluan Oksigen, Laluan Darah) muncul pada tajuk peta,
    bukan menggantikan jenama di bar atas. */
+/* Setiap bab ialah satu dunia: warna, ikon hentian dan satu ayat misi.
+   Bab tanpa entri di sini memakai DUNIA_ASAS, jadi bab baharu tetap berfungsi. */
+var DUNIA={
+  t3b1:{warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"⚡",
+        hentian:["👁️","⚡","🦴","🧠","💪","🏃"],
+        misi:"Bawa isyarat saraf dari deria sampai ke tindakan badan."},
+  t3b2:{warna:"#0A8FD0",lembut:"#DDF1FB",gelap:"#06679A",ikon:"🫁",
+        hentian:["👃","🌳","🫧","🩸","❤️","🔋"],
+        misi:"Bawa oksigen dari hidung sampai ke setiap sel badan."},
+  t3b3:{warna:"#E23D4B",lembut:"#FDE4E6",gelap:"#A81F2C",ikon:"🫀",
+        hentian:["🫀","🛣️","🕸️","🩸","🌿","🧍"],
+        misi:"Pam darah dari jantung ke seluruh badan, dan air ke seluruh tumbuhan."}
+};
+var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔬",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
+function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
+function pasangDunia(){
+  var d=duniaBab(), s=document.body.style;
+  s.setProperty("--dunia",d.warna); s.setProperty("--dunia-gelap",d.gelap);
+  var gelap=document.documentElement.getAttribute("data-theme")==="dark"||
+    (!document.documentElement.getAttribute("data-theme")&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);
+  if(gelap) s.removeProperty("--dunia-lembut"); else s.setProperty("--dunia-lembut",d.lembut);
+}
 function pasangJenama(){
+  pasangDunia();
   function tulis(pilih,teks){ var e=document.querySelector(pilih); if(e&&teks) e.textContent=teks; }
   tulis(".brand span", BAB.subtajuk);
   var ge=document.getElementById("guruEyebrow");
@@ -1175,74 +1446,8 @@ function aturDegup(){
   degupTimer=setInterval(function(){bunyi("degup");},S.nafas<20?360:520);
 }
 
-/* ============================================================
-   PETA KANVAS — molekul menyusur salur udara
-   ============================================================ */
-var petaCv=null,petaCtx=null,petaAnim=null,bob=0;
-function nodPos(i,w,h){
-  var t=i/5;
-  return {x:w*0.08+t*w*0.84, y:h*0.52+Math.sin(t*Math.PI*1.35)*h*0.26};
-}
-function lukisPeta(){
-  if(!petaCv)return;
-  var dpr=Math.min(window.devicePixelRatio||1,2);
-  var w=petaCv.clientWidth,h=petaCv.clientHeight;
-  if(!w||!h)return;
-  if(petaCv.width!==Math.round(w*dpr)){petaCv.width=Math.round(w*dpr);petaCv.height=Math.round(h*dpr);}
-  var c=petaCtx; c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,w,h);
-  var cs=getComputedStyle(document.documentElement);
-  var cLine=cs.getPropertyValue("--line2").trim()||"#C3CFDE";
-  var cTeal=cs.getPropertyValue("--teal").trim()||"#0E8C7F";
-  var cArt=cs.getPropertyValue("--arteri").trim()||"#C8102E";
-  var cAmb=cs.getPropertyValue("--amber").trim()||"#B07208";
-  var cInk3=cs.getPropertyValue("--ink3").trim()||"#6C7F96";
-  var cSurf=cs.getPropertyValue("--surface").trim()||"#fff";
-  var tunggu=menungguCikgu();
-
-  var pts=[];for(var i=0;i<6;i++)pts.push(nodPos(i,w,h));
-  for(var s=0;s<5;s++){
-    var a=pts[s],b=pts[s+1];
-    var lebar1=26-s*3.4, lebar2=26-(s+1)*3.4;
-    c.beginPath();
-    c.moveTo(a.x,a.y-lebar1/2); c.lineTo(b.x,b.y-lebar2/2);
-    c.lineTo(b.x,b.y+lebar2/2); c.lineTo(a.x,a.y+lebar1/2); c.closePath();
-    c.fillStyle = S.lulus[s+1] ? cTeal+"26" : cLine+"3A";
-    c.fill();
-    c.strokeStyle = S.lulus[s+1] ? cTeal : cLine;
-    c.lineWidth=1.4; c.stroke();
-  }
-  for(var k=0;k<6;k++){
-    var p=pts[k],lulus=!!S.lulus[k+1],aktif=(k+1===S.aras);
-    var menunggu=(k===5&&!lulus&&tunggu);
-    c.beginPath(); c.arc(p.x,p.y,aktif?15:12,0,Math.PI*2);
-    c.fillStyle = lulus?cTeal:(menunggu?cAmb:(aktif?cArt:cSurf));
-    c.fill();
-    c.lineWidth=2; c.strokeStyle = lulus?cTeal:(menunggu?cAmb:(aktif?cArt:cLine));
-    c.stroke();
-    c.fillStyle = (lulus||aktif||menunggu)?"#fff":cInk3;
-    c.font="500 11px 'DM Mono', monospace"; c.textAlign="center"; c.textBaseline="middle";
-    c.fillText(lulus?"✓":(menunggu?"…":String(k+1)),p.x,p.y+0.5);
-  }
-  var sasar=Math.min(S.aras,6)-1;
-  if(S.molPos===null||S.molPos===undefined) S.molPos=sasar;
-  S.molPos += (sasar-S.molPos)*0.075;
-  if(Math.abs(sasar-S.molPos)<0.002) S.molPos=sasar;
-  var lo=Math.max(0,Math.floor(S.molPos)), hi=Math.min(5,lo+1), fr=S.molPos-lo;
-  var mp={x:pts[lo].x+(pts[hi].x-pts[lo].x)*fr, y:pts[lo].y+(pts[hi].y-pts[lo].y)*fr};
-  var oy=Math.sin(bob)*3.6;
-  c.beginPath(); c.arc(mp.x-6,mp.y-24+oy,5.6,0,Math.PI*2); c.fillStyle=cArt; c.fill();
-  c.beginPath(); c.arc(mp.x+6,mp.y-24+oy,5.6,0,Math.PI*2); c.fillStyle=cArt; c.fill();
-  c.globalAlpha=0.28;
-  c.beginPath(); c.arc(mp.x,mp.y-24+oy,15,0,Math.PI*2); c.strokeStyle=cArt; c.lineWidth=1.5; c.stroke();
-  c.globalAlpha=1;
-}
-function mulaPetaAnim(){
-  if(petaAnim)cancelAnimationFrame(petaAnim);
-  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduce){lukisPeta();return;}
-  (function loop(){ bob+=0.055; lukisPeta(); petaAnim=requestAnimationFrame(loop); })();
-}
-function hentiPetaAnim(){ if(petaAnim){cancelAnimationFrame(petaAnim);petaAnim=null;} }
+/* Peta kini dilukis dengan HTML dan SVG dalam renderPeta, bukan kanvas. */
+function hentiPetaAnim(){}
 
 /* Kad seterusnya yang boleh dibuka, supaya sentiasa ada sebab yang jelas
    untuk main sekali lagi, bukan sekadar nombor skor yang naik. */
@@ -1496,13 +1701,14 @@ function seterusnya(){
 function render(){
   kemasHud();
   var luar=(S.skrin==="kodkelas"||S.skrin==="nama"||S.skrin==="pin");
-  $("hud").classList.toggle("hidden",luar);
+  $("hud").classList.toggle("hidden",S.skrin!=="main");
   if(luar){ hentiJam(); hentiPetaAnim(); aturDegup();
     if(S.skrin==="nama"&&KM) return renderNama();
     if(S.skrin==="pin"&&KM) return renderPin();
     return renderKodKelas(); }
   if(S.skrin==="peta"){ hentiJam(); aturDegup(); return renderPeta(); }
   hentiPetaAnim();
+  if(S.skrin==="hasil") return;
   if(S.skrin==="main") return renderSoalan();
   if(S.skrin==="kad") return renderKad();
 }
@@ -1729,110 +1935,134 @@ function kiraKad(){
   if(g&&Number(g.tp)>=6){ S.kad["6a"]=1; S.kad["6b"]=1; }
 }
 
+/* Kedudukan mendatar setiap hentian (peratus lebar), supaya laluan berliku
+   seperti peta level dan setiap nod ada ruang untuk labelnya. */
+var POS_NOD=[28,64,78,40,22,60];
+var TINGGI_NOD=118;
+
+function lukisLaluan(n,lulus){
+  var pts=[];
+  for(var k=0;k<n;k++) pts.push([POS_NOD[k%POS_NOD.length], TINGGI_NOD*k+TINGGI_NOD/2]);
+  function seg(a,b){ var my=(a[1]+b[1])/2; return "M"+a[0]+" "+a[1]+" C"+a[0]+" "+my+" "+b[0]+" "+my+" "+b[0]+" "+b[1]; }
+  var tebal="", isi="";
+  for(k=1;k<n;k++){
+    var d=seg(pts[k-1],pts[k]), siap=!!lulus[k];
+    tebal+='<path d="'+d+'" stroke="var(--garis)" stroke-width="20" vector-effect="non-scaling-stroke"/>';
+    isi+='<path d="'+d+'" stroke="'+(siap?"var(--lulus)":"var(--kad2)")+'" stroke-width="13" vector-effect="non-scaling-stroke"/>';
+    if(!siap) isi+='<path d="'+d+'" stroke="var(--lembut)" stroke-width="4" stroke-dasharray="0.1 13" opacity=".7" vector-effect="non-scaling-stroke"/>';
+  }
+  return '<svg class="jalan" viewBox="0 0 100 '+(n*TINGGI_NOD)+'" preserveAspectRatio="none" aria-hidden="true">'+tebal+isi+'</svg>';
+}
+
 function renderPeta(){
   var st=$("stage"); st.innerHTML="";
   var tunggu=menungguCikgu();
+  var d=duniaBab();
+  var siap=0, i;
+  for(i=1;i<=6;i++) if(S.lulus[i]) siap++;
+  var berekod=!S.latihan&&KM&&S.no;
 
-  var p=el("div","panel");
-  var hd=el("div","panel-hd");
-  hd.appendChild(el("div","grow",'<p class="eyebrow">'+
-    esc(S.latihan||!KM?"Mod latihan · tiada rekod":(namaPendek(KM.id,S.no)+" · "+KM.nama))+
-    '</p><h2>'+esc(BAB.tajuk)+'</h2>'));
-  if(S.rentetan>0) hd.appendChild(el("span","tp-chip a",'<span class="api"><em>\u{1F525}</em>'+S.rentetan+' hari</span>'));
-  hd.appendChild(el("span","tp-chip t",Object.keys(S.kad).length+" / 12 kad"));
-  if(S.inhaler>0||S.hemo>0)
-    hd.appendChild(el("span","tp-chip",'\u{1F489} '+S.inhaler+'  \u{1FA78} '+S.hemo));
-  p.appendChild(hd);
-  var bd=el("div","panel-bd");
-  bd.innerHTML='<canvas id="peta" aria-label="Peta perjalanan enam hentian bagi bab ini"></canvas>';
-  var grid=el("div","stopgrid");
-  ARAS.forEach(function(a){
-    var menunggu=(a.n===6&&!S.lulus[6]&&tunggu);
-    var s=S.lulus[a.n]?"lulus":(menunggu?"tunggu":(a.n===S.aras?"aktif":"buka"));
-    var b=el("button","stop");b.type="button";b.setAttribute("data-s",s);b.setAttribute("data-f","stop-"+a.n);
-    b.innerHTML='<span class="top"><span class="dot">'+(S.lulus[a.n]?"✓":(menunggu?"…":a.n))+'</span><span class="nm">'+esc(a.tempat)+'</span></span>'+
-                '<span class="tp">TP'+a.n+' · '+KKO[a.n-1]+(menunggu?" · menunggu cikgu":"")+'</span>';
-    b.onclick=function(){ mulaAras(a.n); };
-    grid.appendChild(b);
-  });
-  bd.appendChild(grid);
+  /* wira dunia */
+  var w=el("section","wira");
+  var h='<span class="ikonbesar" aria-hidden="true">'+d.ikon+'</span>';
+  if(berekod) h+='<p class="siapa">Hai, '+esc(namaPendek(KM.id,S.no))+'!</p>';
+  h+='<h2>'+esc(BAB.tajuk)+'</h2><p class="cerita">'+esc(d.misi)+'</p>';
+  h+='<div class="kemajuan" role="img" aria-label="'+siap+' daripada 6 hentian dilepasi">';
+  for(i=1;i<=6;i++) h+='<i class="'+(S.lulus[i]?"on":"")+'"></i>';
+  h+='</div><div class="statbaris">'+
+     '<span class="stat"><span aria-hidden="true">⭐</span>'+siap+'/6 hentian</span>'+
+     '<span class="stat"><span aria-hidden="true">🃏</span>'+Object.keys(S.kad).length+'/12 kad</span>'+
+     (S.rentetan>0?'<span class="stat"><span aria-hidden="true">🔥</span>'+S.rentetan+' hari</span>':'')+
+     ((S.inhaler||S.hemo)?'<span class="stat" title="Kuasa: inhaler dan hemoglobin"><span aria-hidden="true">💉</span>'+S.inhaler+' <span aria-hidden="true">🩸</span>'+S.hemo+'</span>':'')+
+     '</div>';
+  if(!berekod) h+='<span class="latihan">Mod latihan: markah tidak dihantar kepada cikgu</span>';
+  w.innerHTML=h;
+  st.appendChild(w);
 
-  /* mod tenang */
-  var tg=el("div","tenangrow");
-  tg.appendChild(el("div","txt",'<div class="t">Mod tenang</div><div class="d">'+
-    (S.tenang
-      ? "Meter nafas dimatikan. Awak boleh baca selama yang perlu. Cikgu nampak tanda ini pada rekod awak."
-      : "Hidupkan jika meter nafas membuat awak tergesa-gesa. Soalan dan markah tetap sama.")+'</div>'));
-  var tb=el("button","btn sm"+(S.tenang?"":" ghost"));
-  tb.textContent=S.tenang?"Tenang: hidup":"Tenang: mati";
-  tb.setAttribute("aria-pressed",S.tenang?"true":"false");
-  tb.onclick=function(){ S.tenang=!S.tenang; simpanDiri(); render(); };
-  tg.appendChild(tb);
-  bd.appendChild(tg);
-
-  /* pemilih bab: kemajuan setiap bab dikira berasingan */
+  /* pilih bab: kemajuan setiap bab dikira berasingan */
   var babs=senaraiBab();
   if(babs.length>1){
-    var pb=el("div","babrow");
-    pb.appendChild(el("div","tajuk","Bab"));
+    var bp=el("div","babpilih"); bp.setAttribute("role","group"); bp.setAttribute("aria-label","Pilih bab");
     babs.forEach(function(b){
-      var t=el("button","babbtn"); t.type="button";
-      t.setAttribute("aria-pressed", b.id===BAB_ID ? "true":"false");
-      var siap=0;
-      if(S.no&&b.id===BAB_ID){ for(var i=1;i<=6;i++) if(S.lulus[i]) siap++; }
-      t.innerHTML='<span class="k">'+esc(b.kod.split(" ")[0])+'</span><span class="n">'+
-        esc(b.kod.replace(/^[0-9.]+\s*/,""))+'</span>'+
-        (b.id===BAB_ID&&S.no?'<span class="s">'+siap+' / 6 hentian</span>':'');
+      var dd=duniaBab(b.id);
+      var t=el("button"); t.type="button"; t.title=b.kod;
+      t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
+      t.innerHTML='<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>'+esc(b.tajuk);
       t.onclick=function(){ tukarBab(b.id); };
-      pb.appendChild(t);
+      bp.appendChild(t);
     });
-    bd.appendChild(pb);
+    st.appendChild(bp);
   }
 
+  /* peta level */
+  var lal=el("div","laluan");
+  lal.style.height=(ARAS.length*TINGGI_NOD)+"px";
+  lal.innerHTML=lukisLaluan(ARAS.length,S.lulus);
+  ARAS.forEach(function(a,k){
+    var row=el("div","hentian");
+    row.style.position="absolute"; row.style.left="0"; row.style.right="0"; row.style.top=(k*TINGGI_NOD)+"px";
+    var menunggu=(a.n===6&&!S.lulus[6]&&tunggu);
+    var s=S.lulus[a.n]?"lulus":(menunggu?"tunggu":(a.n===S.aras?"aktif":"buka"));
+    var x=POS_NOD[k%POS_NOD.length];
+    var b=el("button","nod"); b.type="button";
+    b.setAttribute("data-s",s); b.setAttribute("data-f","stop-"+a.n);
+    b.style.left=x+"%";
+    b.setAttribute("aria-label","Hentian "+a.n+", "+a.tempat+
+      (s==="lulus"?", sudah dilepasi":(menunggu?", menunggu cikgu":(s==="aktif"?", hentian seterusnya":""))));
+    b.innerHTML='<span aria-hidden="true">'+(d.hentian[k]||a.kadEm)+'</span>'+
+      '<span class="lencana" aria-hidden="true">'+(s==="lulus"?"★":(menunggu?"…":a.n))+'</span>'+
+      (s==="aktif"?'<span class="gelembung" aria-hidden="true">Main!</span>':'');
+    b.onclick=function(){ mulaAras(a.n); };
+    row.appendChild(b);
+    var lb=el("div","labelnod");
+    var jarak=(s==="aktif"?60:54)+"px";
+    if(x>50){ lb.style.right="calc("+(100-x)+"% + "+jarak+")"; lb.style.textAlign="right"; }
+    else lb.style.left="calc("+x+"% + "+jarak+")";
+    lb.innerHTML='<b>'+esc(a.tempat)+'</b><span>'+
+      (menunggu?"Cikgu sedang menilai":("Tahap "+a.n+": "+esc(KKO[a.n-1])))+'</span>';
+    row.appendChild(lb);
+    lal.appendChild(row);
+  });
+  st.appendChild(lal);
+
+  if(tunggu){
+    var nt=el("div","fb ok");
+    nt.innerHTML='<span class="emo" aria-hidden="true">✉️</span><div><b>Tugasan dihantar</b>Cikgu akan membaca cadangan reka cipta awak dan memutuskan hentian 6.</div>';
+    st.appendChild(nt);
+  }
+
+  /* kad seterusnya */
   var ks=kadSeterusnya();
-  var sa=el("div","sasaran"+(ks?"":" siap"));
+  var sa=el("div","kotakmain");
   if(ks){
     sa.appendChild(el("span","em",ks.em));
-    sa.appendChild(el("div","txt",'<div class="t">Kad seterusnya: '+esc(ks.nama)+'</div>'+
-      '<div class="d">'+esc(ks.cara)+'</div>'));
-    var kb2=el("button","btn sm ghost"); kb2.textContent="Pergi";
+    sa.appendChild(el("div","txt",'<div class="t">Kad seterusnya: '+esc(ks.nama)+'</div><div class="d">'+esc(ks.cara)+'</div>'));
+    var kb2=el("button","btn sm"); kb2.textContent="Pergi";
     kb2.onclick=function(){ mulaAras(ks.aras); };
     sa.appendChild(kb2);
   } else {
     sa.appendChild(el("span","em","\u{1F3C6}"));
-    sa.appendChild(el("div","txt",'<div class="t">Kesemua dua belas kad sudah dikumpul</div>'+
-      '<div class="d">Tiada lagi kad untuk dibuka. Ulang mana-mana hentian untuk menajamkan lagi jawapan awak.</div>'));
+    sa.appendChild(el("div","txt",'<div class="t">Semua 12 kad sudah dikumpul!</div>'+
+      '<div class="d">Ulang mana-mana hentian untuk kejar skor lebih tinggi.</div>'));
   }
-  bd.appendChild(sa);
-
-  p.appendChild(bd);
-  st.appendChild(p);
-
-  if(tunggu){
-    var nt=el("div","fb ok");nt.style.marginTop="16px";
-    nt.innerHTML="<b>Tugasan reka cipta sudah dihantar</b>Cikgu akan membaca dan memutuskan TP6. Hentian enam akan bertanda siap selepas itu.";
-    st.appendChild(nt);
-  }
+  st.appendChild(sa);
 
   /* cabaran harian */
   var hariIni=tarikhTempatan();
   var sudah=(S.harianTarikh===hariIni);
-  var h=el("div","harian");
-  var garisApi = S.rentetan>0
-    ? (" Rentetan awak "+S.rentetan+" hari. Main hari ini untuk kekalkannya.")
-    : " Main hari ini untuk mula rentetan awak.";
-  h.appendChild(el("div","txt",'<div class="t">Cabaran harian</div><div class="d">'+
-    (sudah?("Sudah selesai hari ini. Skor awak "+S.harianSkor+"."):"Lima soalan campur semua aras.")+
-    esc(garisApi)+'</div>'));
+  var hr=el("div","kotakmain harian");
+  hr.appendChild(el("span","em","\u{1F3AF}"));
+  hr.appendChild(el("div","txt",'<div class="t">Cabaran harian</div><div class="d">'+
+    (sudah?("Selesai hari ini dengan skor "+S.harianSkor+"."):"Lima soalan rawak dari semua hentian.")+
+    esc(S.rentetan>0?(" Rentetan awak "+S.rentetan+" hari, jangan putus!"):" Main hari ini untuk mula rentetan.")+'</div>'));
   var hb=el("button","btn sm"+(sudah?" ghost":""));
-  hb.textContent=sudah?"Main lagi (tak dikira)":"Mula cabaran";
+  hb.textContent=sudah?"Main lagi":"Mula";
   hb.onclick=mulaHarian;
-  h.appendChild(hb);
-  st.appendChild(h);
+  hr.appendChild(hb);
+  st.appendChild(hr);
 
-  /* Papan skor kelas. Dua paparan: minggu ini (bermula semula setiap Isnin,
-     jadi murid yang mula lambat masih boleh naik) dan sepanjang bab. */
-  if(!S.latihan&&KM&&S.no){
+  /* papan skor kelas */
+  if(berekod){
     var p2=el("div","panel");
     p2.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(KM.nama)+'</p><h2>Papan skor kelas</h2></div>'));
     var bd2=el("div","panel-bd");
@@ -1840,37 +2070,44 @@ function renderPeta(){
     var mingguan=(S.papan==="minggu");
     var semua=barisPapan(KM.id,mingguan);
     var kedudukan=-1;
-    semua.forEach(function(m,i){ if(m.no===S.no) kedudukan=i; });
+    semua.forEach(function(m,j){ if(m.no===S.no) kedudukan=j; });
     var tunjuk=semua.slice(0,10);
     if(kedudukan>=10) tunjuk.push(semua[kedudukan]);
-    if(tunjuk.length){
-      bd2.appendChild(lukisPapan(KM.id,tunjuk,mingguan,S.no,false,semua));
-    } else {
-      bd2.appendChild(el("p","note", mingguan
-        ? "Belum ada sesiapa melepasi hentian minggu ini. Awak boleh jadi yang pertama!"
-        : "Belum ada skor direkod untuk kelas ini."));
-    }
+    if(tunjuk.length) bd2.appendChild(lukisPapan(KM.id,tunjuk,mingguan,S.no,false,semua));
+    else bd2.appendChild(el("p","note", mingguan
+      ? "Belum ada sesiapa melepasi hentian minggu ini. Jadi yang pertama!"
+      : "Belum ada skor direkod untuk kelas ini."));
     bd2.appendChild(el("p","note", mingguan
-      ? "Papan ini mengira hentian yang dilepasi minggu ini dan bermula semula setiap Isnin."
-      : "Jumlah mata terbaik bagi setiap hentian sepanjang bab ini."));
+      ? "Kiraan hentian yang dilepasi minggu ini. Bermula semula setiap Isnin."
+      : "Jumlah mata terbaik bagi setiap hentian dalam bab ini."));
     p2.appendChild(bd2);
     st.appendChild(p2);
   }
 
-  var ab=el("div","actions");
-  var kb=el("button","btn ghost sm");kb.textContent="Lihat koleksi kad";
+  /* alat */
+  var ab=el("div","alat");
+  var tb=el("button","suisbesar"); tb.type="button";
+  tb.setAttribute("aria-pressed",S.tenang?"true":"false");
+  tb.innerHTML='<span class="trek" aria-hidden="true"></span>Mod tenang';
+  tb.title=S.tenang
+    ? "Meter nafas dimatikan. Baca selama yang perlu. Cikgu nampak tanda ini pada rekod awak."
+    : "Hidupkan jika meter nafas membuat awak tergesa-gesa. Soalan dan markah tetap sama.";
+  tb.onclick=function(){ S.tenang=!S.tenang; simpanDiri(); render(); };
+  ab.appendChild(tb);
+  var kb=el("button","btn ghost sm"); kb.textContent="\u{1F0CF} Koleksi kad";
   kb.onclick=function(){ S.skrin="kad"; render(); window.scrollTo({top:0,behavior:"smooth"}); };
   ab.appendChild(kb);
-  var tb2=el("button","btn ghost sm");tb2.textContent=S.latihan?"Masuk dengan nama":"Bukan saya";
+  var tb2=el("button","btn ghost sm"); tb2.textContent=berekod?"Bukan saya":"Masuk dengan nama";
   tb2.onclick=function(){
     S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri();
     S.skrin=KM?"nama":"kodkelas"; render(); window.scrollTo({top:0});
   };
   ab.appendChild(tb2);
   st.appendChild(ab);
+  st.appendChild(el("p","note",S.tenang
+    ? "Mod tenang hidup: meter nafas dimatikan dan cikgu nampak tanda ini pada rekod awak."
+    : "Mod tenang mematikan meter nafas. Soalan dan markah tetap sama."));
 
-  petaCv=$("peta"); petaCtx=petaCv.getContext("2d");
-  requestAnimationFrame(function(){ mulaPetaAnim(); });
   pulihFokus();
 }
 
@@ -1967,10 +2204,12 @@ function renderSoalan(){
 
   var p=el("div","panel"+(bos?" bospanel":""));
   var hd=el("div","panel-hd");
+  var ikonH=duniaBab().hentian[a.n-1]||a.kadEm;
   hd.appendChild(el("div","grow",
-    '<p class="eyebrow">'+(S.modHarian?"Cabaran harian":("Hentian "+a.n+" · "+esc(a.sk)))+'</p>'+
-    '<h2>'+(bos?"Bos: "+esc(a.tempat):(S.modHarian?"Campur semua aras":esc(a.tempat)))+'</h2>'));
-  hd.appendChild(el("span","tp-chip"+(bos?"":" t"), S.modHarian?"Campur":("TP"+a.n)));
+    '<p class="eyebrow">'+(S.modHarian?"Cabaran harian":("Hentian "+a.n+" daripada 6"))+'</p>'+
+    '<h2 class="tajukbos">'+(bos?'<span aria-hidden="true">\u{1F47E}</span>Soalan bos!':
+      (S.modHarian?'<span aria-hidden="true">\u{1F3AF}</span>Campur semua hentian':
+      '<span aria-hidden="true">'+ikonH+'</span>'+esc(a.tempat)))+'</h2>'));
   p.appendChild(hd);
 
   var bd=el("div","panel-bd");
@@ -2106,14 +2345,17 @@ function renderSoalan(){
   if(S.disemak){
     var hantar=(q._betul===null);
     var f=el("div","fb "+(hantar?"ok":(q._betul?"ok":"no")));
-    f.innerHTML='<b>'+(hantar?"Dihantar kepada cikgu.":(q._betul?"Betul. Tarik nafas.":"Belum tepat."))+'</b>'+
-      (hantar?"Tugasan reka cipta tidak dinilai oleh mesin. Cikgu akan membacanya dan memutuskan TP6.":(q.u||""));
+    var PUJI=["Betul!","Hebat!","Tepat sekali!","Mantap!"];
+    var tajukFb=hantar?"Dihantar kepada cikgu":(q._betul?(S.kombo>=3?"Kombo "+S.kombo+"!":PUJI[S.qi%PUJI.length]):"Belum tepat");
+    var emo=hantar?"✉️":(q._betul?(S.kombo>=3?"\u{1F525}":"\u{1F389}"):"\u{1F914}");
+    f.innerHTML='<span class="emo" aria-hidden="true">'+emo+'</span><div><b>'+tajukFb+'</b>'+
+      (hantar?"Tugasan reka cipta tidak dinilai oleh mesin. Cikgu akan membacanya dan memutuskan hentian 6.":(q.u||""))+'</div>';
     bd.insertBefore(f,act);
   }
 
   if(!S.disemak){
     var bs=el("button","btn");bs.id="btnSemak";bs.setAttribute("data-f","aksi");
-    bs.textContent=(q.j==="buka")?"Hantar kepada cikgu":"Semak";
+    bs.textContent=(q.j==="buka")?"Hantar kepada cikgu":"Semak jawapan";
     bs.disabled=!adaJawapan(q);
     bs.onclick=function(){semak(false);};
     act.appendChild(bs);
@@ -2130,7 +2372,7 @@ function renderSoalan(){
 }
 
 function hasilAras(){
-  hentiJam(); aturDegup(); kemasRentetan();
+  hentiJam(); S.skrin="hasil"; $("hud").classList.add("hidden"); aturDegup(); kemasRentetan();
   var a=ARAS[S.aras-1];
   var terbukaTP6=(a.n===6);
   var jumItem=S.jumlahBiasa+1, betulItem=S.betulBiasa+(S.bosBetul?1:0), perlu=ambangItem(jumItem);
@@ -2146,40 +2388,65 @@ function hasilAras(){
   rekodCubaan(a.n,lulus);
   simpanDiri();
 
+  /* Bintang: 3 jika semua betul, 2 jika lulus, 1 jika sekurang-kurangnya
+     separuh betul. TP6 dinilai cikgu, jadi hentian itu tidak diberi bintang. */
+  var nisbah=jumItem?betulItem/jumItem:0;
+  var bintang = terbukaTP6 ? 0 : (lulus ? (betulItem===jumItem?3:2) : (nisbah>=0.5?1:0));
+
   var st=$("stage"); st.innerHTML="";
   var p=el("div","panel"); var b=el("div","result");
-  if(kadBaru.length){
-    var k=kadBaru[0];
-    b.appendChild(el("div","kadbesar",'<div class="em">'+k[1]+'</div><div class="nm">'+esc(k[0])+'</div><div class="ft">'+esc(k[2])+'</div>'));
-  } else {
-    b.appendChild(el("div","badbig",lulus?"✓":(terbukaTP6&&S.bosHantar?"✉":"\u{1F501}")));
-  }
 
   if(terbukaTP6){
-    b.appendChild(el("h2",null,S.bosHantar?"Tugasan reka cipta dihantar":"Hentian akhir belum selesai"));
+    b.appendChild(el("div","badbig",S.bosHantar?"✉️":"\u{1F4DD}"));
+    b.appendChild(el("h2",null,S.bosHantar?"Tugasan dihantar!":"Hentian akhir belum selesai"));
     b.appendChild(el("p",null,S.bosHantar
-      ? ("Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+" soalan aneka pilihan, dan cadangan reka cipta awak sudah dihantar. TP6 diputuskan oleh cikgu selepas membaca cadangan itu, bukan oleh mesin.")
-      : ("Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+". Tugasan reka cipta belum dihantar, jadi TP6 belum boleh dinilai.")));
+      ? ("Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+" soalan pilihan, dan cadangan reka cipta awak sudah sampai kepada cikgu. Cikgu yang akan memutuskan hentian ini.")
+      : ("Awak betul "+S.betulBiasa+" daripada "+S.jumlahBiasa+". Hantar tugasan reka cipta supaya cikgu boleh menilai hentian ini.")));
   } else {
-    b.appendChild(el("h2",null,lulus?("Hentian "+a.n+" dilepasi"):"Belum cukup konsisten"));
+    var bn=el("div","bintang"); bn.setAttribute("role","img"); bn.setAttribute("aria-label",bintang+" daripada 3 bintang");
+    for(var i=1;i<=3;i++) bn.appendChild(el("span",i<=bintang?"on":"","⭐"));
+    b.appendChild(bn);
+    b.appendChild(el("h2",null,lulus?(bintang===3?"Sempurna!":"Hentian "+a.n+" dilepasi!"):(bintang?"Hampir berjaya!":"Cuba sekali lagi")));
+    b.appendChild(el("div","skorbesar",S.skor+" mata"));
     b.appendChild(el("p",null,lulus
-      ? ("Awak betul "+betulItem+" daripada "+jumItem+" item termasuk soalan bos. Itu dikira bukti penguasaan TP"+a.n+"."+(kadBaru.length>1?" Dua kad baharu dibuka.":""))
-      : ("Awak betul "+betulItem+" daripada "+jumItem+" item. Perlu "+perlu+" untuk dikira menguasai TP"+a.n+
-         ", supaya tekaan bertuah tidak lepas. Soalan yang awak salah akan datang balik nanti.")));
+      ? ("Betul "+betulItem+" daripada "+jumItem+", termasuk soalan bos."+(kadBaru.length>1?" Dua kad baharu dibuka!":(kadBaru.length?" Kad baharu dibuka!":"")))
+      : ("Betul "+betulItem+" daripada "+jumItem+". Perlu "+perlu+" betul untuk lepas. Soalan yang salah akan muncul lagi supaya awak boleh cuba semula.")));
   }
+
+  var act=el("div","actions");act.style.justifyContent="center";
+  if(lulus&&a.n<6){
+    var b1=el("button","btn hijau");b1.textContent="Hentian "+(a.n+1)+": "+ARAS[a.n].tempat;
+    b1.setAttribute("data-f","aksi");
+    b1.onclick=function(){mulaAras(a.n+1);};
+    act.appendChild(b1);
+  }
+  var b2=el("button","btn"+(lulus&&a.n<6?" ghost":""));b2.textContent=lulus?"Ulang":"Cuba lagi";
+  if(!(lulus&&a.n<6)) b2.setAttribute("data-f","aksi");
+  b2.onclick=function(){mulaAras(a.n);};
+  act.appendChild(b2);
+  var b3=el("button","btn ghost");b3.textContent="Peta";
+  b3.onclick=function(){S.skrin="peta";render();window.scrollTo({top:0,behavior:"smooth"});};
+  act.appendChild(b3);
+  b.appendChild(act);
+
+  if(kadBaru.length){
+    kadBaru.forEach(function(k){
+      var kd=el("div","kadbesar",'<div class="em">'+k[1]+'</div><div class="nm">'+esc(k[0])+'</div><div class="ft">'+esc(k[2])+'</div>');
+      kd.style.marginTop="22px";
+      b.appendChild(kd);
+    });
+  }
+
   var meta=el("div","metahasil");
   function kepil(t){ meta.appendChild(el("span",null,t)); }
-  kepil("Skor pusingan "+S.skor);
   kepil(S.tenang?"Mod tenang":"Nafas tinggal "+Math.ceil(S.nafas));
-  kepil(S.no?("Percubaan ke-"+kaliKe):"Tidak direkod");
+  kepil(S.no?("Percubaan ke-"+kaliKe):"Latihan, tidak direkod");
   b.appendChild(meta);
-  if(S.no&&kaliKe===1) b.appendChild(el("p","note","Percubaan pertama inilah yang dikira sebagai bukti TP. Ulangan selepas ini untuk latihan, dan tidak akan menindihnya."));
+  if(S.no&&kaliKe===1) b.appendChild(el("p","note","Percubaan pertama inilah yang dilihat cikgu sebagai bukti. Ulangan selepas ini untuk latihan dan skor sahaja."));
 
-  /* Apa yang murid sebenarnya belajar dalam pusingan ini.
-     Skor sahaja tidak memberitahu sesiapa apa-apa; baris ini memberi
-     sebab kepada setiap jawapan, terutamanya yang salah. */
+  /* Apa yang murid sebenarnya belajar dalam pusingan ini. */
   var pel=el("div","pelajaran");
-  pel.appendChild(el("h3",null,"Apa yang awak baru pelajari"));
+  pel.appendChild(el("h3",null,"Apa yang awak pelajari"));
   var ul=el("ul");
   S.set.forEach(function(q){
     var li=el("li");
@@ -2188,38 +2455,40 @@ function hasilAras(){
     li.appendChild(el("span","tanda "+jenis,tanda));
     var isi=el("div");
     isi.appendChild(el("b",null,esc(ringkas(q.t))));
-    isi.appendChild(el("span",null, q._betul===null
-      ? "Dihantar kepada cikgu untuk dinilai."
-      : (q.u||"")));
+    isi.appendChild(el("span",null, q._betul===null ? "Dihantar kepada cikgu untuk dinilai." : (q.u||"")));
     li.appendChild(isi);
     ul.appendChild(li);
   });
   pel.appendChild(ul);
-  if(S.salah.length){
-    pel.appendChild(el("p","note","Soalan yang awak salah akan muncul semula dalam hentian seterusnya sebagai latihan. Ia tidak dikira dalam keputusan hentian itu."));
-  }
   b.appendChild(pel);
 
-  var act=el("div","actions");act.style.justifyContent="center";
-  if(a.n<6){
-    var b1=el("button","btn teal");b1.textContent="Hentian "+(a.n+1)+": "+ARAS[a.n].tempat;
-    b1.setAttribute("data-f","aksi");
-    b1.onclick=function(){mulaAras(a.n+1);};
-    act.appendChild(b1);
-  }
-  var b2=el("button","btn ghost");b2.textContent="Ulang hentian ini";
-  b2.onclick=function(){mulaAras(a.n);};
-  act.appendChild(b2);
-  var b3=el("button","btn ghost");b3.textContent="Peta";
-  b3.onclick=function(){S.skrin="peta";render();window.scrollTo({top:0,behavior:"smooth"});};
-  act.appendChild(b3);
-  b.appendChild(act);
   p.appendChild(b); st.appendChild(p);
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(lulus||(terbukaTP6&&S.bosHantar)) konfeti();
   pulihFokus();
 }
 
+/* Satu detik sambutan apabila hentian dilepasi. */
+function konfeti(){
+  if(kurangGerak) return;
+  var w=el("div","konfeti"); w.setAttribute("aria-hidden","true");
+  var warna=["#FFC83D","#1DB36B","#F2545B",duniaBab().warna,"#FFFFFF","#3FA9F5"];
+  for(var i=0;i<42;i++){
+    var c=el("i");
+    c.style.left=(Math.random()*100)+"%";
+    c.style.background=warna[i%warna.length];
+    c.style.setProperty("--dx",(Math.random()*160-80)+"px");
+    c.style.setProperty("--r",(Math.random()*900-450)+"deg");
+    c.style.animationDelay=(Math.random()*0.35)+"s";
+    c.style.animationDuration=(1.5+Math.random()*1.1)+"s";
+    w.appendChild(c);
+  }
+  document.body.appendChild(w);
+  setTimeout(function(){ if(w.parentNode) w.parentNode.removeChild(w); },3200);
+}
+
 function hasilHarian(){
-  hentiJam(); aturDegup(); kemasRentetan();
+  hentiJam(); S.skrin="hasil"; $("hud").classList.add("hidden"); aturDegup(); kemasRentetan();
   var hariIni=tarikhTempatan();
   if(S.harianTarikh!==hariIni){ S.harianTarikh=hariIni; S.harianSkor=S.skor; }
   simpanDiri();
@@ -2634,7 +2903,11 @@ function tetapSesi(sesi){
   segarGuru();
   muatProfil()
     .then(function(){ return (PROFIL&&PROFIL.ada) ? muatGuru() : null; })
-    .catch(function(e){ RALAT_GURU=pesanRalat(e); if(!PROFIL) PROFIL={nama:"",sekolah:"",ada:false}; })
+    .catch(function(e){
+      /* akaun sudah dipadam tetapi token lama masih dalam pelayar */
+      if(e&&e.code==="23503"){ SB.auth.signOut(); return; }
+      RALAT_GURU=pesanRalat(e); if(!PROFIL) PROFIL={nama:"",sekolah:"",ada:false};
+    })
     .then(segarGuru);
 }
 
@@ -3600,6 +3873,7 @@ function tukarMod(m){
   $("cikgu").classList.toggle("hidden",murid);
   $("btnMurid").setAttribute("aria-pressed",murid);
   $("btnCikgu").setAttribute("aria-pressed",!murid);
+  document.body.classList.toggle("zon-murid",murid);
   try{ localStorage.setItem("cn-mod",murid?"murid":"cikgu"); }catch(e){}
   if(murid){ render(); } else { hentiJam(); hentiPetaAnim(); aturDegup(); mulaAuth(); renderCikgu(); }
   window.scrollTo({top:0,behavior:"smooth"});
@@ -3624,9 +3898,8 @@ $("btnTema").onclick=function(){
   var r=document.documentElement,k=r.getAttribute("data-theme");
   if(!k){var g=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;r.setAttribute("data-theme",g?"light":"dark");}
   else r.setAttribute("data-theme",k==="dark"?"light":"dark");
-  lukisPeta();
+  pasangDunia();
 };
-window.addEventListener("resize",function(){ if(S.skrin==="peta")lukisPeta(); });
 
 /* ============================================================
    MULA
