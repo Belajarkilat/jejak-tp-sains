@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Cikgu Nani: pentaksiran bilik darjah untuk Sains KSSM Tingkatan 3. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
+<meta name="description" content="Jejak TP Sains: pentaksiran bilik darjah untuk Sains KSSM Tingkatan 3. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
 <meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#070D18" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,7 +11,7 @@
 <link rel="icon" href="ikon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="ikon.svg">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Cikgu Nani</title>
+<title>Jejak TP Sains</title>
 <style>
   :root{color-scheme:light}
   html,body{margin:0;padding:0}
@@ -903,7 +903,7 @@ body.zon-murid{color:var(--tinta)}
           <circle cx="16.5" cy="13" r="3.6" fill="var(--vena)"></circle>
         </svg>
         <div>
-          <b>Cikgu Nani</b>
+          <b>Jejak TP Sains</b>
           <span>Sains Tingkatan 3</span>
         </div>
       </div>
@@ -1006,7 +1006,7 @@ function pasangBab(id){
   pasangJenama();
   return true;
 }
-/* Jenama produk kekal "Cikgu Nani". Nama perjalanan setiap bab
+/* Jenama produk kekal "Jejak TP Sains". Nama perjalanan setiap bab
    (Laluan Impuls, Laluan Oksigen, Laluan Darah) muncul pada tajuk peta,
    bukan menggantikan jenama di bar atas. */
 /* Setiap bab ialah satu dunia: warna, ikon hentian dan satu ayat misi.
@@ -1037,7 +1037,7 @@ function pasangJenama(){
   tulis(".brand span", BAB.subtajuk);
   var ge=document.getElementById("guruEyebrow");
   if(ge) ge.textContent="Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
-  document.title = BAB.tajuk ? ("Cikgu Nani · "+BAB.tajuk) : "Cikgu Nani";
+  document.title = BAB.tajuk ? ("Jejak TP Sains · "+BAB.tajuk) : "Jejak TP Sains";
 }
 function senaraiBab(){
   return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]; })
@@ -3007,7 +3007,7 @@ function medan(label,jenis,nama,nilai,atr){
 }
 function kadMudah(tajuk,teks,butang){
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Cikgu Nani · Untuk guru</p><h2>'+esc(tajuk)+'</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Jejak TP Sains · Untuk guru</p><h2>'+esc(tajuk)+'</h2></div>'));
   var bd=el("div","panel-bd");
   if(teks) bd.appendChild(el("p","qnote",esc(teks)));
   if(butang){ var a=el("div","actions"); a.appendChild(butang); bd.appendChild(a); }
@@ -3049,7 +3049,7 @@ function paneLogMasuk(ak){
   var mod=S.authMod||"masuk";
   var tajuk={masuk:"Log masuk guru",daftar:"Daftar akaun guru",lupa:"Lupa kata laluan"}[mod];
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Cikgu Nani · Untuk guru</p><h2>'+tajuk+'</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Jejak TP Sains · Untuk guru</p><h2>'+tajuk+'</h2></div>'));
   var bd=el("div","panel-bd");
   bd.appendChild(el("p","qnote",
     mod==="daftar" ? "Percuma. Setiap guru ada kelas, senarai nama dan rekod murid sendiri. Guru lain tidak dapat melihatnya." :
@@ -3075,7 +3075,7 @@ function paneLogMasuk(ak){
   var f=el("form"); f.noValidate=true;
   var fNama,fSekolah,fEmel,fKata;
   if(mod==="daftar"){
-    fNama=medan("Nama (dipaparkan kepada murid)","text","nama","",{placeholder:"cth. Cikgu Nani",maxlength:"80",autocomplete:"name"});
+    fNama=medan("Nama (dipaparkan kepada murid)","text","nama","",{placeholder:"cth. Cikgu Aminah",maxlength:"80",autocomplete:"name"});
     fSekolah=medan("Sekolah","text","sekolah","",{placeholder:"cth. SMK Taman Maluri",maxlength:"120",autocomplete:"organization"});
     f.appendChild(fNama); f.appendChild(fSekolah);
   }
@@ -3137,7 +3137,7 @@ function paneLogMasuk(ak){
 
 function paneKataBaru(ak){
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Cikgu Nani · Untuk guru</p><h2>Tetapkan kata laluan baharu</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Jejak TP Sains · Untuk guru</p><h2>Tetapkan kata laluan baharu</h2></div>'));
   var bd=el("div","panel-bd");
   var f=el("form"); f.noValidate=true;
   var fk=medan("Kata laluan baharu (sekurang-kurangnya 8 aksara)","password","katabaru","",{autocomplete:"new-password",minlength:"8"});
@@ -3171,7 +3171,7 @@ function paneProfil(ak){
   var bd=el("div","panel-bd");
   if(baru) bd.appendChild(el("p","qnote","Nama anda dipaparkan kepada murid semasa mereka memilih kelas."));
   var f=el("form"); f.noValidate=true;
-  var fn=medan("Nama (dipaparkan kepada murid)","text","pnama",PROFIL.nama,{placeholder:"cth. Cikgu Nani",maxlength:"80"});
+  var fn=medan("Nama (dipaparkan kepada murid)","text","pnama",PROFIL.nama,{placeholder:"cth. Cikgu Aminah",maxlength:"80"});
   var fs=medan("Sekolah","text","psekolah",PROFIL.sekolah,{placeholder:"cth. SMK Taman Maluri",maxlength:"120"});
   f.appendChild(fn); f.appendChild(fs);
   var bs=el("button","btn penuh"); bs.type="submit"; bs.textContent=baru?"Simpan dan teruskan":"Simpan"; bs.style.marginTop="18px";
@@ -3664,7 +3664,7 @@ function kotakKongsi(k){
   bs.onclick=function(){ salin(url,bs); };
   a.appendChild(bs);
   var wa=el("a","btn sm ghost");
-  wa.href="https://wa.me/?text="+encodeURIComponent("Kelas Sains "+k.nama+" (Cikgu Nani). Buka pautan ini, pilih nama awak dan masukkan PIN daripada cikgu:\n"+url);
+  wa.href="https://wa.me/?text="+encodeURIComponent("Kelas Sains "+k.nama+" (Jejak TP Sains). Buka pautan ini, pilih nama awak dan masukkan PIN daripada cikgu:\n"+url);
   wa.target="_blank"; wa.rel="noopener"; wa.textContent="Kongsi di WhatsApp";
   wa.style.textDecoration="none"; wa.style.display="inline-flex"; wa.style.alignItems="center";
   a.appendChild(wa);
@@ -3694,7 +3694,7 @@ function cetakSlip(kelas){
     '<div class="np"><button onclick="print()">Cetak</button> Gunting setiap slip dan beri kepada murid.</div>';
   senarai.forEach(function(k){
     var url=urlKelas(k.kod);
-    html+='<div class="hal"><h1>'+esc(k.nama)+' &middot; Cikgu Nani &middot; Sains</h1><div class="g">';
+    html+='<div class="hal"><h1>'+esc(k.nama)+' &middot; Jejak TP Sains &middot; Sains</h1><div class="g">';
     nomborKelas(k.id).forEach(function(m){
       html+='<div class="s"><b>'+esc(NAMA[k.id][m.no])+'</b>Kod kelas: <span class="k">'+esc(k.kod)+'</span><br>'+
         'PIN saya: <span class="k">'+esc(PIN[k.id][m.no])+'</span><div class="u">'+esc(url)+'</div></div>';

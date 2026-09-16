@@ -1,5 +1,5 @@
 -- ============================================================
--- Cikgu Nani — skema rekod PBD, versi 3 (berbilang guru dan sekolah)
+-- Jejak TP Sains — skema rekod PBD, versi 3 (berbilang guru dan sekolah)
 --
 -- Prinsip:
 -- * Guru log masuk dengan Supabase Auth (e-mel atau Google). Setiap guru

@@ -1,4 +1,4 @@
-# Cikgu Nani
+# Jejak TP Sains
 
 Permainan pentaksiran bilik darjah untuk **Sains KSSM Tingkatan 3**. Setiap bidang
 pembelajaran menjadi satu perjalanan enam hentian yang dipetakan satu lawan satu
@@ -10,7 +10,7 @@ kepada Tahap Penguasaan 1 hingga 6 dalam DSKP.
 | 2.0 Respirasi | Laluan Oksigen, hidung hingga sel badan | 54 |
 | 3.0 Pengangkutan | Laluan Darah, jantung hingga seluruh organisma | 54 |
 
-Nama perjalanan itu milik babnya. Jenama produk ialah Cikgu Nani.
+Nama perjalanan itu milik babnya. Jenama produk ialah Jejak TP Sains (dahulu Cikgu Nani, dan sebelum itu Laluan Oksigen).
 
 Standard Prestasi disalin kata demi kata daripada DSKP KSSM Sains Tingkatan 3,
 terbitan Bahagian Pembangunan Kurikulum, April 2017.
@@ -75,7 +75,7 @@ Sempadan ditegakkan di pelayan (`skema.sql`), bukan di skrin:
 ### Tetapan Supabase yang diperlukan
 
 - Authentication → URL Configuration: Site URL dan Redirect URL mesti
-  mengandungi alamat aplikasi (kini `https://belajarkilat.github.io/cikgunani/**`).
+  mengandungi alamat aplikasi (kini `https://belajarkilat.github.io/jejak-tp-sains/**`).
 - Pengesahan e-mel dimatikan (`mailer_autoconfirm`) kerana pelayan e-mel
   terbina Supabase hanya membenarkan 2 e-mel sejam. Sambungkan SMTP sendiri
   (contohnya Resend) sebelum ia dihidupkan semula.
