@@ -1,40 +1,94 @@
 -- ============================================================
--- Cikgu Nani — skema rekod PBD
+-- Cikgu Nani — skema rekod PBD, versi 3 (berbilang guru dan sekolah)
 --
--- Prinsip: tiada satu pun jadual boleh ditulis terus oleh pelayar.
--- Semua tulisan melalui fungsi SECURITY DEFINER yang menyemak kod dahulu.
--- Kunci anon hanya boleh MEMBACA apa yang murid memang patut nampak,
--- iaitu senarai nombor dan skor. Nama penuh murid tidak pernah terdedah
--- kepada kunci anon walau dalam keadaan apa sekalipun.
+-- Prinsip:
+-- * Guru log masuk dengan Supabase Auth (e-mel atau Google). Setiap guru
+--   hanya nampak kelas miliknya. Sempadan itu ditegakkan oleh peraturan
+--   baris (RLS) pada auth.uid(), bukan oleh skrin.
+-- * Murid tiada akaun. Murid masuk dengan KOD KELAS (6 aksara rawak),
+--   memilih namanya, dan memasukkan PIN 4 angka. Semua bacaan dan tulisan
+--   murid melalui fungsi SECURITY DEFINER yang menyemak kod atau PIN dahulu.
+-- * Kunci anon tidak boleh membaca atau menulis mana-mana jadual terus.
+-- * Percubaan PERTAMA setiap murid bagi setiap hentian ditulis sekali
+--   sahaja dan tidak pernah ditindih. Itulah bukti PBD.
+--
+-- Nama jadual masih berawalan lo_ daripada nama projek yang terdahulu.
+-- Skrip ini MEMBUANG jadual versi 2 (satu kod cikgu untuk semua kelas).
+-- Ia hanya selamat dijalankan semasa pangkalan data masih kosong.
 -- ============================================================
 
 create extension if not exists pgcrypto with schema extensions;
 
+-- ---------- buang versi 2 ----------
+drop function if exists lo_guru_ada();
+drop function if exists lo_guru_tetap_kod(text, text);
+drop function if exists lo_guru_data(text);
+drop function if exists lo_guru_simpan_kelas(text, text, text, jsonb, jsonb);
+drop function if exists lo_guru_buang_kelas(text, text);
+drop function if exists lo_guru_simpan_tp(text, text, text, text, int, text);
+drop function if exists lo_kod_guru_betul(text);
+drop function if exists lo_masuk(text, text, text);
+drop function if exists lo_simpan_cubaan(text, text, text, text, int, jsonb, jsonb);
+drop function if exists lo_kod_murid_betul(text, text, text);
+drop table if exists lo_rahsia, lo_nama, lo_tp, lo_cubaan, lo_murid, lo_gagal, lo_kelas, lo_guru cascade;
+
+-- ---------- utiliti ----------
+
+create or replace function lo_cap(p_teks text)
+returns text language sql immutable set search_path = public, extensions as $$
+  select encode(extensions.digest(p_teks, 'sha256'), 'hex')
+$$;
+
+-- Kod kelas: 6 aksara tanpa huruf yang mudah keliru (I, L, O, 0, 1).
+-- 31^6 ialah kira-kira 887 juta kemungkinan.
+create or replace function lo_jana_kod()
+returns text language plpgsql volatile security definer
+set search_path = public, extensions as $$
+declare abjad text := 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; k text; b bytea; i int;
+begin
+  loop
+    b := extensions.gen_random_bytes(6); k := '';
+    for i in 0..5 loop
+      k := k || substr(abjad, 1 + (get_byte(b, i) % length(abjad)), 1);
+    end loop;
+    exit when not exists (select 1 from lo_kelas where kod = k);
+  end loop;
+  return k;
+end $$;
+
 -- ---------- jadual ----------
 
-create table if not exists lo_kelas (
-  id       text primary key,
-  nama     text not null,
-  nombor   jsonb not null default '[]'::jsonb,   -- [{no, cap}] cap = sha256(no:kod)
-  dikemas  timestamptz not null default now()
+create table lo_guru (
+  id       uuid primary key references auth.users(id) on delete cascade,
+  nama     text not null default '' check (length(nama) <= 80),
+  sekolah  text not null default '' check (length(sekolah) <= 120),
+  dicipta  timestamptz not null default now()
 );
 
--- Nama penuh murid. Tiada dasar SELECT untuk anon: jadual ini tidak
--- boleh dibaca dari pelayar langsung, hanya melalui fungsi kod cikgu.
-create table if not exists lo_nama (
-  kelas    text primary key references lo_kelas(id) on delete cascade,
-  nama     jsonb not null default '{}'::jsonb,   -- {no: "Nama Penuh"}
-  dikemas  timestamptz not null default now()
+create table lo_kelas (
+  id       text primary key default ('k' || encode(extensions.gen_random_bytes(6), 'hex')),
+  guru     uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  nama     text not null check (length(nama) between 1 and 60),
+  kod      text not null unique default lo_jana_kod(),
+  dicipta  timestamptz not null default now()
+);
+create index lo_kelas_guru on lo_kelas(guru);
+
+-- Nama penuh dan PIN murid. Hanya guru pemilik kelas boleh membacanya
+-- terus. Murid yang tahu kod kelas mendapat senarai NAMA sahaja melalui
+-- lo_kelas_buka, tidak pernah PIN.
+create table lo_murid (
+  kelas    text not null references lo_kelas(id) on delete cascade,
+  no       text not null check (no ~ '^[0-9]{1,3}$'),
+  nama     text not null check (length(nama) between 1 and 120),
+  pin      text not null check (pin ~ '^[0-9]{4}$'),
+  primary key (kelas, no)
 );
 
--- Satu baris = satu murid, satu hentian. Percubaan pertama ditulis
--- sekali sahaja; fungsi simpan tidak akan menyentuhnya lagi selepas itu.
--- `bab` memisahkan rekod setiap bidang pembelajaran. Tahap Penguasaan
--- dalam DSKP ditentukan bagi setiap bidang secara berasingan, jadi rekod
--- pun mesti berasingan.
-create table if not exists lo_cubaan (
+-- Satu baris = satu murid, satu hentian, satu bab.
+create table lo_cubaan (
   bab       text not null,
-  kelas     text not null,
+  kelas     text not null references lo_kelas(id) on delete cascade,
   no        text not null,
   aras      int  not null check (aras between 1 and 6),
   pertama   jsonb,
@@ -45,124 +99,151 @@ create table if not exists lo_cubaan (
   primary key (bab, kelas, no, aras)
 );
 
-create table if not exists lo_tp (
+create table lo_tp (
   bab     text not null,
-  kelas   text not null,
+  kelas   text not null references lo_kelas(id) on delete cascade,
   no      text not null,
   tp      int check (tp between 0 and 6),
-  sebab   text not null default '',
+  sebab   text not null default '' check (length(sebab) <= 2000),
   masa    timestamptz not null default now(),
   primary key (bab, kelas, no)
 );
 
-create table if not exists lo_rahsia (
-  k text primary key,
-  v text not null
+-- Kiraan PIN salah, supaya tekaan 10 000 PIN tidak boleh dicuba berterusan.
+create table lo_gagal (
+  kelas  text not null,
+  no     text not null,
+  bil    int not null default 0,
+  mula   timestamptz not null default now(),
+  primary key (kelas, no)
 );
 
--- ---------- kunci semua jadual ----------
+-- Had supaya satu akaun tidak boleh memenuhkan pangkalan data.
+create or replace function lo_had_kelas()
+returns trigger language plpgsql security definer set search_path = public as $$
+begin
+  if (select count(*) from lo_kelas where guru = new.guru) >= 20 then
+    raise exception 'had 20 kelas bagi setiap guru';
+  end if;
+  return new;
+end $$;
+create trigger lo_had_kelas before insert on lo_kelas
+  for each row execute function lo_had_kelas();
 
-alter table lo_kelas   enable row level security;
-alter table lo_nama    enable row level security;
-alter table lo_cubaan  enable row level security;
-alter table lo_tp      enable row level security;
-alter table lo_rahsia  enable row level security;
+-- ---------- peraturan baris ----------
 
--- Murid perlu nampak senarai nombor kelas untuk memilih nombornya.
-drop policy if exists lo_kelas_baca on lo_kelas;
-create policy lo_kelas_baca on lo_kelas for select to anon, authenticated using (true);
+alter table lo_guru   enable row level security;
+alter table lo_kelas  enable row level security;
+alter table lo_murid  enable row level security;
+alter table lo_cubaan enable row level security;
+alter table lo_tp     enable row level security;
+alter table lo_gagal  enable row level security;
 
--- Skor perlu dibaca untuk papan pendahulu. Baris ini hanya mengandungi
--- nombor murid, bukan nama, jadi ia selamat dibaca.
-drop policy if exists lo_cubaan_baca on lo_cubaan;
-create policy lo_cubaan_baca on lo_cubaan for select to anon, authenticated using (true);
-
--- lo_nama, lo_tp dan lo_rahsia sengaja tiada sebarang dasar.
--- RLS tanpa dasar bermakna kunci anon tidak nampak apa-apa.
-
--- ---------- pembantu ----------
-
--- pgcrypto dipasang dalam skema extensions pada Supabase, jadi digest
--- mesti dipanggil dengan nama penuhnya. Fungsi lain menetapkan
--- search_path = public atas sebab keselamatan, jadi ia tidak akan jumpa
--- digest tanpa kelayakan skema ini.
-create or replace function lo_cap(p_teks text)
-returns text language sql immutable set search_path = public, extensions as $$
-  select encode(extensions.digest(p_teks, 'sha256'), 'hex')
+create or replace function lo_milik(p_kelas text)
+returns boolean language sql stable security definer set search_path = public as $$
+  select exists (select 1 from lo_kelas where id = p_kelas and guru = auth.uid())
 $$;
 
-create or replace function lo_kod_guru_betul(p_kod text)
-returns boolean language plpgsql security definer set search_path = public as $$
-declare simpan text; betul boolean;
-begin
-  select v into simpan from lo_rahsia where k = 'kod_guru';
-  if simpan is null then return false; end if;
-  betul := (simpan = lo_cap(coalesce(p_kod, '')));
-  -- lengah pada percubaan yang gagal, supaya tekaan automatik jadi perlahan
-  if not betul then perform pg_sleep(0.4); end if;
-  return betul;
-end $$;
+create policy lo_guru_diri on lo_guru for all to authenticated
+  using (id = auth.uid()) with check (id = auth.uid());
 
-create or replace function lo_kod_murid_betul(p_kelas text, p_no text, p_kod text)
+create policy lo_kelas_milik on lo_kelas for all to authenticated
+  using (guru = auth.uid()) with check (guru = auth.uid());
+
+create policy lo_murid_milik on lo_murid for all to authenticated
+  using (lo_milik(kelas)) with check (lo_milik(kelas));
+
+create policy lo_cubaan_milik on lo_cubaan for select to authenticated
+  using (lo_milik(kelas));
+
+create policy lo_tp_milik on lo_tp for all to authenticated
+  using (lo_milik(kelas)) with check (lo_milik(kelas));
+
+-- lo_gagal: tiada dasar langsung. Hanya fungsi yang menyentuhnya.
+
+-- ---------- murid ----------
+
+create or replace function lo_pin_betul(p_kelas text, p_no text, p_pin text)
 returns boolean language plpgsql security definer set search_path = public as $$
-declare rec jsonb; simpan text;
+declare simpan text; g lo_gagal%rowtype;
 begin
-  select nombor into rec from lo_kelas where id = p_kelas;
-  if rec is null then return false; end if;
-  select (x->>'cap') into simpan
-    from jsonb_array_elements(rec) x where x->>'no' = p_no limit 1;
-  -- nombor tanpa kod bermakna cikgu belum menjananya lagi
-  if simpan is null then return true; end if;
-  if simpan = lo_cap(p_no || ':' || coalesce(p_kod, '')) then return true; end if;
+  select * into g from lo_gagal where kelas = p_kelas and no = p_no;
+  -- lapan kali salah dalam 15 minit: kunci sementara
+  if g.kelas is not null and g.bil >= 8 and g.mula > now() - interval '15 minutes' then
+    perform pg_sleep(0.5);
+    return false;
+  end if;
+  select pin into simpan from lo_murid where kelas = p_kelas and no = p_no;
+  if simpan is not null and simpan = coalesce(p_pin, '') then
+    if g.kelas is not null then delete from lo_gagal where kelas = p_kelas and no = p_no; end if;
+    return true;
+  end if;
+  insert into lo_gagal(kelas, no, bil, mula) values (p_kelas, p_no, 1, now())
+    on conflict (kelas, no) do update set
+      bil  = case when lo_gagal.mula < now() - interval '15 minutes' then 1 else lo_gagal.bil + 1 end,
+      mula = case when lo_gagal.mula < now() - interval '15 minutes' then now() else lo_gagal.mula end;
   perform pg_sleep(0.3);
   return false;
 end $$;
 
--- ---------- kod cikgu ----------
-
-create or replace function lo_guru_ada()
-returns boolean language sql security definer set search_path = public as $$
-  select exists (select 1 from lo_rahsia where k = 'kod_guru')
-$$;
-
-create or replace function lo_guru_tetap_kod(p_kod_lama text, p_kod_baru text)
-returns boolean language plpgsql security definer set search_path = public as $$
+-- Buka kelas dengan kod. Memulangkan nama kelas, nama guru dan senarai
+-- nama murid (tanpa PIN), atau null jika kod tiada.
+create or replace function lo_kelas_buka(p_kod text)
+returns jsonb language plpgsql security definer set search_path = public as $$
+declare k lo_kelas%rowtype; bersih text;
 begin
-  -- kod cikgu membuka nama penuh semua murid, jadi ia mesti lebih panjang
-  -- daripada kod murid. Lapan aksara menjadikan tekaan automatik tidak
-  -- berbaloi apabila digabung dengan lengah di bawah.
-  if length(coalesce(p_kod_baru,'')) < 8 then return false; end if;
-  if exists (select 1 from lo_rahsia where k = 'kod_guru') then
-    if not lo_kod_guru_betul(p_kod_lama) then return false; end if;
+  bersih := upper(regexp_replace(coalesce(p_kod, ''), '[^A-Za-z0-9]', '', 'g'));
+  select * into k from lo_kelas where kod = bersih;
+  if k.id is null then
+    perform pg_sleep(0.5);
+    return null;
   end if;
-  insert into lo_rahsia(k, v) values ('kod_guru', lo_cap(p_kod_baru))
-    on conflict (k) do update set v = excluded.v;
-  return true;
+  return jsonb_build_object(
+    'id', k.id, 'nama', k.nama, 'kod', k.kod,
+    'guru', coalesce((select nama from lo_guru where id = k.guru), ''),
+    'sekolah', coalesce((select sekolah from lo_guru where id = k.guru), ''),
+    'murid', coalesce((select jsonb_agg(jsonb_build_object('no', no, 'nama', nama)
+                        order by lpad(no, 3, '0')) from lo_murid where kelas = k.id), '[]'::jsonb)
+  );
 end $$;
 
--- ---------- murid ----------
-
-create or replace function lo_masuk(p_kelas text, p_no text, p_kod text)
+create or replace function lo_masuk(p_kelas text, p_no text, p_pin text)
 returns boolean language sql security definer set search_path = public as $$
-  select lo_kod_murid_betul(p_kelas, p_no, p_kod)
+  select lo_pin_betul(p_kelas, p_no, p_pin)
 $$;
 
+-- Rekod kelas untuk papan skor murid. Karangan murid lain tidak dipulangkan.
+create or replace function lo_papan(p_bab text, p_kelas text, p_no text, p_pin text)
+returns jsonb language plpgsql security definer set search_path = public as $$
+begin
+  if not lo_pin_betul(p_kelas, p_no, p_pin) then return null; end if;
+  return jsonb_build_object(
+    'cubaan', coalesce((select jsonb_agg(jsonb_build_object(
+        'bab', bab, 'kelas', kelas, 'no', no, 'aras', aras,
+        'pertama', case when no = p_no then pertama else null end,
+        'terbaik', terbaik, 'kali', kali, 'akhir', akhir,
+        'karangan', case when no = p_no then karangan else null end))
+      from lo_cubaan where bab = p_bab and kelas = p_kelas), '[]'::jsonb),
+    'tp', (select to_jsonb(t) from lo_tp t where bab = p_bab and kelas = p_kelas and no = p_no)
+  );
+end $$;
+
 -- Simpan satu percubaan. Percubaan pertama tidak pernah ditindih.
--- Tulisan cikgu berada dalam jadual lain, jadi ia tidak boleh berlanggar.
+-- PIN salah memulangkan {ralat} dan tidak membatalkan transaksi, supaya
+-- kiraan PIN salah tetap direkod.
 create or replace function lo_simpan_cubaan(
   p_bab text, p_kelas text, p_no text, p_kod text, p_aras int,
   p_kini jsonb, p_karangan jsonb default null)
 returns jsonb language plpgsql security definer set search_path = public as $$
 declare ada lo_cubaan%rowtype; hasil lo_cubaan%rowtype;
 begin
-  if not lo_kod_murid_betul(p_kelas, p_no, p_kod) then
-    raise exception 'kod tidak sah';
+  if not lo_pin_betul(p_kelas, p_no, p_kod) then
+    return jsonb_build_object('ralat', 'pin');
   end if;
-  if p_aras is null or p_aras < 1 or p_aras > 6 then
-    raise exception 'aras tidak sah';
-  end if;
-
-  if coalesce(p_bab,'') = '' then raise exception 'bab tidak dinyatakan'; end if;
+  if p_aras is null or p_aras < 1 or p_aras > 6 then raise exception 'aras tidak sah'; end if;
+  if coalesce(p_bab,'') = '' or length(p_bab) > 20 then raise exception 'bab tidak sah'; end if;
+  if length(coalesce(p_kini::text, '')) > 20000 then raise exception 'rekod terlalu besar'; end if;
+  if p_karangan is not null and length(p_karangan::text) > 9000 then raise exception 'karangan terlalu panjang'; end if;
 
   select * into ada from lo_cubaan
     where bab = p_bab and kelas = p_kelas and no = p_no and aras = p_aras for update;
@@ -174,7 +255,6 @@ begin
       returning * into hasil;
   else
     update lo_cubaan set
-      -- pertama ditulis sekali sahaja, selamanya
       pertama  = coalesce(ada.pertama, p_kini),
       terbaik  = case
                    when ada.terbaik is null then p_kini
@@ -192,84 +272,46 @@ begin
   return to_jsonb(hasil);
 end $$;
 
--- ---------- cikgu ----------
+-- ---------- guru ----------
 
-create or replace function lo_guru_data(p_kod text)
-returns jsonb language plpgsql security definer set search_path = public as $$
-begin
-  if not lo_kod_guru_betul(p_kod) then raise exception 'kod cikgu tidak sah'; end if;
-  return jsonb_build_object(
-    'kelas',  coalesce((select jsonb_agg(jsonb_build_object('id',id,'nama',nama,'nombor',nombor) order by id) from lo_kelas), '[]'::jsonb),
-    'nama',   coalesce((select jsonb_object_agg(kelas, nama) from lo_nama), '{}'::jsonb),
-    'cubaan', coalesce((select jsonb_agg(to_jsonb(c)) from lo_cubaan c), '[]'::jsonb),
-    'tp',     coalesce((select jsonb_agg(to_jsonb(t)) from lo_tp t), '[]'::jsonb)
-  );
-end $$;
-
--- p_nombor menerima [{no, kod}] dengan kod MENTAH, atau [{no, cap}] dengan
--- cincangan sedia ada. Kod mentah dicincang di sini supaya pelayar tidak
--- perlu melaksanakan kriptografi sendiri, dan supaya hanya ada satu cara
--- mencincang dalam keseluruhan sistem.
-create or replace function lo_guru_simpan_kelas(
-  p_kod text, p_id text, p_nama text, p_nombor jsonb, p_nama_murid jsonb)
-returns boolean language plpgsql security definer set search_path = public as $$
-declare siap jsonb;
-begin
-  if not lo_kod_guru_betul(p_kod) then raise exception 'kod cikgu tidak sah'; end if;
-  select coalesce(jsonb_agg(jsonb_build_object(
-           'no', x->>'no',
-           'cap', case when nullif(x->>'kod','') is not null
-                       then lo_cap((x->>'no') || ':' || (x->>'kod'))
-                       else nullif(x->>'cap','') end)), '[]'::jsonb)
-    into siap
-    from jsonb_array_elements(coalesce(p_nombor,'[]'::jsonb)) x;
-  insert into lo_kelas(id, nama, nombor, dikemas)
-    values (p_id, p_nama, siap, now())
-    on conflict (id) do update
-      set nama = excluded.nama, nombor = excluded.nombor, dikemas = now();
-  insert into lo_nama(kelas, nama, dikemas)
-    values (p_id, coalesce(p_nama_murid,'{}'::jsonb), now())
-    on conflict (kelas) do update
-      set nama = excluded.nama, dikemas = now();
-  return true;
-end $$;
-
-create or replace function lo_guru_buang_kelas(p_kod text, p_id text)
+-- Ganti senarai murid satu kelas sekali gus. Pemilikan kelas disemak
+-- dengan auth.uid() sebelum apa-apa ditulis.
+create or replace function lo_guru_simpan_murid(p_kelas text, p_murid jsonb)
 returns boolean language plpgsql security definer set search_path = public as $$
 begin
-  if not lo_kod_guru_betul(p_kod) then raise exception 'kod cikgu tidak sah'; end if;
-  delete from lo_cubaan where kelas = p_id;
-  delete from lo_tp     where kelas = p_id;
-  delete from lo_kelas  where id    = p_id;
-  return true;
-end $$;
-
-create or replace function lo_guru_simpan_tp(
-  p_kod text, p_bab text, p_kelas text, p_no text, p_tp int, p_sebab text)
-returns boolean language plpgsql security definer set search_path = public as $$
-begin
-  if not lo_kod_guru_betul(p_kod) then raise exception 'kod cikgu tidak sah'; end if;
-  insert into lo_tp(bab, kelas, no, tp, sebab, masa)
-    values (p_bab, p_kelas, p_no, p_tp, coalesce(p_sebab,''), now())
-    on conflict (bab, kelas, no) do update
-      set tp = excluded.tp, sebab = excluded.sebab, masa = now();
+  if not lo_milik(p_kelas) then raise exception 'bukan kelas anda'; end if;
+  if jsonb_array_length(coalesce(p_murid, '[]'::jsonb)) > 60 then
+    raise exception 'had 60 murid bagi setiap kelas';
+  end if;
+  delete from lo_murid where kelas = p_kelas;
+  insert into lo_murid(kelas, no, nama, pin)
+    select p_kelas, x->>'no', x->>'nama', x->>'pin'
+    from jsonb_array_elements(coalesce(p_murid, '[]'::jsonb)) x;
+  delete from lo_gagal where kelas = p_kelas;
   return true;
 end $$;
 
 -- ---------- kebenaran ----------
 
-revoke all on lo_kelas, lo_nama, lo_cubaan, lo_tp, lo_rahsia from anon, authenticated;
-grant select on lo_kelas, lo_cubaan to anon, authenticated;
+revoke all on lo_guru, lo_kelas, lo_murid, lo_cubaan, lo_tp, lo_gagal from anon, authenticated;
+grant select, insert, update on lo_guru to authenticated;
+-- kod kelas dijana pelayan dan tidak boleh ditukar kepada kod yang mudah diteka
+grant select, insert (nama), update (nama), delete on lo_kelas to authenticated;
+grant select, insert, update, delete on lo_murid to authenticated;
+grant select on lo_cubaan to authenticated;
+grant select, insert, update, delete on lo_tp to authenticated;
 
-revoke all on function lo_cap(text) from anon, authenticated;
-revoke all on function lo_kod_guru_betul(text) from anon, authenticated;
-revoke all on function lo_kod_murid_betul(text, text, text) from anon, authenticated;
+revoke all on function lo_cap(text) from public, anon, authenticated;
+revoke all on function lo_jana_kod() from public, anon;
+grant execute on function lo_jana_kod() to authenticated;
+revoke all on function lo_pin_betul(text, text, text) from public, anon, authenticated;
+revoke all on function lo_had_kelas() from public, anon, authenticated;
+revoke all on function lo_milik(text) from public, anon;
+grant execute on function lo_milik(text) to authenticated;
 
-grant execute on function lo_guru_ada() to anon, authenticated;
-grant execute on function lo_guru_tetap_kod(text, text) to anon, authenticated;
+grant execute on function lo_kelas_buka(text) to anon, authenticated;
 grant execute on function lo_masuk(text, text, text) to anon, authenticated;
+grant execute on function lo_papan(text, text, text, text) to anon, authenticated;
 grant execute on function lo_simpan_cubaan(text, text, text, text, int, jsonb, jsonb) to anon, authenticated;
-grant execute on function lo_guru_data(text) to anon, authenticated;
-grant execute on function lo_guru_simpan_kelas(text, text, text, jsonb, jsonb) to anon, authenticated;
-grant execute on function lo_guru_buang_kelas(text, text) to anon, authenticated;
-grant execute on function lo_guru_simpan_tp(text, text, text, text, int, text) to anon, authenticated;
+revoke all on function lo_guru_simpan_murid(text, jsonb) from public, anon;
+grant execute on function lo_guru_simpan_murid(text, jsonb) to authenticated;

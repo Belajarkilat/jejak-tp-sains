@@ -27,35 +27,54 @@ terbitan Bahagian Pembangunan Kurikulum, April 2017.
 | `skema.sql` | Jadual, peraturan baris dan fungsi pangkalan data. Nama jadual masih berawalan `lo_` daripada nama projek yang terdahulu. |
 | `dskp/` | DSKP KSSM Sains Tingkatan 1 hingga 3 (rujukan, tidak diterbitkan). |
 
-## Cara ia menjaga data murid
+## Akaun guru dan kelas (skema versi 3)
 
-Nama penuh murid **tidak pernah** masuk ke pelayar tanpa kod cikgu. Murid memilih
-nombor, bukan nama, dan papan pendahulu memaparkan nombor sahaja.
+Setiap guru mempunyai akaun sendiri (Supabase Auth, e-mel dan kata laluan, atau
+Google) dan hanya nampak kelas miliknya. Ramai guru dari banyak sekolah boleh
+menggunakan pautan yang sama.
 
-Sempadan itu ditegakkan di pelayan, bukan di skrin:
+### Menyediakan kelas
 
-- Kunci awam tidak boleh membaca `lo_nama`, `lo_tp` atau `lo_rahsia` langsung.
-  Tiada dasar baris diberikan kepadanya, jadi jadual itu tidak wujud baginya.
-- Tiada satu pun jadual boleh **ditulis** terus. Setiap tulisan melalui fungsi
-  yang menyemak kod murid atau kod cikgu terlebih dahulu.
+1. Buka aplikasi, tekan **Cikgu**, daftar atau log masuk.
+2. Tekan **Tambah kelas** dan beri nama. Pelayan menjana **kod kelas** 6 aksara.
+3. Tab **Nama & PIN**: tampal nama murid, satu nama satu baris. Setiap murid
+   mendapat PIN 4 nombor.
+4. **Kongsi di WhatsApp** (pautan `?k=KOD`) dan **Cetak slip PIN**.
+5. Murid buka pautan, ketik namanya, masukkan PIN pada pad nombor.
+
+Tab lain dalam satu kelas: **Keputusan murid** (TP setiap murid mengikut nama,
+tindih TP, ulasan PBD, eksport SPPB), **Papan skor** (bernama, dengan suis sorok
+nama untuk projektor), **Diagnostik** dan **Tangga TP**.
+
+### Cara ia menjaga data murid
+
+Sempadan ditegakkan di pelayan (`skema.sql`), bukan di skrin:
+
+- Kunci awam tidak boleh membaca atau menulis mana-mana jadual `lo_` terus.
+- Guru membaca dan menulis kelasnya melalui peraturan baris pada `auth.uid()`.
+  Guru hanya boleh menukar **nama** kelas; kod kelas dijana pelayan.
+- Murid yang tahu kod kelas mendapat senarai **nama** kelas itu melalui
+  `lo_kelas_buka`, tidak pernah PIN.
+- Setiap bacaan rekod (`lo_papan`) dan tulisan (`lo_simpan_cubaan`) murid
+  memerlukan PIN yang betul. Karangan murid lain tidak dipulangkan.
+- Lapan PIN salah dalam 15 minit mengunci murid itu sementara. Butang
+  **PIN baharu** dalam mod cikgu membuka kunci serta-merta.
 - Percubaan **pertama** setiap murid bagi setiap hentian ditulis sekali sahaja
-  dan tidak pernah ditindih, walaupun oleh murid itu sendiri. Itulah bukti PBD.
-- Rekod dan Tahap Penguasaan diasingkan mengikut bab, kerana DSKP menentukan
-  TP bagi setiap bidang pembelajaran secara berasingan.
-- Percubaan gagal pada kod dilengahkan, supaya tekaan automatik jadi mahal.
+  dan tidak pernah ditindih. Itulah bukti PBD.
+- Nombor murid tidak pernah diguna semula dalam satu kelas, supaya murid
+  baharu tidak mewarisi rekod murid yang sudah dibuang.
+- Had: 20 kelas setiap guru, 60 murid setiap kelas.
 
-Yang **boleh** dibaca umum: nombor murid, skor, dan teks tugasan reka cipta.
-Tiada nama padanya.
+### Tetapan Supabase yang diperlukan
 
-## Menyediakan kelas
-
-1. Buka aplikasi, tekan **Cikgu**, masukkan kod cikgu.
-2. Tab **Senarai kelas** → tampal nama kelas, satu nama satu baris → **Simpan senarai**.
-3. Cetak jadual nombor, nama dan kod. Berikan setiap murid nombor dan kodnya sahaja.
-4. Murid buka pautan yang sama, pilih nombornya, masukkan kodnya.
-
-Tukar kod cikgu di bahagian bawah tab yang sama. Kod itu membuka nama semua murid,
-jadi ia perlu lapan aksara atau lebih.
+- Authentication → URL Configuration: Site URL dan Redirect URL mesti
+  mengandungi alamat aplikasi (kini `https://belajarkilat.github.io/cikgunani/**`).
+- Pengesahan e-mel dimatikan (`mailer_autoconfirm`) kerana pelayan e-mel
+  terbina Supabase hanya membenarkan 2 e-mel sejam. Sambungkan SMTP sendiri
+  (contohnya Resend) sebelum ia dihidupkan semula.
+- Log masuk Google: Authentication → Providers → Google, isi Client ID dan
+  Client Secret daripada Google Cloud Console. Butang Google hanya muncul
+  selepas penyedia ini diaktifkan.
 
 ## Menambah bab baharu
 
