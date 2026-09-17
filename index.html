@@ -899,6 +899,7 @@ body.zon-murid{color:var(--tinta)}
 <script src="bank-t3b2.js?v=20260914"></script>
 <script src="bank-t3b3.js?v=20260914"></script>
 <script src="bank-t3b4.js?v=20260917"></script>
+<script src="bank-t3b5.js?v=20260917"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -978,7 +979,7 @@ body.zon-murid{color:var(--tinta)}
 
 /* Bab yang tersedia, mengikut urutan paparan. Menambah bab bermakna
    menambah satu fail bank dan satu id di sini. */
-var BAB_TERSEDIA=["t3b1","t3b2","t3b3","t3b4"];
+var BAB_TERSEDIA=["t3b1","t3b2","t3b3","t3b4","t3b5"];
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("cn-bab"); }catch(e){}
 if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID=BAB_TERSEDIA[0];
@@ -1033,7 +1034,10 @@ var DUNIA={
         misi:"Pam darah dari jantung ke seluruh badan, dan air ke seluruh tumbuhan."},
   t3b4:{warna:"#C26A1B",lembut:"#FBEBDC",gelap:"#8A4910",ikon:"⛏️",
         hentian:["🪨","📊","🔥","⚫","🏭","🌱"],
-        misi:"Bawa bijih dari kerak bumi sehingga menjadi logam yang berguna."}
+        misi:"Bawa bijih dari kerak bumi sehingga menjadi logam yang berguna."},
+  t3b5:{warna:"#E8850C",lembut:"#FFF1DB",gelap:"#A85A00",ikon:"🔥",
+        hentian:["🌡️","⚖️","🧪","🧊","🫙","🛠️"],
+        misi:"Jejaki haba yang dibebaskan dan diserap dalam setiap tindak balas."}
 };
 var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔬",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
 function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
