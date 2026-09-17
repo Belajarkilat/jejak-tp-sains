@@ -1,0 +1,796 @@
+/* Bank soalan — Sains Ting. 3 · Bab 4 Kereaktifan Logam.
+   DIJANA. Jangan sunting fail ini terus; sunting sumber/t3b4.js
+   kemudian jalankan: node bina.js t3b4
+
+   Standard Prestasi disalin kata demi kata daripada DSKP KSSM Sains
+   Tingkatan 3, Bahagian Pembangunan Kurikulum.
+*/
+window.BANK = window.BANK || {};
+window.BANK["t3b4"] =
+{
+ "id": "t3b4",
+ "tingkatan": 3,
+ "kod": "4.0 Kereaktifan Logam",
+ "tajuk": "Laluan Bijih",
+ "subtajuk": "Sains Ting. 3 · Bab 4 Kereaktifan Logam",
+ "spi": [
+  "Mengingat kembali pengetahuan dan kemahiran sains mengenai kereaktifan logam.",
+  "Memahami kereaktifan logam serta dapat menjelaskan kefahaman tersebut.",
+  "Mengaplikasikan pengetahuan mengenai kereaktifan logam dan dapat melaksanakan tugasan mudah.",
+  "Menganalisis pengetahuan mengenai kereaktifan logam dalam konteks penyelesaian masalah mengenai kejadian atau fenomena alam.",
+  "Menilai pengetahuan mengenai kereaktifan logam dalam konteks penyelesaian masalah dan membuat keputusan untuk melaksanakan satu tugasan.",
+  "Mereka cipta dengan menggunakan pengetahuan dan kemahiran sains mengenai kereaktifan logam dalam konteks penyelesaian masalah dan membuat keputusan atau dalam melaksanakan satu tugasan dalam situasi baru secara kreatif dan inovatif dengan mengambil kira nilai sosial/ekonomi/budaya masyarakat."
+ ],
+ "kko": [
+  "Mengingat",
+  "Memahami",
+  "Mengaplikasi",
+  "Menganalisis",
+  "Menilai",
+  "Mereka cipta"
+ ],
+ "ulasan": {
+  "1": "{n} dapat mengingat kembali contoh mineral dalam kerak bumi, bijih logam utama dan susunan asas siri kereaktifan. Langkah seterusnya ialah menerangkan sebab sesuatu logam lebih reaktif daripada yang lain.",
+  "2": "{n} memahami siri kereaktifan logam dan boleh menjelaskan kedudukan karbon serta kaedah pengekstrakan yang sesuai. Perlu lebih banyak latihan mentafsir pemerhatian eksperimen sebelum bergerak ke TP3.",
+  "3": "{n} boleh mengaplikasikan pengetahuan kereaktifan logam untuk mentafsir pemerhatian pemanasan logam dan menerangkan kegunaan mineral dalam kehidupan harian. Galakkan mengaitkan data dengan kesimpulan.",
+  "4": "{n} mampu menganalisis data penurunan oksida logam untuk menentukan kedudukan karbon, hidrogen dan logam yang tidak diketahui. Seterusnya latih menimbang bukti untuk membuat keputusan.",
+  "5": "{n} dapat menilai kesan perlombongan dan kaedah pengekstrakan logam serta membuat keputusan yang wajar berdasarkan data. Sudah bersedia untuk tugasan reka cipta.",
+  "6": "{n} berjaya mereka cipta pelan pemulihan kawasan bekas lombong yang praktikal, dengan mengambil kira sains, kos dan keperluan masyarakat. Pencapaian cemerlang bagi bab ini.",
+  "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Kereaktifan Logam. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
+ },
+ "lampiran": {
+  "bakar": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Logam</th><th>Pemerhatian</th><th>Warna baki semasa panas</th><th>Warna baki apabila sejuk</th></tr></thead><tbody><tr><td>Magnesium</td><td>Terbakar dengan nyalaan putih yang sangat terang</td><td>Putih</td><td>Putih</td></tr><tr><td>Aluminium</td><td>Terbakar dengan terang</td><td>Putih</td><td>Putih</td></tr><tr><td>Zink</td><td>Berbara terang</td><td>Kuning</td><td>Putih</td></tr><tr><td>Ferum</td><td>Berbara malap</td><td>Perang</td><td>Perang</td></tr><tr><td>Plumbum</td><td>Berbara sangat malap</td><td>Perang</td><td>Kuning</td></tr></tbody></table></div><p class=\"qnote\">Serbuk logam dipanaskan dengan kuat. Oksigen dibekalkan dengan memanaskan kalium manganat(VII) di dasar tabung didih.</p>",
+  "turun": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Set</th><th>Campuran yang dipanaskan</th><th>Pemerhatian</th></tr></thead><tbody><tr><td>1</td><td>Zink oksida + serbuk karbon</td><td>Berbara terang, baki kelabu terbentuk</td></tr><tr><td>2</td><td>Aluminium oksida + serbuk karbon</td><td>Tiada perubahan</td></tr><tr><td>3</td><td>Ferum oksida + serbuk karbon</td><td>Berbara, baki kelabu terbentuk</td></tr><tr><td>4</td><td>Zink oksida + gas hidrogen</td><td>Tiada perubahan</td></tr><tr><td>5</td><td>Ferum oksida + gas hidrogen</td><td>Berbara, baki kelabu dan titisan air terbentuk</td></tr><tr><td>6</td><td>Kuprum(II) oksida + gas hidrogen</td><td>Berbara, pepejal hitam menjadi perang, titisan air terbentuk</td></tr><tr><td>7</td><td>Oksida logam W + serbuk karbon</td><td>Tiada perubahan</td></tr></tbody></table></div><p class=\"qnote\">Jika unsur yang ditambah lebih reaktif daripada logam dalam oksida, ia menyingkirkan oksigen daripada oksida itu dan logam terbebas.</p>",
+  "sungai": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Stesen</th><th>Kedudukan</th><th class=\"n\">Kekeruhan (NTU)</th><th class=\"n\">pH</th><th class=\"n\">Spesies ikan</th></tr></thead><tbody><tr><td>A</td><td>2 km di hulu lombong</td><td class=\"n\">8</td><td class=\"n\">6.9</td><td class=\"n\">15</td></tr><tr><td>B</td><td>Alur keluar air lombong</td><td class=\"n\">390</td><td class=\"n\">5.2</td><td class=\"n\">3</td></tr><tr><td>C</td><td>3 km di hilir lombong</td><td class=\"n\">150</td><td class=\"n\">6.1</td><td class=\"n\">7</td></tr><tr><td>D</td><td>8 km di hilir lombong</td><td class=\"n\">40</td><td class=\"n\">6.7</td><td class=\"n\">12</td></tr></tbody></table></div><p class=\"qnote\">Data rekaan untuk latihan. Nilai kekeruhan yang tinggi bermakna air lebih berlumpur.</p>"
+ },
+ "aras": [
+  {
+   "n": 1,
+   "tempat": "Kerak Bumi",
+   "sk": "4.1 Kepelbagaian mineral",
+   "lampiran": null,
+   "kadNama": "Emas",
+   "kadEm": "🪙",
+   "kadFakta": "Emas sangat tidak reaktif, jadi ia ditemui sebagai unsur bebas dan kekal berkilat walaupun tertanam beratus-ratus tahun.",
+   "bosKadNama": "Bauksit",
+   "bosKadEm": "🪨",
+   "bosKadFakta": "Bauksit selalunya berwarna kemerahan kerana mengandungi sedikit ferum oksida bersama aluminium oksida.",
+   "soalan": [
+    {
+     "j": "pilih",
+     "t": "Mineral yang wujud sebagai unsur dalam kerak bumi ialah:",
+     "p": [
+      "Emas",
+      "Bauksit",
+      "Hematit",
+      "Galena"
+     ],
+     "b": 0,
+     "u": "Emas sangat tidak reaktif, jadi ia tidak bergabung dengan unsur lain."
+    },
+    {
+     "j": "pilih",
+     "t": "Bauksit ialah bijih bagi logam:",
+     "p": [
+      "Magnesium",
+      "Aluminium",
+      "Plumbum",
+      "Stanum"
+     ],
+     "b": 1,
+     "u": "Bauksit mengandungi aluminium oksida, iaitu gabungan aluminium dan oksigen."
+    },
+    {
+     "j": "pilih",
+     "t": "Nama saintifik bagi galena ialah:",
+     "p": [
+      "Plumbum(II) oksida",
+      "Ferum(III) oksida",
+      "Plumbum(II) sulfida",
+      "Stanum(IV) oksida"
+     ],
+     "b": 2,
+     "u": "Galena ialah gabungan plumbum dan sulfur."
+    },
+    {
+     "j": "pilih",
+     "t": "Kasiterit ialah bijih yang dilombong di Malaysia untuk mendapatkan logam:",
+     "p": [
+      "Aluminium",
+      "Ferum (besi)",
+      "Kuprum (tembaga)",
+      "Stanum (timah)"
+     ],
+     "b": 3,
+     "u": "Kasiterit ialah stanum(IV) oksida. Malaysia pernah menjadi pengeluar bijih timah terbesar di dunia."
+    },
+    {
+     "j": "susun",
+     "t": "Susun logam berikut mengikut kereaktifan terhadap oksigen, bermula daripada yang PALING reaktif.",
+     "p": [
+      "Magnesium",
+      "Aluminium",
+      "Zink",
+      "Ferum",
+      "Plumbum"
+     ],
+     "b": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "u": "Magnesium terbakar paling terang, manakala plumbum hanya berbara dengan sangat malap."
+    },
+    {
+     "j": "pilih",
+     "t": "Hasil tindak balas apabila magnesium dipanaskan dalam oksigen ialah:",
+     "p": [
+      "Magnesium oksida",
+      "Magnesium karbonat",
+      "Magnesium sulfida",
+      "Magnesium hidroksida"
+     ],
+     "b": 0,
+     "u": "Logam yang bergabung dengan oksigen membentuk oksida logam."
+    },
+    {
+     "j": "banyak",
+     "t": "Pilih SEMUA unsur yang terdapat dalam hematit, iaitu ferum(III) oksida.",
+     "p": [
+      "Ferum",
+      "Oksigen",
+      "Sulfur",
+      "Karbon",
+      "Aluminium"
+     ],
+     "b": [
+      0,
+      1
+     ],
+     "u": "Nama sebatian memberitahu unsurnya: ferum dan oksida, iaitu oksigen."
+    },
+    {
+     "j": "pilih",
+     "t": "Logam yang diekstrak daripada bijihnya melalui elektrolisis, bukan dengan karbon, ialah:",
+     "p": [
+      "Ferum",
+      "Aluminium",
+      "Stanum",
+      "Plumbum"
+     ],
+     "b": 1,
+     "u": "Aluminium lebih reaktif daripada karbon, jadi karbon tidak dapat menyingkirkan oksigen daripada aluminium oksida."
+    }
+   ],
+   "bos": {
+    "j": "banyak",
+    "t": "Pilih SEMUA mineral yang merupakan sebatian, iaitu gabungan dua atau lebih unsur.",
+    "p": [
+     "Bauksit",
+     "Galena",
+     "Kasiterit",
+     "Emas",
+     "Perak"
+    ],
+    "b": [
+     0,
+     1,
+     2
+    ],
+    "u": "Emas dan perak ialah unsur. Bauksit, galena dan kasiterit ialah sebatian logam dengan oksigen atau sulfur."
+   }
+  },
+  {
+   "n": 2,
+   "tempat": "Siri Kereaktifan",
+   "sk": "4.2 Siri kereaktifan logam",
+   "lampiran": null,
+   "kadNama": "Kalium",
+   "kadEm": "🧪",
+   "kadFakta": "Kalium begitu reaktif sehingga ia disimpan di dalam minyak parafin supaya tidak bertindak balas dengan udara dan wap air.",
+   "bosKadNama": "Elektrolisis",
+   "bosKadEm": "⚡",
+   "bosKadFakta": "Logam yang lebih reaktif daripada karbon, seperti aluminium, diekstrak menggunakan arus elektrik.",
+   "soalan": [
+    {
+     "j": "pilih",
+     "t": "Mengapakah emas ditemui sebagai unsur bebas tetapi aluminium hanya ditemui sebagai sebatian?",
+     "p": [
+      "Emas lebih berat, jadi ia tenggelam jauh ke dalam kerak bumi",
+      "Aluminium lebih lembut, jadi ia mudah pecah dan bercampur",
+      "Emas sangat tidak reaktif, aluminium mudah bergabung dengan oksigen",
+      "Emas mempunyai takat lebur rendah, jadi ia mudah melebur semula jadi"
+     ],
+     "b": 2,
+     "u": "Logam yang sangat reaktif sentiasa bergabung dengan unsur lain di alam semula jadi."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengapakah magnesium terbakar lebih terang daripada ferum apabila dipanaskan dalam oksigen?",
+     "p": [
+      "Magnesium lebih ringan, jadi ia lebih mudah terapung dalam api",
+      "Ferum berwarna gelap, jadi ia menyerap cahaya nyalaan itu",
+      "Magnesium sudah mengandungi oksigen di dalam logamnya",
+      "Magnesium lebih reaktif, jadi tindak balasnya lebih cergas"
+     ],
+     "b": 3,
+     "u": "Kecerahan nyalaan atau baraan menunjukkan betapa cergas logam itu bertindak balas dengan oksigen."
+    },
+    {
+     "j": "pilih",
+     "t": "Apakah maksud siri kereaktifan logam?",
+     "p": [
+      "Susunan logam mengikut kecergasan bertindak balas dengan oksigen",
+      "Susunan logam mengikut ketumpatan, dari paling berat ke paling ringan",
+      "Susunan logam mengikut harga pasaran semasa di seluruh dunia",
+      "Susunan logam mengikut tarikh logam itu mula-mula ditemui"
+     ],
+     "b": 0,
+     "u": "Logam paling reaktif berada di atas siri, dan logam paling kurang reaktif di bawah."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengapakah karbon dimasukkan dalam siri kereaktifan walaupun ia bukan logam?",
+     "p": [
+      "Karbon bersifat seperti logam kerana ia mengalirkan haba dengan baik",
+      "Kedudukannya menentukan logam yang boleh diekstrak dengan karbon",
+      "Karbon terdapat dalam semua bijih logam yang dilombong di Malaysia",
+      "Karbon ialah unsur paling reaktif, jadi ia diletakkan di bahagian atas"
+     ],
+     "b": 1,
+     "u": "Karbon murah dan mudah didapati, jadi penting untuk mengetahui logam mana yang dapat diturunkannya."
+    },
+    {
+     "j": "pilih",
+     "t": "Zink oksida dipanaskan dengan serbuk karbon dan menghasilkan zink. Apakah yang dapat disimpulkan?",
+     "p": [
+      "Zink lebih reaktif daripada karbon",
+      "Karbon dan zink sama reaktif",
+      "Karbon lebih reaktif daripada zink",
+      "Zink oksida tidak mengandungi oksigen"
+     ],
+     "b": 2,
+     "u": "Unsur yang lebih reaktif dapat menyingkirkan oksigen daripada oksida unsur yang kurang reaktif."
+    },
+    {
+     "j": "pilih",
+     "t": "Apakah yang berlaku kepada karbon apabila ia menyingkirkan oksigen daripada zink oksida?",
+     "p": [
+      "Karbon bertukar menjadi zink kerana menerima oksigen",
+      "Karbon melebur dan bercampur dengan zink membentuk aloi",
+      "Karbon hilang sepenuhnya tanpa menghasilkan sebarang bahan",
+      "Karbon bergabung dengan oksigen membentuk karbon dioksida"
+     ],
+     "b": 3,
+     "u": "Zink oksida + karbon → zink + karbon dioksida."
+    },
+    {
+     "j": "pilih",
+     "t": "Pilih persamaan perkataan yang betul bagi pemanasan aluminium dalam oksigen.",
+     "p": [
+      "aluminium + oksigen → aluminium oksida",
+      "aluminium oksida → aluminium + oksigen",
+      "aluminium + karbon → aluminium karbida",
+      "aluminium + oksigen → aluminium dioksida"
+     ],
+     "b": 0,
+     "u": "Bahan tindak balas ditulis di sebelah kiri anak panah dan hasil di sebelah kanan."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengapakah logam di bawah karbon dalam siri kereaktifan boleh diekstrak dengan memanaskan bijihnya bersama karbon?",
+     "p": [
+      "Karbon menambah oksigen kepada bijih supaya logam terbebas",
+      "Karbon dapat menyingkirkan oksigen daripada oksida logam itu",
+      "Karbon melarutkan bijih logam itu menjadi cecair yang tulen",
+      "Karbon menyerap bendasing tetapi tidak menyentuh oksida logam"
+     ],
+     "b": 1,
+     "u": "Proses menyingkirkan oksigen daripada oksida logam dipanggil penurunan."
+    }
+   ],
+   "bos": {
+    "j": "pilih",
+    "t": "Oksida logam X tidak bertindak balas apabila dipanaskan dengan karbon. Kaedah pengekstrakan yang paling sesuai bagi X ialah:",
+    "p": [
+     "Pemanasan bijih X dengan karbon",
+     "Pemanasan bijih X dengan hidrogen",
+     "Elektrolisis sebatian lebur X",
+     "Mengutip X sebagai unsur bebas"
+    ],
+    "b": 2,
+    "u": "X lebih reaktif daripada karbon. Logam sereaktif ini tidak ditemui sebagai unsur bebas, dan hidrogen yang lebih rendah daripada karbon juga tidak dapat menurunkannya."
+   }
+  },
+  {
+   "n": 3,
+   "tempat": "Makmal Pembakaran",
+   "sk": "4.1 / 4.2 Mengaplikasi dalam kehidupan",
+   "lampiran": "bakar",
+   "kadNama": "Magnesium",
+   "kadEm": "✨",
+   "kadFakta": "Nyalaan magnesium sangat terang sehingga serbuknya pernah digunakan sebagai lampu kilat dalam fotografi awal.",
+   "bosKadNama": "Karat",
+   "bosKadEm": "🔩",
+   "bosKadFakta": "Karat ialah ferum oksida terhidrat. Ia terbentuk apabila ferum bertindak balas dengan oksigen dan air.",
+   "soalan": [
+    {
+     "j": "pilih",
+     "t": "Berdasarkan jadual, logam manakah paling reaktif terhadap oksigen?",
+     "p": [
+      "Aluminium",
+      "Zink",
+      "Plumbum",
+      "Magnesium"
+     ],
+     "b": 3,
+     "u": "Magnesium terbakar dengan nyalaan paling terang."
+    },
+    {
+     "j": "pilih",
+     "t": "Seorang murid mendapati bakinya kuning semasa panas dan putih apabila sejuk. Logam yang dipanaskan ialah:",
+     "p": [
+      "Zink",
+      "Plumbum",
+      "Magnesium",
+      "Ferum"
+     ],
+     "b": 0,
+     "u": "Zink oksida kuning semasa panas dan putih apabila sejuk. Plumbum oksida pula perang semasa panas dan kuning apabila sejuk."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengapakah kalium manganat(VII) dipanaskan dalam eksperimen ini?",
+     "p": [
+      "Untuk menyerap wap air dalam tabung",
+      "Untuk membebaskan gas oksigen",
+      "Untuk memanaskan serbuk logam",
+      "Untuk mengeringkan kapas kaca"
+     ],
+     "b": 1,
+     "u": "Kalium manganat(VII) terurai apabila dipanaskan dan membebaskan oksigen yang diperlukan oleh logam."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengapakah logam digunakan dalam bentuk serbuk, bukan ketulan?",
+     "p": [
+      "Serbuk lebih ringan, jadi tidak jatuh ke dasar tabung didih",
+      "Serbuk tidak mengandungi bendasing seperti ketulan logam",
+      "Luas permukaannya besar, jadi tindak balas mudah berlaku",
+      "Serbuk tidak berkarat walaupun disimpan lama di dalam makmal"
+     ],
+     "b": 2,
+     "u": "Lebih banyak permukaan logam bersentuhan dengan oksigen pada masa yang sama."
+    },
+    {
+     "j": "pilih",
+     "t": "Petani menabur kalsium oksida (kapur) di sawah yang tanahnya berasid. Mengapa?",
+     "p": [
+      "Kalsium oksida bersifat asid, jadi ia menambah nutrien dalam tanah",
+      "Kalsium oksida menyerap air supaya sawah tidak dilanda banjir",
+      "Kalsium oksida membunuh semua serangga perosak di dalam tanah",
+      "Kalsium oksida bersifat bes dan meneutralkan keasidan tanah"
+     ],
+     "b": 3,
+     "u": "Bes meneutralkan asid. Kebanyakan tanaman tumbuh dengan baik dalam tanah yang hampir neutral."
+    },
+    {
+     "j": "pilih",
+     "t": "Silikon dioksida (pasir) digunakan untuk membuat kaca. Sifat manakah yang menjadikannya sesuai?",
+     "p": [
+      "Takat leburnya tinggi",
+      "Mudah larut dalam air",
+      "Bersifat bes yang kuat",
+      "Mengalirkan elektrik"
+     ],
+     "b": 0,
+     "u": "Kaca yang dibuat daripada silikon dioksida tahan haba dan tidak mudah melebur."
+    },
+    {
+     "j": "nombor",
+     "t": "Sampel bijih seberat 500 g mengandungi 60% kasiterit. Berapakah jisim kasiterit dalam sampel itu, dalam gram?",
+     "b": 300,
+     "tol": 0.5,
+     "suf": "g",
+     "u": "60 per 100 didarab 500 g bersamaan 300 g."
+    },
+    {
+     "j": "pilih",
+     "t": "Pemanasan kuprum(II) karbonat menghasilkan pepejal hitam dan gas yang mengeruhkan air kapur. Apakah hasilnya?",
+     "p": [
+      "Kuprum(II) oksida dan gas hidrogen",
+      "Kuprum(II) oksida dan karbon dioksida",
+      "Kuprum tulen dan karbon monoksida",
+      "Kuprum(II) sulfida dan gas oksigen"
+     ],
+     "b": 1,
+     "u": "Karbonat logam terurai apabila dipanaskan kepada oksida logam dan karbon dioksida. Karbon dioksida mengeruhkan air kapur."
+    }
+   ],
+   "bos": {
+    "j": "pilih",
+    "t": "Sebilah pisau keluli (ferum) dan sebentuk cincin emas tertinggal di pantai selama setahun. Ramalkan keadaan kedua-duanya.",
+    "p": [
+     "Kedua-duanya berkarat dengan kadar yang sama",
+     "Cincin emas berkarat, pisau kekal berkilat",
+     "Pisau berkarat, cincin emas kekal berkilat",
+     "Kedua-duanya kekal berkilat tanpa perubahan"
+    ],
+    "b": 2,
+    "u": "Ferum jauh lebih reaktif daripada emas, jadi ia bergabung dengan oksigen dengan bantuan air membentuk karat. Emas hampir tidak bertindak balas."
+   }
+  },
+  {
+   "n": 4,
+   "tempat": "Karbon & Hidrogen",
+   "sk": "4.2 Kedudukan karbon dan hidrogen",
+   "lampiran": "turun",
+   "kadNama": "Karbon",
+   "kadEm": "⚫",
+   "kadFakta": "Karbon dalam bentuk kok digunakan untuk menurunkan bijih besi kerana karbon lebih reaktif daripada ferum.",
+   "bosKadNama": "Tindak Balas Termit",
+   "bosKadEm": "🔥",
+   "bosKadFakta": "Campuran serbuk aluminium dan ferum oksida yang dinyalakan menghasilkan besi lebur, dan pernah digunakan untuk menyambung landasan kereta api.",
+   "soalan": [
+    {
+     "j": "pilih",
+     "t": "Berdasarkan Set 1 dan Set 2, di manakah kedudukan karbon dalam siri kereaktifan?",
+     "p": [
+      "Di atas aluminium dan zink",
+      "Di bawah zink dan ferum",
+      "Di antara zink dan ferum",
+      "Di antara aluminium dan zink"
+     ],
+     "b": 3,
+     "u": "Karbon dapat menurunkan zink oksida tetapi tidak aluminium oksida, jadi karbon lebih reaktif daripada zink tetapi kurang reaktif daripada aluminium."
+    },
+    {
+     "j": "pilih",
+     "t": "Berdasarkan Set 4 dan Set 5, di manakah kedudukan hidrogen?",
+     "p": [
+      "Di antara zink dan ferum",
+      "Di antara aluminium dan zink",
+      "Di atas zink dan aluminium",
+      "Di bawah kuprum dan ferum"
+     ],
+     "b": 0,
+     "u": "Hidrogen menurunkan ferum oksida tetapi tidak zink oksida."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengapakah titisan air terbentuk dalam Set 5 dan Set 6?",
+     "p": [
+      "Oksida logam itu sudah lembap sebelum dipanaskan",
+      "Hidrogen bergabung dengan oksigen daripada oksida logam",
+      "Gas hidrogen terkondensasi apabila menyentuh kaca sejuk",
+      "Logam yang terhasil membebaskan air semasa menyejuk"
+     ],
+     "b": 1,
+     "u": "Kuprum(II) oksida + hidrogen → kuprum + air."
+    },
+    {
+     "j": "banyak",
+     "t": "Pilih SEMUA kesimpulan yang disokong oleh data Set 1 hingga Set 6.",
+     "p": [
+      "Karbon lebih reaktif daripada zink",
+      "Aluminium lebih reaktif daripada karbon",
+      "Hidrogen lebih reaktif daripada ferum",
+      "Hidrogen lebih reaktif daripada zink",
+      "Karbon kurang reaktif daripada ferum"
+     ],
+     "b": [
+      0,
+      1,
+      2
+     ],
+     "u": "Set 4 menunjukkan hidrogen tidak dapat menurunkan zink oksida, dan Set 3 menunjukkan karbon dapat menurunkan ferum oksida."
+    },
+    {
+     "j": "pilih",
+     "t": "Oksida logam W tidak berubah apabila dipanaskan dengan karbon (Set 7). Logam W mungkin:",
+     "p": [
+      "Plumbum",
+      "Kuprum",
+      "Magnesium",
+      "Ferum"
+     ],
+     "b": 2,
+     "u": "W mesti lebih reaktif daripada karbon. Antara pilihan, hanya magnesium berada di atas karbon."
+    },
+    {
+     "j": "pilih",
+     "t": "Oksida logam Y berubah apabila dipanaskan dengan karbon tetapi tidak berubah dengan hidrogen. Di manakah kedudukan Y?",
+     "p": [
+      "Di atas aluminium dan karbon",
+      "Di bawah ferum dan kuprum",
+      "Di antara hidrogen dan ferum",
+      "Di antara karbon dan hidrogen"
+     ],
+     "b": 3,
+     "u": "Karbon lebih reaktif daripada Y, dan Y lebih reaktif daripada hidrogen. Zink ialah contoh logam sebegini."
+    },
+    {
+     "j": "pilih",
+     "t": "Seorang murid mendakwa Set 2 tidak berubah hanya kerana api tidak cukup panas. Cara terbaik menguji dakwaannya?",
+     "p": [
+      "Ulang Set 2 dengan pemanasan lebih kuat dan lebih lama",
+      "Tukar karbon dengan serbuk zink lalu ulang pemanasan",
+      "Ulang Set 1 sahaja kerana set itu sudah berjaya",
+      "Buat kesimpulan tanpa mengulang kerana data sudah ada"
+     ],
+     "b": 0,
+     "u": "Hanya faktor yang dipersoalkan, iaitu kekuatan pemanasan, perlu diubah."
+    },
+    {
+     "j": "pilih",
+     "t": "Aluminium ialah logam paling banyak dalam kerak bumi, tetapi manusia menggunakannya jauh lebih lewat daripada ferum. Mengapa?",
+     "p": [
+      "Aluminium terlalu lembut untuk dibuat peralatan",
+      "Ia terlalu reaktif untuk diekstrak dengan karbon",
+      "Bijih aluminium hanya terdapat di dasar laut",
+      "Aluminium tidak wujud sebagai sebatian semula jadi"
+     ],
+     "b": 1,
+     "u": "Aluminium hanya dapat diekstrak secara besar-besaran selepas elektrolisis ditemui."
+    }
+   ],
+   "bos": {
+    "j": "pilih",
+    "t": "Data bagi logam M: karbon menurunkan oksida M; M menyingkirkan oksigen daripada ferum oksida; hidrogen tidak menurunkan oksida M. Susunan yang betul, dari PALING reaktif?",
+    "p": [
+     "M, karbon, hidrogen, ferum",
+     "Karbon, hidrogen, M, ferum",
+     "Karbon, M, hidrogen, ferum",
+     "Karbon, M, ferum, hidrogen"
+    ],
+    "b": 2,
+    "u": "Karbon lebih reaktif daripada M, M lebih reaktif daripada ferum dan hidrogen, dan hidrogen berada di atas ferum."
+   }
+  },
+  {
+   "n": 5,
+   "tempat": "Relau & Lombong",
+   "sk": "4.3 Pengekstrakan logam dan kesan perlombongan",
+   "lampiran": "sungai",
+   "kadNama": "Relau Bagas",
+   "kadEm": "🏭",
+   "kadFakta": "Dalam relau bagas, sanga yang terbentuk daripada batu kapur terapung di atas besi lebur dan disalir keluar secara berasingan.",
+   "bosKadNama": "Kitar Semula",
+   "bosKadEm": "♻",
+   "bosKadFakta": "Mengitar semula aluminium hanya memerlukan kira-kira 5 peratus tenaga yang diperlukan untuk mengekstrak aluminium baharu.",
+   "soalan": [
+    {
+     "j": "pilih",
+     "t": "Berdasarkan jadual, apakah bukti paling kukuh bahawa lombong menjejaskan sungai?",
+     "p": [
+      "Stesen D mempunyai 12 spesies ikan, iaitu kurang daripada 15",
+      "Stesen A mempunyai pH 6.9 yang hampir neutral",
+      "Semua stesen mempunyai sekurang-kurangnya tiga spesies ikan",
+      "Stesen B jauh lebih keruh dan berasid berbanding Stesen A"
+     ],
+     "b": 3,
+     "u": "Stesen A di hulu menjadi kawalan. Perubahan besar di alur keluar lombong menunjukkan puncanya."
+    },
+    {
+     "j": "pilih",
+     "t": "Nilaikan dakwaan: \"Sungai itu pulih sepenuhnya 8 km dari lombong.\"",
+     "p": [
+      "Tidak tepat, kerana Stesen D masih lebih keruh dan kurang ikan daripada A",
+      "Tepat, kerana kekeruhan Stesen D jauh lebih rendah daripada Stesen B",
+      "Tepat, kerana pH Stesen D sudah melebihi 6.5 seperti air biasa",
+      "Tidak tepat, kerana sungai tidak pernah pulih selepas dicemari"
+     ],
+     "b": 0,
+     "u": "Pulih sepenuhnya bermakna kembali seperti keadaan kawalan di Stesen A."
+    },
+    {
+     "j": "pilih",
+     "t": "Pihak berkuasa hanya mampu melaksanakan SATU langkah segera. Pilihan paling wajar?",
+     "p": [
+      "Pasang papan tanda larangan memancing di sepanjang sungai itu",
+      "Bina kolam takungan supaya lumpur mendap sebelum ke sungai",
+      "Lepaskan benih ikan baharu di Stesen B setiap bulan",
+      "Pindahkan semua penduduk kampung yang tinggal di hilir sungai"
+     ],
+     "b": 1,
+     "u": "Langkah yang menyerang punca pencemaran lebih berkesan daripada merawat kesannya."
+    },
+    {
+     "j": "pilih",
+     "t": "Seorang jurutera mencadangkan batu kapur dikeluarkan daripada relau bagas untuk menjimatkan kos. Nilaikan cadangan itu.",
+     "p": [
+      "Wajar, kerana batu kapur tidak terlibat dalam tindak balas di dalam relau",
+      "Wajar, kerana kok sudah cukup untuk menyingkirkan semua bendasing",
+      "Kurang wajar, kerana bendasing tidak lagi dapat disingkirkan sebagai sanga",
+      "Kurang wajar, kerana batu kapur ialah sumber utama besi dalam relau"
+     ],
+     "b": 2,
+     "u": "Batu kapur terurai kepada kalsium oksida yang bergabung dengan pasir membentuk sanga. Tanpanya, besi yang terhasil bercampur bendasing."
+    },
+    {
+     "j": "pilih",
+     "t": "Dua kaedah pengekstrakan aluminium dicadangkan: (P) panaskan bauksit dengan karbon, (Q) elektrolisis. Keputusan paling wajar?",
+     "p": [
+      "P, kerana pemanasan dengan karbon lebih murah daripada elektrolisis",
+      "P, kerana aluminium berada di bawah karbon dalam siri",
+      "Q, kerana elektrolisis tidak menggunakan sebarang tenaga",
+      "Q, kerana karbon tidak dapat menurunkan aluminium oksida"
+     ],
+     "b": 3,
+     "u": "Kaedah yang murah tidak berguna jika ia tidak berfungsi. Elektrolisis menggunakan banyak tenaga elektrik."
+    },
+    {
+     "j": "pilih",
+     "t": "Bekas lombong timah di Lembah Klang telah dijadikan tasik rekreasi dan tanah lembap. Apakah kelebihan utama pendekatan ini?",
+     "p": [
+      "Tanah yang rosak diberi kegunaan baharu yang bermanfaat",
+      "Kerajaan tidak perlu lagi mengawal perlombongan baharu",
+      "Bijih timah yang tinggal dapat terus dilombong di tasik",
+      "Air tasik bekas lombong sentiasa selamat untuk diminum"
+     ],
+     "b": 0,
+     "u": "Pemulihan menjadikan kawasan terbiar sebagai habitat dan tempat rekreasi, tetapi air bekas lombong masih perlu diuji."
+    },
+    {
+     "j": "banyak",
+     "t": "Pilih SEMUA langkah yang wajar diwajibkan sebelum lombong bauksit baharu dibuka.",
+     "p": [
+      "Penilaian Kesan Alam Sekeliling yang diluluskan",
+      "Pelan pemulihan tanah selepas perlombongan tamat",
+      "Kawalan habuk semasa bijih diangkut dengan lori",
+      "Pampasan dibayar hanya selepas penduduk mengadu",
+      "Perlombongan di tebing sungai untuk memudahkan angkutan"
+     ],
+     "b": [
+      0,
+      1,
+      2
+     ],
+     "u": "Pencemaran habuk bauksit di Kuantan pada 2015 menunjukkan akibat apabila kawalan ini diabaikan."
+    },
+    {
+     "j": "pilih",
+     "t": "Mengitar semula tin aluminium menggunakan jauh kurang tenaga berbanding mengekstrak aluminium baharu. Keputusan paling wajar bagi kantin sekolah?",
+     "p": [
+      "Buang tin bersama sampah lain kerana aluminium tidak boleh dikitar semula",
+      "Sediakan tong khas untuk tin aluminium dan hantar ke pusat kitar semula",
+      "Bakar tin aluminium supaya isi padu sampah menjadi lebih kecil",
+      "Tanam tin di belakang sekolah kerana aluminium mudah reput"
+     ],
+     "b": 1,
+     "u": "Kitar semula menjimatkan tenaga dan mengurangkan keperluan melombong bauksit baharu."
+    }
+   ],
+   "bos": {
+    "j": "pilih",
+    "t": "Sebuah kampung perlu memutuskan sama ada membenarkan lombong bauksit yang membuka 200 peluang pekerjaan, sedangkan sungai berhampiran ialah sumber air minum. Keputusan paling wajar?",
+    "p": [
+     "Benarkan tanpa syarat kerana peluang pekerjaan lebih penting",
+     "Tolak kerana perlombongan tidak pernah membawa sebarang manfaat",
+     "Benarkan hanya jika kawalan pencemaran dan pemulihan dikuatkuasakan",
+     "Tangguhkan keputusan sehingga sungai itu tercemar dahulu"
+    ],
+    "b": 2,
+    "u": "Keputusan yang baik menimbang manfaat ekonomi dan keselamatan air, dan meletakkan syarat yang boleh dipantau."
+   }
+  },
+  {
+   "n": 6,
+   "tempat": "Tanah Bekas Lombong",
+   "sk": "4.3 Mereka cipta penyelesaian",
+   "lampiran": null,
+   "kadNama": "Tanah Lembap",
+   "kadEm": "🦆",
+   "kadFakta": "Paya Indah Wetlands di Selangor dibina di atas bekas kawasan perlombongan bijih timah dan kini menjadi habitat burung air.",
+   "bosKadNama": "Lembah Kinta",
+   "bosKadEm": "⛏",
+   "bosKadFakta": "Lembah Kinta di Perak pernah menjadi antara kawasan perlombongan bijih timah terkaya di dunia.",
+   "soalan": [
+    {
+     "j": "pilih",
+     "t": "Awak mereka bentuk pelan memulihkan tanah bekas lombong di kampung awak. Langkah pertama paling penting?",
+     "p": [
+      "Tanam pokok buah-buahan terus tanpa sebarang ujian",
+      "Timbus semua kolam lombong dengan sampah domestik",
+      "Bina rumah di atasnya kerana tanahnya sudah rata",
+      "Uji tanah dan air untuk mengetahui keadaan sebenarnya"
+     ],
+     "b": 3,
+     "u": "Pelan yang baik bermula dengan data tentang masalah sebenar."
+    },
+    {
+     "j": "pilih",
+     "t": "Ujian menunjukkan tanah bekas lombong itu berasid. Bahan manakah paling sesuai ditambah sebelum menanam?",
+     "p": [
+      "Kapur pertanian",
+      "Garam dapur halus",
+      "Cuka beras",
+      "Serbuk zink"
+     ],
+     "b": 0,
+     "u": "Kapur bersifat bes dan meneutralkan tanah berasid."
+    },
+    {
+     "j": "pilih",
+     "t": "Kolam bekas lombong mahu dijadikan tempat ternakan ikan. Syarat paling penting sebelum ia dimulakan?",
+     "p": [
+      "Tebing kolam dicat supaya lebih menarik",
+      "Air kolam diuji bebas daripada logam berat",
+      "Ikan dibeli dalam jumlah paling banyak",
+      "Pagar tinggi dibina di sekeliling kolam"
+     ],
+     "b": 1,
+     "u": "Logam berat dalam air boleh terkumpul dalam ikan dan akhirnya dalam badan orang yang memakannya."
+    },
+    {
+     "j": "pilih",
+     "t": "Bajet projek pemulihan hanya RM500, tetapi anak pokok hutan berharga RM15 sebatang. Cara paling kreatif?",
+     "p": [
+      "Tanam lima pokok sahaja dan biarkan selebihnya kosong",
+      "Tangguhkan projek sehingga bajet mencukupi sepenuhnya",
+      "Semai benih pokok tempatan bersama murid dan penduduk",
+      "Beli pokok plastik supaya kawasan itu kelihatan hijau"
+     ],
+     "b": 2,
+     "u": "Menyemai sendiri menjimatkan kos dan melibatkan masyarakat."
+    },
+    {
+     "j": "pilih",
+     "t": "Awak mahu membuktikan pelan pemulihan berjaya selepas setahun. Bukti paling meyakinkan?",
+     "p": [
+      "Tanya penduduk sama ada kawasan itu kelihatan lebih cantik",
+      "Kira gambar kawasan itu yang dikongsi di media sosial",
+      "Ukur ketinggian satu pokok yang paling cepat membesar",
+      "Bandingkan bilangan spesies dan kualiti air sebelum dan selepas"
+     ],
+     "b": 3,
+     "u": "Ukuran sebelum dan selepas memberikan bukti yang boleh dibandingkan."
+    },
+    {
+     "j": "pilih",
+     "t": "Sebuah syarikat lombong menawarkan dana tetapi mahu logonya dipaparkan besar di papan tanda projek. Keputusan paling wajar?",
+     "p": [
+      "Terima dengan syarat projek tetap mengikut pelan komuniti",
+      "Tolak terus kerana semua syarikat lombong merosakkan alam",
+      "Terima dan ubah pelan mengikut kehendak syarikat itu",
+      "Terima tanpa memaklumkan penduduk kampung"
+     ],
+     "b": 0,
+     "u": "Dana luar boleh membantu selagi keputusan projek kekal di tangan masyarakat."
+    },
+    {
+     "j": "pilih",
+     "t": "Awak mereka cipta alat mudah untuk memisahkan bijih timah daripada pasir, seperti mendulang. Prinsip sains yang digunakan?",
+     "p": [
+      "Bijih timah lebih ringan, jadi ia terapung di atas air",
+      "Bijih timah lebih tumpat, jadi ia mendap lebih cepat",
+      "Bijih timah bermagnet kuat, jadi ia melekat pada dulang",
+      "Bijih timah larut dalam air, jadi pasir tertinggal"
+     ],
+     "b": 1,
+     "u": "Kasiterit jauh lebih tumpat daripada pasir, jadi air yang digoncang membawa pasir pergi dahulu."
+    },
+    {
+     "j": "pilih",
+     "t": "Masyarakat Orang Asli bergantung pada sungai berhampiran kawasan yang ingin dipulihkan. Pendekatan paling wajar?",
+     "p": [
+      "Laksanakan pelan tanpa berbincang kerana pakar lebih tahu",
+      "Minta mereka berpindah sementara projek dijalankan",
+      "Libatkan mereka dan gunakan pengetahuan tempatan mereka",
+      "Larang mereka menggunakan sungai itu buat selama-lamanya"
+     ],
+     "b": 2,
+     "u": "Masyarakat yang paling lama mengenali kawasan itu selalunya tahu tumbuhan dan corak air yang sesuai."
+    }
+   ],
+   "bos": {
+    "j": "buka",
+    "t": "Sebuah tasik bekas lombong timah berhampiran sekolah awak terbiar, airnya keruh dan tebingnya runtuh. Reka satu pelan untuk menjadikannya kawasan yang selamat dan bermanfaat kepada masyarakat.",
+    "arahan": "Terangkan masalah sains yang perlu diatasi (contohnya keasidan tanah, logam berat dan hakisan), langkah serta bahan yang digunakan, siapa yang terlibat, dan bagaimana awak mengambil kira kos serta keperluan penduduk setempat.",
+    "u": "Jawapan TP6 yang kukuh mengaitkan sifat bahan dan tindak balas kimia dengan langkah pemulihan, kos sebenar, dan peranan masyarakat."
+   }
+  }
+ ]
+};
