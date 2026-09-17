@@ -9,6 +9,13 @@ kepada Tahap Penguasaan 1 hingga 6 dalam DSKP.
 | 1.0 Rangsangan dan Gerak Balas | Laluan Impuls, reseptor hingga tindakan | 54 |
 | 2.0 Respirasi | Laluan Oksigen, hidung hingga sel badan | 54 |
 | 3.0 Pengangkutan | Laluan Darah, jantung hingga seluruh organisma | 54 |
+| 4.0 Kereaktifan Logam | Laluan Bijih, kerak bumi hingga tanah bekas lombong | 54 |
+| 5.0 Termokimia | Laluan Haba, termometer hingga bengkel reka cipta | 54 |
+| 6.0 Keelektrikan dan Kemagnetan | Laluan Arus, sumber tenaga hingga kampung pedalaman | 54 |
+| 7.0 Tenaga dan Kuasa | Laluan Tenaga, padang kerja hingga taman permainan | 54 |
+| 8.0 Keradioaktifan | Laluan Sinaran, makmal Curie hingga pameran sains | 54 |
+| 9.0 Cuaca Angkasa Lepas | Laluan Suria, teras Matahari hingga stesen angkasa | 54 |
+| 10.0 Penerokaan Angkasa Lepas | Laluan Angkasa, planetarium hingga pelancar roket | 54 |
 
 Nama perjalanan itu milik babnya. Jenama produk ialah Jejak TP Sains (dahulu Cikgu Nani, dan sebelum itu Laluan Oksigen).
 
@@ -130,8 +137,8 @@ menyalinnya terus ke SPPB.
 
 - Cikgu belum boleh menulis soalan sendiri melalui skrin. Bank masih disunting
   sebagai fail sumber.
-- Tiga daripada tiga puluh dua bidang Sains menengah rendah sudah siap. Bidang
-  Tingkatan 1 dan 2 belum dimulakan.
+- Kesemua sepuluh bidang Tingkatan 3 sudah siap. Bab 4 hingga 10 (17 Sep 2026)
+  belum disemak oleh guru. Bidang Tingkatan 1 dan 2 belum dimulakan.
 - Tiada pra atau pasca ujian, jadi permainan ini belum boleh membuktikan bahawa
   murid benar-benar belajar, hanya bahawa mereka terlibat.
 - Tiada mod luar talian penuh. Halaman perlukan talian untuk dibuka kali pertama.

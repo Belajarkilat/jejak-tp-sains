@@ -904,6 +904,7 @@ body.zon-murid{color:var(--tinta)}
 <script src="bank-t3b7.js?v=20260917"></script>
 <script src="bank-t3b8.js?v=20260917"></script>
 <script src="bank-t3b9.js?v=20260917"></script>
+<script src="bank-t3b10.js?v=20260917"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -983,7 +984,7 @@ body.zon-murid{color:var(--tinta)}
 
 /* Bab yang tersedia, mengikut urutan paparan. Menambah bab bermakna
    menambah satu fail bank dan satu id di sini. */
-var BAB_TERSEDIA=["t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7","t3b8","t3b9"];
+var BAB_TERSEDIA=["t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"];
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("cn-bab"); }catch(e){}
 if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID=BAB_TERSEDIA[0];
@@ -1053,7 +1054,10 @@ var DUNIA={
         misi:"Kenali sinaran radioaktif dan gunakannya dengan selamat untuk kesejahteraan hidup."},
   t3b9:{warna:"#9C36B5",lembut:"#F3E3F8",gelap:"#6E1F80",ikon:"☀️",
         hentian:["☀️","🧲","🔭","📈","🚨","🛰️"],
-        misi:"Jejaki tenaga dan zarah dari Matahari sehingga sampai ke Bumi."}
+        misi:"Jejaki tenaga dan zarah dari Matahari sehingga sampai ke Bumi."},
+  t3b10:{warna:"#1864AB",lembut:"#DCEBFA",gelap:"#0B3D6E",ikon:"🚀",
+        hentian:["🏛️","🪐","📅","🛰️","🏢","🚀"],
+        misi:"Terokai angkasa lepas dari model Ptolemy sehingga satelit Malaysia."}
 };
 var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔬",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
 function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
