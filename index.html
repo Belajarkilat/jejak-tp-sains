@@ -902,6 +902,7 @@ body.zon-murid{color:var(--tinta)}
 <script src="bank-t3b5.js?v=20260917"></script>
 <script src="bank-t3b6.js?v=20260917"></script>
 <script src="bank-t3b7.js?v=20260917"></script>
+<script src="bank-t3b8.js?v=20260917"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -981,7 +982,7 @@ body.zon-murid{color:var(--tinta)}
 
 /* Bab yang tersedia, mengikut urutan paparan. Menambah bab bermakna
    menambah satu fail bank dan satu id di sini. */
-var BAB_TERSEDIA=["t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7"];
+var BAB_TERSEDIA=["t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7","t3b8"];
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("cn-bab"); }catch(e){}
 if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID=BAB_TERSEDIA[0];
@@ -1045,7 +1046,10 @@ var DUNIA={
         misi:"Salurkan arus dari stesen janakuasa sehingga ke setiap rumah dengan selamat."},
   t3b7:{warna:"#0CA678",lembut:"#D7F5EA",gelap:"#087F5B",ikon:"🎢",
         hentian:["⚙️","🕰️","🪜","🎢","🏗️","🛝"],
-        misi:"Tukarkan tenaga dari satu bentuk ke bentuk lain tanpa membazir."}
+        misi:"Tukarkan tenaga dari satu bentuk ke bentuk lain tanpa membazir."},
+  t3b8:{warna:"#5C940D",lembut:"#EEF8D9",gelap:"#3F6A08",ikon:"☢️",
+        hentian:["🔬","⚛️","☁️","🧱","🏥","🪧"],
+        misi:"Kenali sinaran radioaktif dan gunakannya dengan selamat untuk kesejahteraan hidup."}
 };
 var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔬",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
 function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
