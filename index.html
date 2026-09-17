@@ -568,6 +568,10 @@ input.kodkelas:focus{border-color:var(--arteri);outline:none}
 
 /* ---------- guru: log masuk dan papan pemuka ---------- */
 .authkad{max-width:440px;margin:0 auto}
+.demokad{max-width:440px;margin:16px auto 0;border-style:dashed}
+.demokad h3{margin:0 0 4px}
+.demojalur{margin-top:6px;padding:12px 16px;border:1.5px dashed var(--line2);border-radius:var(--r);background:var(--surface2);display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
+.demojalur p{margin:0;flex:1 1 240px;font-size:14px;color:var(--ink2)}
 .btn.google{
   width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
   background:var(--surface);color:var(--ink);border:1.5px solid var(--line2);box-shadow:none;
@@ -939,6 +943,7 @@ body.zon-murid{color:var(--tinta)}
     <div id="guruAkaun"></div>
     <div class="hidden" id="guruKelas">
       <button class="kembali" id="btnKembali" type="button">&larr; Semua kelas saya</button>
+      <div class="demojalur hidden" id="demoJalur"></div>
       <div class="panel" style="margin-top:6px">
         <div class="panel-hd">
           <div class="grow">
@@ -1159,6 +1164,9 @@ function jalanTp(kelas,no){ return "guru/tp-"+kelas+"-"+no; }
 /* Kelas contoh hanya untuk demo dalam mod cikgu. Ia tidak pernah
    ditulis ke pangkalan data dan murid tidak boleh memasukinya. */
 var KELAS_CONTOH={id:"contoh",nama:"3 Amanah (contoh)",kod:"CONTOH",contoh:true};
+/* Guru yang belum log masuk boleh membuka kelas contoh. Tidak disimpan,
+   jadi muat semula halaman membawa guru kembali ke skrin log masuk. */
+var DEMO_GURU=false;
 function kelasGuruKini(){
   if(S.gk==="contoh") return KELAS_CONTOH;
   for(var i=0;i<KELAS_GURU.length;i++) if(KELAS_GURU[i].id===S.gk) return KELAS_GURU[i];
@@ -3059,7 +3067,8 @@ function salin(teks,btn){
 
 function renderCikgu(){
   var ak=$("guruAkaun"), kl=$("guruKelas");
-  var dalamKelas=!!(SESI&&PROFIL&&PROFIL.ada&&S.guruSkrin!=="katabaru"&&S.guruSkrin!=="profil"&&kelasGuruKini());
+  var dalamKelas=!!(SESI&&PROFIL&&PROFIL.ada&&S.guruSkrin!=="katabaru"&&S.guruSkrin!=="profil"&&kelasGuruKini())||
+                 (!SESI&&DEMO_GURU&&S.gk==="contoh");
   ak.classList.toggle("hidden",dalamKelas);
   kl.classList.toggle("hidden",!dalamKelas);
   if(dalamKelas) return renderKelasGuru();
@@ -3080,6 +3089,26 @@ function renderCikgu(){
 
 /* ---------------- Log masuk, daftar, lupa kata laluan ---------------- */
 var SVG_G='<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>';
+
+function bukaDemoGuru(){
+  DEMO_GURU=true; S.gk="contoh"; S.tabCikgu="kelas"; S.muridPilih=null;
+  renderCikgu(); window.scrollTo({top:0});
+}
+function cubaSebagaiMurid(){
+  mainTanpaRekod(); tukarMod("murid");
+}
+function kadDemo(){
+  var p=el("div","panel demokad");
+  var bd=el("div","panel-bd");
+  bd.appendChild(el("h3",null,"Belum mahu daftar?"));
+  bd.appendChild(el("p","qnote","Lihat rupa laporan TP dengan kelas contoh berisi 6 murid rekaan, atau main sendiri seperti murid. Tiada apa yang disimpan."));
+  var a=el("div","actions");
+  var b1=el("button","btn teal"); b1.type="button"; b1.textContent="Lihat kelas contoh"; b1.onclick=bukaDemoGuru;
+  var b2=el("button","btn ghost"); b2.type="button"; b2.textContent="Cuba sebagai murid"; b2.onclick=cubaSebagaiMurid;
+  a.appendChild(b1); a.appendChild(b2);
+  bd.appendChild(a); p.appendChild(bd);
+  return p;
+}
 
 function paneLogMasuk(ak){
   var mod=S.authMod||"masuk";
@@ -3175,6 +3204,7 @@ function paneLogMasuk(ak){
   bd.appendChild(bawah);
   p.appendChild(bd);
   ak.appendChild(p);
+  if(mod!=="lupa") ak.appendChild(kadDemo());
 }
 
 function paneKataBaru(ak){
@@ -3401,6 +3431,18 @@ function renderKelasGuru(){
   $("guruTajuk").textContent=k.nama;
   $("guruEyebrow").textContent=(k.contoh?"Kelas contoh · ":"")+"Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
   $("guruKod").textContent=k.contoh?"DEMO":k.kod;
+  $("btnKembali").innerHTML=(k.contoh&&!SESI)?"&larr; Kembali ke log masuk":"&larr; Semua kelas saya";
+  var dj=$("demoJalur"); dj.innerHTML=""; dj.classList.toggle("hidden",!k.contoh);
+  if(k.contoh){
+    dj.appendChild(el("p",null,"Kelas contoh dengan 6 murid rekaan. Beginilah rupa keputusan apabila murid anda bermain."));
+    var bm=el("button","btn ghost sm"); bm.type="button"; bm.textContent="Cuba sebagai murid"; bm.onclick=cubaSebagaiMurid;
+    dj.appendChild(bm);
+    if(!SESI){
+      var bd=el("button","btn sm"); bd.type="button"; bd.textContent="Daftar percuma";
+      bd.onclick=function(){ DEMO_GURU=false; S.gk=null; S.authMod="daftar"; renderCikgu(); window.scrollTo({top:0}); };
+      dj.appendChild(bd);
+    }
+  }
   var tab=S.tabCikgu;
   TAB_GURU.forEach(function(x){
     $(x[0]).setAttribute("aria-selected",tab===x[1]?"true":"false");
@@ -4250,7 +4292,7 @@ TAB_GURU.forEach(function(x){
   $(x[0]).onclick=function(){ S.tabCikgu=x[1]; S.muridPilih=null; renderCikgu(); };
 });
 $("btnKembali").onclick=function(){
-  S.gk=null; S.muridPilih=null; renderCikgu(); window.scrollTo({top:0});
+  S.gk=null; S.muridPilih=null; DEMO_GURU=false; renderCikgu(); window.scrollTo({top:0});
   /* rekod mungkin berubah semasa guru melihat satu kelas */
   if(SESI&&PROFIL&&PROFIL.ada) muatGuru().then(segarGuru).catch(function(){});
 };
@@ -4281,10 +4323,12 @@ function mula(){
 
   /* ?k=KOD daripada pautan cikgu; ?code=... daripada log masuk Google atau
      pautan tetapan semula kata laluan */
-  var qk=null, authUrl=false, modLama=null;
+  var qk=null, authUrl=false, modLama=null, qdemo=null;
   try{
     var u=new URL(location.href);
     qk=u.searchParams.get("k");
+    qdemo=u.searchParams.get("demo");
+    if(qdemo){ u.searchParams.delete("demo"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
     authUrl=u.searchParams.has("code")||u.searchParams.has("error_description")||/access_token|error_description/.test(u.hash);
     if(qk){ u.searchParams.delete("k"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
   }catch(e){}
@@ -4307,10 +4351,14 @@ function mula(){
     } else if(!S.no){ S.latihan=false; S.skrin="nama"; }
   }
 
+  if(qdemo==="murid"&&!qk&&!authUrl){ S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); }
+
   render();
   lukisTalian();
   muatJauh();
-  if(authUrl||(modLama==="cikgu"&&!qk)) tukarMod("cikgu");
+  if(qdemo==="cikgu"&&!qk&&!authUrl){ DEMO_GURU=true; S.gk="contoh"; S.tabCikgu="kelas"; tukarMod("cikgu"); }
+  else if(qdemo==="murid"&&!qk&&!authUrl) tukarMod("murid");
+  else if(authUrl||(modLama==="cikgu"&&!qk)) tukarMod("cikgu");
 }
 mula();
 
