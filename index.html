@@ -78,6 +78,20 @@ p{margin:0}
 :focus-visible{outline:2px solid var(--arteri);outline-offset:3px;border-radius:8px}
 .hidden{display:none !important}
 .shell{max-width:940px;margin:0 auto;padding-inline:16px;padding-block:0 60px}
+/* Jenama payung NaikGred — sokongan sahaja, tidak menggantikan jenama produk. */
+.jenama-kaki{--ng1:#86CEBD;--ng2:#0C6B5E;--ng3:#F0A62F;--ngN:#0C6B5E;--ngG:#E09517;
+  display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;
+  margin-top:36px;padding-block:18px 2px;border-top:1px solid var(--line);
+  color:var(--ink3);font-size:12px;line-height:1.5}
+.jenama-kaki svg{width:18px;height:18px;flex:none;display:block}
+.jenama-kaki .ngw{font-family:"Bricolage Grotesque",sans-serif;letter-spacing:-.015em;font-size:13px}
+.jenama-kaki .ngw i{font-style:normal;font-weight:600;color:var(--ngN)}
+.jenama-kaki .ngw b{font-weight:800;color:var(--ngG)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .jenama-kaki{--ng1:#2F8874;--ng2:#7ED3BF;--ng3:#FFC24D;--ngN:#7ED3BF;--ngG:#FFC24D}
+}
+:root[data-theme="dark"] .jenama-kaki{--ng1:#2F8874;--ng2:#7ED3BF;--ng3:#FFC24D;--ngN:#7ED3BF;--ngG:#FFC24D}
+@media print{.jenama-kaki{display:none}}
 
 /* ---------- bar atas ---------- */
 .topbar{position:sticky;top:0;z-index:40;background:var(--ground);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
@@ -989,6 +1003,15 @@ body.zon-murid{color:var(--tinta)}
       </div>
     </div>
   </main>
+
+  <footer class="jenama-kaki">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <rect x="6" y="38" width="12" height="18" rx="4.5" fill="var(--ng1)"></rect>
+      <rect x="22" y="27" width="12" height="29" rx="4.5" fill="var(--ng2)"></rect>
+      <path d="M38 20 L32.6 20 Q30 20 31.6 18 L41.8 6 Q44 3.4 46.2 6 L56.4 18 Q58 20 55.4 20 L50 20 L50 51.5 Q50 56 45.5 56 L42.5 56 Q38 56 38 51.5 Z" fill="var(--ng3)"></path>
+    </svg>
+    <span>Sebuah produk <span class="ngw"><i>Naik</i><b>Gred</b></span></span>
+  </footer>
 </div>
 
 <script>
