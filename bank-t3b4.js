@@ -566,12 +566,12 @@ window.BANK["t3b4"] =
      "t": "Berdasarkan jadual, apakah bukti paling kukuh bahawa lombong menjejaskan sungai?",
      "p": [
       "Stesen D mempunyai 12 spesies ikan, iaitu kurang daripada 15",
-      "Stesen A mempunyai pH 6.9 yang hampir neutral",
-      "Semua stesen mempunyai sekurang-kurangnya tiga spesies ikan",
-      "Stesen B jauh lebih keruh dan berasid berbanding Stesen A"
+      "Stesen C lebih keruh daripada Stesen D di hilir",
+      "Kekeruhan berkurang secara beransur dari Stesen B ke Stesen D",
+      "Stesen B jauh lebih keruh dan berasid berbanding Stesen A di hulu"
      ],
      "b": 3,
-     "u": "Stesen A di hulu menjadi kawalan. Perubahan besar di alur keluar lombong menunjukkan puncanya."
+     "u": "Stesen A di hulu menjadi kawalan. Perubahan besar tepat di alur keluar lombong menunjukkan punca pencemaran."
     },
     {
      "j": "pilih",
@@ -580,22 +580,22 @@ window.BANK["t3b4"] =
       "Tidak tepat, kerana Stesen D masih lebih keruh dan kurang ikan daripada A",
       "Tepat, kerana kekeruhan Stesen D jauh lebih rendah daripada Stesen B",
       "Tepat, kerana pH Stesen D sudah melebihi 6.5 seperti air biasa",
-      "Tidak tepat, kerana sungai tidak pernah pulih selepas dicemari"
+      "Tidak tepat, kerana pH Stesen D lebih berasid daripada Stesen B"
      ],
      "b": 0,
-     "u": "Pulih sepenuhnya bermakna kembali seperti keadaan kawalan di Stesen A."
+     "u": "Pulih sepenuhnya bermakna kembali seperti Stesen A. pH 6.7 kurang berasid daripada 5.2, bukan lebih berasid."
     },
     {
      "j": "pilih",
      "t": "Pihak berkuasa hanya mampu melaksanakan SATU langkah segera. Pilihan paling wajar?",
      "p": [
-      "Pasang papan tanda larangan memancing di sepanjang sungai itu",
-      "Bina kolam takungan supaya lumpur mendap sebelum ke sungai",
       "Lepaskan benih ikan baharu di Stesen B setiap bulan",
-      "Pindahkan semua penduduk kampung yang tinggal di hilir sungai"
+      "Bina kolam takungan supaya lumpur mendap",
+      "Tambah kapur terus ke dalam sungai di Stesen D",
+      "Pasang papan tanda larangan memancing di sepanjang sungai"
      ],
      "b": 1,
-     "u": "Langkah yang menyerang punca pencemaran lebih berkesan daripada merawat kesannya."
+     "u": "Kolam takungan menyerang punca di alur keluar. Kapur di Stesen D tidak mengurangkan kekeruhan dan diletakkan jauh dari punca."
     },
     {
      "j": "pilih",
@@ -607,31 +607,31 @@ window.BANK["t3b4"] =
       "Kurang wajar, kerana batu kapur ialah sumber utama besi dalam relau"
      ],
      "b": 2,
-     "u": "Batu kapur terurai kepada kalsium oksida yang bergabung dengan pasir membentuk sanga. Tanpanya, besi yang terhasil bercampur bendasing."
+     "u": "Batu kapur terurai kepada kalsium oksida yang bergabung dengan pasir membentuk sanga. Besi datang daripada bijih besi, bukan batu kapur."
     },
     {
      "j": "pilih",
      "t": "Dua kaedah pengekstrakan aluminium dicadangkan: (P) panaskan bauksit dengan karbon, (Q) elektrolisis. Keputusan paling wajar?",
      "p": [
       "P, kerana pemanasan dengan karbon lebih murah daripada elektrolisis",
-      "P, kerana aluminium berada di bawah karbon dalam siri",
-      "Q, kerana elektrolisis tidak menggunakan sebarang tenaga",
+      "P, kerana aluminium berada di bawah karbon dalam siri kereaktifan",
+      "Q, kerana elektrolisis menggunakan kurang tenaga daripada pemanasan",
       "Q, kerana karbon tidak dapat menurunkan aluminium oksida"
      ],
      "b": 3,
-     "u": "Kaedah yang murah tidak berguna jika ia tidak berfungsi. Elektrolisis menggunakan banyak tenaga elektrik."
+     "u": "Aluminium lebih reaktif daripada karbon. Elektrolisis sebenarnya menggunakan banyak tenaga elektrik, tetapi hanya kaedah itu yang berfungsi."
     },
     {
      "j": "pilih",
      "t": "Bekas lombong timah di Lembah Klang telah dijadikan tasik rekreasi dan tanah lembap. Apakah kelebihan utama pendekatan ini?",
      "p": [
-      "Tanah yang rosak diberi kegunaan baharu yang bermanfaat",
-      "Kerajaan tidak perlu lagi mengawal perlombongan baharu",
-      "Bijih timah yang tinggal dapat terus dilombong di tasik",
-      "Air tasik bekas lombong sentiasa selamat untuk diminum"
+      "Tanah yang rosak diberi kegunaan baharu dan menjadi habitat",
+      "Bijih timah yang tinggal boleh terus dilombong dari dasar tasik",
+      "Air tasik bekas lombong sesuai terus diminum kerana ia air hujan",
+      "Kolam lombong tidak lagi perlu diuji untuk kandungan logam berat"
      ],
      "b": 0,
-     "u": "Pemulihan menjadikan kawasan terbiar sebagai habitat dan tempat rekreasi, tetapi air bekas lombong masih perlu diuji."
+     "u": "Pemulihan memberi manfaat baharu, tetapi air bekas lombong masih perlu diuji kerana logam berat boleh kekal di dasar."
     },
     {
      "j": "banyak",
@@ -641,39 +641,39 @@ window.BANK["t3b4"] =
       "Pelan pemulihan tanah selepas perlombongan tamat",
       "Kawalan habuk semasa bijih diangkut dengan lori",
       "Pampasan dibayar hanya selepas penduduk mengadu",
-      "Perlombongan di tebing sungai untuk memudahkan angkutan"
+      "Stok bijih disimpan terbuka di tebing sungai"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Pencemaran habuk bauksit di Kuantan pada 2015 menunjukkan akibat apabila kawalan ini diabaikan."
+     "u": "Pencemaran habuk bauksit di Kuantan pada 2015 menunjukkan akibat apabila kawalan ini diabaikan. Stok terbuka di tebing sungai dihanyutkan hujan ke dalam air."
     },
     {
      "j": "pilih",
-     "t": "Mengitar semula tin aluminium menggunakan jauh kurang tenaga berbanding mengekstrak aluminium baharu. Keputusan paling wajar bagi kantin sekolah?",
+     "t": "Mengitar semula aluminium hanya memerlukan kira-kira 5% tenaga pengekstrakan baharu. Mengapakah perbezaannya begitu besar?",
      "p": [
-      "Buang tin bersama sampah lain kerana aluminium tidak boleh dikitar semula",
-      "Sediakan tong khas untuk tin aluminium dan hantar ke pusat kitar semula",
-      "Bakar tin aluminium supaya isi padu sampah menjadi lebih kecil",
-      "Tanam tin di belakang sekolah kerana aluminium mudah reput"
+      "Tin aluminium lebih reaktif daripada bauksit, jadi ia melebur tanpa haba",
+      "Aluminium terpakai sudah berbentuk logam, jadi elektrolisis tidak diperlukan",
+      "Kitar semula menggunakan karbon, yang jauh lebih murah daripada elektrik",
+      "Tin terpakai tidak perlu dileburkan, cuma dipotong dan dibentuk semula"
      ],
      "b": 1,
-     "u": "Kitar semula menjimatkan tenaga dan mengurangkan keperluan melombong bauksit baharu."
+     "u": "Tenaga paling banyak digunakan untuk memisahkan aluminium daripada oksigen melalui elektrolisis. Tin terpakai masih perlu dileburkan, tetapi itu jauh lebih murah."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Sebuah kampung perlu memutuskan sama ada membenarkan lombong bauksit yang membuka 200 peluang pekerjaan, sedangkan sungai berhampiran ialah sumber air minum. Keputusan paling wajar?",
     "p": [
-     "Benarkan tanpa syarat kerana peluang pekerjaan lebih penting",
-     "Tolak kerana perlombongan tidak pernah membawa sebarang manfaat",
+     "Benarkan tanpa syarat kerana 200 pekerjaan lebih penting",
+     "Benarkan, kerana bauksit tidak larut dan tidak menjejaskan sungai",
      "Benarkan hanya jika kawalan pencemaran dan pemulihan dikuatkuasakan",
-     "Tangguhkan keputusan sehingga sungai itu tercemar dahulu"
+     "Tolak, kerana semua lombong menjadikan air sungai radioaktif"
     ],
     "b": 2,
-    "u": "Keputusan yang baik menimbang manfaat ekonomi dan keselamatan air, dan meletakkan syarat yang boleh dipantau."
+    "u": "Bauksit yang tidak larut tetap menjadikan sungai keruh dan mengubah pH. Keputusan yang baik menimbang ekonomi dengan keselamatan air melalui syarat yang boleh dipantau."
    }
   },
   {
@@ -692,82 +692,82 @@ window.BANK["t3b4"] =
      "j": "pilih",
      "t": "Awak mereka bentuk pelan memulihkan tanah bekas lombong di kampung awak. Langkah pertama paling penting?",
      "p": [
-      "Tanam pokok buah-buahan terus tanpa sebarang ujian",
-      "Timbus semua kolam lombong dengan sampah domestik",
-      "Bina rumah di atasnya kerana tanahnya sudah rata",
-      "Uji tanah dan air untuk mengetahui keadaan sebenarnya"
+      "Tanam pokok buah-buahan segera kerana akar mengikat tanah",
+      "Tabur baja kimia sebanyak mungkin untuk menyuburkan pasir",
+      "Timbus kolam dengan tanah liat supaya air tidak bertakung",
+      "Uji pH tanah dan kandungan logam berat"
      ],
      "b": 3,
-     "u": "Pelan yang baik bermula dengan data tentang masalah sebenar."
+     "u": "Pelan yang baik bermula dengan data. Buah daripada tanah yang mengandungi logam berat mungkin tidak selamat dimakan."
     },
     {
      "j": "pilih",
      "t": "Ujian menunjukkan tanah bekas lombong itu berasid. Bahan manakah paling sesuai ditambah sebelum menanam?",
      "p": [
       "Kapur pertanian",
-      "Garam dapur halus",
-      "Cuka beras",
-      "Serbuk zink"
+      "Serbuk sulfur",
+      "Baja ammonium sulfat",
+      "Pasir sungai"
      ],
      "b": 0,
-     "u": "Kapur bersifat bes dan meneutralkan tanah berasid."
+     "u": "Kapur bersifat bes dan meneutralkan tanah berasid. Sulfur dan ammonium sulfat menambah lagi keasidan tanah."
     },
     {
      "j": "pilih",
      "t": "Kolam bekas lombong mahu dijadikan tempat ternakan ikan. Syarat paling penting sebelum ia dimulakan?",
      "p": [
-      "Tebing kolam dicat supaya lebih menarik",
+      "Air kolam dijernihkan supaya ikan mudah dilihat",
       "Air kolam diuji bebas daripada logam berat",
-      "Ikan dibeli dalam jumlah paling banyak",
-      "Pagar tinggi dibina di sekeliling kolam"
+      "Spesies ikan yang dipilih tahan air berasid",
+      "Kolam didalamkan supaya airnya lebih sejuk"
      ],
      "b": 1,
-     "u": "Logam berat dalam air boleh terkumpul dalam ikan dan akhirnya dalam badan orang yang memakannya."
+     "u": "Logam berat terkumpul dalam badan ikan dan akhirnya dalam badan orang yang memakannya. Ikan yang tahan asid tetap boleh mengumpul logam berat."
     },
     {
      "j": "pilih",
-     "t": "Bajet projek pemulihan hanya RM500, tetapi anak pokok hutan berharga RM15 sebatang. Cara paling kreatif?",
+     "t": "Tanah bekas lombong berpasir, miskin nutrien dan cepat kering. Tanaman perintis paling sesuai?",
      "p": [
-      "Tanam lima pokok sahaja dan biarkan selebihnya kosong",
-      "Tangguhkan projek sehingga bajet mencukupi sepenuhnya",
-      "Semai benih pokok tempatan bersama murid dan penduduk",
-      "Beli pokok plastik supaya kawasan itu kelihatan hijau"
+      "Sayur-sayuran berdaun lebar kerana ia cepat membesar",
+      "Padi sawah kerana tanah bekas lombong sentiasa berair",
+      "Pokok kekacang tahan kering yang menambah nitrogen tanah",
+      "Pokok hiasan import yang biasa ditanam di taman bandar"
      ],
      "b": 2,
-     "u": "Menyemai sendiri menjimatkan kos dan melibatkan masyarakat."
+     "u": "Pokok kekacang seperti akasia hidup dalam tanah miskin dan menyuburkannya, lalu memudahkan spesies lain tumbuh kemudian."
     },
     {
      "j": "pilih",
      "t": "Awak mahu membuktikan pelan pemulihan berjaya selepas setahun. Bukti paling meyakinkan?",
      "p": [
-      "Tanya penduduk sama ada kawasan itu kelihatan lebih cantik",
-      "Kira gambar kawasan itu yang dikongsi di media sosial",
       "Ukur ketinggian satu pokok yang paling cepat membesar",
+      "Tanya penduduk sama ada kawasan itu kelihatan lebih hijau",
+      "Kira bilangan anak pokok yang ditanam pada hari pertama",
       "Bandingkan bilangan spesies dan kualiti air sebelum dan selepas"
      ],
      "b": 3,
-     "u": "Ukuran sebelum dan selepas memberikan bukti yang boleh dibandingkan."
+     "u": "Ukuran yang sama sebelum dan selepas memberi bukti yang boleh dibandingkan. Satu pokok terbaik tidak mewakili seluruh kawasan."
     },
     {
      "j": "pilih",
-     "t": "Sebuah syarikat lombong menawarkan dana tetapi mahu logonya dipaparkan besar di papan tanda projek. Keputusan paling wajar?",
+     "t": "Tebing tasik bekas lombong kerap runtuh. Reka bentuk paling berkesan?",
      "p": [
-      "Terima dengan syarat projek tetap mengikut pelan komuniti",
-      "Tolak terus kerana semua syarikat lombong merosakkan alam",
-      "Terima dan ubah pelan mengikut kehendak syarikat itu",
-      "Terima tanpa memaklumkan penduduk kampung"
+      "Tanam rumput vetiver yang berakar dalam",
+      "Siram tebing setiap hari supaya tanahnya lebih padat",
+      "Buang semua tumbuhan di tebing supaya air mengalir lancar",
+      "Tabur kapur di tebing kerana kapur mengeras seperti simen"
      ],
      "b": 0,
-     "u": "Dana luar boleh membantu selagi keputusan projek kekal di tangan masyarakat."
+     "u": "Akar yang dalam dan rapat mengikat tanah. Tanah yang sentiasa basah lebih mudah runtuh, bukan lebih padat."
     },
     {
      "j": "pilih",
-     "t": "Awak mereka cipta alat mudah untuk memisahkan bijih timah daripada pasir, seperti mendulang. Prinsip sains yang digunakan?",
+     "t": "Awak mereka dulang untuk memisahkan bijih timah daripada pasir. Prinsip sains yang digunakan?",
      "p": [
       "Bijih timah lebih ringan, jadi ia terapung di atas air",
-      "Bijih timah lebih tumpat, jadi ia mendap lebih cepat",
-      "Bijih timah bermagnet kuat, jadi ia melekat pada dulang",
-      "Bijih timah larut dalam air, jadi pasir tertinggal"
+      "Bijih timah lebih tumpat, jadi ia mendap dahulu",
+      "Bijih timah bermagnet, jadi ia melekat pada dasar dulang",
+      "Bijih timah larut dalam air, jadi pasir yang tertinggal dibuang"
      ],
      "b": 1,
      "u": "Kasiterit jauh lebih tumpat daripada pasir, jadi air yang digoncang membawa pasir pergi dahulu."
@@ -776,10 +776,10 @@ window.BANK["t3b4"] =
      "j": "pilih",
      "t": "Masyarakat Orang Asli bergantung pada sungai berhampiran kawasan yang ingin dipulihkan. Pendekatan paling wajar?",
      "p": [
-      "Laksanakan pelan tanpa berbincang kerana pakar lebih tahu",
       "Minta mereka berpindah sementara projek dijalankan",
-      "Libatkan mereka dan gunakan pengetahuan tempatan mereka",
-      "Larang mereka menggunakan sungai itu buat selama-lamanya"
+      "Laksanakan pelan pakar dahulu, kemudian maklumkan hasilnya",
+      "Libatkan mereka dan gunakan pengetahuan tempatan tentang tumbuhan dan air",
+      "Beri pampasan wang supaya mereka berhenti menggunakan sungai"
      ],
      "b": 2,
      "u": "Masyarakat yang paling lama mengenali kawasan itu selalunya tahu tumbuhan dan corak air yang sesuai."

@@ -87,13 +87,16 @@ function semak(bab){
    - jawapan betul ialah pilihan paling panjang dalam <= 35% soalan satu
      jawapan (peluang rawak bagi empat pilihan ialah 25%)
    - purata panjang jawapan betul <= 1.20 kali purata pengganggu
+   - jawapan betul ialah pilihan paling pendek dalam 10% hingga 35% soalan satu
+     jawapan. Jika jawapan betul hampir tidak pernah paling pendek, murid
+     boleh membuang pilihan terpendek tanpa membaca soalan.
    Had setiap soalan:
    - jawapan betul tidak boleh melebihi 1.5 kali pengganggu terpanjang
    - bagi soalan pelbagai jawapan, purata pilihan betul <= 1.3 kali
      purata pilihan salah */
 function semakPetunjuk(bab, butiran){
   const m = [];
-  let n = 0, terpanjang = 0, nisbahJumlah = 0;
+  let n = 0, terpanjang = 0, terpendek = 0, nisbahJumlah = 0;
   bab.aras.forEach(a => {
     a.soalan.concat([a.bos]).forEach((q, k) => {
       const id = `H${a.n} item ${k+1}`;
@@ -104,6 +107,7 @@ function semakPetunjuk(bab, butiran){
         const purataLain = lain.reduce((x, y) => x + y, 0) / lain.length;
         n++;
         if(betul > Math.max(...lain)) terpanjang++;
+        if(betul < Math.min(...lain)) terpendek++;
         nisbahJumlah += betul / purataLain;
         /* pilihan sangat pendek seperti "AB" lawan "O" tidak membawa petunjuk */
         if(Math.max(...lain) >= 15 && betul > 1.5 * Math.max(...lain))
@@ -120,7 +124,10 @@ function semakPetunjuk(bab, butiran){
   const purataNisbah = n ? nisbahJumlah / n : 0;
   if(peratus > 0.35) m.push(`jawapan betul paling panjang dalam ${Math.round(100*peratus)}% soalan satu jawapan (had 35%)`);
   if(purataNisbah > 1.20) m.push(`purata panjang jawapan betul ${purataNisbah.toFixed(2)} kali pengganggu (had 1.20)`);
-  return { masalah: m, peratus, purataNisbah };
+  const pendek = n ? terpendek / n : 0;
+  if(pendek < 0.10) m.push(`jawapan betul paling pendek dalam ${Math.round(100*pendek)}% soalan satu jawapan sahaja (had minimum 10%)`);
+  if(pendek > 0.35) m.push(`jawapan betul paling pendek dalam ${Math.round(100*pendek)}% soalan satu jawapan (had 35%)`);
+  return { masalah: m, peratus, pendek, purataNisbah };
 }
 
 /* Kedudukan jawapan dipusing merentas keseluruhan bab supaya fail sumber

@@ -529,13 +529,13 @@ window.BANK["t3b7"] =
      "j": "pilih",
      "t": "Berdasarkan jadual, motor manakah paling cekap?",
      "p": [
-      "Motor Q",
+      "Motor R, kerana ia paling laju mengangkat beban",
       "Motor P",
-      "Motor R",
-      "Semua sama cekap"
+      "Motor Q, kerana ia menggunakan tenaga paling banyak",
+      "Semua sama cekap kerana kerja bergunanya sama"
      ],
      "b": 1,
-     "u": "P: 20 000 ÷ 25 000 = 80%. R: kira-kira 77%. Q: 50%."
+     "u": "P: 20 000 ÷ 25 000 = 80%. R: kira-kira 77%. Q: 50%. Kecekapan bergantung pada tenaga yang digunakan, bukan kelajuan."
     },
     {
      "j": "nombor",
@@ -549,37 +549,37 @@ window.BANK["t3b7"] =
      "j": "pilih",
      "t": "Nilaikan dakwaan: \"Motor R paling baik kerana paling berkuasa.\"",
      "p": [
-      "Tepat, kerana kuasa ialah satu-satunya ukuran penting",
-      "Tepat, kerana motor paling mahal sentiasa paling baik",
+      "Tepat, kerana kuasa yang tinggi bermakna kecekapan yang tinggi",
+      "Tepat, kerana Motor R menggunakan tenaga paling sedikit",
       "Belum tentu, kerana harga dan kecekapan juga perlu dinilai",
       "Salah, kerana Motor R paling lambat mengangkat beban"
      ],
      "b": 2,
-     "u": "Motor terbaik bergantung pada keperluan pengguna."
+     "u": "Motor R paling laju, tetapi Motor P menggunakan tenaga lebih sedikit. Kuasa dan kecekapan ialah dua ukuran berbeza."
     },
     {
      "j": "pilih",
      "t": "Sebuah bengkel kecil mengangkat beban beberapa kali sehari dan mahu menjimatkan bil elektrik. Pilihan paling wajar?",
      "p": [
-      "Motor Q, kerana harganya paling murah di pasaran",
-      "Motor R, kerana paling laju",
-      "Motor Q, kerana ia paling berkuasa",
+      "Motor Q, kerana harga belinya paling murah",
+      "Motor R, kerana kuasa tinggi menjimatkan elektrik",
+      "Motor Q, kerana ia paling cepat menyiapkan kerja",
       "Motor P, kerana paling cekap walaupun perlahan"
      ],
      "b": 3,
-     "u": "Kelajuan tidak penting bagi bengkel kecil, tetapi tenaga yang dibazirkan dibayar setiap hari."
+     "u": "Kelajuan kurang penting bagi bengkel kecil, tetapi tenaga yang dibazirkan dibayar setiap hari. Motor R lebih cepat daripada Q."
     },
     {
      "j": "pilih",
      "t": "Sebuah pelabuhan sibuk perlu mengangkat beban secepat mungkin sepanjang hari. Pilihan paling wajar?",
      "p": [
       "Motor R, kerana laju dan masih agak cekap",
-      "Motor P, kerana paling murah dikendalikan",
-      "Motor Q, kerana paling murah dibeli",
-      "Tiada, kerana semua motor terlalu perlahan"
+      "Motor P, kerana paling cekap walaupun paling perlahan",
+      "Motor Q, kerana harga belinya paling murah",
+      "Motor Q, kerana kuasa outputnya paling tinggi"
      ],
      "b": 0,
-     "u": "Masa sangat bernilai di pelabuhan, dan Motor R hanya sedikit kurang cekap daripada P."
+     "u": "Kuasa output Q ialah 20 000 J ÷ 25 s = 800 W, manakala R ialah 1000 W. Masa sangat bernilai di pelabuhan."
     },
     {
      "j": "pilih",
@@ -587,53 +587,53 @@ window.BANK["t3b7"] =
      "p": [
       "Tenaga keupayaan kenyal",
       "Haba dan bunyi",
-      "Tenaga kimia",
-      "Cahaya"
+      "Tenaga keupayaan graviti tambahan pada beban",
+      "Tenaga kimia yang disimpan semula dalam motor"
      ],
      "b": 1,
-     "u": "Motor yang kurang cekap menjadi panas dan bising."
+     "u": "Tenaga keupayaan graviti beban sudah dikira sebagai kerja berguna. Motor yang kurang cekap menjadi panas dan bising."
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA langkah yang wajar untuk mengurangkan tenaga yang dibazirkan oleh motor.",
+     "t": "Pilih SEMUA langkah yang benar-benar mengurangkan tenaga yang dibazirkan oleh motor.",
      "p": [
       "Minyakkan bahagian yang bergerak",
       "Selenggara motor secara berkala",
       "Pilih motor yang lebih cekap",
-      "Biarkan motor hidup walaupun tidak digunakan",
-      "Tambah beban melebihi had motor"
+      "Guna motor lebih berkuasa untuk beban yang sama",
+      "Angkat beban lebih cepat supaya kerja berkurang"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Geseran dan beban berlebihan menambah tenaga yang menjadi haba."
+     "u": "Kerja mengangkat beban ialah mgh, sama walau cepat atau perlahan. Motor yang lebih berkuasa belum tentu lebih cekap."
     },
     {
      "j": "pilih",
      "t": "Seorang murid mendakwa kereta mainan berspring lebih mesra alam daripada kereta mainan berbateri. Nilaikan dakwaan itu.",
      "p": [
-      "Salah, kerana spring mencipta tenaga daripada tiada",
-      "Salah, kerana kereta berspring langsung tidak mempunyai sebarang tenaga",
-      "Munasabah, kerana tenaganya daripada tangan dan tiada sisa bateri",
-      "Munasabah, kerana spring tidak pernah haus atau rosak"
+      "Salah, kerana spring mencipta tenaga baharu setiap kali ia dililit",
+      "Munasabah, kerana spring menukar semua tenaganya kepada tenaga kinetik",
+      "Munasabah, kerana tenaganya daripada kerja tangan dan tiada sisa bateri",
+      "Salah, kerana tenaga kenyal lebih mencemarkan daripada tenaga kimia"
      ],
      "b": 2,
-     "u": "Spring hanya menyimpan tenaga daripada kerja tangan, dan tidak menghasilkan sisa bateri."
+     "u": "Spring hanya menyimpan tenaga daripada kerja tangan; ia tidak mencipta tenaga. Sebahagian tenaga tetap menjadi haba akibat geseran."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Pengurus taman air memilih antara gelongsor X setinggi 12 m dan gelongsor Y setinggi 6 m. Pengunjung termasuk kanak-kanak kecil. Keputusan paling wajar?",
     "p": [
-     "Bina X sahaja kerana lebih seronok untuk semua",
-     "Bina Y sahaja kerana gelongsor tinggi tidak berguna",
-     "Bina X tanpa sekatan kerana air menghilangkan semua laju",
-     "Bina Y untuk kanak-kanak dan hadkan X kepada pengunjung dewasa"
+     "X sahaja kerana laju di bawah tidak bergantung pada ketinggian",
+     "X untuk kanak-kanak kerana badan yang ringan menggelongsor lebih perlahan",
+     "Y sahaja kerana air menghapuskan semua tenaga kinetik",
+     "Y untuk kanak-kanak, X dihadkan kepada dewasa"
     ],
     "b": 3,
-    "u": "Gelongsor lebih tinggi memberi lebih banyak tenaga kinetik di bawah, jadi laju lebih tinggi dan lebih berisiko bagi kanak-kanak."
+    "u": "Daripada mgh = ½mv², laju di bawah bergantung pada ketinggian, bukan jisim. Gelongsor lebih tinggi memberi laju lebih tinggi."
    }
   },
   {
@@ -653,36 +653,36 @@ window.BANK["t3b7"] =
      "t": "Awak mereka kereta mainan berspring untuk pertandingan jarak. Ciri paling penting untuk menambah jarak?",
      "p": [
       "Spring yang menyimpan lebih tenaga dan roda yang licin",
-      "Badan kereta seberat mungkin supaya lebih stabil di atas trek",
-      "Roda bergetah tebal yang banyak geseran",
-      "Warna terang supaya kelihatan laju"
+      "Badan seberat mungkin supaya tenaga kinetiknya lebih besar",
+      "Roda bergetah tebal supaya cengkaman pada trek lebih kuat",
+      "Spring yang sangat lembut supaya ia mudah dililit"
      ],
      "b": 0,
-     "u": "Lebih banyak tenaga kenyal dan kurang geseran bermakna lebih banyak tenaga kinetik untuk bergerak."
+     "u": "Tenaga kinetik datang daripada tenaga kenyal spring. Badan yang berat dan roda bergetah tebal menambah geseran, dan spring lembut menyimpan kurang tenaga."
     },
     {
      "j": "pilih",
      "t": "Awak mereka buaian untuk taman permainan. Ciri keselamatan paling penting?",
      "p": [
-      "Buaian dibina setinggi mungkin supaya lebih seronok dimainkan",
+      "Lantai simen licin supaya kanak-kanak tidak tersadung",
       "Lantai lembut di bawah buaian untuk menyerap hentaman",
-      "Lantai simen supaya mudah dibersihkan",
-      "Tali nipis supaya buaian lebih ringan"
+      "Tali buaian lebih panjang supaya ayunan lebih perlahan",
+      "Tempat duduk lebih berat supaya buaian lebih stabil"
      ],
      "b": 1,
-     "u": "Lantai lembut memanjangkan masa hentaman dan mengurangkan kecederaan."
+     "u": "Lantai lembut memanjangkan masa hentaman dan mengurangkan kecederaan. Laju di titik terendah bergantung pada ketinggian ayunan, bukan panjang tali."
     },
     {
      "j": "pilih",
      "t": "Awak mahu menjana elektrik daripada basikal senaman di sekolah. Idea paling praktikal?",
      "p": [
-      "Pasang panel suria kecil pada tempat duduk setiap basikal",
-      "Sambung basikal terus kepada soket dinding",
+      "Pasang bateri pada roda supaya ia mengecas sendiri semasa berputar",
+      "Sambung basikal terus kepada soket dinding sekolah",
       "Sambung roda kepada generator kecil untuk mengecas lampu",
-      "Guna basikal tanpa rantai supaya lebih ringan"
+      "Pasang panel suria kecil pada tempat duduk basikal"
      ],
      "b": 2,
-     "u": "Generator menukar tenaga kinetik roda kepada tenaga elektrik."
+     "u": "Generator menukar tenaga kinetik roda kepada tenaga elektrik. Bateri yang berputar tidak mengecas dirinya sendiri."
     },
     {
      "j": "nombor",
@@ -694,51 +694,51 @@ window.BANK["t3b7"] =
     },
     {
      "j": "pilih",
-     "t": "Bajet sekolah terhad untuk membina gelongsor. Cara paling kreatif?",
+     "t": "Awak mereka gelongsor supaya kanak-kanak tidak terlalu laju di bawah. Pengubahsuaian paling berkesan?",
      "p": [
-      "Bina menara besi setinggi 20 m",
-      "Beli gelongsor import paling mahal",
-      "Batalkan projek taman permainan",
-      "Guna cerun bukit sedia ada"
+      "Panjangkan gelongsor tetapi kekalkan ketinggian yang sama",
+      "Gunakan permukaan gelongsor yang lebih licin",
+      "Alirkan air pada gelongsor supaya geseran bertambah",
+      "Kurangkan ketinggian permulaan"
      ],
      "b": 3,
-     "u": "Cerun semula jadi sudah menyediakan ketinggian dan tenaga keupayaan secara percuma."
+     "u": "Tenaga keupayaan mgh ditentukan oleh ketinggian. Gelongsor yang lebih panjang dari ketinggian sama tetap memberi laju yang hampir sama, dan air mengurangkan geseran."
     },
     {
      "j": "pilih",
      "t": "Bagaimanakah awak menguji sama ada pelancar bola kertas rekaan awak lebih baik daripada rekaan rakan?",
      "p": [
-      "Lancar kedua-duanya berulang kali dengan bola sama",
-      "Lancar sekali sahaja dan pilih yang kelihatan kuat",
-      "Tanya guru rekaan mana yang lebih cantik",
-      "Guna bola berbeza bagi setiap rekaan"
+      "Lancar kedua-duanya berulang kali dengan bola yang sama",
+      "Lancar sekali sahaja dan pilih yang pergi paling jauh",
+      "Guna bola lebih ringan bagi rekaan yang kelihatan lemah",
+      "Lancar rekaan awak di dalam dewan dan rekaan rakan di luar"
      ],
      "b": 0,
-     "u": "Ulangan dan bola yang sama menjadikan perbandingan adil."
+     "u": "Ulangan dan bola yang sama menjadikan perbandingan adil. Angin di luar menambah pemboleh ubah yang tidak dikawal."
     },
     {
      "j": "pilih",
      "t": "Taman permainan awak turut digunakan oleh kanak-kanak kurang upaya. Pertimbangan paling wajar?",
      "p": [
-      "Bina semua permainan setinggi mungkin",
+      "Bina semua permainan lebih tinggi supaya lebih menarik",
       "Sediakan permainan yang boleh dicapai dengan kerusi roda",
-      "Sediakan permainan untuk kanak-kanak biasa sahaja seperti sebelum ini",
-      "Letakkan tangga curam di setiap pintu masuk"
+      "Kekalkan permainan sama seperti taman biasa",
+      "Letakkan permainan khas di sudut yang berasingan"
      ],
      "b": 1,
-     "u": "Reka bentuk yang baik boleh digunakan oleh semua anggota masyarakat."
+     "u": "Reka bentuk yang baik boleh digunakan bersama oleh semua kanak-kanak tanpa mengasingkan sesiapa."
     },
     {
      "j": "pilih",
      "t": "Penduduk mengadu buaian berkeriut kuat pada waktu malam. Penyelesaian paling wajar?",
      "p": [
-      "Tanggalkan terus semua buaian di taman",
-      "Tambah beban pada buaian supaya ia kurang berayun pada waktu malam",
-      "Minyakkan engsel untuk mengurangkan geseran dan bunyi",
-      "Abaikan aduan kerana taman itu milik awam"
+      "Tambah beban pada buaian supaya ia berayun perlahan",
+      "Ketatkan engsel supaya buaian tidak bergerak longgar",
+      "Minyakkan engsel",
+      "Tukar rantai kepada tali getah supaya ayunan lebih lembut"
      ],
      "b": 2,
-     "u": "Bunyi keriut ialah tenaga yang terbazir akibat geseran."
+     "u": "Bunyi keriut ialah tenaga yang terbazir akibat geseran. Engsel yang terlalu ketat menambah geseran."
     }
    ],
    "bos": {

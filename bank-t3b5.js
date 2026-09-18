@@ -34,14 +34,14 @@ window.BANK["t3b5"] =
   "2": "{n} memahami perubahan haba dalam tindak balas eksotermik dan endotermik serta mengaitkannya dengan keseimbangan terma. Perlu lebih banyak latihan mentafsir data suhu sebelum bergerak ke TP3.",
   "3": "{n} boleh mengaplikasikan pengetahuan termokimia untuk mentafsir data eksperimen dan menerangkan kegunaan seperti pek sejuk dan tin swa-panas. Galakkan mengaitkan perubahan suhu dengan jenis tindak balas.",
   "4": "{n} mampu menganalisis data pek sejuk untuk mengenal pasti hubungan antara pemboleh ubah dan membuat ramalan. Seterusnya latih menimbang bukti untuk membuat keputusan.",
-  "5": "{n} dapat menilai bahan dan reka bentuk bekas penebat serta pek haba dan membuat keputusan yang wajar berdasarkan data, kos dan keselamatan. Sudah bersedia untuk tugasan reka cipta.",
+  "5": "{n} dapat menilai produk pek panas dan pek sejuk berdasarkan jenis tindak balas, suhu, keselamatan dan kos, serta membuat keputusan yang wajar berdasarkan data. Sudah bersedia untuk tugasan reka cipta.",
   "6": "{n} berjaya mereka bentuk produk berasaskan tindak balas eksotermik dan endotermik yang selamat dan praktikal, dengan mengambil kira kos dan pengguna. Pencapaian cemerlang bagi bab ini.",
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Termokimia. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
   "suhu": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Eksperimen</th><th>Bahan yang dicampurkan</th><th class=\"n\">Suhu awal (&deg;C)</th><th class=\"n\">Suhu akhir (&deg;C)</th></tr></thead><tbody><tr><td>P</td><td>Natrium hidroksida pepejal + air</td><td class=\"n\">29.0</td><td class=\"n\">38.5</td></tr><tr><td>Q</td><td>Ammonium nitrat + air</td><td class=\"n\">29.0</td><td class=\"n\">21.0</td></tr><tr><td>R</td><td>Asid hidroklorik + larutan natrium hidroksida</td><td class=\"n\">29.0</td><td class=\"n\">35.5</td></tr><tr><td>S</td><td>Soda penaik + larutan asid sitrik</td><td class=\"n\">29.0</td><td class=\"n\">25.5</td></tr><tr><td>T</td><td>Kalsium oksida + air</td><td class=\"n\">29.0</td><td class=\"n\">45.0</td></tr></tbody></table></div><p class=\"qnote\">Setiap eksperimen dijalankan dalam cawan polistirena dengan 50 ml air atau larutan. Data rekaan untuk latihan.</p>",
   "pek": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Pek</th><th class=\"n\">Ammonium nitrat (g)</th><th class=\"n\">Air (ml)</th><th class=\"n\">Suhu terendah (&deg;C)</th><th class=\"n\">Minit di bawah 15 &deg;C</th></tr></thead><tbody><tr><td>A</td><td class=\"n\">20</td><td class=\"n\">100</td><td class=\"n\">20</td><td class=\"n\">0</td></tr><tr><td>B</td><td class=\"n\">40</td><td class=\"n\">100</td><td class=\"n\">12</td><td class=\"n\">8</td></tr><tr><td>C</td><td class=\"n\">60</td><td class=\"n\">100</td><td class=\"n\">6</td><td class=\"n\">15</td></tr><tr><td>D</td><td class=\"n\">60</td><td class=\"n\">200</td><td class=\"n\">13</td><td class=\"n\">10</td></tr></tbody></table></div><p class=\"qnote\">Semua pek diuji pada suhu bilik 29 &deg;C. Data rekaan untuk latihan.</p>",
-  "bekas": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Bekas</th><th>Jenis</th><th class=\"n\">Ais tinggal selepas 3 jam (%)</th><th class=\"n\">Harga (RM)</th><th>Catatan</th></tr></thead><tbody><tr><td>P</td><td>Kotak polistirena tebal</td><td class=\"n\">70</td><td class=\"n\">18</td><td>Ringan tetapi mudah retak</td></tr><tr><td>Q</td><td>Bekas plastik biasa</td><td class=\"n\">35</td><td class=\"n\">5</td><td>Tahan lasak</td></tr><tr><td>R</td><td>Kelalang vakum</td><td class=\"n\">85</td><td class=\"n\">45</td><td>Dinding kaca dalaman boleh pecah</td></tr><tr><td>S</td><td>Bekas plastik dibalut kain dan surat khabar</td><td class=\"n\">60</td><td class=\"n\">6</td><td>Menggunakan bahan terpakai</td></tr></tbody></table></div><p class=\"qnote\">Setiap bekas diisi 1 kg ais dan disimpan di tempat yang sama. Data rekaan untuk latihan.</p>"
+  "produk": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Produk</th><th>Bahan aktif</th><th>Perubahan haba</th><th class=\"n\">Suhu (&deg;C)</th><th>Tempoh</th><th>Guna semula</th><th class=\"n\">Harga (RM)</th></tr></thead><tbody><tr><td>V</td><td>Serbuk besi + garam, bertindak balas dengan oksigen udara</td><td>Eksotermik</td><td class=\"n\">55</td><td>6 jam</td><td>Tidak</td><td class=\"n\">3</td></tr><tr><td>W</td><td>Natrium asetat, menghablur apabila diaktifkan</td><td>Eksotermik</td><td class=\"n\">54</td><td>30 minit</td><td>Ya, direbus</td><td class=\"n\">15</td></tr><tr><td>X</td><td>Kalsium klorida + air</td><td>Eksotermik</td><td class=\"n\">70</td><td>20 minit</td><td>Tidak</td><td class=\"n\">4</td></tr><tr><td>Y</td><td>Ammonium nitrat + air</td><td>Endotermik</td><td class=\"n\">3</td><td>20 minit</td><td>Tidak</td><td class=\"n\">5</td></tr><tr><td>Z</td><td>Gel air, disejukkan dalam peti sejuk</td><td>Tiada tindak balas</td><td class=\"n\">5</td><td>20 minit</td><td>Ya, disejukkan semula</td><td class=\"n\">12</td></tr></tbody></table></div><p class=\"qnote\">Suhu ialah suhu tertinggi atau terendah pada permukaan pek. Kulit boleh melecur jika bersentuhan lama dengan permukaan melebihi kira-kira 45 &deg;C. Data rekaan untuk latihan.</p>"
  },
  "aras": [
   {
@@ -552,129 +552,129 @@ window.BANK["t3b5"] =
   },
   {
    "n": 5,
-   "tempat": "Bekas Penebat",
-   "sk": "5.1 Menilai bahan dan membuat keputusan",
-   "lampiran": "bekas",
-   "kadNama": "Kelalang Vakum",
-   "kadEm": "🫙",
-   "kadFakta": "Ruang vakum dalam kelalang menghalang pengaliran dan perolakan haba, manakala dinding berkilat mengurangkan sinaran.",
+   "tempat": "Kedai Farmasi",
+   "sk": "5.1 Menilai produk berasaskan tindak balas",
+   "lampiran": "produk",
+   "kadNama": "Kalsium Klorida",
+   "kadEm": "🧂",
+   "kadFakta": "Kalsium klorida membebaskan haba apabila larut dalam air, dan ia juga ditabur di jalan raya negara bersalji untuk mencairkan ais.",
    "bosKadNama": "Pek Panas Besi",
    "bosKadEm": "🧤",
    "bosKadFakta": "Pek pemanas tangan sekali guna menjadi panas apabila serbuk besi di dalamnya bergabung dengan oksigen.",
    "soalan": [
     {
      "j": "pilih",
-     "t": "Kantin sekolah perlu menyimpan ais untuk jualan petang dengan bajet yang kecil. Pilihan paling wajar?",
+     "t": "Seorang atlet terseliuh di padang yang jauh dari peti sejuk. Berdasarkan jadual, produk paling sesuai untuk tuaman sejuk segera?",
      "p": [
-      "Bekas R, kerana ia mengekalkan ais paling banyak",
-      "Bekas Q, kerana harganya paling murah",
-      "Bekas P, kerana ia paling ringan untuk dibawa",
-      "Bekas S, kerana murah dan ais masih banyak kekal"
+      "Z, kerana gel air lebih sejuk daripada mana-mana pek kimia",
+      "X, kerana kalsium klorida menyejukkan kulit dengan cepat",
+      "W, kerana ia boleh digunakan semula berulang kali",
+      "Y, kerana tindak balas endotermiknya menyejuk tanpa peti sejuk"
      ],
      "b": 3,
-     "u": "Bekas S hanya RM1 lebih mahal daripada Q tetapi mengekalkan hampir dua kali ganda ais."
+     "u": "Pek Y menyerap haba apabila ammonium nitrat larut. Gel Z hanya sejuk jika sudah disimpan dalam peti sejuk, dan X serta W membebaskan haba."
     },
     {
      "j": "pilih",
-     "t": "Nilaikan dakwaan: \"Bekas R terbaik untuk semua kegunaan kerana ia menyimpan ais paling lama.\"",
+     "t": "Pek X mencapai 70 °C. Nilaikan kesesuaiannya untuk diletakkan terus pada kulit bagi melegakan kekejangan otot.",
      "p": [
-      "Tidak tepat, kerana harga dan risiko pecah juga perlu dinilai",
-      "Tepat, kerana prestasi penebatan ialah satu-satunya ukuran penting",
-      "Tepat, kerana bekas yang mahal sentiasa lebih baik",
-      "Tidak tepat, kerana bekas R mengekalkan ais paling sedikit"
+      "Tidak sesuai, kerana suhunya jauh melebihi 45 °C",
+      "Sesuai, kerana suhu lebih tinggi melegakan otot dengan lebih cepat",
+      "Sesuai, kerana tindak balas eksotermik membebaskan haba ke udara sahaja",
+      "Tidak sesuai, kerana kalsium klorida menyerap haba daripada kulit"
      ],
      "b": 0,
-     "u": "Bekas terbaik bergantung pada kegunaan, bajet dan cara ia dikendalikan."
+     "u": "Catatan jadual menyatakan kulit boleh melecur melebihi kira-kira 45 °C. Pek X eksotermik, jadi ia membebaskan haba ke kulit, bukan menyerapnya."
     },
     {
      "j": "pilih",
-     "t": "Mengapakah Bekas S jauh lebih baik daripada Bekas Q walaupun kedua-duanya plastik?",
+     "t": "Seorang pendaki gunung memerlukan kehangatan tangan sepanjang malam tanpa dapur. Produk paling wajar?",
      "p": [
-      "Kain dan surat khabar menghasilkan sejuk untuk ais itu",
-      "Lapisan kain memerangkap udara dan mengurangkan aliran haba",
-      "Surat khabar menyerap air daripada ais yang cair",
-      "Kain menjadikan bekas itu lebih berat dan stabil"
+      "W, kerana ia boleh digunakan semula sepanjang pendakian",
+      "V",
+      "X, kerana suhunya paling tinggi antara semua produk",
+      "Z, kerana gel air menyimpan haba dengan sangat baik"
      ],
      "b": 1,
-     "u": "Udara yang terperangkap ialah penebat haba yang baik."
+     "u": "Pek V kekal panas selama 6 jam. Pek W perlu direbus untuk digunakan semula, dan pek X hanya bertahan 20 minit."
     },
     {
      "j": "pilih",
-     "t": "Sebuah syarikat mahu menjual pek panas untuk melegakan kekejangan otot. Pilihan: (X) pek serbuk besi sekali guna, (Y) pek natrium asetat boleh guna semula. Keputusan paling wajar untuk mengurangkan sampah?",
-     "p": [
-      "X, kerana pek sekali guna lebih mesra alam sekitar",
-      "X, kerana serbuk besi tidak menghasilkan haba",
-      "Y, kerana ia boleh dipulihkan dan digunakan berulang kali",
-      "Y, kerana ia tidak memerlukan sebarang tindak balas"
-     ],
-     "b": 2,
-     "u": "Pek natrium asetat dipulihkan dengan merebusnya, jadi satu pek boleh menggantikan banyak pek sekali guna."
-    },
-    {
-     "j": "pilih",
-     "t": "Seorang pengguna mendakwa pek panas serbuk besi \"menghasilkan haba tanpa tindak balas kimia\". Nilaikan dakwaan itu.",
+     "t": "Seorang pengguna mendakwa pek V \"menghasilkan haba tanpa tindak balas kimia\". Nilaikan dakwaan itu.",
      "p": [
       "Betul, kerana haba datang daripada geseran semasa pek digoncang",
-      "Betul, kerana pek itu dipanaskan di kilang sebelum dijual",
-      "Salah, kerana haba datang daripada bateri kecil yang tersembunyi di dalam pek",
-      "Salah, kerana besi bergabung dengan oksigen dan membebaskan haba"
+      "Betul, kerana garam dalam pek itu menyimpan haba dari kilang",
+      "Salah, kerana besi bergabung dengan oksigen dan membebaskan haba",
+      "Salah, kerana besi menyerap haba daripada udara di sekelilingnya"
      ],
-     "b": 3,
-     "u": "Pek itu mula panas apabila pembalut kedap udaranya dibuka dan oksigen masuk."
+     "b": 2,
+     "u": "Pengoksidaan besi ialah tindak balas eksotermik. Garam hanya mempercepatkan tindak balas itu."
     },
     {
      "j": "pilih",
-     "t": "Pihak sekolah mahu mengurangkan penggunaan pek sejuk kimia sekali guna di bilik sukan. Keputusan paling wajar?",
+     "t": "Mengapakah pek V hanya mula panas selepas pembalut kedap udaranya dibuka?",
      "p": [
-      "Simpan pek gel boleh guna semula di dalam peti sejuk",
-      "Beli pek sejuk kimia dalam jumlah dua kali ganda",
-      "Hentikan rawatan sejuk bagi semua kecederaan",
-      "Minta murid membawa pek sejuk masing-masing"
+      "Cahaya matahari diperlukan untuk memulakan tindak balas",
+      "Pembalut itu menyerap semua haba yang dibebaskan",
+      "Wap air dalam pembalut menyejukkan serbuk besi",
+      "Oksigen udara diperlukan untuk tindak balas"
+     ],
+     "b": 3,
+     "u": "Tanpa oksigen, besi tidak dapat bertindak balas. Sebab itu pembalutnya kedap udara sehingga digunakan."
+    },
+    {
+     "j": "pilih",
+     "t": "Sebuah syarikat mahu mengurangkan sampah daripada pek panas. Pilihan paling wajar antara V dan W?",
+     "p": [
+      "W, kerana hablurnya boleh dilarutkan semula dengan merebus pek",
+      "V, kerana serbuk besi terurai menjadi baja selepas digunakan",
+      "W, kerana ia langsung tidak melibatkan perubahan haba",
+      "V, kerana pek sekali guna tidak perlu dibersihkan"
      ],
      "b": 0,
-     "u": "Pek gel boleh digunakan berulang kali selagi ada peti sejuk."
+     "u": "Merebus pek W melarutkan semula hablur natrium asetat, jadi satu pek menggantikan banyak pek sekali guna. Pek W tetap eksotermik semasa menghablur."
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA ciri yang wajar dinilai sebelum memilih pek panas untuk kanak-kanak.",
+     "t": "Pilih SEMUA ciri yang wajar dinilai sebelum memilih pek panas atau pek sejuk untuk kanak-kanak.",
      "p": [
-      "Suhu maksimum tidak melecurkan kulit",
-      "Bahan di dalamnya tidak beracun jika bocor",
-      "Pek tahan lasak dan tidak mudah koyak",
-      "Warna pek sama dengan jenama terkenal",
-      "Harganya paling mahal di pasaran"
+      "Suhu permukaan tidak melecurkan atau membekukan kulit",
+      "Bahan di dalamnya tidak berbahaya jika pek bocor",
+      "Pembalut tahan lasak dan tidak mudah koyak",
+      "Pek panas sepanas mungkin supaya cepat berkesan",
+      "Bahan kimia yang paling reaktif supaya cepat bertindak"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Keselamatan pengguna lebih penting daripada rupa atau harga."
+     "u": "Kulit kanak-kanak lebih nipis dan mudah cedera. Bahan yang paling reaktif selalunya juga paling berbahaya jika bocor."
     },
     {
      "j": "pilih",
-     "t": "Dua pasukan membina bekas penyimpan ais. Pasukan 1 menguji sekali, manakala Pasukan 2 menguji tiga kali dan mengambil purata. Dapatan pasukan manakah lebih boleh dipercayai?",
+     "t": "Sebuah pasukan menguji pek Y di bilik berhawa dingin dan pek Z di luar bangunan, lalu menyimpulkan Y lebih sejuk. Nilaikan kesimpulan itu.",
      "p": [
-      "Pasukan 1, kerana ujian pertama paling tepat",
-      "Pasukan 2, kerana ulangan mengurangkan kesan ralat",
-      "Kedua-duanya sama kerana bekasnya sama jenis",
-      "Pasukan 1, kerana ais cair lebih cepat kali kedua"
+      "Adil, kerana kedua-dua pek diuji dalam tempoh 20 minit yang sama",
+      "Tidak adil, kerana suhu persekitaran yang berbeza mempengaruhi bacaan",
+      "Adil, kerana pek Y memang melibatkan tindak balas endotermik",
+      "Tidak adil, kerana pek Z tidak melibatkan sebarang tindak balas kimia"
      ],
      "b": 1,
-     "u": "Satu bacaan yang tersilap tidak dapat dikesan tanpa ulangan."
+     "u": "Haba mengalir dari persekitaran ke dalam pek. Persekitaran yang lebih panas menjadikan pek Z kelihatan kurang sejuk walaupun ia sama baik."
     }
    ],
    "bos": {
     "j": "pilih",
-    "t": "Klinik desa tanpa bekalan elektrik yang stabil perlu memastikan vaksin kekal sejuk semasa perjalanan selama 3 jam. Pilihan paling wajar?",
+    "t": "Klinik desa tanpa peti sejuk perlu merawat kecederaan baharu dan kekejangan otot semasa kejohanan. Gabungan produk paling wajar?",
     "p": [
-     "Bekas Q kerana paling murah dibeli dalam jumlah besar",
-     "Bekas S kerana diperbuat daripada bahan terpakai",
-     "Bekas R dengan pek sejuk, dibalut kain supaya tidak pecah",
-     "Bekas P tanpa pek sejuk kerana ia paling ringan"
+     "X untuk kecederaan baharu kerana ia bertindak balas paling cepat",
+     "Z untuk kedua-dua keadaan kerana ia boleh digunakan semula",
+     "Y untuk kecederaan baharu, V untuk kekejangan, dibalut kain",
+     "W untuk kecederaan baharu kerana hablurnya menyerap haba dari kulit"
     ],
     "b": 2,
-    "u": "Vaksin yang rosak jauh lebih mahal daripada bekas. Penebat terbaik bersama pek sejuk dan perlindungan daripada hentakan paling selamat."
+    "u": "Kecederaan baharu memerlukan sejuk dan kekejangan memerlukan haba. Tanpa peti sejuk, gel Z tidak dapat disejukkan, dan W serta X membebaskan haba."
    }
   },
   {
@@ -682,9 +682,9 @@ window.BANK["t3b5"] =
    "tempat": "Bengkel Reka Cipta",
    "sk": "5.1 Mereka bentuk bahan berasaskan termokimia",
    "lampiran": null,
-   "kadNama": "Kayu Cahaya",
-   "kadEm": "💡",
-   "kadFakta": "Kayu cahaya menyala apabila dua bahan kimia di dalamnya bercampur selepas tiub kaca kecil di dalamnya dipatahkan.",
+   "kadNama": "Pek Sejuk Segera",
+   "kadEm": "🧊",
+   "kadFakta": "Dalam pek sejuk segera, ammonium nitrat dipisahkan daripada air oleh uncang nipis yang pecah apabila pek dipicit, lalu tindak balas endotermik bermula.",
    "bosKadNama": "Pek Natrium Asetat",
    "bosKadEm": "♨",
    "bosKadFakta": "Pek natrium asetat menjadi panas apabila hablur terbentuk di dalamnya, dan boleh digunakan semula selepas direbus.",
@@ -693,97 +693,97 @@ window.BANK["t3b5"] =
      "j": "pilih",
      "t": "Awak mereka bentuk pek panas untuk melegakan kekejangan otot atlet. Ciri paling penting?",
      "p": [
-      "Pek itu sepanas mungkin supaya cepat berkesan",
-      "Pek itu berwarna terang supaya mudah dilihat",
-      "Pek itu paling murah walaupun mudah bocor",
-      "Suhunya cukup panas tetapi tidak melecurkan kulit"
+      "Sepanas mungkin supaya tindak balas cepat tamat dan pek cepat dibuang",
+      "Tindak balasnya endotermik supaya otot menyerap lebih banyak haba",
+      "Kedap udara sepenuhnya walaupun bahan aktifnya ialah serbuk besi",
+      "Cukup panas tetapi tidak melebihi paras yang melecurkan kulit"
      ],
      "b": 3,
-     "u": "Pek yang melecurkan kulit mencederakan pengguna yang ingin dibantunya."
+     "u": "Pek yang melecurkan kulit mencederakan pengguna. Serbuk besi memerlukan oksigen, jadi pek kedap udara sepenuhnya tidak akan panas."
     },
     {
      "j": "pilih",
      "t": "Pek panas awak terlalu panas dalam ujian pertama. Pengubahsuaian paling wajar?",
      "p": [
-      "Kurangkan bahan yang bertindak balas atau tambah lapisan kain",
-      "Tambah lebih banyak bahan supaya tindak balas cepat tamat",
-      "Buang pembalut pek supaya haba cepat keluar ke kulit",
-      "Simpan pek dalam peti sejuk dahulu sebelum diaktifkan setiap kali"
+      "Kurangkan jisim bahan atau tambah lapisan kain penebat",
+      "Tambah lebih banyak bahan supaya tindak balas lebih cepat tamat",
+      "Campurkan sedikit ammonium nitrat supaya suhu turun sedikit",
+      "Buang pembalut supaya haba lebih cepat keluar ke kulit"
      ],
      "b": 0,
-     "u": "Kurang bahan membebaskan kurang haba, dan lapisan kain memperlahankan pengaliran haba ke kulit."
+     "u": "Kurang bahan membebaskan kurang haba, dan kain memperlahankan pengaliran haba. Mencampurkan bahan kimia lain tanpa ujian boleh berbahaya."
     },
     {
      "j": "pilih",
-     "t": "Awak mereka lampu kecemasan menggunakan kayu cahaya untuk rumah semasa bekalan elektrik terputus. Faktor keselamatan paling penting?",
+     "t": "Awak mereka tin minuman swa-sejuk. Bahan manakah sesuai diletakkan dalam ruang berasingan di dasar tin?",
      "p": [
-      "Warna cahayanya sama dengan warna lampu biasa",
-      "Bahan kimianya tidak bocor dan jauh dari capaian kanak-kanak",
-      "Kayu cahaya dipatahkan lebih awal, sebelum bekalan elektrik terputus",
-      "Kayu cahaya dibuka dan cecairnya dituang ke dalam balang"
+      "Kalsium oksida dan air yang bercampur apabila butang ditekan",
+      "Ammonium nitrat dan air yang bercampur apabila butang ditekan",
+      "Serbuk besi yang terdedah kepada udara apabila tin dibuka",
+      "Kalsium klorida kering yang menyerap haba daripada minuman"
      ],
      "b": 1,
-     "u": "Cecair kayu cahaya boleh merengsakan kulit dan mata."
+     "u": "Pelarutan ammonium nitrat menyerap haba. Kalsium oksida, serbuk besi dan kalsium klorida semuanya membebaskan haba."
     },
     {
      "j": "pilih",
-     "t": "Awak mahu membina bekas yang mengekalkan air panas untuk dijual di pasar malam. Gabungan ciri paling berkesan?",
+     "t": "Tin makanan swa-panas awak menggunakan kalsium oksida dan air, tetapi makanan di bahagian atas masih sejuk. Pengubahsuaian paling wajar?",
      "p": [
-      "Dinding logam nipis dan penutup yang terbuka luas",
-      "Bekas kaca lutsinar tanpa penutup supaya mudah diisi",
-      "Dinding berlapis berisi udara dan penutup yang rapat",
-      "Bekas plastik nipis berwarna hitam di dalam dan luar"
+      "Tukar kepada ammonium nitrat supaya lebih banyak haba terhasil",
+      "Simpan tin dalam peti sejuk dahulu supaya perbezaan suhu lebih besar",
+      "Tambah kalsium oksida dan besarkan permukaan sentuhan dengan makanan",
+      "Buka penutup semasa memanaskan supaya haba mengalir ke atas"
      ],
      "b": 2,
-     "u": "Udara terperangkap mengurangkan pengaliran haba, dan penutup menghalang haba hilang melalui perolakan dan penyejatan."
+     "u": "Lebih banyak bahan membebaskan lebih banyak haba, dan permukaan sentuhan yang besar memudahkan haba mengalir ke makanan."
     },
     {
      "j": "pilih",
-     "t": "Bajet awak hanya RM20 untuk membina bekas penyimpan ais. Cara paling kreatif?",
+     "t": "Awak mahu menguji sama ada jisim kalsium klorida mempengaruhi suhu pek panas. Reka bentuk eksperimen paling adil?",
      "p": [
-      "Beli kelalang vakum yang paling mahal secara berhutang",
-      "Guna bekas plastik nipis tanpa sebarang lapisan",
-      "Batalkan projek kerana bajet tidak mencukupi",
-      "Guna semula kotak polistirena dan kain terpakai"
+      "Ubah jisim dan isi padu air serentak supaya perbezaan lebih jelas",
+      "Gunakan air suam bagi jisim besar dan air sejuk bagi jisim kecil",
+      "Uji satu jisim sahaja tetapi ulang sepuluh kali",
+      "Ubah jisim sahaja; isi padu dan suhu awal air dimalarkan"
      ],
      "b": 3,
-     "u": "Bahan terpakai yang memerangkap udara murah dan berkesan."
+     "u": "Hanya satu pemboleh ubah boleh diubah. Mengubah air serentak menjadikan kesan jisim tidak dapat dipisahkan."
     },
     {
      "j": "pilih",
-     "t": "Pek sejuk rekaan awak menggunakan ammonium nitrat. Bagaimana pek yang sudah digunakan patut diuruskan?",
+     "t": "Pek sejuk rekaan awak menggunakan ammonium nitrat. Bagaimana pek terpakai patut diuruskan?",
      "p": [
-      "Ikut arahan label dan jangan buang isinya ke longkang",
-      "Buang terus ke dalam sungai kerana ia hanya air sejuk",
-      "Bakar pek itu supaya tiada sisa yang tertinggal",
-      "Simpan dan makan isinya kerana ia sama seperti garam"
+      "Ikut arahan label, kerana ammonium nitrat menyuburkan alga di sungai",
+      "Buang ke longkang, kerana ammonium nitrat terurai menjadi air sahaja",
+      "Simpan pek terpakai kerana ia akan menjadi sejuk semula sendiri",
+      "Bakar pek terpakai supaya ammonium nitrat terurai dengan selamat"
      ],
      "b": 0,
-     "u": "Ammonium nitrat tidak boleh dimakan atau dibakar, dan boleh mencemarkan air jika dibuang sesuka hati."
+     "u": "Ammonium nitrat ialah baja nitrogen yang menyebabkan alga membiak berlebihan di sungai. Ia juga berbahaya jika dipanaskan."
     },
     {
      "j": "pilih",
-     "t": "Awak mahu membuktikan pek sejuk rekaan awak lebih baik daripada pek di pasaran. Cara paling adil?",
+     "t": "Pek sejuk awak hanya kekal sejuk selama 5 minit. Pengubahsuaian paling berkesan?",
      "p": [
-      "Uji pek awak di bilik berhawa dingin dan pek pasaran di luar",
-      "Uji kedua-dua pek pada suhu bilik sama dan catat suhu setiap minit",
-      "Minta rakan memilih pek yang kelihatan lebih cantik",
-      "Uji pek awak sahaja kerana pek pasaran sudah diuji"
+      "Gunakan air panas supaya ammonium nitrat larut dengan lebih cepat",
+      "Tambah ammonium nitrat dan balut pek dengan lapisan penebat nipis",
+      "Kurangkan ammonium nitrat supaya tindak balas berlaku lebih lama",
+      "Tukar kepada kalsium klorida kerana ia larut dengan lebih cepat"
      ],
      "b": 1,
-     "u": "Ujian yang adil memalarkan semua keadaan kecuali pek yang dibandingkan."
+     "u": "Lebih banyak bahan menyerap lebih banyak haba, dan penebat memperlahankan haba dari persekitaran. Air panas menaikkan suhu awal pek."
     },
     {
      "j": "pilih",
-     "t": "Pek panas awak akan dijual kepada warga emas di kampung. Pertimbangan paling wajar?",
+     "t": "Pek panas awak akan digunakan oleh warga emas yang kulitnya kurang peka. Pertimbangan paling penting?",
      "p": [
-      "Arahan dalam bahasa asing supaya kelihatan mewah",
-      "Pek yang memerlukan alat khas untuk dibuka",
-      "Arahan dalam bahasa mudah dan pek mudah diaktifkan",
-      "Harga paling tinggi supaya dianggap berkualiti"
+      "Pilih pek paling panas kerana kulit mereka kurang merasa haba",
+      "Gunakan pek sejuk sahaja kerana haba berbahaya kepada warga emas",
+      "Hadkan suhu maksimum dan sertakan sarung kain",
+      "Biarkan pengguna menentukan sendiri tempoh pek diletakkan"
      ],
      "b": 2,
-     "u": "Reka bentuk yang baik bermula daripada keperluan penggunanya."
+     "u": "Kulit yang kurang peka tidak memberi amaran apabila terlalu panas, jadi had suhu perlu dibina ke dalam reka bentuk."
     }
    ],
    "bos": {

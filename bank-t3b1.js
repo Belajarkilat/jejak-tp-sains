@@ -303,7 +303,7 @@ window.BANK["t3b1"] =
     "p": [
      "Gerak balas nastik hanya berlaku pada waktu malam tanpa cahaya",
      "Gerak balas nastik berlaku pada akar, tropisme pada pucuk sahaja",
-     "Arah gerak balas nastik tidak bergantung pada arah rangsangan",
+     "Arah gerak balas nastik tidak bergantung pada arah datangnya rangsangan",
      "Gerak balas nastik berlaku tanpa sebarang rangsangan dari luar"
     ],
     "b": 2,
@@ -577,122 +577,117 @@ window.BANK["t3b1"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Berdasarkan jadual, siapakah yang memerlukan kanta cekung?",
+     "t": "Berdasarkan jadual, siapakah yang memerlukan kanta cekung, dan mengapa?",
      "p": [
-      "Rajesh",
-      "Puan Salmah",
-      "Mei Yin",
-      "Ketiga-tiganya"
+      "Rajesh, kerana imej objek jauh terbentuk di hadapan retina matanya",
+      "Puan Salmah, kerana kanta matanya kurang anjal dan perlu dicapahkan",
+      "Rajesh, kerana imej objek jauh terbentuk di belakang retinanya",
+      "Puan Salmah, kerana imej objek dekat terbentuk di hadapan retina"
      ],
      "b": 0,
-     "u": "Nilai kanta Rajesh negatif, dan kanta bernilai negatif ialah kanta cekung."
+     "u": "Nilai kanta Rajesh negatif, iaitu kanta cekung. Rabun jauh berlaku apabila imej objek jauh jatuh di hadapan retina, dan kanta cekung mencapahkan cahaya supaya imej itu jatuh tepat pada retina."
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA bukti daripada jadual yang menyokong bahawa Puan Salmah mengalami masalah melihat objek dekat.",
+     "t": "Pilih SEMUA bukti daripada jadual yang menyokong bahawa Puan Salmah sukar melihat objek dekat.",
      "p": [
       "Beliau perlu menjauhkan surat khabar untuk membaca",
       "Kanta yang diperlukan bernilai positif",
-      "Umurnya berada dalam julat presbiopia biasa",
-      "Ujian pendengaran beliau menunjukkan keputusan normal",
-      "Beliau mengadu tidak dapat mendengar bunyi bernada tinggi"
+      "Umurnya dalam julat biasa bagi presbiopia",
+      "Kanta bernilai positif bermaksud kanta cekung",
+      "Beliau mengadu papan putih kelihatan kabur"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Pendengaran normal tidak memberitahu apa-apa tentang penglihatannya, dan aduan nada tinggi itu milik Mei Yin."
+     "u": "Kanta bernilai positif ialah kanta cembung, bukan cekung. Aduan papan putih kabur itu milik Rajesh."
     },
     {
      "j": "pilih",
-     "t": "Kelas Mei Yin mahu membantunya mengikuti pelajaran. Langkah paling wajar sebelum apa-apa pembelian?",
+     "t": "Guru mencadangkan Mei Yin hanya duduk di hadapan kelas tanpa pemeriksaan lanjut. Nilaikan cadangan itu berdasarkan jadual.",
      "p": [
-      "Kumpul derma untuk membeli alat bantuan pendengaran yang paling mahal di pasaran",
-      "Alihkan tempat duduknya ke hadapan dan minta guru menghadap kelas ketika bercakap",
-      "Minta semua murid bercakap sekuat mungkin setiap kali berbual dengan Mei Yin",
-      "Tunggu sehingga sekolah menerima peruntukan khas untuk murid berkeperluan"
+      "Wajar, kerana bunyi nada tinggi tidak penting untuk memahami percakapan",
+      "Kurang wajar, kerana kehilangan melebihi 40 dB dikira sederhana",
+      "Wajar, kerana 45 dB masih di bawah had sederhana dalam jadual",
+      "Kurang wajar, kerana Mei Yin juga memerlukan kanta cembung"
      ],
      "b": 1,
-     "u": "Penyelesaian yang boleh dilaksanakan serta-merta patut dicuba dahulu sebelum yang mahal."
+     "u": "Jadual menyatakan kehilangan melebihi 40 dB dikira sederhana. Bunyi konsonan seperti s dan f bernada tinggi, jadi kehilangan ini menjejaskan pemahaman percakapan dan perlu dirujuk."
     },
     {
      "j": "pilih",
-     "t": "Seorang murid menjalankan eksperimen fototropisme menggunakan SATU pasu sahaja. Nilaikan kesahan dapatannya.",
+     "t": "Seorang murid meletakkan SATU pasu anak pokok di tepi tingkap. Pucuknya membengkok ke arah tingkap, lalu dia menyimpulkan cahaya menjadi puncanya. Nilaikan kesimpulan itu.",
      "p": [
-      "Sah, kerana fototropisme sentiasa berlaku pada semua tumbuhan hijau",
-      "Sah, asalkan pasu itu disiram dengan jumlah air yang sama setiap hari",
-      "Tidak sah, kerana tiada pasu kawalan sebagai perbandingan",
-      "Tidak sah, kerana fototropisme hanya boleh diuji di makmal universiti"
+      "Kukuh, kerana pucuk memang menunjukkan fototropisme positif",
+      "Belum kukuh, kerana pucuk sepatutnya menunjukkan geotropisme positif",
+      "Belum kukuh, kerana tiada pasu kawalan yang menerima cahaya dari semua arah",
+      "Kukuh, kerana pasu itu disiram dengan jumlah air yang sama setiap hari"
      ],
      "b": 2,
-     "u": "Tanpa kawalan, tiada apa yang boleh dibandingkan dengan keputusan itu."
+     "u": "Tanpa pasu kawalan, pembengkokan itu mungkin disebabkan angin atau haba dari tingkap. Pucuk sebenarnya menunjukkan geotropisme negatif."
     },
     {
      "j": "pilih",
-     "t": "Sekolah mempunyai RM300 untuk membantu murid yang bermasalah penglihatan. Pilihan memberi kesan paling luas?",
+     "t": "Seorang pemandu bas sekolah berumur 50 tahun gagal ujian penglihatan dekat tetapi lulus ujian penglihatan jauh. Keputusan paling wajar?",
      "p": [
-      "Beli sepasang cermin mata berjenama untuk seorang murid yang rabun",
-      "Beli projektor baharu supaya tulisan lebih besar dalam satu kelas",
-      "Simpan wang itu untuk membeli peralatan yang lebih mahal tahun depan",
-      "Adakan saringan penglihatan percuma untuk semua murid"
+      "Larang dia memandu kerana matanya tidak lagi normal",
+      "Beri kanta cekung supaya dia dapat membaca dengan jelas",
+      "Beri kanta cembung dan wajibkan dipakai semasa memandu",
+      "Beri kanta cembung untuk membaca sahaja"
      ],
      "b": 3,
-     "u": "Mengesan masalah yang belum diketahui memberi pulangan lebih besar daripada merawat satu kes yang sudah dikenal pasti."
+     "u": "Presbiopia menjejaskan penglihatan dekat sahaja. Kanta cembung untuk membaca akan mengaburkan objek jauh jika dipakai semasa memandu."
     },
     {
      "j": "pilih",
      "t": "Nilaikan dakwaan bahawa memakai cermin mata menjadikan mata semakin lemah.",
      "p": [
-      "Tidak berasas, kerana cermin mata tidak mengubah bentuk bola mata",
-      "Betul, kerana otot mata menjadi malas apabila fokus dibantu kanta",
-      "Betul, tetapi hanya berlaku pada kanta cekung dan bukan kanta cembung",
-      "Tidak dapat dinilai, kerana tiada cara untuk mengukur kekuatan mata"
+      "Tidak berasas, kerana kanta hanya membetulkan fokus dan tidak mengubah bola mata",
+      "Berasas, kerana otot mata menjadi lemah apabila tidak perlu memfokus sendiri",
+      "Berasas bagi kanta cekung, kerana cahaya yang dicapahkan merosakkan retina",
+      "Tidak berasas, kerana rabun jauh berhenti bertambah selepas umur 12 tahun"
      ],
      "b": 0,
-     "u": "Rabun jauh memang bertambah semasa remaja walaupun tanpa cermin mata, dan itu yang sering disalah anggap."
+     "u": "Rabun jauh memang boleh bertambah semasa remaja walaupun tanpa cermin mata, dan itulah yang sering disalah anggap sebagai kesan cermin mata."
     },
     {
-     "j": "banyak",
-     "t": "Pilih SEMUA ciri kempen kesihatan mata di sekolah yang berkemungkinan besar berjaya.",
+     "j": "pilih",
+     "t": "Seorang atlet pecut mahu memendekkan masa tindak balasnya terhadap bunyi pistol permulaan. Cadangan paling berasaskan sains?",
      "p": [
-      "Saringan dijalankan semasa waktu persekolahan",
-      "Ibu bapa diberi keputusan bertulis berserta langkah seterusnya",
-      "Ada rujukan ke klinik untuk murid yang gagal saringan",
-      "Keputusan diumumkan di perhimpunan supaya murid rasa malu",
-      "Hanya murid yang mengadu sakit mata sahaja yang disaring"
+      "Latih supaya dia bertindak secara refleks melalui saraf tunjang sahaja",
+      "Berlatih bermula berulang kali mengikut bunyi pistol yang sebenar",
+      "Minum minuman bertenaga supaya impuls saraf bergerak lebih laju",
+      "Tutup sebelah telinga supaya bunyi lebih tertumpu ke dalam koklea"
      ],
-     "b": [
-      0,
-      1,
-      2
-     ],
-     "u": "Mempermalukan murid menghalang mereka daripada menyertai kali berikutnya, dan menunggu aduan terlepas kes yang senyap."
+     "b": 1,
+     "u": "Bermula selepas bunyi pistol ialah tindakan terkawal melalui otak, bukan refleks. Latihan berulang memendekkan masa otak membuat keputusan."
     },
     {
      "j": "pilih",
      "t": "Data manakah paling kukuh untuk menguji sama ada masa skrin menjejaskan penglihatan remaja?",
      "p": [
-      "Tinjauan dalam talian bertanya remaja sama ada mata mereka rasa lemah",
-      "Susulan bertahun-tahun ke atas ramai remaja dengan ujian mata berkala",
-      "Pendapat seorang pakar mata terkenal yang pernah menulis buku tentangnya",
-      "Kisah seorang remaja yang banyak bermain telefon lalu menjadi rabun jauh"
+      "Tinjauan ke atas 1000 remaja tentang sama ada mata mereka terasa penat",
+      "Ujian mata sekali sahaja ke atas 30 remaja yang banyak menggunakan telefon",
+      "Susulan bertahun-tahun ke atas ramai remaja dengan ujian mata yang berkala",
+      "Pengalaman seorang pakar mata terhadap pesakit yang datang ke kliniknya"
      ],
-     "b": 1,
-     "u": "Susulan jangka panjang ke atas kumpulan besar memisahkan kesan sebenar daripada kebetulan."
+     "b": 2,
+     "u": "Rasa penat bukan ukuran penglihatan, 30 remaja tanpa kumpulan perbandingan terlalu sedikit, dan pesakit klinik bukan wakil semua remaja."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Klinik bergerak hanya dapat menyaring 40 murid daripada 800. Kriteria pemilihan paling wajar?",
     "p": [
-     "Empat puluh murid pertama yang sampai ke sekolah pada pagi itu",
-     "Murid daripada kelas hadapan kerana keputusan mereka paling penting",
-     "Murid yang mengadu penglihatan kabur atau prestasinya jatuh mendadak",
-     "Empat puluh nama yang dipilih secara rawak daripada senarai sekolah"
+     "Empat puluh nama yang dipilih secara rawak daripada senarai sekolah",
+     "Murid tingkatan satu sahaja kerana rabun jauh bermula pada usia muda",
+     "Murid yang sudah memakai cermin mata kerana mereka pasti bermasalah",
+     "Murid yang mengadu penglihatan kabur atau prestasinya jatuh mendadak"
     ],
-    "b": 2,
-    "u": "Prestasi yang jatuh mendadak selalunya petanda awal masalah deria yang belum dikesan."
+    "b": 3,
+    "u": "Saringan rawak sesuai untuk kajian, tetapi dengan tempat terhad, kumpulan berisiko menjumpai lebih banyak kes. Murid bercermin mata sudah pun dirawat."
    }
   },
   {
@@ -709,98 +704,98 @@ window.BANK["t3b1"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Awak mereka cipta alat amaran untuk murid pekak dalam kelas. Ciri manakah paling menentukan sama ada ia benar-benar digunakan?",
+     "t": "Awak mereka alat amaran supaya rakan yang pekak tahu bila guru memanggilnya. Isyarat manakah paling berkesan?",
      "p": [
-      "Rekaan paling menarik yang mendapat perhatian seluruh kelas",
-      "Bunyi amaran paling kuat supaya didengar dari hujung bilik darjah",
-      "Laporan penggunaan bulanan yang dihantar kepada pengetua sekolah",
-      "Isyarat yang dapat dilihat atau dirasa dari tempat duduknya sendiri"
-     ],
-     "b": 3,
-     "u": "Reka cipta yang baik dinilai pada sama ada orang yang memerlukannya benar-benar menggunakannya."
-    },
-    {
-     "j": "pilih",
-     "t": "Kos prototaip awak RM150 tetapi kelas hanya mengumpul RM60. Tindakan paling kreatif dan praktikal?",
-     "p": [
-      "Guna motor bergetar daripada alat lama dan kekalkan fungsi utama",
-      "Batalkan projek dan tunggu sehingga cukup wang dikumpul semula",
-      "Buang fungsi amaran utama supaya kos bahan muat dengan bajet",
-      "Minta murid pekak itu menanggung baki kos kerana alat itu miliknya"
+      "Getaran pada pergelangan tangan atau lampu berkelip dalam pandangannya",
+      "Bunyi siren yang sangat kuat berhampiran telinganya",
+      "Bunyi bernada tinggi kerana ia lebih mudah dikesan oleh koklea",
+      "Mesej suara yang diulang dua kali melalui pembesar suara"
      ],
      "b": 0,
-     "u": "Kekangan kos menguji kreativiti, bukan menamatkan projek."
+     "u": "Alat bantuan deria yang baik menggunakan organ deria lain yang masih berfungsi, iaitu kulit dan mata."
     },
     {
      "j": "pilih",
-     "t": "Rakan sekelas awak buta warna merah dan hijau. Pembetulan paling wajar untuk poster projek kelas?",
+     "t": "Alat bergetar rekaan awak diletakkan pada hujung jari. Mengapakah lokasi itu sesuai?",
      "p": [
-      "Tukar semua warna merah kepada oren supaya lebih mudah dilihat",
-      "Tambah label teks dan corak berbeza, bukan bergantung pada warna",
-      "Cetak keseluruhan poster dalam hitam putih tanpa sebarang warna",
-      "Minta rakan itu menghafal kedudukan setiap warna sebelum membentang"
+      "Hujung jari paling hampir dengan saraf tunjang",
+      "Hujung jari kaya dengan reseptor sentuhan",
+      "Kulit hujung jari paling tebal, jadi getaran tidak menyakitkan",
+      "Hujung jari tiada reseptor sakit, jadi getaran terasa selesa"
      ],
      "b": 1,
-     "u": "Maklumat yang dibawa oleh warna sahaja hilang sepenuhnya bagi sesetengah pembaca."
+     "u": "Kepekaan kulit bergantung pada bilangan reseptor. Hujung jari dan bibir antara bahagian paling peka."
     },
     {
      "j": "pilih",
-     "t": "Awak mahu menguji sama ada reka cipta awak benar-benar membantu. Cara paling meyakinkan?",
+     "t": "Rakan sekelas awak buta warna merah dan hijau. Pembetulan paling wajar untuk carta dalam poster projek kelas?",
      "p": [
-      "Tanya tiga orang rakan rapat sama ada mereka menyukai rekaan itu",
-      "Kira berapa jam bateri alat itu dapat bertahan dalam sehari",
-      "Rekod kekerapan dia terlepas arahan sebelum dan selepas alat digunakan",
-      "Bandingkan dengan kelas lain yang tidak mempunyai murid pekak"
+      "Tukar merah kepada oren kerana sel kon mengesan oren dengan lebih baik",
+      "Terangkan lagi warna merah dan hijau supaya perbezaannya lebih jelas",
+      "Tambah label teks dan corak berbeza, bukan bergantung pada warna sahaja",
+      "Gunakan lebih banyak rona hijau supaya dia hanya perlu membaca satu warna"
      ],
      "b": 2,
-     "u": "Perbandingan sebelum dan selepas pada orang yang sama mengasingkan kesan alat awak."
+     "u": "Buta warna merah-hijau berpunca daripada sel kon yang tidak berfungsi dengan baik, jadi oren dan rona hijau yang berlainan juga sukar dibezakan."
     },
     {
      "j": "pilih",
-     "t": "Sekolah lain mahu meniru reka cipta awak tetapi murid mereka tidak dibenarkan membawa telefon. Pengubahsuaian paling wajar?",
+     "t": "Awak mahu membuktikan alat amaran itu benar-benar membantu rakan awak. Cara paling meyakinkan?",
      "p": [
-      "Minta sekolah itu menukar peraturan supaya telefon dibenarkan",
-      "Kekalkan rekaan asal kerana ia sudah terbukti berkesan di sekolah awak",
-      "Batalkan cadangan kerana rekaan itu tidak sesuai untuk sekolah tersebut",
-      "Tukar kepada isyarat lampu di hadapan kelas yang tidak perlukan telefon"
+      "Tanya rakan-rakan sekelas sama ada mereka rasa alat itu berguna",
+      "Uji alat itu pada murid yang pendengarannya normal",
+      "Ukur kekuatan getaran alat itu menggunakan aplikasi telefon",
+      "Kira kekerapan dia terlepas arahan sebelum dan selepas alat digunakan"
      ],
      "b": 3,
-     "u": "Reka cipta yang baik menyesuaikan diri dengan keadaan penggunanya."
+     "u": "Bukti terbaik datang daripada pengguna sebenar, diukur sebelum dan selepas. Getaran yang kuat belum tentu bermakna arahan tidak terlepas."
     },
     {
      "j": "pilih",
-     "t": "Projek awak berjaya tetapi awak akan naik tingkatan empat tahun depan. Langkah paling penting supaya ia kekal berfungsi?",
+     "t": "Awak mereka cermin mata bacaan murah untuk warga emas di kampung. Kanta manakah perlu digunakan?",
      "p": [
-      "Latih murid tingkatan bawah dan tinggalkan panduan ringkas bertulis",
-      "Simpan semua lakaran dan fail rekaan dalam telefon awak sendiri",
-      "Minta guru mengumumkan kejayaan projek di perhimpunan sekolah",
-      "Bina seberapa banyak unit yang mampu sebelum awak berpindah kelas"
+      "Kanta cembung, kerana ia menumpukan cahaya sebelum masuk ke mata",
+      "Kanta cekung, kerana ia membesarkan tulisan yang dekat",
+      "Kanta cembung, kerana ia mencapahkan cahaya ke arah retina",
+      "Kaca rata berwarna, kerana ia mengurangkan silau semasa membaca"
      ],
      "b": 0,
-     "u": "Penyelesaian yang bergantung pada seorang individu akan berhenti bersama orang itu."
+     "u": "Presbiopia berlaku apabila kanta mata hilang keanjalan. Kanta cembung menumpukan cahaya sebelum ia sampai ke mata."
     },
     {
      "j": "pilih",
-     "t": "Ada dua rekaan. Rekaan A berharga RM40 dengan bateri sekali guna RM8 sebulan. Rekaan B berharga RM120 dan boleh dicas semula. Pilihan paling wajar untuk kegunaan setahun?",
+     "t": "Awak mereka stesen ujian pembaris jatuh untuk hari sukan. Pengubahsuaian manakah menjadikan bacaan lebih adil?",
      "p": [
-      "Rekaan A, kerana harga belian awalnya paling rendah",
-      "Rekaan B, kerana jumlah kos A setahun mencecah RM136",
-      "Rekaan A, kerana bateri baharu lebih dipercayai daripada dicas",
-      "Kedua-duanya sama, kerana fungsi kedua-dua rekaan serupa"
+      "Murid dibenarkan melihat tangan orang yang melepaskan pembaris",
+      "Pembaris dilepaskan tanpa amaran dan jari bermula pada kedudukan sama",
+      "Setiap murid menggunakan pembaris yang berlainan panjangnya",
+      "Hanya bacaan terbaik daripada lima cubaan direkodkan"
      ],
      "b": 1,
-     "u": "RM40 campur RM8 darab 12 bulan bersamaan RM136, sudah melebihi RM120 bagi Rekaan B. Kos jangka panjang selalunya menentukan pilihan yang wajar."
+     "u": "Amaran dan isyarat tangan membolehkan murid meneka, bukan bertindak balas. Bacaan terbaik sahaja menyembunyikan ralat rawak."
+    },
+    {
+     "j": "pilih",
+     "t": "Rakan awak pekak pada telinga kanan sahaja. Kedudukan duduk paling sesuai dalam kelas?",
+     "p": [
+      "Di hadapan, dengan telinga kanan menghadap guru",
+      "Di belakang, supaya bunyi sempat bergema dan menjadi lebih kuat",
+      "Di barisan hadapan, dengan telinga kiri menghadap guru",
+      "Di tepi tingkap, supaya bunyi dari luar menutup bunyi bising"
+     ],
+     "b": 2,
+     "u": "Telinga yang masih berfungsi patut menerima bunyi secara terus. Gema dan bunyi luar menyukarkan lagi pendengaran."
     },
     {
      "j": "pilih",
      "t": "Awak mahu murid lain menerima alat itu tanpa membuat rakan awak berasa terasing. Pendekatan paling wajar?",
      "p": [
-      "Letakkan nama rakan awak pada alat itu supaya semua tahu miliknya",
-      "Umumkan keadaan rakan awak di perhimpunan supaya semua memahaminya",
-      "Reka supaya kelihatan biasa dan berguna kepada sesiapa dalam kelas",
-      "Simpan alat itu di bilik guru dan hanya dikeluarkan apabila perlu"
+      "Letakkan nama rakan awak pada alat itu supaya tidak tertukar",
+      "Terangkan keadaan rakan awak kepada seluruh sekolah terlebih dahulu",
+      "Hanya keluarkan alat itu apabila guru memberi arahan penting",
+      "Reka supaya kelihatan biasa dan berguna kepada sesiapa dalam kelas"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Reka cipta yang mengambil kira nilai sosial menghormati maruah penggunanya, bukan hanya fungsinya."
     }
    ],

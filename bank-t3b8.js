@@ -41,7 +41,7 @@ window.BANK["t3b8"] =
  "lampiran": {
   "reput": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th class=\"n\">Masa (jam)</th><th class=\"n\">Aktiviti bahan X (Bq)</th></tr></thead><tbody><tr><td class=\"n\">0</td><td class=\"n\">800</td></tr><tr><td class=\"n\">2</td><td class=\"n\">400</td></tr><tr><td class=\"n\">4</td><td class=\"n\">200</td></tr><tr><td class=\"n\">6</td><td class=\"n\">100</td></tr><tr><td class=\"n\">8</td><td class=\"n\">50</td></tr></tbody></table></div><p class=\"qnote\">1 Bq bermaksud satu nukleus mereput setiap saat. Data rekaan untuk latihan.</p>",
   "tembus": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Sumber</th><th class=\"n\">Tanpa penghadang</th><th class=\"n\">Sehelai kertas</th><th class=\"n\">Aluminium 5 mm</th><th class=\"n\">Plumbum 5 cm</th></tr></thead><tbody><tr><td>P</td><td class=\"n\">900</td><td class=\"n\">20</td><td class=\"n\">20</td><td class=\"n\">20</td></tr><tr><td>Q</td><td class=\"n\">700</td><td class=\"n\">690</td><td class=\"n\">20</td><td class=\"n\">20</td></tr><tr><td>R</td><td class=\"n\">500</td><td class=\"n\">500</td><td class=\"n\">480</td><td class=\"n\">60</td></tr></tbody></table></div><p class=\"qnote\">Bacaan dalam bilangan seminit. Setiap sumber memancarkan satu jenis sinaran sahaja. Bacaan latar belakang ialah 20 bilangan seminit.</p>",
-  "dos": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Lokasi</th><th class=\"n\">Kadar dos (&micro;Sv/j)</th></tr></thead><tbody><tr><td>Bilik darjah</td><td class=\"n\">0.10</td></tr><tr><td>Bilik menunggu klinik</td><td class=\"n\">0.12</td></tr><tr><td>Kawasan batuan granit</td><td class=\"n\">0.25</td></tr><tr><td>Tepi pagar tapak simpanan sisa radioaktif</td><td class=\"n\">0.35</td></tr><tr><td>Kabin kapal terbang pada ketinggian 11 km</td><td class=\"n\">3.0</td></tr></tbody></table></div><p class=\"qnote\">Kadar dos kurang daripada 0.2 &micro;Sv/j dianggap selamat. Data rekaan untuk latihan.</p>"
+  "dos": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Lokasi</th><th class=\"n\">Kadar dos (&micro;Sv/j)</th></tr></thead><tbody><tr><td>Bilik darjah</td><td class=\"n\">0.10</td></tr><tr><td>Bilik menunggu klinik</td><td class=\"n\">0.12</td></tr><tr><td>Kawasan batuan granit</td><td class=\"n\">0.25</td></tr><tr><td>Tepi pagar tapak simpanan sisa radioaktif</td><td class=\"n\">0.35</td></tr><tr><td>Kabin kapal terbang pada ketinggian 11 km</td><td class=\"n\">3.0</td></tr></tbody></table></div><p class=\"qnote\">Kadar dos latar belakang semula jadi biasanya antara 0.05 dan 0.3 &micro;Sv/j, bergantung pada tempat. Had dos tambahan ialah 1 mSv (1000 &micro;Sv) setahun bagi orang awam dan 20 mSv setahun bagi pekerja sinaran. Data rekaan untuk latihan.</p>"
  },
  "aras": [
   {
@@ -548,27 +548,27 @@ window.BANK["t3b8"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Berdasarkan jadual, lokasi manakah melebihi paras yang dianggap selamat?",
+     "t": "Berdasarkan jadual, lokasi manakah mempunyai kadar dos paling tinggi, dan apakah puncanya?",
      "p": [
-      "Kabin, tepi simpanan sisa dan kawasan granit",
-      "Bilik darjah dan bilik menunggu klinik sahaja",
-      "Kabin kapal terbang sahaja, bukan tempat lain",
-      "Semua lokasi yang disenaraikan dalam jadual"
+      "Kabin kapal terbang, kerana sinaran kosmik lebih kuat di altitud tinggi",
+      "Tepi tapak sisa radioaktif, kerana sisa memancarkan sinaran paling kuat",
+      "Kawasan granit, kerana batuan granit memancarkan sinar-X",
+      "Kabin kapal terbang, kerana enjin kapal terbang memancarkan sinar gama"
      ],
      "b": 0,
-     "u": "Ketiga-tiga lokasi itu mempunyai kadar dos 0.2 µSv/j atau lebih."
+     "u": "Di altitud tinggi, lapisan atmosfera yang melindungi daripada sinaran kosmik lebih nipis. Kadar di tepi pagar tapak sisa jauh lebih rendah daripada kabin."
     },
     {
      "j": "pilih",
-     "t": "Seorang kru kabin terbang 800 jam setahun. Keputusan paling wajar bagi syarikat penerbangan?",
+     "t": "Seorang kru kabin terbang 800 jam setahun pada kadar dalam jadual. Anggaran dos tambahannya dan keputusan paling wajar?",
      "p": [
-      "Hentikan semua penerbangan antarabangsa",
-      "Pantau dos setiap kru dan hadkan jam terbang tahunan",
-      "Abaikan kerana sinaran kosmik tidak berbahaya",
-      "Beri kru makanan tambahan sebagai perlindungan"
+      "Kira-kira 2.4 mSv; hentikan semua penerbangan kru itu serta-merta",
+      "Kira-kira 2.4 mSv; pantau dos kru dan hadkan jam terbang",
+      "Kira-kira 0.24 mSv; tiada pemantauan diperlukan",
+      "Kira-kira 24 mSv; kru itu sudah melebihi had pekerja sinaran"
      ],
      "b": 1,
-     "u": "Risiko diurus dengan memantau dan mengehadkan pendedahan."
+     "u": "800 jam × 3.0 µSv/j = 2400 µSv = 2.4 mSv. Ia di bawah had pekerja 20 mSv tetapi melebihi had orang awam, jadi kru dipantau sebagai pekerja sinaran."
     },
     {
      "j": "nombor",
@@ -576,43 +576,43 @@ window.BANK["t3b8"] =
      "b": 15,
      "tol": 0.05,
      "suf": "µSv",
-     "u": "3.0 µSv/j × 5 jam = 15 µSv."
+     "u": "3.0 µSv/j × 5 jam = 15 µSv, iaitu sebahagian kecil sahaja daripada had tahunan orang awam."
     },
     {
      "j": "pilih",
      "t": "Nilaikan dakwaan: \"Kawasan granit langsung tidak selamat didiami.\"",
      "p": [
-      "Tepat, kerana semua sinaran mengion sangat berbahaya walaupun sedikit",
-      "Tepat, kerana granit meletup apabila terdedah sinaran",
-      "Tidak tepat, kerana ia sedikit tinggi dan boleh dikurangkan",
-      "Tidak tepat, kerana granit tidak memancarkan sinaran"
+      "Tepat, kerana kadarnya lebih tinggi daripada bilik darjah",
+      "Tepat, kerana semua sinaran mengion berbahaya walaupun sedikit",
+      "Tidak tepat, kerana 0.25 µSv/j masih dalam julat latar belakang semula jadi",
+      "Tidak tepat, kerana granit langsung tidak memancarkan sinaran"
      ],
      "b": 2,
-     "u": "Pengudaraan yang baik mengurangkan gas radon daripada batuan di dalam rumah."
+     "u": "Granit memang memancarkan sedikit sinaran dan gas radon, tetapi kadarnya dalam julat semula jadi. Pengudaraan yang baik mengurangkan radon di dalam rumah."
     },
     {
      "j": "pilih",
      "t": "Sebuah syarikat mahu membina tapak simpanan sisa radioaktif. Lokasi paling wajar?",
      "p": [
-      "Tepi sungai supaya sisa mudah diangkut dengan bot",
-      "Tengah bandar supaya mudah dipantau",
-      "Tanah paya kerana tanahnya lembut untuk digali",
-      "Kawasan stabil yang jauh dari sumber air dan penduduk"
+      "Tepi sungai supaya sisa mudah diangkut dan sentiasa disejukkan",
+      "Berhampiran hospital kerana hospital sudah biasa mengendalikan sinaran",
+      "Tanah paya kerana air di situ menghalang sinaran daripada keluar",
+      "Kawasan geologi stabil yang jauh dari sumber air dan penduduk"
      ],
      "b": 3,
-     "u": "Sisa radioaktif boleh kekal aktif untuk tempoh yang sangat lama, jadi ia mesti diasingkan daripada air dan manusia."
+     "u": "Sisa radioaktif boleh kekal aktif untuk tempoh yang sangat lama. Air tanah dan sungai boleh membawa bahan radioaktif jauh dari tapak."
     },
     {
      "j": "pilih",
      "t": "Sebuah hospital mahu membeli mesin radioterapi kobalt-60. Syarat paling penting untuk diwajibkan?",
      "p": [
       "Bilik berdinding konkrit tebal dan pekerja memakai lencana dos",
-      "Mesin diletakkan di ruang menunggu supaya mudah dicapai",
-      "Pekerja tidak perlu latihan kerana mesin itu beroperasi secara automatik",
-      "Sumber kobalt dibuang ke tong sampah selepas tamat guna"
+      "Bilik berdinding aluminium kerana aluminium menghalang sinar gama",
+      "Pekerja berdiri dekat sumber supaya rawatan lebih tepat",
+      "Sumber disimpan dalam bekas plastik tebal selepas digunakan"
      ],
      "b": 0,
-     "u": "Sumber gama yang kuat memerlukan perisai dan pemantauan dos."
+     "u": "Sinar gama hanya dikurangkan dengan ketara oleh konkrit tebal atau plumbum. Jarak yang jauh mengurangkan dos pekerja."
     },
     {
      "j": "banyak",
@@ -621,40 +621,40 @@ window.BANK["t3b8"] =
       "Gunakan penyepit berpemegang panjang",
       "Pakai lencana dos untuk memantau pendedahan",
       "Simpan sumber dalam bekas plumbum",
-      "Pegang sumber dengan tangan supaya lebih cepat",
-      "Makan di dalam makmal untuk menjimatkan masa"
+      "Pakai sarung tangan getah untuk menghalang sinar gama",
+      "Bekerja lebih perlahan supaya tidak tersilap"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Jarak, perisai dan pemantauan mengurangkan dos. Makan di makmal berisiko menelan bahan radioaktif."
+     "u": "Jarak, perisai dan masa pendedahan yang singkat mengurangkan dos. Sarung tangan getah tidak menghalang sinar gama."
     },
     {
      "j": "pilih",
      "t": "Sesetengah pengguna menolak makanan yang diawet dengan sinar gama kerana takut makanan itu radioaktif. Nilaikan kebimbangan itu.",
      "p": [
-      "Berasas, kerana semua makanan yang diawet dengan sinaran bercahaya",
+      "Berasas, kerana sinar gama kekal tersimpan di dalam makanan",
       "Tidak berasas, kerana makanan itu tidak menjadi radioaktif",
-      "Berasas, kerana sinar gama kekal dalam makanan",
-      "Tidak berasas, kerana sinar gama tidak wujud"
+      "Berasas, kerana makanan itu memancarkan sinaran selepas disinari",
+      "Tidak berasas, kerana sinar gama tidak dapat menembusi makanan"
      ],
      "b": 1,
-     "u": "Sinar gama melalui makanan dan tidak tertinggal di dalamnya."
+     "u": "Sinar gama melalui makanan dan membunuh mikroorganisma, tetapi tidak tertinggal di dalamnya. Ia menembusi makanan, dan itulah sebabnya ia berkesan."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Sebuah negara menimbang pembinaan loji tenaga nuklear untuk mengurangkan pembakaran arang batu. Pertimbangan paling wajar sebelum keputusan dibuat?",
     "p": [
-     "Bina segera kerana tenaga nuklear tiada risiko langsung",
-     "Tolak kerana semua bahan radioaktif tiada kegunaan",
+     "Bina segera kerana loji nuklear tidak menghasilkan sebarang sisa",
+     "Tolak kerana loji nuklear membebaskan lebih banyak karbon dioksida",
      "Timbang tenaga bersih dengan risiko kemalangan dan sisa",
-     "Pilih lokasi di zon gempa bumi kerana tanahnya murah"
+     "Bina di pantai zon gempa kerana air laut menyejukkan reaktor"
     ],
     "b": 2,
-    "u": "Kemalangan Chernobyl dan Fukushima menunjukkan pentingnya lokasi dan pengurusan risiko."
+    "u": "Loji nuklear hampir tidak membebaskan karbon dioksida, tetapi menghasilkan sisa radioaktif. Fukushima menunjukkan bahaya lokasi di zon gempa dan tsunami."
    }
   },
   {
@@ -671,99 +671,99 @@ window.BANK["t3b8"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Awak mereka poster untuk mendidik penduduk tentang gas radon di rumah. Mesej paling berkesan?",
+     "t": "Awak mereka poster untuk mendidik penduduk tentang gas radon di rumah. Mesej paling tepat?",
      "p": [
       "Pindah rumah serta-merta jika tinggal di kawasan berbatu",
-      "Radon tidak wujud, jadi tiada tindakan diperlukan",
-      "Tutup semua tingkap rapat-rapat supaya gas radon tidak dapat masuk",
+      "Tutup tingkap rapat-rapat supaya radon tidak dapat masuk",
+      "Tanam pokok di sekeliling rumah kerana pokok menyerap radon",
       "Buka tingkap untuk pengudaraan dan uji paras radon jika risau"
      ],
      "b": 3,
-     "u": "Radon datang dari tanah di bawah rumah, jadi menutup tingkap memerangkapnya di dalam."
+     "u": "Radon datang dari tanah di bawah rumah, jadi menutup tingkap memerangkapnya di dalam. Pengudaraan mengurangkannya."
     },
     {
      "j": "pilih",
-     "t": "Awak membina model kebuk awan untuk pameran. Apakah tujuan utamanya?",
+     "t": "Awak membina model kebuk awan untuk pameran. Apakah yang dapat ditunjukkan olehnya?",
      "p": [
-      "Menunjukkan runut yang dihasilkan oleh sinaran",
-      "Menghasilkan hujan buatan di dalam kelas",
-      "Menyimpan bahan radioaktif dengan selamat",
-      "Mengukur separuh hayat dengan tepat"
+      "Runut yang dihasilkan oleh sinaran",
+      "Separuh hayat sumber radioaktif dengan tepat",
+      "Cara menghentikan sinaran daripada keluar ke kelas",
+      "Perbezaan antara sinar gama dengan sinar-X"
      ],
      "b": 0,
-     "u": "Sinaran tidak kelihatan, tetapi runutnya dalam kebuk awan boleh dilihat."
+     "u": "Sinaran tidak kelihatan, tetapi runutnya dalam kebuk awan boleh dilihat. Runut alfa pendek dan tebal, runut beta nipis dan berliku."
     },
     {
      "j": "pilih",
      "t": "Pameran awak akan dilawati kanak-kanak. Langkah keselamatan paling penting?",
      "p": [
-      "Benarkan kanak-kanak memegang sumber radioaktif sebentar sahaja",
-      "Guna gambar dan model, bukan sumber radioaktif sebenar",
-      "Letakkan sumber radioaktif di atas meja terbuka",
-      "Tiada langkah diperlukan kerana pameran singkat"
+      "Guna sumber alfa sahaja kerana alfa tidak menembusi kulit",
+      "Guna gambar, model dan simulasi, bukan sumber sebenar",
+      "Letak sumber gama di belakang sekeping kertas tebal",
+      "Benarkan kanak-kanak memegang sumber jika memakai sarung tangan"
      ],
      "b": 1,
-     "u": "Konsep boleh diajar tanpa mendedahkan pengunjung kepada sinaran."
+     "u": "Alfa sangat berbahaya jika tertelan atau terhidu. Kertas tidak menghalang sinar gama, dan sarung tangan tidak melindungi daripada sinar gama."
     },
     {
      "j": "pilih",
      "t": "Awak mereka kempen tentang kegunaan radioisotop dalam pertanian. Contoh yang paling tepat?",
      "p": [
-      "Menjadikan buah-buahan bercahaya pada waktu malam",
-      "Menggantikan semua baja dengan bahan radioaktif",
+      "Menyinari padi setiap hari supaya ia membesar lebih cepat",
+      "Mengawet buah dengan sinar gama sehingga buah itu radioaktif",
       "Menghasilkan varieti padi baharu melalui mutasi",
-      "Menyiram tanaman dengan air radioaktif setiap hari"
+      "Menggantikan baja dengan bahan radioaktif yang lebih murah"
      ],
      "b": 2,
-     "u": "Sinaran mengubah bahan genetik benih dan menghasilkan varieti yang boleh dipilih."
+     "u": "Sinaran mengubah bahan genetik benih dan menghasilkan varieti yang boleh dipilih. Buah yang diawet dengan sinar gama tidak menjadi radioaktif."
     },
     {
      "j": "pilih",
-     "t": "Bajet pameran terhad. Cara paling kreatif untuk menunjukkan konsep separuh hayat?",
+     "t": "Awak mahu menunjukkan konsep separuh hayat tanpa bahan radioaktif. Simulasi paling tepat?",
      "p": [
-      "Beli sumber radioaktif sebenar dari luar negara",
-      "Tulis definisi separuh hayat pada kad besar",
-      "Tunjukkan video tanpa sebarang aktiviti",
-      "Simulasi dengan melambung 100 syiling berulang kali"
+      "Lambung satu syiling 100 kali dan rekod setiap keputusan",
+      "Buang 10 syiling pada setiap pusingan sehingga semuanya habis",
+      "Kira masa yang diambil untuk 100 ketul ais cair sepenuhnya",
+      "Lambung 100 syiling berulang kali dan buang yang menunjukkan kepala"
      ],
      "b": 3,
-     "u": "Kira-kira separuh syiling dibuang setiap pusingan, sama seperti separuh nukleus mereput setiap separuh hayat."
+     "u": "Kira-kira separuh syiling yang tinggal dibuang setiap pusingan, sama seperti separuh nukleus yang tinggal mereput setiap separuh hayat. Membuang 10 setiap kali ialah pengurangan tetap, bukan separuh hayat."
     },
     {
      "j": "pilih",
      "t": "Bagaimanakah awak menilai sama ada pameran berjaya meningkatkan kefahaman pengunjung?",
      "p": [
       "Beri kuiz ringkas sebelum dan selepas lawatan",
-      "Kira bilangan gambar yang diambil pengunjung",
-      "Tanya pengunjung sama ada poster cantik",
-      "Lihat berapa lama pengunjung berdiri"
+      "Kira bilangan gambar yang diambil oleh pengunjung",
+      "Tanya pengunjung sama ada pameran itu menarik",
+      "Kira berapa lama pengunjung berdiri di setiap poster"
      ],
      "b": 0,
-     "u": "Perbandingan sebelum dan selepas menunjukkan perubahan kefahaman."
+     "u": "Perbandingan sebelum dan selepas menunjukkan perubahan kefahaman, bukan sekadar minat."
     },
     {
      "j": "pilih",
      "t": "Penduduk berhampiran sebuah kilang nadir bumi bimbang tentang sisa radioaktif. Pendekatan komunikasi paling wajar?",
      "p": [
-      "Rahsiakan maklumat supaya penduduk tidak panik",
-      "Kongsi data pemantauan secara terbuka kepada penduduk",
-      "Ejek kebimbangan penduduk sebagai tidak saintifik dan tidak berasas",
-      "Minta penduduk berpindah tanpa penjelasan"
+      "Rahsiakan data supaya penduduk tidak panik",
+      "Kongsi data pemantauan secara terbuka",
+      "Kongsi data hanya apabila bacaannya rendah",
+      "Beritahu penduduk semua sinaran tidak berbahaya"
      ],
      "b": 1,
-     "u": "Ketelusan membina kepercayaan dan membolehkan penduduk menilai sendiri risikonya."
+     "u": "Ketelusan membina kepercayaan. Berkongsi data yang baik sahaja, atau menafikan semua risiko, merosakkan kepercayaan itu."
     },
     {
      "j": "pilih",
      "t": "Awak mahu menerangkan sinaran mengion kepada warga emas yang tidak biasa dengan istilah sains. Cara paling sesuai?",
      "p": [
-      "Guna istilah teknikal sahaja supaya kelihatan pakar",
-      "Beri buku teks universiti untuk dibaca sendiri",
-      "Guna analogi mudah dan contoh seperti X-ray di klinik",
-      "Elakkan terus topik itu kerana terlalu sukar difahami"
+      "Guna istilah teknikal sahaja supaya penjelasan tepat",
+      "Tekankan bahawa semua sinaran boleh membawa maut",
+      "Guna analogi mudah dan contoh seperti sinar-X di klinik",
+      "Elakkan topik itu supaya mereka tidak risau"
      ],
      "b": 2,
-     "u": "Mesej yang baik disesuaikan dengan pendengarnya."
+     "u": "Mesej yang baik tepat dan disesuaikan dengan pendengar. Menakut-nakutkan sama mengelirukan seperti menafikan risiko."
     }
    ],
    "bos": {

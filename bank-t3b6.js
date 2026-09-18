@@ -542,12 +542,12 @@ window.BANK["t3b6"] =
      "t": "Berdasarkan jadual, langkah manakah memberi penjimatan paling besar?",
      "p": [
       "Menukar semua mentol kepada LED",
-      "Bercuti di rumah pada bulan April",
-      "Tiada langkah memberi kesan kepada bil",
+      "Kedua-duanya sama, kerana bil turun selepas setiap langkah",
+      "Menukar mentol, kerana lampu digunakan lebih lama setiap hari",
       "Menukar penyaman udara kepada model 5 bintang"
      ],
      "b": 3,
-     "u": "Penggunaan turun kira-kira 80 kWj selepas penyaman udara diganti, berbanding 30 kWj selepas LED dipasang."
+     "u": "Penggunaan turun kira-kira 80 kWj selepas penyaman udara diganti, berbanding 30 kWj selepas LED dipasang. Masa penggunaan panjang tidak semestinya bermakna tenaga yang besar jika kuasanya kecil."
     },
     {
      "j": "pilih",
@@ -555,11 +555,11 @@ window.BANK["t3b6"] =
      "p": [
       "Tidak tepat, kerana bil April naik akibat cuti, bukan LED",
       "Tepat, kerana bil April ialah yang tertinggi dalam jadual",
-      "Tepat, kerana LED menggunakan lebih banyak kuasa",
-      "Tidak tepat, kerana LED tidak digunakan pada bulan April"
+      "Tepat, kerana LED menggunakan lebih kuasa semasa baru dipasang",
+      "Tidak tepat, kerana kadar sen bagi setiap kWj naik pada bulan April"
      ],
      "b": 0,
-     "u": "Perbandingan yang adil mesti mengambil kira perubahan lain pada bulan yang sama."
+     "u": "Catatan jadual menunjukkan semua ahli keluarga di rumah pada April. Kadar dalam jadual rata 30 sen, jadi kenaikan datang daripada penggunaan."
     },
     {
      "j": "nombor",
@@ -573,46 +573,46 @@ window.BANK["t3b6"] =
      "j": "pilih",
      "t": "Keluarga ini hanya mampu membeli SATU peti sejuk baharu. Berdasarkan label Suruhanjaya Tenaga, pilihan paling wajar?",
      "p": [
-      "Peti sejuk 2 bintang kerana harganya paling murah",
+      "Peti sejuk 2 bintang kerana harga belian paling penting",
       "Peti sejuk 5 bintang walaupun lebih mahal sedikit",
-      "Peti sejuk paling besar supaya muat banyak makanan",
-      "Peti sejuk yang warnanya sama dengan dapur"
+      "Peti sejuk paling besar kerana ruang kosong menjimatkan tenaga",
+      "Peti sejuk paling berkuasa kerana ia menyejuk lebih cepat"
      ],
      "b": 1,
-     "u": "Peti sejuk berjalan 24 jam sehari, jadi penjimatan kecil setiap jam terkumpul menjadi besar."
+     "u": "Peti sejuk berjalan 24 jam sehari, jadi penjimatan kecil setiap jam terkumpul menjadi besar. Kuasa yang lebih tinggi bermakna lebih banyak tenaga digunakan."
     },
     {
      "j": "pilih",
      "t": "Dua pilihan lampu jalan untuk kampung yang jauh dari talian elektrik: (P) lampu bersambung grid, (Q) lampu LED suria. Keputusan paling wajar?",
      "p": [
-      "P, kerana lampu grid sentiasa jauh lebih terang",
-      "P, kerana tenaga suria tidak berfungsi di Malaysia",
+      "P, kerana lampu suria tidak berfungsi pada waktu malam",
+      "P, kerana cahaya matahari di Malaysia tidak cukup kuat",
       "Q, kerana tidak perlu menarik kabel yang jauh dan mahal",
-      "Q, kerana lampu suria tidak perlu diselenggara langsung"
+      "Q, kerana lampu suria tidak memerlukan penyelenggaraan"
      ],
      "b": 2,
-     "u": "Lampu suria tetap perlu diselenggara, tetapi kos kabel jarak jauh sangat tinggi."
+     "u": "Lampu suria menyimpan tenaga dalam bateri pada siang hari untuk digunakan pada waktu malam. Panel dan bateri tetap perlu diselenggara."
     },
     {
      "j": "pilih",
      "t": "Nilaikan cadangan: \"Pasang fius 30 A pada cerek supaya fius tidak mudah terputus.\"",
      "p": [
       "Wajar, kerana fius yang jarang terputus menjimatkan kos",
-      "Wajar, kerana cerek memerlukan arus 30 A untuk mendidih",
-      "Tidak wajar, kerana fius 30 A lebih mahal daripada 10 A",
+      "Wajar, kerana cerek menarik arus 30 A semasa air mendidih",
+      "Tidak wajar, kerana fius 30 A menurunkan voltan ke cerek",
       "Tidak wajar, kerana wayar boleh terlalu panas sebelum fius terputus"
      ],
      "b": 3,
-     "u": "Fius yang terlalu tinggi tidak melindungi wayar daripada arus berlebihan."
+     "u": "Arus normal cerek 2000 W kira-kira 8.3 A. Fius tidak mengubah voltan; ia hanya lebur apabila arus melebihi nilainya."
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA ciri bangunan hijau yang menjimatkan tenaga elektrik.",
+     "t": "Pilih SEMUA ciri bangunan yang menjimatkan tenaga elektrik di Malaysia.",
      "p": [
-      "Tingkap besar untuk cahaya semula jadi",
+      "Tingkap berpeneduh untuk cahaya semula jadi",
       "Panel suria di atas bumbung",
       "Penebat haba pada bumbung dan dinding",
-      "Lampu dibiarkan menyala 24 jam untuk keselamatan",
+      "Dinding kaca besar tanpa peneduh di sebelah barat",
       "Penyaman udara ditetapkan pada 16 °C"
      ],
      "b": [
@@ -620,19 +620,19 @@ window.BANK["t3b6"] =
       1,
       2
      ],
-     "u": "Suhu penyaman udara yang terlalu rendah menggunakan lebih banyak elektrik."
+     "u": "Kaca tanpa peneduh di sebelah barat menerima matahari petang dan menambah beban penyaman udara. Suhu 16 °C menggunakan lebih banyak elektrik."
     },
     {
      "j": "pilih",
      "t": "Seorang murid masih melekat pada wayar selepas terkena kejutan elektrik. Tindakan pertama paling wajar?",
      "p": [
       "Matikan suis utama dahulu",
-      "Tarik tangan mangsa dengan segera",
-      "Siram mangsa dengan air supaya sejuk",
-      "Tunggu mangsa lepas dengan sendiri"
+      "Tarik tangan mangsa segera dengan tangan kosong",
+      "Siram mangsa dengan air supaya arus mengalir keluar",
+      "Tolak mangsa menggunakan batang besi yang panjang"
      ],
      "b": 0,
-     "u": "Menyentuh mangsa yang masih bersambung kepada bekalan boleh menjadikan penyelamat mangsa kedua."
+     "u": "Tubuh, air dan besi semuanya mengalirkan elektrik, jadi penyelamat boleh menjadi mangsa kedua."
     }
    ],
    "bos": {
@@ -640,12 +640,12 @@ window.BANK["t3b6"] =
     "t": "Sekolah mahu memasang panel suria, tetapi bajetnya hanya cukup untuk separuh bumbung. Keputusan paling wajar?",
     "p": [
      "Tangguhkan projek sehingga bajet cukup untuk seluruh bumbung",
-     "Pasang separuh dahulu dan tukar lampu kepada LED",
-     "Pasang panel di bahagian bumbung yang paling teduh",
-     "Beli panel terpakai tanpa memeriksa keadaannya"
+     "Pasang separuh dahulu dan kurangkan permintaan dengan LED",
+     "Pasang panel di bahagian bumbung yang paling teduh supaya tidak panas",
+     "Pasang panel dan simpan lebihan tenaga di dalam transformer"
     ],
     "b": 1,
-    "u": "Penjimatan boleh bermula segera, dan mengurangkan permintaan tenaga menjadikan setiap panel lebih bermakna."
+    "u": "Penjimatan boleh bermula segera. Panel di tempat teduh menjana kurang elektrik, dan transformer tidak menyimpan tenaga."
    }
   },
   {
@@ -662,15 +662,15 @@ window.BANK["t3b6"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Awak mereka penjana elektrik untuk kampung pedalaman di tepi sungai yang deras. Sumber paling sesuai?",
+     "t": "Awak mereka penjana elektrik untuk kampung pedalaman di tepi sungai yang deras dan dikelilingi hutan tebal. Sumber paling sesuai?",
      "p": [
-      "Penjana diesel yang besar",
-      "Loji tenaga nuklear kecil",
-      "Turbin air mikro hidro di sungai",
-      "Kincir angin di dalam hutan tebal"
+      "Panel suria di bawah kanopi hutan tebal",
+      "Kincir angin di lembah yang terlindung",
+      "Turbin mikro hidro di sungai itu",
+      "Penjana diesel kerana bahan apinya mudah dihantar"
      ],
      "b": 2,
-     "u": "Sungai deras ialah sumber tenaga boleh baharu yang sudah tersedia."
+     "u": "Sungai deras ialah tenaga boleh baharu yang sudah tersedia. Kanopi hutan menghalang cahaya, lembah terlindung kurang berangin, dan diesel sukar dihantar ke pedalaman."
     },
     {
      "j": "pilih",
@@ -678,23 +678,23 @@ window.BANK["t3b6"] =
      "p": [
       "Sambung bateri terus kepada turbin tanpa alat lain",
       "Guna transformer sahaja untuk menukar a.u. kepada a.t.",
-      "Alihkan turbin ke kolam supaya air lebih tenang",
+      "Guna fius yang lebih besar supaya arus mengalir satu arah",
       "Guna pengecas yang menukar a.u. kepada a.t."
      ],
      "b": 3,
-     "u": "Transformer hanya mengubah voltan, bukan jenis arus."
+     "u": "Transformer hanya mengubah voltan, bukan jenis arus. Fius melindungi litar dan tidak mengubah arah arus."
     },
     {
      "j": "pilih",
-     "t": "Pembinaan empangan kecil akan membanjiri sebahagian hutan. Pendekatan paling wajar mengambil kira alam sekitar?",
+     "t": "Pembinaan empangan kecil akan membanjiri sebahagian hutan. Pendekatan paling wajar yang mengambil kira alam sekitar?",
      "p": [
       "Guna turbin arus sungai tanpa empangan besar",
-      "Bina empangan setinggi mungkin untuk kuasa maksimum",
-      "Tebang semua pokok di tebing supaya air lebih laju",
-      "Batalkan terus sebarang bekalan elektrik ke kampung"
+      "Bina empangan setinggi mungkin supaya kuasa maksimum",
+      "Luruskan sungai supaya air mengalir lebih laju ke turbin",
+      "Bina empangan di hulu kerana hutan di situ tidak berpenghuni"
      ],
      "b": 0,
-     "u": "Turbin arus sungai menjana elektrik tanpa menenggelamkan hutan."
+     "u": "Turbin arus sungai menjana elektrik tanpa menenggelamkan hutan. Hutan di hulu tetap habitat hidupan liar dan kawasan tadahan air."
     },
     {
      "j": "pilih",
@@ -702,59 +702,59 @@ window.BANK["t3b6"] =
      "p": [
       "1 : 5",
       "5 : 1",
-      "1 : 1",
-      "12 : 24"
+      "1200 : 1",
+      "1 : 1"
      ],
      "b": 1,
-     "u": "Np/Ns = Vp/Vs = 1200/240 = 5."
+     "u": "Np/Ns = Vp/Vs = 1200/240 = 5. Transformer injak turun mempunyai lebih banyak lilitan primer."
     },
     {
      "j": "pilih",
      "t": "Penduduk kampung belum biasa dengan keselamatan elektrik. Langkah paling penting dalam rekaan awak?",
      "p": [
-      "Sembunyikan semua suis supaya tidak disentuh",
-      "Guna wayar paling nipis untuk menjimatkan kos",
-      "Pasang ELCB dan dawai bumi serta latih penduduk",
-      "Biarkan wayar terdedah supaya mudah dibaiki"
+      "Pasang fius bernilai tinggi supaya bekalan jarang terputus",
+      "Gunakan wayar nipis kerana arus di kampung kecil sahaja",
+      "Pasang ELCB dan dawai bumi, serta latih penduduk",
+      "Pasang MCB sahaja kerana MCB turut mengesan kebocoran ke bumi"
      ],
      "b": 2,
-     "u": "Alat keselamatan hanya berkesan jika pengguna tahu cara menggunakannya."
+     "u": "MCB mengesan arus berlebihan, manakala ELCB mengesan kebocoran arus ke bumi. Alat keselamatan berkesan hanya jika pengguna faham fungsinya."
     },
     {
      "j": "pilih",
-     "t": "Bajet projek terhad. Cara paling kreatif untuk mengurangkan permintaan tenaga di kampung?",
+     "t": "Bajet projek terhad dan penjana hanya menghasilkan kuasa kecil. Cara paling kreatif untuk memenuhi keperluan kampung?",
      "p": [
-      "Beli penjana kedua untuk kegunaan waktu siang",
-      "Naikkan voltan bekalan supaya tenaga lebih banyak",
-      "Hadkan elektrik kepada rumah ketua kampung sahaja",
+      "Naikkan voltan bekalan supaya lebih banyak tenaga dihasilkan",
+      "Beli penjana kedua khas untuk kegunaan waktu siang",
+      "Guna mentol pijar kerana ia lebih tahan lama daripada LED",
       "Guna lampu LED dan jadualkan alat berkuasa tinggi"
      ],
      "b": 3,
-     "u": "Mengurangkan dan menyusun permintaan lebih murah daripada menambah penjana."
+     "u": "Menaikkan voltan dengan transformer tidak menambah tenaga. Mengurangkan dan menyusun permintaan lebih murah daripada menambah penjana."
     },
     {
      "j": "pilih",
      "t": "Bagaimanakah awak membuktikan sistem mikro hidro itu berjaya selepas enam bulan?",
      "p": [
       "Bandingkan jam bekalan dan kos diesel sebelum dan selepas",
-      "Tanya ketua kampung sama ada lampu kelihatan terang",
-      "Kira bilangan wayar yang digunakan dalam projek",
-      "Ukur kedalaman sungai sekali sahaja pada musim hujan"
+      "Tanya ketua kampung sama ada lampu kelihatan lebih terang",
+      "Ukur voltan output sekali sahaja pada hari pemasangan",
+      "Kira bilangan rumah yang mempunyai soket elektrik"
      ],
      "b": 0,
-     "u": "Ukuran sebelum dan selepas menunjukkan perubahan sebenar."
+     "u": "Ukuran yang sama sebelum dan selepas menunjukkan perubahan sebenar. Satu bacaan pada hari pertama tidak menunjukkan prestasi enam bulan."
     },
     {
      "j": "pilih",
-     "t": "Penduduk kampung mempunyai adat menjaga sungai sebagai sumber makanan. Pertimbangan paling wajar?",
+     "t": "Penduduk kampung bergantung pada ikan sungai sebagai sumber makanan. Pertimbangan paling wajar dalam reka bentuk turbin?",
      "p": [
-      "Abaikan adat itu kerana bekalan elektrik lebih penting",
-      "Pastikan laluan ikan tidak terhalang oleh turbin",
-      "Pindahkan penduduk jauh dari sungai semasa projek",
-      "Tangkap semua ikan sebelum turbin mula dipasang"
+      "Pasang turbin merentasi seluruh lebar sungai untuk kuasa maksimum",
+      "Pastikan laluan ikan tidak terhalang",
+      "Pindahkan penduduk jauh dari sungai sepanjang projek dijalankan",
+      "Hadkan tangkapan ikan untuk menampung kehilangan habitat"
      ],
      "b": 1,
-     "u": "Penyelesaian yang baik menjaga sumber yang sudah lama menyara masyarakat."
+     "u": "Turbin yang merentasi seluruh sungai menghalang ikan berhijrah untuk bertelur. Penyelesaian yang baik menjaga sumber yang menyara masyarakat."
     }
    ],
    "bos": {

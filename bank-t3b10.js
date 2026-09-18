@@ -557,55 +557,55 @@ window.BANK["t3b10"] =
       "Q dan R"
      ],
      "b": 2,
-     "u": "P dan Q berjumlah RM400 juta. Misi R sahaja sudah RM2500 juta."
+     "u": "P dan Q berjumlah RM400 juta. Misi R sahaja sudah RM2500 juta, lima kali ganda bajet."
     },
     {
      "j": "pilih",
      "t": "Dalam bajet itu, misi manakah memberi manfaat paling langsung kepada rakyat?",
      "p": [
-      "Misi R, kerana misi paling mahal pasti paling berguna",
-      "Misi Q sahaja, kerana angkasawan terkenal",
-      "Tiada misi, kerana angkasa tiada manfaat",
+      "Misi Q, kerana penyelidikan mikrograviti terus menghasilkan ubat baharu",
+      "Misi R, kerana pengetahuan baharu tentang Marikh paling bernilai",
+      "Misi Q, kerana ia paling murah dan risikonya hanya sederhana",
       "Misi P, kerana amaran bencana melindungi jutaan penduduk"
      ],
      "b": 3,
-     "u": "Misi R juga di luar bajet."
+     "u": "Misi R di luar bajet. Penyelidikan mikrograviti bernilai tetapi manfaatnya mengambil masa bertahun-tahun."
     },
     {
      "j": "pilih",
      "t": "Nilaikan dakwaan: \"Wang penerokaan angkasa lebih baik digunakan untuk masalah di Bumi sahaja.\"",
      "p": [
-      "Separuh wajar, kerana teknologi angkasa turut membantu Bumi",
-      "Tepat sepenuhnya, kerana angkasa tiada kaitan dengan Bumi",
-      "Salah sepenuhnya, kerana masalah di Bumi tidak penting",
-      "Tepat, kerana satelit tidak pernah membantu sesiapa"
+      "Tidak sepenuhnya tepat, kerana teknologi angkasa turut membantu Bumi",
+      "Tepat, kerana penerokaan angkasa tiada kaitan dengan masalah di Bumi",
+      "Tepat, kerana satelit hanya berguna untuk kegunaan ketenteraan",
+      "Tidak tepat, kerana masalah di Bumi boleh diselesaikan di angkasa"
      ],
      "b": 0,
-     "u": "Ramalan cuaca, GPS dan pemantauan bencana semuanya bergantung pada teknologi angkasa."
+     "u": "Ramalan cuaca, GPS dan pemantauan bencana semuanya bergantung pada teknologi angkasa. Tetapi kos dan manfaat setiap misi tetap perlu ditimbang."
     },
     {
      "j": "pilih",
      "t": "Satelit pemantau jerebu (Misi P) memerlukan data tanah untuk pengesahan. Keputusan paling wajar?",
      "p": [
-      "Gunakan data satelit sahaja tanpa semakan",
-      "Gabungkan data satelit dengan stesen udara di tanah",
-      "Tutup semua stesen di tanah untuk jimat kos",
-      "Tunggu jerebu hilang sepenuhnya sebelum mula menganalisis data"
+      "Gunakan data satelit sahaja kerana satelit melihat seluruh negara",
+      "Gabungkan data satelit dengan stesen kualiti udara di tanah",
+      "Tutup stesen di tanah kerana satelit lebih jitu",
+      "Gunakan stesen di tanah sahaja kerana satelit terhalang oleh awan"
      ],
      "b": 1,
-     "u": "Data dari dua sumber saling mengesahkan."
+     "u": "Satelit meliputi kawasan luas, manakala stesen di tanah mengukur udara yang benar-benar disedut. Dua sumber saling mengesahkan."
     },
     {
      "j": "pilih",
      "t": "Sebuah syarikat menawarkan pelancaran murah tetapi rekod keselamatannya lemah. Keputusan paling wajar bagi Misi P?",
      "p": [
-      "Pilih pelancar paling murah tanpa semakan",
-      "Batalkan terus Misi P kerana risiko pelancaran",
+      "Pilih pelancar murah dan guna baki wang untuk satelit kedua",
+      "Batalkan Misi P kerana setiap pelancaran ada risiko",
       "Pilih pelancar yang lebih selamat walaupun mahal sedikit",
-      "Lancarkan satelit tanpa insurans langsung untuk menjimatkan kos"
+      "Guna pelancar murah tetapi tambah perisai pada satelit"
      ],
      "b": 2,
-     "u": "Kehilangan satelit RM300 juta jauh lebih mahal daripada perbezaan harga pelancaran."
+     "u": "Kehilangan satelit RM300 juta jauh lebih mahal daripada perbezaan harga pelancaran. Perisai tidak menyelamatkan satelit jika roket gagal."
     },
     {
      "j": "banyak",
@@ -614,52 +614,52 @@ window.BANK["t3b10"] =
       "Rancang satelit jatuh ke atmosfera selepas tamat hayat",
       "Kurangkan serpihan yang terlepas semasa pelancaran",
       "Kongsi data orbit dengan agensi lain",
-      "Tinggalkan peringkat roket lama di orbit selama-lamanya",
-      "Letupkan satelit lama di orbit supaya menjadi kepingan kecil"
+      "Letupkan satelit lama supaya serpihannya lebih kecil",
+      "Tinggalkan peringkat roket lama di orbit sebagai perisai"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Meletupkan satelit menghasilkan lebih banyak serpihan berbahaya."
+     "u": "Serpihan kecil pun bergerak sangat laju dan berbahaya. Peringkat roket yang ditinggalkan menjadi sampah angkasa, bukan perisai."
     },
     {
      "j": "pilih",
      "t": "Negara mahu murid lebih berminat dengan sains angkasa. Pilihan paling wajar dengan kos rendah?",
      "p": [
-      "Hantar setiap murid ke angkasa",
-      "Bina roket sebenar sendiri di setiap sekolah menengah di negara ini",
-      "Hentikan pengajaran astronomi di sekolah",
-      "Program membina satelit kecil CubeSat bersama universiti"
+      "Hantar murid terbaik melawat pusat angkasa di luar negara",
+      "Beli teleskop mahal untuk setiap sekolah menengah",
+      "Bina tapak pelancaran roket kecil di setiap negeri",
+      "Program membina CubeSat bersama universiti"
      ],
      "b": 3,
-     "u": "CubeSat murah dan memberi pengalaman membina satelit sebenar."
+     "u": "CubeSat murah dan memberi ramai murid pengalaman membina satelit sebenar."
     },
     {
      "j": "pilih",
-     "t": "Selepas banjir besar, agensi bantuan mempunyai imej satelit sehari selepas banjir dan laporan penduduk seminggu kemudian. Keputusan paling wajar?",
+     "t": "Selepas banjir besar, agensi bantuan ada imej satelit sehari selepas banjir dan laporan penduduk seminggu kemudian. Keputusan paling wajar?",
      "p": [
-      "Guna imej satelit dahulu, kemudian sahkan dengan penduduk",
-      "Tunggu laporan penduduk sebelum bertindak",
-      "Guna laporan penduduk sahaja kerana imej satelit tidak tepat",
-      "Abaikan kedua-duanya dan tunggu arahan seterusnya"
+      "Guna imej satelit dahulu, kemudian sahkan dengan laporan penduduk",
+      "Tunggu laporan penduduk kerana imej satelit mungkin salah",
+      "Guna imej satelit sahaja kerana ia menunjukkan semua butiran",
+      "Tunggu imej satelit kedua seminggu kemudian untuk perbandingan"
      ],
      "b": 0,
-     "u": "Bantuan perlu bergerak cepat, dan laporan penduduk menambah butiran yang tidak dilihat satelit."
+     "u": "Bantuan perlu bergerak cepat, dan laporan penduduk menambah butiran yang tidak dilihat satelit, seperti keadaan di bawah bumbung."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Negara mempertimbangkan untuk meneruskan program angkasa walaupun ekonomi perlahan. Hujah paling kukuh untuk meneruskannya?",
     "p": [
-     "Program angkasa menjadikan negara kelihatan lebih hebat di mata dunia",
+     "Program angkasa menjadikan negara kelihatan lebih hebat",
      "Data satelit membantu pertanian, cuaca dan bencana",
-     "Negara lain juga mempunyai program angkasa",
-     "Angkasawan mendapat gaji yang sangat tinggi"
+     "Negara jiran juga mempunyai program angkasa sendiri",
+     "Penerokaan Marikh akan menyediakan tempat tinggal baharu"
     ],
     "b": 1,
-    "u": "Hujah yang kukuh menunjukkan manfaat sebenar kepada rakyat."
+    "u": "Hujah yang kukuh menunjukkan manfaat sebenar kepada rakyat. Marikh belum boleh didiami manusia dalam masa terdekat."
    }
   },
   {
@@ -678,97 +678,97 @@ window.BANK["t3b10"] =
      "j": "pilih",
      "t": "Awak mereka roket air untuk pertandingan sekolah. Faktor paling penting untuk ketinggian maksimum?",
      "p": [
-      "Warna roket yang terang dan menarik",
-      "Botol plastik yang paling berat",
+      "Botol diisi penuh dengan air supaya tujahan maksimum",
+      "Botol paling berat supaya roket lebih stabil",
       "Isi padu air dan tekanan yang sesuai",
-      "Sirip yang dipasang secara rawak"
+      "Tekanan serendah mungkin supaya botol tidak pecah"
      ],
      "b": 2,
-     "u": "Terlalu banyak air menambah jisim, manakala terlalu sedikit air mengurangkan tujahan."
+     "u": "Air ditolak ke bawah dan menolak roket ke atas. Terlalu banyak air menambah jisim dan tiada ruang untuk udara bertekanan; terlalu sedikit mengurangkan tujahan."
     },
     {
      "j": "pilih",
      "t": "Roket air awak terbang tidak lurus. Pengubahsuaian paling wajar?",
      "p": [
-      "Tambah lebih banyak air sehingga botol itu penuh",
-      "Buang semua sirip",
-      "Lancarkan pada hari berangin kencang",
-      "Pasang sirip yang sama saiz secara simetri"
+      "Pasang sirip di bahagian hidung roket",
+      "Tambah air sehingga botol hampir penuh",
+      "Pasang satu sirip besar di satu sisi sahaja",
+      "Pasang sirip sama saiz secara simetri di bahagian bawah"
      ],
      "b": 3,
-     "u": "Sirip simetri menstabilkan arah penerbangan."
+     "u": "Sirip simetri di bahagian belakang menstabilkan arah penerbangan, seperti bulu pada anak panah."
     },
     {
      "j": "pilih",
-     "t": "Awak mereka cadangan satelit kecil untuk Malaysia. Kegunaan paling bermanfaat kepada rakyat?",
+     "t": "Awak mereka cadangan satelit kecil untuk Malaysia. Kegunaan paling sesuai dan bermanfaat?",
      "p": [
       "Memantau banjir, jerebu dan kesihatan tanaman",
-      "Menyiarkan iklan syarikat ke seluruh dunia",
-      "Mengambil gambar rumah orang tanpa izin",
-      "Mengawal cuaca supaya hujan tidak turun"
+      "Menyiarkan televisyen berterusan dari orbit 400 km",
+      "Mengawal hujan supaya banjir tidak berlaku",
+      "Menentukan kedudukan kereta seperti sistem GPS"
      ],
      "b": 0,
-     "u": "Satelit tidak boleh mengawal cuaca, dan mengambil gambar tanpa izin melanggar privasi."
+     "u": "Satelit di orbit rendah bergerak melintasi langit, jadi tidak sesuai untuk siaran berterusan. GPS memerlukan banyak satelit, dan satelit tidak mengawal cuaca."
     },
     {
      "j": "pilih",
-     "t": "Bajet projek roket air awak terhad. Bahan paling kreatif dan selamat?",
+     "t": "Bajet projek roket air awak terhad. Bahan paling sesuai dan selamat untuk badan roket?",
      "p": [
-      "Tabung gas bertekanan tinggi",
-      "Botol plastik terpakai, kadbod dan pam basikal",
-      "Botol kaca terpakai kerana lebih kukuh dan keras",
-      "Bahan api petrol untuk tujahan lebih kuat"
+      "Botol kaca terpakai kerana lebih kukuh",
+      "Botol plastik minuman berkarbonat terpakai",
+      "Botol air mineral nipis kerana lebih ringan",
+      "Tin aluminium kerana ia logam yang kuat"
      ],
      "b": 1,
-     "u": "Botol kaca boleh pecah berkecai di bawah tekanan."
+     "u": "Botol minuman berkarbonat direka untuk menahan tekanan. Kaca boleh pecah berkecai, dan botol nipis serta tin boleh terkoyak di bawah tekanan."
     },
     {
      "j": "pilih",
      "t": "Bagaimanakah awak menentukan reka bentuk sirip terbaik secara adil?",
      "p": [
-      "Uji sekali sahaja bagi setiap reka bentuk",
-      "Tukar isi padu air dan tekanan setiap kali pelancaran dibuat",
-      "Uji setiap sirip berulang kali dengan tekanan yang sama",
-      "Pilih sirip yang kelihatan paling cantik"
+      "Uji sekali sahaja bagi setiap reka bentuk sirip",
+      "Tukar isi padu air setiap kali supaya lebih banyak data diperoleh",
+      "Uji setiap sirip berulang kali dengan tekanan dan air yang sama",
+      "Uji setiap reka bentuk pada hari yang berbeza cuacanya"
      ],
      "b": 2,
-     "u": "Hanya reka bentuk sirip yang patut berubah antara ujian."
+     "u": "Hanya reka bentuk sirip yang patut berubah. Angin pada hari berbeza menambah pemboleh ubah yang tidak dikawal."
     },
     {
      "j": "pilih",
      "t": "Kawasan pelancaran roket air awak berhampiran bangunan dan orang ramai. Keputusan paling wajar?",
      "p": [
-      "Lancarkan di kantin supaya ramai menonton",
-      "Halakan roket ke arah bangunan",
-      "Tiada langkah diperlukan kerana roket air ringan",
-      "Lancarkan di padang terbuka dengan zon selamat"
+      "Tepi bangunan supaya roket tidak dibawa angin",
+      "Dalam dewan tertutup supaya tiada angin",
+      "Jalan sekolah kerana ruangnya panjang dan lurus",
+      "Padang terbuka dengan zon selamat"
      ],
      "b": 3,
-     "u": "Roket air yang laju boleh mencederakan orang."
+     "u": "Roket air yang laju boleh mencederakan orang dan memecahkan tingkap."
     },
     {
      "j": "pilih",
      "t": "Model satelit awak akan dipamerkan kepada murid sekolah rendah. Pendekatan paling berkesan?",
      "p": [
       "Tunjuk cara imej satelit membantu kehidupan mereka",
-      "Tulis penerangan panjang dalam istilah teknikal",
-      "Larang murid menyentuh atau bertanya",
-      "Tunjukkan model tanpa sebarang penerangan"
+      "Terangkan persamaan orbit dengan terperinci",
+      "Tunjukkan model tanpa penerangan supaya mereka meneka",
+      "Fokus pada sejarah pelancaran Sputnik sahaja"
      ],
      "b": 0,
-     "u": "Kanak-kanak lebih berminat apabila nampak kaitan dengan kehidupan sendiri."
+     "u": "Kanak-kanak lebih berminat apabila nampak kaitan dengan kehidupan sendiri, seperti ramalan cuaca dan peta."
     },
     {
      "j": "pilih",
      "t": "Awak mencadangkan pusat pelancaran roket kecil di sebuah negeri. Pertimbangan paling wajar?",
      "p": [
-      "Pilih tapak paling hampir dengan pusat bandar",
+      "Pilih tapak berhampiran pusat bandar supaya mudah dikunjungi",
       "Kaji kesan kepada penduduk, alam dan keselamatan",
-      "Abaikan pendapat nelayan di kawasan itu",
-      "Bina tanpa kelulusan untuk menjimatkan masa"
+      "Pilih tanah tinggi di tengah semenanjung supaya roket lebih tinggi",
+      "Pilih tapak jauh dari laut supaya roket tidak jatuh ke dalam air"
      ],
      "b": 1,
-     "u": "Pusat pelancaran menjejaskan ruang udara, laut dan penduduk di sekitarnya."
+     "u": "Kebanyakan pusat pelancaran dibina di tepi laut supaya peringkat roket yang terpisah jatuh jauh dari penduduk."
     }
    ],
    "bos": {

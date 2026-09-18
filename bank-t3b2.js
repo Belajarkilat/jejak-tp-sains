@@ -330,11 +330,11 @@ window.BANK["t3b2"] =
    "soalan": [
     {
      "j": "nombor",
-     "t": "Berapa peratus oksigen yang digunakan badan daripada udara yang disedut?",
+     "t": "Berdasarkan jadual, berapakah beza peratus oksigen antara udara disedut dan udara dihembus?",
      "b": 5,
      "tol": 0.05,
      "suf": "%",
-     "u": "21.0 tolak 16.0 bersamaan 5.0 peratus diserap."
+     "u": "21.0 tolak 16.0 bersamaan 5.0. Maknanya kira-kira satu perempat daripada oksigen yang disedut diserap oleh badan, dan selebihnya dihembus keluar semula."
     },
     {
      "j": "pilih",
@@ -577,15 +577,15 @@ window.BANK["t3b2"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Siapakah paling berisiko mengalami kegagalan pertukaran gas semasa aktiviti berat?",
+     "t": "Berdasarkan jadual, siapakah paling berisiko tidak mendapat oksigen yang cukup semasa aktiviti berat?",
      "p": [
-      "Mei Ling",
-      "Suriani",
-      "Encik Fauzi",
-      "Risiko ketiga-tiganya sama"
+      "Suriani, kerana asma menyempitkan bronkiolnya pada setiap masa",
+      "Mei Ling, kerana kadar nafas rehatnya paling rendah dalam jadual",
+      "Encik Fauzi, kerana ketiga-tiga bacaannya di luar julat sihat",
+      "Encik Fauzi, kerana umurnya paling tua antara ketiga-tiga individu"
      ],
      "b": 2,
-     "u": "Ketiga-tiga bacaan Encik Fauzi berada di luar julat sihat serentak."
+     "u": "Kadar nafas rehat yang rendah seperti Mei Ling ialah tanda kecergasan. Umur sahaja bukan bukti; bacaan Encik Fauzi yang menjadi bukti."
     },
     {
      "j": "banyak",
@@ -594,105 +594,105 @@ window.BANK["t3b2"] =
       "Kapasiti vital 2.6 L, di bawah julat sihat",
       "PEFR 290, jauh di bawah julat sihat",
       "Nafas rehat 22, melebihi julat sihat",
-      "Beliau paling tua antara ketiga-tiganya",
-      "Suriani pesakit asma jadi datanya tak boleh dipercayai"
+      "Kadar nafas yang tinggi bermakna peparunya lebih cekap",
+      "Merokok menambah bilangan alveolus"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Umur ialah latar belakang, bukan bukti daripada jadual."
+     "u": "Kadar nafas rehat yang tinggi bermakna setiap nafas kurang berkesan. Merokok memecahkan dinding alveolus, bukan menambahnya."
     },
     {
      "j": "pilih",
-     "t": "Sekolah hanya mampu jalankan SATU program kesihatan respirasi. Pilihan paling wajar?",
+     "t": "Suriani mahu menyertai merentas desa sekolah. Keputusan paling wajar?",
      "p": [
-      "Kelas senaman pagi, kerana semua murid akan capai kapasiti vital atlet",
-      "Pemeriksaan PEFR sahaja, kerana ia dapat mengesan semua penyakit peparu",
-      "Tiada program, kerana hanya seorang menunjukkan bacaan yang rendah",
-      "Kempen bebas rokok, kerana kerosakan alveolus tidak boleh dipulihkan"
+      "Halang, kerana senaman berat pasti mencetuskan serangan asma",
+      "Benarkan, tetapi dia berhenti menggunakan inhaler supaya peparunya kuat",
+      "Benarkan tanpa persediaan kerana PEFR 340 dalam julat sihat",
+      "Benarkan, dengan inhaler pelega dibawa dan pemanasan badan dahulu"
      ],
      "b": 3,
-     "u": "Keputusan yang baik menimbang mana satu memberi pulangan terbesar bagi kos yang sama."
+     "u": "PEFR 340 masih di bawah julat sihat 400 hingga 550. Asma yang terkawal tidak menghalang senaman jika persediaan dibuat."
     },
     {
      "j": "pilih",
-     "t": "Suriani mahu sertai merentas desa sekolah. Keputusan paling wajar?",
+     "t": "Seorang murid mengukur kapasiti vitalnya sekali sahaja dan mendapat 2.9 L. Nilaikan kebolehpercayaan bacaan itu.",
      "p": [
-      "Benarkan dengan syarat membawa inhaler dan membuat pemanasan badan",
-      "Halang terus, kerana semua pesakit asma dilarang bersenam berat",
-      "Benarkan tanpa sebarang persediaan kerana asmanya sudah terkawal",
-      "Benarkan hanya jika dia berhenti menggunakan inhaler sebelum itu"
+      "Kurang boleh dipercayai, kerana ukuran perlu diulang dan bacaan tertinggi diambil",
+      "Boleh dipercayai, kerana kapasiti vital seseorang tetap sepanjang hari",
+      "Kurang boleh dipercayai, kerana kapasiti vital hanya diukur selepas bersenam",
+      "Boleh dipercayai, asalkan alat itu sudah ditentukur oleh pihak makmal"
      ],
      "b": 0,
-     "u": "Asma yang terkawal tidak menghalang senaman. Persediaan yang betul menjadikannya selamat, dan senaman berkala sebenarnya membantu."
+     "u": "Satu tiupan yang lemah memberi bacaan rendah. Ulangan meningkatkan kebolehpercayaan. Alat yang ditentukur meningkatkan kejituan, tetapi tidak menggantikan ulangan."
     },
     {
      "j": "pilih",
-     "t": "Sekolah ada RM500 untuk kurangkan habuk pada waktu petang. Pilihan memberi kesan paling luas?",
+     "t": "Sekolah hanya mampu menjalankan SATU program kesihatan respirasi. Pilihan paling wajar berdasarkan sains?",
      "p": [
-      "Beli satu penapis udara berkuasa tinggi untuk satu bilik darjah",
-      "Pindahkan aktiviti luar ke waktu pagi dan tutup tingkap petang",
-      "Beli topeng muka khas untuk tiga orang murid asma sahaja",
-      "Simpan wang itu untuk membeli peralatan lebih besar tahun depan"
+      "Kelas senaman pagi, kerana senaman membina semula alveolus yang pecah",
+      "Kempen bebas rokok",
+      "Ujian PEFR sahaja, kerana ia mengesan semua jenis penyakit peparu",
+      "Topeng muka untuk semua, kerana topeng biasa menapis asap rokok"
      ],
      "b": 1,
-     "u": "Langkah pertama hampir tidak menggunakan wang dan melindungi setiap murid. Penyelesaian terbaik bukan selalu yang paling mahal."
+     "u": "Kerosakan alveolus akibat rokok tidak boleh dipulihkan, jadi mencegahnya memberi manfaat paling besar. Senaman tidak membina semula alveolus."
     },
     {
      "j": "pilih",
-     "t": "Seorang murid mengukur kapasiti vitalnya sekali sahaja. Nilaikan kesahan datanya.",
+     "t": "Habuk dari tapak binaan paling tinggi pada waktu petang. Langkah manakah melindungi paling ramai murid asma dengan kos paling rendah?",
      "p": [
-      "Sah, kerana alat pengukur itu sudah ditentukur oleh pihak makmal",
-      "Sah, kerana kapasiti vital seseorang tidak pernah berubah langsung",
-      "Tidak sah, kerana ukuran perlu diulang dan bacaan tertinggi diambil",
-      "Tidak sah, kerana kapasiti vital tidak boleh diukur di sekolah"
+      "Beli satu penapis udara untuk kelas murid asma",
+      "Beri inhaler pencegah kepada semua murid di sekolah",
+      "Pindahkan aktiviti luar ke waktu pagi",
+      "Minta murid asma bernafas melalui mulut semasa berada di luar"
      ],
      "b": 2,
-     "u": "Satu bacaan tunggal tidak boleh membezakan prestasi sebenar daripada percubaan yang lemah."
+     "u": "Mengelak pendedahan hampir tiada kos dan melindungi semua murid. Rongga hidung menapis habuk, jadi bernafas melalui mulut memburukkan keadaan."
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA ciri kempen anti-rokok yang berkesan untuk remaja.",
+     "t": "Pilih SEMUA fakta yang tepat untuk dimasukkan dalam poster anti-rokok untuk remaja.",
      "p": [
-      "Tunjukkan kesan pada penampilan dan prestasi sukan sekarang",
-      "Libatkan bekas perokok muda sebagai penceramah",
-      "Sediakan khidmat bantuan berhenti merokok",
-      "Paparkan gambar menakutkan sahaja tanpa sokongan",
-      "Denda murid yang kedapatan merokok tanpa kaunseling"
+      "Tar melumpuhkan silia sehingga mukus berkumpul",
+      "Karbon monoksida mengurangkan oksigen yang dibawa darah",
+      "Stamina sukan boleh menurun walaupun baru merokok beberapa bulan",
+      "Nikotina melebarkan bronkiol supaya lebih banyak udara masuk",
+      "Rokok elektronik hanya mengeluarkan wap air yang tidak berbahaya"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Remaja bertindak balas pada kesan segera dan pada orang yang mereka percaya."
+     "u": "Nikotina menyempitkan salur darah dan tidak membantu pernafasan. Rokok elektronik mengandungi nikotina dan bahan kimia lain."
     },
     {
      "j": "pilih",
-     "t": "Data manakah paling kukuh untuk membuktikan merokok merosakkan peparu?",
+     "t": "Encik Fauzi berhenti merokok. Ramalan paling munasabah tentang keadaan peparunya setahun kemudian?",
      "p": [
-      "Pendapat seorang doktor pakar peparu yang sangat terkenal",
-      "Kisah seorang perokok tegar yang meninggal akibat kanser",
-      "Tinjauan dalam talian tentang perasaan orang ramai terhadap rokok",
-      "Kajian jangka panjang ke atas perokok dan bukan perokok seusia"
+      "Semua bacaan kembali ke julat sihat kerana peparu pulih sepenuhnya",
+      "Tiada sebarang perubahan kerana semua kerosakan akibat rokok kekal",
+      "Kapasiti vitalnya melebihi Mei Ling kerana alveolus baharu terbentuk",
+      "Batuk berkurang kerana silia pulih, tetapi alveolus yang pecah kekal rosak"
      ],
      "b": 3,
-     "u": "Perbandingan terkawal jangka panjang mengasingkan kesan sebenar merokok."
+     "u": "Silia boleh pulih selepas berhenti merokok, tetapi dinding alveolus yang pecah tidak terbentuk semula."
     }
    ],
    "bos": {
     "j": "pilih",
-    "t": "Klinik hanya boleh menyaring 50 murid daripada 900. Kriteria pemilihan paling wajar?",
+    "t": "Seorang guru mencadangkan PEFR sahaja digunakan untuk mengenal pasti murid asma. Nilaikan cadangan itu berdasarkan jadual.",
     "p": [
-     "Murid yang sesak nafas atau tinggal dekat sumber pencemaran",
-     "Lima puluh murid yang paling awal mendaftar pada hari itu",
-     "Murid daripada kelas terbaik kerana keputusan mereka penting",
-     "Lima puluh nama yang dipilih secara rawak daripada senarai"
+     "Kurang tepat, kerana perokok seperti Encik Fauzi juga mempunyai PEFR rendah",
+     "Tepat, kerana hanya pesakit asma mempunyai PEFR di bawah 400",
+     "Tepat, kerana PEFR mengukur isi padu udara terbanyak dalam peparu",
+     "Kurang tepat, kerana PEFR atlet sentiasa lebih rendah daripada pesakit asma"
     ],
     "b": 0,
-    "u": "Saringan bersumber terhad patut disasarkan pada kumpulan berisiko tertinggi."
+    "u": "PEFR ialah kelajuan maksimum udara dihembus, bukan isi padu. Bacaan rendah boleh berpunca daripada asma, merokok atau penyakit lain."
    }
   },
   {
@@ -709,99 +709,99 @@ window.BANK["t3b2"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Awak reka alat amaran kualiti udara untuk sekolah. Ciri mana paling penting supaya murid asma benar-benar menggunakannya?",
+     "t": "Awak mereka alat amaran habuk untuk murid asma. Ciri manakah paling penting supaya ia benar-benar melindungi mereka?",
      "p": [
-      "Rekaan yang paling cantik supaya dapat menarik perhatian semua murid",
-      "Amaran yang boleh dilihat dari koridor tanpa perlu membuka telefon",
-      "Bacaan angka yang paling tepat sehingga tiga titik perpuluhan",
-      "Laporan bulanan yang dihantar terus kepada guru besar sekolah"
+      "Amaran berbunyi selepas murid mula batuk dan sesak nafas",
+      "Amaran berbunyi sebelum habuk mencapai paras yang mencetuskan asma",
+      "Alat mengukur suhu kerana suhu tinggi ialah punca utama asma",
+      "Alat mengukur oksigen kerana habuk mengurangkan oksigen dalam udara"
      ],
      "b": 1,
-     "u": "Reka cipta yang baik dinilai pada sama ada orang benar-benar menggunakannya."
+     "u": "Amaran berguna hanya jika ia datang sebelum bronkiol mula menyempit. Habuk mencetuskan asma dengan merengsakan salur udara, bukan dengan mengurangkan oksigen."
     },
     {
      "j": "pilih",
-     "t": "Kos bahan awak RM180 tetapi PIBG hanya luluskan RM100. Tindakan paling kreatif dan praktikal?",
+     "t": "Awak reka topeng penapis habuk menggunakan bahan di sekolah. Kriteria manakah paling menentukan kejayaannya?",
      "p": [
-      "Batalkan projek terus kerana bajet PIBG tidak mencukupi",
-      "Buang fungsi amaran utama supaya kos bahan muat dengan bajet",
-      "Guna penderia terpakai dan kotak kitar semula, kekalkan fungsi utama",
-      "Minta murid asma membayar sendiri baki kos kerana alat itu untuk mereka"
+      "Ditutup serapat mungkin dengan lima lapisan kain tebal",
+      "Menapis karbon dioksida supaya udara sedutan lebih bersih",
+      "Menapis zarah halus tetapi udara masih mengalir dengan mudah",
+      "Dibuat daripada plastik kedap udara supaya habuk langsung tidak masuk"
      ],
      "b": 2,
-     "u": "Kekangan kos menguji kreativiti, bukan menamatkan projek."
+     "u": "Terlalu banyak lapisan menambah rintangan dan menyukarkan pernafasan, terutama bagi murid asma. Topeng habuk tidak menapis gas seperti karbon dioksida."
     },
     {
      "j": "pilih",
-     "t": "Kontraktor tapak pembinaan enggan berhenti kerja. Pendekatan paling wajar mengambil kira nilai masyarakat?",
+     "t": "Kontraktor tapak binaan enggan berhenti kerja. Pendekatan paling wajar yang mengambil kira nilai masyarakat?",
      "p": [
-      "Buat aduan di media sosial tanpa berbincang dengan mereka dahulu",
-      "Halang lori daripada masuk dengan menutup jalan ke tapak bina",
-      "Abaikan sahaja kerana pihak sekolah tiada kuasa ke atas kontraktor",
+      "Minta mereka membina pagar zink kerana pagar menyekat semua habuk halus",
+      "Minta kerja dihentikan sepenuhnya sehingga semua murid asma sembuh",
+      "Minta mereka bekerja pada waktu malam tanpa sebarang kawalan habuk",
       "Berbincang supaya mereka menyiram tanah dan menutup muatan lori"
      ],
      "b": 3,
-     "u": "Penyelesaian yang menang ialah yang murah bagi pihak satu lagi dan berkesan bagi awak."
+     "u": "Tanah basah tidak menerbangkan habuk. Zarah halus melepasi pagar, dan habuk malam masih terapung sehingga pagi."
     },
     {
      "j": "pilih",
-     "t": "Awak reka topeng penapis habuk mudah untuk murid asma menggunakan bahan yang ada di sekolah. Kriteria reka bentuk mana paling menentukan sama ada ia benar-benar membantu?",
+     "t": "Selepas penyelesaian awak dipasang, bagaimana awak membuktikan ia benar-benar berkesan?",
      "p": [
-      "Ia menapis zarah halus tetapi murid masih bernafas dengan selesa",
-      "Ia dibuat daripada bahan paling murah yang ada di pasaran",
-      "Ia boleh dibasuh dan digunakan semula sekurang-kurangnya seratus kali",
-      "Ia mempunyai logo sekolah yang jelas di bahagian hadapan topeng"
+      "Rekod PEFR dan episod sesak nafas murid asma sebelum dan selepas",
+      "Kira habuk yang melekat pada tingkap kelas sekali sahaja",
+      "Tanya kontraktor sama ada habuk di tapak binaan sudah berkurang",
+      "Bandingkan PEFR murid asma dengan PEFR murid yang sihat"
      ],
      "b": 0,
-     "u": "Penapis yang terlalu rapat menambah rintangan aliran udara. Reka bentuk yang berjaya mengimbangi penapisan dengan kemudahan bernafas."
+     "u": "Perbandingan sebelum dan selepas pada murid yang sama mengasingkan kesan penyelesaian. Murid sihat memang mempunyai PEFR lebih tinggi sejak awal."
     },
     {
      "j": "pilih",
-     "t": "Selepas memasang penyelesaian awak, bagaimana awak buktikan ia benar-benar berkesan dan bukan sekadar nampak berguna?",
+     "t": "Awak mahu menanam penghadang hijau di pagar sekolah untuk memerangkap habuk. Pokok manakah paling sesuai?",
      "p": [
-      "Tanya tiga orang kawan sama ada mereka menyukai reka cipta itu",
-      "Rekod episod sesak nafas dan bacaan PEFR sebelum dan selepas",
-      "Kira berapa banyak habuk yang melekat pada penapis seminggu sekali",
-      "Bandingkan dengan sekolah lain yang memang tiada masalah habuk"
+      "Pokok palma tinggi dengan beberapa helai daun di puncaknya",
+      "Pokok renek berdaun lebat yang ditanam rapat",
+      "Rumput pendek kerana akarnya menyerap habuk dari udara",
+      "Pokok berbunga harum supaya bau habuk tidak lagi dihidu"
      ],
      "b": 1,
-     "u": "Perbandingan sebelum dan selepas pada orang yang sama, dalam tempoh yang setara, mengasingkan kesan penyelesaian awak daripada sebab lain."
+     "u": "Daun yang banyak dan rapat pada paras pernafasan memerangkap zarah. Bau wangi tidak mengurangkan habuk yang disedut."
     },
     {
      "j": "pilih",
-     "t": "Sekolah luar bandar mahu meniru reka cipta awak tetapi bekalan elektrik di sana kerap terputus. Pengubahsuaian paling wajar?",
+     "t": "Rakan awak mencadangkan kipas besar di pintu kelas untuk meniup habuk keluar. Nilaikan reka bentuk itu.",
      "p": [
-      "Beri arahan supaya mereka membeli janakuasa mudah alih sendiri",
-      "Kekalkan reka bentuk asal kerana ia sudah terbukti berkesan di sini",
-      "Tukar kepada penunjuk tanpa kuasa, seperti kain penanda habuk",
-      "Batalkan cadangan itu kerana sekolah tersebut tiada bekalan elektrik"
+      "Sesuai, kerana aliran udara yang laju menapis habuk seperti silia",
+      "Sesuai, kerana habuk lebih berat daripada udara dan akan terus jatuh",
+      "Kurang sesuai, kerana kipas turut menerbangkan habuk di lantai",
+      "Kurang sesuai, kerana kipas menambah karbon dioksida dalam kelas"
      ],
      "b": 2,
-     "u": "Reka cipta yang baik menyesuaikan diri dengan keadaan penggunanya, bukan menuntut pengguna menyesuaikan diri dengannya."
+     "u": "Kipas menggerakkan udara, termasuk habuk yang sudah mendap. Habuk halus cukup ringan untuk terus terapung."
     },
     {
      "j": "pilih",
-     "t": "Projek awak berjaya, tetapi awak akan naik ke tingkatan empat dan meninggalkan kelab ini tahun depan. Langkah paling penting supaya ia kekal berfungsi?",
+     "t": "Dua reka bentuk memberi perlindungan yang sama. A berharga RM90 dan perlu penapis baharu setiap bulan pada RM15. B berharga RM250 dan penapisnya boleh dibasuh. Pilihan paling wajar untuk setahun?",
      "p": [
-      "Simpan semua maklumat projek di dalam telefon bimbit awak sendiri",
-      "Minta guru besar mengumumkan kejayaan projek dalam perhimpunan",
-      "Pasang seberapa banyak unit yang mampu sebelum awak meninggalkan kelab",
-      "Tulis panduan penyelenggaraan dan latih ahli kelab tingkatan satu"
+      "A, kerana harga permulaannya jauh lebih rendah",
+      "A, kerana penapis baharu setiap bulan lebih berkesan",
+      "B, kerana penapis yang dibasuh menapis zarah lebih halus",
+      "B, kerana jumlah kos A setahun ialah RM270"
      ],
      "b": 3,
-     "u": "Penyelesaian yang bergantung pada seorang individu akan mati bersama penglibatan orang itu."
+     "u": "RM90 campur RM15 darab 12 bersamaan RM270, melebihi RM250. Soalan menyatakan perlindungan sama, jadi kos jangka panjang yang menentukan."
     },
     {
      "j": "pilih",
-     "t": "Dua reka bentuk memberi perlindungan yang sama. Reka bentuk A berharga RM90 dan perlu penapis baharu setiap bulan pada RM15. Reka bentuk B berharga RM250 dan penapisnya boleh dibasuh. Pilihan paling wajar untuk sekolah?",
+     "t": "Awak menulis kad panduan kecemasan asma untuk kelas. Langkah pertama yang betul semasa serangan asma?",
      "p": [
-      "Reka bentuk B, kerana jumlah kos A dalam setahun mencecah RM270",
-      "Reka bentuk A, kerana harga permulaannya paling murah",
-      "Reka bentuk A, kerana penapis sekali guna sentiasa lebih bersih",
-      "Kedua-duanya sama, kerana perlindungan yang diberi adalah sama"
+      "Dudukkan murid tegak dan bantu dia menggunakan inhaler pelega",
+      "Baringkan murid supaya diafragma dapat berehat sepenuhnya",
+      "Beri murid air sejuk untuk melebarkan bronkiol yang menyempit",
+      "Minta murid bernafas berulang kali ke dalam beg kertas"
      ],
      "b": 0,
-     "u": "A menelan RM90 campur RM180 dalam tahun pertama, iaitu RM270, sudah melebihi RM250 bagi B. Kos jangka panjang selalunya menentukan pilihan yang wajar."
+     "u": "Duduk tegak memudahkan pergerakan diafragma. Inhaler pelega melebarkan bronkiol; air sejuk tidak. Beg kertas menambah karbon dioksida."
     }
    ],
    "bos": {

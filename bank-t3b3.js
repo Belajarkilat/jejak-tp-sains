@@ -565,15 +565,15 @@ window.BANK["t3b3"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Berdasarkan jadual, faktor manakah memberi kesan paling besar terhadap kadar transpirasi?",
+     "t": "Seorang murid menyimpulkan angin ialah faktor terpenting dalam semua keadaan kerana Set A mencatat kenaikan paling besar. Nilaikan kesimpulan itu.",
      "p": [
-      "Suhu, kerana Set B menaikkan kadar daripada 12 kepada 19",
-      "Angin, kerana Set A menaikkan kadar daripada 12 kepada 21",
-      "Kelembapan, kerana Set C menurunkan kadar kepada 5",
-      "Ketiga-tiganya memberi kesan yang sama besar"
+      "Kukuh, kerana 21 ialah bacaan tertinggi dalam jadual",
+      "Belum kukuh, kerana kekuatan kipas, suhu dan kelembapan yang dipilih tidak setara",
+      "Kukuh, kerana angin sentiasa memberi kesan lebih besar daripada suhu",
+      "Belum kukuh, kerana kelembapan langsung tidak mempengaruhi transpirasi"
      ],
      "b": 1,
-     "u": "Kenaikan sembilan unit oleh angin lebih besar daripada kenaikan tujuh unit oleh suhu."
+     "u": "Jika kipas diperlahankan atau suhu dinaikkan lagi, susunannya mungkin berubah. Set C menunjukkan kelembapan memberi kesan yang besar."
     },
     {
      "j": "banyak",
@@ -581,106 +581,101 @@ window.BANK["t3b3"] =
      "p": [
       "Saiz pucuk berdaun yang digunakan",
       "Tempoh pengukuran selama satu jam",
-      "Jenis alat yang digunakan untuk mengukur",
-      "Suhu bilik dalam setiap set",
-      "Kelembapan udara dalam setiap set"
+      "Alat yang digunakan untuk mengukur",
+      "Suhu udara bagi Set B",
+      "Kadar transpirasi bagi setiap set"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Suhu dan kelembapan sengaja diubah dalam Set B dan Set C, jadi ia pemboleh ubah dimanipulasi, bukan dimalarkan."
+     "u": "Suhu Set B sengaja diubah, jadi ia pemboleh ubah dimanipulasi. Kadar transpirasi ialah pemboleh ubah bergerak balas."
     },
     {
      "j": "pilih",
-     "t": "Mengapakah kadar transpirasi jatuh kepada 5 apabila kelembapan dinaikkan kepada 95 peratus?",
+     "t": "Seorang pekebun mendakwa menyembur air pada daun waktu tengah hari mengurangkan kehilangan air. Nilaikan dakwaan itu berdasarkan Set C.",
      "p": [
-      "Stoma pecah apabila kelembapan udara terlalu tinggi di sekeliling daun",
-      "Air dalam xilem menjadi terlalu sejuk untuk bergerak naik ke daun",
-      "Udara luar hampir tepu, jadi kecerunan resapan wap air menjadi kecil",
-      "Akar berhenti menyerap air apabila udara di sekeliling terlalu lembap"
+      "Salah, kerana udara lembap mempercepatkan transpirasi",
+      "Betul, kerana air pada daun diserap terus melalui stoma ke xilem",
+      "Ada asasnya, tetapi air itu cepat tersejat, jadi kesannya singkat",
+      "Salah, kerana Set C menunjukkan kelembapan tidak mengubah kadar"
      ],
      "b": 2,
-     "u": "Transpirasi bergantung pada perbezaan kelembapan antara ruang dalam daun dan udara luar."
+     "u": "Set C menunjukkan udara lembap mengurangkan transpirasi. Air pada daun tidak diserap ke dalam xilem; air diserap oleh akar."
     },
     {
      "j": "pilih",
-     "t": "Nilaikan kesahan dapatan ini jika setiap set dijalankan sekali sahaja.",
+     "t": "Setiap set dalam jadual dijalankan sekali sahaja. Nilaikan kebolehpercayaan dapatan ini.",
      "p": [
-      "Sudah kukuh, kerana perbezaan antara setiap set jelas besar",
-      "Sudah kukuh, kerana fotometer ialah alat yang sentiasa tepat",
-      "Belum kukuh, kerana transpirasi tidak boleh diukur di makmal",
-      "Belum kukuh, kerana setiap set perlu diulang beberapa kali"
+      "Sudah kukuh, kerana perbezaan antara setiap set sangat besar",
+      "Sudah kukuh, kerana fotometer ialah alat yang sangat jitu",
+      "Belum kukuh, kerana pucuk berdaun perlu ditukar bagi setiap bacaan",
+      "Belum kukuh, kerana setiap set perlu diulang untuk mengesan bacaan ganjil"
      ],
      "b": 3,
-     "u": "Perbezaan yang besar tetap boleh terhasil daripada satu ralat besar dalam satu bacaan."
+     "u": "Perbezaan yang besar pun boleh datang daripada satu ralat. Alat yang jitu tidak menggantikan ulangan, dan menukar pucuk menambah pemboleh ubah baharu."
     },
     {
      "j": "pilih",
-     "t": "Seorang petani mahu mengurangkan kehilangan air anak benihnya yang baru dipindahkan. Langkah paling wajar berdasarkan data ini?",
+     "t": "Seorang petani mahu mengurangkan kehilangan air anak benih yang baru dipindahkan. Langkah paling wajar berdasarkan data?",
      "p": [
-      "Sediakan teduhan dan pengadang angin di sekeliling anak benih",
-      "Siram anak benih dengan lebih kerap tepat pada waktu tengah hari",
+      "Sediakan teduhan dan pengadang angin",
+      "Siram daun anak benih dengan lebih kerap pada tengah hari",
       "Buang sebahagian akar supaya kurang air diserap oleh anak benih",
-      "Pindahkan anak benih ke kawasan terbuka yang lebih berangin"
+      "Tambah baja supaya anak benih cepat membesar dan menyerap lebih air"
      ],
      "b": 0,
-     "u": "Dalam data ini angin dan suhu tinggi paling meningkatkan transpirasi, jadi teduhan dan pengadang angin menyerang kedua-duanya. Mengurangkan kehilangan lebih berkesan daripada menambah siraman."
+     "u": "Data menunjukkan angin dan suhu tinggi paling meningkatkan transpirasi. Akar yang dibuang mengurangkan serapan air, bukan kehilangannya."
     },
     {
      "j": "pilih",
-     "t": "Sebatang pokok dikelar kulitnya sekeliling batang sehingga floem terputus tetapi xilem masih utuh. Apakah yang akan berlaku?",
+     "t": "Sebatang pokok dikelar kulitnya sekeliling batang sehingga floem terputus tetapi xilem masih utuh. Ramalan paling munasabah?",
      "p": [
       "Pokok mati serta-merta kerana air tidak lagi dapat naik ke daun",
-      "Daun masih menerima air, tetapi akar mati kerana tidak menerima makanan",
-      "Tiada kesan kerana xilem boleh mengambil alih fungsi floem sepenuhnya",
-      "Akar tumbuh lebih cepat kerana tidak lagi perlu menghantar makanan"
+      "Daun kekal segar, tetapi akar mati perlahan-lahan",
+      "Tiada kesan kerana xilem mengambil alih fungsi floem sepenuhnya",
+      "Daun layu serta-merta kerana hasil fotosintesis tidak dapat keluar"
      ],
      "b": 1,
-     "u": "Inilah sebabnya kulit pokok yang dikelar sekeliling batang membunuh pokok secara perlahan."
+     "u": "Xilem membawa air ke atas, jadi daun kekal segar buat sementara. Floem yang terputus menghalang gula sampai ke akar, lalu akar mati secara perlahan."
     },
     {
      "j": "pilih",
-     "t": "Nilaikan dakwaan bahawa titisan air pada hujung daun rumput pada waktu pagi ialah embun.",
+     "t": "Sebuah kedai bunga menyimpan bunga potong di bilik sejuk yang lembap. Nilaikan amalan ini.",
      "p": [
-      "Betul, kerana semua titisan air pada daun berasal daripada udara",
-      "Salah, kerana embun tidak pernah terbentuk di kawasan tropika",
-      "Belum tentu, kerana titisan di hujung daun selalunya gutasi",
-      "Tidak boleh dinilai, kerana embun dan gutasi kelihatan sama"
+      "Kurang wajar, kerana bunga memerlukan angin untuk terus menyerap air",
+      "Wajar, kerana suhu rendah menghentikan fotosintesis supaya bunga tidak layu",
+      "Wajar, kerana suhu rendah dan udara lembap mengurangkan transpirasi",
+      "Kurang wajar, kerana udara lembap mempercepatkan kehilangan air dari daun"
      ],
      "b": 2,
-     "u": "Embun terbentuk merata pada permukaan daun, manakala gutasi keluar pada titik tertentu di tepi atau hujung daun."
+     "u": "Bunga potong tiada akar, jadi mengurangkan kehilangan air paling penting. Layu berpunca daripada kehilangan air, bukan daripada fotosintesis."
     },
     {
-     "j": "banyak",
-     "t": "Pilih SEMUA ciri kempen derma darah sekolah yang berkemungkinan besar berjaya.",
+     "j": "pilih",
+     "t": "Seorang atlet mendakwa nadi rehatnya 48 denyutan seminit menunjukkan jantungnya lemah. Nilaikan dakwaan itu.",
      "p": [
-      "Maklumat kriteria kelayakan diedar sebelum hari kempen",
-      "Bekas penerima darah dijemput berkongsi pengalaman",
-      "Tempat rehat dan minuman disediakan selepas menderma",
-      "Nama mereka yang enggan menderma diumumkan di perhimpunan",
-      "Murid bawah umur disasarkan tanpa kebenaran ibu bapa"
+      "Tepat, kerana nadi rehat yang normal mesti melebihi 60 denyutan seminit",
+      "Tepat, kerana nadi rendah bermakna kurang oksigen sampai ke otot",
+      "Tidak tepat, kerana kadar nadi tidak berkaitan dengan kerja jantung",
+      "Tidak tepat, kerana jantung cergas memam lebih banyak darah setiap denyutan"
      ],
-     "b": [
-      0,
-      1,
-      2
-     ],
-     "u": "Mempermalukan orang dan mengabaikan syarat umur merosakkan kempen dan melanggar garis panduan Pusat Darah Negara."
+     "b": 3,
+     "u": "Seperti Hakim dalam data nadi, atlet mempunyai nadi rehat rendah kerana setiap denyutan menghantar lebih banyak darah."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Sekolah hanya mampu menjalankan SATU program kesihatan jantung tahun ini. Pilihan paling wajar?",
     "p": [
+     "Program senaman berkala untuk semua murid",
      "Saringan tekanan darah sekali sahaja untuk semua murid",
-     "Ceramah sehari oleh pakar jantung dari hospital negeri",
-     "Membeli mesin tekanan darah baharu untuk bilik rawatan",
-     "Program senaman berkala untuk semua murid sepanjang tahun"
+     "Ceramah sehari tentang struktur jantung oleh pakar dari hospital",
+     "Suplemen zat besi untuk semua murid bagi mencegah penyakit jantung"
     ],
-    "b": 3,
-    "u": "Saringan dan ceramah hanya berlaku sekali, tetapi kesihatan jantung terbina daripada tabiat harian. Program berkala sampai kepada semua murid dan mengurangkan risiko itu sendiri."
+    "b": 0,
+    "u": "Kesihatan jantung terbina daripada tabiat harian. Zat besi membantu pesakit anemia menghasilkan hemoglobin, tetapi tidak mencegah penyakit jantung."
    }
   },
   {
@@ -697,99 +692,99 @@ window.BANK["t3b3"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Awak mereka cipta sistem pengairan mudah untuk kebun sekolah. Ciri manakah paling menentukan sama ada ia benar-benar menjimatkan air?",
+     "t": "Awak mereka sistem pengairan mudah untuk kebun sekolah. Ciri manakah paling menentukan sama ada ia benar-benar menjimatkan air?",
      "p": [
-      "Air dihantar terus ke pangkal akar pada waktu pagi atau petang",
-      "Air disembur ke seluruh daun supaya daun sentiasa kelihatan segar",
-      "Sistem itu dapat menyiram seluruh kebun dalam masa lima minit",
-      "Tangki air diletakkan setinggi mungkin supaya aliran lebih kuat"
+      "Air disembur pada daun kerana daun menyerap air melalui stoma",
+      "Air terus ke pangkal akar, pada pagi atau petang",
+      "Air disiram pada tengah hari supaya tanah yang panas cepat sejuk",
+      "Tangki diletakkan setinggi mungkin supaya air keluar sederas mungkin"
      ],
-     "b": 0,
-     "u": "Air yang tersejat sebelum sampai ke akar ialah air yang terbuang."
+     "b": 1,
+     "u": "Akar menyerap air, dan air yang disiram pada tengah hari banyak tersejat sebelum sampai ke akar."
     },
     {
      "j": "pilih",
-     "t": "Kos bahan sistem awak RM220 tetapi kelab alam sekitar hanya ada RM90. Tindakan paling kreatif dan praktikal?",
+     "t": "Awak mahu menunjukkan kepada kelas bahawa air naik melalui xilem. Reka bentuk demonstrasi paling tepat?",
      "p": [
-      "Batalkan projek kerana dana kelab tidak mencukupi tahun ini",
-      "Guna botol plastik terpakai sebagai penitis dan hos lama sekolah",
-      "Siram separuh kebun sahaja supaya kos bahan muat dengan bajet",
-      "Minta setiap murid membawa sebotol air dari rumah setiap hari"
+      "Letak saderi dalam air berwarna di tempat gelap supaya xilem berehat",
+      "Sapu pewarna pada daun dan lihat sama ada warna turun ke akar",
+      "Letak batang saderi dalam air berwarna, kemudian potong rentas batangnya",
+      "Buang semua daun saderi supaya air berwarna naik dengan lebih cepat"
      ],
-     "b": 1,
-     "u": "Kekangan kos menguji kreativiti, bukan menamatkan projek."
+     "b": 2,
+     "u": "Keratan rentas menunjukkan titik berwarna tepat pada xilem. Tanpa daun, transpirasi berhenti dan air naik lebih perlahan."
     },
     {
      "j": "pilih",
      "t": "Awak mahu membuktikan sistem awak benar-benar menjimatkan air. Cara paling meyakinkan?",
      "p": [
       "Tanya ahli kelab sama ada mereka rasa penggunaan air berkurang",
-      "Kira berapa lama sistem dapat berjalan tanpa sebarang kerosakan",
-      "Bandingkan air digunakan pada dua petak serupa, satu tanpa sistem",
-      "Bandingkan dengan kebun sekolah lain yang jenis tanahnya berbeza"
+      "Bandingkan dengan kebun sekolah lain yang jenis tanahnya berbeza",
+      "Ukur air yang digunakan oleh sistem pada minggu pertama sahaja",
+      "Bandingkan air digunakan pada dua petak serupa, satu tanpa sistem"
      ],
-     "b": 2,
-     "u": "Petak kawalan yang serupa ialah satu-satunya cara memisahkan kesan sistem awak daripada cuaca."
+     "b": 3,
+     "u": "Petak kawalan yang serupa, dalam cuaca yang sama, memisahkan kesan sistem awak daripada faktor lain."
     },
     {
      "j": "pilih",
      "t": "Kelas awak mahu menganjurkan kempen derma darah. Langkah pertama paling wajar?",
      "p": [
-      "Cetak poster secantik mungkin dan tampal di seluruh kawasan sekolah",
-      "Tetapkan sasaran seratus orang penderma sebelum membuat perancangan",
+      "Berhubung dengan Pusat Darah Negara tentang kriteria penderma",
       "Kumpul nama semua murid tingkatan tiga sebagai calon penderma",
-      "Berhubung dengan Pusat Darah Negara tentang kriteria penderma"
-     ],
-     "b": 3,
-     "u": "Ramai murid tingkatan tiga belum cukup umur, dan itu perlu diketahui sebelum sebarang janji dibuat."
-    },
-    {
-     "j": "pilih",
-     "t": "Kempen awak menarik ramai orang tetapi ramai ditolak kerana berat badan atau umur tidak layak. Pembetulan paling wajar untuk kali seterusnya?",
-     "p": [
-      "Sediakan semakan kelayakan ringkas sebelum hari kempen bermula",
-      "Turunkan syarat kelayakan supaya lebih ramai orang layak menderma",
-      "Terima semua orang dan biarkan pihak klinik menolak di tempat",
-      "Hentikan kempen kerana terlalu ramai orang yang tidak layak"
+      "Cari penderma kumpulan O sahaja kerana hanya darah O diperlukan",
+      "Minta penderma berpuasa sebelum menderma supaya darah lebih bersih"
      ],
      "b": 0,
-     "u": "Syarat kelayakan wujud untuk melindungi penderma dan penerima, jadi ia diuruskan lebih awal, bukan dilonggarkan."
+     "u": "Kebanyakan murid tingkatan tiga belum cukup umur. Semua kumpulan darah diperlukan, dan penderma perlu makan sebelum menderma."
     },
     {
      "j": "pilih",
-     "t": "Sekolah luar bandar mahu meniru sistem pengairan awak tetapi tiada bekalan air paip yang tetap. Pengubahsuaian paling wajar?",
+     "t": "Awak mereka poster kempen derma darah. Mesej manakah paling tepat dari segi sains?",
      "p": [
-      "Minta sekolah itu memasang paip air baharu terlebih dahulu",
-      "Tambah tong menuai air hujan sebagai sumber air utama sistem",
-      "Kekalkan rekaan asal kerana ia sudah terbukti berkesan di sini",
-      "Cadangkan mereka menanam pokok yang langsung tidak perlukan air"
+      "Darah O diterima semua orang, jadi hanya penderma O diperlukan",
+      "Satu beg darah boleh membantu tiga pesakit berbeza",
+      "Menderma darah mengurangkan isi padu darah seseorang secara kekal",
+      "Badan berhenti menghasilkan sel darah merah selepas seseorang menderma"
      ],
      "b": 1,
-     "u": "Reka cipta yang baik menyesuaikan diri dengan keadaan penggunanya."
+     "u": "Darah diasingkan kepada sel darah merah, plasma dan platelet. Plasma diganti dalam masa sehari dua dan sel darah merah dalam beberapa minggu. Pesakit kumpulan lain juga memerlukan darah kumpulan mereka sendiri."
     },
     {
      "j": "pilih",
-     "t": "Awak akan naik ke tingkatan empat dan meninggalkan kelab ini tahun depan. Langkah paling penting supaya kebun dan sistem itu terus hidup?",
+     "t": "Penitis sistem awak kerap tersumbat oleh lumut dari tangki. Pengubahsuaian paling sesuai?",
      "p": [
-      "Pasang sistem yang lebih besar sebelum awak meninggalkan kelab",
-      "Simpan semua lakaran reka bentuk dalam telefon awak sendiri",
-      "Latih kelab tingkatan bawah dan tinggalkan jadual penyelenggaraan",
-      "Minta seorang guru menjaga kebun itu seorang diri selepas ini"
+      "Tambah garam ke dalam tangki supaya lumut mati",
+      "Besarkan lubang penitis sehingga air mengalir deras",
+      "Tutup tangki supaya lumut tidak mendapat cahaya",
+      "Letak tangki di tempat panas supaya air panas membunuh lumut"
      ],
      "b": 2,
-     "u": "Penyelesaian yang bergantung pada seorang individu akan berhenti bersama orang itu."
+     "u": "Lumut memerlukan cahaya untuk fotosintesis. Air masin menyebabkan akar sayur kehilangan air secara osmosis."
     },
     {
      "j": "pilih",
-     "t": "Jiran sekolah mengadu air dari sistem awak membanjiri laluan mereka. Pendekatan paling wajar mengambil kira nilai masyarakat?",
+     "t": "Jiran sekolah mengadu air dari sistem awak melimpah ke laluan mereka. Pendekatan paling wajar?",
      "p": [
-      "Abaikan aduan itu kerana kebun berada di dalam kawasan sekolah",
-      "Hentikan sistem itu serta-merta tanpa berbincang dengan sesiapa",
-      "Salahkan hujan lebat dan teruskan penggunaan sistem seperti biasa",
+      "Tambah air supaya tanah cepat tepu dan berhenti menyerap air",
+      "Hentikan sistem sepenuhnya dan siram dengan tangan setiap hari",
+      "Teruskan seperti biasa kerana air hanya melimpah semasa hujan lebat",
       "Berbincang dengan jiran, alihkan penitis dan tambah parit kecil"
      ],
      "b": 3,
-     "u": "Penyelesaian yang menang ialah yang murah bagi awak dan menghormati pihak sebelah."
+     "u": "Tanah yang tepu menambah limpahan, bukan menguranginya. Penyelesaian yang baik membaiki punca sambil menghormati jiran."
+    },
+    {
+     "j": "pilih",
+     "t": "Kebun perlu disiram sepanjang cuti seminggu tanpa bekalan elektrik. Kaedah paling sesuai?",
+     "p": [
+      "Sumbu kain atau botol terbalik yang menyalurkan air perlahan ke akar",
+      "Siram sebanyak mungkin sekali sahaja sebelum cuti bermula",
+      "Tutup setiap pokok dengan plastik rapat supaya transpirasi berhenti",
+      "Alihkan pokok ke bawah matahari penuh supaya ia menghasilkan air sendiri"
+     ],
+     "b": 0,
+     "u": "Air yang berlebihan sekali gus mengalir keluar dari tanah. Plastik yang rapat memerangkap haba, dan pokok tidak menghasilkan air untuk dirinya sendiri."
     }
    ],
    "bos": {

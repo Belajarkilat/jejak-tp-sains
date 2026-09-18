@@ -564,73 +564,73 @@ window.BANK["t3b9"] =
      "j": "pilih",
      "t": "Amaran tahap G3 dikeluarkan. Keputusan paling wajar bagi nelayan laut dalam yang bergantung pada GPS?",
      "p": [
-      "Belayar lebih jauh kerana aurora akan kelihatan",
-      "Matikan semua lampu bot pada waktu malam",
-      "Sediakan kompas dan peta sebagai sandaran navigasi",
-      "Abaikan amaran kerana GPS tidak pernah gagal"
+      "Belayar lebih jauh ke utara kerana aurora membantu navigasi",
+      "Terus bergantung pada GPS kerana satelit dilindungi magnetosfera",
+      "Sediakan kompas dan peta sebagai sandaran",
+      "Tangguh semua pelayaran kerana G3 memutuskan grid kuasa"
      ],
      "b": 2,
-     "u": "Amaran G3 menjangkakan gangguan GPS."
+     "u": "Jadual menunjukkan G3 menjangkakan gangguan GPS. Grid kuasa terputus hanya dijangka pada tahap G5."
     },
     {
      "j": "pilih",
      "t": "Nilaikan dakwaan: \"Cuaca angkasa lepas tidak penting bagi Malaysia kerana aurora tidak kelihatan di sini.\"",
      "p": [
       "Tepat, kerana satu-satunya kesan cuaca angkasa ialah aurora",
-      "Tepat, kerana Malaysia sentiasa dilindungi awan yang tebal",
-      "Tidak tepat, kerana aurora sebenarnya sering kelihatan di sini",
+      "Tepat, kerana magnetosfera paling tebal di atas khatulistiwa",
+      "Tidak tepat, kerana aurora sebenarnya sering kelihatan di Malaysia",
       "Tidak tepat, kerana GPS dan satelit di sini tetap boleh terjejas"
      ],
      "b": 3,
-     "u": "Aurora hanya satu daripada banyak kesan cuaca angkasa."
+     "u": "Aurora hanya satu daripada banyak kesan. Satelit GPS dan isyarat radio melalui atmosfera atas di atas semua negara."
     },
     {
      "j": "pilih",
      "t": "Amaran G5 dijangka dalam 24 jam. Tindakan paling wajar bagi syarikat pembekal elektrik?",
      "p": [
       "Pantau grid dan sediakan langkah melindungi transformer",
-      "Matikan terus bekalan elektrik seluruh negara selama seminggu penuh",
-      "Abaikan kerana amaran sering tidak tepat",
-      "Naikkan voltan grid supaya lebih kuat"
+      "Matikan bekalan elektrik seluruh negara selama seminggu",
+      "Naikkan voltan grid supaya lebih tahan terhadap arus aruhan",
+      "Teruskan seperti biasa kerana kabel bawah tanah tidak terjejas"
      ],
      "b": 0,
-     "u": "Persediaan awal mengurangkan risiko kerosakan transformer tanpa menghentikan bekalan."
+     "u": "Ribut geomagnet mengaruhkan arus berlebihan dalam talian panjang, termasuk kabel bawah tanah. Persediaan awal melindungi transformer tanpa menghentikan bekalan."
     },
     {
      "j": "pilih",
      "t": "Sebuah agensi angkasa perlu memilih antara (P) melancarkan angkasawan semasa amaran G5, atau (Q) menangguhkan pelancaran beberapa hari. Keputusan paling wajar?",
      "p": [
-      "P, kerana tarikh pelancaran tidak boleh diubah",
-      "Q, kerana angkasawan terdedah kepada sinaran tinggi",
-      "P, kerana roket boleh mengelak zarah bercas",
-      "Q, kerana roket tidak boleh terbang pada waktu siang"
+      "P, kerana roket terlalu laju untuk terkena zarah bercas",
+      "Q, kerana angkasawan di luar atmosfera kurang terlindung",
+      "P, kerana magnetosfera melindungi angkasawan sepenuhnya di orbit",
+      "Q, kerana ribut suria melemahkan graviti Bumi buat sementara"
      ],
      "b": 1,
-     "u": "Di luar atmosfera, angkasawan kurang terlindung daripada zarah bercas."
+     "u": "Di orbit, angkasawan tiada lapisan atmosfera yang tebal untuk melindungi mereka. Ribut suria tidak mengubah graviti."
     },
     {
      "j": "pilih",
      "t": "Nilaikan cadangan: \"Negara tidak perlu memantau cuaca angkasa kerana ia tidak boleh dihalang.\"",
      "p": [
-      "Wajar, kerana pemantauan terlalu mahal",
-      "Wajar, kerana ribut suria jarang berlaku",
+      "Wajar, kerana ribut suria hanya berlaku sekali setiap 11 tahun",
+      "Wajar, kerana magnetosfera sudah melindungi semua teknologi",
       "Tidak wajar, kerana amaran awal membolehkan persediaan",
-      "Tidak wajar, kerana pemantauan boleh menghentikan ribut suria"
+      "Tidak wajar, kerana pemantauan dapat melemahkan ribut suria"
      ],
      "b": 2,
-     "u": "Seperti ramalan cuaca biasa, cuaca angkasa tidak boleh dihalang tetapi kesannya boleh dikurangkan."
+     "u": "Kitaran 11 tahun ialah tempoh naik turun aktiviti, bukan kekerapan ribut. Seperti ramalan hujan, cuaca angkasa tidak dihalang tetapi kesannya boleh dikurangkan."
     },
     {
      "j": "pilih",
      "t": "Sekolah awak mahu melihat aurora dalam lawatan sains. Destinasi dan masa paling wajar?",
      "p": [
-      "Pantai timur Malaysia semasa musim tengkujuh",
-      "Kawasan khatulistiwa pada waktu tengah hari",
-      "Mana-mana tempat asalkan langit cerah",
-      "Norway, semasa aktiviti suria sedang tinggi"
+      "Pantai timur Malaysia pada malam yang cerah",
+      "Mana-mana negara pada tengah hari yang cerah",
+      "Kawasan khatulistiwa semasa tompok matahari paling sedikit",
+      "Norway, semasa aktiviti suria tinggi"
      ],
      "b": 3,
-     "u": "Aurora paling kerap di latitud tinggi dan semasa aktiviti suria tinggi."
+     "u": "Aurora paling kerap di latitud tinggi dan semasa aktiviti suria tinggi, dan ia hanya kelihatan dalam gelap."
     },
     {
      "j": "banyak",
@@ -640,39 +640,39 @@ window.BANK["t3b9"] =
       "Pantau amaran cuaca angkasa setiap hari",
       "Masukkan mod selamat semasa ribut suria",
       "Lancarkan satelit hanya pada waktu malam",
-      "Cat satelit dengan warna terang"
+      "Naikkan satelit ke orbit lebih tinggi semasa ribut"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Waktu pelancaran dan warna cat tidak melindungi satelit daripada zarah bercas."
+     "u": "Orbit yang lebih tinggi lebih jauh dari perlindungan magnetosfera. Waktu pelancaran tidak mengubah pendedahan satelit di orbit."
     },
     {
      "j": "pilih",
-     "t": "Dua sumber berita melaporkan ribut suria. Sumber A memetik agensi cuaca angkasa rasmi, manakala sumber B hanya memetik hantaran media sosial. Keputusan paling wajar?",
+     "t": "Seorang murid membaca bahawa ribut suria minggu depan akan memanaskan permukaan Bumi sebanyak 10 °C. Nilaikan dakwaan itu.",
      "p": [
-      "Rujuk sumber A dan semak semula dengan laman agensi rasmi",
-      "Percaya sumber B kerana lebih cepat tular",
-      "Kongsi kedua-duanya tanpa menyemak",
-      "Abaikan kedua-duanya kerana ribut suria sebenarnya tidak pernah wujud"
+      "Tidak berasas, kerana ribut suria menjejaskan medan magnet, bukan suhu",
+      "Berasas, kerana lentingan jisim korona membawa haba terus ke Bumi",
+      "Berasas, kerana tompok matahari menjadikan Matahari jauh lebih panas",
+      "Tidak berasas, kerana ribut suria tidak pernah sampai ke Bumi"
      ],
      "b": 0,
-     "u": "Maklumat saintifik perlu disemak dengan sumber yang berautoriti."
+     "u": "Zarah bercas dipesongkan oleh magnetosfera dan menjejaskan atmosfera atas serta teknologi. Tompok matahari sebenarnya kawasan yang lebih sejuk."
     }
    ],
    "bos": {
     "j": "pilih",
     "t": "Kerajaan hanya mampu membiayai SATU projek tahun ini. Pilihan paling wajar untuk mengurangkan kesan cuaca angkasa?",
     "p": [
-     "Teleskop besar untuk merakam gambar aurora yang cantik",
+     "Teleskop besar untuk merakam aurora dari Malaysia",
      "Sistem amaran awal untuk syarikat elektrik dan penerbangan",
-     "Kempen melarang orang ramai menggunakan GPS",
-     "Satelit baharu yang dilancarkan tanpa sebarang perisai"
+     "Larangan penggunaan GPS sepanjang tahun puncak kitaran suria",
+     "Satelit baharu di orbit geopegun tanpa sebarang perisai"
     ],
     "b": 1,
-    "u": "Amaran awal melindungi banyak sektor sekaligus."
+    "u": "Amaran awal melindungi banyak sektor sekali gus. Aurora jarang kelihatan dari Malaysia, dan larangan GPS setahun menjejaskan semua orang tanpa perlu."
    }
   },
   {
@@ -691,97 +691,97 @@ window.BANK["t3b9"] =
      "j": "pilih",
      "t": "Awak mereka aplikasi amaran cuaca angkasa untuk nelayan. Ciri paling penting?",
      "p": [
-      "Istilah saintifik yang panjang supaya kelihatan pakar",
-      "Gambar aurora yang cantik tanpa sebarang maklumat",
+      "Amaran berdasarkan bilangan tompok matahari pada hari itu sahaja",
+      "Amaran dihantar selepas gangguan GPS disahkan berlaku",
       "Amaran ringkas dalam bahasa mudah beserta tindakan",
-      "Amaran hanya dihantar selepas ribut suria tamat"
+      "Amaran dihantar hanya pada tahun puncak kitaran suria"
      ],
      "b": 2,
-     "u": "Amaran berguna hanya jika difahami dan diikuti."
+     "u": "Amaran berguna jika difahami dan datang sebelum gangguan. Ribut suria boleh berlaku pada bila-bila masa dalam kitaran, bukan hanya pada tahun puncak."
     },
     {
      "j": "pilih",
-     "t": "Awak mereka model magnetosfera untuk pameran. Bahan paling sesuai untuk menunjukkan garis medan magnet?",
+     "t": "Awak mereka model untuk menunjukkan garis medan magnet Bumi. Bahan paling sesuai?",
      "p": [
-      "Bola plastik dan cat berwarna",
-      "Belon dan tali",
-      "Kapas dan gam",
+      "Bola plastik yang dicat dengan jalur warna",
+      "Sebuah kompas yang diletakkan di atas globe",
+      "Belon yang ditiup dengan kipas dari satu arah",
       "Magnet bar dan serbuk besi"
      ],
      "b": 3,
-     "u": "Serbuk besi menyusun diri mengikut garis medan magnet."
+     "u": "Serbuk besi menyusun diri mengikut garis medan magnet. Satu kompas hanya menunjukkan arah pada satu titik."
     },
     {
      "j": "pilih",
-     "t": "Awak mereka perisai untuk melindungi satelit sekolah (CubeSat) daripada zarah bercas. Pertimbangan paling penting?",
+     "t": "Awak mereka perisai untuk satelit kecil (CubeSat) sekolah. Pertimbangan paling penting?",
      "p": [
       "Perisai berkesan tetapi cukup ringan untuk dilancarkan",
-      "Perisai setebal mungkin tanpa mengira jisim atau kos pelancarannya",
-      "Warna perisai sepadan dengan logo sekolah",
-      "Perisai daripada kertas supaya murah"
+      "Perisai setebal mungkin tanpa mengira jisim",
+      "Perisai plumbum kerana plumbum menghalang semua zarah",
+      "Tiada perisai kerana magnetosfera melindungi orbit rendah sepenuhnya"
      ],
      "b": 0,
-     "u": "Setiap gram tambahan meningkatkan kos pelancaran."
+     "u": "Setiap gram tambahan meningkatkan kos pelancaran. Magnetosfera mengurangkan, tetapi tidak menghapuskan, zarah bercas di orbit rendah."
     },
     {
      "j": "pilih",
-     "t": "Bajet awak terhad untuk membina alat pengesan aktiviti suria. Idea paling kreatif?",
+     "t": "Awak mahu merekod aktiviti suria setiap hari di sekolah. Kaedah paling selamat dan bermakna?",
      "p": [
-      "Beli teleskop angkasa yang mahal",
-      "Unjurkan Matahari dengan kanta murah dan kira tompoknya",
-      "Tunggu gerhana matahari penuh seterusnya",
-      "Tenung Matahari setiap hari tanpa sebarang perlindungan mata"
+      "Pandang Matahari melalui cermin mata hitam setiap pagi",
+      "Unjurkan imej Matahari ke kertas dan kira tompoknya",
+      "Rekod bilangan aurora yang kelihatan dari sekolah",
+      "Ukur suhu udara tengah hari sebagai ukuran aktiviti suria"
      ],
      "b": 1,
-     "u": "Kiraan tompok harian ialah data cuaca angkasa yang sebenar dan murah."
+     "u": "Kiraan tompok harian ialah data cuaca angkasa yang sebenar. Cermin mata hitam tidak melindungi retina, dan suhu udara dipengaruhi cuaca Bumi."
     },
     {
      "j": "pilih",
      "t": "Bagaimanakah awak menguji sama ada aplikasi amaran awak benar-benar membantu nelayan?",
      "p": [
-      "Kira bilangan muat turun aplikasi itu sahaja",
-      "Tanya rakan sekelas sama ada logo dan warna aplikasi itu menarik",
-      "Bandingkan tindakan nelayan sebelum dan selepas guna aplikasi",
-      "Uji aplikasi pada komputer sendiri sahaja"
+      "Kira bilangan muat turun aplikasi itu dalam sebulan",
+      "Tanya rakan sekelas sama ada reka bentuk aplikasi itu menarik",
+      "Bandingkan tindakan nelayan semasa amaran, sebelum dan selepas aplikasi",
+      "Uji aplikasi pada telefon sendiri sahaja"
      ],
      "b": 2,
-     "u": "Kejayaan diukur daripada perubahan tindakan pengguna sebenar."
+     "u": "Kejayaan diukur daripada perubahan tindakan pengguna sebenar, bukan bilangan muat turun."
     },
     {
      "j": "pilih",
      "t": "Komuniti nelayan kurang mahir menggunakan telefon pintar. Pengubahsuaian paling wajar?",
      "p": [
-      "Buang terus aplikasi itu",
-      "Minta nelayan membeli telefon baharu",
-      "Tambah lebih banyak menu dan ciri canggih dalam aplikasi itu",
+      "Tambah lebih banyak ciri supaya aplikasi lebih lengkap",
+      "Minta nelayan menyemak laman web agensi setiap hari",
+      "Hantar amaran melalui GPS kerana nelayan sentiasa menggunakannya",
       "Hantar amaran melalui SMS dan radio komuniti"
      ],
      "b": 3,
-     "u": "Saluran yang sudah biasa digunakan komuniti lebih berkesan."
+     "u": "Penerima GPS hanya menerima isyarat kedudukan dan tidak boleh menerima mesej. Ia juga terjejas semasa ribut suria."
     },
     {
      "j": "pilih",
      "t": "Awak mencadangkan projek pemerhatian tompok matahari untuk sekolah seluruh negeri. Cara paling berkesan mengumpul data yang boleh dipercayai?",
      "p": [
-      "Gunakan kaedah dan borang rekod yang sama di semua sekolah",
+      "Guna kaedah dan borang rekod yang sama di semua sekolah",
       "Setiap sekolah bebas memilih kaedah sendiri",
-      "Kumpul data sekali setahun sahaja",
-      "Hanya satu murid memerhati Matahari bagi mewakili seluruh negeri"
+      "Kumpul data sekali setahun semasa puncak kitaran",
+      "Hanya sekolah yang mempunyai teleskop mahal mengambil bahagian"
      ],
      "b": 0,
-     "u": "Kaedah yang seragam membolehkan data dibandingkan."
+     "u": "Kaedah yang seragam membolehkan data dibandingkan. Data sekali setahun terlepas perubahan harian."
     },
     {
      "j": "pilih",
      "t": "Poster awak tentang cuaca angkasa akan dipamerkan di kampung. Pendekatan paling wajar?",
      "p": [
-      "Guna bahasa Inggeris sahaja untuk nampak saintifik",
+      "Guna bahasa Inggeris sahaja supaya istilahnya tepat",
       "Kaitkan dengan kehidupan harian seperti GPS dan telefon",
-      "Tampal di tempat tersembunyi",
-      "Isi poster dengan formula fizik yang panjang"
+      "Isi poster dengan formula fizik yang lengkap",
+      "Fokus pada gambar aurora kerana ia paling menarik"
      ],
      "b": 1,
-     "u": "Orang lebih peduli apabila mereka nampak kaitannya dengan kehidupan sendiri."
+     "u": "Orang lebih peduli apabila nampak kaitan dengan kehidupan sendiri. Aurora menarik, tetapi jarang kelihatan dari Malaysia."
     }
    ],
    "bos": {
