@@ -322,3 +322,23 @@ grant execute on function lo_papan(text, text, text, text) to anon, authenticate
 grant execute on function lo_simpan_cubaan(text, text, text, text, int, jsonb, jsonb) to anon, authenticated;
 revoke all on function lo_guru_simpan_murid(text, jsonb) from public, anon;
 grant execute on function lo_guru_simpan_murid(text, jsonb) to authenticated;
+
+-- ---------- semakan soalan oleh guru (Mod Semak, semak.html) ----------
+-- Satu baris bagi setiap guru bagi setiap item. `item` ialah bab:hentian:indeks
+-- (atau bos, kad, boskad). `teks` bermula dengan cincangan item semasa disemak,
+-- jadi item yang dibaiki kemudian dipaparkan semula sebagai "semak semula".
+-- Semua semakan dibaca oleh pembangun melalui kunci service_role.
+create table if not exists lo_semakan (
+  guru    uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  item    text not null check (item ~ '^t3b[0-9]{1,2}:[1-6]:([0-9]{1,2}|bos|kad|boskad)$'),
+  status  text not null check (status in ('ok','masalah')),
+  komen   text not null default '' check (length(komen) <= 1500),
+  teks    text not null default '' check (length(teks) <= 3000),
+  dikemas timestamptz not null default now(),
+  primary key (guru, item)
+);
+alter table lo_semakan enable row level security;
+create policy lo_semakan_diri on lo_semakan for all to authenticated
+  using (guru = auth.uid()) with check (guru = auth.uid());
+grant select, insert, update, delete on lo_semakan to authenticated;
+revoke all on lo_semakan from anon;

@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<title>Semak Soalan · Jejak TP Sains</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#EDF0F5;--surface:#FFFFFF;--surface2:#F6F8FC;--ink:#0D1B2E;--ink2:#3D5068;--ink3:#6C7F96;
+  --line:#DBE2EC;--line2:#C3CFDE;--arteri:#C8102E;--arteri-soft:#FBE8EB;--vena:#25395C;
+  --teal:#0E8C7F;--teal-soft:#DFF2EF;--amber:#B07208;--amber-soft:#FBF0DB;
+  --shadow:0 1px 2px rgba(13,27,46,.06),0 8px 24px -14px rgba(13,27,46,.22);--r:15px;color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#070D18;--surface:#0F1A2B;--surface2:#16243A;--ink:#E8EEF8;--ink2:#AABCD3;--ink3:#7B8EA8;
+  --line:#1E2D45;--line2:#2B3E5B;--arteri:#FF6068;--arteri-soft:#2B1620;--vena:#8AA3CC;
+  --teal:#2FC2AE;--teal-soft:#0C2B29;--amber:#F0B255;--amber-soft:#2A2013;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 8px 24px -14px rgba(0,0,0,.8);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#070D18;--surface:#0F1A2B;--surface2:#16243A;--ink:#E8EEF8;--ink2:#AABCD3;--ink3:#7B8EA8;
+  --line:#1E2D45;--line2:#2B3E5B;--arteri:#FF6068;--arteri-soft:#2B1620;--vena:#8AA3CC;
+  --teal:#2FC2AE;--teal-soft:#0C2B29;--amber:#F0B255;--amber-soft:#2A2013;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 8px 24px -14px rgba(0,0,0,.8);color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Figtree",-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",sans-serif;margin:0;line-height:1.15;letter-spacing:-.018em;text-wrap:balance}
+p{margin:0}
+button,textarea{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:2px solid var(--arteri);outline-offset:3px;border-radius:8px}
+.mono{font-family:"DM Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.shell{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:0 80px}
+
+.topbar{position:sticky;top:0;z-index:10;background:var(--ground);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+.topbar .in{display:flex;align-items:center;gap:12px;min-height:58px}
+.topbar h1{font-size:18px;flex:1}
+.pautan{background:none;border:0;padding:6px 0;color:var(--ink2);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px}
+.intro{margin-top:18px;display:grid;gap:6px}
+.intro h2{font-size:22px}
+.intro p{color:var(--ink2);font-size:15px}
+
+.bab{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:18px}
+.bab button{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.bab button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.bab b{font-size:14px}
+.bab span{font-size:12.5px;color:var(--ink3)}
+.bab .bar{height:4px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:6px}
+.bab .bar i{display:block;height:100%;background:var(--teal)}
+.bab .baru{color:var(--amber);font-weight:600}
+
+.alat{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px}
+.seg{display:flex;gap:4px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.seg button{border:0;background:none;padding:6px 12px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.kira{font-size:13px;color:var(--ink3);margin-left:auto}
+
+.peta{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.peta button{width:22px;height:22px;border-radius:6px;border:1px solid var(--line2);background:var(--surface);padding:0;font-size:0}
+.peta button.ok{background:var(--teal);border-color:var(--teal)}
+.peta button.masalah{background:var(--arteri);border-color:var(--arteri)}
+.peta button.kini{outline:2px solid var(--ink);outline-offset:2px}
+.peta .pisah{width:100%;height:0}
+
+.item{margin-top:16px;display:grid;gap:14px}
+.item .kepala{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.lencana{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--surface2);border:1px solid var(--line);color:var(--ink2)}
+.lencana.tp{background:var(--vena);border-color:var(--vena);color:var(--surface)}
+.lencana.st-ok{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+.lencana.st-masalah{background:var(--arteri-soft);border-color:var(--arteri);color:var(--arteri)}
+.lencana.st-ubah{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
+.soalan{font-size:18px;font-weight:600;line-height:1.45}
+.arahan{color:var(--ink2);font-size:15px}
+.pilihan{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.pilihan li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:11px;font-size:15.5px}
+.pilihan li .h{font-family:"DM Mono",monospace;font-size:13px;color:var(--ink3);min-width:18px;padding-top:2px}
+.pilihan li.betul{border-color:var(--teal);background:var(--teal-soft)}
+.pilihan li.betul .h{color:var(--teal);font-weight:600}
+.pilihan li .tanda{margin-left:auto;font-size:12px;font-weight:700;color:var(--teal);white-space:nowrap;padding-top:2px}
+.pilihan li.salah{color:var(--ink3)}
+ol.pilihan{counter-reset:u}
+.jawapan{padding:12px 14px;border-radius:11px;background:var(--teal-soft);border:1px solid var(--teal);font-size:16px}
+.jawapan b{color:var(--teal)}
+.penerangan{padding:12px 14px;border-radius:11px;background:var(--surface2);border:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.penerangan b{color:var(--ink)}
+.kad{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:12px;border:1px dashed var(--line2);background:var(--surface2)}
+.kad .em{font-size:34px;line-height:1}
+.lampiran summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--ink2)}
+.qnote{font-size:13.5px;color:var(--ink3);margin-top:7px}
+.datatable{width:100%;border-collapse:collapse;font-size:14px}
+.datatable th,.datatable td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+.datatable th{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:500;background:var(--surface2)}
+.datatable td.n,.datatable th.n{text-align:right}
+.datatable tbody tr:last-child td{border-bottom:0}
+.scrollx{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin-top:10px}
+
+.keputusan{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{border:0;border-radius:12px;padding:14px 16px;font-weight:700;font-size:16px}
+.btn.ok{background:var(--teal);color:#fff}
+.btn.masalah{background:var(--surface);color:var(--arteri);box-shadow:inset 0 0 0 2px var(--arteri)}
+.btn.simpan{background:var(--arteri);color:#fff}
+.btn:disabled{opacity:.55;cursor:default}
+.komen{display:grid;gap:10px}
+.cepat{display:flex;flex-wrap:wrap;gap:6px}
+.cepat button{border:1px solid var(--line2);background:var(--surface);border-radius:999px;padding:6px 11px;font-size:13px}
+textarea{width:100%;min-height:96px;border:1px solid var(--line2);border-radius:11px;padding:10px 12px;background:var(--surface);resize:vertical;font-size:15px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nav button{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-weight:600;font-size:14px}
+.nav button:disabled{opacity:.4;cursor:default}
+.mesej{font-size:14px;color:var(--ink2);min-height:20px}
+.mesej.ralat{color:var(--arteri)}
+.tunggu{margin-top:40px;text-align:center;color:var(--ink2)}
+.tunggu .btn{margin-top:14px;background:var(--ink);color:var(--surface)}
+.kosong{text-align:center;color:var(--ink2);padding:30px 10px}
+@media (max-width:600px){
+  .bab{display:flex;overflow-x:auto;scroll-snap-type:x proximity;margin-inline:-16px;padding-inline:16px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .bab button{flex:none;width:138px;scroll-snap-align:start}
+  .intro p:last-child{font-size:14px}
+}
+@media (max-width:480px){.keputusan{grid-template-columns:1fr}.soalan{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar"><div class="in">
+    <button class="pautan" id="balik" type="button">&larr; Papan cikgu</button>
+    <h1>Semak Soalan</h1>
+  </div></header>
+  <main id="app"><p class="tunggu">Memuatkan&hellip;</p></main>
+</div>
+
+<script src="konfig.js?v=20260914"></script>
+<script src="bank-t3b1.js?v=20260914"></script>
+<script src="bank-t3b2.js?v=20260914"></script>
+<script src="bank-t3b3.js?v=20260914"></script>
+<script src="bank-t3b4.js?v=20260917"></script>
+<script src="bank-t3b5.js?v=20260917"></script>
+<script src="bank-t3b6.js?v=20260917"></script>
+<script src="bank-t3b7.js?v=20260917"></script>
+<script src="bank-t3b8.js?v=20260917"></script>
+<script src="bank-t3b9.js?v=20260917"></script>
+<script src="bank-t3b10.js?v=20260917"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js"></script>
+<script>
+(function(){
+"use strict";
+var AWAN=window.CN_AWAN, BANK=window.BANK||{};
+var BAB_BARU=["t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"];
+var SUSUNAN=["t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"].filter(function(k){return BANK[k];});
+var JENIS={pilih:"Pilih satu",banyak:"Pilih semua",susun:"Susun",nombor:"Jawapan nombor",buka:"Soalan terbuka",kad:"Kad fakta"};
+var CEPAT=["Fakta salah","Jawapan salah","Lebih daripada satu jawapan betul","Bahasa atau ejaan","Tidak ikut buku teks","Aras TP tidak sesuai","Terlalu panjang"];
+var HURUF="ABCDEFGHIJ";
+
+var SB=null, GURU=null, REKOD={}, S={bab:"t3b4",tapis:"semua",i:0,komenBuka:false,mesej:"",ralat:false,sibuk:false};
+var app=document.getElementById("app");
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
+function cincang(s){var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return (h>>>0).toString(16);}
+
+/* Setiap bab: bagi setiap hentian, 8 soalan + soalan bos + dua kad fakta. */
+function senaraiItem(k){
+  var b=BANK[k], out=[];
+  b.aras.forEach(function(a){
+    a.soalan.forEach(function(q,i){ out.push({id:k+":"+a.n+":"+i, aras:a, q:q, label:"Soalan "+(i+1)}); });
+    if(a.bos) out.push({id:k+":"+a.n+":bos", aras:a, q:a.bos, label:"Soalan bos"});
+    if(a.kadFakta) out.push({id:k+":"+a.n+":kad", aras:a, q:{j:"kad",nama:a.kadNama,em:a.kadEm,fakta:a.kadFakta}, label:"Kad fakta"});
+    if(a.bosKadFakta) out.push({id:k+":"+a.n+":boskad", aras:a, q:{j:"kad",nama:a.bosKadNama,em:a.bosKadEm,fakta:a.bosKadFakta}, label:"Kad fakta bos"});
+  });
+  out.forEach(function(it){ it.hash=cincang(JSON.stringify(it.q)); });
+  return out;
+}
+var ITEM={}; SUSUNAN.forEach(function(k){ITEM[k]=senaraiItem(k);});
+
+/* Status semasa: rekod yang dibuat pada versi soalan lain dikira "berubah". */
+function status(it){
+  var r=REKOD[it.id]; if(!r) return "belum";
+  if(r.teks.split("|")[0]!==it.hash) return "ubah";
+  return r.status;
+}
+function ditapis(){
+  return ITEM[S.bab].filter(function(it){
+    var s=status(it);
+    if(S.tapis==="belum") return s==="belum"||s==="ubah";
+    if(S.tapis==="masalah") return s==="masalah";
+    return true;
+  });
+}
+
+/* ---------- sambungan ---------- */
+function mula(){
+  try{ var q=new URL(location.href).searchParams.get("bab"); if(q&&BANK[q]) S.bab=q; }catch(e){}
+  if(!AWAN||!window.supabase){ tunjukRalat("Tidak dapat menyambung ke pelayan. Semak internet dan muat semula halaman."); return; }
+  SB=window.supabase.createClient(AWAN.url,AWAN.kunci,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,flowType:"pkce",storageKey:"cn-auth"}});
+  SB.auth.getSession().then(function(r){
+    var sesi=r.data&&r.data.session;
+    if(!sesi){ tunjukLogMasuk(); return; }
+    GURU=sesi.user;
+    return SB.from("lo_semakan").select("item,status,komen,teks,dikemas").then(function(res){
+      if(res.error) throw res.error;
+      (res.data||[]).forEach(function(r){ REKOD[r.item]=r; });
+      lompatBelum(); render();
+    });
+  }).catch(function(e){ tunjukRalat("Rekod semakan tidak dapat dimuatkan ("+esc(e.message||e)+"). Muat semula halaman."); });
+}
+function tunjukLogMasuk(){
+  app.innerHTML='<div class="tunggu"><p>Log masuk sebagai cikgu dahulu, kemudian tekan <b>Semak soalan</b> di papan cikgu.</p></div>';
+  var b=el("button","btn","Log masuk cikgu"); b.type="button"; b.onclick=keCikgu; app.firstChild.appendChild(b);
+}
+function tunjukRalat(m){ app.innerHTML='<p class="tunggu">'+m+'</p>'; }
+function keCikgu(){ try{localStorage.setItem("cn-mod","cikgu");}catch(e){} location.href="./"; }
+document.getElementById("balik").onclick=keCikgu;
+
+function lompatBelum(){
+  var l=ditapis(), j=0;
+  for(var i=0;i<l.length;i++){ var s=status(l[i]); if(s==="belum"||s==="ubah"){ j=i; break; } }
+  S.i=j;
+}
+
+function simpan(it,st,komen){
+  S.sibuk=true; S.mesej="Menyimpan…"; S.ralat=false; render();
+  var baris={item:it.id,status:st,komen:komen||"",teks:(it.hash+"|"+(it.q.t||it.q.fakta||"")).slice(0,3000),dikemas:new Date().toISOString()};
+  return SB.from("lo_semakan").upsert(baris,{onConflict:"guru,item"}).then(function(res){
+    S.sibuk=false;
+    if(res.error){ S.mesej="Tidak tersimpan: "+res.error.message+". Cuba lagi."; S.ralat=true; render(); return false; }
+    REKOD[it.id]=baris; S.komenBuka=false; S.mesej=st==="ok"?"Disimpan sebagai betul.":"Komen disimpan.";
+    return true;
+  });
+}
+
+/* ---------- lukis ---------- */
+function render(){
+  var y=window.scrollY;
+  app.innerHTML="";
+  var intro=el("section","intro");
+  intro.innerHTML='<p class="eyebrow">Mod semak &middot; '+esc(GURU.email)+'</p><h2>Semak soalan satu demi satu</h2>'+
+    '<p>Jawapan betul ditanda hijau. Tekan <b>Betul</b> jika soalan itu tepat, atau <b>Ada masalah</b> dan tulis sebabnya. Semakan disimpan terus, jadi boleh berhenti dan sambung bila-bila masa.</p>';
+  app.appendChild(intro);
+
+  var g=el("div","bab");
+  SUSUNAN.forEach(function(k){
+    var l=ITEM[k], siap=0, m=0;
+    l.forEach(function(it){ var s=status(it); if(s==="ok"||s==="masalah") siap++; if(s==="masalah") m++; });
+    var b=el("button"); b.type="button"; b.setAttribute("aria-pressed",k===S.bab);
+    var no=BANK[k].kod.split(" ")[0].replace(".0","");
+    b.innerHTML='<b>Bab '+esc(no)+'</b><span>'+esc(BANK[k].tajuk)+'</span><span>'+siap+'/'+l.length+' disemak'+(m?' &middot; <span style="color:var(--arteri)">'+m+' masalah</span>':'')+
+      (BAB_BARU.indexOf(k)>=0&&siap===0?' &middot; <span class="baru">baharu</span>':'')+'</span><span class="bar"><i style="width:'+(100*siap/l.length).toFixed(1)+'%"></i></span>';
+    b.onclick=function(){ S.bab=k; S.tapis="semua"; S.komenBuka=false; S.mesej=""; lompatBelum(); render(); };
+    g.appendChild(b);
+  });
+  app.appendChild(g);
+  /* Bab terpilih kekal kelihatan dalam jalur yang boleh diseret di telefon. */
+  var sel=g.querySelector('[aria-pressed="true"]');
+  if(sel&&g.scrollWidth>g.clientWidth) g.scrollLeft=Math.max(0,sel.offsetLeft-g.offsetLeft-16);
+
+  var alat=el("div","alat"), seg=el("div","seg");
+  [["semua","Semua"],["belum","Belum disemak"],["masalah","Ada masalah"]].forEach(function(t){
+    var b=el("button",null,t[1]); b.type="button"; b.setAttribute("aria-pressed",S.tapis===t[0]);
+    b.onclick=function(){ S.tapis=t[0]; S.i=0; S.komenBuka=false; S.mesej=""; render(); };
+    seg.appendChild(b);
+  });
+  alat.appendChild(seg);
+  var l=ditapis();
+  alat.appendChild(el("span","kira",l.length+" item"));
+  app.appendChild(alat);
+
+  var peta=el("div","peta"), semua=ITEM[S.bab], kini=l[S.i];
+  semua.forEach(function(it,ix){
+    if(ix>0&&it.aras!==semua[ix-1].aras) peta.appendChild(el("span","pisah"));
+    var s=status(it), b=el("button",(s==="ok"||s==="masalah")?s:""); b.type="button";
+    if(kini&&kini.id===it.id) b.classList.add("kini");
+    b.title="Hentian "+it.aras.n+" · "+it.label; b.setAttribute("aria-label",b.title);
+    b.onclick=function(){ S.tapis="semua"; S.i=ix; S.komenBuka=false; S.mesej=""; render(); };
+    peta.appendChild(b);
+  });
+  app.appendChild(peta);
+
+  if(!l.length){
+    app.appendChild(el("div","card kosong",S.tapis==="masalah"?"Tiada soalan ditanda bermasalah dalam bab ini.":"Semua soalan dalam bab ini sudah disemak. Terima kasih!"));
+    return;
+  }
+  if(S.i>=l.length) S.i=l.length-1;
+  app.appendChild(lukisItem(kini,l));
+  window.scrollTo(0,y);
+}
+
+function lukisItem(it,l){
+  var q=it.q, a=it.aras, b=BANK[S.bab], c=el("section","card item"), s=status(it), r=REKOD[it.id];
+  var kp=el("div","kepala");
+  kp.innerHTML='<span class="lencana tp">TP'+a.n+'</span><span class="lencana">Hentian '+a.n+' &middot; '+esc(a.tempat)+'</span><span class="lencana">'+esc(it.label)+(q.j==="kad"?'':' &middot; '+esc(JENIS[q.j]||q.j))+'</span>'+
+    (s==="ok"?'<span class="lencana st-ok">Betul</span>':s==="masalah"?'<span class="lencana st-masalah">Ada masalah</span>':s==="ubah"?'<span class="lencana st-ubah">Sudah dibaiki, semak semula</span>':'');
+  c.appendChild(kp);
+  c.appendChild(el("p","eyebrow",esc(a.sk)));
+
+  if(a.lampiran&&b.lampiran&&b.lampiran[a.lampiran]&&q.j!=="kad"){
+    var d=el("details","lampiran"); d.appendChild(el("summary",null,"Data yang dilihat murid untuk hentian ini"));
+    d.appendChild(el("div",null,b.lampiran[a.lampiran])); c.appendChild(d);
+  }
+
+  if(q.j==="kad"){
+    c.appendChild(el("div","kad",'<span class="em">'+esc(q.em||"")+'</span><div><b>'+esc(q.nama)+'</b><p>'+esc(q.fakta)+'</p></div>'));
+  } else {
+    c.appendChild(el("p","soalan",q.t));
+    if(q.arahan) c.appendChild(el("p","arahan",q.arahan));
+  }
+
+  if(q.j==="pilih"||q.j==="banyak"){
+    var betul=[].concat(q.b), ul=el("ul","pilihan");
+    q.p.forEach(function(p,i){
+      var ok=betul.indexOf(i)>=0, li=el("li",ok?"betul":(q.j==="banyak"?"salah":""));
+      li.innerHTML='<span class="h">'+HURUF[i]+'</span><span>'+p+'</span>'+(ok?'<span class="tanda">&#10003; Jawapan</span>':'');
+      ul.appendChild(li);
+    });
+    c.appendChild(ul);
+  } else if(q.j==="susun"){
+    var ol=el("ol","pilihan");
+    q.b.forEach(function(ix,n){ var li=el("li","betul"); li.innerHTML='<span class="h">'+(n+1)+'</span><span>'+q.p[ix]+'</span>'; ol.appendChild(li); });
+    c.appendChild(el("p","eyebrow","Urutan betul"));
+    c.appendChild(ol);
+  } else if(q.j==="nombor"){
+    c.appendChild(el("div","jawapan",'Jawapan: <b>'+esc(q.b)+(q.suf?' '+esc(q.suf):'')+'</b>'+(q.tol?' <span class="mono" style="color:var(--ink3);font-size:13px">(diterima &plusmn;'+esc(q.tol)+')</span>':'')));
+  } else if(q.j==="buka"){
+    c.appendChild(el("div","penerangan","<b>Soalan terbuka.</b> Tiada jawapan tetap; cikgu menilai jawapan murid sendiri. Semak sama ada soalan dan arahannya jelas serta sesuai untuk TP6."));
+  }
+  if(q.u) c.appendChild(el("div","penerangan","<b>Penerangan kepada murid:</b> "+esc(q.u)));
+
+  if(r&&r.komen&&(s==="masalah"||s==="ubah")) c.appendChild(el("div","penerangan",'<b>Komen cikgu:</b> '+esc(r.komen)));
+
+  if(!S.komenBuka){
+    var kpt=el("div","keputusan");
+    var bo=el("button","btn ok","&#10003; Betul"); bo.type="button"; bo.disabled=S.sibuk;
+    bo.onclick=function(){ simpan(it,"ok","").then(function(ok){ if(ok) seterusnya(); }); };
+    var bm=el("button","btn masalah","&#9888; Ada masalah"); bm.type="button"; bm.disabled=S.sibuk;
+    bm.onclick=function(){ S.komenBuka=true; S.mesej=""; render(); var t=document.getElementById("komen"); if(t) t.focus(); };
+    kpt.appendChild(bo); kpt.appendChild(bm); c.appendChild(kpt);
+  } else {
+    var k=el("div","komen");
+    k.appendChild(el("label",null,'<b>Apa masalahnya?</b>')).setAttribute("for","komen");
+    var cp=el("div","cepat"), ta=el("textarea"); ta.id="komen";
+    ta.placeholder="Contoh: jawapan B juga betul kerana…";
+    ta.value=(r&&r.status==="masalah")?r.komen:"";
+    CEPAT.forEach(function(t){ var b=el("button",null,esc(t)); b.type="button";
+      b.onclick=function(){ ta.value=ta.value?(ta.value.replace(/\s+$/,"")+"; "+t):t+": "; ta.focus(); }; cp.appendChild(b); });
+    k.appendChild(cp); k.appendChild(ta);
+    var kb=el("div","keputusan");
+    var bs=el("button","btn simpan","Simpan komen"); bs.type="button"; bs.disabled=S.sibuk;
+    bs.onclick=function(){ var v=ta.value.trim(); if(v.length<3){ S.mesej="Tulis sedikit sebab supaya soalan boleh dibaiki."; S.ralat=true; render(); return; }
+      simpan(it,"masalah",v).then(function(ok){ if(ok) seterusnya(); }); };
+    var bb=el("button","btn masalah","Batal"); bb.type="button";
+    bb.onclick=function(){ S.komenBuka=false; S.mesej=""; render(); };
+    kb.appendChild(bs); kb.appendChild(bb); k.appendChild(kb); c.appendChild(k);
+  }
+
+  c.appendChild(el("p","mesej"+(S.ralat?" ralat":""),esc(S.mesej)));
+
+  var nav=el("div","nav");
+  var bp=el("button",null,"&larr; Sebelum"); bp.type="button"; bp.disabled=S.i===0;
+  bp.onclick=function(){ S.i--; S.komenBuka=false; S.mesej=""; render(); };
+  var bn=el("button",null,"Seterusnya &rarr;"); bn.type="button"; bn.disabled=S.i>=l.length-1;
+  bn.onclick=function(){ S.i++; S.komenBuka=false; S.mesej=""; render(); };
+  nav.appendChild(bp); nav.appendChild(el("span","mono",(S.i+1)+" / "+l.length)); nav.appendChild(bn);
+  c.appendChild(nav);
+  return c;
+}
+
+function seterusnya(){
+  var l=ditapis();
+  /* Dalam tapisan "belum", item yang baru disemak hilang daripada senarai, jadi indeks kekal. */
+  if(S.tapis==="semua"&&S.i<l.length-1) S.i++;
+  render();
+}
+
+document.addEventListener("keydown",function(e){
+  if(!GURU||S.komenBuka||e.target.tagName==="TEXTAREA") return;
+  var l=ditapis();
+  if(e.key==="ArrowRight"&&S.i<l.length-1){ S.i++; S.mesej=""; render(); }
+  else if(e.key==="ArrowLeft"&&S.i>0){ S.i--; S.mesej=""; render(); }
+});
+
+mula();
+})();
+</script>
+</body>
+</html>

@@ -3363,7 +3363,9 @@ function paneRumah(ak){
   bp.onclick=function(){ S.guruSkrin="profil"; renderCikgu(); };
   var bo=el("button","btn ghost sm"); bo.textContent="Log keluar";
   bo.onclick=logKeluar;
-  var bb=el("div","butang"); bb.appendChild(bp); bb.appendChild(bo);
+  var bsk=el("button","btn ghost sm"); bsk.textContent="Semak soalan";
+  bsk.onclick=function(){ location.href="semak.html"; };
+  var bb=el("div","butang"); bb.appendChild(bsk); bb.appendChild(bp); bb.appendChild(bo);
   hd.appendChild(bb);
   ak.appendChild(hd);
 

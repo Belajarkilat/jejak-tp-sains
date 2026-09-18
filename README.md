@@ -90,6 +90,14 @@ Sempadan ditegakkan di pelayan (`skema.sql`), bukan di skrin:
   Client Secret daripada Google Cloud Console. Butang Google hanya muncul
   selepas penyedia ini diaktifkan.
 
+## Semak soalan (Mod Semak)
+
+Guru yang log masuk boleh tekan **Semak soalan** di papan cikgu (`semak.html`).
+Setiap item dipaparkan satu demi satu bersama jawapan betul, dan guru menanda
+**Betul** atau **Ada masalah** dengan komen. Kad fakta juga disemak, jadi setiap
+bab ada 66 item. Semakan disimpan dalam jadual `lo_semakan`; item yang disunting
+selepas disemak ditanda "semak semula" secara automatik.
+
 ## Menambah bab baharu
 
 Aplikasi tidak tahu apa-apa tentang respirasi atau mana-mana tajuk. Ia hanya
