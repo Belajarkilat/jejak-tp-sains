@@ -666,7 +666,7 @@ window.BANK["t3b7"] =
      "p": [
       "Lantai simen licin supaya kanak-kanak tidak tersadung",
       "Lantai lembut di bawah buaian untuk menyerap hentaman",
-      "Tali buaian lebih panjang supaya ayunan lebih perlahan",
+      "Tali buaian lebih panjang supaya laju di titik terendah berkurang",
       "Tempat duduk lebih berat supaya buaian lebih stabil"
      ],
      "b": 1,
@@ -702,7 +702,7 @@ window.BANK["t3b7"] =
       "Kurangkan ketinggian permulaan"
      ],
      "b": 3,
-     "u": "Tenaga keupayaan mgh ditentukan oleh ketinggian. Gelongsor yang lebih panjang dari ketinggian sama tetap memberi laju yang hampir sama, dan air mengurangkan geseran."
+     "u": "Tenaga keupayaan mgh ditentukan oleh ketinggian. Memanjangkan gelongsor dari ketinggian yang sama hanya mengurangkan sedikit laju melalui geseran, dan air mengurangkan geseran."
     },
     {
      "j": "pilih",

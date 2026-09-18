@@ -640,26 +640,26 @@ window.BANK["t3b9"] =
       "Pantau amaran cuaca angkasa setiap hari",
       "Masukkan mod selamat semasa ribut suria",
       "Lancarkan satelit hanya pada waktu malam",
-      "Naikkan satelit ke orbit lebih tinggi semasa ribut"
+      "Cat satelit dengan warna gelap supaya zarah bercas diserap"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Orbit yang lebih tinggi lebih jauh dari perlindungan magnetosfera. Waktu pelancaran tidak mengubah pendedahan satelit di orbit."
+     "u": "Warna cat tidak menghalang zarah bercas. Waktu pelancaran tidak mengubah pendedahan satelit di orbit."
     },
     {
      "j": "pilih",
      "t": "Seorang murid membaca bahawa ribut suria minggu depan akan memanaskan permukaan Bumi sebanyak 10 °C. Nilaikan dakwaan itu.",
      "p": [
-      "Tidak berasas, kerana ribut suria menjejaskan medan magnet, bukan suhu",
+      "Tidak berasas, kerana ribut suria menjejaskan atmosfera atas, bukan permukaan",
       "Berasas, kerana lentingan jisim korona membawa haba terus ke Bumi",
       "Berasas, kerana tompok matahari menjadikan Matahari jauh lebih panas",
       "Tidak berasas, kerana ribut suria tidak pernah sampai ke Bumi"
      ],
      "b": 0,
-     "u": "Zarah bercas dipesongkan oleh magnetosfera dan menjejaskan atmosfera atas serta teknologi. Tompok matahari sebenarnya kawasan yang lebih sejuk."
+     "u": "Ribut suria memanaskan atmosfera atas dan mengganggu medan magnet serta teknologi, tetapi tidak menaikkan suhu permukaan Bumi. Tompok matahari sebenarnya kawasan yang lebih sejuk."
     }
    ],
    "bos": {

@@ -688,7 +688,7 @@ window.BANK["t3b3"] =
    "kadFakta": "Satu unit darah yang diderma boleh dipecahkan kepada tiga komponen dan membantu tiga orang pesakit berbeza.",
    "bosKadNama": "Sistem Pengairan",
    "bosKadEm": "🌱",
-   "bosKadFakta": "Pengairan titisan menghantar air terus ke akar dan boleh menjimatkan lebih separuh air berbanding penyiraman biasa.",
+   "bosKadFakta": "Pengairan titisan menghantar air terus ke akar dan boleh menjimatkan sehingga separuh air berbanding penyiraman biasa.",
    "soalan": [
     {
      "j": "pilih",
@@ -736,7 +736,7 @@ window.BANK["t3b3"] =
       "Minta penderma berpuasa sebelum menderma supaya darah lebih bersih"
      ],
      "b": 0,
-     "u": "Kebanyakan murid tingkatan tiga belum cukup umur. Semua kumpulan darah diperlukan, dan penderma perlu makan sebelum menderma."
+     "u": "Murid tingkatan tiga berumur 15 tahun, sedangkan penderma mesti berumur sekurang-kurangnya 17 tahun dengan kebenaran bertulis ibu bapa. Semua kumpulan darah diperlukan, dan penderma perlu makan sebelum menderma."
     },
     {
      "j": "pilih",
