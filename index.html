@@ -968,7 +968,7 @@ body.zon-murid{color:var(--tinta)}
         <button id="btnCikgu" aria-pressed="false">Cikgu</button>
       </div>
       <span class="talian" id="talian" role="status" aria-live="polite"></span>
-      <button class="icon-btn" id="btnBunyi" title="Bunyi" aria-label="Hidup atau matikan bunyi">&#9834;</button>
+      <button class="icon-btn" id="btnBunyi" title="Bunyi dan getaran" aria-label="Hidup atau matikan bunyi dan getaran">&#9834;</button>
       <button class="icon-btn" id="btnTema" title="Tema" aria-label="Tukar tema">&#9680;</button>
     </div>
   </header>
@@ -1608,7 +1608,36 @@ function bunyi(k){
   else if(k==="degup"){nada(58,0.13,"sine",0.22);}
   else if(k==="kad"){nada(520,0.1);setTimeout(function(){nada(784,0.1);},90);setTimeout(function(){nada(1046,0.22);},180);}
   else if(k==="mati"){nada(300,0.5,"sawtooth",0.08);setTimeout(function(){nada(140,0.7,"sawtooth",0.09);},220);}
+  var pola={betul:18,salah:[35,50,35],kad:[15,40,15,40,25],mati:[180,80,260]}[k];
+  if(pola) getar(pola);
 }
+
+/* Getaran ikut suis bunyi yang sama. Android guna navigator.vibrate.
+   Safari iOS tiada vibrate, tetapi sejak iOS 18 klik pada label suis
+   <input switch> memberi haptik sistem, jadi itu digunakan sebagai ganti. */
+var suisHaptik=null;
+function getar(pola){
+  if(S.senyap)return;
+  try{
+    if(navigator.vibrate){navigator.vibrate(pola);return;}
+    if(!suisHaptik){
+      var l=document.createElement("label"),i=document.createElement("input");
+      l.setAttribute("aria-hidden","true");
+      l.style.cssText="position:fixed;left:-9px;top:0;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none";
+      i.type="checkbox";i.setAttribute("switch","");i.tabIndex=-1;
+      l.appendChild(i);document.body.appendChild(l);suisHaptik=l;
+    }
+    suisHaptik.click();
+  }catch(e){}
+}
+
+/* Ketik: bunyi "tik" pendek dan getar ringan pada setiap butang,
+   supaya terasa seperti aplikasi telefon. */
+document.addEventListener("pointerdown",function(e){
+  var b=e.target&&e.target.closest?e.target.closest("button,a.btn,[role=tab]"):null;
+  if(!b||b.disabled)return;
+  nada(1400,0.035,"triangle",0.045); getar(8);
+},{passive:true});
 function aturDegup(){
   if(degupTimer){clearInterval(degupTimer);degupTimer=null;}
   if(S.tenang||S.skrin!=="main"||S.senyap||S.nafas>35||S.mati)return;
@@ -4570,7 +4599,7 @@ $("btnKembali").onclick=function(){
 $("btnBunyi").onclick=function(){
   S.senyap=!S.senyap;
   $("btnBunyi").innerHTML=S.senyap?"&#9633;":"&#9834;";
-  $("btnBunyi").setAttribute("aria-label",S.senyap?"Hidupkan bunyi":"Matikan bunyi");
+  $("btnBunyi").setAttribute("aria-label",S.senyap?"Hidupkan bunyi dan getaran":"Matikan bunyi dan getaran");
   aturDegup(); simpanDiri();
 };
 $("btnTema").onclick=function(){
