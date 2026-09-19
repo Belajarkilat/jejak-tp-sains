@@ -342,3 +342,23 @@ create policy lo_semakan_diri on lo_semakan for all to authenticated
   using (guru = auth.uid()) with check (guru = auth.uid());
 grant select, insert, update, delete on lo_semakan to authenticated;
 revoke all on lo_semakan from anon;
+
+-- Maklum balas umum cikgu (19 Sep 2026). Cikgu hanya boleh tambah dan baca rekod sendiri.
+create table if not exists lo_maklum_balas (
+  id        bigserial primary key,
+  guru      uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  skor      int  not null check (skor between 1 and 5),
+  suka      text not null default '' check (length(suka) <= 1500),
+  baiki     text not null default '' check (length(baiki) <= 1500),
+  tingkatan text[] not null default '{}',
+  hubungi   boolean not null default false,
+  dicipta   timestamptz not null default now()
+);
+alter table lo_maklum_balas enable row level security;
+drop policy if exists lo_maklum_balas_tambah on lo_maklum_balas;
+drop policy if exists lo_maklum_balas_baca on lo_maklum_balas;
+create policy lo_maklum_balas_tambah on lo_maklum_balas for insert to authenticated with check (guru = auth.uid());
+create policy lo_maklum_balas_baca on lo_maklum_balas for select to authenticated using (guru = auth.uid());
+grant select, insert on lo_maklum_balas to authenticated;
+grant usage on sequence lo_maklum_balas_id_seq to authenticated;
+revoke all on lo_maklum_balas from anon;
