@@ -773,6 +773,12 @@ body.zon-murid{color:var(--tinta)}
   pointer-events:none;
 }
 .wira .ikonbesar{position:absolute;right:18px;top:14px;font-size:54px;line-height:1;transform:rotate(-8deg);filter:drop-shadow(0 3px 0 rgba(0,0,0,.25))}
+.bebas .medan-bebas{display:flex;flex-direction:column;gap:6px;width:100%;max-width:340px;text-align:left;font-weight:700;font-size:15px}
+.bebas .medan-bebas small{font-weight:500;opacity:.7}
+.bebas .medan-bebas input{font:600 18px/1.3 "Figtree",sans-serif;padding:13px 15px;border:2.5px solid var(--garis,#1C1B3A);border-radius:14px;background:var(--kad,#fff);color:var(--tinta,#1C1B3A);width:100%}
+.bebas .medan-bebas input:focus{outline:3px solid var(--dunia,#6D3BFF);outline-offset:1px}
+.bebas .tengah{gap:14px}
+.ucap-nama{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:20px;margin:-4px 0 8px}
 .wira .siapa{font-weight:700;font-size:14px;opacity:.92;padding-right:70px}
 .wira h2{font-family:"Baloo 2",sans-serif;font-size:38px;font-weight:800;line-height:1;margin-top:4px;padding-right:60px}
 .wira .cerita{margin-top:6px;font-size:15px;opacity:.95;max-width:34ch}
@@ -1217,6 +1223,7 @@ function tukarBab(id){
   benihContohBab();
   muatTempatan();
   if(S.no){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); }
+  else muatLatihan();
   simpanDiri();
   muatBabJauh();
   render();
@@ -1918,7 +1925,53 @@ function panelMula(tajuk,eyebrow){
 }
 
 function mainTanpaRekod(){
-  S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); render();
+  S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; muatLatihan(); simpanDiri(); render();
+}
+
+/* Main bebas (pautan ?main untuk keluarga dan kawan): tiada kelas, tiada
+   PIN, tiada apa-apa dihantar ke pelayan. Nama, sekolah dan hentian yang
+   dilepasi disimpan dalam telefon ini sahaja, setiap bab berasingan. */
+function simpanLatihan(){
+  if(!S.latihan) return;
+  try{ localStorage.setItem("cn-latihan-"+BAB_ID,JSON.stringify({v:SKEMA,lulus:S.lulus,kad:S.kad})); }catch(e){}
+}
+function muatLatihan(){
+  if(!S.latihan) return;
+  var o=null;
+  try{ o=JSON.parse(localStorage.getItem("cn-latihan-"+BAB_ID)||"null"); }catch(e){}
+  S.lulus=(o&&o.v===SKEMA&&o.lulus)||{}; S.kad=(o&&o.v===SKEMA&&o.kad)||{};
+  var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1);
+}
+function renderNamaBebas(){
+  var st=$("stage"); st.innerHTML="";
+  var p=el("div","panel bebas");
+  var bd=el("div","panel-bd");
+  bd.innerHTML='<div class="sambut">'+
+    '<img class="logo" src="ikon.svg" alt="">'+
+    '<h2>Jom main Sains!</h2>'+
+    '<p>Tulis nama awak dulu. Nama ni disimpan dalam telefon ni je.</p></div>';
+  var t=el("div","tengah");
+  var l1=el("label","medan-bebas"); l1.innerHTML='<span>Nama awak</span>';
+  var n=el("input"); n.type="text"; n.id="namaBebas"; n.maxLength=40; n.autocomplete="given-name";
+  n.placeholder="Contoh: Aina"; n.value=S.namaMain||""; l1.appendChild(n);
+  var l2=el("label","medan-bebas"); l2.innerHTML='<span>Sekolah <small>(tak wajib)</small></span>';
+  var k=el("input"); k.type="text"; k.id="sekolahBebas"; k.maxLength=60; k.autocomplete="off";
+  k.placeholder="Contoh: SMK Seri Gading"; k.value=S.sekolahMain||""; l2.appendChild(k);
+  var bt=el("button","btn penuh"); bt.textContent="Mula main"; bt.style.maxWidth="340px";
+  var msg=el("p","ralat",""); msg.hidden=true;
+  t.appendChild(l1); t.appendChild(l2); t.appendChild(bt); t.appendChild(msg);
+  bd.appendChild(t);
+  function mula(){
+    var v=n.value.replace(/\s+/g," ").trim();
+    if(v.length<2){ msg.hidden=false; msg.textContent="Tulis nama awak dulu, sekurang-kurangnya 2 huruf."; n.focus(); return; }
+    S.namaMain=v; S.sekolahMain=k.value.replace(/\s+/g," ").trim();
+    simpanDiri(); render(); window.scrollTo({top:0});
+  }
+  n.onkeydown=function(e){ if(e.key==="Enter") k.focus(); };
+  k.onkeydown=function(e){ if(e.key==="Enter") mula(); };
+  bt.onclick=mula;
+  p.appendChild(bd); st.appendChild(p);
+  setTimeout(function(){ if(!n.value) n.focus(); },60);
 }
 
 /* ---------- 1. kod kelas ---------- */
@@ -2153,6 +2206,7 @@ function lukisLaluan(n,lulus){
 }
 
 function renderPeta(){
+  if(S.latihan&&!S.namaMain) return renderNamaBebas();
   var st=$("stage"); st.innerHTML="";
   var tunggu=menungguCikgu();
   var d=duniaBab();
@@ -2164,6 +2218,7 @@ function renderPeta(){
   var w=el("section","wira");
   var h='<span class="ikonbesar" aria-hidden="true">'+d.ikon+'</span>';
   if(berekod) h+='<p class="siapa">Hai, '+esc(namaPendek(KM.id,S.no))+'!</p>';
+  else if(S.namaMain) h+='<p class="siapa">Hai, '+esc(S.namaMain)+'!'+(S.sekolahMain?' · '+esc(S.sekolahMain):'')+'</p>';
   h+='<h2>'+esc(BAB.tajuk)+'</h2><p class="cerita">'+esc(d.misi)+'</p>';
   h+='<div class="kemajuan" role="img" aria-label="'+siap+' daripada 6 hentian dilepasi">';
   for(i=1;i<=6;i++) h+='<i class="'+(S.lulus[i]?"on":"")+'"></i>';
@@ -2173,7 +2228,7 @@ function renderPeta(){
      (S.rentetan>0?'<span class="stat"><span aria-hidden="true">🔥</span>'+S.rentetan+' hari</span>':'')+
      ((S.inhaler||S.hemo)?'<span class="stat" title="Kuasa: inhaler dan hemoglobin"><span aria-hidden="true">💉</span>'+S.inhaler+' <span aria-hidden="true">🩸</span>'+S.hemo+'</span>':'')+
      '</div>';
-  if(!berekod) h+='<span class="latihan">Mod latihan: markah tidak dihantar kepada cikgu</span>';
+  if(!berekod) h+='<span class="latihan">'+(S.namaMain?'Main bebas: kemajuan disimpan dalam telefon ni je':'Mod latihan: markah tidak dihantar kepada cikgu')+'</span>';
   w.innerHTML=h;
   st.appendChild(w);
 
@@ -2317,7 +2372,12 @@ function renderPeta(){
   var kb=el("button","btn ghost sm"); kb.textContent="\u{1F0CF} Koleksi kad";
   kb.onclick=function(){ S.skrin="kad"; render(); window.scrollTo({top:0,behavior:"smooth"}); };
   ab.appendChild(kb);
-  var tb2=el("button","btn ghost sm"); tb2.textContent=berekod?"Bukan saya":"Masuk dengan nama";
+  if(S.latihan&&S.namaMain){
+    var tn=el("button","btn ghost sm"); tn.textContent="Tukar nama";
+    tn.onclick=function(){ S.namaMain=""; simpanDiri(); render(); window.scrollTo({top:0}); };
+    ab.appendChild(tn);
+  }
+  var tb2=el("button","btn ghost sm"); tb2.textContent=berekod?"Bukan saya":(S.namaMain?"Ada kod kelas?":"Masuk dengan nama");
   tb2.onclick=function(){
     S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri();
     S.skrin=KM?"nama":"kodkelas"; render(); window.scrollTo({top:0});
@@ -2602,6 +2662,7 @@ function hasilAras(){
   if((S.bosBetul||(terbukaTP6&&S.bosHantar)) && !S.kad[a.n+"b"]){ S.kad[a.n+"b"]=1; kadBaru.push([a.bosKadNama,a.bosKadEm,a.bosKadFakta]); }
   if(lulus) S.lulus[a.n]=true;
   if(kadBaru.length) bunyi("kad");
+  simpanLatihan();
 
   var sebelum=cubaanMurid(S.kelasId,S.no,a.n);
   var kaliKe=(sebelum?(sebelum.kali||0):0)+1;
@@ -2627,6 +2688,7 @@ function hasilAras(){
     for(var i=1;i<=3;i++) bn.appendChild(el("span",i<=bintang?"on":"","⭐"));
     b.appendChild(bn);
     b.appendChild(el("h2",null,lulus?(bintang===3?"Sempurna!":"Hentian "+a.n+" dilepasi!"):(bintang?"Hampir berjaya!":"Cuba sekali lagi")));
+    if(S.latihan&&S.namaMain) b.appendChild(el("p","ucap-nama",lulus?"Syabas, "+S.namaMain+"!":"Jangan putus asa, "+S.namaMain+". Cuba lagi!"));
     b.appendChild(el("div","skorbesar",S.skor+" mata"));
     b.appendChild(el("p",null,lulus
       ? ("Betul "+betulItem+" daripada "+jumItem+", termasuk soalan bos."+(kadBaru.length>1?" Dua kad baharu dibuka!":(kadBaru.length?" Kad baharu dibuka!":"")))
@@ -2807,7 +2869,8 @@ function simpanDiri(){
     kad:S.kad, inhaler:S.inhaler, hemo:S.hemo, tenang:S.tenang,
     rentetan:S.rentetan, rentetanTarikh:S.rentetanTarikh,
     harianTarikh:S.harianTarikh, harianSkor:S.harianSkor, senyap:S.senyap,
-    minggu:S.minggu, mingguSkor:S.mingguSkor
+    minggu:S.minggu, mingguSkor:S.mingguSkor,
+    namaMain:S.namaMain, sekolahMain:S.sekolahMain
   })); }catch(e){}
 }
 
@@ -2942,6 +3005,7 @@ function muatTempatan(){
         S.rentetan=d.rentetan||0; S.rentetanTarikh=d.rentetanTarikh||null;
         S.harianTarikh=d.harianTarikh||null; S.harianSkor=d.harianSkor||0;
         S.senyap=!!d.senyap; S.minggu=d.minggu||null; S.mingguSkor=d.mingguSkor||0;
+        S.namaMain=d.namaMain||""; S.sekolahMain=d.sekolahMain||"";
         if(S.rentetanTarikh&&S.rentetanTarikh!==tarikhTempatan()&&S.rentetanTarikh!==tarikhSemalam()) S.rentetan=0;
       }
     }
@@ -4628,6 +4692,7 @@ function mula(){
     var u=new URL(location.href);
     qk=u.searchParams.get("k");
     qdemo=u.searchParams.get("demo");
+    if(u.searchParams.has("main")){ qdemo="bebas"; u.searchParams.delete("main"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
     if(qdemo){ u.searchParams.delete("demo"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
     authUrl=u.searchParams.has("code")||u.searchParams.has("error_description")||/access_token|error_description/.test(u.hash);
     if(qk){ u.searchParams.delete("k"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
@@ -4635,7 +4700,7 @@ function mula(){
   try{ modLama=localStorage.getItem("cn-mod"); }catch(e){}
 
   if(S.no&&KM&&S.kod){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
-  else if(S.latihan) S.skrin="peta";
+  else if(S.latihan){ S.skrin="peta"; muatLatihan(); }
   else if(KM) S.skrin="nama";
   else S.skrin="kodkelas";
 
@@ -4652,12 +4717,13 @@ function mula(){
   }
 
   if(qdemo==="murid"&&!qk&&!authUrl){ S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); }
+  if(qdemo==="bebas"&&!qk&&!authUrl&&!(S.no&&S.kod)){ S.latihan=true; S.no=null; S.skrin="peta"; muatLatihan(); simpanDiri(); }
 
   render();
   lukisTalian();
   muatJauh();
   if(qdemo==="cikgu"&&!qk&&!authUrl){ DEMO_GURU=true; S.gk="contoh"; S.tabCikgu="kelas"; tukarMod("cikgu"); }
-  else if(qdemo==="murid"&&!qk&&!authUrl) tukarMod("murid");
+  else if((qdemo==="murid"||qdemo==="bebas")&&!qk&&!authUrl) tukarMod("murid");
   else if(authUrl||(modLama==="cikgu"&&!qk)) tukarMod("cikgu");
 }
 mula();
