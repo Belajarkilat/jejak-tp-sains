@@ -139,16 +139,22 @@ textarea{width:100%;min-height:96px;border:1px solid var(--line2);border-radius:
 </div>
 
 <script src="konfig.js?v=20260914"></script>
-<script src="bank-t3b1.js?v=2026091904"></script>
-<script src="bank-t3b2.js?v=2026091904"></script>
-<script src="bank-t3b3.js?v=2026091904"></script>
+<script src="bank-t1b1.js?v=2026092001"></script>
+<script src="bank-t1b2.js?v=2026092001"></script>
+<script src="bank-t1b3.js?v=2026092001"></script>
+<script src="bank-t2b1.js?v=2026092001"></script>
+<script src="bank-t2b2.js?v=2026092001"></script>
+<script src="bank-t2b3.js?v=2026092001"></script>
+<script src="bank-t3b1.js?v=2026092001"></script>
+<script src="bank-t3b2.js?v=2026092001"></script>
+<script src="bank-t3b3.js?v=2026092001"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js"></script>
 <script>
 (function(){
 "use strict";
 var AWAN=window.CN_AWAN, BANK=window.BANK||{};
-var BAB_BARU=["t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"];
-var SUSUNAN=["t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"].filter(function(k){return BANK[k];});
+var BAB_BARU=["t1b1","t1b2","t1b3","t2b1","t2b2","t2b3","t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"];
+var SUSUNAN=["t1b1","t1b2","t1b3","t2b1","t2b2","t2b3","t3b1","t3b2","t3b3","t3b4","t3b5","t3b6","t3b7","t3b8","t3b9","t3b10"].filter(function(k){return BANK[k];});
 var JENIS={pilih:"Pilih satu",banyak:"Pilih semua",susun:"Susun",nombor:"Jawapan nombor",buka:"Soalan terbuka",kad:"Kad fakta"};
 var CEPAT=["Fakta salah","Jawapan salah","Lebih daripada satu jawapan betul","Bahasa atau ejaan","Tidak ikut buku teks","Aras TP tidak sesuai","Terlalu panjang"];
 var HURUF="ABCDEFGHIJ";
@@ -245,7 +251,7 @@ function render(){
     l.forEach(function(it){ var s=status(it); if(s==="ok"||s==="masalah") siap++; if(s==="masalah") m++; });
     var b=el("button"); b.type="button"; b.setAttribute("aria-pressed",k===S.bab);
     var no=BANK[k].kod.split(" ")[0].replace(".0","");
-    b.innerHTML='<b>Bab '+esc(no)+'</b><span>'+esc(BANK[k].tajuk)+'</span><span>'+siap+'/'+l.length+' disemak'+(m?' &middot; <span style="color:var(--arteri)">'+m+' masalah</span>':'')+
+    b.innerHTML='<b>T'+BANK[k].tingkatan+' Bab '+esc(no)+'</b><span>'+esc(BANK[k].tajuk)+'</span><span>'+siap+'/'+l.length+' disemak'+(m?' &middot; <span style="color:var(--arteri)">'+m+' masalah</span>':'')+
       (BAB_BARU.indexOf(k)>=0&&siap===0?' &middot; <span class="baru">baharu</span>':'')+'</span><span class="bar"><i style="width:'+(100*siap/l.length).toFixed(1)+'%"></i></span>';
     b.onclick=function(){ S.bab=k; S.tapis="semua"; S.komenBuka=false; S.mesej=""; lompatBelum(); render(); };
     g.appendChild(b);

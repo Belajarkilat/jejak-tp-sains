@@ -1,6 +1,6 @@
 # Jejak TP Sains
 
-Permainan pentaksiran bilik darjah untuk **Sains KSSM Tingkatan 3**. Setiap bidang
+Permainan pentaksiran bilik darjah untuk **Sains KSSM Tingkatan 1 hingga 3** (menengah rendah). Setiap bidang
 pembelajaran menjadi satu perjalanan enam hentian yang dipetakan satu lawan satu
 kepada Tahap Penguasaan 1 hingga 6 dalam DSKP.
 
@@ -164,3 +164,44 @@ menyalinnya terus ke SPPB.
   disimpan, jadi murid tidak boleh memilihnya.
 - **Seluruh kelas serentak.** Diuji dengan 40 penghantaran serentak; kesemuanya
   berjaya dan sampai ke pangkalan data dalam kira-kira dua setengah saat.
+
+## Tingkatan 1 dan 2 (siap 19 Sep 2026)
+
+| Tingkatan | Bab | Perjalanan |
+|---|---|---|
+| 1 | 1.0 Pengenalan kepada Penyiasatan Saintifik | Laluan Makmal |
+| 1 | 2.0 Sel sebagai Unit Asas Hidupan | Laluan Sel |
+| 1 | 3.0 Koordinasi dan Gerak Balas | Laluan Seimbang |
+| 1 | 4.0 Pembiakan | Laluan Benih |
+| 1 | 5.0 Jirim | Laluan Zarah |
+| 1 | 6.0 Jadual Berkala | Laluan Unsur |
+| 1 | 7.0 Udara | Laluan Udara |
+| 1 | 8.0 Cahaya dan Optik | Laluan Cahaya |
+| 1 | 9.0 Bumi | Laluan Bumi |
+| 2 | 1.0 Biodiversiti | Laluan Rimba |
+| 2 | 2.0 Ekosistem | Laluan Ekosistem |
+| 2 | 3.0 Nutrisi | Laluan Nutrisi |
+| 2 | 4.0 Kesihatan Manusia | Laluan Imun |
+| 2 | 5.0 Air dan Larutan | Laluan Air |
+| 2 | 6.0 Asid dan Alkali | Laluan pH |
+| 2 | 7.0 Keelektrikan dan Kemagnetan | Laluan Elektro |
+| 2 | 8.0 Daya dan Gerakan | Laluan Daya |
+| 2 | 9.0 Haba | Laluan Haba |
+| 2 | 10.0 Gelombang Bunyi | Laluan Bunyi |
+| 2 | 11.0 Bintang dan Galaksi dalam Alam Semesta | Laluan Galaksi |
+| 2 | 12.0 Sistem Suria | Laluan Planet |
+| 2 | 13.0 Meteoroid, Asteroid, Komet | Laluan Komet |
+
+Setiap bab 54 item. DSKP Tingkatan 1 menulis Standard Prestasi mengikut tema;
+setiap bab T1 mengambil ayat tema itu dan menghadkannya kepada topik bab.
+
+**Bab yang dibuka** ditetapkan dalam `BAB_TERSEDIA` (index.html) bersama tag
+skrip bank. Kini Bab 1 hingga 3 bagi setiap tingkatan dibuka; bab lain
+dipaparkan sebagai "akan datang". Untuk membuka bab, tambah tag skrip bank
+dan id dalam `BAB_TERSEDIA` (dan dalam `semak.html`).
+
+**Audit kandungan:** `node bina.js` (struktur dan petunjuk panjang jawapan),
+`node audit.js` (istilah buku teks, bahasa, soalan berulang, rujukan jadual,
+jawapan berangka, petunjuk tatabahasa). Alat penulis: `_panjang.js <id>`
+(soalan yang jawapan betulnya paling panjang) dan `_ringkas.js <id>`
+(soalan dan jawapan untuk semakan manual).

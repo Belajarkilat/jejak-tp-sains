@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Jejak TP Sains: pentaksiran bilik darjah untuk Sains KSSM Tingkatan 3. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
+<meta name="description" content="Jejak TP Sains: pentaksiran bilik darjah untuk Sains KSSM Tingkatan 1, 2 dan 3. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
 <meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#070D18" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -789,6 +789,9 @@ body.zon-murid{color:var(--tinta)}
 
 .babpilih{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
 .babpilih::-webkit-scrollbar{display:none}
+.tingpilih{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.tingpilih button{font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;border:2px solid var(--garis,var(--line2));background:transparent;color:inherit;cursor:pointer;min-height:36px}
+.tingpilih button[aria-pressed="true"]{background:var(--dunia,var(--vena));border-color:var(--dunia,var(--vena));color:#fff}
 .babpilih button.akan-datang{opacity:.55;cursor:default;border-style:dashed}
 .akan-datang-guru{align-self:center;margin:0}
 .mb-skor{display:flex;gap:8px;margin-top:8px}
@@ -934,9 +937,15 @@ body.zon-murid{color:var(--tinta)}
 
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
 <script src="konfig.js?v=20260914"></script>
-<script src="bank-t3b1.js?v=2026091904"></script>
-<script src="bank-t3b2.js?v=2026091904"></script>
-<script src="bank-t3b3.js?v=2026091904"></script>
+<script src="bank-t1b1.js?v=2026092001"></script>
+<script src="bank-t1b2.js?v=2026092001"></script>
+<script src="bank-t1b3.js?v=2026092001"></script>
+<script src="bank-t2b1.js?v=2026092001"></script>
+<script src="bank-t2b2.js?v=2026092001"></script>
+<script src="bank-t2b3.js?v=2026092001"></script>
+<script src="bank-t3b1.js?v=2026092001"></script>
+<script src="bank-t3b2.js?v=2026092001"></script>
+<script src="bank-t3b3.js?v=2026092001"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -951,7 +960,7 @@ body.zon-murid{color:var(--tinta)}
         </svg>
         <div>
           <b>Jejak TP Sains</b>
-          <span>Sains Tingkatan 3</span>
+          <span>Sains Menengah Rendah</span>
         </div>
       </div>
       <div class="seg" role="group" aria-label="Tukar mod">
@@ -986,7 +995,7 @@ body.zon-murid{color:var(--tinta)}
       <div class="panel" style="margin-top:6px">
         <div class="panel-hd">
           <div class="grow">
-            <p class="eyebrow" id="guruEyebrow">Sains &middot; Tingkatan 3</p>
+            <p class="eyebrow" id="guruEyebrow">Sains</p>
             <h2 id="guruTajuk">Kelas</h2>
           </div>
           <span class="kodbesar" id="guruKod" title="Kod kelas untuk murid"></span>
@@ -1026,11 +1035,20 @@ body.zon-murid{color:var(--tinta)}
 /* Bab yang dibuka, mengikut urutan paparan. Membuka bab bermakna
    menambah skrip bank dan id di sini. Bab 4-10 siap tetapi ditutup
    sehingga Bab 1-3 mendapat maklum balas cikgu. */
-var BAB_TERSEDIA=["t3b1","t3b2","t3b3"];
-var BAB_AKAN_DATANG="Bab 4.0 hingga 10.0";
+var BAB_TERSEDIA=["t1b1","t1b2","t1b3","t2b1","t2b2","t2b3","t3b1","t3b2","t3b3"];
+/* Bilangan bab setiap tingkatan dalam DSKP. Bab selepas yang dibuka
+   dipaparkan sebagai "akan datang". */
+var JUMLAH_BAB={1:9,2:13,3:10};
+function babAkanDatang(t){
+  var buka=BAB_TERSEDIA.filter(function(x){ return x.indexOf("t"+t+"b")===0; }).length;
+  var n=JUMLAH_BAB[t]||0;
+  if(buka>=n) return "";
+  return buka+1===n ? ("Bab "+n+".0") : ("Bab "+(buka+1)+".0 hingga "+n+".0");
+}
+function tingkatanBab(id){ var m=/^t(\d)b/.exec(id||""); return m?+m[1]:3; }
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("cn-bab"); }catch(e){}
-if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID=BAB_TERSEDIA[0];
+if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID="t3b1";
 
 /* ============================================================
    KANDUNGAN — dimuatkan daripada fail bank yang berasingan.
@@ -1071,6 +1089,72 @@ function pasangBab(id){
 /* Setiap bab ialah satu dunia: warna, ikon hentian dan satu ayat misi.
    Bab tanpa entri di sini memakai DUNIA_ASAS, jadi bab baharu tetap berfungsi. */
 var DUNIA={
+  t1b1:{warna:"#0E7490",lembut:"#D5F1F7",gelap:"#0A5266",ikon:"🔬",
+        hentian:["🚪","🧪","📏","🧊","⚖️","💡"],
+        misi:"Jadi saintis muda, dari pintu makmal hingga pameran inovasi."},
+  t1b2:{warna:"#2F9E44",lembut:"#DDF5E1",gelap:"#1F6E2F",ikon:"🧫",
+        hentian:["🔬","🏭","🧪","🌿","🐟","🎨"],
+        misi:"Selami dunia sel, unit asas setiap benda hidup."},
+  t1b3:{warna:"#E8590C",lembut:"#FFE8D9",gelap:"#A63E06",ikon:"⚖️",
+        hentian:["🌡️","🎛️","🏃","🏅","🌻","🏥"],
+        misi:"Bantu badan kekal seimbang walau cuaca panas atau sejuk."},
+  t1b4:{warna:"#D6336C",lembut:"#FCE0EA",gelap:"#9C1F4B",ikon:"🌱",
+        hentian:["🌺","🏥","📅","🌱","🌸","🐝"],
+        misi:"Ikuti perjalanan hidup baharu, dari bunga hingga benih."},
+  t1b5:{warna:"#5F3DC4",lembut:"#E8E2FB",gelap:"#40288C",ikon:"⚛️",
+        hentian:["🍳","⚛️","🧪","♨️","🌸","🛠️"],
+        misi:"Kenali zarah kecil yang membina segala jirim."},
+  t1b6:{warna:"#1971C2",lembut:"#DCEBFA",gelap:"#11508A",ikon:"🧲",
+        hentian:["🗂️","🔩","🧪","🔥","♻️","💡"],
+        misi:"Susun unsur, asingkan campuran dan bina sebatian."},
+  t1b7:{warna:"#0B7285",lembut:"#D3F0F4",gelap:"#085261",ikon:"🌬️",
+        hentian:["☁️","🔥","🕯️","📊","🧯","🌳"],
+        misi:"Jejaki udara yang kita sedut, dari oksigen hingga jerebu."},
+  t1b8:{warna:"#F08C00",lembut:"#FFF0D6",gelap:"#A86200",ikon:"💡",
+        hentian:["🪞","🏊","🔦","🐠","🎭","🔭"],
+        misi:"Ikuti cahaya yang memantul, membias dan berwarna-warni."},
+  t1b9:{warna:"#8B5E34",lembut:"#F2E6DA",gelap:"#5E3F22",ikon:"🌍",
+        hentian:["⛰️","🦇","🏛️","⛰️","🏘️","🚨"],
+        misi:"Terokai lapisan Bumi, batuan dan kuasa alam."},
+  t2b1:{warna:"#2B8A3E",lembut:"#DDF3E1",gelap:"#1D6029",ikon:"🌳",
+        hentian:["🚪","🌉","🔑","🏕️","🐅","🦋"],
+        misi:"Terokai kepelbagaian hidupan di hutan Malaysia."},
+  t2b2:{warna:"#5C940D",lembut:"#EAF5D6",gelap:"#3F6609",ikon:"🍃",
+        hentian:["🌾","🌲","🏡","🦉","🧑‍🌾","🐟"],
+        misi:"Kaji hubungan antara hidupan dengan persekitarannya."},
+  t2b3:{warna:"#E67700",lembut:"#FFEBD1",gelap:"#A35400",ikon:"🍎",
+        hentian:["🥬","🍳","🧪","🦷","🍱","🥗"],
+        misi:"Ikuti makanan dari pinggan hingga ke setiap sel."},
+  t2b4:{warna:"#C92A2A",lembut:"#FDE2E2",gelap:"#8E1D1D",ikon:"🛡️",
+        hentian:["🏥","💉","📋","🧫","🦟","🧼"],
+        misi:"Pertahankan badan daripada serangan kuman."},
+  t2b5:{warna:"#1C7ED6",lembut:"#DBEDFC",gelap:"#135A9A",ikon:"💧",
+        hentian:["🏞️","🏭","👕","🥤","🏘️","🧪"],
+        misi:"Ikuti setitik air dari sungai hingga ke paip rumah."},
+  t2b6:{warna:"#AE3EC9",lembut:"#F4E1F9",gelap:"#7A2B8D",ikon:"🧪",
+        hentian:["🍋","🚿","🌈","⚗️","🥬","🧫"],
+        misi:"Uji dunia asid dan alkali di sekeliling awak."},
+  t2b7:{warna:"#F59F00",lembut:"#FFF1D1",gelap:"#AD7000",ikon:"⚡",
+        hentian:["🎛️","🏠","🔌","🧲","🏮","💡"],
+        misi:"Hidupkan litar dan bina magnet elektrik."},
+  t2b8:{warna:"#495057",lembut:"#E9ECEF",gelap:"#343A40",ikon:"🏋️",
+        hentian:["🛝","🔧","⚖️","🚢","🚜","🛠️"],
+        misi:"Tolak, tarik dan angkat dengan kuasa daya."},
+  t2b9:{warna:"#E03131",lembut:"#FDE3E3",gelap:"#9E2222",ikon:"🔥",
+        hentian:["🏖️","🚆","🧪","🥫","🏡","☀️"],
+        misi:"Ikuti haba yang mengalir, mengembang dan memanaskan."},
+  t2b10:{warna:"#7048E8",lembut:"#E9E3FC",gelap:"#4F33A4",ikon:"🎵",
+        hentian:["🎸","🎻","📺","🚢","🎼","🎧"],
+        misi:"Dengar, ukur dan kawal gelombang bunyi."},
+  t2b11:{warna:"#364FC7",lembut:"#E0E5FA",gelap:"#25378C",ikon:"🌌",
+        hentian:["🏛️","🔭","⭐","💥","🌃","🎪"],
+        misi:"Kembara ke bintang dan galaksi yang jauh."},
+  t2b12:{warna:"#1098AD",lembut:"#D4F2F6",gelap:"#0B6B7A",ikon:"🪐",
+        hentian:["🪐","🖥️","🧭","🔬","🚀","🏛️"],
+        misi:"Jelajah Sistem Suria dan kenali jiran-jiran Bumi."},
+  t2b13:{warna:"#0C8599",lembut:"#D3F0F4",gelap:"#085E6C",ikon:"☄️",
+        hentian:["🌠","🪨","🔎","💥","🛡️","🛠️"],
+        misi:"Jejaki meteoroid, asteroid dan komet yang merentas langit."},
   t3b1:{warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"⚡",
         hentian:["👁️","⚡","🦴","🧠","💪","🏃"],
         misi:"Bawa isyarat saraf dari deria sampai ke tindakan badan."},
@@ -2065,7 +2149,23 @@ function renderPeta(){
   st.appendChild(w);
 
   /* pilih bab: kemajuan setiap bab dikira berasingan */
-  var babs=senaraiBab();
+  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID);
+  var tingAda=[1,2,3].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
+  if(tingAda.length>1){
+    var tp=el("div","tingpilih"); tp.setAttribute("role","group"); tp.setAttribute("aria-label","Pilih tingkatan");
+    tingAda.forEach(function(t){
+      var b=el("button"); b.type="button"; b.textContent="Tingkatan "+t;
+      b.setAttribute("aria-pressed",t===tingKini?"true":"false");
+      b.onclick=function(){
+        if(t===tingKini) return;
+        var pertama=semuaBab.filter(function(x){ return tingkatanBab(x.id)===t; })[0];
+        if(pertama) tukarBab(pertama.id);
+      };
+      tp.appendChild(b);
+    });
+    st.appendChild(tp);
+  }
+  var babs=semuaBab.filter(function(b){ return tingkatanBab(b.id)===tingKini; });
   if(babs.length>1){
     var bp=el("div","babpilih"); bp.setAttribute("role","group"); bp.setAttribute("aria-label","Pilih bab");
     babs.forEach(function(b){
@@ -2076,9 +2176,12 @@ function renderPeta(){
       t.onclick=function(){ tukarBab(b.id); };
       bp.appendChild(t);
     });
-    var kd=el("button","akan-datang"); kd.type="button"; kd.disabled=true;
-    kd.innerHTML='<span class="ik" aria-hidden="true">\u{1F512}</span>'+esc(BAB_AKAN_DATANG)+' akan datang';
-    bp.appendChild(kd);
+    var ad=babAkanDatang(tingKini);
+    if(ad){
+      var kd=el("button","akan-datang"); kd.type="button"; kd.disabled=true;
+      kd.innerHTML='<span class="ik" aria-hidden="true">\u{1F512}</span>'+esc(ad)+' akan datang';
+      bp.appendChild(kd);
+    }
     st.appendChild(bp);
   }
 
@@ -3542,30 +3645,48 @@ function kadTambah(){
   return w;
 }
 
+function tukarBabGuru(id){
+  if(id===BAB_ID) return;
+  pasangBab(id);
+  CUBAAN={}; GURU={};
+  benihContohBab();
+  muatTempatan();
+  S.muridPilih=null;
+  GURU_DIMUAT=false;
+  renderCikgu();
+  muatGuru().catch(function(e){ RALAT_GURU=pesanRalat(e); }).then(function(){ GURU_DIMUAT=true; segarGuru(); });
+  muatBabJauh();
+}
 function pilihBabGuru(p){
-  var babs=senaraiBab();
-  if(babs.length<2) return;
+  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID);
+  if(semuaBab.length<2) return;
+  var tingAda=[1,2,3].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
+  if(tingAda.length>1){
+    var tr=el("div","actions tingguru");
+    tingAda.forEach(function(t){
+      var b=el("button","kbtn"); b.type="button"; b.textContent="Tingkatan "+t;
+      b.setAttribute("aria-pressed",t===tingKini?"true":"false");
+      if(t===tingKini){ b.style.borderColor="var(--vena)"; b.style.fontWeight="700"; }
+      b.onclick=function(){
+        var pertama=semuaBab.filter(function(x){ return tingkatanBab(x.id)===t; })[0];
+        if(pertama) tukarBabGuru(pertama.id);
+      };
+      tr.appendChild(b);
+    });
+    p.appendChild(tr);
+  }
+  var babs=semuaBab.filter(function(b){ return tingkatanBab(b.id)===tingKini; });
   var row=el("div","actions");
   babs.forEach(function(b){
     var t=el("button","kbtn"); t.type="button";
     t.innerHTML="\u{1F4D8} "+esc(b.kod);
     t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
     if(b.id===BAB_ID){ t.style.borderColor="var(--vena)"; t.style.background="var(--surface)"; t.style.fontWeight="700"; }
-    t.onclick=function(){
-      if(b.id===BAB_ID) return;
-      pasangBab(b.id);
-      CUBAAN={}; GURU={};
-      benihContohBab();
-      muatTempatan();
-      S.muridPilih=null;
-      GURU_DIMUAT=false;
-      renderCikgu();
-      muatGuru().catch(function(e){ RALAT_GURU=pesanRalat(e); }).then(function(){ GURU_DIMUAT=true; segarGuru(); });
-      muatBabJauh();
-    };
+    t.onclick=function(){ tukarBabGuru(b.id); };
     row.appendChild(t);
   });
-  row.appendChild(el("span","note akan-datang-guru","\u{1F512} "+esc(BAB_AKAN_DATANG)+" akan dibuka tidak lama lagi."));
+  var adg=babAkanDatang(tingKini);
+  if(adg) row.appendChild(el("span","note akan-datang-guru","\u{1F512} "+esc(adg)+" akan dibuka tidak lama lagi."));
   p.appendChild(row);
 }
 
@@ -4366,7 +4487,11 @@ function paneSenarai(){
 /* ---------------- Tangga TP ---------------- */
 function paneTangga(){
   var q=$("paneTangga"); q.innerHTML="";
-  q.appendChild(el("p","note","Standard Prestasi "+BAB.kod+", disalin kata demi kata daripada DSKP KSSM Sains Tingkatan "+BAB.tingkatan+". Setiap hentian menyasarkan satu tahap sahaja."));
+  /* DSKP Tingkatan 1 menulis Standard Prestasi mengikut tema (contohnya
+     "jirim/jadual berkala/udara"); hanya bahagian bab ini dikekalkan. */
+  q.appendChild(el("p","note","Standard Prestasi "+BAB.kod+", "+(BAB.tingkatan===1
+    ? "diambil daripada Standard Prestasi tema dalam DSKP KSSM Sains Tingkatan 1 dan dihadkan kepada bab ini."
+    : "disalin kata demi kata daripada DSKP KSSM Sains Tingkatan "+BAB.tingkatan+".")+" Setiap hentian menyasarkan satu tahap sahaja."));
   var lad=el("div","ladder");
   ARAS.forEach(function(a,i){
     var r=el("div","rung");

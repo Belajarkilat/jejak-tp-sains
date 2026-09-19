@@ -330,7 +330,7 @@ grant execute on function lo_guru_simpan_murid(text, jsonb) to authenticated;
 -- Semua semakan dibaca oleh pembangun melalui kunci service_role.
 create table if not exists lo_semakan (
   guru    uuid not null default auth.uid() references auth.users(id) on delete cascade,
-  item    text not null check (item ~ '^t3b[0-9]{1,2}:[1-6]:([0-9]{1,2}|bos|kad|boskad)$'),
+  item    text not null check (item ~ '^t[1-3]b[0-9]{1,2}:[1-6]:([0-9]{1,2}|bos|kad|boskad)$'),
   status  text not null check (status in ('ok','masalah')),
   komen   text not null default '' check (length(komen) <= 1500),
   teks    text not null default '' check (length(teks) <= 3000),
@@ -362,3 +362,7 @@ create policy lo_maklum_balas_baca on lo_maklum_balas for select to authenticate
 grant select, insert on lo_maklum_balas to authenticated;
 grant usage on sequence lo_maklum_balas_id_seq to authenticated;
 revoke all on lo_maklum_balas from anon;
+
+-- 20 Sep 2026: semakan soalan kini meliputi Tingkatan 1 hingga 3.
+-- alter table lo_semakan drop constraint lo_semakan_item_check;
+-- alter table lo_semakan add constraint lo_semakan_item_check check (item ~ '^t[1-3]b[0-9]{1,2}:[1-6]:([0-9]{1,2}|bos|kad|boskad)$');
