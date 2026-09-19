@@ -109,7 +109,7 @@ const ARAS = [
  kadNama:"Penyulingan", kadEm:"\u{1F52C}", kadFakta:"Penyulingan mengasingkan cecair dengan memanaskan campuran dan mengkondensasikan wap yang terhasil.",
  bosKadNama:"Magnet Besar", bosKadEm:"\u{1F9F2}", bosKadFakta:"Pusat kitar semula menggunakan magnet besar untuk mengasingkan tin besi daripada tin aluminium.",
  soalan:[
- {j:"pilih",t:"Cadangan manakah SALAH bagi campuran 2?",p:["Penyulingan; magnet lebih sesuai","Penyulingan; penurasan lebih sesuai","Penyulingan; kromatografi lebih sesuai","Tiada kesalahan; penyulingan sesuai"],b:0,u:"Besi bersifat magnet tetapi sulfur tidak."},
+ {j:"pilih",t:"Kumpulan Jaya mencadangkan penyulingan bagi campuran 2. Nilaikan cadangan itu.",p:["Penyulingan; magnet lebih sesuai","Penyulingan; penurasan lebih sesuai","Penyulingan; kromatografi lebih sesuai","Tiada kesalahan; penyulingan sesuai"],b:0,u:"Besi bersifat magnet tetapi sulfur tidak."},
  {j:"pilih",t:"Cadangan untuk campuran 5 ialah penurasan. Nilaikan cadangan itu.",p:["Salah; garam terlarut melalui kertas turas","Betul; kertas turas menapis semua garam","Betul; air laut sama seperti pasir dan air","Salah; kromatografi paling sesuai"],b:0,u:"Penyulingan diperlukan untuk mendapatkan air tulen daripada air laut."},
  {j:"pilih",t:"Mengapakah penyejatan sesuai untuk campuran 3?",p:["Garam tertinggal apabila air menyejat","Garam menyejat dan air tertinggal","Garam tertarik pada magnet","Garam tidak larut dalam air"],b:0,u:"Takat didih garam jauh lebih tinggi daripada air."},
  {j:"pilih",t:"Berapakah cadangan Kumpulan Jaya yang betul?",p:["3","5","2","4"],b:0,u:"Campuran 1, 3 dan 4 betul; campuran 2 dan 5 salah."},

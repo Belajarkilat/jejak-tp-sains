@@ -85,7 +85,7 @@ const ARAS = [
  {j:"pilih",t:"Kertas litmus merah dicelup ke dalam air sabun. Warna yang dijangka ialah:",p:["Biru","Merah","Hijau","Tidak berubah"],b:0,u:"Air sabun beralkali."},
  {j:"pilih",t:"Air suling tidak menukar warna kertas litmus biru. Kesimpulannya:",p:["Air suling bukan asid","Air suling ialah asid kuat","Air suling ialah alkali kuat","Kertas litmus rosak"],b:0,u:"Litmus biru kekal biru dalam larutan neutral dan alkali."},
  {j:"pilih",t:"Kertas litmus biru kekal biru dalam ubat gigi dan air sabun. Mengapakah litmus biru sahaja tidak cukup untuk mengenal pasti alkali?",p:["Ia juga kekal biru dalam larutan neutral","Ia bertukar merah dalam alkali","Ia tidak berfungsi dalam air","Ia hanya mengesan gas"],b:0,u:"Gunakan litmus merah atau penunjuk universal untuk mengesahkan alkali."},
- {j:"banyak",t:"Pilih SEMUA bahan dalam jadual yang akan bertindak balas dengan magnesium untuk membebaskan gas hidrogen.",p:["Jus limau","Cuka","Asid hidroklorik cair","Air sabun","Ubat gigi"],b:[0,1,2],u:"Hanya asid bertindak balas dengan logam reaktif seperti magnesium."}],
+ {j:"banyak",t:"Pilih SEMUA bahan yang akan bertindak balas dengan magnesium untuk membebaskan gas hidrogen.",p:["Jus limau","Cuka","Asid hidroklorik cair","Air sabun","Ubat gigi"],b:[0,1,2],u:"Hanya asid bertindak balas dengan logam reaktif seperti magnesium."}],
  bos:{j:"pilih",t:"Sebotol cecair tanpa label memberi pH 9. Kesimpulan paling tepat?",p:["Ia alkali lemah","Ia asid kuat","Ia neutral","Ia alkali paling kuat"],b:0,u:"pH 9 sedikit di atas 7."}},
 
 {n:4, tempat:"Stesen Pentitratan", sk:"6.2 Menganalisis proses peneutralan", lampiran:"titrat",

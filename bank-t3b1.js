@@ -228,7 +228,7 @@ window.BANK["t3b1"] =
      "j": "pilih",
      "t": "Mengapakah manusia mempunyai dua mata di hadapan kepala?",
      "p": [
-      "Medan penglihatan bertindih lalu memberi persepsi kedalaman",
+      "Supaya medan penglihatan bertindih dan memberi persepsi kedalaman",
       "Supaya dapat melihat ke belakang tanpa perlu memusingkan kepala",
       "Supaya satu mata boleh berehat sementara mata yang satu lagi bekerja",
       "Supaya setiap mata dapat mengesan warna berbeza pada masa yang sama"
@@ -303,7 +303,7 @@ window.BANK["t3b1"] =
     "p": [
      "Gerak balas nastik hanya berlaku pada waktu malam tanpa cahaya",
      "Gerak balas nastik berlaku pada akar, tropisme pada pucuk sahaja",
-     "Arah gerak balas nastik tidak bergantung pada arah datangnya rangsangan",
+     "Gerak balas nastik tidak bergantung pada arah rangsangan",
      "Gerak balas nastik berlaku tanpa sebarang rangsangan dari luar"
     ],
     "b": 2,
@@ -483,7 +483,7 @@ window.BANK["t3b1"] =
       "Damia letih selepas cubaan pertama, kemudian pulih semula pada cubaan ketiga",
       "Damia sebenarnya paling perlahan, dan dua cubaan lain hanyalah nasib baik",
       "Damia sengaja melambatkan tangan pada cubaan kedua untuk menguji alat itu",
-      "Bunyi bising mengganggu tumpuannya, jadi bacaan itu ialah bacaan ganjil"
+      "Damia terganggu oleh bunyi bising, jadi bacaan itu bacaan ganjil"
      ],
      "b": 3,
      "u": "Catatan dalam jadual memberi sebab yang munasabah untuk bacaan tersasar itu."

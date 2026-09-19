@@ -361,7 +361,7 @@ window.BANK["t3b8"] =
      "j": "pilih",
      "t": "Sebuah kilang mengawal ketebalan kepingan kertas menggunakan sumber beta. Mengapakah beta sesuai?",
      "p": [
-      "Bacaan beta berubah apabila ketebalan kertas berubah",
+      "Beta separa menembusi kertas",
       "Beta tidak dapat menembusi kertas walaupun nipis",
       "Beta menembusi plumbum tebal dengan mudah",
       "Beta tidak mengionkan bahan langsung"

@@ -562,7 +562,7 @@ window.BANK["t1b6"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Cadangan manakah SALAH bagi campuran 2?",
+     "t": "Kumpulan Jaya mencadangkan penyulingan bagi campuran 2. Nilaikan cadangan itu.",
      "p": [
       "Penyulingan; penurasan lebih sesuai",
       "Penyulingan; kromatografi lebih sesuai",

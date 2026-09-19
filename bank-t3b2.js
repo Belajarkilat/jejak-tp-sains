@@ -116,8 +116,8 @@ window.BANK["t3b2"] =
      "t": "Otot berbentuk kubah di bawah peparu ialah:",
      "p": [
       "Otot interkosta",
-      "Otot bisep",
-      "Otot jantung",
+      "Pleura",
+      "Epiglotis",
       "Diafragma"
      ],
      "b": 3,
@@ -240,7 +240,7 @@ window.BANK["t3b2"] =
      "t": "Mengapakah alveolus banyak dan kecil, bukan satu kantung besar?",
      "p": [
       "Supaya peparu lebih ringan dan mudah mengembang",
-      "Memberi jumlah luas permukaan yang jauh lebih besar",
+      "Supaya jumlah luas permukaan jauh lebih besar",
       "Supaya udara bergerak lebih perlahan di dalam peparu",
       "Supaya mukus mudah terkumpul dan memerangkap habuk"
      ],
@@ -738,7 +738,7 @@ window.BANK["t3b2"] =
       "Minta mereka membina pagar zink kerana pagar menyekat semua habuk halus",
       "Minta kerja dihentikan sepenuhnya sehingga semua murid asma sembuh",
       "Minta mereka bekerja pada waktu malam tanpa sebarang kawalan habuk",
-      "Berbincang supaya mereka menyiram tanah dan menutup muatan lori"
+      "Minta mereka menyiram tanah dan menutup muatan lori"
      ],
      "b": 3,
      "u": "Tanah basah tidak menerbangkan habuk. Zarah halus melepasi pagar, dan habuk malam masih terapung sehingga pagi."

@@ -235,7 +235,7 @@ window.BANK["t3b4"] =
      "t": "Mengapakah karbon dimasukkan dalam siri kereaktifan walaupun ia bukan logam?",
      "p": [
       "Karbon bersifat seperti logam kerana ia mengalirkan haba dengan baik",
-      "Kedudukannya menentukan logam yang boleh diekstrak dengan karbon",
+      "Karbon menentukan logam yang boleh diekstrak dengannya",
       "Karbon terdapat dalam semua bijih logam yang dilombong di Malaysia",
       "Karbon ialah unsur paling reaktif, jadi ia diletakkan di bahagian atas"
      ],
@@ -358,7 +358,7 @@ window.BANK["t3b4"] =
      "p": [
       "Serbuk lebih ringan, jadi tidak jatuh ke dasar tabung didih",
       "Serbuk tidak mengandungi bendasing seperti ketulan logam",
-      "Luas permukaannya besar, jadi tindak balas mudah berlaku",
+      "Serbuk ada luas permukaan besar untuk bertindak balas",
       "Serbuk tidak berkarat walaupun disimpan lama di dalam makmal"
      ],
      "b": 2,

@@ -256,7 +256,7 @@ window.BANK["t3b3"] =
      "j": "pilih",
      "t": "Mengapakah organisma ringkas seperti amoeba tidak memerlukan sistem pengangkutan?",
      "p": [
-      "Semua bahagian selnya dekat dengan permukaan, jadi resapan mencukupi",
+      "Amoeba cukup kecil sehingga resapan mencukupi",
       "Amoeba tidak memerlukan oksigen kerana ia hidup di dalam air",
       "Amoeba menyimpan semua nutrien yang diperlukan di dalam nukleus",
       "Amoeba bergerak cukup pantas untuk mengambil bahan dari persekitaran"

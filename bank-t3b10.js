@@ -204,7 +204,7 @@ window.BANK["t3b10"] =
      "j": "pilih",
      "t": "Apakah kelebihan model Kepler berbanding model Copernicus?",
      "p": [
-      "Orbit elips meramal kedudukan planet dengan lebih tepat",
+      "Model Kepler meramal kedudukan planet lebih tepat",
       "Model Kepler meletakkan Bumi semula di pusat Sistem Suria",
       "Model Kepler tidak memerlukan Matahari",
       "Model Kepler menggunakan orbit segi empat"
@@ -252,7 +252,7 @@ window.BANK["t3b10"] =
      "j": "pilih",
      "t": "Mengapakah satelit komunikasi geopegun kelihatan tidak bergerak dari Bumi?",
      "p": [
-      "Tempoh orbitnya sama dengan tempoh putaran Bumi",
+      "Satelit itu mengorbit seiring putaran Bumi",
       "Satelit itu terapung pegun tanpa bergerak",
       "Satelit itu terlalu jauh untuk dilihat bergerak",
       "Satelit itu diikat pada Bumi dengan kabel"
@@ -513,7 +513,7 @@ window.BANK["t3b10"] =
      "j": "pilih",
      "t": "Sampah angkasa semakin banyak di orbit rendah. Analisis risiko terbesarnya.",
      "p": [
-      "Serpihan boleh melanggar dan merosakkan satelit atau stesen angkasa",
+      "Sampah angkasa boleh merosakkan satelit dan stesen angkasa",
       "Sampah angkasa jatuh ke Bumi setiap hari dan memusnahkan banyak bandar",
       "Sampah angkasa menghalang cahaya Matahari sampai ke Bumi",
       "Sampah angkasa tidak mempunyai sebarang kesan"
@@ -762,7 +762,7 @@ window.BANK["t3b10"] =
      "j": "pilih",
      "t": "Awak mencadangkan pusat pelancaran roket kecil di sebuah negeri. Pertimbangan paling wajar?",
      "p": [
-      "Pilih tapak berhampiran pusat bandar supaya mudah dikunjungi",
+      "Tapak berhampiran pusat bandar supaya mudah dikunjungi",
       "Kaji kesan kepada penduduk, alam dan keselamatan",
       "Pilih tanah tinggi di tengah semenanjung supaya roket lebih tinggi",
       "Pilih tapak jauh dari laut supaya roket tidak jatuh ke dalam air"

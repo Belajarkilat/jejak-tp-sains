@@ -396,7 +396,7 @@ window.BANK["t2b6"] =
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA bahan dalam jadual yang akan bertindak balas dengan magnesium untuk membebaskan gas hidrogen.",
+     "t": "Pilih SEMUA bahan yang akan bertindak balas dengan magnesium untuk membebaskan gas hidrogen.",
      "p": [
       "Jus limau",
       "Cuka",

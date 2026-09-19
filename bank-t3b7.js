@@ -491,10 +491,10 @@ window.BANK["t3b7"] =
      "j": "pilih",
      "t": "Jika jisim kereta digandakan kepada 1000 kg, berapakah lajunya di titik B?",
      "p": [
-      "Menjadi 40 m/s kerana jisim digandakan",
-      "Menjadi 10 m/s kerana kereta lebih berat",
-      "Menjadi 0 m/s kerana kereta terlalu berat",
-      "Kekal 20 m/s kerana jisim terbatal"
+      "40 m/s, kerana jisim digandakan",
+      "10 m/s, kerana kereta lebih berat",
+      "0 m/s, kerana kereta terlalu berat",
+      "20 m/s, kerana jisim terbatal"
      ],
      "b": 3,
      "u": "Dalam mgh = ½mv², m ada di kedua-dua belah dan terbatal."
@@ -586,7 +586,7 @@ window.BANK["t3b7"] =
      "t": "Tenaga yang dibazirkan oleh Motor Q kebanyakannya bertukar menjadi:",
      "p": [
       "Tenaga keupayaan kenyal",
-      "Haba dan bunyi",
+      "Tenaga haba dan bunyi",
       "Tenaga keupayaan graviti tambahan pada beban",
       "Tenaga kimia yang disimpan semula dalam motor"
      ],
