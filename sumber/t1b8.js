@@ -1,0 +1,158 @@
+/* Sumber kandungan — Sains KSSM Tingkatan 1, Bidang 8.0 Cahaya dan Optik.
+   Jalankan `node bina.js t1b8` untuk menyemak dan menghasilkan bank-t1b8.js.
+
+   Standard Prestasi disalin daripada DSKP KSSM Sains Tingkatan 1, muka 71
+   (Tema Tenaga dan Kelestarian Hidup). Perkataan "dalam dalam" pada TP5
+   DSKP dibetulkan dan "mengenai" ditambah pada TP6.
+
+   Istilah mengikut DSKP: penyebaran cahaya = cahaya putih terurai oleh
+   prisma; penyerakan cahaya = cahaya diserakkan oleh zarah udara.
+
+   Tulis jawapan betul pada indeks 0. Pembina akan mengagihkannya. */
+
+const SPI = [
+"Mengingat kembali pengetahuan dan kemahiran sains mengenai penggunaan cermin/ ciri cahaya/ pantulan cahaya/pembiasan cahaya/penyebaran cahaya/penyerakan cahaya/penambahan dan penolakan cahaya.",
+"Memahami penggunaan cermin/ ciri cahaya/ pantulan cahaya/pembiasan cahaya/penyebaran cahaya/penyerakan cahaya/penambahan dan penolakan cahaya serta dapat menjelaskan kefahaman tersebut.",
+"Mengaplikasikan penggunaan cermin/ ciri cahaya/ pantulan cahaya/pembiasan cahaya/penyebaran cahaya/penyerakan cahaya/penambahan dan penolakan cahaya untuk melaksanakan tugasan mudah.",
+"Menganalisis pengetahuan mengenai penggunaan cermin/ ciri cahaya/ pantulan cahaya/pembiasan cahaya/penyebaran cahaya/penyerakan cahaya/penambahan dan penolakan cahaya dalam konteks penyelesaian masalah mengenai kejadian atau fenomena alam.",
+"Menilai kesesuaian penggunaan cermin/ ciri cahaya/ pantulan cahaya/pembiasan cahaya/penyebaran cahaya/penyerakan cahaya/penambahan dan penolakan cahaya dalam konteks penyelesaian masalah dan membuat keputusan untuk melaksanakan satu tugasan.",
+"Merekabentuk persembahan pelbagai media/visual/folio/poster/main peranan/drama secara kreatif dan inovatif dengan menggunakan pengetahuan dan kemahiran sains mengenai penggunaan cermin/ ciri cahaya/ pantulan cahaya/pembiasan cahaya/penyebaran cahaya/penyerakan cahaya/penambahan dan penolakan cahaya dalam konteks penyelesaian masalah dan membuat keputusan dengan mengambil kira nilai sosial/ekonomi/budaya masyarakat."];
+
+/* ---------- lampiran ---------- */
+
+const T_PANTUL =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Percubaan</th>'+
+'<th class="n">Sudut tuju, i (&deg;)</th><th class="n">Sudut pantulan, r (&deg;)</th></tr></thead><tbody>'+
+'<tr><td>1</td><td class="n">20</td><td class="n">20</td></tr>'+
+'<tr><td>2</td><td class="n">35</td><td class="n">35</td></tr>'+
+'<tr><td>3</td><td class="n">50</td><td class="n">50</td></tr>'+
+'<tr><td>4</td><td class="n">65</td><td class="n">?</td></tr>'+
+'</tbody></table></div><p class="qnote">Sinar cahaya dari kotak sinar ditujukan ke cermin satah. Sudut diukur dari garis normal.</p>';
+
+const T_BIAS =
+'<div class="scrollx"><table class="datatable"><thead><tr><th class="n">Sudut tuju di udara (&deg;)</th>'+
+'<th class="n">Sudut biasan dalam air (&deg;)</th><th class="n">Sudut biasan dalam kaca (&deg;)</th></tr></thead><tbody>'+
+'<tr><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>'+
+'<tr><td class="n">30</td><td class="n">22</td><td class="n">19</td></tr>'+
+'<tr><td class="n">45</td><td class="n">32</td><td class="n">28</td></tr>'+
+'<tr><td class="n">60</td><td class="n">41</td><td class="n">35</td></tr>'+
+'</tbody></table></div><p class="qnote">Sinar cahaya bergerak dari udara ke dalam air dan ke dalam blok kaca. Nilai dibundarkan kepada darjah terdekat.</p>';
+
+const T_WARNA =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Baju</th>'+
+'<th>Di bawah cahaya putih</th><th>Di bawah cahaya merah</th><th>Di bawah cahaya biru</th></tr></thead><tbody>'+
+'<tr><td>1</td><td>Putih</td><td>Merah</td><td>Biru</td></tr>'+
+'<tr><td>2</td><td>Merah</td><td>Merah</td><td>Hitam</td></tr>'+
+'<tr><td>3</td><td>Biru</td><td>Hitam</td><td>Biru</td></tr>'+
+'<tr><td>4</td><td>Kuning</td><td>Merah</td><td>Hitam</td></tr>'+
+'</tbody></table></div><p class="qnote">Warna baju yang dilihat di atas pentas di bawah lampu berlainan warna. Objek kuning memantulkan cahaya merah dan hijau.</p>';
+
+/* ---------- hentian ---------- */
+
+const ARAS = [
+
+{n:1, tempat:"Bilik Cermin", sk:"8.1 / 8.2 Cermin dan sifat cahaya",
+ kadNama:"Laju Cahaya", kadEm:"\u{26A1}", kadFakta:"Cahaya bergerak kira-kira 300 000 km setiap saat, cukup untuk mengelilingi Bumi lebih 7 kali dalam satu saat.",
+ bosKadNama:"Cermin Cembung", bosKadEm:"\u{1F697}", bosKadFakta:"Cermin di selekoh tajam ialah cermin cembung kerana ia memberi pandangan yang lebih luas.",
+ soalan:[
+ {j:"pilih",t:"Cahaya bergerak dalam:",p:["Garis lurus","Garis bengkang-bengkok","Bulatan","Lengkung sahaja"],b:0,u:"Sebab itu bayang-bayang terbentuk apabila objek legap menghalang cahaya."},
+ {j:"pilih",t:"Kita nampak kilat sebelum mendengar guruh kerana:",p:["Cahaya lebih laju daripada bunyi","Bunyi lebih laju daripada cahaya","Kilat berlaku lebih awal daripada guruh","Telinga lebih lambat daripada mata"],b:0,u:"Kilat dan guruh berlaku serentak, tetapi cahaya sampai dahulu."},
+ {j:"pilih",t:"Imej yang boleh dibentuk pada skrin dipanggil:",p:["Imej sahih","Imej maya","Imej tegak","Imej songsang sisi"],b:0,u:"Imej maya tidak boleh ditangkap pada skrin."},
+ {j:"pilih",t:"Cermin yang membesarkan imej objek yang dekat ialah:",p:["Cermin cekung","Cermin cembung","Cermin satah","Cermin berwarna"],b:0,u:"Cermin solek dan cermin doktor gigi ialah cermin cekung."},
+ {j:"pilih",t:"Cermin sisi kenderaan ialah cermin cembung kerana ia:",p:["Memberi pandangan luas","Membesarkan imej","Menghasilkan imej sahih","Menyerap cahaya"],b:0,u:"Imej lebih kecil tetapi kawasan yang dilihat lebih luas."},
+ {j:"pilih",t:"Ciri imej dalam cermin satah ialah:",p:["Tegak, sama saiz dan songsang sisi","Songsang, lebih besar dan sahih","Tegak, lebih kecil dan sahih","Songsang, sama saiz dan maya"],b:0,u:"Imej cermin satah juga maya."},
+ {j:"pilih",t:"Alat optik yang menggunakan dua cermin satah untuk melihat dari balik dinding ialah:",p:["Periskop","Kaleidoskop","Mikroskop","Kanta pembesar"],b:0,u:"Dua cermin disusun selari pada sudut 45°."},
+ {j:"banyak",t:"Pilih SEMUA kegunaan cermin cekung.",p:["Cermin solek","Pemantul lampu suluh","Cermin doktor gigi","Cermin di selekoh tajam","Cermin sisi motosikal"],b:[0,1,2],u:"Cermin di selekoh tajam dan cermin sisi ialah cermin cembung."}],
+ bos:{j:"pilih",t:"Pekedai memasang cermin besar melengkung di sudut kedai untuk mengawasi pelanggan. Cermin itu ialah:",p:["Cermin cembung","Cermin cekung","Cermin satah","Cermin dua muka"],b:0,u:"Cermin cembung menunjukkan kawasan yang luas dalam satu pandangan."}},
+
+{n:2, tempat:"Kolam Renang", sk:"8.3 / 8.4 / 8.5 / 8.6 Pantulan, pembiasan, penyebaran dan penyerakan",
+ kadNama:"Pelangi", kadEm:"\u{1F308}", kadFakta:"Pelangi terbentuk apabila titisan air hujan menyebarkan cahaya matahari kepada tujuh warna.",
+ bosKadNama:"Langit Biru", bosKadEm:"\u{1F30C}", bosKadFakta:"Langit kelihatan biru kerana cahaya biru diserakkan lebih banyak oleh zarah udara berbanding warna lain.",
+ soalan:[
+ {j:"pilih",t:"Hukum pantulan menyatakan bahawa:",p:["Sudut tuju sama dengan sudut pantulan","Sudut tuju dua kali sudut pantulan","Sudut pantulan sentiasa 90°","Sudut tuju lebih kecil daripada sudut pantulan"],b:0,u:"Sinar tuju, sinar pantulan dan normal juga berada pada satah yang sama."},
+ {j:"pilih",t:"Pembiasan cahaya berlaku apabila cahaya:",p:["Merentasi medium berbeza ketumpatan","Terkena cermin yang sangat licin","Bergerak di dalam ruang vakum","Dihalang oleh objek legap"],b:0,u:"Laju cahaya berubah apabila memasuki medium lain, jadi arahnya berubah."},
+ {j:"pilih",t:"Mengapakah dasar kolam kelihatan lebih cetek daripada sebenar?",p:["Cahaya terbias semasa keluar dari air","Air memantulkan semua cahaya","Mata tidak dapat fokus di dalam air","Cahaya bergerak lebih laju di dalam air"],b:0,u:"Cahaya terbias menjauhi normal apabila keluar dari air ke udara."},
+ {j:"pilih",t:"Apabila cahaya bergerak dari udara ke kaca, ia terbias:",p:["Mendekati normal","Menjauhi normal","Sepanjang normal","Kembali ke udara"],b:0,u:"Kaca lebih tumpat daripada udara."},
+ {j:"pilih",t:"Penyebaran cahaya berlaku apabila cahaya putih:",p:["Terurai kepada spektrum warna melalui prisma","Dipantulkan oleh cermin satah","Diserap sepenuhnya oleh objek hitam","Bergerak lurus di udara"],b:0,u:"Spektrumnya ialah merah, jingga, kuning, hijau, biru, indigo dan ungu."},
+ {j:"pilih",t:"Mengapakah matahari terbenam kelihatan kemerahan?",p:["Cahaya melalui lebih banyak udara, jadi biru diserakkan dan merah sampai","Matahari menjadi lebih sejuk pada waktu petang","Awan menukar cahaya putih kepada merah","Matahari memancarkan cahaya merah sahaja pada waktu petang"],b:0,u:"Pada waktu petang, cahaya menempuh laluan atmosfera yang lebih panjang."},
+ {j:"pilih",t:"Bintang kelihatan berkelip pada waktu malam kerana:",p:["Cahayanya terbias oleh lapisan udara yang bergerak","Bintang menyala dan padam berulang kali","Awan menghalang cahaya bintang setiap saat","Bintang bergerak sangat laju di angkasa"],b:0,u:"Lapisan udara berbeza suhu dan ketumpatan membiaskan cahaya bintang secara berubah-ubah."},
+ {j:"pilih",t:"Jaket keselamatan pekerja jalan raya mempunyai jalur yang bersinar apabila disuluh lampu kereta. Ini menggunakan konsep:",p:["Pantulan cahaya","Pembiasan cahaya","Penyerakan cahaya","Penyerapan cahaya"],b:0,u:"Jalur pemantul memantulkan cahaya kembali ke arah pemandu."}],
+ bos:{j:"banyak",t:"Pilih SEMUA fenomena yang disebabkan oleh pembiasan cahaya.",p:["Penyedut minuman kelihatan bengkok dalam gelas berisi air","Dasar kolam kelihatan cetek","Bintang berkelip","Imej muka dalam cermin satah","Bayang-bayang pokok pada waktu petang"],b:[0,1,2],u:"Cermin menggunakan pantulan, dan bayang-bayang terbentuk kerana cahaya bergerak lurus."}},
+
+{n:3, tempat:"Makmal Kotak Sinar", sk:"8.1 / 8.3 Mengaplikasi pantulan cahaya", lampiran:"pantul",
+ kadNama:"Normal", kadEm:"\u{1F4D0}", kadFakta:"Garis normal ialah garis khayalan yang berserenjang dengan permukaan cermin di titik sinar mengenainya.",
+ bosKadNama:"Kaleidoskop", bosKadEm:"\u{1F52E}", bosKadFakta:"Kaleidoskop menggunakan tiga cermin satah untuk menghasilkan corak berulang yang cantik.",
+ soalan:[
+ {j:"nombor",t:"Berdasarkan jadual, berapakah sudut pantulan bagi percubaan 4, dalam darjah?",b:65,tol:0.5,suf:"°",u:"Sudut pantulan sama dengan sudut tuju, iaitu 65°."},
+ {j:"pilih",t:"Apakah hubungan antara sudut tuju dengan sudut pantulan dalam jadual?",p:["Sentiasa sama","Sudut pantulan sentiasa lebih besar","Tiada sebarang hubungan","Sudut tuju sentiasa dua kali ganda"],b:0,u:"Ini ialah Hukum Pantulan."},
+ {j:"nombor",t:"Sinar cahaya mengenai cermin dengan sudut tuju 30°. Berapakah sudut antara sinar tuju dengan sinar pantulan, dalam darjah?",b:60,tol:0.5,suf:"°",u:"30° + 30° = 60°."},
+ {j:"nombor",t:"Aisyah berdiri 2 m di hadapan cermin satah. Berapakah jarak antara Aisyah dengan imejnya, dalam meter?",b:4,tol:0.05,suf:"m",u:"Imej berada 2 m di belakang cermin, jadi jaraknya 2 + 2 = 4 m."},
+ {j:"pilih",t:"Tulisan AMBULANS di hadapan ambulans dicetak secara terbalik. Sebabnya ialah:",p:["Imej dalam cermin pandang belakang songsang sisi","Supaya pejalan kaki dapat membacanya dari belakang","Supaya tulisan lebih cantik dan menarik","Kerana cermin cekung membesarkan tulisan"],b:0,u:"Pemandu di hadapan membacanya dengan betul melalui cermin pandang belakang."},
+ {j:"pilih",t:"Murid menggerakkan cermin satah 1 m menjauhi objek yang pegun. Apakah yang berlaku kepada jarak objek ke imej?",p:["Bertambah 2 m","Bertambah 1 m","Tidak berubah","Berkurang 1 m"],b:0,u:"Jarak objek ke cermin bertambah 1 m, dan jarak cermin ke imej juga bertambah 1 m."},
+ {j:"pilih",t:"Dalam periskop, pada sudut berapakah setiap cermin satah dipasang?",p:["45°","90°","30°","60°"],b:0,u:"Sudut 45° memantulkan cahaya 90° ke arah cermin kedua."},
+ {j:"pilih",t:"Segi tiga kecemasan kenderaan diletakkan di belakang kereta yang rosak pada waktu malam. Ia berfungsi kerana:",p:["Ia memantulkan cahaya lampu kereta lain","Ia menghasilkan cahayanya sendiri tanpa bateri","Ia menyerap cahaya supaya tidak menyilaukan","Ia membiaskan cahaya kepada tujuh warna"],b:0,u:"Pemantul membantu pemandu lain melihat kereta yang rosak dari jauh."}],
+ bos:{j:"pilih",t:"Kotak sinar ditujukan ke cermin satah dengan sudut tuju 0° (sepanjang normal). Ke manakah sinar pantulan pergi?",p:["Kembali sepanjang laluan asal","Selari dengan permukaan cermin","Pada sudut 90° dari normal","Menembusi cermin tanpa terpantul"],b:0,u:"Sudut tuju 0° memberi sudut pantulan 0°."}},
+
+{n:4, tempat:"Akuarium Optik", sk:"8.4 Menganalisis pembiasan cahaya", lampiran:"bias",
+ kadNama:"Blok Kaca", kadEm:"\u{1F9CA}", kadFakta:"Cahaya bergerak kira-kira 200 000 km/s dalam kaca, lebih perlahan daripada di udara.",
+ bosKadNama:"Gentian Optik", bosKadEm:"\u{1F310}", bosKadFakta:"Gentian optik membawa data internet sebagai denyutan cahaya yang dipantulkan berulang kali di dalam gentian kaca.",
+ soalan:[
+ {j:"pilih",t:"Berdasarkan jadual, sinar cahaya yang masuk ke air terbias:",p:["Mendekati normal","Menjauhi normal","Tidak terbias langsung","Kembali ke udara"],b:0,u:"Sudut biasan lebih kecil daripada sudut tuju."},
+ {j:"pilih",t:"Bahan manakah membiaskan cahaya dengan lebih banyak?",p:["Kaca","Air","Sama banyak","Udara"],b:0,u:"Pada sudut tuju yang sama, sudut biasan dalam kaca lebih kecil."},
+ {j:"pilih",t:"Apakah yang berlaku apabila sudut tuju ialah 0°?",p:["Cahaya tidak berubah arah","Cahaya terbias paling banyak","Cahaya dipantulkan sepenuhnya","Cahaya berhenti bergerak"],b:0,u:"Cahaya yang masuk sepanjang normal tidak terbias, walaupun lajunya berubah."},
+ {j:"pilih",t:"Apakah hubungan antara sudut tuju dengan sudut biasan dalam kaca?",p:["Sudut tuju bertambah, sudut biasan bertambah","Sudut tuju bertambah, sudut biasan berkurang","Sudut biasan sentiasa sama dengan sudut tuju","Sudut biasan kekal 19° walau apa pun sudut tuju"],b:0,u:"Sudut biasan naik daripada 19° kepada 35° apabila sudut tuju naik daripada 30° kepada 60°."},
+ {j:"nombor",t:"Pada sudut tuju 60°, berapakah beza sudut biasan antara air dan kaca, dalam darjah?",b:6,tol:0.05,suf:"°",u:"41° − 35° = 6°."},
+ {j:"pilih",t:"Jika sinar cahaya bergerak dari kaca ke udara, apakah yang berlaku?",p:["Ia terbias menjauhi normal","Ia terbias mendekati normal","Ia berhenti di permukaan","Ia menjadi lebih perlahan"],b:0,u:"Cahaya bergerak dari medium tumpat ke kurang tumpat."},
+ {j:"pilih",t:"Seorang nelayan membaling tombak tepat ke arah ikan yang dilihatnya di dalam sungai tetapi terlepas. Sebab paling munasabah?",p:["Ikan sebenar lebih dalam daripada imejnya","Ikan sebenar lebih dekat ke permukaan","Air memantulkan semua cahaya dari ikan","Tombak bergerak lebih perlahan di dalam air"],b:0,u:"Pembiasan menjadikan ikan kelihatan lebih cetek; nelayan patut membidik lebih rendah."},
+ {j:"banyak",t:"Pilih SEMUA kesimpulan yang disokong oleh data.",p:["Cahaya terbias apabila masuk ke medium lebih tumpat","Kaca membiaskan cahaya lebih daripada air","Cahaya sepanjang normal tidak terbias","Air lebih tumpat daripada kaca","Sudut biasan lebih besar daripada sudut tuju"],b:[0,1,2],u:"Sudut biasan lebih kecil daripada sudut tuju kerana cahaya memasuki medium lebih tumpat."}],
+ bos:{j:"pilih",t:"Guru mahu murid melihat kesan pembiasan paling ketara untuk demonstrasi. Pilihan paling wajar berdasarkan data?",p:["Blok kaca dengan sudut tuju 60°","Blok kaca dengan sudut tuju 0°","Bikar air dengan sudut tuju 0°","Bikar air dengan sudut tuju 30°"],b:0,u:"Beza antara sudut tuju dan sudut biasan paling besar (25°) bagi kaca pada 60°."}},
+
+{n:5, tempat:"Pentas Teater", sk:"8.7 Menilai penambahan dan penolakan cahaya", lampiran:"warna",
+ kadNama:"Warna Primer", kadEm:"\u{1F3A8}", kadFakta:"Skrin telefon menghasilkan jutaan warna hanya dengan menggabungkan titik cahaya merah, hijau dan biru.",
+ bosKadNama:"Penapis Warna", bosKadEm:"\u{1F534}", bosKadFakta:"Penapis merah hanya membenarkan cahaya merah melaluinya dan menyerap warna lain.",
+ soalan:[
+ {j:"pilih",t:"Mengapakah baju 2 kelihatan hitam di bawah cahaya biru?",p:["Baju merah menyerap cahaya biru","Baju merah memantulkan cahaya biru","Cahaya biru tidak sampai ke pentas","Baju itu sebenarnya berwarna hitam"],b:0,u:"Tiada cahaya merah untuk dipantulkan, jadi tiada cahaya sampai ke mata."},
+ {j:"pilih",t:"Mengapakah baju 4 kelihatan merah di bawah cahaya merah?",p:["Baju kuning memantulkan merah","Baju kuning menyerap cahaya merah","Cahaya merah bertukar menjadi kuning","Baju kuning memantulkan cahaya biru"],b:0,u:"Objek kuning memantulkan cahaya merah dan hijau."},
+ {j:"pilih",t:"Baju manakah boleh digunakan untuk kesan 'hilang dalam gelap' di bawah cahaya biru?",p:["Baju 2 atau 4","Baju 1 atau 3","Baju 1 sahaja","Baju 3 sahaja"],b:0,u:"Kedua-duanya kelihatan hitam di bawah cahaya biru."},
+ {j:"pilih",t:"Pengarah mahu semua pelakon kelihatan dalam warna asal. Lampu paling sesuai?",p:["Cahaya putih","Cahaya merah","Cahaya biru","Cahaya hijau"],b:0,u:"Cahaya putih mengandungi semua warna untuk dipantulkan."},
+ {j:"pilih",t:"Pengarah mahu baju 1 kelihatan kuning tanpa menukar baju. Gabungan lampu paling sesuai?",p:["Merah dan hijau","Merah dan biru","Biru dan hijau","Merah sahaja"],b:0,u:"Merah + hijau = kuning. Baju putih memantulkan kedua-duanya."},
+ {j:"pilih",t:"Pereka mencadangkan baju 3 untuk babak yang bercahaya merah supaya pelakon menonjol. Nilaikan cadangan itu.",p:["Kurang sesuai; baju biru kelihatan hitam di bawah cahaya merah","Sesuai; biru ialah warna primer yang terang","Sesuai; biru memantulkan cahaya merah dengan baik","Kurang sesuai; baju biru kelihatan putih di bawah cahaya merah"],b:0,u:"Baju 1 atau 2 lebih menonjol di bawah cahaya merah."},
+ {j:"pilih",t:"Apakah warna yang terhasil apabila cahaya merah, hijau dan biru bertindih pada skrin?",p:["Putih","Hitam","Kuning","Sian"],b:0,u:"Ini contoh penambahan cahaya."},
+ {j:"pilih",t:"Penapis merah dan penapis biru diletakkan satu di hadapan yang lain di depan lampu putih. Apakah yang dilihat pada skrin?",p:["Gelap","Magenta","Merah","Biru"],b:0,u:"Penapis merah menyerap biru, dan penapis biru menyerap merah, jadi hampir tiada cahaya melalui kedua-duanya."}],
+ bos:{j:"pilih",t:"Sebuah teater sekolah hanya mampu membeli dua lampu berwarna. Mereka mahu boleh menghasilkan cahaya kuning, merah dan hijau. Pilihan paling wajar?",p:["Lampu merah dan lampu hijau","Lampu merah dan lampu biru","Lampu biru dan lampu hijau","Dua lampu kuning"],b:0,u:"Merah sahaja, hijau sahaja, atau kedua-duanya bersama untuk kuning."}},
+
+{n:6, tempat:"Bengkel Optik", sk:"8.1 / 8.3 / 8.7 Mereka bentuk alat optik",
+ kadNama:"Periskop", kadEm:"\u{1F52D}", kadFakta:"Kapal selam menggunakan periskop untuk melihat permukaan laut tanpa timbul sepenuhnya.",
+ bosKadNama:"Relau Suria", bosKadEm:"\u{2600}", bosKadFakta:"Relau suria menggunakan cermin cekung besar untuk menumpukan cahaya matahari sehingga boleh memasak makanan.",
+ soalan:[
+ {j:"pilih",t:"Awak membina periskop daripada kotak susu untuk melihat dari balik tembok. Kedudukan cermin yang betul?",p:["Dua cermin satah selari, condong 45°","Dua cermin cembung bersebelahan","Satu cermin cekung di tengah","Dua cermin satah berserenjang dengan kotak"],b:0,u:"Setiap cermin memantulkan cahaya 90°."},
+ {j:"pilih",t:"Selekoh tajam di kampung awak kerap berlaku kemalangan. Cadangan paling berkesan?",p:["Pasang cermin cembung di selekoh","Pasang cermin cekung di selekoh","Pasang cermin satah kecil","Cat jalan dengan warna gelap"],b:0,u:"Cermin cembung memberi pandangan yang luas ke arah kenderaan dari arah bertentangan."},
+ {j:"pilih",t:"Awak mereka beg sekolah untuk murid yang berjalan kaki pada waktu subuh. Ciri paling penting?",p:["Jalur pemantul cahaya","Warna hitam sepenuhnya","Kain lutsinar","Saiz yang sangat kecil"],b:0,u:"Jalur pemantul memantulkan cahaya lampu kenderaan supaya murid mudah dilihat."},
+ {j:"pilih",t:"Awak mereka pemasak suria untuk perkhemahan. Bentuk pemantul paling berkesan?",p:["Cermin cekung yang menumpukan cahaya","Cermin cembung yang menyebarkan cahaya","Cermin satah kecil yang diletak rata","Kertas hitam yang diletakkan menegak"],b:0,u:"Cermin cekung menumpukan cahaya matahari ke satu titik."},
+ {j:"pilih",t:"Awak mahu menghasilkan pelangi di taman sekolah untuk pameran. Cara paling praktikal?",p:["Semburan air halus membelakangi matahari","Lampu merah di dalam kotak gelap","Cermin cembung di tengah padang","Balang air yang diletak di tempat teduh"],b:0,u:"Titisan air menyebarkan cahaya matahari kepada spektrum warna."},
+ {j:"pilih",t:"Awak mereka papan tanda sekolah yang jelas pada waktu malam tanpa elektrik. Bahan paling sesuai?",p:["Pelekat pemantul cahaya","Cat hitam berkilat","Kertas lutsinar","Kain baldu hitam"],b:0,u:"Pelekat pemantul memantulkan cahaya lampu kenderaan ke arah pemandu."},
+ {j:"pilih",t:"Awak mereka lampu pentas berwarna menggunakan lampu suluh dan penapis. Untuk menghasilkan warna magenta, gunakan:",p:["Lampu merah dan lampu biru bertindih","Satu lampu dengan penapis merah dan biru","Lampu hijau dan lampu merah bertindih","Satu lampu dengan penapis hijau sahaja"],b:0,u:"Merah + biru = magenta melalui penambahan cahaya. Dua penapis bertindih menyerap hampir semua cahaya."},
+ {j:"pilih",t:"Bagaimanakah awak menguji sama ada periskop rekaan awak berfungsi dengan baik?",p:["Baca huruf pada kad dari jarak tetap di balik dinding","Ukur berat periskop dengan penimbang","Tanya rakan sama ada warna periskop menarik","Lihat terus ke arah matahari melaluinya"],b:0,u:"Ujian yang boleh diulang memberi bukti prestasi. Jangan sekali-kali melihat matahari melalui alat optik."}],
+ bos:{j:"buka",
+  t:"Sebuah taman permainan kanak-kanak di kawasan awak gelap pada waktu senja dan mempunyai selekoh yang sukar dilihat. Reka satu penyelesaian menggunakan konsep cahaya dan cermin supaya taman itu lebih selamat.",
+  arahan:"Terangkan rekaan awak, jenis cermin atau bahan pemantul yang digunakan beserta ciri imejnya, lukisan atau penerangan laluan sinar cahaya, bagaimana keberkesanannya diuji, serta kos dan keselamatan kanak-kanak.",
+  u:"Jawapan TP6 yang kukuh memilih cermin cembung atau bahan pemantul dengan alasan ciri imej yang betul, menerangkan laluan cahaya, dan mengambil kira kos serta keselamatan."}}
+];
+
+module.exports = {
+  id:"t1b8", tingkatan:1, kod:"8.0 Cahaya dan Optik",
+  tajuk:"Laluan Cahaya",
+  subtajuk:"Sains Ting. 1 · Bab 8 Cahaya dan Optik",
+  spi:SPI,
+  ulasan:{
+   1:"{n} dapat mengingat kembali sifat cahaya, jenis cermin dan ciri imej cermin satah. Langkah seterusnya ialah menjelaskan pantulan dan pembiasan cahaya.",
+   2:"{n} memahami pantulan, pembiasan, penyebaran dan penyerakan cahaya serta dapat menerangkan fenomena harian. Perlu lebih banyak latihan melukis gambar rajah sinar.",
+   3:"{n} boleh mengaplikasikan Hukum Pantulan untuk mengira sudut dan jarak imej dalam cermin satah. Galakkan melakar gambar rajah sinar dengan normal yang betul.",
+   4:"{n} mampu menganalisis data pembiasan untuk membandingkan medium dan meramal arah biasan. Seterusnya latih menilai penggunaan cahaya berwarna.",
+   5:"{n} dapat menilai penambahan dan penolakan cahaya untuk membuat keputusan pencahayaan yang wajar. Sudah bersedia untuk tugasan reka bentuk.",
+   6:"{n} berjaya mereka bentuk alat atau penyelesaian optik yang selamat dan praktikal. Pencapaian cemerlang bagi bab ini.",
+   tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Cahaya dan Optik. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
+  },
+  lampiran:{ pantul:T_PANTUL, bias:T_BIAS, warna:T_WARNA },
+  aras:ARAS
+};

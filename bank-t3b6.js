@@ -293,7 +293,7 @@ window.BANK["t3b6"] =
     "p": [
      "MCB menambah voltan supaya semua alat berfungsi",
      "ELCB menukar arus terus kepada arus ulang-alik",
-     "Tiada kesan kerana soket boleh menampung apa saja",
+     "Tiada kesan kerana soket boleh menampung apa-apa sahaja",
      "MCB memutuskan litar kerana arus berlebihan"
     ],
     "b": 3,
