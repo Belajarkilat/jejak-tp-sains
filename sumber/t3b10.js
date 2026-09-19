@@ -33,7 +33,7 @@ const T_SATELIT =
 '<tr><td>Satelit penderiaan jauh</td><td class="n">700</td><td>Kira-kira 99 minit</td><td>Memantau tanaman, hutan dan banjir</td></tr>'+
 '<tr><td>Satelit GPS</td><td class="n">20 200</td><td>Kira-kira 12 jam</td><td>Navigasi dan penentuan kedudukan</td></tr>'+
 '<tr><td>Satelit komunikasi geopegun</td><td class="n">35 786</td><td>24 jam</td><td>Siaran TV dan telekomunikasi</td></tr>'+
-'</tbody></table></div><p class="qnote">Nilai ketinggian dan tempoh ialah anggaran.</p>';
+'</tbody></table></div><p class="qnote">Nilai ketinggian dan tempoh ialah anggaran. Satelit geopegun ialah satelit yang mengorbit seiring putaran Bumi, jadi ia kelihatan kekal di atas tempat yang sama.</p>';
 
 const T_MISI =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Misi</th>'+
@@ -91,7 +91,7 @@ const ARAS = [
 
 {n:4, tempat:"Orbit Satelit", sk:"10.2 Menganalisis teknologi satelit", lampiran:"satelit",
  kadNama:"Stesen Angkasa", kadEm:"\u{1F30D}", kadFakta:"Stesen Angkasa Antarabangsa mengorbit Bumi kira-kira 16 kali sehari.",
- bosKadNama:"Geopegun", bosKadEm:"\u{1F4E1}", bosKadFakta:"Satelit geopegun berada kira-kira 36 000 km di atas khatulistiwa dan mengorbit sekali setiap 24 jam.",
+ bosKadNama:"Geopegun", bosKadEm:"\u{1F4E1}", bosKadFakta:"Satelit geopegun berada kira-kira 36 000 km di atas khatulistiwa dan mengorbit sekali setiap 24 jam, seiring putaran Bumi, jadi ia kelihatan tidak bergerak dari Bumi.",
  soalan:[
  {j:"pilih",t:"Berdasarkan jadual, apakah hubungan antara ketinggian orbit dengan tempoh satu orbit?",p:["Semakin tinggi, semakin lama tempoh orbit","Semakin tinggi, semakin singkat tempoh orbit","Ketinggian tidak mempengaruhi tempoh orbit","Semua satelit mengambil masa 24 jam"],b:0,u:"Tempoh bertambah dari 90 minit pada 400 km kepada 24 jam pada 35 786 km."},
  {j:"pilih",t:"Mengapakah piring satelit TV di rumah tidak perlu dipusingkan untuk mengikut satelit?",p:["Satelit geopegun sentiasa berada di atas titik yang sama","Satelit bergerak terlalu laju untuk dikesan","Piring satelit sebenarnya menerima isyarat dari menara di tanah sahaja","Satelit komunikasi berada pada ketinggian 400 km"],b:0,u:"Tempoh orbitnya 24 jam, sama dengan putaran Bumi."},

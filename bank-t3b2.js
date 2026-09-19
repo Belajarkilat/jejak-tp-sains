@@ -51,7 +51,7 @@ window.BANK["t3b2"] =
    "lampiran": null,
    "kadNama": "Silia",
    "kadEm": "🧹",
-   "kadFakta": "Silia berdegup ke atas kira-kira 1000 kali seminit untuk menyapu mukus keluar dari salur udara.",
+   "kadFakta": "Silia ialah bulu halus pada dinding trakea. Ia berdegup ke atas kira-kira 1000 kali seminit untuk menyapu mukus keluar dari salur udara.",
    "bosKadNama": "Gelang Rawan",
    "bosKadEm": "🦴",
    "bosKadFakta": "Trakea manusia ada 16 hingga 20 gelang rawan berbentuk C yang tak pernah membenarkannya kemek.",
@@ -89,7 +89,7 @@ window.BANK["t3b2"] =
     },
     {
      "j": "pilih",
-     "t": "Apakah fungsi silia pada dinding trakea?",
+     "t": "Apakah fungsi silia (bulu halus) pada dinding trakea?",
      "p": [
       "Menyerap oksigen terus ke dalam aliran darah",
       "Menyapu mukus berhabuk keluar dari salur udara",
@@ -166,7 +166,7 @@ window.BANK["t3b2"] =
     "p": [
      "Trakea",
      "Bronkiol",
-     "Diafragma",
+     "Bronkus",
      "Alveolus",
      "Esofagus",
      "Aorta"

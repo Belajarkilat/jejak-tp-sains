@@ -51,7 +51,7 @@ const ARAS = [
 
 {n:1, tempat:"Termometer", sk:"5.1 Tindak balas endotermik dan eksotermik",
  kadNama:"Api Unggun", kadEm:"\u{1F525}", kadFakta:"Pembakaran kayu ialah tindak balas eksotermik. Haba yang dibebaskan memanaskan kayu seterusnya supaya api terus menyala.",
- bosKadNama:"Fotosintesis", bosKadEm:"\u{1F33F}", bosKadFakta:"Fotosintesis ialah proses endotermik yang menyerap tenaga cahaya untuk menghasilkan glukosa.",
+ bosKadNama:"Fotosintesis", bosKadEm:"\u{1F33F}", bosKadFakta:"Fotosintesis ialah tindak balas endotermik yang menyerap tenaga cahaya untuk menghasilkan glukosa.",
  soalan:[
  {j:"pilih",t:"Tindak balas eksotermik ialah tindak balas yang:",p:["Membebaskan haba ke persekitaran","Menyerap haba dari persekitaran","Tidak melibatkan sebarang haba","Hanya berlaku pada suhu yang tinggi"],b:0,u:"Ekso bermaksud keluar. Haba keluar ke persekitaran."},
  {j:"pilih",t:"Tindak balas endotermik ialah tindak balas yang:",p:["Menyerap haba dari persekitaran","Membebaskan haba ke persekitaran","Menghasilkan nyalaan api yang terang","Hanya berlaku di dalam badan hidupan"],b:0,u:"Endo bermaksud ke dalam. Haba diserap masuk daripada persekitaran."},
@@ -59,7 +59,7 @@ const ARAS = [
  {j:"pilih",t:"Contoh tindak balas eksotermik ialah:",p:["Pembakaran kertas","Fotosintesis","Membuat kek","Penguraian batu kapur"],b:0,u:"Pembakaran membebaskan haba dan cahaya."},
  {j:"pilih",t:"Contoh tindak balas endotermik ialah:",p:["Fotosintesis","Respirasi","Letupan bom","Pembakaran kayu"],b:0,u:"Fotosintesis menyerap tenaga cahaya matahari."},
  {j:"banyak",t:"Pilih SEMUA tindak balas eksotermik.",p:["Respirasi sel","Letupan bunga api","Pembakaran petrol dalam enjin","Fotosintesis dalam daun","Penguraian terma kalsium karbonat"],b:[0,1,2],u:"Fotosintesis dan penguraian terma perlu menyerap tenaga untuk berlaku."},
- {j:"pilih",t:"Fotosintesis dikelaskan sebagai proses endotermik kerana ia:",p:["Menyerap tenaga cahaya matahari","Membebaskan oksigen ke udara","Menghasilkan glukosa yang manis","Berlaku di dalam kloroplas"],b:0,u:"Tanpa tenaga yang diserap, fotosintesis tidak dapat berlaku."},
+ {j:"pilih",t:"Fotosintesis dikelaskan sebagai tindak balas endotermik kerana ia:",p:["Menyerap tenaga cahaya matahari","Membebaskan oksigen ke udara","Menghasilkan glukosa yang manis","Berlaku di dalam kloroplas"],b:0,u:"Tanpa tenaga yang diserap, fotosintesis tidak dapat berlaku."},
  {j:"pilih",t:"Keseimbangan terma tercapai apabila:",p:["Dua objek yang bersentuhan mencapai suhu yang sama","Objek panas terus menjadi lebih panas","Haba terus mengalir dari objek sejuk ke objek panas","Kedua-dua objek kehilangan semua haba"],b:0,u:"Pada keseimbangan terma, tiada lagi pengaliran haba bersih antara kedua-dua objek."}],
  bos:{j:"pilih",t:"Seorang murid memegang bikar semasa tindak balas berlaku dan mendapati bikar itu menjadi sejuk. Tindak balas itu ialah:",p:["Endotermik, kerana haba diserap daripada tangannya","Eksotermik, kerana haba dibebaskan ke tangannya","Endotermik, kerana haba dibebaskan ke tangannya","Eksotermik, kerana haba diserap daripada tangannya"],b:0,u:"Rasa sejuk bermakna haba sedang mengalir keluar dari tangan ke dalam bikar."}},
 

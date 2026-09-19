@@ -54,7 +54,7 @@ window.BANK["t3b5"] =
    "kadFakta": "Pembakaran kayu ialah tindak balas eksotermik. Haba yang dibebaskan memanaskan kayu seterusnya supaya api terus menyala.",
    "bosKadNama": "Fotosintesis",
    "bosKadEm": "🌿",
-   "bosKadFakta": "Fotosintesis ialah proses endotermik yang menyerap tenaga cahaya untuk menghasilkan glukosa.",
+   "bosKadFakta": "Fotosintesis ialah tindak balas endotermik yang menyerap tenaga cahaya untuk menghasilkan glukosa.",
    "soalan": [
     {
      "j": "pilih",
@@ -135,7 +135,7 @@ window.BANK["t3b5"] =
     },
     {
      "j": "pilih",
-     "t": "Fotosintesis dikelaskan sebagai proses endotermik kerana ia:",
+     "t": "Fotosintesis dikelaskan sebagai tindak balas endotermik kerana ia:",
      "p": [
       "Membebaskan oksigen ke udara",
       "Menyerap tenaga cahaya matahari",

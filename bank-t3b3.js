@@ -85,7 +85,7 @@ window.BANK["t3b3"] =
      "t": "Komponen darah yang mengangkut oksigen ialah:",
      "p": [
       "Sel darah putih",
-      "Platelet",
+      "Platlet",
       "Sel darah merah",
       "Plasma"
      ],
@@ -140,12 +140,12 @@ window.BANK["t3b3"] =
      "t": "Komponen darah yang membantu pembekuan darah ialah:",
      "p": [
       "Sel darah merah",
-      "Platelet",
+      "Platlet",
       "Plasma",
       "Hemoglobin"
      ],
      "b": 1,
-     "u": "Platelet berkumpul di tempat luka dan memulakan proses pembekuan."
+     "u": "Platlet berkumpul di tempat luka dan memulakan proses pembekuan."
     },
     {
      "j": "pilih",
@@ -352,11 +352,11 @@ window.BANK["t3b3"] =
      "p": [
       "Sel darah merah melekat bersama dan membentuk kulit baharu",
       "Plasma mengeras dengan sendirinya apabila terkena udara",
-      "Platelet berkumpul di tempat luka dan memulakan pembekuan",
+      "Platlet berkumpul di tempat luka dan memulakan pembekuan",
       "Sel darah putih menutup luka untuk menghalang kuman masuk"
      ],
      "b": 2,
-     "u": "Tanpa platelet, luka kecil pun boleh menjadi bahaya, dan itulah masalah pesakit hemofilia."
+     "u": "Tanpa platlet, luka kecil pun boleh menjadi bahaya, dan itulah masalah pesakit hemofilia."
     },
     {
      "j": "pilih",
@@ -748,7 +748,7 @@ window.BANK["t3b3"] =
       "Badan berhenti menghasilkan sel darah merah selepas seseorang menderma"
      ],
      "b": 1,
-     "u": "Darah diasingkan kepada sel darah merah, plasma dan platelet. Plasma diganti dalam masa sehari dua dan sel darah merah dalam beberapa minggu. Pesakit kumpulan lain juga memerlukan darah kumpulan mereka sendiri."
+     "u": "Darah diasingkan kepada sel darah merah, plasma dan platlet. Plasma diganti dalam masa sehari dua dan sel darah merah dalam beberapa minggu. Pesakit kumpulan lain juga memerlukan darah kumpulan mereka sendiri."
     },
     {
      "j": "pilih",

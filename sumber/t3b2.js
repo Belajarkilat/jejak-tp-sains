@@ -29,17 +29,17 @@ const L_TEKANAN = "<figure class=\"figure\"><svg viewBox=\"0 0 560 240\" role=\"
 
 const ARAS = [
 
-{n:1, tempat:"Hidung & Trakea", sk:"2.1 Sistem respirasi", kadNama:"Silia", kadEm:"🧹", kadFakta:"Silia berdegup ke atas kira-kira 1000 kali seminit untuk menyapu mukus keluar dari salur udara.", bosKadNama:"Gelang Rawan", bosKadEm:"🦴", bosKadFakta:"Trakea manusia ada 16 hingga 20 gelang rawan berbentuk C yang tak pernah membenarkannya kemek.",
+{n:1, tempat:"Hidung & Trakea", sk:"2.1 Sistem respirasi", kadNama:"Silia", kadEm:"🧹", kadFakta:"Silia ialah bulu halus pada dinding trakea. Ia berdegup ke atas kira-kira 1000 kali seminit untuk menyapu mukus keluar dari salur udara.", bosKadNama:"Gelang Rawan", bosKadEm:"🦴", bosKadFakta:"Trakea manusia ada 16 hingga 20 gelang rawan berbentuk C yang tak pernah membenarkannya kemek.",
  soalan:[
  {"j":"pilih","t":"Salur udara yang disokong gelang rawan berbentuk C ialah:","p":["Trakea","Esofagus","Alveolus","Diafragma"],"b":0,"u":"Gelang rawan menahan trakea daripada kemek."},
  {"j":"susun","t":"Susun laluan udara dari luar badan ke tempat pertukaran gas.","p":["Rongga hidung","Trakea","Bronkus","Bronkiol","Alveolus"],"b":[0,1,2,3,4],"u":"Setiap cabang jadi lebih kecil sehingga berakhir di alveolus."},
- {"j":"pilih","t":"Apakah fungsi silia pada dinding trakea?","p":["Menyapu mukus berhabuk keluar dari salur udara","Menyerap oksigen terus ke dalam aliran darah","Menghasilkan tenaga untuk menggerakkan udara","Menapis karbon dioksida keluar daripada darah"],"b":0,"u":"Mukus memerangkap, silia menyapu."},
+ {"j":"pilih","t":"Apakah fungsi silia (bulu halus) pada dinding trakea?","p":["Menyapu mukus berhabuk keluar dari salur udara","Menyerap oksigen terus ke dalam aliran darah","Menghasilkan tenaga untuk menggerakkan udara","Menapis karbon dioksida keluar daripada darah"],"b":0,"u":"Mukus memerangkap, silia menyapu."},
  {"j":"pilih","t":"Gas yang diperlukan untuk respirasi sel ialah:","p":["Nitrogen","Karbon dioksida","Oksigen","Helium"],"b":2,"u":"Oksigen mengoksidakan glukosa untuk bebaskan tenaga."},
  {"j":"pilih","t":"Otot berbentuk kubah di bawah peparu ialah:","p":["Otot interkosta","Otot bisep","Otot jantung","Diafragma"],"b":3,"u":"Diafragma memisahkan rongga toraks daripada rongga abdomen."},
  {"j":"pilih","t":"Unit terkecil tempat pertukaran gas berlaku ialah:","p":["Alveolus","Bronkus","Trakea","Peparu"],"b":0,"u":"Kira-kira 300 juta alveolus dalam sepasang peparu."},
  {"j":"pilih","t":"Hasil buangan respirasi sel ialah:","p":["Karbon dioksida dan air","Oksigen dan karbon dioksida","Nitrogen dan air","Glukosa dan tenaga"],"b":0,"u":"Glukosa dan oksigen masuk, karbon dioksida dan air keluar."},
  {"j":"pilih","t":"Rambut halus dalam rongga hidung berfungsi untuk:","p":["Menapis zarah habuk yang besar","Memanaskan darah dalam hidung","Menghasilkan mukus pelembap","Mengecut semasa menarik nafas"],"b":0,"u":"Hidung menapis, memanaskan dan melembapkan udara."}],
- bos:{"j":"banyak","t":"Pilih SEMUA struktur yang merupakan sebahagian sistem respirasi manusia.","p":["Trakea","Bronkiol","Diafragma","Alveolus","Esofagus","Aorta"],"b":[0,1,2,3],"u":"Esofagus salur makanan, aorta salur darah. Kedua-duanya bukan sistem respirasi."}},
+ bos:{"j":"banyak","t":"Pilih SEMUA struktur yang merupakan sebahagian sistem respirasi manusia.","p":["Trakea","Bronkiol","Bronkus","Alveolus","Esofagus","Aorta"],"b":[0,1,2,3],"u":"Esofagus salur makanan, aorta salur darah. Kedua-duanya bukan sistem respirasi."}},
 
 {n:2, tempat:"Bronkus & Bronkiol", sk:"2.1 Mekanisme pernafasan", kadNama:"Diafragma", kadEm:"🛡", kadFakta:"Diafragma menyumbang kira-kira 75 peratus perubahan isi padu toraks semasa pernafasan rehat.", bosKadNama:"Surfaktan", bosKadEm:"🫧", bosKadFakta:"Surfaktan melapisi alveolus supaya ia tidak melekat dan kuncup selepas setiap hembusan.",
  soalan:[

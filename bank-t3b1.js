@@ -412,7 +412,7 @@ window.BANK["t3b1"] =
       "Bola mata memanjang dengan usia, jadi imej jatuh di hadapan retina"
      ],
      "b": 1,
-     "u": "Keadaan ini dipanggil presbiopia dan dibetulkan dengan kanta cembung."
+     "u": "Keadaan ini ialah rabun dekat akibat usia dan dibetulkan dengan kanta cembung."
     }
    ],
    "bos": {
@@ -593,7 +593,7 @@ window.BANK["t3b1"] =
      "p": [
       "Beliau perlu menjauhkan surat khabar untuk membaca",
       "Kanta yang diperlukan bernilai positif",
-      "Umurnya dalam julat biasa bagi presbiopia",
+      "Umurnya dalam julat biasa bagi rabun dekat akibat usia",
       "Kanta bernilai positif bermaksud kanta cekung",
       "Beliau mengadu papan putih kelihatan kabur"
      ],
@@ -638,7 +638,7 @@ window.BANK["t3b1"] =
       "Beri kanta cembung untuk membaca sahaja"
      ],
      "b": 3,
-     "u": "Presbiopia menjejaskan penglihatan dekat sahaja. Kanta cembung untuk membaca akan mengaburkan objek jauh jika dipakai semasa memandu."
+     "u": "Rabun dekat menjejaskan penglihatan dekat sahaja. Kanta cembung untuk membaca akan mengaburkan objek jauh jika dipakai semasa memandu."
     },
     {
      "j": "pilih",
@@ -760,7 +760,7 @@ window.BANK["t3b1"] =
       "Kaca rata berwarna, kerana ia mengurangkan silau semasa membaca"
      ],
      "b": 0,
-     "u": "Presbiopia berlaku apabila kanta mata hilang keanjalan. Kanta cembung menumpukan cahaya sebelum ia sampai ke mata."
+     "u": "Rabun dekat pada warga emas berlaku apabila kanta mata hilang keanjalan. Kanta cembung menumpukan cahaya sebelum ia sampai ke mata."
     },
     {
      "j": "pilih",
