@@ -1924,8 +1924,20 @@ function panelMula(tajuk,eyebrow){
   return p;
 }
 
+/* Mod main bebas ditanda dalam URL, bukan dalam telefon sahaja: buka semula
+   pautan ?main dan mod bebas kembali, buka pautan biasa dan skrin kod kelas
+   keluar seperti sepatutnya. */
+function tandaMainUrl(ada){
+  try{
+    var u=new URL(location.href);
+    if(ada===u.searchParams.has("main")) return;
+    if(ada) u.searchParams.set("main","1"); else u.searchParams.delete("main");
+    history.replaceState(null,"",u.pathname+u.search+u.hash);
+  }catch(e){}
+}
+
 function mainTanpaRekod(){
-  S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; muatLatihan(); simpanDiri(); render();
+  S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; muatLatihan(); simpanDiri(); tandaMainUrl(true); render();
 }
 
 /* Main bebas (pautan ?main untuk keluarga dan kawan): tiada kelas, tiada
@@ -2379,7 +2391,7 @@ function renderPeta(){
   }
   var tb2=el("button","btn ghost sm"); tb2.textContent=berekod?"Bukan saya":(S.namaMain?"Ada kod kelas?":"Masuk dengan nama");
   tb2.onclick=function(){
-    S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri();
+    S.no=null; S.kod=""; S.latihan=false; S.lulus={}; S.kad={}; simpanDiri(); tandaMainUrl(false);
     S.skrin=KM?"nama":"kodkelas"; render(); window.scrollTo({top:0});
   };
   ab.appendChild(tb2);
@@ -4692,15 +4704,19 @@ function mula(){
     var u=new URL(location.href);
     qk=u.searchParams.get("k");
     qdemo=u.searchParams.get("demo");
-    if(u.searchParams.has("main")){ qdemo="bebas"; u.searchParams.delete("main"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
-    if(qdemo){ u.searchParams.delete("demo"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
+    /* ?main dikekalkan dalam URL supaya keluarga yang simpan pautan ini
+       kekal dalam mod main bebas. Pautan biasa (tanpa ?main) sentiasa
+       bermula di skrin kod kelas. */
+    if(u.searchParams.has("main")) qdemo="bebas";
+    if(qdemo&&qdemo!=="bebas"){ u.searchParams.delete("demo"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
     authUrl=u.searchParams.has("code")||u.searchParams.has("error_description")||/access_token|error_description/.test(u.hash);
     if(qk){ u.searchParams.delete("k"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
   }catch(e){}
   try{ modLama=localStorage.getItem("cn-mod"); }catch(e){}
 
   if(S.no&&KM&&S.kod){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
-  else if(S.latihan){ S.skrin="peta"; muatLatihan(); }
+  else if(S.latihan&&qdemo==="bebas"){ S.skrin="peta"; muatLatihan(); }
+  else if(S.latihan){ S.latihan=false; S.skrin=KM?"nama":"kodkelas"; }
   else if(KM) S.skrin="nama";
   else S.skrin="kodkelas";
 
