@@ -39,6 +39,8 @@ window.BANK["t3b1"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Rangsangan dan Gerak Balas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "neuron": "<figure class=\"figure\"><svg viewBox=\"0 0 260 210\" role=\"img\" aria-label=\"Rajah aliran menegak: dendrit, badan sel, akson, dan bahagian terakhir bertanda soal\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Dendrit</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Badan sel</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Akson</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">?</text></svg><figcaption>Rajah 1 · Arah perjalanan impuls dalam satu neuron.</figcaption></figure>",
+  "refleks": "<figure class=\"figure\"><svg viewBox=\"0 0 260 266\" role=\"img\" aria-label=\"Rajah aliran menegak laluan impuls dari reseptor kulit ke otot lengan melalui saraf tunjang, tanpa melalui otak\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Reseptor kulit</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Neuron deria</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Saraf tunjang</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Neuron motor</text><line x1=\"130\" y1=\"209\" x2=\"130\" y2=\"224\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"228\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"249.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Otot lengan</text></svg><figcaption>Rajah 1 · Laluan impuls apabila tangan menyentuh objek panas.</figcaption></figure>",
   "pembaris": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Murid</th><th class=\"n\">Cubaan 1 (cm)</th><th class=\"n\">Cubaan 2 (cm)</th><th class=\"n\">Cubaan 3 (cm)</th><th class=\"n\">Purata (cm)</th><th>Catatan</th></tr></thead><tbody><tr><td>Aiman</td><td class=\"n\">19</td><td class=\"n\">17</td><td class=\"n\">18</td><td class=\"n\">18.0</td><td>Tidur 8 jam</td></tr><tr><td>Bella</td><td class=\"n\">13</td><td class=\"n\">12</td><td class=\"n\">11</td><td class=\"n\">12.0</td><td>Tidur 8 jam</td></tr><tr><td>Chandran</td><td class=\"n\">25</td><td class=\"n\">27</td><td class=\"n\">26</td><td class=\"n\">26.0</td><td>Tidur 4 jam</td></tr><tr><td>Damia</td><td class=\"n\">12</td><td class=\"n\">20</td><td class=\"n\">13</td><td class=\"n\">15.0</td><td>Tidur 8 jam, bunyi bising semasa cubaan 2</td></tr></tbody></table></div><p class=\"qnote\">Ujian pembaris jatuh. Jarak pembaris jatuh sebelum ditangkap diukur. Jarak lebih pendek bermakna gerak balas lebih pantas.</p>",
   "deria": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Individu</th><th>Aduan</th><th class=\"n\">Ujian penglihatan</th><th class=\"n\">Ujian pendengaran</th></tr></thead><tbody><tr><td>Puan Salmah, 62</td><td>Perlu menjauhkan surat khabar untuk membaca</td><td class=\"n\">Kanta +2.00 D</td><td class=\"n\">Normal</td></tr><tr><td>Rajesh, 15</td><td>Papan putih kabur dari barisan belakang</td><td class=\"n\">Kanta &minus;1.50 D</td><td class=\"n\">Normal</td></tr><tr><td>Mei Yin, 17</td><td>Tidak dengar bunyi bernada tinggi</td><td class=\"n\">Normal</td><td class=\"n\">Kehilangan 45 dB</td></tr></tbody></table></div><p class=\"qnote\">Kanta bernilai positif ialah kanta cembung. Kanta bernilai negatif ialah kanta cekung. Kehilangan pendengaran melebihi 40 dB dikira sederhana.</p>"
  },
@@ -47,7 +49,7 @@ window.BANK["t3b1"] =
    "n": 1,
    "tempat": "Reseptor",
    "sk": "1.1 / 1.2 Sistem saraf dan organ deria",
-   "lampiran": null,
+   "lampiran": "neuron",
    "kadNama": "Sel Rod",
    "kadEm": "👁",
    "kadFakta": "Retina manusia mengandungi kira-kira 120 juta sel rod, dan ia berfungsi walaupun dalam cahaya yang hampir gelap.",
@@ -124,15 +126,15 @@ window.BANK["t3b1"] =
     },
     {
      "j": "pilih",
-     "t": "Tunas rasa yang mengesan rasa umami terdapat pada:",
+     "t": "Berdasarkan Rajah 1, bahagian neuron bertanda ? menghantar impuls kepada neuron seterusnya. Bahagian itu ialah:",
      "p": [
-      "Lidah",
-      "Hidung",
-      "Kulit",
-      "Telinga"
+      "Hujung akson",
+      "Salut mielin yang membalut akson",
+      "Nukleus di dalam badan sel neuron",
+      "Dendrit yang bercabang halus"
      ],
      "b": 0,
-     "u": "Umami ialah rasa kelima selain manis, masin, masam dan pahit."
+     "u": "Impuls bergerak satu arah sahaja: dendrit menerima, akson membawa, hujung akson menghantar."
     },
     {
      "j": "pilih",
@@ -185,7 +187,7 @@ window.BANK["t3b1"] =
    "n": 2,
    "tempat": "Saraf Deria",
    "sk": "1.1 / 1.2 Mekanisme gerak balas",
-   "lampiran": null,
+   "lampiran": "refleks",
    "kadNama": "Tindakan Refleks",
    "kadEm": "⚡",
    "kadFakta": "Tindakan refleks tidak melalui otak, jadi ia berlaku dalam masa kurang seperlima saat.",
@@ -195,7 +197,7 @@ window.BANK["t3b1"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Mengapakah tindakan luar kawal berlaku lebih pantas daripada tindakan terkawal?",
+     "t": "Berdasarkan Rajah 1, mengapakah tindakan luar kawal berlaku lebih pantas daripada tindakan terkawal?",
      "p": [
       "Impuls bergerak melalui salur darah yang lebih laju daripada saraf",
       "Otot mengecut dahulu, kemudian barulah impuls dihantar ke otak",

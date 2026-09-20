@@ -18,6 +18,69 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_MAKLUMBALAS = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Keadaan dalam badan berubah",
+    "Penerima mengesan perubahan",
+    "Otak membandingkan dengan aras normal",
+    "Efektor bertindak",
+    "Keadaan kembali normal"
+  ],
+  "kapsyen": "Rajah 1 · Cara badan mengekalkan keadaan dalamannya.",
+  "alt": "Rajah aliran menegak lima langkah: keadaan dalam badan berubah, penerima mengesan, otak membandingkan dengan aras normal, efektor bertindak, keadaan kembali normal"
+};
+
+const R_SUHU = {
+  "jenis": "graf",
+  "titik": true,
+  "setiap": 2,
+  "x": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60
+  ],
+  "yMin": 26,
+  "yMaks": 40,
+  "grid": 7,
+  "siri": [
+    {
+      "label": "Suhu udara luar",
+      "y": [
+        28,
+        30,
+        33,
+        35,
+        37,
+        38,
+        38
+      ],
+      "warna": "merah"
+    },
+    {
+      "label": "Suhu badan Aisyah",
+      "y": [
+        37,
+        37,
+        37.1,
+        37.2,
+        37.1,
+        37.2,
+        37.1
+      ],
+      "warna": "ungu"
+    }
+  ],
+  "xLabel": "Masa (minit)",
+  "kapsyen": "Rajah 1 · Suhu udara dan suhu badan Aisyah semasa berkebun.",
+  "alt": "Graf garis: suhu udara luar naik dari 28 ke 38 darjah Celsius dalam sejam, manakala suhu badan kekal sekitar 37 darjah"
+};
+
 const T_BADAN =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Situasi</th>'+
 '<th>Suhu persekitaran</th><th>Gerak balas yang diperhatikan pada Hafiz</th></tr></thead><tbody>'+
@@ -49,11 +112,11 @@ const T_DAUN =
 
 const ARAS = [
 
-{n:1, tempat:"Termostat Badan", sk:"3.1 Maksud homeostasis",
+{n:1, tempat:"Termostat Badan", sk:"3.1 Maksud homeostasis", lampiran:"maklumbalas",
  kadNama:"Homeostasis", kadEm:"\u{2696}", kadFakta:"Suhu badan manusia yang sihat dikekalkan pada kira-kira 37 °C walaupun cuaca di luar panas atau sejuk.",
  bosKadNama:"Kelenjar Peluh", bosKadEm:"\u{1F4A7}", bosKadFakta:"Kulit manusia mempunyai jutaan kelenjar peluh yang membantu menyejukkan badan apabila peluh tersejat.",
  soalan:[
- {j:"pilih",t:"Homeostasis ialah:",p:["Pengekalan persekitaran dalam badan yang stabil","Perubahan suhu badan mengikut cuaca di luar","Pertumbuhan badan daripada kecil kepada besar","Pergerakan organisma dari satu tempat ke tempat lain"],b:0,u:"Contohnya suhu badan dan kandungan air dikekalkan pada paras yang sesuai."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, homeostasis ialah:",p:["Pengekalan persekitaran dalam badan yang stabil","Perubahan suhu badan mengikut cuaca di luar","Pertumbuhan badan daripada kecil kepada besar","Pergerakan organisma dari satu tempat ke tempat lain"],b:0,u:"Contohnya suhu badan dan kandungan air dikekalkan pada paras yang sesuai."},
  {j:"pilih",t:"Suhu badan normal manusia ialah kira-kira:",p:["37 °C","27 °C","42 °C","100 °C"],b:0,u:"Suhu yang terlalu tinggi atau rendah boleh mengganggu fungsi sel."},
  {j:"pilih",t:"Gerak balas badan manusia apabila terlalu panas ialah:",p:["Berpeluh","Menggigil","Bulu roma meremang","Kurang air kencing"],b:0,u:"Peluh yang tersejat membawa haba keluar daripada badan."},
  {j:"pilih",t:"Gerak balas badan manusia apabila terlalu sejuk ialah:",p:["Menggigil","Berpeluh","Menjelirkan lidah","Minum banyak air"],b:0,u:"Otot yang menggigil menghasilkan haba."},
@@ -63,7 +126,7 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA contoh homeostasis dalam manusia.",p:["Berpeluh ketika bersenam","Menggigil dalam bilik sejuk","Kurang kencing apabila kurang minum","Rambut bertambah panjang setiap bulan","Membesar dengan cepat semasa remaja"],b:[0,1,2],u:"Pertumbuhan rambut dan badan bukan usaha mengekalkan keadaan dalam badan."}],
  bos:{j:"banyak",t:"Pilih SEMUA sistem badan yang terlibat dalam mengawal suhu badan.",p:["Sistem integumen (kulit)","Sistem saraf","Sistem peredaran darah","Sistem rangka","Sistem pencernaan"],b:[0,1,2],u:"Saraf mengesan perubahan, kulit berpeluh, dan salur darah di kulit mengembang atau mengecut."}},
 
-{n:2, tempat:"Bilik Kawalan", sk:"3.1 Sistem yang terlibat dalam homeostasis",
+{n:2, tempat:"Bilik Kawalan", sk:"3.1 Sistem yang terlibat dalam homeostasis", lampiran:"grafsuhu",
  kadNama:"Ginjal", kadEm:"\u{1FAD8}", kadFakta:"Kedua-dua ginjal menapis kira-kira 180 liter cecair darah sehari, tetapi hanya sekitar 1.5 liter menjadi air kencing.",
  bosKadNama:"Stoma", bosKadEm:"\u{1F343}", bosKadFakta:"Stoma dikawal oleh dua sel pengawal. Apabila tumbuhan kekurangan air, sel pengawal menutup stoma.",
  soalan:[
@@ -73,7 +136,7 @@ const ARAS = [
  {j:"pilih",t:"Mengapakah kadar denyutan jantung meningkat semasa melakukan kerja berat?",p:["Otot perlukan lebih oksigen dan glukosa","Jantung menjadi lebih panas dan berdegup laju","Darah menjadi lebih cair semasa bekerja keras","Peparu berhenti membekalkan oksigen kepada darah"],b:0,u:"Darah yang dipam lebih laju membekalkan bahan untuk respirasi sel dan membawa karbon dioksida keluar."},
  {j:"pilih",t:"Apakah yang berlaku kepada stoma apabila tumbuhan kekurangan air?",p:["Stoma tertutup untuk mengurangkan kehilangan air","Stoma terbuka luas untuk menyerap air hujan","Stoma bertukar menjadi sel rerambut akar","Stoma menghasilkan lebih banyak klorofil"],b:0,u:"Menutup stoma mengurangkan transpirasi."},
  {j:"pilih",t:"Gajah Afrika sering mengibas telinganya yang besar. Ini membantunya:",p:["Membebaskan haba badan","Mendengar bunyi dengan lebih jelas","Menghalau pemangsa yang datang dekat","Menyimpan air di dalam telinga"],b:0,u:"Telinga gajah mempunyai banyak salur darah; kibasan menyejukkan darah itu."},
- {j:"pilih",t:"Mengapakah homeostasis penting kepada manusia?",p:["Supaya sel dapat berfungsi dalam keadaan yang sesuai","Supaya manusia tidak perlu makan dan minum","Supaya suhu badan sentiasa sama dengan suhu bilik","Supaya manusia boleh membesar dengan lebih cepat"],b:0,u:"Tindak balas kimia dalam sel memerlukan suhu dan kandungan air yang stabil."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah suhu badan Aisyah hampir tidak berubah walaupun suhu udara naik 10 darjah?",p:["Supaya sel dapat berfungsi dalam keadaan yang sesuai","Supaya manusia tidak perlu makan dan minum","Supaya suhu badan sentiasa sama dengan suhu bilik","Supaya manusia boleh membesar dengan lebih cepat"],b:0,u:"Tindak balas kimia dalam sel memerlukan suhu dan kandungan air yang stabil."},
  {j:"pilih",t:"Bulu roma meremang semasa sejuk. Pada haiwan berbulu tebal, gerak balas ini:",p:["Memerangkap udara untuk menebat haba","Membuang haba badan dengan lebih cepat","Menarik lebih banyak cahaya matahari ke kulit","Menghasilkan peluh di celah-celah bulu"],b:0,u:"Udara ialah penebat haba yang baik."}],
  bos:{j:"susun",t:"Susun gerak balas badan apabila suhu badan meningkat semasa bersenam.",p:["Suhu badan meningkat","Otak mengesan perubahan suhu","Kelenjar peluh merembeskan peluh","Peluh tersejat dan membawa haba","Suhu badan kembali normal"],b:[0,1,2,3,4],u:"Ini contoh kawal atur suhu badan melalui gerak balas yang membetulkan perubahan."}},
 
@@ -151,6 +214,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk kempen atau alat yang menggunakan konsep homeostasis secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Koordinasi dan Gerak Balas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ badan:T_BADAN, larian:T_LARIAN, daun:T_DAUN },
+  lampiran:{ maklumbalas:R_MAKLUMBALAS, grafsuhu:R_SUHU, badan:T_BADAN, larian:T_LARIAN, daun:T_DAUN },
   aras:ARAS
 };

@@ -39,6 +39,8 @@ window.BANK["t1b2"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Sel sebagai Unit Asas Hidupan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "seltumbuhan": "<figure class=\"figure\"><svg viewBox=\"0 0 260 168\" role=\"img\" aria-label=\"Rajah skematik sel tumbuhan: dinding sel di luar, nukleus bulat kecil di bahagian atas, vakuol besar di tengah, dan kloroplas kecil di bawah\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"11.9\" y=\"12.5\" width=\"122.2\" height=\"141\" rx=\"4\" fill=\"var(--teal-soft)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></rect><circle cx=\"44.4\" cy=\"44\" r=\"11.7\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"75.6\" cy=\"92\" r=\"31.2\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></circle><circle cx=\"39.2\" cy=\"122\" r=\"9.1\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><line x1=\"73\" y1=\"12.5\" x2=\"150\" y2=\"18\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73\" cy=\"12.5\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"22\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Dinding sel</text><line x1=\"44.4\" y1=\"44\" x2=\"150\" y2=\"40\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"44.4\" cy=\"44\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"44\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Nukleus</text><line x1=\"75.6\" y1=\"92\" x2=\"150\" y2=\"62\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"75.6\" cy=\"92\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"66\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Vakuol</text><line x1=\"39.2\" y1=\"122\" x2=\"150\" y2=\"84\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"39.2\" cy=\"122\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"88\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Kloroplas</text></svg><figcaption>Rajah 1 · Sel tumbuhan (rajah skematik).</figcaption></figure>",
+  "kitarsel": "<figure class=\"figure\"><svg viewBox=\"0 0 260 230\" role=\"img\" aria-label=\"Rajah kitaran empat kotak: fotosintesis di daun, glukosa disimpan, respirasi sel, dan tenaga untuk sel\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><path d=\"M130 43 Q183 58.8 198 115\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M198 115 Q183 171.2 130 187\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M130 187 Q77 171.2 62 115\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M62 115 Q77 58.8 130 43\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><rect x=\"78\" y=\"23\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"39.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Fotosintesis</text><text x=\"130\" y=\"54.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">di daun</text><rect x=\"146\" y=\"95\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"198\" y=\"111.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Glukosa</text><text x=\"198\" y=\"126.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">disimpan</text><rect x=\"78\" y=\"167\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"183.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Respirasi</text><text x=\"130\" y=\"198.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">sel</text><rect x=\"10\" y=\"95\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"62\" y=\"111.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Tenaga untuk</text><text x=\"62\" y=\"126.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">sel</text></svg><figcaption>Rajah 1 · Hubungan fotosintesis dengan respirasi sel.</figcaption></figure>",
   "sel": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Sel</th><th>Dinding sel</th><th>Kloroplas</th><th>Vakuol</th><th>Nukleus</th><th>Bentuk</th></tr></thead><tbody><tr><td>J</td><td>Ada</td><td>Banyak</td><td>Besar</td><td>Ada</td><td>Tetap, panjang</td></tr><tr><td>K</td><td>Tiada</td><td>Tiada</td><td>Tiada atau kecil</td><td>Ada</td><td>Tidak tetap</td></tr><tr><td>L</td><td>Ada</td><td>Tiada</td><td>Besar</td><td>Ada</td><td>Tetap, ada unjuran panjang</td></tr><tr><td>M</td><td>Tiada</td><td>Tiada</td><td>Tiada</td><td>Tiada</td><td>Cakera dwicekung</td></tr></tbody></table></div><p class=\"qnote\">Pemerhatian empat jenis sel di bawah mikroskop. Semua sel mempunyai membran sel dan sitoplasma.</p>",
   "kanji": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Daun</th><th>Keadaan pokok selama 2 hari</th><th>Warna selepas diuji dengan iodin</th></tr></thead><tbody><tr><td>A</td><td>Di bawah cahaya matahari</td><td>Biru tua</td></tr><tr><td>B</td><td>Di dalam almari gelap</td><td>Perang</td></tr><tr><td>C</td><td>Di bawah cahaya, dalam bekas dengan natrium hidroksida</td><td>Perang</td></tr><tr><td>D (daun berbelang)</td><td>Di bawah cahaya matahari</td><td>Bahagian hijau biru tua, bahagian putih perang</td></tr></tbody></table></div><p class=\"qnote\">Semua pokok dinyahkanji dahulu dengan diletakkan di tempat gelap selama 48 jam. Natrium hidroksida menyerap karbon dioksida. Warna biru tua menunjukkan kehadiran kanji.</p>",
   "hidrila": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Jarak lampu dari tumbuhan (cm)</th><th class=\"n\">Bilangan gelembung seminit</th></tr></thead><tbody><tr><td>10</td><td class=\"n\">42</td></tr><tr><td>20</td><td class=\"n\">25</td></tr><tr><td>30</td><td class=\"n\">14</td></tr><tr><td>40</td><td class=\"n\">6</td></tr></tbody></table></div><p class=\"qnote\">Seorang murid meletakkan tumbuhan akuatik Hydrilla di dalam tabung didih berisi air dan mengira gelembung gas yang terbebas. Satu bacaan bagi setiap jarak. Bilik tidak digelapkan. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t1b2"] =
    "n": 1,
    "tempat": "Lensa Mikroskop",
    "sk": "2.1 Sel: struktur dan fungsi",
-   "lampiran": null,
+   "lampiran": "seltumbuhan",
    "kadNama": "Sel",
    "kadEm": "🧫",
    "kadFakta": "Badan manusia dewasa dianggarkan mengandungi kira-kira 37 trilion sel.",
@@ -118,12 +120,12 @@ window.BANK["t1b2"] =
     },
     {
      "j": "pilih",
-     "t": "Pewarna yang digunakan untuk menyediakan slaid sel pipi ialah:",
+     "t": "Berdasarkan Rajah 1, struktur yang paling besar dan menyimpan air serta bahan terlarut ialah:",
      "p": [
-      "Larutan iodin",
-      "Metilena biru",
-      "Larutan kanji",
-      "Air suling sahaja"
+      "Nukleus di tepi sel",
+      "Vakuol",
+      "Kloroplas berwarna hijau",
+      "Dinding sel di luar"
      ],
      "b": 1,
      "u": "Sel bawang biasanya diwarnakan dengan larutan iodin."
@@ -183,7 +185,7 @@ window.BANK["t1b2"] =
    "n": 2,
    "tempat": "Kilang Sel",
    "sk": "2.1 / 2.2 Jenis sel, respirasi sel dan fotosintesis",
-   "lampiran": null,
+   "lampiran": "kitarsel",
    "kadNama": "Sel Saraf",
    "kadEm": "⚡",
    "kadFakta": "Sesetengah sel saraf manusia boleh mencapai panjang lebih satu meter, dari tulang belakang ke hujung kaki.",
@@ -277,7 +279,7 @@ window.BANK["t1b2"] =
     },
     {
      "j": "pilih",
-     "t": "Mengapakah respirasi sel dan fotosintesis dikatakan saling melengkapi?",
+     "t": "Berdasarkan Rajah 1, mengapakah respirasi sel dan fotosintesis dikatakan saling melengkapi?",
      "p": [
       "Kedua-duanya hanya berlaku pada waktu siang",
       "Fotosintesis dan respirasi menghasilkan oksigen",

@@ -17,6 +17,34 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_KAEDAH = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Membuat pemerhatian",
+    "Membuat inferens",
+    "Membentuk hipotesis",
+    "Menjalankan eksperimen",
+    "Mengumpul data",
+    "Membuat kesimpulan"
+  ],
+  "kapsyen": "Rajah 1 · Langkah dalam kaedah saintifik.",
+  "alt": "Rajah aliran menegak enam langkah kaedah saintifik, dari membuat pemerhatian sehingga membuat kesimpulan"
+};
+
+const R_PEMBARIS_H2 = {
+  "jenis": "skala",
+  "alat": "pembaris",
+  "dari": 0,
+  "hingga": 10,
+  "langkah": 1,
+  "bacaan": 6.4,
+  "objek": "pensel",
+  "unit": "cm",
+  "kapsyen": "Rajah 1 · Sebatang pensel diukur dengan pembaris.",
+  "alt": "Pembaris bersenggat sifar hingga sepuluh sentimeter dengan sebatang pensel bermula pada sifar dan berakhir antara enam dan tujuh"
+};
+
 const T_UKUR =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Alat pengukur</th>'+
 '<th>Kuantiti diukur</th><th>Senggatan terkecil</th></tr></thead><tbody>'+
@@ -49,7 +77,7 @@ const T_GULA =
 
 const ARAS = [
 
-{n:1, tempat:"Pintu Makmal", sk:"1.1 / 1.2 Sains dan makmal sains",
+{n:1, tempat:"Pintu Makmal", sk:"1.1 / 1.2 Sains dan makmal sains", lampiran:"kaedah",
  kadNama:"Ahli Sains", kadEm:"\u{1F52C}", kadFakta:"Sains ialah ilmu yang dibina melalui pemerhatian dan penyiasatan yang sistematik terhadap fenomena alam.",
  bosKadNama:"Simbol Bahaya", bosKadEm:"\u{2623}", bosKadFakta:"Setiap botol bahan kimia di makmal berlabel simbol bahaya supaya pengguna tahu cara mengendalikannya dengan selamat.",
  soalan:[
@@ -59,17 +87,17 @@ const ARAS = [
  {j:"pilih",t:"Radas yang digunakan untuk mengukur isi padu cecair dengan agak tepat ialah:",p:["Silinder penyukat","Bikar bermuncung","Kelalang dasar bulat","Tabung uji"],b:0,u:"Bikar dan kelalang hanya ada tanda anggaran isi padu. Tabung uji tiada skala."},
  {j:"pilih",t:"Radas yang digunakan untuk memanaskan bahan di makmal ialah:",p:["Penunu Bunsen","Corong turas","Silinder penyukat","Mangkuk penyejat"],b:0,u:"Penunu Bunsen membekalkan nyalaan untuk pemanasan."},
  {j:"pilih",t:"Simbol bahaya bergambar api menunjukkan bahan itu:",p:["Mudah terbakar","Mengakis","Radioaktif","Beracun"],b:0,u:"Contoh bahan mudah terbakar ialah alkohol dan petrol."},
- {j:"pilih",t:"Asid sulfurik pekat boleh memakan kulit dan kain. Simbol bahaya yang sesuai ialah:",p:["Mengakis","Mudah terbakar","Radioaktif","Mudah meletup"],b:0,u:"Bahan mengakis merosakkan tisu hidup dan bahan lain apabila bersentuhan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, langkah yang dijalankan sebaik sahaja selepas hipotesis dibentuk ialah:",p:["Menjalankan eksperimen","Membuat inferens daripada pemerhatian","Mengumpul data daripada eksperimen","Membuat kesimpulan tentang hipotesis"],b:0,u:"Bahan mengakis merosakkan tisu hidup dan bahan lain apabila bersentuhan."},
  {j:"banyak",t:"Pilih SEMUA peraturan yang betul di dalam makmal sains.",p:["Masuk makmal hanya dengan kebenaran guru","Laporkan segera sebarang kemalangan kepada guru","Ikat rambut yang panjang semasa menggunakan api","Rasa bahan kimia untuk mengenal pastinya","Makan di dalam makmal jika eksperimen lama"],b:[0,1,2],u:"Jangan sekali-kali merasa bahan kimia atau makan di dalam makmal."}],
  bos:{j:"pilih",t:"Simbol bahaya bergambar tengkorak dan tulang bersilang menunjukkan bahan itu:",p:["Toksik atau beracun","Mudah terbakar","Mengakis logam sahaja","Selamat jika dipegang"],b:0,u:"Contoh bahan toksik ialah merkuri."}},
 
-{n:2, tempat:"Rak Radas", sk:"1.2 / 1.3 Keselamatan, kuantiti fizik dan unit",
+{n:2, tempat:"Rak Radas", sk:"1.2 / 1.3 Keselamatan, kuantiti fizik dan unit", lampiran:"ukurpensel",
  kadNama:"Unit S.I.", kadEm:"\u{1F4CF}", kadFakta:"Unit S.I. digunakan di seluruh dunia supaya ukuran seorang ahli sains boleh difahami oleh ahli sains di negara lain.",
  bosKadNama:"Imbuhan", bosKadEm:"\u{1F522}", bosKadFakta:"Imbuhan kilo bermaksud seribu kali. Jadi 1 kilometer ialah 1000 meter dan 1 kilogram ialah 1000 gram.",
  soalan:[
  {j:"pilih",t:"Unit S.I. bagi jisim ialah:",p:["Kilogram (kg)","Gram (g)","Newton (N)","Liter (l)"],b:0,u:"Gram ialah unit jisim juga, tetapi unit S.I.nya kilogram."},
  {j:"pilih",t:"Unit S.I. bagi suhu ialah:",p:["Kelvin (K)","Darjah Celsius (°C)","Joule (J)","Ampere (A)"],b:0,u:"Darjah Celsius biasa digunakan, tetapi unit S.I. suhu ialah kelvin."},
- {j:"pilih",t:"Imbuhan mili (m) bermaksud:",p:["Satu per seribu","Seribu kali","Satu per seratus","Sejuta kali"],b:0,u:"1 milimeter = 0.001 meter."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, panjang pensel itu ialah:",p:["6.4 cm","6.0 cm","7.4 cm","64 cm"],b:0,u:"Hujung pensel berada empat senggatan kecil selepas tanda 6 cm, dan setiap senggatan kecil ialah 0.1 cm."},
  {j:"pilih",t:"Mengapakah unit S.I. penting dalam perdagangan antarabangsa?",p:["Semua negara mengukur dengan unit yang sama","Unit S.I. menjadikan barangan lebih murah","Unit S.I. hanya digunakan oleh ahli sains","Setiap negara boleh menukar nilai unit sendiri"],b:0,u:"Ukuran yang seragam mengelakkan salah faham semasa jual beli."},
  {j:"pilih",t:"Mengapakah kita tidak boleh menghidu gas terus dari mulut tabung uji?",p:["Gas itu mungkin beracun atau merengsa","Gas akan keluar lebih cepat daripada tabung","Hidung akan mencemarkan gas di dalam tabung","Bau gas hanya dapat dikesan dari jauh"],b:0,u:"Kibas gas perlahan ke arah hidung dengan tangan."},
  {j:"pilih",t:"Mengapakah tabung uji dihalakan menjauhi diri dan rakan semasa dipanaskan?",p:["Cecair panas boleh terpercik keluar","Supaya nyalaan api lebih besar","Supaya cecair lebih cepat mendidih","Tabung uji akan pecah jika dihalakan ke arah kita"],b:0,u:"Percikan cecair panas boleh mencederakan muka dan mata."},
@@ -152,6 +180,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta produk atau alat menggunakan konsep ketumpatan dan kaedah saintifik, dengan mengambil kira keselamatan dan kos. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Pengenalan kepada Penyiasatan Saintifik. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ ukur:T_UKUR, blok:T_BLOK, gula:T_GULA },
+  lampiran:{ kaedah:R_KAEDAH, ukurpensel:R_PEMBARIS_H2, ukur:T_UKUR, blok:T_BLOK, gula:T_GULA },
   aras:ARAS
 };

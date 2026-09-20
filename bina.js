@@ -7,6 +7,7 @@
    rosak tidak pernah sampai ke murid. */
 const fs = require("fs");
 const path = require("path");
+const { lukisLampiran } = require("./tools/lukis");
 
 const KKO = ["Mengingat","Memahami","Mengaplikasi","Menganalisis","Menilai","Mereka cipta"];
 
@@ -35,6 +36,15 @@ function semak(bab){
       lihat(a[k], `${di}: medan kad ${k} tiada`));
     if(a.lampiran) lihat(bab.lampiran && bab.lampiran[a.lampiran],
       `${di}: merujuk lampiran "${a.lampiran}" yang tidak wujud`);
+    /* Hentian yang ada rajah mesti ada sekurang-kurangnya satu soalan yang
+       benar-benar merujuknya. Rajah yang tiada soalan bergantung padanya
+       hanyalah hiasan yang melambatkan telefon murid. */
+    const spekL = a.lampiran && bab.lampiran ? bab.lampiran[a.lampiran] : null;
+    if(spekL && typeof spekL === "object"){
+      const semuaQ = (a.soalan || []).concat(a.bos ? [a.bos] : []);
+      lihat(semuaQ.some(q => /\bRajah\b/.test(String(q.t) + " " + String(q.arahan || ""))),
+        `${di}: ada rajah tetapi tiada soalan yang merujuk "Rajah"`);
+    }
     lihat(Array.isArray(a.soalan) && a.soalan.length === 8,
       `${di}: ${a.soalan ? a.soalan.length : 0} soalan, sepatutnya 8`);
     lihat(a.bos, `${di}: tiada soalan bos`);
@@ -156,12 +166,87 @@ function imbang(bab){
   return taburan;
 }
 
+/* Semakan rajah. Rajah gagal secara SENYAP: ia tetap nampak cantik walaupun
+   warnanya lesap dalam tema gelap atau teksnya terlalu kecil untuk dibaca.
+   Jadi setiap rajah diperiksa selepas dijana, bukan dipercayai. */
+function semakRajah(bab){
+  const m = [];
+  const lampiran = bab.lampiran || {};
+  for(const kunci of Object.keys(lampiran)){
+    const spek = lampiran[kunci];
+    if(typeof spek === "string") continue;
+    let html;
+    try { html = lukisLampiran(spek); }
+    catch(e){ m.push(`rajah "${kunci}": ${e.message}`); continue; }
+
+    /* Warna tetap lesap dalam tema gelap. */
+    const tetap = html.match(/(?:fill|stroke)="(#[0-9a-fA-F]{3,8}|rgb[^"]*|black|white)"/g);
+    if(tetap) m.push(`rajah "${kunci}": warna tetap ${tetap[0]}, guna var(--...) sahaja`);
+
+    /* Fon terlalu kecil tidak terbaca pada telefon. */
+    for(const f of html.match(/font-size="([0-9.]+)"/g) || []){
+      const saiz = parseFloat(f.match(/[0-9.]+/)[0]);
+      if(saiz < 11) m.push(`rajah "${kunci}": font-size ${saiz}px, minimum 11px`);
+    }
+
+    /* viewBox jauh lebih lebar daripada kotak rajah pada telefon (lebih
+       kurang 272px) akan mengecilkan semua teks. */
+    const vb = html.match(/viewBox="0 0 ([0-9.]+) ([0-9.]+)"/);
+    if(!vb) m.push(`rajah "${kunci}": tiada viewBox`);
+    else {
+      const lebar = parseFloat(vb[1]), tinggi = parseFloat(vb[2]);
+      if(lebar > 300) m.push(`rajah "${kunci}": viewBox ${lebar} terlalu lebar, teks mengecil pada telefon`);
+      if(tinggi > 420) m.push(`rajah "${kunci}": viewBox tinggi ${tinggi}, murid terpaksa menatal`);
+      /* Tiada teks boleh keluar daripada viewBox. Kedudukan x sahaja tidak
+         cukup: label paksi kanan bermula di dalam kotak tetapi hujungnya
+         boleh terpotong, jadi lebar teks dianggarkan juga (DM Mono, lebar
+         satu aksara lebih kurang 0.6 kali saiz fon). */
+      for(const t of html.match(/<text [^>]*>[^<]*<\/text>/g) || []){
+        const x = parseFloat((t.match(/ x="([-0-9.]+)"/) || [])[1]);
+        const y = parseFloat((t.match(/ y="([-0-9.]+)"/) || [])[1]);
+        const saiz = parseFloat((t.match(/font-size="([0-9.]+)"/) || [])[1]) || 12;
+        const isiTeks = (t.match(/>([^<]*)<\/text>/) || ["", ""])[1];
+        const w = isiTeks.length * saiz * 0.6;
+        const hujung = /text-anchor="middle"/.test(t) ? x + w / 2
+          : /text-anchor="end"/.test(t) ? x : x + w;
+        const mula = /text-anchor="middle"/.test(t) ? x - w / 2
+          : /text-anchor="end"/.test(t) ? x - w : x;
+        if(mula < -1 || hujung > lebar + 1 || y < 0 || y > tinggi)
+          m.push(`rajah "${kunci}": teks "${isiTeks}" menjangkau ${Math.round(mula)}..${Math.round(hujung)} di luar viewBox ${lebar}x${tinggi}`);
+      }
+
+      /* Bentuk juga tidak boleh keluar viewBox: kotak mod kitar pernah
+         terpotong 7px di kiri dan kanan kerana saiznya masih ditetapkan
+         untuk viewBox lama yang lebih lebar. */
+      for(const r of html.match(/<rect [^>]*>/g) || []){
+        const rx = parseFloat((r.match(/ x="([-0-9.]+)"/) || [])[1]);
+        const rw = parseFloat((r.match(/ width="([-0-9.]+)"/) || [])[1]);
+        if(rx < -1 || rx + rw > lebar + 1)
+          m.push(`rajah "${kunci}": kotak ${Math.round(rx)}..${Math.round(rx + rw)} di luar viewBox lebar ${lebar}`);
+      }
+      for(const c of html.match(/<circle [^>]*>/g) || []){
+        const cx = parseFloat((c.match(/cx="([-0-9.]+)"/) || [])[1]);
+        const cr = parseFloat((c.match(/ r="([-0-9.]+)"/) || [])[1]);
+        if(cx - cr < -1 || cx + cr > lebar + 1)
+          m.push(`rajah "${kunci}": bulatan ${Math.round(cx - cr)}..${Math.round(cx + cr)} di luar viewBox lebar ${lebar}`);
+      }
+    }
+
+    if(!/aria-label="[^"]{15,}"/.test(html)) m.push(`rajah "${kunci}": aria-label tiada atau terlalu pendek`);
+    if(!/<figcaption>/.test(html)) m.push(`rajah "${kunci}": tiada kapsyen`);
+    if(!/^Rajah \d/.test(spek.kapsyen || "")) m.push(`rajah "${kunci}": kapsyen mesti bermula "Rajah <n>"`);
+  }
+  return m;
+}
+
 function tulis(bab){
+  const lampiran = {};
+  for(const k of Object.keys(bab.lampiran || {})) lampiran[k] = lukisLampiran(bab.lampiran[k]);
   const keluar = {
     id: bab.id, tingkatan: bab.tingkatan, kod: bab.kod,
     tajuk: bab.tajuk, subtajuk: bab.subtajuk,
     spi: bab.spi, kko: KKO, ulasan: bab.ulasan,
-    lampiran: bab.lampiran || {},
+    lampiran: lampiran,
     aras: bab.aras.map(a => ({
       n: a.n, tempat: a.tempat, sk: a.sk, lampiran: a.lampiran || null,
       kadNama: a.kadNama, kadEm: a.kadEm, kadFakta: a.kadFakta,
@@ -199,6 +284,7 @@ senarai.forEach(id => {
     const butiran = laporan ? [] : null;
     const p = semakPetunjuk(bab, butiran);
     masalah.push(...p.masalah);
+    masalah.push(...semakRajah(bab));
     if(laporan){
       console.log(`\n${id}: jawapan betul paling panjang ${Math.round(100*p.peratus)}%, nisbah purata ${p.purataNisbah.toFixed(2)}`);
       butiran.filter(x => x.nisbah > 1.2 || x.betul > Math.max(...x.lain))

@@ -20,6 +20,34 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_SEL = {
+  "jenis": "struktur",
+  "mod": "label",
+  "tinggiLukis": 150,
+  "bahagian": [
+    { "label": "Dinding sel", "bentuk": "kotak", "x": 50, "y": 50, "l": 94, "t": 94,
+      "bulat": 4, "isi": "hijauLembut", "garis": "hijau", "anchorX": 50, "anchorY": 3 },
+    { "label": "Nukleus", "bentuk": "bulat", "x": 28, "y": 24, "r": 9, "isi": "ungu", "garis": "ungu" },
+    { "label": "Vakuol", "bentuk": "bulat", "x": 52, "y": 56, "r": 24, "isi": "kertas", "garis": "garis2" },
+    { "label": "Kloroplas", "bentuk": "bulat", "x": 24, "y": 76, "r": 7, "isi": "hijau", "garis": "hijau" }
+  ],
+  "kapsyen": "Rajah 1 · Sel tumbuhan (rajah skematik).",
+  "alt": "Rajah skematik sel tumbuhan: dinding sel di luar, nukleus bulat kecil di bahagian atas, vakuol besar di tengah, dan kloroplas kecil di bawah"
+};
+
+const R_KITARSEL = {
+  "jenis": "aliran",
+  "mod": "kitar",
+  "nod": [
+    "Fotosintesis di daun",
+    "Glukosa disimpan",
+    "Respirasi sel",
+    "Tenaga untuk sel"
+  ],
+  "kapsyen": "Rajah 1 · Hubungan fotosintesis dengan respirasi sel.",
+  "alt": "Rajah kitaran empat kotak: fotosintesis di daun, glukosa disimpan, respirasi sel, dan tenaga untuk sel"
+};
+
 const T_SEL =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Sel</th>'+
 '<th>Dinding sel</th><th>Kloroplas</th><th>Vakuol</th><th>Nukleus</th><th>Bentuk</th></tr></thead><tbody>'+
@@ -51,7 +79,7 @@ const T_HIDRILA =
 
 const ARAS = [
 
-{n:1, tempat:"Lensa Mikroskop", sk:"2.1 Sel: struktur dan fungsi",
+{n:1, tempat:"Lensa Mikroskop", sk:"2.1 Sel: struktur dan fungsi", lampiran:"seltumbuhan",
  kadNama:"Sel", kadEm:"\u{1F9EB}", kadFakta:"Badan manusia dewasa dianggarkan mengandungi kira-kira 37 trilion sel.",
  bosKadNama:"Robert Hooke", bosKadEm:"\u{1F52C}", bosKadFakta:"Pada tahun 1665, Robert Hooke memerhati petak-petak kecil dalam gabus dan menamakannya sel.",
  soalan:[
@@ -60,12 +88,12 @@ const ARAS = [
  {j:"pilih",t:"Struktur yang mengawal keluar masuk bahan ke dalam sel ialah:",p:["Membran sel","Dinding sel","Kloroplas","Mitokondria"],b:0,u:"Dinding sel telap sepenuhnya; membran sel yang memilih bahan."},
  {j:"pilih",t:"Struktur yang menjalankan respirasi sel untuk membebaskan tenaga ialah:",p:["Mitokondria","Kloroplas","Nukleus","Vakuol"],b:0,u:"Mitokondria sering digelar 'penjana kuasa' sel."},
  {j:"pilih",t:"Struktur sel tumbuhan yang mengandungi klorofil ialah:",p:["Kloroplas","Mitokondria","Sitoplasma","Vakuol"],b:0,u:"Klorofil menyerap cahaya untuk fotosintesis."},
- {j:"pilih",t:"Pewarna yang digunakan untuk menyediakan slaid sel pipi ialah:",p:["Metilena biru","Larutan iodin","Larutan kanji","Air suling sahaja"],b:0,u:"Sel bawang biasanya diwarnakan dengan larutan iodin."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, struktur yang paling besar dan menyimpan air serta bahan terlarut ialah:",p:["Vakuol","Nukleus di tepi sel","Kloroplas berwarna hijau","Dinding sel di luar"],b:0,u:"Sel bawang biasanya diwarnakan dengan larutan iodin."},
  {j:"pilih",t:"Contoh organisma unisel ialah:",p:["Amoeba sp.","Hydra sp.","Spirogyra sp.","Cendawan tiram"],b:0,u:"Amoeba terdiri daripada satu sel sahaja."},
  {j:"banyak",t:"Pilih SEMUA struktur yang ada pada sel tumbuhan tetapi TIADA pada sel haiwan.",p:["Dinding sel","Kloroplas","Vakuol besar","Nukleus","Membran sel","Mitokondria"],b:[0,1,2],u:"Nukleus, membran sel dan mitokondria ada pada kedua-dua jenis sel."}],
  bos:{j:"susun",t:"Susun tahap organisasi hidupan bermula daripada yang PALING ringkas.",p:["Sel","Tisu","Organ","Sistem","Organisma"],b:[0,1,2,3,4],u:"Contoh: sel otot → tisu otot → jantung → sistem peredaran darah → manusia."}},
 
-{n:2, tempat:"Kilang Sel", sk:"2.1 / 2.2 Jenis sel, respirasi sel dan fotosintesis",
+{n:2, tempat:"Kilang Sel", sk:"2.1 / 2.2 Jenis sel, respirasi sel dan fotosintesis", lampiran:"kitarsel",
  kadNama:"Sel Saraf", kadEm:"\u{26A1}", kadFakta:"Sesetengah sel saraf manusia boleh mencapai panjang lebih satu meter, dari tulang belakang ke hujung kaki.",
  bosKadNama:"Fotosintesis", bosKadEm:"\u{1F33F}", bosKadFakta:"Hampir semua oksigen di atmosfera dihasilkan oleh fotosintesis tumbuhan dan alga.",
  soalan:[
@@ -76,7 +104,7 @@ const ARAS = [
  {j:"pilih",t:"Hasil respirasi sel ialah:",p:["Tenaga, karbon dioksida dan air","Glukosa, oksigen dan cahaya matahari","Oksigen, air dan tenaga","Kanji dan karbon dioksida"],b:0,u:"Glukosa + oksigen → karbon dioksida + air + tenaga."},
  {j:"pilih",t:"Keperluan fotosintesis ialah:",p:["Cahaya, klorofil, karbon dioksida dan air","Oksigen, glukosa, cahaya matahari dan tanah","Karbon dioksida dan oksigen sahaja","Air, oksigen dan klorofil"],b:0,u:"Hasilnya ialah glukosa dan oksigen."},
  {j:"pilih",t:"Sel kanser berbeza daripada sel biasa kerana ia:",p:["Membahagi tanpa kawalan","Tidak mempunyai nukleus","Tidak dapat membahagi langsung","Hanya wujud pada tumbuhan"],b:0,u:"Pembahagian sel yang tidak terkawal membentuk ketumbuhan."},
- {j:"pilih",t:"Mengapakah respirasi sel dan fotosintesis dikatakan saling melengkapi?",p:["Hasil satu proses menjadi bahan proses lain","Kedua-duanya hanya berlaku pada waktu siang","Fotosintesis dan respirasi menghasilkan oksigen","Kedua-duanya berlaku di dalam kloroplas"],b:0,u:"Fotosintesis menghasilkan glukosa dan oksigen yang digunakan dalam respirasi, dan sebaliknya."}],
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah respirasi sel dan fotosintesis dikatakan saling melengkapi?",p:["Hasil satu proses menjadi bahan proses lain","Kedua-duanya hanya berlaku pada waktu siang","Fotosintesis dan respirasi menghasilkan oksigen","Kedua-duanya berlaku di dalam kloroplas"],b:0,u:"Fotosintesis menghasilkan glukosa dan oksigen yang digunakan dalam respirasi, dan sebaliknya."}],
  bos:{j:"banyak",t:"Pilih SEMUA padanan sel dan fungsi yang BETUL.",p:["Sel saraf: menghantar impuls","Sel otot: mengecut untuk pergerakan","Sel pengawal: mengawal bukaan stoma","Sel darah merah: melawan kuman","Sel rerambut akar: menjalankan fotosintesis"],b:[0,1,2],u:"Sel darah putih yang melawan kuman. Sel rerambut akar menyerap air dan tidak mempunyai kloroplas."}},
 
 {n:3, tempat:"Makmal Slaid", sk:"2.1 Mengenal pasti sel haiwan dan sel tumbuhan", lampiran:"sel",
@@ -153,6 +181,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk persembahan atau model yang menerangkan sel, fotosintesis dan respirasi sel secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Sel sebagai Unit Asas Hidupan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ sel:T_SEL, kanji:T_KANJI, hidrila:T_HIDRILA },
+  lampiran:{ seltumbuhan:R_SEL, kitarsel:R_KITARSEL, sel:T_SEL, kanji:T_KANJI, hidrila:T_HIDRILA },
   aras:ARAS
 };

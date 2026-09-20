@@ -208,7 +208,10 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
   .datatable th,.datatable td{padding:7px 8px}
   .datatable th{font-size:9.5px;letter-spacing:.06em}
 }
-.figure{margin-top:14px;border:1px solid var(--line);border-radius:11px;padding:13px;background:var(--surface2)}
+/* margin-inline:0 penting: <figure> mewarisi margin 40px kiri dan kanan
+   daripada pelayar, yang mengecilkan setiap rajah sebanyak 80px dan
+   menjadikan teksnya terlalu kecil untuk dibaca pada telefon. */
+.figure{margin:14px 0 0;border:1px solid var(--line);border-radius:11px;padding:11px;background:var(--surface2)}
 .figure svg{display:block;width:100%;height:auto}
 .figure figcaption{font-size:11.5px;color:var(--ink3);margin-top:7px;font-family:"DM Mono",monospace}
 
@@ -225,8 +228,10 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
 .btn.sm{padding:9px 15px;font-size:13.5px;min-height:40px}
 
 /* pips */
-.pips{display:flex;gap:5px}
-.pip{width:24px;height:5px;border-radius:3px;background:var(--line2)}
+/* Sembilan titik kemajuan melimpah keluar panel pada telefon 320px jika
+   ia tidak dibenarkan mengecut, jadi setiap titik berkongsi ruang. */
+.pips{display:flex;gap:5px;flex:1 1 auto;min-width:0}
+.pip{flex:1 1 0;min-width:0;max-width:24px;height:5px;border-radius:3px;background:var(--line2)}
 .pip.on{background:var(--vena)}
 .pip.ok{background:var(--teal)}
 .pip.no{background:var(--arteri)}
@@ -369,6 +374,7 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
 .api em{font-style:normal;font-size:15px}
 
 @media (max-width:560px){
+  .figure{padding:9px}
   .brand span{display:none}
   .brand b{font-size:15px}
   .topbar-in{min-height:54px;gap:9px}
@@ -760,7 +766,7 @@ body.zon-murid{color:var(--tinta)}
 #murid .opt[data-mark="miss"]{border-style:dashed;border-color:var(--lulus)}
 #murid .opt:disabled{box-shadow:0 3px 0 var(--garis)}
 #murid .pips{gap:6px;flex:1}
-#murid .pip{flex:1;max-width:none;height:12px;border-radius:999px;background:var(--kad2);border:2px solid var(--garis)}
+#murid .pip{flex:1 1 0;min-width:0;max-width:none;height:12px;border-radius:999px;background:var(--kad2);border:2px solid var(--garis)}
 #murid .pip.on{background:var(--dunia)}
 #murid .pip.ok{background:var(--lulus)}
 #murid .pip.no{background:var(--silap)}

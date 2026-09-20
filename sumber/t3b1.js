@@ -17,6 +17,22 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+/* Rajah ditulis sebagai spesifikasi, bukan SVG. bina.js menjananya. */
+
+const R_NEURON = {
+  jenis:"aliran", mod:"turun",
+  nod:["Dendrit","Badan sel","Akson","?"],
+  kapsyen:"Rajah 1 · Arah perjalanan impuls dalam satu neuron.",
+  alt:"Rajah aliran menegak: dendrit, badan sel, akson, dan bahagian terakhir bertanda soal"
+};
+
+const R_REFLEKS = {
+  jenis:"aliran", mod:"turun",
+  nod:["Reseptor kulit","Neuron deria","Saraf tunjang","Neuron motor","Otot lengan"],
+  kapsyen:"Rajah 1 · Laluan impuls apabila tangan menyentuh objek panas.",
+  alt:"Rajah aliran menegak laluan impuls dari reseptor kulit ke otot lengan melalui saraf tunjang, tanpa melalui otak"
+};
+
 const T_PEMBARIS =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Murid</th>'+
 '<th class="n">Cubaan 1 (cm)</th><th class="n">Cubaan 2 (cm)</th><th class="n">Cubaan 3 (cm)</th>'+
@@ -39,7 +55,7 @@ const T_DERIA =
 
 const ARAS = [
 
-{n:1, tempat:"Reseptor", sk:"1.1 / 1.2 Sistem saraf dan organ deria",
+{n:1, tempat:"Reseptor", sk:"1.1 / 1.2 Sistem saraf dan organ deria", lampiran:"neuron",
  kadNama:"Sel Rod", kadEm:"\u{1F441}", kadFakta:"Retina manusia mengandungi kira-kira 120 juta sel rod, dan ia berfungsi walaupun dalam cahaya yang hampir gelap.",
  bosKadNama:"Neuron", bosKadEm:"\u{1FA7B}", bosKadFakta:"Impuls saraf bergerak sehingga 120 meter sesaat, iaitu lebih laju daripada kereta di lebuh raya.",
  soalan:[
@@ -48,16 +64,16 @@ const ARAS = [
  {j:"pilih",t:"Bahagian mata yang mengawal jumlah cahaya yang masuk ialah:",p:["Iris","Retina","Kornea","Saraf optik"],b:0,u:"Iris mengubah saiz pupil mengikut keamatan cahaya."},
  {j:"susun",t:"Susun laluan impuls dalam tindakan terkawal mengikut urutan yang betul.",p:["Reseptor","Neuron deria","Otak","Neuron motor","Efektor"],b:[0,1,2,3,4],u:"Dalam tindakan terkawal, otak yang membuat keputusan sebelum arahan dihantar ke efektor."},
  {j:"pilih",t:"Otot dan kelenjar yang bertindak balas terhadap arahan saraf dipanggil:",p:["Efektor","Reseptor","Neuron perantara","Rangsangan"],b:0,u:"Reseptor mengesan, efektor bertindak."},
- {j:"pilih",t:"Tunas rasa yang mengesan rasa umami terdapat pada:",p:["Lidah","Hidung","Kulit","Telinga"],b:0,u:"Umami ialah rasa kelima selain manis, masin, masam dan pahit."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bahagian neuron bertanda ? menghantar impuls kepada neuron seterusnya. Bahagian itu ialah:",p:["Hujung akson","Salut mielin yang membalut akson","Nukleus di dalam badan sel neuron","Dendrit yang bercabang halus"],b:0,u:"Impuls bergerak satu arah sahaja: dendrit menerima, akson membawa, hujung akson menghantar."},
  {j:"pilih",t:"Gerak balas tumbuhan terhadap rangsangan cahaya dipanggil:",p:["Fototropisme","Geotropisme","Hidrotropisme","Tigmotropisme"],b:0,u:"Foto bermaksud cahaya, tropisme bermaksud gerak balas berarah."},
  {j:"pilih",t:"Bahagian telinga yang menukar getaran kepada impuls saraf ialah:",p:["Koklea","Gegendang telinga","Salur telinga","Tulang martil"],b:0,u:"Koklea berbentuk lingkaran dan mengandungi sel rambut deria."}],
  bos:{j:"banyak",t:"Pilih SEMUA yang merupakan organ deria manusia.",p:["Mata","Telinga","Hidung","Kulit","Lidah","Peparu","Jantung"],b:[0,1,2,3,4],u:"Peparu dan jantung ialah organ, tetapi ia tidak mengesan rangsangan dari persekitaran."}},
 
-{n:2, tempat:"Saraf Deria", sk:"1.1 / 1.2 Mekanisme gerak balas",
+{n:2, tempat:"Saraf Deria", sk:"1.1 / 1.2 Mekanisme gerak balas", lampiran:"refleks",
  kadNama:"Tindakan Refleks", kadEm:"\u{26A1}", kadFakta:"Tindakan refleks tidak melalui otak, jadi ia berlaku dalam masa kurang seperlima saat.",
  bosKadNama:"Gerak Balas Nastik", bosKadEm:"\u{1F33F}", bosKadFakta:"Daun semalu menguncup dalam masa satu hingga dua saat selepas disentuh, tanpa mengira arah sentuhan itu.",
  soalan:[
- {j:"pilih",t:"Mengapakah tindakan luar kawal berlaku lebih pantas daripada tindakan terkawal?",p:["Impuls diproses di saraf tunjang tanpa perlu sampai ke otak","Impuls bergerak melalui salur darah yang lebih laju daripada saraf","Otot mengecut dahulu, kemudian barulah impuls dihantar ke otak","Reseptor menghantar impuls terus kepada efektor tanpa sebarang neuron"],b:0,u:"Laluan yang lebih pendek bermakna masa yang lebih singkat."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah tindakan luar kawal berlaku lebih pantas daripada tindakan terkawal?",p:["Impuls diproses di saraf tunjang tanpa perlu sampai ke otak","Impuls bergerak melalui salur darah yang lebih laju daripada saraf","Otot mengecut dahulu, kemudian barulah impuls dihantar ke otak","Reseptor menghantar impuls terus kepada efektor tanpa sebarang neuron"],b:0,u:"Laluan yang lebih pendek bermakna masa yang lebih singkat."},
  {j:"susun",t:"Susun mekanisme pendengaran mengikut urutan yang betul.",p:["Bunyi masuk melalui salur telinga","Gegendang telinga bergetar","Tulang telinga tengah menguatkan getaran","Koklea menukar getaran kepada impuls","Saraf auditori membawa impuls ke otak"],b:[0,1,2,3,4],u:"Getaran menjadi impuls hanya apabila sampai di koklea."},
  {j:"pilih",t:"Mengapakah manusia mempunyai dua mata di hadapan kepala?",p:["Supaya medan penglihatan bertindih dan memberi persepsi kedalaman","Supaya dapat melihat ke belakang tanpa perlu memusingkan kepala","Supaya satu mata boleh berehat sementara mata yang satu lagi bekerja","Supaya setiap mata dapat mengesan warna berbeza pada masa yang sama"],b:0,u:"Ini dipanggil penglihatan stereoskopik, biasa pada haiwan pemangsa."},
  {j:"pilih",t:"Apakah fungsi kanta mata?",p:["Memfokuskan cahaya supaya imej jatuh tepat pada retina","Menukarkan cahaya kepada impuls saraf untuk dihantar ke otak","Mengawal saiz pupil mengikut keamatan cahaya yang masuk","Melindungi retina daripada habuk dan jangkitan kuman"],b:0,u:"Kanta berubah bentuk untuk memfokus objek dekat dan jauh."},
@@ -142,6 +158,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta penyelesaian yang praktikal untuk membantu rakan yang mengalami masalah deria, lengkap dengan pertimbangan kos dan penerimaan sosial dalam kelas. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Rangsangan dan Gerak Balas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ pembaris:T_PEMBARIS, deria:T_DERIA },
+  lampiran:{ neuron:R_NEURON, refleks:R_REFLEKS, pembaris:T_PEMBARIS, deria:T_DERIA },
   aras:ARAS
 };

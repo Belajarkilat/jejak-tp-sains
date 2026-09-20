@@ -13,3 +13,6 @@ _bina-bank.js
 
 # sandaran semasa menyunting kandungan
 sumber/_*.js
+_dbg.html
+_galeri.html
+.playwright-mcp/
