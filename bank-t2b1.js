@@ -39,6 +39,8 @@ window.BANK["t2b1"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Biodiversiti. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "vertebrat": "<figure class=\"figure\"><svg viewBox=\"0 0 260 178\" role=\"img\" aria-label=\"Carta pengelasan vertebrat kepada mamalia dengan contoh kelawar, reptilia dengan contoh penyu, dan amfibia dengan contoh katak\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"92\" y=\"4\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Vertebrat</text><rect x=\"6\" y=\"72\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"44\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Mamalia</text><rect x=\"92\" y=\"72\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Reptilia</text><rect x=\"178\" y=\"72\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"216\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Amfibia</text><rect x=\"6\" y=\"140\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"44\" y=\"161.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Kelawar</text><rect x=\"92\" y=\"140\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"161.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Penyu</text><rect x=\"178\" y=\"140\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"216\" y=\"161.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Katak</text><line x1=\"98.6\" y1=\"45.8\" x2=\"78.5\" y2=\"61.7\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"130\" y1=\"40\" x2=\"130\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"161.4\" y1=\"45.8\" x2=\"181.5\" y2=\"61.7\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"44\" y1=\"108\" x2=\"44\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"130\" y1=\"108\" x2=\"130\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"216\" y1=\"108\" x2=\"216\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line></svg><figcaption>Rajah 1 · Tiga kumpulan vertebrat dengan satu contoh setiap satu.</figcaption></figure>",
+  "ancaman": "<figure class=\"figure\"><svg viewBox=\"0 0 260 210\" role=\"img\" aria-label=\"Rajah aliran menegak: pemburuan haram menyebabkan bilangan spesies berkurang, rantai makanan terputus, dan ekosistem hilang keseimbangan\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Pemburuan haram</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Bilangan spesies berkurang</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Rantai makanan terputus</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Ekosistem hilang keseimbangan</text></svg><figcaption>Rajah 1 · Kesan berantai pemburuan haram.</figcaption></figure>",
   "kekunci": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Langkah</th><th>Soalan</th><th>Ya</th><th>Tidak</th></tr></thead><tbody><tr><td>1</td><td>Mempunyai tulang belakang?</td><td>Pergi ke 2</td><td>Pergi ke 4</td></tr><tr><td>2</td><td>Mempunyai bulu pelepah?</td><td>P</td><td>Pergi ke 3</td></tr><tr><td>3</td><td>Menyusukan anak?</td><td>Q</td><td>R</td></tr><tr><td>4</td><td>Mempunyai tiga pasang kaki?</td><td>S</td><td>T</td></tr></tbody></table></div><p class=\"qnote\">Kekunci dikotomi untuk mengenal pasti lima haiwan P, Q, R, S dan T yang ditemui semasa lawatan ke Taman Negara.</p>",
   "spesies": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Kawasan</th><th>Jenis kawasan</th><th class=\"n\">Spesies burung</th><th class=\"n\">Spesies pokok</th><th class=\"n\">Suhu purata (&deg;C)</th></tr></thead><tbody><tr><td>A</td><td>Hutan hujan asli</td><td class=\"n\">120</td><td class=\"n\">210</td><td class=\"n\">25</td></tr><tr><td>B</td><td>Hutan dibalak 10 tahun lalu</td><td class=\"n\">65</td><td class=\"n\">90</td><td class=\"n\">27</td></tr><tr><td>C</td><td>Ladang kelapa sawit</td><td class=\"n\">18</td><td class=\"n\">3</td><td class=\"n\">29</td></tr><tr><td>D</td><td>Kawasan perumahan</td><td class=\"n\">12</td><td class=\"n\">15</td><td class=\"n\">31</td></tr></tbody></table></div><p class=\"qnote\">Tinjauan di empat kawasan yang sama luas dalam satu daerah. Data rekaan.</p>",
   "pulihara": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Pilihan</th><th class=\"n\">Kos setahun (RM juta)</th><th>Kesan kepada harimau</th><th>Kesan kepada penduduk</th></tr></thead><tbody><tr><td>1. Rondaan anti-pemburuan haram</td><td class=\"n\">3</td><td>Kurang jerat dan pemburuan</td><td>Peluang kerja sebagai renjer</td></tr><tr><td>2. Koridor hutan antara dua hutan simpan</td><td class=\"n\">5</td><td>Kawasan jelajah lebih luas</td><td>Sebahagian tanah perlu dipindah milik</td></tr><tr><td>3. Pusat pembiakan dalam kurungan</td><td class=\"n\">4</td><td>Bilangan bertambah di pusat sahaja</td><td>Tarikan pelancong</td></tr><tr><td>4. Pagar elektrik di sekeliling kampung</td><td class=\"n\">1</td><td>Kurang konflik dengan manusia</td><td>Ternakan lebih selamat</td></tr></tbody></table></div><p class=\"qnote\">Pilihan untuk memulihara Harimau Malaya di sebuah negeri. Harimau Malaya disenaraikan sebagai terancam kritikal. Data kos rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t2b1"] =
    "n": 1,
    "tempat": "Pintu Taman Negara",
    "sk": "1.1 / 1.2 Biodiversiti dan kumpulan organisma",
-   "lampiran": null,
+   "lampiran": "vertebrat",
    "kadNama": "Mega Biodiversiti",
    "kadEm": "🌿",
    "kadFakta": "Malaysia ialah salah satu daripada 12 negara mega biodiversiti di dunia.",
@@ -130,15 +132,15 @@ window.BANK["t2b1"] =
     },
     {
      "j": "pilih",
-     "t": "Ikan paus dikelaskan sebagai:",
+     "t": "Berdasarkan Rajah 1, kelawar tergolong dalam kumpulan:",
      "p": [
-      "Ikan",
       "Reptilia",
+      "Amfibia",
       "Mamalia",
-      "Amfibia"
+      "Burung"
      ],
      "b": 2,
-     "u": "Ikan paus bernafas dengan peparu dan menyusukan anaknya."
+     "u": "Carta menunjukkan kelawar di bawah mamalia kerana ia menyusukan anaknya."
     },
     {
      "j": "banyak",
@@ -175,7 +177,7 @@ window.BANK["t2b1"] =
    "n": 2,
    "tempat": "Jejantas Kanopi",
    "sk": "1.1 / 1.2 Ciri kumpulan taksonomi dan pengurusan biodiversiti",
-   "lampiran": null,
+   "lampiran": "ancaman",
    "kadNama": "Kera Belanda",
    "kadEm": "🐒",
    "kadFakta": "Monyet Belanda (bekantan) berhidung panjang ialah spesies endemik Borneo yang hidup di hutan paya bakau dan tepi sungai.",
@@ -221,7 +223,7 @@ window.BANK["t2b1"] =
     },
     {
      "j": "pilih",
-     "t": "Bagaimanakah pemburuan haram menjejaskan biodiversiti?",
+     "t": "Berdasarkan Rajah 1, bagaimanakah pemburuan haram menjejaskan biodiversiti?",
      "p": [
       "Spesies baharu terbentuk dengan cepat",
       "Hutan menjadi lebih luas dan subur",

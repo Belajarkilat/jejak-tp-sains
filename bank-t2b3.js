@@ -39,6 +39,8 @@ window.BANK["t2b3"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Nutrisi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "hasilcerna": "<figure class=\"figure\"><svg viewBox=\"0 0 260 178\" role=\"img\" aria-label=\"Tiga baris: karbohidrat menjadi glukosa, protein menjadi asid amino, lemak menjadi asid lemak dan gliserol\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Karbohidrat</text><rect x=\"135\" y=\"4\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Glukosa</text><rect x=\"6\" y=\"72\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Protein</text><rect x=\"135\" y=\"72\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Asid amino</text><rect x=\"6\" y=\"140\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"161.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Lemak</text><rect x=\"135\" y=\"140\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"153.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Asid lemak &amp;</text><text x=\"194.5\" y=\"168.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">gliserol</text><line x1=\"127\" y1=\"21\" x2=\"129\" y2=\"21\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"127\" y1=\"89\" x2=\"129\" y2=\"89\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"127\" y1=\"157\" x2=\"129\" y2=\"157\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line></svg><figcaption>Rajah 1 · Hasil akhir pencernaan bagi tiga kelas makanan.</figcaption></figure>",
+  "hempedu": "<figure class=\"figure\"><svg viewBox=\"0 0 260 266\" role=\"img\" aria-label=\"Rajah aliran menegak: titisan lemak besar dipecahkan oleh hempedu menjadi banyak titisan halus, kemudian enzim lipase menghasilkan asid lemak dan gliserol\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Titisan lemak besar</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Hempedu mengemulsikannya</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Banyak titisan lemak halus</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Enzim lipase bertindak</text><line x1=\"130\" y1=\"209\" x2=\"130\" y2=\"224\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"228\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"249.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Asid lemak dan gliserol</text></svg><figcaption>Rajah 1 · Peranan hempedu dalam pencernaan lemak.</figcaption></figure>",
   "uji": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Sampel</th><th>Larutan iodin</th><th>Larutan Benedict (dipanaskan)</th><th>Ujian alkohol-emulsi</th></tr></thead><tbody><tr><td>W</td><td>Biru tua</td><td>Kekal biru</td><td>Jernih</td></tr><tr><td>X</td><td>Perang</td><td>Mendakan merah bata</td><td>Jernih</td></tr><tr><td>Y</td><td>Perang</td><td>Kekal biru</td><td>Emulsi putih keruh</td></tr><tr><td>Z</td><td>Biru tua</td><td>Mendakan merah bata</td><td>Jernih</td></tr></tbody></table></div><p class=\"qnote\">Keputusan ujian makanan bagi empat sampel. Warna asal larutan iodin ialah perang dan larutan Benedict ialah biru.</p>",
   "liur": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Tabung</th><th>Kandungan</th><th class=\"n\">Suhu (&deg;C)</th><th>Ujian iodin selepas 20 minit</th></tr></thead><tbody><tr><td>P</td><td>Larutan kanji + air liur</td><td class=\"n\">37</td><td>Perang (tiada kanji)</td></tr><tr><td>Q</td><td>Larutan kanji + air suling</td><td class=\"n\">37</td><td>Biru tua</td></tr><tr><td>R</td><td>Larutan kanji + air liur</td><td class=\"n\">5</td><td>Biru tua</td></tr><tr><td>S</td><td>Larutan kanji + air liur yang telah dididih</td><td class=\"n\">37</td><td>Biru tua</td></tr></tbody></table></div><p class=\"qnote\">Air liur mengandungi enzim amilase. Mendidih memusnahkan enzim.</p>",
   "menu": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Makanan atau minuman</th><th class=\"n\">Tenaga (kcal)</th><th>Kandungan utama</th></tr></thead><tbody><tr><td>Nasi lemak biasa</td><td class=\"n\">400</td><td>Karbohidrat, lemak</td></tr><tr><td>Roti canai 2 keping</td><td class=\"n\">600</td><td>Karbohidrat, lemak</td></tr><tr><td>Nasi putih, ikan bakar dan sayur</td><td class=\"n\">550</td><td>Karbohidrat, protein, serat</td></tr><tr><td>Teh tarik</td><td class=\"n\">150</td><td>Gula, lemak</td></tr><tr><td>Air kosong</td><td class=\"n\">0</td><td>Air</td></tr><tr><td>Sebiji pisang</td><td class=\"n\">100</td><td>Karbohidrat, serat, kalium</td></tr></tbody></table></div><p class=\"qnote\">Nilai anggaran. Keperluan tenaga harian remaja berumur 14 tahun yang aktif adalah sekitar 2000 hingga 2400 kcal.</p>"
@@ -48,7 +50,7 @@ window.BANK["t2b3"] =
    "n": 1,
    "tempat": "Pasar Tani",
    "sk": "3.1 / 3.3 Kelas makanan dan sistem pencernaan",
-   "lampiran": null,
+   "lampiran": "hasilcerna",
    "kadNama": "Tujuh Kelas Makanan",
    "kadEm": "🥗",
    "kadFakta": "Tujuh kelas makanan ialah karbohidrat, protein, lemak, vitamin, mineral, pelawas dan air.",
@@ -142,7 +144,7 @@ window.BANK["t2b3"] =
     },
     {
      "j": "banyak",
-     "t": "Pilih SEMUA hasil akhir pencernaan.",
+     "t": "Berdasarkan Rajah 1, pilih SEMUA hasil akhir pencernaan.",
      "p": [
       "Glukosa",
       "Asid amino",
@@ -175,7 +177,7 @@ window.BANK["t2b3"] =
    "n": 2,
    "tempat": "Dapur Sekolah",
    "sk": "3.2 / 3.3 / 3.4 Gizi seimbang, pencernaan dan penyahtinjaan",
-   "lampiran": null,
+   "lampiran": "hempedu",
    "kadNama": "Pinggan Sihat",
    "kadEm": "🍽",
    "kadFakta": "Pinggan Sihat Malaysia: separuh sayur dan buah, suku nasi atau karbohidrat, suku protein.",
@@ -209,7 +211,7 @@ window.BANK["t2b3"] =
     },
     {
      "j": "pilih",
-     "t": "Mengapakah hempedu membantu pencernaan lemak?",
+     "t": "Berdasarkan Rajah 1, mengapakah hempedu membantu pencernaan lemak?",
      "p": [
       "Ia enzim yang menguraikan lemak kepada glukosa",
       "Ia menukar lemak kepada protein",

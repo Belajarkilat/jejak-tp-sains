@@ -16,6 +16,96 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_VERTEBRAT = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "v",
+      "label": "Vertebrat",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "m",
+      "label": "Mamalia",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "r",
+      "label": "Reptilia",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "a",
+      "label": "Amfibia",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "id": "m2",
+      "label": "Kelawar",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "r2",
+      "label": "Penyu",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "id": "a2",
+      "label": "Katak",
+      "x": 2,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "v",
+      "m"
+    ],
+    [
+      "v",
+      "r"
+    ],
+    [
+      "v",
+      "a"
+    ],
+    [
+      "m",
+      "m2"
+    ],
+    [
+      "r",
+      "r2"
+    ],
+    [
+      "a",
+      "a2"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Tiga kumpulan vertebrat dengan satu contoh setiap satu.",
+  "alt": "Carta pengelasan vertebrat kepada mamalia dengan contoh kelawar, reptilia dengan contoh penyu, dan amfibia dengan contoh katak"
+};
+
+const R_ANCAM = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Pemburuan haram",
+    "Bilangan spesies berkurang",
+    "Rantai makanan terputus",
+    "Ekosistem hilang keseimbangan"
+  ],
+  "kapsyen": "Rajah 1 · Kesan berantai pemburuan haram.",
+  "alt": "Rajah aliran menegak: pemburuan haram menyebabkan bilangan spesies berkurang, rantai makanan terputus, dan ekosistem hilang keseimbangan"
+};
+
 const T_KEKUNCI =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Langkah</th>'+
 '<th>Soalan</th><th>Ya</th><th>Tidak</th></tr></thead><tbody>'+
@@ -47,7 +137,7 @@ const T_PULIHARA =
 
 const ARAS = [
 
-{n:1, tempat:"Pintu Taman Negara", sk:"1.1 / 1.2 Biodiversiti dan kumpulan organisma",
+{n:1, tempat:"Pintu Taman Negara", sk:"1.1 / 1.2 Biodiversiti dan kumpulan organisma", lampiran:"vertebrat",
  kadNama:"Mega Biodiversiti", kadEm:"\u{1F33F}", kadFakta:"Malaysia ialah salah satu daripada 12 negara mega biodiversiti di dunia.",
  bosKadNama:"Rafflesia", bosKadEm:"\u{1F33A}", bosKadFakta:"Rafflesia mempunyai bunga terbesar di dunia dan boleh ditemui di hutan Sabah, Sarawak dan Semenanjung.",
  soalan:[
@@ -57,18 +147,18 @@ const ARAS = [
  {j:"pilih",t:"Tumbuhan yang mempunyai urat daun selari dan akar serabut ialah:",p:["Monokotiledon","Dikotiledon","Paku-pakis","Lumut"],b:0,u:"Contohnya padi, jagung dan rumput."},
  {j:"pilih",t:"Paku-pakis dikelaskan sebagai tumbuhan:",p:["Tidak berbunga","Berbunga","Monokotiledon","Dikotiledon"],b:0,u:"Paku-pakis membiak melalui spora."},
  {j:"pilih",t:"Cendawan tidak dikelaskan sebagai tumbuhan kerana ia:",p:["Tiada klorofil","Tiada sel","Bergerak bebas","Bertulang belakang"],b:0,u:"Fungi mendapatkan makanan daripada bahan organik."},
- {j:"pilih",t:"Ikan paus dikelaskan sebagai:",p:["Mamalia","Ikan","Reptilia","Amfibia"],b:0,u:"Ikan paus bernafas dengan peparu dan menyusukan anaknya."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, kelawar tergolong dalam kumpulan:",p:["Mamalia","Reptilia","Amfibia","Burung"],b:0,u:"Carta menunjukkan kelawar di bawah mamalia kerana ia menyusukan anaknya."},
  {j:"banyak",t:"Pilih SEMUA kepentingan biodiversiti kepada manusia.",p:["Sumber makanan","Sumber ubat-ubatan","Tarikan pelancongan","Punca banjir kilat","Sumber jerebu"],b:[0,1,2],u:"Hutan yang pelbagai sebenarnya membantu mengurangkan banjir."}],
  bos:{j:"pilih",t:"Spesies yang hanya ditemui secara semula jadi di satu kawasan tertentu dipanggil spesies:",p:["Endemik","Invasif","Pupus","Peliharaan"],b:0,u:"Contohnya monyet Belanda yang endemik di Borneo."}},
 
-{n:2, tempat:"Jejantas Kanopi", sk:"1.1 / 1.2 Ciri kumpulan taksonomi dan pengurusan biodiversiti",
+{n:2, tempat:"Jejantas Kanopi", sk:"1.1 / 1.2 Ciri kumpulan taksonomi dan pengurusan biodiversiti", lampiran:"ancaman",
  kadNama:"Kera Belanda", kadEm:"\u{1F412}", kadFakta:"Monyet Belanda (bekantan) berhidung panjang ialah spesies endemik Borneo yang hidup di hutan paya bakau dan tepi sungai.",
  bosKadNama:"Kekunci Dikotomi", bosKadEm:"\u{1F511}", bosKadFakta:"Kekunci dikotomi mengenal pasti organisma melalui siri soalan yang setiap satunya ada dua pilihan jawapan.",
  soalan:[
  {j:"pilih",t:"Mengapakah kelawar dikelaskan sebagai mamalia walaupun boleh terbang?",p:["Ia menyusukan anak dan berbulu roma","Ia mempunyai bulu pelepah dan paruh","Ia bertelur di dalam sarang di pokok","Ia bernafas dengan insang semasa kecil"],b:0,u:"Kebolehan terbang bukan ciri yang menentukan kumpulan."},
  {j:"pilih",t:"Penyu dikelaskan sebagai reptilia kerana ia:",p:["Bersisik kering dan bertelur bercangkerang","Hidup di laut dan pandai berenang","Bernafas dengan insang di dalam air","Menyusukan anaknya selepas menetas"],b:0,u:"Penyu bernafas dengan peparu dan naik ke pantai untuk bertelur."},
  {j:"pilih",t:"Mengapakah kekunci dikotomi berguna kepada ahli sains?",p:["Mengenal pasti organisma secara teratur","Mengira bilangan organisma di hutan","Membiakkan organisma yang terancam","Menukar organisma kepada spesies lain"],b:0,u:"Setiap langkah menyingkirkan kumpulan yang tidak sepadan."},
- {j:"pilih",t:"Bagaimanakah pemburuan haram menjejaskan biodiversiti?",p:["Bilangan spesies berkurang dan boleh pupus","Spesies baharu terbentuk dengan cepat","Hutan menjadi lebih luas dan subur","Tiada kesan kerana haiwan cepat membiak"],b:0,u:"Harimau Malaya dan tenggiling terancam akibat pemburuan haram."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bagaimanakah pemburuan haram menjejaskan biodiversiti?",p:["Bilangan spesies berkurang dan boleh pupus","Spesies baharu terbentuk dengan cepat","Hutan menjadi lebih luas dan subur","Tiada kesan kerana haiwan cepat membiak"],b:0,u:"Harimau Malaya dan tenggiling terancam akibat pemburuan haram."},
  {j:"pilih",t:"Mengapakah spesies asing invasif mengancam biodiversiti tempatan?",p:["Ia bersaing dan menggantikan spesies tempatan","Ia membantu spesies tempatan membiak lebih cepat","Ia hanya hidup di dalam zoo dan taman","Ia membersihkan sungai daripada semua sampah"],b:0,u:"Contohnya ikan bandaraya yang merebak dalam sungai-sungai di Malaysia."},
  {j:"pilih",t:"Tujuan utama taman negara ialah:",p:["Memulihara habitat dan spesies","Membina kawasan perumahan","Membuka ladang baharu","Membalak kayu balak"],b:0,u:"Taman negara juga digunakan untuk penyelidikan dan eko-pelancongan."},
  {j:"pilih",t:"Beza utama monokotiledon dengan dikotiledon ialah bilangan:",p:["Kotiledon dalam biji benih","Kelopak bunga yang berwarna","Daun pada setiap dahan","Akar yang tumbuh dari batang"],b:0,u:"Mono = satu, di = dua."},
@@ -149,6 +239,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta projek biodiversiti yang kreatif, praktikal dan mengambil kira komuniti. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Biodiversiti. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ kekunci:T_KEKUNCI, spesies:T_SPESIES, pulihara:T_PULIHARA },
+  lampiran:{ vertebrat:R_VERTEBRAT, ancaman:R_ANCAM, kekunci:T_KEKUNCI, spesies:T_SPESIES, pulihara:T_PULIHARA },
   aras:ARAS
 };

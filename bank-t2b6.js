@@ -39,6 +39,8 @@ window.BANK["t2b6"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Asid dan Alkali. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "skalaph": "<figure class=\"figure\"><svg viewBox=\"0 0 260 190\" role=\"img\" aria-label=\"Graf palang nilai pH: cuka 3, susu 6, air 7, sabun 10\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><line x1=\"40\" y1=\"150\" x2=\"248\" y2=\"150\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"154\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">0</text><line x1=\"40\" y1=\"130.9\" x2=\"248\" y2=\"130.9\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"134.9\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">2</text><line x1=\"40\" y1=\"111.7\" x2=\"248\" y2=\"111.7\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"115.7\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">4</text><line x1=\"40\" y1=\"92.6\" x2=\"248\" y2=\"92.6\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"96.6\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">6</text><line x1=\"40\" y1=\"73.4\" x2=\"248\" y2=\"73.4\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"77.4\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">8</text><line x1=\"40\" y1=\"54.3\" x2=\"248\" y2=\"54.3\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"58.3\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">10</text><line x1=\"40\" y1=\"35.1\" x2=\"248\" y2=\"35.1\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"39.1\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">12</text><line x1=\"40\" y1=\"16\" x2=\"248\" y2=\"16\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"20\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">14</text><rect x=\"50.4\" y=\"121.3\" width=\"31.2\" height=\"28.7\" rx=\"3\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></rect><text x=\"66\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"middle\">Cuka</text><rect x=\"102.4\" y=\"92.6\" width=\"31.2\" height=\"57.4\" rx=\"3\" fill=\"var(--amber)\" stroke=\"var(--amber)\" stroke-width=\"1.5\"></rect><text x=\"118\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"middle\">Susu</text><rect x=\"154.4\" y=\"83\" width=\"31.2\" height=\"67\" rx=\"3\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></rect><text x=\"170\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"middle\">Air</text><rect x=\"206.4\" y=\"54.3\" width=\"31.2\" height=\"95.7\" rx=\"3\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></rect><text x=\"222\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"middle\">Sabun</text><line x1=\"40\" y1=\"16\" x2=\"40\" y2=\"150\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><line x1=\"40\" y1=\"150\" x2=\"248\" y2=\"150\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><text x=\"144\" y=\"181\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Nilai pH bahan di dapur</text></svg><figcaption>Rajah 1 · Nilai pH empat bahan yang biasa ada di dapur.</figcaption></figure>",
+  "neutral": "<figure class=\"figure\"><svg viewBox=\"0 0 260 225\" role=\"img\" aria-label=\"Rajah aliran menegak: asid berlebihan dalam perut, alkali dalam ubat gastrik ditambah, garam dan air terbentuk, kandungan perut menjadi neutral\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Asid berlebihan dalam perut</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"49\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Alkali dalam ubat gastrik</text><text x=\"130\" y=\"96.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">ditambah</text><line x1=\"130\" y1=\"112\" x2=\"130\" y2=\"127\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"131\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"152.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Garam dan air terbentuk</text><line x1=\"130\" y1=\"168\" x2=\"130\" y2=\"183\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"187\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"208.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Kandungan perut jadi neutral</text></svg><figcaption>Rajah 1 · Peneutralan asid perut oleh ubat gastrik.</figcaption></figure>",
   "ph": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Bahan</th><th class=\"n\">Nilai pH</th><th>Warna kertas litmus biru</th></tr></thead><tbody><tr><td>Jus limau</td><td class=\"n\">2</td><td>Merah</td></tr><tr><td>Cuka</td><td class=\"n\">3</td><td>Merah</td></tr><tr><td>Air suling</td><td class=\"n\">7</td><td>Biru</td></tr><tr><td>Ubat gigi</td><td class=\"n\">9</td><td>Biru</td></tr><tr><td>Air sabun</td><td class=\"n\">10</td><td>Biru</td></tr><tr><td>Pencuci longkang</td><td class=\"n\">14</td><td>Biru</td></tr></tbody></table></div><p class=\"qnote\">Nilai pH diukur dengan meter pH. Kertas litmus biru bertukar merah dalam asid.</p>",
   "titrat": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th class=\"n\">Isi padu natrium hidroksida ditambah (ml)</th><th class=\"n\">0</th><th class=\"n\">5</th><th class=\"n\">10</th><th class=\"n\">15</th><th class=\"n\">20</th><th class=\"n\">25</th></tr></thead><tbody><tr><td>pH campuran</td><td class=\"n\">1</td><td class=\"n\">1.5</td><td class=\"n\">2</td><td class=\"n\">3</td><td class=\"n\">7</td><td class=\"n\">12</td></tr><tr><td>Warna fenolftalein</td><td>Tidak berwarna</td><td>Tidak berwarna</td><td>Tidak berwarna</td><td>Tidak berwarna</td><td>Tidak berwarna</td><td>Merah jambu</td></tr></tbody></table></div><p class=\"qnote\">Larutan natrium hidroksida ditambah sedikit demi sedikit dari buret ke dalam 20 ml asid hidroklorik. Fenolftalein tidak berwarna dalam asid dan larutan neutral, dan merah jambu dalam alkali.</p>",
   "tanah": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Petak</th><th class=\"n\">pH tanah</th><th>Rawatan</th><th class=\"n\">Hasil sayur (kg)</th></tr></thead><tbody><tr><td>1</td><td class=\"n\">4.5</td><td>Tiada</td><td class=\"n\">12</td></tr><tr><td>2</td><td class=\"n\">4.5 &rarr; 6.5</td><td>Kapur pertanian</td><td class=\"n\">30</td></tr><tr><td>3</td><td class=\"n\">4.5 &rarr; 8.5</td><td>Kapur pertanian berlebihan</td><td class=\"n\">15</td></tr></tbody></table></div><p class=\"qnote\">Tiga petak sayur sawi yang sama saiz di tanah gambut. Kebanyakan sayur tumbuh paling baik pada pH 6 hingga 7. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t2b6"] =
    "n": 1,
    "tempat": "Dapur Rumah",
    "sk": "6.1 Sifat asid dan alkali",
-   "lampiran": null,
+   "lampiran": "skalaph",
    "kadNama": "Skala pH",
    "kadEm": "🌈",
    "kadFakta": "Skala pH bermula dari 0 hingga 14. pH 7 neutral, bawah 7 berasid dan atas 7 beralkali.",
@@ -94,15 +96,15 @@ window.BANK["t2b6"] =
     },
     {
      "j": "pilih",
-     "t": "Contoh bahan berasid dalam dapur ialah:",
+     "t": "Berdasarkan Rajah 1, bahan yang bersifat berasid ialah:",
      "p": [
       "Sabun",
-      "Ubat gigi",
-      "Soda penaik",
+      "Air",
+      "Susu",
       "Cuka"
      ],
      "b": 3,
-     "u": "Cuka mengandungi asid etanoik."
+     "u": "Bahan berasid mempunyai pH kurang daripada 7, dan cuka paling rendah pada pH 3."
     },
     {
      "j": "pilih",
@@ -175,7 +177,7 @@ window.BANK["t2b6"] =
    "n": 2,
    "tempat": "Bilik Air",
    "sk": "6.1 / 6.2 Kekuatan asid, alkali dan peneutralan",
-   "lampiran": null,
+   "lampiran": "neutral",
    "kadNama": "Ubat Gastrik",
    "kadEm": "💊",
    "kadFakta": "Ubat gastrik mengandungi bes lemah seperti magnesium hidroksida yang meneutralkan asid perut berlebihan.",
@@ -209,7 +211,7 @@ window.BANK["t2b6"] =
     },
     {
      "j": "pilih",
-     "t": "Mengapakah ubat gastrik meredakan pedih ulu hati?",
+     "t": "Berdasarkan Rajah 1, mengapakah ubat gastrik meredakan pedih ulu hati?",
      "p": [
       "Ia menambah asid dalam perut",
       "Ia membunuh semua sel perut",

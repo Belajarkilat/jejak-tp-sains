@@ -16,6 +16,51 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_SKALAPH = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 7,
+  "yMaks": 14,
+  "bar": [
+    {
+      "label": "Cuka",
+      "nilai": 3,
+      "warna": "merah"
+    },
+    {
+      "label": "Susu",
+      "nilai": 6,
+      "warna": "kuning"
+    },
+    {
+      "label": "Air",
+      "nilai": 7,
+      "warna": "ungu"
+    },
+    {
+      "label": "Sabun",
+      "nilai": 10,
+      "warna": "hijau"
+    }
+  ],
+  "xLabel": "Nilai pH bahan di dapur",
+  "kapsyen": "Rajah 1 · Nilai pH empat bahan yang biasa ada di dapur.",
+  "alt": "Graf palang nilai pH: cuka 3, susu 6, air 7, sabun 10"
+};
+
+const R_NEUTRAL = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Asid berlebihan dalam perut",
+    "Alkali dalam ubat gastrik ditambah",
+    "Garam dan air terbentuk",
+    "Kandungan perut jadi neutral"
+  ],
+  "kapsyen": "Rajah 1 · Peneutralan asid perut oleh ubat gastrik.",
+  "alt": "Rajah aliran menegak: asid berlebihan dalam perut, alkali dalam ubat gastrik ditambah, garam dan air terbentuk, kandungan perut menjadi neutral"
+};
+
 const T_PH =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Bahan</th>'+
 '<th class="n">Nilai pH</th><th>Warna kertas litmus biru</th></tr></thead><tbody>'+
@@ -46,27 +91,27 @@ const T_TANAH =
 
 const ARAS = [
 
-{n:1, tempat:"Dapur Rumah", sk:"6.1 Sifat asid dan alkali",
+{n:1, tempat:"Dapur Rumah", sk:"6.1 Sifat asid dan alkali", lampiran:"skalaph",
  kadNama:"Skala pH", kadEm:"\u{1F308}", kadFakta:"Skala pH bermula dari 0 hingga 14. pH 7 neutral, bawah 7 berasid dan atas 7 beralkali.",
  bosKadNama:"Asid Perut", bosKadEm:"\u{1F9EA}", bosKadFakta:"Perut manusia menghasilkan asid hidroklorik yang membantu membunuh kuman dalam makanan.",
  soalan:[
  {j:"pilih",t:"Bahan dengan nilai pH kurang daripada 7 ialah:",p:["Asid","Alkali","Neutral","Garam"],b:0,u:"Semakin rendah pH, semakin kuat asid."},
  {j:"pilih",t:"Asid menukarkan warna kertas litmus biru kepada:",p:["Merah","Biru","Hijau","Kuning"],b:0,u:"Alkali pula menukarkan litmus merah kepada biru."},
  {j:"pilih",t:"Sifat alkali ialah:",p:["Rasa pahit dan licin","Rasa masam","pH kurang daripada 7","Menukar litmus biru kepada merah"],b:0,u:"Jangan merasa bahan kimia di makmal."},
- {j:"pilih",t:"Contoh bahan berasid dalam dapur ialah:",p:["Cuka","Sabun","Ubat gigi","Soda penaik"],b:0,u:"Cuka mengandungi asid etanoik."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bahan yang bersifat berasid ialah:",p:["Cuka","Sabun","Air","Susu"],b:0,u:"Bahan berasid mempunyai pH kurang daripada 7, dan cuka paling rendah pada pH 3."},
  {j:"pilih",t:"Asid bertindak balas dengan logam magnesium untuk menghasilkan:",p:["Gas hidrogen","Gas oksigen","Gas klorin","Gas nitrogen"],b:0,u:"Gas hidrogen menghasilkan bunyi 'pop' dengan kayu uji menyala."},
  {j:"pilih",t:"Warna fenolftalein dalam alkali ialah:",p:["Merah jambu","Tidak berwarna","Kuning","Biru"],b:0,u:"Fenolftalein tidak berwarna dalam asid dan larutan neutral."},
  {j:"pilih",t:"Tindak balas antara asid dengan alkali dipanggil:",p:["Peneutralan","Pembakaran","Pengaratan","Penyejatan"],b:0,u:"Asid + alkali → garam + air."},
  {j:"banyak",t:"Pilih SEMUA bahan beralkali.",p:["Sabun","Ubat gigi","Air kapur","Jus limau","Cuka"],b:[0,1,2],u:"Jus limau dan cuka berasid."}],
  bos:{j:"pilih",t:"Hasil peneutralan asid hidroklorik dengan natrium hidroksida ialah:",p:["Natrium klorida dan air","Hidrogen dan oksigen","Karbon dioksida dan air","Natrium dan klorin"],b:0,u:"Natrium klorida ialah garam biasa."}},
 
-{n:2, tempat:"Bilik Air", sk:"6.1 / 6.2 Kekuatan asid, alkali dan peneutralan",
+{n:2, tempat:"Bilik Air", sk:"6.1 / 6.2 Kekuatan asid, alkali dan peneutralan", lampiran:"neutral",
  kadNama:"Ubat Gastrik", kadEm:"\u{1F48A}", kadFakta:"Ubat gastrik mengandungi bes lemah seperti magnesium hidroksida yang meneutralkan asid perut berlebihan.",
  bosKadNama:"Kapur Pertanian", bosKadEm:"\u{1F33E}", bosKadFakta:"Petani menabur kapur pada tanah berasid untuk menaikkan pH tanah.",
  soalan:[
  {j:"pilih",t:"Asid yang mempunyai pH 1 berbanding asid pH 4 adalah:",p:["Lebih kuat","Lebih lemah","Sama kuat","Neutral"],b:0,u:"Semakin rendah pH, semakin kuat asid."},
  {j:"pilih",t:"Mengapakah asid kering tidak menukar warna kertas litmus biru yang kering?",p:["Asid perlu air untuk menunjukkan sifatnya","Litmus kering tidak berwarna biru sebenarnya","Asid kering ialah alkali yang sangat lemah","Litmus hanya bertindak balas dengan gas oksigen"],b:0,u:"Asid dan alkali memerlukan air untuk menunjukkan sifatnya."},
- {j:"pilih",t:"Mengapakah ubat gastrik meredakan pedih ulu hati?",p:["Ia meneutralkan asid perut berlebihan","Ia menambah asid dalam perut","Ia membunuh semua sel perut","Ia menukar makanan kepada air"],b:0,u:"Ubat gastrik bersifat alkali lemah."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah ubat gastrik meredakan pedih ulu hati?",p:["Ia meneutralkan asid perut berlebihan","Ia menambah asid dalam perut","Ia membunuh semua sel perut","Ia menukar makanan kepada air"],b:0,u:"Ubat gastrik bersifat alkali lemah."},
  {j:"pilih",t:"Sengatan lebah bersifat berasid. Rawatan pertolongan cemas yang sesuai ialah menyapu:",p:["Larutan soda penaik","Jus limau nipis","Cuka makan","Air garam pekat"],b:0,u:"Soda penaik beralkali lemah dan meneutralkan asid."},
  {j:"pilih",t:"Mengapakah ubat gigi beralkali?",p:["Meneutralkan asid daripada sisa makanan","Supaya gigi menjadi lebih putih serta-merta","Supaya ubat gigi berasa masam dan segar","Untuk menambah asid yang menguatkan gigi"],b:0,u:"Bakteria dalam mulut menghasilkan asid yang merosakkan enamel gigi."},
  {j:"pilih",t:"Penunjuk yang menunjukkan julat warna untuk setiap nilai pH ialah:",p:["Penunjuk universal","Kertas litmus biru","Fenolftalein","Metil jingga"],b:0,u:"Penunjuk universal berubah dari merah (asid kuat) ke ungu (alkali kuat)."},
@@ -148,6 +193,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta penyelesaian menggunakan peneutralan yang selamat dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Asid dan Alkali. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ ph:T_PH, titrat:T_TITRAT, tanah:T_TANAH },
+  lampiran:{ skalaph:R_SKALAPH, neutral:R_NEUTRAL, ph:T_PH, titrat:T_TITRAT, tanah:T_TANAH },
   aras:ARAS
 };

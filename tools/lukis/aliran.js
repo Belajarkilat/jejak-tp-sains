@@ -20,7 +20,9 @@ const SAIZ = 12;
 const TEPI = 6;
 
 function pecahBaris(teks, lebarKotak, saiz){
-  const muat = Math.floor((lebarKotak - 14) / (saiz * 0.6));
+  /* 11px pelapik: cukup ruang bernafas di tepi kotak, tetapi masih
+     membenarkan label sembilan aksara seperti "Vertebrat" dalam lajur tiga. */
+  const muat = Math.floor((lebarKotak - 11) / (saiz * 0.6));
   const kata = String(teks).split(/\s+/);
   const baris = [];
   let kini = "";

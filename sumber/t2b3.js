@@ -20,6 +20,79 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_HASILCERNA = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "k",
+      "label": "Karbohidrat",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "k2",
+      "label": "Glukosa",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "p",
+      "label": "Protein",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "p2",
+      "label": "Asid amino",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "l",
+      "label": "Lemak",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "l2",
+      "label": "Asid lemak & gliserol",
+      "x": 1,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "k",
+      "k2"
+    ],
+    [
+      "p",
+      "p2"
+    ],
+    [
+      "l",
+      "l2"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Hasil akhir pencernaan bagi tiga kelas makanan.",
+  "alt": "Tiga baris: karbohidrat menjadi glukosa, protein menjadi asid amino, lemak menjadi asid lemak dan gliserol"
+};
+
+const R_HEMPEDU = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Titisan lemak besar",
+    "Hempedu mengemulsikannya",
+    "Banyak titisan lemak halus",
+    "Enzim lipase bertindak",
+    "Asid lemak dan gliserol"
+  ],
+  "kapsyen": "Rajah 1 · Peranan hempedu dalam pencernaan lemak.",
+  "alt": "Rajah aliran menegak: titisan lemak besar dipecahkan oleh hempedu menjadi banyak titisan halus, kemudian enzim lipase menghasilkan asid lemak dan gliserol"
+};
+
 const T_UJI =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Sampel</th>'+
 '<th>Larutan iodin</th><th>Larutan Benedict (dipanaskan)</th><th>Ujian alkohol-emulsi</th></tr></thead><tbody>'+
@@ -53,7 +126,7 @@ const T_MENU =
 
 const ARAS = [
 
-{n:1, tempat:"Pasar Tani", sk:"3.1 / 3.3 Kelas makanan dan sistem pencernaan",
+{n:1, tempat:"Pasar Tani", sk:"3.1 / 3.3 Kelas makanan dan sistem pencernaan", lampiran:"hasilcerna",
  kadNama:"Tujuh Kelas Makanan", kadEm:"\u{1F957}", kadFakta:"Tujuh kelas makanan ialah karbohidrat, protein, lemak, vitamin, mineral, pelawas dan air.",
  bosKadNama:"Enzim", bosKadEm:"\u{2702}", bosKadFakta:"Enzim mempercepat penguraian makanan tanpa berubah selepas tindak balas.",
  soalan:[
@@ -64,16 +137,16 @@ const ARAS = [
  {j:"pilih",t:"Larutan yang digunakan untuk menguji kehadiran glukosa ialah:",p:["Larutan Benedict","Larutan iodin","Bahan uji Millon","Alkohol"],b:0,u:"Mendakan merah bata terbentuk selepas dipanaskan."},
  {j:"pilih",t:"Organ yang menghasilkan hempedu ialah:",p:["Hati","Pankreas","Perut","Pundi hempedu"],b:0,u:"Hempedu disimpan dalam pundi hempedu dan mengemulsikan lemak."},
  {j:"pilih",t:"Tempat utama penyerapan makanan tercerna ialah:",p:["Usus kecil","Perut","Usus besar","Esofagus"],b:0,u:"Vilus pada dinding usus kecil menambah luas permukaan."},
- {j:"banyak",t:"Pilih SEMUA hasil akhir pencernaan.",p:["Glukosa","Asid amino","Asid lemak dan gliserol","Kanji","Protein"],b:[0,1,2],u:"Kanji dan protein ialah molekul besar yang perlu dicernakan dahulu."}],
+ {j:"banyak",t:"Berdasarkan Rajah 1, pilih SEMUA hasil akhir pencernaan.",p:["Glukosa","Asid amino","Asid lemak dan gliserol","Kanji","Protein"],b:[0,1,2],u:"Kanji dan protein ialah molekul besar yang perlu dicernakan dahulu."}],
  bos:{j:"pilih",t:"Enzim amilase dalam air liur mencernakan:",p:["Kanji","Protein","Lemak","Vitamin"],b:0,u:"Kanji diuraikan kepada maltosa."}},
 
-{n:2, tempat:"Dapur Sekolah", sk:"3.2 / 3.3 / 3.4 Gizi seimbang, pencernaan dan penyahtinjaan",
+{n:2, tempat:"Dapur Sekolah", sk:"3.2 / 3.3 / 3.4 Gizi seimbang, pencernaan dan penyahtinjaan", lampiran:"hempedu",
  kadNama:"Pinggan Sihat", kadEm:"\u{1F37D}", kadFakta:"Pinggan Sihat Malaysia: separuh sayur dan buah, suku nasi atau karbohidrat, suku protein.",
  bosKadNama:"Serat", bosKadEm:"\u{1F966}", bosKadFakta:"Serat tidak dicernakan, tetapi ia membantu najis bergerak lancar di dalam usus besar.",
  soalan:[
  {j:"pilih",t:"Mengapakah pelawas penting walaupun tidak dicernakan?",p:["Ia mengelakkan sembelit","Ia sumber tenaga utama","Ia membina otot","Ia membentuk hemoglobin"],b:0,u:"Pelawas menambah pukal najis dan merangsang pergerakan usus."},
  {j:"pilih",t:"Beza pencernaan fizikal dengan pencernaan kimia ialah pencernaan fizikal:",p:["Memecahkan makanan tanpa enzim","Menguraikan molekul besar dengan bantuan enzim","Hanya berlaku di dalam usus kecil sahaja","Menghasilkan glukosa daripada kanji terus"],b:0,u:"Contohnya gigi mengunyah dan perut mengisar makanan."},
- {j:"pilih",t:"Mengapakah hempedu membantu pencernaan lemak?",p:["Ia memecahkan lemak kepada titisan kecil","Ia enzim yang menguraikan lemak kepada glukosa","Ia menukar lemak kepada protein","Ia menyerap lemak ke dalam darah"],b:0,u:"Titisan kecil mempunyai luas permukaan yang lebih besar untuk tindakan lipase."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah hempedu membantu pencernaan lemak?",p:["Ia memecahkan lemak kepada titisan kecil","Ia enzim yang menguraikan lemak kepada glukosa","Ia menukar lemak kepada protein","Ia menyerap lemak ke dalam darah"],b:0,u:"Titisan kecil mempunyai luas permukaan yang lebih besar untuk tindakan lipase."},
  {j:"pilih",t:"Fungsi utama usus besar ialah:",p:["Menyerap semula air","Mencernakan protein","Menghasilkan hempedu","Menyerap glukosa"],b:0,u:"Baki makanan menjadi najis dan disingkirkan melalui dubur."},
  {j:"pilih",t:"Mengapakah seorang pekerja binaan memerlukan lebih banyak tenaga daripada seorang kerani?",p:["Kerjanya lebih aktif secara fizikal","Dia lebih tinggi daripada kerani","Dia bekerja di dalam bangunan","Kerja kerani memerlukan lebih banyak protein"],b:0,u:"Pekerjaan ialah salah satu faktor yang mempengaruhi gizi seimbang."},
  {j:"pilih",t:"Hasil pencernaan diangkut ke seluruh badan oleh:",p:["Sistem peredaran darah","Sistem rangka badan","Sistem respirasi","Sistem otot rangka"],b:0,u:"Glukosa kemudian digunakan dalam respirasi sel dengan oksigen dari peparu."},
@@ -155,6 +228,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta program atau produk pemakanan sihat yang kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Nutrisi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ uji:T_UJI, liur:T_LIUR, menu:T_MENU },
+  lampiran:{ hasilcerna:R_HASILCERNA, hempedu:R_HEMPEDU, uji:T_UJI, liur:T_LIUR, menu:T_MENU },
   aras:ARAS
 };

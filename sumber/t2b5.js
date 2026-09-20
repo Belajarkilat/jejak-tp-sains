@@ -16,6 +16,45 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_MOLEKULAIR = {
+  "jenis": "aliran", "mod": "turun",
+  "nod": [
+    { "label": "Gula (zat terlarut)", "nota": "dimasukkan" },
+    "Air (pelarut)",
+    "Air gula (larutan)"
+  ],
+  "kapsyen": "Rajah 1 · Gula dilarutkan ke dalam air.",
+  "alt": "Rajah aliran menegak: gula sebagai zat terlarut dimasukkan ke dalam air sebagai pelarut, menghasilkan air gula iaitu larutan"
+};
+
+
+const R_JEMUR = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 4,
+  "yMaks": 200,
+  "bar": [
+    {
+      "label": "Berangin",
+      "nilai": 60,
+      "warna": "hijau"
+    },
+    {
+      "label": "Tenang",
+      "nilai": 110,
+      "warna": "kuning"
+    },
+    {
+      "label": "Lembap",
+      "nilai": 180,
+      "warna": "merah"
+    }
+  ],
+  "xLabel": "Masa pakaian kering (minit)",
+  "kapsyen": "Rajah 1 · Masa yang diambil untuk sehelai tuala kering pada tiga keadaan cuaca.",
+  "alt": "Graf palang masa pengeringan: hari berangin 60 minit, hari tenang 110 minit, hari lembap 180 minit"
+};
+
 const T_SEJAT =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Piring</th>'+
 '<th>Keadaan</th><th class="n">Air yang tinggal selepas 3 jam (ml)</th></tr></thead><tbody>'+
@@ -47,13 +86,13 @@ const T_BERSIH =
 
 const ARAS = [
 
-{n:1, tempat:"Tebing Sungai", sk:"5.1 / 5.2 Sifat air dan larutan",
+{n:1, tempat:"Tebing Sungai", sk:"5.1 / 5.2 Sifat air dan larutan", lampiran:"molekulair",
  kadNama:"Tegangan Permukaan", kadEm:"\u{1F997}", kadFakta:"Serangga pelari air boleh berjalan di atas air kerana tegangan permukaan air.",
  bosKadNama:"Pelarut Universal", bosKadEm:"\u{1F4A7}", bosKadFakta:"Air digelar pelarut universal kerana ia boleh melarutkan lebih banyak bahan berbanding pelarut lain.",
  soalan:[
  {j:"pilih",t:"Air terdiri daripada unsur:",p:["Hidrogen dan oksigen","Karbon dan oksigen","Nitrogen dan hidrogen","Natrium dan klorin"],b:0,u:"Formula air ialah H₂O."},
  {j:"pilih",t:"Takat beku air tulen ialah:",p:["0 °C","100 °C","−10 °C","37 °C"],b:0,u:"Takat didihnya pula 100 °C pada tekanan biasa."},
- {j:"pilih",t:"Bahan yang larut dalam pelarut dipanggil:",p:["Zat terlarut","Pelarut","Ampaian","Larutan tepu"],b:0,u:"Zat terlarut + pelarut = larutan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bahan yang larut dalam pelarut dipanggil:",p:["Zat terlarut","Pelarut","Ampaian","Larutan tepu"],b:0,u:"Zat terlarut + pelarut = larutan."},
  {j:"pilih",t:"Larutan yang tidak dapat melarutkan zat terlarut lagi pada suhu tertentu ialah:",p:["Larutan tepu","Larutan cair","Larutan pekat","Ampaian"],b:0,u:"Zat terlarut tambahan akan tertinggal di dasar."},
  {j:"pilih",t:"Pelarut yang digunakan untuk menanggalkan pengilat kuku ialah:",p:["Aseton","Air","Kerosin","Turpentin"],b:0,u:"Pengilat kuku tidak larut dalam air."},
  {j:"pilih",t:"Susu dan mayones ialah contoh:",p:["Koloid","Larutan tepu","Pelarut","Unsur"],b:0,u:"Ia sejenis emulsi, iaitu titisan halus satu cecair dalam cecair lain."},
@@ -61,13 +100,13 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA kaedah pembersihan air yang membunuh kuman.",p:["Pendidihan","Pengklorinan","Penyulingan","Penurasan dengan kain","Pengenapan"],b:[0,1,2],u:"Penurasan dan pengenapan membuang kotoran tetapi tidak membunuh kuman sepenuhnya."}],
  bos:{j:"pilih",t:"Dalam elektrolisis air, isi padu gas hidrogen yang terhasil berbanding gas oksigen ialah:",p:["Dua kali ganda","Separuh","Sama banyak","Tiga kali ganda"],b:0,u:"Nisbah hidrogen kepada oksigen ialah 2 : 1, sepadan dengan formula H₂O."}},
 
-{n:2, tempat:"Loji Air", sk:"5.1 / 5.2 / 5.3 Penyejatan, keterlarutan dan pembekalan air",
+{n:2, tempat:"Loji Air", sk:"5.1 / 5.2 / 5.3 Penyejatan, keterlarutan dan pembekalan air", lampiran:"jemur",
  kadNama:"Tawas", kadEm:"\u{1F9C2}", kadFakta:"Tawas (aluminium sulfat) ditambah di loji air supaya zarah kotoran bergumpal dan mudah mengenap.",
  bosKadNama:"Minamata", bosKadEm:"\u{26A0}", bosKadFakta:"Di Minamata, Jepun, sisa merkuri dari kilang mencemarkan laut dan meracuni penduduk yang memakan ikan.",
  soalan:[
  {j:"pilih",t:"Garam yang dilarutkan ke dalam air menyebabkan takat didih air:",p:["Meningkat","Menurun","Tidak berubah","Menjadi 0 °C"],b:0,u:"Bendasing meningkatkan takat didih dan menurunkan takat beku air."},
  {j:"pilih",t:"Pakaian cepat kering pada hari yang berangin kerana:",p:["Angin mempercepat penyejatan","Angin menukar air kepada ais","Angin menambah kelembapan udara","Angin memanaskan air hingga 100 °C"],b:0,u:"Angin membawa pergi wap air dari permukaan kain."},
- {j:"pilih",t:"Pakaian lambat kering pada hari yang lembap kerana:",p:["Udara sudah banyak wap air","Suhu udara terlalu tinggi","Angin bertiup terlalu kencang","Kain menyerap cahaya matahari"],b:0,u:"Kelembapan tinggi memperlahankan penyejatan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, pakaian lambat kering pada hari yang lembap kerana:",p:["Udara sudah banyak wap air","Suhu udara terlalu tinggi","Angin bertiup terlalu kencang","Kain menyerap cahaya matahari"],b:0,u:"Kelembapan tinggi memperlahankan penyejatan."},
  {j:"pilih",t:"Mengapakah gula halus lebih cepat larut daripada gula kiub?",p:["Luas permukaannya lebih besar","Rasanya lebih manis","Jisimnya lebih berat","Suhunya lebih rendah"],b:0,u:"Lebih banyak zarah gula bersentuhan dengan air."},
  {j:"pilih",t:"Peringkat di loji air yang menambah klorin bertujuan untuk:",p:["Membunuh kuman","Menambah rasa manis","Menukar warna air","Membuang garam"],b:0,u:"Pengklorinan menjadikan air selamat diminum."},
  {j:"pilih",t:"Mengapakah fluorida ditambah ke dalam air paip?",p:["Menguatkan gigi","Membunuh semua kuman","Menjernihkan air keruh","Menambah rasa air"],b:0,u:"Fluorida membantu mencegah kerosakan gigi."},
@@ -149,6 +188,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta sistem atau kempen air yang kreatif, selamat dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Air dan Larutan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ sejat:T_SEJAT, larut:T_LARUT, bersih:T_BERSIH },
+  lampiran:{ molekulair:R_MOLEKULAIR, jemur:R_JEMUR, sejat:T_SEJAT, larut:T_LARUT, bersih:T_BERSIH },
   aras:ARAS
 };

@@ -16,6 +16,34 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_RANTAI = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Padi",
+    "Belalang",
+    "Katak",
+    "Ular",
+    "Helang",
+    "Pengurai"
+  ],
+  "kapsyen": "Rajah 1 · Rantai makanan di sawah padi.",
+  "alt": "Rantai makanan menegak: padi dimakan belalang, belalang dimakan katak, katak dimakan ular, ular dimakan helang, dan akhirnya diuraikan oleh pengurai"
+};
+
+const R_KITARAIR = {
+  "jenis": "aliran",
+  "mod": "kitar",
+  "nod": [
+    "Air di laut & tasik",
+    "Sejatan & transpirasi",
+    "Awan terbentuk",
+    "Hujan turun"
+  ],
+  "kapsyen": "Rajah 1 · Kitar air.",
+  "alt": "Rajah kitaran empat kotak: air di laut dan tasik, sejatan dan transpirasi, awan terbentuk, hujan turun, kemudian kembali ke laut dan tasik"
+};
+
 const T_SIRATAN =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Organisma</th>'+
 '<th>Memakan</th></tr></thead><tbody>'+
@@ -47,12 +75,12 @@ const T_KAWAL =
 
 const ARAS = [
 
-{n:1, tempat:"Sawah Padi", sk:"2.1 / 2.3 Komponen ekosistem",
+{n:1, tempat:"Sawah Padi", sk:"2.1 / 2.3 Komponen ekosistem", lampiran:"rantai",
  kadNama:"Pengurai", kadEm:"\u{1F344}", kadFakta:"Tanpa bakteria dan kulat pengurai, daun dan bangkai akan bertimbun dan nutrien tidak kembali ke tanah.",
  bosKadNama:"Ekosistem", bosKadEm:"\u{1F30F}", bosKadFakta:"Ekosistem terdiri daripada komuniti organisma dan persekitaran fizikalnya seperti tanah, air dan udara.",
  soalan:[
  {j:"pilih",t:"Organisma yang menghasilkan makanan sendiri melalui fotosintesis dipanggil:",p:["Pengeluar","Pengguna primer","Pengurai","Karnivor"],b:0,u:"Tumbuhan hijau ialah pengeluar."},
- {j:"pilih",t:"Belalang yang memakan daun padi ialah:",p:["Pengguna primer","Pengeluar","Karnivor sekunder","Pengurai"],b:0,u:"Pengguna primer ialah herbivor yang memakan pengeluar."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, belalang yang memakan daun padi ialah:",p:["Pengguna primer","Pengeluar","Karnivor sekunder","Pengurai"],b:0,u:"Pengguna primer ialah herbivor yang memakan pengeluar."},
  {j:"pilih",t:"Contoh pengurai ialah:",p:["Kulat","Rumput","Katak","Helang"],b:0,u:"Bakteria dan kulat menguraikan bahan organik."},
  {j:"pilih",t:"Sekumpulan organisma daripada spesies yang sama di satu habitat dipanggil:",p:["Populasi","Komuniti","Ekosistem","Biosfera"],b:0,u:"Komuniti pula terdiri daripada beberapa populasi yang berlainan."},
  {j:"pilih",t:"Hubungan antara lebah dengan bunga ialah:",p:["Mutualisme","Parasitisme","Komensalisme","Persaingan"],b:0,u:"Lebah mendapat nektar, bunga didebungakan."},
@@ -61,14 +89,14 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA contoh persaingan.",p:["Pokok di hutan berebut cahaya","Dua ekor kucing berebut makanan","Rumpai dan padi berebut nutrien","Lebah menghisap nektar bunga","Burung memakan ulat"],b:[0,1,2],u:"Lebah dan bunga ialah mutualisme; burung dan ulat ialah mangsa-pemangsa."}],
  bos:{j:"pilih",t:"Paku langsuyar tumbuh pada dahan pokok besar untuk mendapat cahaya tanpa merosakkan pokok itu. Hubungan ini ialah:",p:["Komensalisme","Parasitisme","Mutualisme","Persaingan"],b:0,u:"Satu pihak mendapat manfaat, pihak lain tidak terjejas."}},
 
-{n:2, tempat:"Tepi Hutan", sk:"2.1 / 2.2 / 2.3 Aliran tenaga, kitar dan interaksi",
+{n:2, tempat:"Tepi Hutan", sk:"2.1 / 2.2 / 2.3 Aliran tenaga, kitar dan interaksi", lampiran:"kitarair",
  kadNama:"Rantai Makanan", kadEm:"\u{1F517}", kadFakta:"Hanya kira-kira 10% tenaga dipindahkan dari satu aras ke aras seterusnya dalam rantai makanan.",
  bosKadNama:"Kitar Karbon", bosKadEm:"\u{267B}", bosKadFakta:"Karbon bergerak antara udara, tumbuhan, haiwan dan tanah melalui fotosintesis, respirasi, penguraian dan pembakaran.",
  soalan:[
  {j:"pilih",t:"Mengapakah rantai makanan jarang melebihi lima aras?",p:["Tenaga berkurang di setiap aras","Pemangsa terakhir tidak perlu makan","Tumbuhan hanya boleh dimakan sekali","Pengurai memakan semua pemangsa"],b:0,u:"Sebahagian besar tenaga digunakan untuk hidup atau hilang sebagai haba."},
  {j:"pilih",t:"Dalam rantai makanan padi → tikus → ular → helang, helang ialah:",p:["Karnivor sekunder","Pengguna primer","Pengeluar","Pengurai"],b:0,u:"Ular ialah karnivor primer yang memakan herbivor; helang yang memakan ular ialah karnivor sekunder."},
  {j:"pilih",t:"Apakah peranan pengurai dalam kitar nutrien?",p:["Memulangkan nutrien ke tanah","Menghasilkan oksigen untuk haiwan","Memakan semua haiwan yang hidup","Menyerap cahaya matahari"],b:0,u:"Nutrien itu kemudian diserap semula oleh tumbuhan."},
- {j:"pilih",t:"Bagaimanakah penebangan hutan mengganggu kitar air?",p:["Kurang transpirasi, jadi kurang wap air untuk hujan","Lebih banyak pokok menyerap air hujan ke dalam akar","Air hujan tidak lagi jatuh ke tanah di kawasan itu","Semua sungai menjadi lebih dalam dan lebih bersih"],b:0,u:"Tanah juga lebih mudah terhakis dan air cepat mengalir ke sungai."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bagaimanakah penebangan hutan mengganggu kitar air?",p:["Kurang transpirasi, jadi kurang wap air untuk hujan","Lebih banyak pokok menyerap air hujan ke dalam akar","Air hujan tidak lagi jatuh ke tanah di kawasan itu","Semua sungai menjadi lebih dalam dan lebih bersih"],b:0,u:"Tanah juga lebih mudah terhakis dan air cepat mengalir ke sungai."},
  {j:"pilih",t:"Bagaimanakah pembakaran bahan api fosil mengganggu kitar karbon?",p:["Menambah karbon dioksida di udara","Menambah bilangan pokok di hutan","Mengurangkan penguraian bangkai","Menukar oksigen menjadi nitrogen"],b:0,u:"Karbon yang tersimpan berjuta tahun dibebaskan dengan cepat."},
  {j:"pilih",t:"Unta mempunyai bulu mata yang panjang dan tebal. Penyesuaian ini membantunya:",p:["Melindungi mata daripada pasir","Menyimpan air di dalam badan","Melihat dengan jelas pada waktu malam","Menakutkan pemangsa"],b:0,u:"Ribut pasir kerap berlaku di gurun."},
  {j:"pilih",t:"Beruang kutub mempunyai lapisan lemak yang tebal. Penyesuaian ini membantunya:",p:["Kekal panas di tundra","Berenang lebih laju di laut","Menyimpan air untuk kemarau","Menarik perhatian pasangan"],b:0,u:"Lemak ialah penebat haba yang baik."},
@@ -149,6 +177,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta projek yang mengekalkan atau memulihkan keseimbangan ekosistem secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Ekosistem. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ siratan:T_SIRATAN, burung:T_BURUNG, kawal:T_KAWAL },
+  lampiran:{ rantai:R_RANTAI, kitarair:R_KITARAIR, siratan:T_SIRATAN, burung:T_BURUNG, kawal:T_KAWAL },
   aras:ARAS
 };

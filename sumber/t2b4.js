@@ -16,6 +16,81 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_TAHAN = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Kulit dan mukus menghalang",
+    "Sel darah putih menelan kuman",
+    "Antibodi memusnahkan patogen"
+  ],
+  "kapsyen": "Rajah 1 · Tiga barisan pertahanan badan mengikut urutan.",
+  "alt": "Rajah aliran menegak tiga barisan pertahanan: kulit dan mukus menghalang, sel darah putih menelan kuman, antibodi memusnahkan patogen"
+};
+
+const R_IMUN = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "a",
+      "label": "Keimunan aktif",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "p",
+      "label": "Keimunan pasif",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "a2",
+      "label": "Badan buat antibodi",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "p2",
+      "label": "Antibodi diberi",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "a3",
+      "label": "Tahan lama",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "p3",
+      "label": "Tidak tahan lama",
+      "x": 1,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "a",
+      "a2"
+    ],
+    [
+      "a2",
+      "a3"
+    ],
+    [
+      "p",
+      "p2"
+    ],
+    [
+      "p2",
+      "p3"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Perbandingan keimunan aktif dan keimunan pasif.",
+  "alt": "Dua lajur: keimunan aktif badan membuat antibodi sendiri dan tahan lama, keimunan pasif antibodi diberi dari luar dan tidak tahan lama"
+};
+
 const T_PENYAKIT =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Penyakit</th>'+
 '<th>Punca</th><th>Cara merebak</th></tr></thead><tbody>'+
@@ -48,7 +123,7 @@ const T_DENGGI =
 
 const ARAS = [
 
-{n:1, tempat:"Klinik Kesihatan", sk:"4.1 / 4.2 Penyakit dan pertahanan badan",
+{n:1, tempat:"Klinik Kesihatan", sk:"4.1 / 4.2 Penyakit dan pertahanan badan", lampiran:"pertahanan",
  kadNama:"Vektor", kadEm:"\u{1F99F}", kadFakta:"Nyamuk Aedes betina menggigit pada waktu pagi dan petang, dan boleh membawa virus denggi dan Zika.",
  bosKadNama:"Antibodi", bosKadEm:"\u{1F6E1}", bosKadFakta:"Antibodi ialah protein yang dihasilkan oleh sel darah putih untuk memusnahkan antigen tertentu.",
  soalan:[
@@ -57,18 +132,18 @@ const ARAS = [
  {j:"pilih",t:"Malaria disebarkan oleh:",p:["Nyamuk Anopheles","Nyamuk Aedes","Lalat rumah","Tikus"],b:0,u:"Nyamuk Aedes membawa denggi dan Zika."},
  {j:"pilih",t:"Organisma yang membawa patogen dari satu perumah ke perumah lain dipanggil:",p:["Vektor","Antibodi","Antigen","Vaksin"],b:0,u:"Contohnya nyamuk dan tikus."},
  {j:"pilih",t:"Bahan asing yang merangsang badan menghasilkan antibodi dipanggil:",p:["Antigen","Antibiotik","Vitamin","Hormon"],b:0,u:"Contohnya protein pada permukaan virus."},
- {j:"pilih",t:"Barisan pertahanan pertama badan ialah:",p:["Kulit dan mukus","Sel darah putih","Antibodi","Vaksin"],b:0,u:"Ia menghalang patogen daripada memasuki badan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, barisan pertahanan pertama badan ialah:",p:["Kulit dan mukus","Sel darah putih","Antibodi","Vaksin"],b:0,u:"Ia menghalang patogen daripada memasuki badan."},
  {j:"pilih",t:"Sel darah putih memusnahkan bakteria dengan cara menelannya. Proses ini dipanggil:",p:["Fagositosis","Pencernaan","Respirasi","Imunisasi"],b:0,u:"Ini barisan pertahanan kedua."},
  {j:"banyak",t:"Pilih SEMUA penyakit yang disebarkan melalui udara.",p:["Tibi","Selesema","H1N1","Taun","Kurap"],b:[0,1,2],u:"Taun merebak melalui air tercemar dan kurap melalui sentuhan."}],
  bos:{j:"pilih",t:"Vaksin berfungsi dengan:",p:["Merangsang penghasilan antibodi","Membunuh semua bakteria dengan segera","Menggantikan sel darah putih","Menambah bilangan sel darah merah"],b:0,u:"Vaksin mengandungi patogen yang dilemahkan, dimatikan atau sebahagiannya."}},
 
-{n:2, tempat:"Pusat Imunisasi", sk:"4.1 / 4.2 Penularan penyakit dan keimunan",
+{n:2, tempat:"Pusat Imunisasi", sk:"4.1 / 4.2 Penularan penyakit dan keimunan", lampiran:"imun",
  kadNama:"Imunisasi", kadEm:"\u{1F489}", kadFakta:"Program imunisasi kebangsaan Malaysia melindungi kanak-kanak daripada penyakit seperti tibi, campak dan batuk kokol.",
  bosKadNama:"Susu Ibu", bosKadEm:"\u{1F37C}", bosKadFakta:"Antibodi dalam susu ibu memberi bayi keimunan pasif semula jadi pada bulan-bulan awal kehidupan.",
  soalan:[
  {j:"pilih",t:"Keimunan yang diperoleh selepas menerima vaksin ialah keimunan:",p:["Aktif buatan","Aktif semula jadi","Pasif semula jadi","Pasif buatan"],b:0,u:"Badan sendiri menghasilkan antibodi selepas dirangsang oleh vaksin."},
  {j:"pilih",t:"Seseorang yang dipatuk ular berbisa diberi suntikan antibisa. Ini memberi keimunan:",p:["Pasif buatan","Aktif buatan","Aktif semula jadi","Pasif semula jadi"],b:0,u:"Antibodi siap diberi dari luar dan bertindak segera."},
- {j:"pilih",t:"Mengapakah keimunan pasif tidak tahan lama?",p:["Badan tidak menghasilkan antibodi itu sendiri","Antibodi daripada luar terlalu kuat untuk badan","Keimunan pasif hanya diberi kepada orang dewasa","Antibodi itu bertukar menjadi antigen baharu"],b:0,u:"Antibodi yang diberi akan dimusnahkan secara beransur-ansur."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah keimunan pasif tidak tahan lama?",p:["Badan tidak menghasilkan antibodi itu sendiri","Antibodi daripada luar terlalu kuat untuk badan","Keimunan pasif hanya diberi kepada orang dewasa","Antibodi itu bertukar menjadi antigen baharu"],b:0,u:"Antibodi yang diberi akan dimusnahkan secara beransur-ansur."},
  {j:"pilih",t:"Mengapakah kita perlu mencuci tangan sebelum makan?",p:["Membuang patogen di tangan","Supaya tangan lebih lembut","Supaya makanan lebih sedap","Menambah antibodi di kulit"],b:0,u:"Tangan menyentuh banyak permukaan yang mungkin tercemar."},
  {j:"pilih",t:"Mengapakah pesakit tibi dinasihatkan memakai pelitup muka?",p:["Kurangkan titisan udara berkuman","Pesakit tidak berasa sejuk di wad hospital","Ubat yang ditelan tidak tercicir keluar","Pesakit tidak perlu makan ubat lagi"],b:0,u:"Tibi merebak melalui titisan udara semasa batuk dan bersin."},
  {j:"pilih",t:"Bagaimanakah air bertakung dalam tayar lama meningkatkan kes denggi?",p:["Ia menjadi tempat nyamuk Aedes bertelur","Ia menghasilkan virus denggi dengan sendiri","Ia menjadikan nyamuk lebih besar dan kuat","Ia menarik tikus yang membawa denggi"],b:0,u:"Jentik-jentik Aedes membesar dalam air bersih yang bertakung."},
@@ -150,6 +225,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta kempen atau alat mencegah penyakit yang kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Kesihatan Manusia. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ penyakit:T_PENYAKIT, antibodi:T_ANTIBODI, denggi:T_DENGGI },
+  lampiran:{ pertahanan:R_TAHAN, imun:R_IMUN, penyakit:T_PENYAKIT, antibodi:T_ANTIBODI, denggi:T_DENGGI },
   aras:ARAS
 };

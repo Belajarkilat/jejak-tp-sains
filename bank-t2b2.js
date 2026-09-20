@@ -39,6 +39,8 @@ window.BANK["t2b2"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Ekosistem. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "rantai": "<figure class=\"figure\"><svg viewBox=\"0 0 260 322\" role=\"img\" aria-label=\"Rantai makanan menegak: padi dimakan belalang, belalang dimakan katak, katak dimakan ular, ular dimakan helang, dan akhirnya diuraikan oleh pengurai\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Padi</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Belalang</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Katak</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Ular</text><line x1=\"130\" y1=\"209\" x2=\"130\" y2=\"224\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"228\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"249.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Helang</text><line x1=\"130\" y1=\"265\" x2=\"130\" y2=\"280\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"284\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"305.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Pengurai</text></svg><figcaption>Rajah 1 · Rantai makanan di sawah padi.</figcaption></figure>",
+  "kitarair": "<figure class=\"figure\"><svg viewBox=\"0 0 260 230\" role=\"img\" aria-label=\"Rajah kitaran empat kotak: air di laut dan tasik, sejatan dan transpirasi, awan terbentuk, hujan turun, kemudian kembali ke laut dan tasik\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><path d=\"M130 43 Q183 58.8 198 115\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M198 115 Q183 171.2 130 187\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M130 187 Q77 171.2 62 115\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M62 115 Q77 58.8 130 43\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><rect x=\"78\" y=\"23\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"39.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Air di laut</text><text x=\"130\" y=\"54.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">&amp; tasik</text><rect x=\"146\" y=\"95\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"198\" y=\"111.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Sejatan &amp;</text><text x=\"198\" y=\"126.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">transpirasi</text><rect x=\"78\" y=\"167\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"183.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Awan</text><text x=\"130\" y=\"198.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">terbentuk</text><rect x=\"10\" y=\"95\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"62\" y=\"119.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Hujan turun</text></svg><figcaption>Rajah 1 · Kitar air.</figcaption></figure>",
   "siratan": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Organisma</th><th>Memakan</th></tr></thead><tbody><tr><td>Belalang</td><td>Padi</td></tr><tr><td>Tikus</td><td>Padi</td></tr><tr><td>Katak</td><td>Belalang</td></tr><tr><td>Ular</td><td>Katak, tikus</td></tr><tr><td>Burung helang</td><td>Ular, tikus</td></tr></tbody></table></div><p class=\"qnote\">Siratan makanan di sebuah sawah padi. Bakteria dan kulat menguraikan organisma yang mati.</p>",
   "burung": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Tahun</th><th class=\"n\">Pasangan burung hantu jelapang</th><th class=\"n\">Anggaran tikus sehektar</th><th class=\"n\">Hasil sawit (tan sehektar)</th></tr></thead><tbody><tr><td>2020</td><td class=\"n\">0</td><td class=\"n\">300</td><td class=\"n\">18</td></tr><tr><td>2021</td><td class=\"n\">10</td><td class=\"n\">220</td><td class=\"n\">19</td></tr><tr><td>2022</td><td class=\"n\">25</td><td class=\"n\">120</td><td class=\"n\">21</td></tr><tr><td>2023</td><td class=\"n\">30</td><td class=\"n\">90</td><td class=\"n\">22</td></tr></tbody></table></div><p class=\"qnote\">Sebuah ladang kelapa sawit memasang kotak sarang untuk burung hantu jelapang mulai 2021 dan berhenti menggunakan racun tikus. Data rekaan.</p>",
   "kawal": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Kaedah</th><th>Kos permulaan</th><th>Masa berkesan</th><th>Kesan sampingan</th></tr></thead><tbody><tr><td>Racun serangga kimia</td><td>Rendah</td><td>Serta-merta, perlu diulang</td><td>Membunuh serangga berguna, mencemarkan air</td></tr><tr><td>Melepaskan pemangsa semula jadi</td><td>Sederhana</td><td>Beberapa bulan</td><td>Hampir tiada jika spesies tempatan</td></tr><tr><td>Menanam bunga menarik serangga pemangsa di batas</td><td>Rendah</td><td>Satu musim</td><td>Menambah biodiversiti</td></tr></tbody></table></div><p class=\"qnote\">Pilihan untuk mengawal perosak di sebuah kawasan sawah padi.</p>"
@@ -48,7 +50,7 @@ window.BANK["t2b2"] =
    "n": 1,
    "tempat": "Sawah Padi",
    "sk": "2.1 / 2.3 Komponen ekosistem",
-   "lampiran": null,
+   "lampiran": "rantai",
    "kadNama": "Pengurai",
    "kadEm": "🍄",
    "kadFakta": "Tanpa bakteria dan kulat pengurai, daun dan bangkai akan bertimbun dan nutrien tidak kembali ke tanah.",
@@ -70,7 +72,7 @@ window.BANK["t2b2"] =
     },
     {
      "j": "pilih",
-     "t": "Belalang yang memakan daun padi ialah:",
+     "t": "Berdasarkan Rajah 1, belalang yang memakan daun padi ialah:",
      "p": [
       "Pengeluar",
       "Pengguna primer",
@@ -175,7 +177,7 @@ window.BANK["t2b2"] =
    "n": 2,
    "tempat": "Tepi Hutan",
    "sk": "2.1 / 2.2 / 2.3 Aliran tenaga, kitar dan interaksi",
-   "lampiran": null,
+   "lampiran": "kitarair",
    "kadNama": "Rantai Makanan",
    "kadEm": "🔗",
    "kadFakta": "Hanya kira-kira 10% tenaga dipindahkan dari satu aras ke aras seterusnya dalam rantai makanan.",
@@ -221,7 +223,7 @@ window.BANK["t2b2"] =
     },
     {
      "j": "pilih",
-     "t": "Bagaimanakah penebangan hutan mengganggu kitar air?",
+     "t": "Berdasarkan Rajah 1, bagaimanakah penebangan hutan mengganggu kitar air?",
      "p": [
       "Lebih banyak pokok menyerap air hujan ke dalam akar",
       "Air hujan tidak lagi jatuh ke tanah di kawasan itu",

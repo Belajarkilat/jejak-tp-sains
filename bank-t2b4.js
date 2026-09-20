@@ -39,6 +39,8 @@ window.BANK["t2b4"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Kesihatan Manusia. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "pertahanan": "<figure class=\"figure\"><svg viewBox=\"0 0 260 154\" role=\"img\" aria-label=\"Rajah aliran menegak tiga barisan pertahanan: kulit dan mukus menghalang, sel darah putih menelan kuman, antibodi memusnahkan patogen\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Kulit dan mukus menghalang</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Sel darah putih menelan kuman</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Antibodi memusnahkan patogen</text></svg><figcaption>Rajah 1 · Tiga barisan pertahanan badan mengikut urutan.</figcaption></figure>",
+  "imun": "<figure class=\"figure\"><svg viewBox=\"0 0 260 178\" role=\"img\" aria-label=\"Dua lajur: keimunan aktif badan membuat antibodi sendiri dan tahan lama, keimunan pasif antibodi diberi dari luar dan tidak tahan lama\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Keimunan aktif</text><rect x=\"135\" y=\"4\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Keimunan pasif</text><rect x=\"6\" y=\"72\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"85.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Badan buat</text><text x=\"65.5\" y=\"100.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">antibodi</text><rect x=\"135\" y=\"72\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Antibodi diberi</text><rect x=\"6\" y=\"140\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"161.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Tahan lama</text><rect x=\"135\" y=\"140\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"153.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Tidak tahan</text><text x=\"194.5\" y=\"168.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">lama</text><line x1=\"65.5\" y1=\"40\" x2=\"65.5\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"65.5\" y1=\"108\" x2=\"65.5\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"194.5\" y1=\"40\" x2=\"194.5\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"194.5\" y1=\"108\" x2=\"194.5\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line></svg><figcaption>Rajah 1 · Perbandingan keimunan aktif dan keimunan pasif.</figcaption></figure>",
   "penyakit": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Penyakit</th><th>Punca</th><th>Cara merebak</th></tr></thead><tbody><tr><td>Taun (kolera)</td><td>Bakteria</td><td>Air atau makanan tercemar</td></tr><tr><td>Tibi</td><td>Bakteria</td><td>Titisan udara semasa batuk</td></tr><tr><td>Kurap</td><td>Kulat</td><td>Sentuhan kulit atau berkongsi tuala</td></tr><tr><td>Denggi</td><td>Virus</td><td>Gigitan nyamuk Aedes</td></tr><tr><td>Kencing tikus</td><td>Bakteria</td><td>Air yang dicemari air kencing tikus</td></tr><tr><td>Diabetes</td><td>Gaya hidup dan genetik</td><td>Tidak berjangkit</td></tr></tbody></table></div><p class=\"qnote\">Ringkasan beberapa penyakit di Malaysia.</p>",
   "antibodi": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Hari selepas dos pertama</th><th class=\"n\">0</th><th class=\"n\">7</th><th class=\"n\">14</th><th class=\"n\">28</th><th class=\"n\">60</th><th class=\"n\">67</th><th class=\"n\">74</th></tr></thead><tbody><tr><td>Aras antibodi (unit)</td><td class=\"n\">0</td><td class=\"n\">5</td><td class=\"n\">20</td><td class=\"n\">10</td><td class=\"n\">4</td><td class=\"n\">60</td><td class=\"n\">90</td></tr></tbody></table></div><p class=\"qnote\">Dos kedua (dos penggalak) diberi pada hari ke-60. Aras perlindungan minimum ialah 50 unit. Data rekaan untuk menunjukkan corak gerak balas.</p>",
   "denggi": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Minggu</th><th class=\"n\">Kes denggi baharu</th><th>Tindakan pada minggu itu</th></tr></thead><tbody><tr><td>1</td><td class=\"n\">4</td><td>Tiada tindakan</td></tr><tr><td>2</td><td class=\"n\">12</td><td>Semburan kabus (fogging) sekali</td></tr><tr><td>3</td><td class=\"n\">10</td><td>Tiada tindakan</td></tr><tr><td>4</td><td class=\"n\">15</td><td>Gotong-royong cari dan musnah tempat pembiakan</td></tr><tr><td>5</td><td class=\"n\">9</td><td>Gotong-royong diteruskan setiap minggu</td></tr><tr><td>6</td><td class=\"n\">3</td><td>Gotong-royong diteruskan setiap minggu</td></tr></tbody></table></div><p class=\"qnote\">Kes denggi di sebuah taman perumahan. Nyamuk Aedes mengambil masa kira-kira 7 hingga 10 hari untuk membesar daripada telur kepada dewasa. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t2b4"] =
    "n": 1,
    "tempat": "Klinik Kesihatan",
    "sk": "4.1 / 4.2 Penyakit dan pertahanan badan",
-   "lampiran": null,
+   "lampiran": "pertahanan",
    "kadNama": "Vektor",
    "kadEm": "🦟",
    "kadFakta": "Nyamuk Aedes betina menggigit pada waktu pagi dan petang, dan boleh membawa virus denggi dan Zika.",
@@ -118,7 +120,7 @@ window.BANK["t2b4"] =
     },
     {
      "j": "pilih",
-     "t": "Barisan pertahanan pertama badan ialah:",
+     "t": "Berdasarkan Rajah 1, barisan pertahanan pertama badan ialah:",
      "p": [
       "Sel darah putih",
       "Kulit dan mukus",
@@ -175,7 +177,7 @@ window.BANK["t2b4"] =
    "n": 2,
    "tempat": "Pusat Imunisasi",
    "sk": "4.1 / 4.2 Penularan penyakit dan keimunan",
-   "lampiran": null,
+   "lampiran": "imun",
    "kadNama": "Imunisasi",
    "kadEm": "💉",
    "kadFakta": "Program imunisasi kebangsaan Malaysia melindungi kanak-kanak daripada penyakit seperti tibi, campak dan batuk kokol.",
@@ -209,7 +211,7 @@ window.BANK["t2b4"] =
     },
     {
      "j": "pilih",
-     "t": "Mengapakah keimunan pasif tidak tahan lama?",
+     "t": "Berdasarkan Rajah 1, mengapakah keimunan pasif tidak tahan lama?",
      "p": [
       "Antibodi daripada luar terlalu kuat untuk badan",
       "Keimunan pasif hanya diberi kepada orang dewasa",
