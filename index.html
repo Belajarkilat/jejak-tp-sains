@@ -106,7 +106,7 @@ p{margin:0}
 .brand b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.02em;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand span{display:block;font-size:11px;color:var(--ink3);line-height:1.1;margin-top:1px}
 .seg{display:flex;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
-.seg button{border:0;background:transparent;padding:9px 15px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink3);white-space:nowrap;min-height:40px}
+.seg button{border:0;background:transparent;padding:9px 15px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink3);white-space:nowrap;min-height:44px}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
 .icon-btn{border:1px solid var(--line);background:var(--surface);width:42px;height:42px;border-radius:999px;cursor:pointer;display:grid;place-items:center;font-size:16px;flex:none}
 
@@ -225,7 +225,7 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
 .btn:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}
 .btn.ghost{background:transparent;color:var(--ink2);border:1.5px solid var(--line2);box-shadow:none}
 .btn.teal{background:var(--teal)}
-.btn.sm{padding:9px 15px;font-size:13.5px;min-height:40px}
+.btn.sm{padding:9px 15px;font-size:13.5px;min-height:44px}
 
 /* pips */
 /* Sembilan titik kemajuan melimpah keluar panel pada telefon 320px jika
@@ -282,7 +282,13 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
 .harian .d{font-size:13px;color:var(--ink2)}
 
 /* cikgu */
-.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);padding:0 16px;background:var(--surface2);overflow-x:auto}
+/* Tab dibiar berbalut, bukan menatal. Lima tab memerlukan 542px sedangkan
+   jalur ini hanya 357px pada telefon 390px, jadi "Diagnostik" dan "Tangga TP"
+   berada di luar skrin tanpa sebarang tanda ia wujud — dan "Nama & PIN"
+   berakhir tepat di tepi bekas, jadi ia nampak seperti tab terakhir. Cikgu
+   membuat kesimpulan ada tiga tab, lalu tab yang paling berguna kepadanya
+   tidak pernah dijumpai. */
+.tabs{display:flex;flex-wrap:wrap;gap:0 4px;border-bottom:1px solid var(--line);padding:0 16px;background:var(--surface2)}
 .tabs button{border:0;background:transparent;padding:13px 12px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink3);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
 .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--arteri)}
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:12px 2px;border-bottom:1px solid var(--line);cursor:pointer;text-align:left;border-left:0;border-right:0;border-top:0;background:transparent;width:100%;min-height:56px}
@@ -294,7 +300,14 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
 .tpbar{display:flex;gap:3px}
 .tpbar i{width:9px;height:20px;border-radius:2px;background:var(--line2);display:block}
 .tpbar i.on{background:var(--teal)}
-.tpbig{font-family:"DM Mono",monospace;font-size:18px;min-width:44px;text-align:right}
+/* TP rendah diberi warna supaya cikgu dapat mengesannya sekali imbas.
+   Dalam kelas 27 murid, TP1 dan TP5 yang sama berat visual bermakna
+   cikgu terpaksa membaca setiap baris satu per satu. Warna sahaja tidak
+   memadai, jadi nombor TP itu sendiri kekal sebagai penanda utama. */
+.tpbig{font-family:"DM Mono",monospace;font-size:18px;min-width:44px;text-align:right;font-weight:600}
+.tpbig[data-tp="0"],.tpbig[data-tp="1"],.tpbig[data-tp="2"]{color:var(--arteri)}
+.tpbig[data-tp="3"]{color:var(--amber)}
+.tpbig[data-tp="5"],.tpbig[data-tp="6"]{color:var(--teal)}
 .ulasan{margin:10px 0 4px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .ulasan-hd{background:var(--surface2);padding:11px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .ulasan-hd .nm{font-weight:700;font-size:14px}
@@ -331,7 +344,7 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
 .kuasa .tajuk{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);width:100%}
 .kbtn{
   display:flex;align-items:center;gap:8px;border:1.5px solid var(--line2);background:var(--surface2);
-  border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:650;cursor:pointer;min-height:42px;
+  border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:650;cursor:pointer;min-height:44px;
 }
 .kbtn:hover:not(:disabled){border-color:var(--teal)}
 .kbtn:disabled{opacity:.38;cursor:not-allowed}
@@ -379,7 +392,7 @@ textarea.free{width:100%;min-height:160px;resize:vertical;margin-top:13px;border
   .brand b{font-size:15px}
   .topbar-in{min-height:54px;gap:9px}
   .seg button{padding:9px 12px;font-size:12.5px}
-  .icon-btn{width:38px;height:38px}
+  .icon-btn{width:44px;height:44px}
   .hud{top:54px}
   .panel-hd h2{font-size:20px}
   .panel-bd,.panel-hd{padding:15px}
@@ -529,7 +542,7 @@ input.pin{
 .papantab{display:flex;gap:4px;margin-bottom:12px}
 .papantab button{
   border:1.5px solid var(--line);background:var(--surface2);border-radius:999px;
-  padding:7px 14px;font-size:12.5px;font-weight:650;cursor:pointer;color:var(--ink3);min-height:38px;
+  padding:7px 14px;font-size:12.5px;font-weight:650;cursor:pointer;color:var(--ink3);min-height:44px;
 }
 .papantab button[aria-pressed="true"]{background:var(--surface);color:var(--ink);border-color:var(--line2)}
 .prow .sub{font-size:11.5px;color:var(--ink3);font-family:"DM Mono",monospace}
@@ -605,8 +618,11 @@ input.kodkelas:focus{border-color:var(--arteri);outline:none}
 
 /* ---------- guru: log masuk dan papan pemuka ---------- */
 .authkad{max-width:440px;margin:0 auto}
-.demokad{max-width:440px;margin:16px auto 0;border-style:dashed}
-.demokad h3{margin:0 0 4px}
+.urutannota{margin:10px 2px 0;text-align:center}
+.demokad{max-width:440px;margin:0 auto 16px}
+.demokad h3{margin:0 0 6px;font-size:20px;line-height:1.25}
+.nilaisenarai{margin:12px 0 12px;padding-left:20px;display:grid;gap:6px}
+.nilaisenarai li{font-size:14.5px;line-height:1.45;color:var(--ink2)}
 .demojalur{margin-top:6px;padding:12px 16px;border:1.5px dashed var(--line2);border-radius:var(--r);background:var(--surface2);display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
 .demojalur p{margin:0;flex:1 1 240px;font-size:14px;color:var(--ink2)}
 .btn.google{
@@ -620,7 +636,7 @@ input.kodkelas:focus{border-color:var(--arteri);outline:none}
 .setuju input{width:20px;height:20px;flex:none;margin-top:1px}
 .setuju em{color:var(--ink3);font-style:normal}
 .note.privasi{font-size:12px;margin-top:10px}
-.pautan{background:none;border:0;padding:6px 0;color:var(--vena);font-weight:650;cursor:pointer;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.pautan{background:none;border:0;padding:11px 0;color:var(--vena);font-weight:650;cursor:pointer;font-size:14px;text-decoration:underline;text-underline-offset:3px;min-height:44px}
 .guruhd{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px}
 .guruhd .grow{flex:1 1 220px;min-width:0}
 .guruhd h2{font-size:26px}
@@ -655,7 +671,7 @@ input.kodkelas::placeholder{opacity:.3}
 .kadkelas.import{border-style:solid;border-color:var(--vena);background:var(--surface)}
 .kadkelas.tambah small{display:block;font-weight:500;color:var(--ink3);font-size:12.5px;margin-top:2px}
 .langkah{margin:14px 0 0;padding-left:20px;color:var(--ink2);font-size:14.5px;line-height:1.7}
-.kembali{border:0;background:none;cursor:pointer;color:var(--ink2);font-weight:650;font-size:14px;padding:8px 0;display:inline-flex;gap:6px;align-items:center}
+.kembali{border:0;background:none;cursor:pointer;color:var(--ink2);font-weight:650;font-size:14px;padding:11px 0;display:inline-flex;gap:6px;align-items:center;min-height:44px}
 .kodbesar{
   font-family:"DM Mono",monospace;font-size:26px;letter-spacing:.2em;color:var(--arteri);
   background:var(--arteri-soft);border-radius:12px;padding:8px 14px;white-space:nowrap;
@@ -666,14 +682,18 @@ input.kodkelas::placeholder{opacity:.3}
 .muridtab{width:100%;border-collapse:collapse;font-size:14px}
 .muridtab th,.muridtab td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
 .muridtab th{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);font-weight:500}
-.muridtab input{font:inherit;font-size:15px;width:100%;min-width:150px;padding:7px 9px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--ink)}
+.muridtab input{font:inherit;font-size:15px;width:100%;min-width:150px;padding:11px 9px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--ink);min-height:44px}
 .muridtab input:hover,.muridtab input:focus{border-color:var(--line2);background:var(--surface)}
 .muridtab .pinsel{font-family:"DM Mono",monospace;font-size:16px;letter-spacing:.14em}
 .muridtab .ops{white-space:nowrap;text-align:right}
-.btnkecil{border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:5px 9px;font-size:12px;cursor:pointer;color:var(--ink2);min-height:32px}
+/* 44px walaupun butang ini kecil: "Buang" memadam nama murid, jadi salah
+   ketik di sini mahal. */
+.btnkecil{border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:5px 11px;font-size:12px;cursor:pointer;color:var(--ink2);min-height:44px}
 .btnkecil.bahaya{color:var(--arteri)}
-.suis{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);cursor:pointer}
-.suis input[type=checkbox]{width:18px;height:18px;flex:none}
+/* Kotak semak 18px terlalu kecil untuk jari, tetapi labelnya boleh diketik
+   juga, jadi sasaran sebenar ialah label ini. */
+.suis{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);cursor:pointer;min-height:44px}
+.suis input[type=checkbox]{width:22px;height:22px;flex:none}
 .papanbesar .prow{font-size:16px;padding:11px 4px}
 .papanbesar .prow .rk{font-size:15px}
 .pingat{font-size:18px}
@@ -816,10 +836,25 @@ body.zon-murid{color:var(--tinta)}
 .wira .kemajuan i.on{background:var(--emas)}
 .wira .latihan{display:inline-block;margin-top:10px;background:rgba(0,0,0,.25);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:700}
 
+/* Jalur bab kekal menatal kerana sepuluh bab tidak muat berbalut pada peta,
+   tetapi ia mesti mengaku yang ia menatal. Bungkusnya memaparkan lorek
+   pudar dan anak panah pada mana-mana tepi yang masih ada bab tersembunyi.
+   Bayang latar CSS sahaja pernah dicuba dan terlalu halus dalam tema gelap. */
+.jalurbungkus{position:relative}
+.jalurbungkus::before,.jalurbungkus::after{content:"";position:absolute;top:0;bottom:6px;width:44px;pointer-events:none;opacity:0;transition:opacity .15s}
+.jalurbungkus::before{left:0;background:linear-gradient(to right,var(--ground) 32%,rgba(0,0,0,0))}
+.jalurbungkus::after{right:0;background:linear-gradient(to left,var(--ground) 32%,rgba(0,0,0,0))}
+.jalurbungkus[data-kiri="1"]::before,.jalurbungkus[data-kanan="1"]::after{opacity:1}
+.jalurbungkus .anak{position:absolute;top:50%;transform:translateY(-58%);z-index:2;pointer-events:none;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:24px;line-height:1;color:var(--tinta);opacity:0;transition:opacity .15s}
+.jalurbungkus .anak.kiri{left:3px}
+.jalurbungkus .anak.kanan{right:3px}
+.jalurbungkus[data-kiri="1"] .anak.kiri,.jalurbungkus[data-kanan="1"] .anak.kanan{opacity:.9}
 .babpilih{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
 .babpilih::-webkit-scrollbar{display:none}
 .tingpilih{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
-.tingpilih button{font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;border:2px solid var(--garis,var(--line2));background:transparent;color:inherit;cursor:pointer;min-height:36px}
+/* 44px: chip tingkatan ialah navigasi utama peta, bukan hiasan. */
+.tingpilih button{font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;border:2px solid var(--garis,var(--line2));background:transparent;color:inherit;cursor:pointer;min-height:44px}
 .tingpilih button[aria-pressed="true"]{background:var(--dunia,var(--vena));border-color:var(--dunia,var(--vena));color:#fff}
 .babpilih button.akan-datang{opacity:.55;cursor:default;border-style:dashed}
 .akan-datang-guru{align-self:center;margin:0}
@@ -1459,6 +1494,17 @@ function bilCubaan(kelas,no){
   for(var i=1;i<=6;i++){ var c=cubaanMurid(kelas,no,i); if(c) n+=(c.kali||0); }
   return n;
 }
+/* Bila kali terakhir murid ini bermain. Untuk bukti PBD, "bila" sama
+   pentingnya dengan "berapa": senarai yang hanya menunjukkan bilangan
+   percubaan tidak memberitahu cikgu sama ada rekod itu masih semasa. */
+function mainTerakhir(kelas,no){
+  var t=0;
+  for(var i=1;i<=6;i++){
+    var c=cubaanMurid(kelas,no,i);
+    if(c&&c.akhir&&c.akhir>t) t=c.akhir;
+  }
+  return t;
+}
 function adaKarangan(kelas,no){
   var c=cubaanMurid(kelas,no,6);
   return (c&&c.karangan&&c.karangan.teks) ? c.karangan : null;
@@ -1959,6 +2005,52 @@ function tandaMainUrl(ada){
   }catch(e){}
 }
 
+/* Zon cikgu juga ditanda dalam URL, atas sebab yang sama seperti ?main.
+   Dulu ia disimpan sebagai "cn-mod" dalam localStorage, jadi sekali sesiapa
+   menekan butang Cikgu pada satu peranti, pautan biasa membuka borang log
+   masuk guru pada peranti itu buat selama-lamanya. Murid yang meminjam
+   telefon atau komputer bilik darjah itu terus berdepan borang e-mel dan
+   kata laluan yang dia memang tidak ada. Kini pautan biasa sentiasa membuka
+   skrin kod kelas, dan cikgu yang menanda buku pautan ?cikgu kekal di
+   zonnya. */
+function tandaZonUrl(cikgu){
+  try{
+    var u=new URL(location.href);
+    if(cikgu===u.searchParams.has("cikgu")) return;
+    if(cikgu) u.searchParams.set("cikgu","1"); else u.searchParams.delete("cikgu");
+    history.replaceState(null,"",u.pathname+u.search+u.hash);
+  }catch(e){}
+}
+
+/* Tatal jalur mendatar supaya item aktif kelihatan. scrollIntoView tidak
+   digunakan kerana ia turut menatal halaman secara menegak, dan pada skrin
+   peta itu melontarkan murid ke tengah-tengah laluan. */
+function tatalKeAktif(jalur,pilih){
+  if(!jalur) return;
+  var a=jalur.querySelector(pilih); if(!a) return;
+  var lj=jalur.getBoundingClientRect(), la=a.getBoundingClientRect();
+  if(la.left>=lj.left-1&&la.right<=lj.right+1) return;
+  jalur.scrollLeft+=(la.left-lj.left)-(lj.width-la.width)/2;
+}
+
+/* Bungkus jalur menatal dengan penunjuk tepi, dan tatal item aktif supaya
+   kelihatan. Tanpa ini, jalur bab memuatkan 768px kandungan dalam 328px
+   tanpa sebarang tanda ada bab lain di sebelah kanan. */
+function bungkusJalur(jalur,pilih){
+  var w=el("div","jalurbungkus");
+  var ki=el("span","anak kiri","‹"); ki.setAttribute("aria-hidden","true");
+  var ka=el("span","anak kanan","›"); ka.setAttribute("aria-hidden","true");
+  w.appendChild(ki); w.appendChild(jalur); w.appendChild(ka);
+  function kemas(){
+    var baki=jalur.scrollWidth-jalur.clientWidth;
+    w.setAttribute("data-kiri",jalur.scrollLeft>4?"1":"0");
+    w.setAttribute("data-kanan",jalur.scrollLeft<baki-4?"1":"0");
+  }
+  jalur.addEventListener("scroll",kemas,{passive:true});
+  setTimeout(function(){ tatalKeAktif(jalur,pilih); kemas(); },0);
+  return w;
+}
+
 function mainTanpaRekod(){
   S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; muatLatihan(); simpanDiri(); tandaMainUrl(true); render();
 }
@@ -2301,7 +2393,7 @@ function renderPeta(){
       kd.innerHTML='<span class="ik" aria-hidden="true">\u{1F512}</span>'+esc(ad)+' akan datang';
       bp.appendChild(kd);
     }
-    st.appendChild(bp);
+    st.appendChild(bungkusJalur(bp,'button[aria-pressed="true"]'));
   }
 
   /* peta level */
@@ -2334,6 +2426,19 @@ function renderPeta(){
     lal.appendChild(row);
   });
   st.appendChild(lal);
+
+  /* Hentian tidak dikunci: cikgu mungkin mahu murid mencuba mana-mana tahap.
+     Tetapi TP dikira berturut (tpAuto berhenti pada hentian pertama yang
+     gagal), jadi murid yang melompat ke hentian 4 boleh habis satu sesi
+     dengan TP0 tanpa app pernah memberitahu sebabnya. Peta menunjuk arah
+     dengan gelembung "Main!", dan baris ini menerangkannya. */
+  var lompat=0;
+  for(var n=6;n>S.aras;n--){ if(S.lulus[n]){ lompat=n; break; } }
+  if(!S.latihan&&lompat&&!S.lulus[S.aras]){
+    st.appendChild(el("p","note urutannota",
+      "Awak dah lepas hentian "+lompat+", tapi TP dikira ikut urutan. Lepas hentian "+
+      S.aras+" dulu supaya TP awak naik."));
+  }
 
   if(tunggu){
     var nt=el("div","fb ok");
@@ -3320,7 +3425,7 @@ function simpanProfil(nama,sekolah,telefon,setuju){
     PROFIL={nama:nama,sekolah:sekolah,telefon:telefon,setuju:!!setuju,simpanan:!!setuju,ada:true};
   });
 }
-var NOTIS_PRIVASI="E-mel anda digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Sains. "+
+var NOTIS_PRIVASI="E-mel cikgu digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Sains. "+
   "Ia tidak dipaparkan kepada guru lain atau murid, dan tidak dijual kepada pihak ketiga. "+
   "Anda boleh menukar atau menarik balik persetujuan tawaran bila-bila masa di halaman Akaun.";
 function kotakSetuju(nilai){
@@ -3366,7 +3471,7 @@ function pesanRalat(e){
   if(/Password should|at least|weak.password/i.test(m)) return "Kata laluan perlu sekurang-kurangnya 8 aksara.";
   if(/rate limit|too many|security purposes/i.test(m)) return "Terlalu banyak cubaan. Tunggu sebentar dan cuba lagi.";
   if(/valid email|invalid.*email|Unable to validate email/i.test(m)) return "Alamat e-mel tidak sah.";
-  if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk anda.";
+  if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk cikgu.";
   if(/Failed to fetch|NetworkError|Load failed|network/i.test(m)) return "Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi.";
   if(/had 20 kelas/.test(m)) return "Setiap akaun boleh ada sehingga 20 kelas.";
   if(/had 60 murid/.test(m)) return "Setiap kelas boleh ada sehingga 60 murid.";
@@ -3452,11 +3557,28 @@ function bukaDemoGuru(){
 function cubaSebagaiMurid(){
   mainTanpaRekod(); tukarMod("murid");
 }
-function kadDemo(){
+/* Kad nilai, diletak DI ATAS borang log masuk.
+
+   Dulu skrin pertama yang dilihat cikgu ialah borang log masuk, dan kelas
+   contoh tersembunyi di bawah satu skrin penuh medan e-mel dan kata laluan.
+   Itu meminta kredensial sebelum menunjukkan sebarang nilai, sedangkan
+   kelas contoh itulah hujah jualan yang paling kuat. Kini kad ini dahulu,
+   borang di bawahnya. */
+function kadNilai(){
   var p=el("div","panel demokad");
   var bd=el("div","panel-bd");
-  bd.appendChild(el("h3",null,"Belum mahu daftar?"));
-  bd.appendChild(el("p","qnote","Lihat rupa laporan TP dengan kelas contoh berisi 6 murid rekaan, atau main sendiri seperti murid. Tiada apa yang disimpan."));
+  bd.appendChild(el("p","eyebrow","Pentaksiran bilik darjah · Sains KSSM"));
+  bd.appendChild(el("h3",null,"Rekod PBD Sains yang murid isi sendiri"));
+  bd.appendChild(el("p","qnote","Setiap bab jadi satu perjalanan enam hentian, satu hentian satu Tahap Penguasaan. Murid main, cikgu dapat rekodnya."));
+  var ul=el("ul","nilaisenarai");
+  ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
+   "Grid diagnostik: soalan mana satu kelas gagal",
+   "Ulasan PBD sedia salin ke SPPB",
+   "32 bab Sains Tingkatan 1, 2 dan 3",
+   "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
+  ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
+  bd.appendChild(ul);
+  bd.appendChild(el("p","qnote","Kelas contoh tidak perlu daftar dan tidak menyimpan apa-apa."));
   var a=el("div","actions");
   var b1=el("button","btn teal"); b1.type="button"; b1.textContent="Lihat kelas contoh"; b1.onclick=bukaDemoGuru;
   var b2=el("button","btn ghost"); b2.type="button"; b2.textContent="Cuba sebagai murid"; b2.onclick=cubaSebagaiMurid;
@@ -3467,14 +3589,15 @@ function kadDemo(){
 
 function paneLogMasuk(ak){
   var mod=S.authMod||"masuk";
+  if(mod==="masuk") ak.appendChild(kadNilai());
   var tajuk={masuk:"Log masuk guru",daftar:"Daftar akaun guru",lupa:"Lupa kata laluan"}[mod];
   var p=el("div","panel authkad");
   p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Jejak TP Sains · Untuk guru</p><h2>'+tajuk+'</h2></div>'));
   var bd=el("div","panel-bd");
   bd.appendChild(el("p","qnote",
     mod==="daftar" ? "Percuma. Setiap guru ada kelas, senarai nama dan rekod murid sendiri. Guru lain tidak dapat melihatnya." :
-    mod==="lupa"   ? "Masukkan e-mel akaun anda. Kami akan hantar pautan untuk menetapkan kata laluan baharu." :
-                     "Urus kelas anda, masukkan nama murid dan pantau keputusan PBD setiap murid."));
+    mod==="lupa"   ? "Masukkan e-mel akaun cikgu. Kami akan hantar pautan untuk menetapkan kata laluan baharu." :
+                     "Sudah ada akaun? Log masuk untuk membuka kelas cikgu."));
   var msg=el("p","ralat",""); msg.hidden=true;
   function papar(t,baik){ msg.hidden=!t; msg.className=baik?"berjaya":"ralat"; msg.textContent=t||""; }
   if(RALAT_AUTH){ papar("Log masuk tidak berjaya: "+RALAT_AUTH); RALAT_AUTH=""; }
@@ -3523,7 +3646,7 @@ function paneLogMasuk(ak){
     S.authEmel=emel;
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emel)) return papar("Masukkan alamat e-mel yang sah.");
     if(mod==="daftar"){
-      if(nilai(fNama).length<2) return papar("Masukkan nama anda.");
+      if(nilai(fNama).length<2) return papar("Masukkan nama cikgu.");
       if(nilai(fSekolah).length<3) return papar("Masukkan nama sekolah.");
     }
     if(mod!=="lupa"&&kata.length<8) return papar("Kata laluan perlu sekurang-kurangnya 8 aksara.");
@@ -3538,7 +3661,7 @@ function paneLogMasuk(ak){
       if(r.error) throw r.error;
       if(r.data&&r.data.user&&r.data.user.identities&&r.data.user.identities.length===0)
         throw new Error("already registered");
-      if(!r.data.session){ siap(); papar("Akaun dicipta. Semak e-mel anda untuk mengesahkannya, kemudian log masuk.",true); }
+      if(!r.data.session){ siap(); papar("Akaun dicipta. Semak e-mel cikgu untuk mengesahkannya, kemudian log masuk.",true); }
     });
     else kerja=SB.auth.resetPasswordForEmail(emel,{redirectTo:asasUrl()}).then(function(r){
       if(r.error) throw r.error;
@@ -3559,7 +3682,7 @@ function paneLogMasuk(ak){
   bd.appendChild(bawah);
   p.appendChild(bd);
   ak.appendChild(p);
-  if(mod!=="lupa") ak.appendChild(kadDemo());
+  if(mod==="daftar") ak.appendChild(kadNilai());
 }
 
 function paneKataBaru(ak){
@@ -3596,7 +3719,7 @@ function paneProfil(ak){
   var p=el("div","panel authkad");
   p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(SESI.user.email||"")+'</p><h2>'+(baru?"Lengkapkan profil":"Akaun saya")+'</h2></div>'));
   var bd=el("div","panel-bd");
-  if(baru) bd.appendChild(el("p","qnote","Nama anda dipaparkan kepada murid semasa mereka memilih kelas."));
+  if(baru) bd.appendChild(el("p","qnote","Nama cikgu dipaparkan kepada murid semasa mereka memilih kelas."));
   var f=el("form"); f.noValidate=true;
   var fn=medan("Nama (dipaparkan kepada murid)","text","pnama",PROFIL.nama,{placeholder:"cth. Cikgu Aminah",maxlength:"80"});
   var fs=medan("Sekolah","text","psekolah",PROFIL.sekolah,{placeholder:"cth. SMK Taman Maluri",maxlength:"120"});
@@ -3879,7 +4002,7 @@ function renderKelasGuru(){
   $("btnKembali").innerHTML=(k.contoh&&!SESI)?"&larr; Kembali ke log masuk":"&larr; Semua kelas saya";
   var dj=$("demoJalur"); dj.innerHTML=""; dj.classList.toggle("hidden",!k.contoh);
   if(k.contoh){
-    dj.appendChild(el("p",null,"Kelas contoh dengan 6 murid rekaan. Beginilah rupa keputusan apabila murid anda bermain."));
+    dj.appendChild(el("p",null,"Kelas contoh dengan 6 murid rekaan. Beginilah rupa keputusan apabila murid cikgu bermain."));
     var bm=el("button","btn ghost sm"); bm.type="button"; bm.textContent="Cuba sebagai murid"; bm.onclick=cubaSebagaiMurid;
     dj.appendChild(bm);
     if(!SESI){
@@ -3932,11 +4055,13 @@ function paneKelas(){
     var bar='<span class="tpbar">';
     for(var i=1;i<=6;i++) bar+='<i class="'+(i<=lapor?"on":"")+'"></i>';
     bar+='</span>';
+    var akhir=mainTerakhir(kelas,no);
     b.innerHTML='<span><span class="nm">'+esc(namaMurid(kelas,no))+'</span><br><span class="meta">'+
       (bil?bil+' percubaan':'belum bermain')+
+      (akhir?' · '+tarikhPendek(akhir):'')+
       (kar&&lapor<6?' · <span class="tandaT">tugasan TP6 menunggu</span>':'')+
       (tindih?' · <span class="tandaT">TP ditindih</span>':'')+'</span></span>'+
-      bar+'<span class="tpbig">TP'+lapor+(tindih?'<span class="tandaT">*</span>':'')+'</span>';
+      bar+'<span class="tpbig" data-tp="'+lapor+'">TP'+lapor+(tindih?'<span class="tandaT">*</span>':'')+'</span>';
     b.onclick=function(){ S.muridPilih=(S.muridPilih===no)?null:no; renderCikgu(); };
     lst.appendChild(b);
     if(S.muridPilih===no) lst.appendChild(butiranMurid(kelas,no,auto,lapor));
@@ -4731,7 +4856,7 @@ function tukarMod(m){
   $("btnMurid").setAttribute("aria-pressed",murid);
   $("btnCikgu").setAttribute("aria-pressed",!murid);
   document.body.classList.toggle("zon-murid",murid);
-  try{ localStorage.setItem("cn-mod",murid?"murid":"cikgu"); }catch(e){}
+  tandaZonUrl(!murid);
   if(murid){ render(); } else { hentiJam(); hentiPetaAnim(); aturDegup(); mulaAuth(); renderCikgu(); }
   window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -4785,7 +4910,7 @@ function mula(){
     authUrl=u.searchParams.has("code")||u.searchParams.has("error_description")||/access_token|error_description/.test(u.hash);
     if(qk){ u.searchParams.delete("k"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
   }catch(e){}
-  try{ modLama=localStorage.getItem("cn-mod"); }catch(e){}
+  try{ modLama=(new URL(location.href)).searchParams.has("cikgu")?"cikgu":null; }catch(e){ modLama=null; }
 
   if(S.no&&KM&&S.kod){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
   else if(S.latihan&&qdemo==="bebas"){ S.skrin="peta"; muatLatihan(); }
