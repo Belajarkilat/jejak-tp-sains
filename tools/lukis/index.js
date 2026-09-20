@@ -19,6 +19,7 @@ const penjana = {
   graf: require("./graf"),
   struktur: require("./struktur"),
   sinar: require("./sinar"),
+  daya: require("./daya"),
 };
 
 function lukisLampiran(spec){

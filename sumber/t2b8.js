@@ -18,6 +18,39 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_BUKU = {
+  "jenis": "daya",
+  "mod": "objek",
+  "objek": "Buku",
+  "daya": [
+    {
+      "arah": "atas",
+      "label": "Daya tindak balas meja",
+      "warna": "ungu"
+    },
+    {
+      "arah": "bawah",
+      "label": "Berat buku",
+      "warna": "merah"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Daya yang bertindak pada sebuah buku yang diam di atas meja.",
+  "alt": "Rajah daya: sebuah buku dengan anak panah berat ke bawah dan anak panah daya tindak balas meja ke atas, kedua-duanya sama panjang"
+};
+
+const R_SORONG = {
+  "jenis": "daya",
+  "mod": "tuas",
+  "fulkrum": 0.06,
+  "beban": 0.45,
+  "daya": 0.94,
+  "kelas": 2,
+  "labelBeban": "Beban",
+  "labelDaya": "Daya",
+  "kapsyen": "Rajah 1 · Kereta sorong: fulkrum pada roda, beban di tengah, daya pada pemegang.",
+  "alt": "Rajah tuas: fulkrum di hujung kiri rentang, beban di tengah menekan ke bawah, dan daya dikenakan ke atas di hujung kanan"
+};
+
 const T_TUAS =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Situasi</th>'+
 '<th class="n">Beban (N)</th><th class="n">Jarak beban dari fulkrum (m)</th><th class="n">Jarak daya dari fulkrum (m)</th></tr></thead><tbody>'+
@@ -47,7 +80,7 @@ const T_TAYAR =
 
 const ARAS = [
 
-{n:1, tempat:"Taman Permainan", sk:"8.1 Jenis daya dan cirinya",
+{n:1, tempat:"Taman Permainan", sk:"8.1 Jenis daya dan cirinya", lampiran:"dayabuku",
  kadNama:"Newton", kadEm:"\u{1F34E}", kadFakta:"Unit daya dinamakan sempena Isaac Newton. Daya 1 N lebih kurang berat sebiji epal kecil.",
  bosKadNama:"Daya Tindak Balas", bosKadEm:"\u{1F680}", bosKadFakta:"Roket bergerak ke atas kerana gas ditolak ke bawah; gas itu menolak roket ke atas dengan daya yang sama magnitud.",
  soalan:[
@@ -57,15 +90,15 @@ const ARAS = [
  {j:"pilih",t:"Daya yang menolak objek ke atas apabila berada di dalam air dipanggil:",p:["Daya apungan","Daya normal","Daya graviti","Daya geseran"],b:0,u:"Daya apungan menyebabkan objek terasa lebih ringan di dalam air."},
  {j:"pilih",t:"Tiga ciri daya ialah magnitud, arah dan:",p:["Titik aplikasi","Warna","Suhu","Jisim"],b:0,u:"Kesan daya bergantung pada di mana ia dikenakan."},
  {j:"nombor",t:"Seorang murid berjisim 45 kg. Berapakah beratnya, dalam newton? (g = 10 N/kg)",b:450,tol:0.5,suf:"N",u:"W = mg = 45 × 10 = 450 N."},
- {j:"pilih",t:"Buku yang diletakkan di atas meja tidak jatuh kerana:",p:["Daya normal meja mengimbangi berat buku","Buku itu tiada berat langsung","Graviti tidak bertindak di atas meja","Geseran menarik buku ke atas"],b:0,u:"Berat (tindakan) sama dengan daya normal (tindak balas)."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, buku yang diletakkan di atas meja tidak jatuh kerana:",p:["Daya normal meja mengimbangi berat buku","Buku itu tiada berat langsung","Graviti tidak bertindak di atas meja","Geseran menarik buku ke atas"],b:0,u:"Berat (tindakan) sama dengan daya normal (tindak balas)."},
  {j:"banyak",t:"Pilih SEMUA contoh daya kenyal.",p:["Spring yang ditarik","Getah lastik yang diregang","Trampolin yang ditekan","Epal jatuh dari pokok","Bot terapung di sungai"],b:[0,1,2],u:"Epal jatuh kerana graviti dan bot terapung kerana daya apungan."}],
  bos:{j:"pilih",t:"Jika awak menolak dinding dengan daya 50 N, dinding menolak awak dengan daya:",p:["50 N ke arah bertentangan","0 N kerana dinding tidak bergerak","100 N ke arah yang sama","25 N ke arah bertentangan"],b:0,u:"Setiap daya tindakan mempunyai daya tindak balas yang sama magnitud tetapi bertentangan arah."}},
 
-{n:2, tempat:"Bengkel Kereta", sk:"8.2 Kesan daya, tuas, momen dan tekanan",
+{n:2, tempat:"Bengkel Kereta", sk:"8.2 Kesan daya, tuas, momen dan tekanan", lampiran:"tuassorong",
  kadNama:"Spanar", kadEm:"\u{1F527}", kadFakta:"Spanar yang panjang memudahkan nat longgar kerana momen daya bertambah apabila jarak dari pangsi bertambah.",
  bosKadNama:"Tekanan Atmosfera", bosKadEm:"\u{1F3D4}", bosKadFakta:"Tekanan atmosfera di puncak Gunung Kinabalu hanya kira-kira 60% daripada tekanan di aras laut.",
  soalan:[
- {j:"pilih",t:"Kereta sorong ialah tuas kelas:",p:["Kedua","Pertama","Ketiga","Keempat"],b:0,u:"Beban berada di antara fulkrum (roda) dan daya."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, kereta sorong ialah tuas kelas:",p:["Kedua","Pertama","Ketiga","Keempat"],b:0,u:"Beban berada di antara fulkrum (roda) dan daya."},
  {j:"pilih",t:"Penyepit makanan ialah tuas kelas:",p:["Ketiga","Pertama","Kedua","Keempat"],b:0,u:"Daya berada di antara fulkrum dan beban."},
  {j:"pilih",t:"Mengapakah lebih mudah membuka pintu dengan menolak pada bahagian yang jauh dari engsel?",p:["Momen daya lebih besar","Pintu menjadi lebih ringan","Geseran pada engsel hilang","Graviti menarik pintu"],b:0,u:"Momen daya = daya × jarak tegak dari pangsi."},
  {j:"pilih",t:"Mengapakah pisau yang tajam lebih mudah memotong?",p:["Luas permukaan kecil, tekanan lebih besar","Pisau tajam lebih berat daripada pisau tumpul","Pisau tajam mengurangkan daya yang dikenakan","Luas permukaan besar, tekanan lebih besar"],b:0,u:"Tekanan = daya ÷ luas permukaan."},
@@ -149,6 +182,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta alat yang menggunakan konsep daya, tuas dan keapungan secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Daya dan Gerakan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ tuas:T_TUAS, apung:T_APUNG, tayar:T_TAYAR },
+  lampiran:{ dayabuku:R_BUKU, tuassorong:R_SORONG, tuas:T_TUAS, apung:T_APUNG, tayar:T_TAYAR },
   aras:ARAS
 };

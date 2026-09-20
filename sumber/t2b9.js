@@ -16,6 +16,78 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_PINDAH = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "k",
+      "label": "Konduksi",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "p",
+      "label": "Perolakan",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "s",
+      "label": "Sinaran",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "k2",
+      "label": "Pepejal",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "p2",
+      "label": "Cecair & gas",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "s2",
+      "label": "Tanpa bahan",
+      "x": 2,
+      "y": 1
+    }
+  ],
+  "panah": [
+    [
+      "k",
+      "k2"
+    ],
+    [
+      "p",
+      "p2"
+    ],
+    [
+      "s",
+      "s2"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Tiga cara haba merambat dan bahan yang diperlukannya.",
+  "alt": "Tiga lajur: konduksi melalui pepejal, perolakan melalui cecair dan gas, sinaran tanpa memerlukan bahan"
+};
+
+const R_KEMBANG = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Logam dipanaskan",
+    "Zarah bergetar lebih kuat",
+    "Jarak antara zarah bertambah",
+    "Logam mengembang"
+  ],
+  "kapsyen": "Rajah 1 · Apa yang berlaku kepada zarah apabila logam dipanaskan.",
+  "alt": "Rajah aliran menegak: logam dipanaskan, zarah bergetar lebih kuat, jarak antara zarah bertambah, logam mengembang"
+};
+
 const T_ROD =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Rod</th>'+
 '<th class="n">Masa paku lilin jatuh (s)</th></tr></thead><tbody>'+
@@ -46,25 +118,25 @@ const T_BUMBUNG =
 
 const ARAS = [
 
-{n:1, tempat:"Pantai Petang", sk:"9.1 / 9.2 Suhu, haba dan pengaliran haba",
+{n:1, tempat:"Pantai Petang", sk:"9.1 / 9.2 Suhu, haba dan pengaliran haba", lampiran:"pindahhaba",
  kadNama:"Keseimbangan Terma", kadEm:"\u{2696}", kadFakta:"Secawan teh panas akhirnya mencapai suhu bilik kerana haba mengalir keluar sehingga suhu sama.",
  bosKadNama:"Bayu Laut", bosKadEm:"\u{1F30A}", bosKadFakta:"Bayu laut bertiup pada waktu siang kerana daratan menjadi panas lebih cepat daripada laut.",
  soalan:[
  {j:"pilih",t:"Unit S.I. bagi haba ialah:",p:["Joule (J)","Kelvin (K)","Darjah Celsius (°C)","Watt (W)"],b:0,u:"Haba ialah satu bentuk tenaga."},
  {j:"pilih",t:"Suhu ialah ukuran:",p:["Darjah kepanasan sesuatu objek","Jumlah tenaga haba dalam objek","Jisim sesuatu objek","Isi padu sesuatu objek"],b:0,u:"Suhu diukur dengan termometer."},
  {j:"pilih",t:"Haba sentiasa mengalir dari:",p:["Kawasan panas ke kawasan sejuk","Kawasan sejuk ke kawasan panas","Objek besar ke objek kecil","Objek ringan ke objek berat"],b:0,u:"Pengaliran berhenti apabila suhu sama."},
- {j:"pilih",t:"Pemindahan haba melalui pepejal dipanggil:",p:["Konduksi","Perolakan","Sinaran","Penyejatan"],b:0,u:"Zarah yang bergetar memindahkan tenaga kepada zarah bersebelahan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, pemindahan haba melalui pepejal dipanggil:",p:["Konduksi","Perolakan","Sinaran","Penyejatan"],b:0,u:"Zarah yang bergetar memindahkan tenaga kepada zarah bersebelahan."},
  {j:"pilih",t:"Pemindahan haba dari Matahari ke Bumi berlaku melalui:",p:["Sinaran","Konduksi","Perolakan","Pantulan"],b:0,u:"Sinaran tidak memerlukan medium."},
  {j:"pilih",t:"Contoh penebat haba ialah:",p:["Plastik","Kuprum","Aluminium","Besi"],b:0,u:"Logam ialah konduktor haba yang baik."},
  {j:"pilih",t:"Objek yang menyerap haba paling baik ialah objek:",p:["Hitam dan kusam","Putih dan berkilat","Perak berkilat","Lutsinar"],b:0,u:"Objek hitam dan kusam juga membebaskan haba paling baik."},
  {j:"banyak",t:"Pilih SEMUA contoh perolakan.",p:["Air di dalam cerek dipanaskan dari bawah","Bayu laut pada waktu siang","Udara panas naik dari api unggun","Sudu logam menjadi panas dalam sup","Cahaya matahari memanaskan kulit"],b:[0,1,2],u:"Sudu logam ialah konduksi, dan cahaya matahari ialah sinaran."}],
  bos:{j:"pilih",t:"Pada waktu malam, bayu darat bertiup kerana:",p:["Daratan menyejuk lebih cepat daripada laut","Laut menyejuk lebih cepat daripada daratan","Angin sentiasa bertiup ke laut","Bulan menarik udara ke laut"],b:0,u:"Udara di atas laut yang lebih panas naik, dan udara sejuk dari darat menggantikannya."}},
 
-{n:2, tempat:"Stesen Kereta Api", sk:"9.2 / 9.3 / 9.4 Konduktor, pengembangan dan penyerapan haba",
+{n:2, tempat:"Stesen Kereta Api", sk:"9.2 / 9.3 / 9.4 Konduktor, pengembangan dan penyerapan haba", lampiran:"kembang",
  kadNama:"Ruang Landasan", kadEm:"\u{1F6E4}", kadFakta:"Ruang kecil ditinggalkan antara landasan kereta api supaya landasan boleh mengembang pada hari panas tanpa bengkok.",
  bosKadNama:"Jalur Dwilogam", bosKadEm:"\u{1F514}", bosKadFakta:"Jalur dwilogam melengkung apabila panas kerana dua logamnya mengembang pada kadar berbeza.",
  soalan:[
- {j:"pilih",t:"Mengapakah ruang ditinggalkan antara landasan kereta api?",p:["Supaya landasan boleh mengembang","Supaya bunyi kereta api lebih kuat","Supaya air hujan mudah mengalir","Supaya landasan lebih murah"],b:0,u:"Tanpa ruang, landasan akan bengkok."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah ruang ditinggalkan antara landasan kereta api?",p:["Supaya landasan boleh mengembang","Supaya bunyi kereta api lebih kuat","Supaya air hujan mudah mengalir","Supaya landasan lebih murah"],b:0,u:"Tanpa ruang, landasan akan bengkok."},
  {j:"pilih",t:"Mengapakah kabel elektrik dipasang kendur di antara tiang?",p:["Kabel mengecut ketika sejuk","Kabel mengembang ketika sejuk","Supaya burung boleh hinggap","Supaya elektrik mengalir laju"],b:0,u:"Kabel yang terlalu tegang boleh putus apabila mengecut."},
  {j:"pilih",t:"Termometer merkuri berfungsi kerana merkuri:",p:["Mengembang apabila dipanaskan","Mengecut apabila dipanaskan","Berubah warna apabila panas","Menjadi pepejal pada suhu bilik"],b:0,u:"Paras merkuri naik apabila suhu meningkat."},
  {j:"pilih",t:"Penutup logam balang kaca yang ketat boleh dibuka dengan merendamnya dalam air panas kerana:",p:["Logam mengembang lebih banyak daripada kaca","Kaca mengembang lebih banyak daripada logam","Air panas melicinkan penutup","Haba melemahkan balang kaca"],b:0,u:"Penutup longgar sedikit apabila ia mengembang."},
@@ -148,6 +220,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta reka bentuk rumah atau alat yang menggunakan konsep haba secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Haba. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ rod:T_ROD, tin:T_TIN, bumbung:T_BUMBUNG },
+  lampiran:{ pindahhaba:R_PINDAH, kembang:R_KEMBANG, rod:T_ROD, tin:T_TIN, bumbung:T_BUMBUNG },
   aras:ARAS
 };

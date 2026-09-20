@@ -17,6 +17,102 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_OHM = {
+  "jenis": "graf",
+  "titik": true,
+  "grid": 5,
+  "yMin": 0,
+  "yMaks": 7.5,
+  "x": [
+    0,
+    0.5,
+    1,
+    1.5,
+    2,
+    2.5
+  ],
+  "siri": [
+    {
+      "label": "Voltan (V)",
+      "warna": "ungu",
+      "y": [
+        0,
+        1.5,
+        3,
+        4.5,
+        6,
+        7.5
+      ]
+    }
+  ],
+  "xLabel": "Arus melalui perintang (A)",
+  "kapsyen": "Rajah 1 · Voltan merentasi satu perintang melawan arus yang melaluinya.",
+  "alt": "Graf garis lurus melalui asalan: voltan naik sekata dari 0 hingga 7.5 volt apabila arus naik dari 0 hingga 2.5 ampere"
+};
+
+const R_LITAR = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "s",
+      "label": "Litar bersiri",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "p",
+      "label": "Litar selari",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "s2",
+      "label": "Satu laluan sahaja",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "p2",
+      "label": "Banyak laluan",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "s3",
+      "label": "Satu putus, semua padam",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "p3",
+      "label": "Satu putus, lain menyala",
+      "x": 1,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "s",
+      "s2"
+    ],
+    [
+      "s2",
+      "s3"
+    ],
+    [
+      "p",
+      "p2"
+    ],
+    [
+      "p2",
+      "p3"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Perbandingan litar bersiri dengan litar selari.",
+  "alt": "Dua lajur: litar bersiri hanya ada satu laluan dan semua mentol padam jika satu putus, litar selari ada banyak laluan dan mentol lain terus menyala"
+};
+
 const T_LITAR =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Litar</th>'+
 '<th>Susunan</th><th class="n">Voltan bateri (V)</th><th class="n">Rintangan setiap mentol (&Omega;)</th></tr></thead><tbody>'+
@@ -45,7 +141,7 @@ const T_LAMPU =
 
 const ARAS = [
 
-{n:1, tempat:"Bilik Kawalan Elektrik", sk:"7.1 / 7.3 Cas, arus dan magnet",
+{n:1, tempat:"Bilik Kawalan Elektrik", sk:"7.1 / 7.3 Cas, arus dan magnet", lampiran:"grafohm",
  kadNama:"Kilat", kadEm:"\u{26A1}", kadFakta:"Kilat ialah nyahcas elektrostatik yang sangat besar antara awan dengan Bumi atau antara awan.",
  bosKadNama:"Kompas", bosKadEm:"\u{1F9ED}", bosKadFakta:"Jarum kompas ialah magnet kecil yang menunjuk ke arah utara kerana Bumi sendiri bertindak seperti magnet besar.",
  soalan:[
@@ -57,13 +153,13 @@ const ARAS = [
  {j:"pilih",t:"Kutub utara magnet didekatkan dengan kutub utara magnet lain. Apakah yang berlaku?",p:["Menolak","Menarik","Tiada kesan","Berputar"],b:0,u:"Kutub sama menolak, kutub berlainan menarik."},
  {j:"pilih",t:"Garisan medan magnet paling rapat di:",p:["Kutub magnet","Tengah magnet","Jauh dari magnet","Sisi magnet"],b:0,u:"Medan magnet paling kuat di kutub."},
  {j:"banyak",t:"Pilih SEMUA kegunaan elektromagnet.",p:["Loceng elektrik","Kren pengangkat besi buruk","Kunci pintu elektrik","Kompas pengakap","Magnet peti sejuk"],b:[0,1,2],u:"Kompas dan magnet peti sejuk menggunakan magnet kekal."}],
- bos:{j:"pilih",t:"Hukum Ohm menyatakan bahawa:",p:["V = IR","V = I + R","I = VR","R = V + I"],b:0,u:"Voltan = arus × rintangan."}},
+ bos:{j:"pilih",t:"Berdasarkan Rajah 1, Hukum Ohm menyatakan bahawa:",p:["V = IR","V = I + R","I = VR","R = V + I"],b:0,u:"Voltan = arus × rintangan."}},
 
-{n:2, tempat:"Rumah Pintar", sk:"7.1 / 7.2 / 7.3 Elektrostatik, litar dan elektromagnet",
+{n:2, tempat:"Rumah Pintar", sk:"7.1 / 7.2 / 7.3 Elektrostatik, litar dan elektromagnet", lampiran:"siriselari",
  kadNama:"Sangkar Faraday", kadEm:"\u{1F697}", kadFakta:"Kereta berbumbung logam melindungi penumpang semasa ribut petir kerana cas mengalir di permukaan luar kereta.",
  bosKadNama:"Solenoid", bosKadEm:"\u{1F300}", bosKadFakta:"Solenoid ialah gegelung dawai yang menghasilkan medan magnet seperti magnet bar apabila arus mengalir.",
  soalan:[
- {j:"pilih",t:"Mengapakah pendawaian rumah menggunakan litar selari?",p:["Setiap alat boleh dihidupkan secara berasingan","Lebih sedikit dawai diperlukan untuk seluruh rumah","Semua alat akan padam serentak jika satu rosak","Voltan setiap alat menjadi lebih rendah"],b:0,u:"Setiap alat juga menerima voltan penuh."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah pendawaian rumah menggunakan litar selari?",p:["Setiap alat boleh dihidupkan secara berasingan","Lebih sedikit dawai diperlukan untuk seluruh rumah","Semua alat akan padam serentak jika satu rosak","Voltan setiap alat menjadi lebih rendah"],b:0,u:"Setiap alat juga menerima voltan penuh."},
  {j:"pilih",t:"Dalam litar bersiri, jika satu mentol terbakar, mentol lain akan:",p:["Padam","Menyala lebih terang","Menyala seperti biasa","Berkelip-kelip"],b:0,u:"Litar bersiri hanya mempunyai satu laluan arus."},
  {j:"pilih",t:"Mengapakah pakaian daripada kain sintetik lebih kerap 'memercik' pada cuaca kering?",p:["Ia mudah mengumpul cas statik","Ia mengkonduksi elektrik dengan sangat baik","Ia mengandungi dawai logam halus","Ia menyerap lembapan dengan cepat"],b:0,u:"Udara kering menghalang cas daripada bocor."},
  {j:"pilih",t:"Mengapakah pekerja stesen minyak menasihatkan jangan masuk semula ke kereta semasa mengisi petrol?",p:["Cas statik boleh menghasilkan percikan","Petrol akan menjadi lebih mahal","Kereta akan bergerak sendiri","Pam petrol akan berhenti berfungsi"],b:0,u:"Percikan api boleh menyalakan wap petrol."},
@@ -147,6 +243,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta sistem elektrik atau elektromagnet yang selamat dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Keelektrikan dan Kemagnetan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ litar:T_LITAR, elektro:T_ELEKTRO, lampu:T_LAMPU },
+  lampiran:{ grafohm:R_OHM, siriselari:R_LITAR, litar:T_LITAR, elektro:T_ELEKTRO, lampu:T_LAMPU },
   aras:ARAS
 };

@@ -18,6 +18,85 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_AMPLITUD = {
+  "jenis": "graf",
+  "grid": 4,
+  "yMin": -4,
+  "yMaks": 4,
+  "setiap": 3,
+  "x": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "siri": [
+    {
+      "label": "Bunyi P (lebih nyaring)",
+      "warna": "merah",
+      "y": [
+        0,
+        3.5,
+        3.5,
+        0,
+        -3.5,
+        -3.5,
+        0,
+        3.5,
+        3.5,
+        0,
+        -3.5,
+        -3.5,
+        0
+      ]
+    },
+    {
+      "label": "Bunyi Q (kurang nyaring)",
+      "warna": "ungu",
+      "y": [
+        0,
+        1.3,
+        1.3,
+        0,
+        -1.3,
+        -1.3,
+        0,
+        1.3,
+        1.3,
+        0,
+        -1.3,
+        -1.3,
+        0
+      ]
+    }
+  ],
+  "xLabel": "Masa (milisaat)",
+  "kapsyen": "Rajah 1 · Dua bunyi yang sama kelangsingan. Bunyi P lebih nyaring daripada bunyi Q.",
+  "alt": "Dua gelombang dengan bilangan puncak yang sama, tetapi gelombang P mempunyai puncak yang jauh lebih tinggi daripada gelombang Q"
+};
+
+const R_GEMA = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Bunyi dari sumber",
+    "Mengenai dinding keras",
+    "Dipantulkan kembali",
+    "Didengar semula sebagai gema"
+  ],
+  "kapsyen": "Rajah 1 · Bagaimana gema terbentuk dalam sebuah dewan.",
+  "alt": "Rajah aliran menegak: bunyi dari sumber mengenai dinding keras, dipantulkan kembali, dan didengar semula sebagai gema"
+};
+
 const T_OSILO =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Bunyi</th>'+
 '<th class="n">Frekuensi (Hz)</th><th class="n">Tinggi gelombang pada skrin osiloskop (petak)</th></tr></thead><tbody>'+
@@ -49,7 +128,7 @@ const T_BAHAN =
 
 const ARAS = [
 
-{n:1, tempat:"Bilik Muzik", sk:"10.1 / 10.2 Ciri gelombang bunyi",
+{n:1, tempat:"Bilik Muzik", sk:"10.1 / 10.2 Ciri gelombang bunyi", lampiran:"amplitud",
  kadNama:"Getaran", kadEm:"\u{1F3B8}", kadFakta:"Semua bunyi dihasilkan oleh getaran, sama ada tali gitar, kulit gendang atau pita suara.",
  bosKadNama:"Balang Vakum", bosKadEm:"\u{1F514}", bosKadFakta:"Loceng di dalam balang vakum tidak kedengaran walaupun ia masih bergetar, kerana bunyi memerlukan medium.",
  soalan:[
@@ -57,19 +136,19 @@ const ARAS = [
  {j:"pilih",t:"Bunyi TIDAK boleh merambat melalui:",p:["Vakum","Udara","Air","Keluli"],b:0,u:"Bunyi memerlukan medium."},
  {j:"pilih",t:"Unit S.I. bagi frekuensi ialah:",p:["Hertz (Hz)","Desibel (dB)","Meter (m)","Saat (s)"],b:0,u:"1 Hz = satu getaran sesaat."},
  {j:"pilih",t:"Kelangsingan bunyi bergantung pada:",p:["Frekuensi","Amplitud","Medium","Suhu"],b:0,u:"Frekuensi tinggi menghasilkan bunyi langsing."},
- {j:"pilih",t:"Kenyaringan bunyi bergantung pada:",p:["Amplitud","Frekuensi","Warna","Jisim"],b:0,u:"Amplitud besar menghasilkan bunyi nyaring."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, kenyaringan bunyi bergantung pada:",p:["Amplitud","Frekuensi","Warna","Jisim"],b:0,u:"Amplitud besar menghasilkan bunyi nyaring."},
  {j:"pilih",t:"Bunyi merambat paling laju dalam:",p:["Keluli","Air","Udara","Vakum"],b:0,u:"Zarah pepejal paling rapat."},
  {j:"pilih",t:"Julat pendengaran manusia ialah kira-kira:",p:["20 Hz hingga 20 000 Hz","2 Hz hingga 200 Hz","200 Hz hingga 2 000 000 Hz","0 Hz hingga 20 Hz"],b:0,u:"Bunyi di atas 20 000 Hz dipanggil ultrasonik."},
  {j:"banyak",t:"Pilih SEMUA permukaan yang menyerap bunyi dengan baik.",p:["Langsir tebal","Karpet","Span","Dinding jubin","Cermin kaca"],b:[0,1,2],u:"Permukaan keras dan licin memantulkan bunyi."}],
  bos:{j:"pilih",t:"Bunyi yang dipantulkan kembali dan didengar semula dipanggil:",p:["Gema","Getaran","Frekuensi","Resonans"],b:0,u:"Gema jelas kedengaran di gua atau dewan kosong."}},
 
-{n:2, tempat:"Pentas Orkestra", sk:"10.2 / 10.3 Kenyaringan, kelangsingan dan pantulan bunyi",
+{n:2, tempat:"Pentas Orkestra", sk:"10.2 / 10.3 Kenyaringan, kelangsingan dan pantulan bunyi", lampiran:"gema",
  kadNama:"Kesan Doppler", kadEm:"\u{1F691}", kadFakta:"Bunyi siren ambulans kedengaran lebih langsing ketika menghampiri dan lebih rendah selepas melepasi kita.",
  bosKadNama:"Ekolokasi", bosKadEm:"\u{1F987}", bosKadFakta:"Kelawar menghasilkan bunyi ultrasonik dan mendengar gemanya untuk mengesan serangga dalam gelap.",
  soalan:[
  {j:"pilih",t:"Tali gitar yang dipetik dengan lebih kuat menghasilkan bunyi yang:",p:["Lebih nyaring","Lebih langsing","Lebih rendah","Lebih perlahan"],b:0,u:"Amplitud getaran bertambah."},
  {j:"pilih",t:"Tali gitar yang lebih pendek menghasilkan bunyi yang lebih:",p:["Langsing","Nyaring","Lembut","Rendah"],b:0,u:"Tali pendek bergetar dengan frekuensi lebih tinggi."},
- {j:"pilih",t:"Mengapakah dewan kosong lebih bergema daripada dewan yang penuh dengan orang?",p:["Kurang permukaan lembut menyerap bunyi","Udara dalam dewan kosong lebih tumpat","Bunyi bergerak lebih laju dalam dewan kosong","Dinding menghasilkan bunyi sendiri"],b:0,u:"Badan dan pakaian manusia menyerap bunyi."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah dewan kosong lebih bergema daripada dewan yang penuh dengan orang?",p:["Kurang permukaan lembut menyerap bunyi","Udara dalam dewan kosong lebih tumpat","Bunyi bergerak lebih laju dalam dewan kosong","Dinding menghasilkan bunyi sendiri"],b:0,u:"Badan dan pakaian manusia menyerap bunyi."},
  {j:"pilih",t:"Siren ambulans kedengaran semakin langsing apabila menghampiri. Fenomena ini dipanggil:",p:["Kesan Doppler","Gema","Resonans","Sonar"],b:0,u:"Frekuensi yang didengar bertambah apabila sumber menghampiri."},
  {j:"pilih",t:"Doktor menggunakan ultrabunyi untuk melihat fetus kerana:",p:["Ia selamat dan dipantulkan tisu","Ia menggunakan sinar-X yang kuat","Ia boleh didengar oleh ibu","Ia memanaskan fetus"],b:0,u:"Gema ultrasonik membentuk imej tanpa sinaran berbahaya."},
  {j:"pilih",t:"Bunyi kereta api yang jauh sampai lebih cepat melalui landasan keluli berbanding melalui udara. Mengapa?",p:["Bunyi lebih laju dalam pepejal","Keluli mengubah bunyi kepada cahaya","Bunyi tidak boleh melalui udara langsung","Landasan menghasilkan bunyinya sendiri"],b:0,u:"Zarah dalam pepejal rapat, jadi getaran dipindahkan dengan lebih cepat. Jangan sekali-kali mendekati landasan untuk menguji perkara ini."},
@@ -151,6 +230,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta penyelesaian masalah bunyi yang kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Gelombang Bunyi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ osilo:T_OSILO, sonar:T_SONAR, bahan:T_BAHAN },
+  lampiran:{ amplitud:R_AMPLITUD, gema:R_GEMA, osilo:T_OSILO, sonar:T_SONAR, bahan:T_BAHAN },
   aras:ARAS
 };

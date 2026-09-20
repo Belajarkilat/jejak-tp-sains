@@ -20,6 +20,65 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_SUHUPLANET = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 5,
+  "yMaks": 500,
+  "bar": [
+    {
+      "label": "Utarid",
+      "nilai": 167,
+      "warna": "kuning"
+    },
+    {
+      "label": "Zuhrah",
+      "nilai": 464,
+      "warna": "merah"
+    },
+    {
+      "label": "Bumi",
+      "nilai": 15,
+      "warna": "hijau"
+    }
+  ],
+  "xLabel": "Suhu purata permukaan (°C)",
+  "kapsyen": "Rajah 1 · Suhu purata permukaan tiga planet dalam.",
+  "alt": "Graf palang suhu purata permukaan: Utarid 167 darjah Celsius, Zuhrah 464, Bumi 15"
+};
+
+const R_ORBIT = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 4,
+  "yMaks": 2,
+  "bar": [
+    {
+      "label": "Utarid",
+      "nilai": 0.24,
+      "warna": "kuning"
+    },
+    {
+      "label": "Zuhrah",
+      "nilai": 0.62,
+      "warna": "merah"
+    },
+    {
+      "label": "Bumi",
+      "nilai": 1,
+      "warna": "hijau"
+    },
+    {
+      "label": "Marikh",
+      "nilai": 1.88,
+      "warna": "ungu"
+    }
+  ],
+  "xLabel": "Tempoh orbit (tahun Bumi)",
+  "kapsyen": "Rajah 1 · Tempoh orbit empat planet dalam, disusun mengikut jarak dari Matahari.",
+  "alt": "Graf palang tempoh orbit yang semakin panjang mengikut jarak: Utarid 0.24 tahun, Zuhrah 0.62, Bumi 1, Marikh 1.88"
+};
+
 const T_JARAK =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Planet</th>'+
 '<th class="n">Jarak purata dari Matahari (a.u.)</th><th class="n">Tempoh satu orbit (tahun Bumi)</th></tr></thead><tbody>'+
@@ -54,7 +113,7 @@ const T_KOLONI =
 
 const ARAS = [
 
-{n:1, tempat:"Model Sistem Suria", sk:"12.1 Planet dan unit jarak angkasa",
+{n:1, tempat:"Model Sistem Suria", sk:"12.1 Planet dan unit jarak angkasa", lampiran:"suhuplanet",
  kadNama:"Unit Astronomi", kadEm:"\u{1F4CF}", kadFakta:"Satu unit astronomi (a.u.) ialah jarak purata Bumi ke Matahari, kira-kira 150 juta kilometer.",
  bosKadNama:"Musytari", bosKadEm:"\u{1FA90}", bosKadFakta:"Musytari ialah planet terbesar. Lebih 1300 buah Bumi boleh dimuatkan di dalamnya.",
  soalan:[
@@ -64,15 +123,15 @@ const ARAS = [
  {j:"pilih",t:"Planet yang dikenali sebagai 'planet merah' ialah:",p:["Marikh","Zuhrah","Musytari","Utarid"],b:0,u:"Tanahnya mengandungi ferum oksida."},
  {j:"pilih",t:"Planet yang mempunyai gelang yang paling jelas ialah:",p:["Zuhal","Bumi","Marikh","Utarid"],b:0,u:"Gelangnya terdiri daripada ais dan batu."},
  {j:"pilih",t:"Satelit semula jadi Bumi ialah:",p:["Bulan","Matahari","Marikh","Komet"],b:0,u:"Utarid dan Zuhrah tidak mempunyai bulan."},
- {j:"pilih",t:"Planet yang paling panas dalam Sistem Suria ialah:",p:["Zuhrah","Utarid","Bumi","Marikh"],b:0,u:"Zuhrah lebih panas daripada Utarid walaupun lebih jauh dari Matahari."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, planet yang paling panas antara tiga planet ini ialah:",p:["Zuhrah","Utarid","Bumi","Marikh"],b:0,u:"Zuhrah lebih panas daripada Utarid walaupun lebih jauh dari Matahari."},
  {j:"banyak",t:"Pilih SEMUA ciri yang menjadikan Bumi sesuai untuk hidupan.",p:["Air dalam keadaan cecair","Atmosfera mengandungi oksigen","Jarak yang sesuai dari Matahari","Suhu purata permukaan 464 °C","Tiada atmosfera langsung di sekelilingnya"],b:[0,1,2],u:"Suhu 464 °C ialah suhu Zuhrah."}],
  bos:{j:"susun",t:"Susun planet mengikut jarak dari Matahari, bermula daripada yang PALING dekat.",p:["Utarid","Zuhrah","Bumi","Marikh","Musytari"],b:[0,1,2,3,4],u:"Selepas Musytari ialah Zuhal, Uranus dan Neptun."}},
 
-{n:2, tempat:"Bilik Simulasi", sk:"12.1 Hubungan ciri planet dan situasi hipotetikal",
+{n:2, tempat:"Bilik Simulasi", sk:"12.1 Hubungan ciri planet dan situasi hipotetikal", lampiran:"tempohorbit",
  kadNama:"Zuhrah", kadEm:"\u{1F525}", kadFakta:"Atmosfera Zuhrah yang tebal memerangkap haba, menjadikan suhunya cukup panas untuk meleburkan plumbum.",
  bosKadNama:"Fasa Bumi", bosKadEm:"\u{1F317}", bosKadFakta:"Angkasawan di Bulan melihat Bumi mengalami fasa, sama seperti kita melihat fasa Bulan dari Bumi.",
  soalan:[
- {j:"pilih",t:"Mengapakah planet yang jauh dari Matahari mempunyai tempoh orbit yang lebih panjang?",p:["Orbitnya lebih panjang dan lebih perlahan","Planet yang jauh lebih berat daripada planet dekat","Matahari menolak planet yang jauh ke belakang","Planet yang jauh berputar pada paksinya lebih cepat"],b:0,u:"Tarikan graviti Matahari lebih lemah pada jarak jauh."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah planet yang jauh dari Matahari mempunyai tempoh orbit yang lebih panjang?",p:["Orbitnya lebih panjang dan lebih perlahan","Planet yang jauh lebih berat daripada planet dekat","Matahari menolak planet yang jauh ke belakang","Planet yang jauh berputar pada paksinya lebih cepat"],b:0,u:"Tarikan graviti Matahari lebih lemah pada jarak jauh."},
  {j:"pilih",t:"Mengapakah Zuhrah lebih panas daripada Utarid?",p:["Atmosfera tebal memerangkap haba","Zuhrah lebih dekat dengan Matahari","Zuhrah mempunyai gunung berapi aktif sahaja","Utarid mempunyai lautan yang luas"],b:0,u:"Kesan rumah hijau yang melampau berlaku di Zuhrah."},
  {j:"pilih",t:"Jika Bumi berhenti berputar pada paksinya, apakah yang paling mungkin berlaku?",p:["Satu sisi siang sangat lama","Siang dan malam kekal 12 jam","Bumi berhenti mengelilingi Matahari","Bulan akan jatuh ke Bumi"],b:0,u:"Siang dan malam berlaku akibat putaran Bumi."},
  {j:"pilih",t:"Dari Bulan, Bumi kelihatan:",p:["Bulat dan mengalami fasa","Rata seperti cakera","Sentiasa gelap","Lebih kecil daripada bintang"],b:0,u:"Bahagian Bumi yang disinari Matahari berubah mengikut kedudukan."},
@@ -156,6 +215,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta pameran atau rekaan Sistem Suria yang tepat, kreatif dan bermakna. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Sistem Suria. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ jarak:T_JARAK, ciri:T_CIRI, koloni:T_KOLONI },
+  lampiran:{ suhuplanet:R_SUHUPLANET, tempohorbit:R_ORBIT, jarak:T_JARAK, ciri:T_CIRI, koloni:T_KOLONI },
   aras:ARAS
 };

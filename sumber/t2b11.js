@@ -19,6 +19,77 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_SUHUBINTANG = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 5,
+  "yMaks": 25000,
+  "bar": [
+    {
+      "label": "Merah",
+      "nilai": 3000,
+      "warna": "merah"
+    },
+    {
+      "label": "Kuning",
+      "nilai": 5800,
+      "warna": "kuning"
+    },
+    {
+      "label": "Putih",
+      "nilai": 10000,
+      "warna": "hijau"
+    },
+    {
+      "label": "Biru",
+      "nilai": 25000,
+      "warna": "ungu"
+    }
+  ],
+  "xLabel": "Suhu permukaan bintang (K)",
+  "kapsyen": "Rajah 1 · Suhu permukaan bintang mengikut warnanya.",
+  "alt": "Graf palang suhu permukaan bintang: merah 3000 kelvin, kuning 5800, putih 10000, biru 25000"
+};
+
+const R_BIMASAKTI = {
+  "jenis": "struktur",
+  "mod": "label",
+  "tinggiLukis": 150,
+  "bahagian": [
+    {
+      "label": "Bima Sakti",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 44,
+      "isi": "kertas2",
+      "garis": "garis2",
+      "anchorX": 50,
+      "anchorY": 6
+    },
+    {
+      "label": "Teras galaksi",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 11,
+      "isi": "kuning",
+      "garis": "kuning"
+    },
+    {
+      "label": "Sistem Suria",
+      "bentuk": "bulat",
+      "x": 34,
+      "y": 76,
+      "r": 4,
+      "isi": "merah",
+      "garis": "merah"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Kedudukan Sistem Suria dalam galaksi Bima Sakti.",
+  "alt": "Bulatan besar mewakili Bima Sakti dengan teras terang di tengah, dan satu titik kecil Sistem Suria jauh dari pusat, di bahagian luar galaksi"
+};
+
 const T_BINTANG =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Bintang</th>'+
 '<th>Warna</th><th class="n">Suhu permukaan (&deg;C)</th><th class="n">Jarak dari Bumi (tahun cahaya)</th></tr></thead><tbody>'+
@@ -49,28 +120,28 @@ const T_CERAP =
 
 const ARAS = [
 
-{n:1, tempat:"Planetarium", sk:"11.1 Objek angkasa dan ciri bintang",
+{n:1, tempat:"Planetarium", sk:"11.1 Objek angkasa dan ciri bintang", lampiran:"suhubintang",
  kadNama:"Bima Sakti", kadEm:"\u{1F30C}", kadFakta:"Galaksi Bima Sakti mengandungi lebih 100 bilion bintang, dan Matahari hanyalah salah satu daripadanya.",
  bosKadNama:"Nebula", bosKadEm:"\u{2601}", bosKadFakta:"Nebula ialah awan gas dan debu yang sangat besar tempat bintang-bintang baharu terbentuk.",
  soalan:[
  {j:"pilih",t:"Bintang yang paling hampir dengan Bumi ialah:",p:["Matahari","Sirius","Proxima Centauri","Rigel"],b:0,u:"Proxima Centauri ialah bintang terdekat selepas Matahari."},
  {j:"pilih",t:"Sekumpulan berbilion bintang, gas dan debu dipanggil:",p:["Galaksi","Nebula","Planet","Komet"],b:0,u:"Contohnya Galaksi Bima Sakti."},
  {j:"pilih",t:"Jenis galaksi Bima Sakti ialah:",p:["Berpilin","Elips","Tidak seragam","Bulat"],b:0,u:"Sistem Suria berada pada salah satu lengan pilinnya."},
- {j:"pilih",t:"Bintang yang paling panas berwarna:",p:["Biru","Merah","Kuning","Jingga"],b:0,u:"Bintang merah paling sejuk."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bintang yang paling panas berwarna:",p:["Biru","Merah","Kuning","Jingga"],b:0,u:"Bintang merah paling sejuk."},
  {j:"pilih",t:"Bintang menghasilkan cahaya dan haba melalui:",p:["Tindak balas nuklear","Pembakaran kayu","Pantulan cahaya","Geseran angin"],b:0,u:"Hidrogen dilakurkan menjadi helium di teras bintang."},
  {j:"pilih",t:"Tempat bintang baharu dilahirkan ialah:",p:["Nebula","Lohong hitam","Planet","Bulan"],b:0,u:"Graviti menarik gas dan debu dalam nebula menjadi bintang."},
  {j:"pilih",t:"Warna Matahari ialah:",p:["Kuning","Biru","Merah","Ungu"],b:0,u:"Matahari ialah bintang bersaiz sederhana."},
  {j:"banyak",t:"Pilih SEMUA ciri yang digunakan untuk membandingkan bintang.",p:["Suhu","Warna","Kecerahan","Bilangan planet yang dimiliki","Nama yang diberi manusia"],b:[0,1,2],u:"Saiz dan jarak juga digunakan."}],
  bos:{j:"susun",t:"Susun mengikut saiz, bermula daripada yang PALING kecil.",p:["Bumi","Matahari","Sistem Suria","Galaksi Bima Sakti","Alam semesta"],b:[0,1,2,3,4],u:"Matahari lebih besar daripada Bumi, tetapi Sistem Suria merangkumi semua planet."}},
 
-{n:2, tempat:"Balai Cerap", sk:"11.1 Kitar hidup bintang dan kedudukan Sistem Suria",
+{n:2, tempat:"Balai Cerap", sk:"11.1 Kitar hidup bintang dan kedudukan Sistem Suria", lampiran:"bimasakti",
  kadNama:"Supernova", kadEm:"\u{1F4A5}", kadFakta:"Supernova ialah letupan bintang besar yang boleh bersinar lebih terang daripada seluruh galaksinya untuk beberapa minggu.",
  bosKadNama:"Tahun Cahaya", bosKadEm:"\u{1F4AB}", bosKadFakta:"Cahaya dari Matahari mengambil masa kira-kira 8 minit untuk sampai ke Bumi.",
  soalan:[
  {j:"pilih",t:"Mengapakah Matahari kelihatan jauh lebih besar dan terang daripada bintang lain?",p:["Ia jauh lebih dekat dengan Bumi","Ia bintang paling besar di alam semesta","Ia bintang paling panas di galaksi","Ia satu-satunya bintang yang bercahaya"],b:0,u:"Banyak bintang lain sebenarnya lebih besar daripada Matahari."},
  {j:"pilih",t:"Bintang seperti Matahari akan berakhir sebagai:",p:["Kerdil putih","Lohong hitam","Supernova","Bintang neutron"],b:0,u:"Matahari tidak cukup besar untuk meletup sebagai supernova."},
  {j:"pilih",t:"Bintang yang sangat besar boleh berakhir sebagai:",p:["Lohong hitam","Kerdil putih","Nebula planet sahaja","Planet baharu"],b:0,u:"Selepas supernova, teras yang tinggal menjadi bintang neutron atau lohong hitam."},
- {j:"pilih",t:"Di manakah kedudukan Sistem Suria dalam Bima Sakti?",p:["Pada salah satu lengan pilin","Tepat di pusat galaksi","Di luar galaksi sepenuhnya","Di tengah lohong hitam"],b:0,u:"Kira-kira 26 000 tahun cahaya dari pusat galaksi."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, di manakah kedudukan Sistem Suria dalam Bima Sakti?",p:["Pada salah satu lengan pilin","Tepat di pusat galaksi","Di luar galaksi sepenuhnya","Di tengah lohong hitam"],b:0,u:"Kira-kira 26 000 tahun cahaya dari pusat galaksi."},
  {j:"pilih",t:"Bintang yang kelihatan paling terang di langit malam:",p:["Tidak semestinya paling besar","Sentiasa bintang paling besar","Pasti bintang paling panas","Tentu bintang paling jauh"],b:0,u:"Kecerahan yang dilihat bergantung pada saiz, suhu dan jarak."},
  {j:"pilih",t:"Tahun cahaya ialah unit bagi:",p:["Jarak","Masa","Kecerahan","Jisim"],b:0,u:"Ia jarak yang dilalui cahaya dalam setahun."},
  {j:"pilih",t:"Mengapakah bintang kelihatan seperti titik kecil walaupun sangat besar?",p:["Jaraknya sangat jauh","Saiz sebenarnya sangat kecil","Atmosfera mengecilkannya","Bintang hanya muncul pada waktu malam"],b:0,u:"Objek yang jauh kelihatan kecil."},
@@ -151,6 +222,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta projek astronomi yang kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Bintang dan Galaksi dalam Alam Semesta. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ bintang:T_BINTANG, kitar:T_KITAR, cerap:T_CERAP },
+  lampiran:{ suhubintang:R_SUHUBINTANG, bimasakti:R_BIMASAKTI, bintang:T_BINTANG, kitar:T_KITAR, cerap:T_CERAP },
   aras:ARAS
 };

@@ -17,6 +17,84 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_METEOR = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    {
+      "label": "Meteoroid di angkasa lepas",
+      "nota": "masuk atmosfera"
+    },
+    "Meteor: terbakar dan bercahaya",
+    "Meteorit: sampai ke permukaan Bumi"
+  ],
+  "kapsyen": "Rajah 1 · Satu ketulan batu angkasa bertukar nama mengikut tempatnya.",
+  "alt": "Rajah aliran menegak: meteoroid di angkasa lepas, meteor apabila terbakar dan bercahaya di atmosfera, meteorit apabila sampai ke permukaan Bumi"
+};
+
+const R_JASADBEZA = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "a",
+      "label": "Asteroid",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "k",
+      "label": "Komet",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "a2",
+      "label": "Batu dan logam",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "k2",
+      "label": "Ais dan debu",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "a3",
+      "label": "Tiada ekor",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "k3",
+      "label": "Ada ekor",
+      "x": 1,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "a",
+      "a2"
+    ],
+    [
+      "a2",
+      "a3"
+    ],
+    [
+      "k",
+      "k2"
+    ],
+    [
+      "k2",
+      "k3"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Perbandingan asteroid dengan komet.",
+  "alt": "Dua lajur: asteroid diperbuat daripada batu dan logam serta tiada ekor, komet diperbuat daripada ais dan debu serta ada ekor"
+};
+
 const T_JASAD =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Jasad</th>'+
 '<th>Saiz</th><th>Bahan utama</th><th>Ciri lain</th></tr></thead><tbody>'+
@@ -47,11 +125,11 @@ const T_PERTAHANAN =
 
 const ARAS = [
 
-{n:1, tempat:"Langit Malam", sk:"13.1 Meteoroid, meteor, meteorit, asteroid dan komet",
+{n:1, tempat:"Langit Malam", sk:"13.1 Meteoroid, meteor, meteorit, asteroid dan komet", lampiran:"meteor",
  kadNama:"Tahi Bintang", kadEm:"\u{1F320}", kadFakta:"'Tahi bintang' sebenarnya meteor, iaitu meteoroid kecil yang terbakar di atmosfera kerana geseran.",
  bosKadNama:"Komet Halley", bosKadEm:"\u{2604}", bosKadFakta:"Komet Halley kelihatan dari Bumi kira-kira setiap 76 tahun. Ia dijangka muncul semula sekitar tahun 2061.",
  soalan:[
- {j:"pilih",t:"Meteoroid yang terbakar dan bercahaya di atmosfera Bumi dipanggil:",p:["Meteor","Meteorit","Asteroid","Komet"],b:0,u:"Ia juga dikenali sebagai tahi bintang."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, meteoroid yang terbakar dan bercahaya di atmosfera Bumi dipanggil:",p:["Meteor","Meteorit","Asteroid","Komet"],b:0,u:"Ia juga dikenali sebagai tahi bintang."},
  {j:"pilih",t:"Meteoroid yang sampai ke permukaan Bumi dipanggil:",p:["Meteorit","Meteor","Komet","Nebula"],b:0,u:"Meteorit boleh dikaji untuk memahami asal usul Sistem Suria."},
  {j:"pilih",t:"Kebanyakan asteroid terletak di:",p:["Antara Marikh dan Musytari","Antara Bumi dan Bulan","Di tengah Matahari","Di luar galaksi"],b:0,u:"Kawasan ini dikenali sebagai lingkaran asteroid."},
  {j:"pilih",t:"Komet terdiri terutamanya daripada:",p:["Ais, debu dan batu","Logam cair panas","Gas hidrogen sahaja","Air laut beku"],b:0,u:"Komet sering digelar 'bola salji kotor'."},
@@ -61,14 +139,14 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA jasad yang mengelilingi Matahari.",p:["Asteroid","Komet","Meteoroid","Galaksi Andromeda","Nebula Orion"],b:[0,1,2],u:"Andromeda dan Nebula Orion berada jauh di luar Sistem Suria."}],
  bos:{j:"pilih",t:"Hujan meteor berlaku apabila:",p:["Bumi melalui serpihan komet","Bulan berlanggar dengan asteroid","Matahari memancarkan batu","Awan hujan menjadi terlalu panas"],b:0,u:"Contohnya hujan meteor Perseid setiap Ogos."}},
 
-{n:2, tempat:"Muzium Meteorit", sk:"13.1 Pergerakan dan kesan jasad angkasa terhadap Bumi",
+{n:2, tempat:"Muzium Meteorit", sk:"13.1 Pergerakan dan kesan jasad angkasa terhadap Bumi", lampiran:"jasadbeza",
  kadNama:"Meteorit", kadEm:"\u{1FAA8}", kadFakta:"Meteorit besi biasanya lebih berat daripada batu biasa yang sama saiz kerana banyak mengandungi besi dan nikel.",
  bosKadNama:"Kawah", bosKadEm:"\u{1F573}", bosKadFakta:"Permukaan Bulan penuh dengan kawah kerana tiada atmosfera untuk membakar meteoroid.",
  soalan:[
  {j:"pilih",t:"Mengapakah kebanyakan meteoroid tidak sampai ke permukaan Bumi?",p:["Terbakar di atmosfera","Ditolak oleh Bulan","Terlalu ringan untuk jatuh","Ditarik oleh Musytari"],b:0,u:"Geseran dengan udara menghasilkan haba yang sangat tinggi."},
  {j:"pilih",t:"Mengapakah Bulan mempunyai lebih banyak kawah daripada Bumi?",p:["Bulan tiada atmosfera dan hakisan","Bulan lebih besar daripada Bumi","Bulan lebih dekat dengan lingkaran asteroid","Bulan mempunyai lebih banyak gunung berapi"],b:0,u:"Di Bumi, hakisan dan kitar batuan memadamkan kebanyakan kawah lama."},
  {j:"pilih",t:"Mengapakah orbit komet biasanya sangat bujur?",p:["Ia datang dari jauh","Ia berputar di sekeliling Bumi sahaja","Ia ditolak oleh planet berbatu","Ia tidak dipengaruhi oleh graviti"],b:0,u:"Sebab itu komet hanya kelihatan sekali-sekala."},
- {j:"pilih",t:"Beza utama antara asteroid dengan komet ialah:",p:["Asteroid berbatu, komet berais","Asteroid berais, komet berbatu","Kedua-duanya sama","Asteroid mempunyai ekor panjang"],b:0,u:"Komet mengeluarkan ekor apabila aisnya menyejat."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, beza utama antara asteroid dengan komet ialah:",p:["Asteroid berbatu, komet berais","Asteroid berais, komet berbatu","Kedua-duanya sama","Asteroid mempunyai ekor panjang"],b:0,u:"Komet mengeluarkan ekor apabila aisnya menyejat."},
  {j:"pilih",t:"Kepupusan dinosaur dikaitkan dengan:",p:["Hentaman asteroid besar","Letupan bintang berhampiran","Banjir besar di seluruh dunia","Gerhana matahari yang panjang"],b:0,u:"Debu yang terhasil menghalang cahaya Matahari untuk tempoh yang lama."},
  {j:"pilih",t:"Meteorit penting kepada ahli sains kerana:",p:["Ia menyimpan bahan dari awal Sistem Suria","Ia boleh digunakan sebagai bahan api roket","Ia mengandungi hidupan dari planet lain","Ia menunjukkan cuaca pada masa depan"],b:0,u:"Kebanyakan meteorit hampir tidak berubah sejak Sistem Suria terbentuk."},
  {j:"pilih",t:"Apakah yang paling mungkin berlaku jika asteroid besar menghentam lautan?",p:["Tsunami besar","Laut terus kering","Air laut menjadi tawar","Tiada kesan langsung"],b:0,u:"Tenaga hentaman menolak air dalam jumlah yang sangat besar."},
@@ -149,6 +227,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta sistem atau misi pertahanan planet yang kreatif dan realistik. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Meteoroid, Asteroid, Komet. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ jasad:T_JASAD, hentaman:T_HENTAMAN, pertahanan:T_PERTAHANAN },
+  lampiran:{ meteor:R_METEOR, jasadbeza:R_JASADBEZA, jasad:T_JASAD, hentaman:T_HENTAMAN, pertahanan:T_PERTAHANAN },
   aras:ARAS
 };

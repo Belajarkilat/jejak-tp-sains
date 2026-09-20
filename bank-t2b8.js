@@ -39,6 +39,8 @@ window.BANK["t2b8"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Daya dan Gerakan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "dayabuku": "<figure class=\"figure\"><svg viewBox=\"0 0 260 216\" role=\"img\" aria-label=\"Rajah daya: sebuah buku dengan anak panah berat ke bawah dan anak panah daya tindak balas meja ke atas, kedua-duanya sama panjang\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"91\" y=\"87\" width=\"78\" height=\"46\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"2\"></rect><text x=\"130\" y=\"114\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\" font-weight=\"700\">Buku</text><line x1=\"130\" y1=\"84\" x2=\"130\" y2=\"38\" stroke=\"var(--vena)\" stroke-width=\"2.2\" marker-end=\"url(#panah)\"></line><text x=\"130\" y=\"29\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--vena)\" text-anchor=\"middle\">Daya tindak balas meja</text><line x1=\"130\" y1=\"136\" x2=\"130\" y2=\"182\" stroke=\"var(--arteri)\" stroke-width=\"2.2\" marker-end=\"url(#panah)\"></line><text x=\"130\" y=\"199\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--arteri)\" text-anchor=\"middle\">Berat buku</text></svg><figcaption>Rajah 1 · Daya yang bertindak pada sebuah buku yang diam di atas meja.</figcaption></figure>",
+  "tuassorong": "<figure class=\"figure\"><svg viewBox=\"0 0 260 170\" role=\"img\" aria-label=\"Rajah tuas: fulkrum di hujung kiri rentang, beban di tengah menekan ke bawah, dan daya dikenakan ke atas di hujung kanan\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"26\" y=\"105\" width=\"208\" height=\"14\" rx=\"4\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"2\"></rect><path d=\"M25.5 142 L38.5 120 L51.5 142 Z\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1\" stroke-linejoin=\"round\"></path><text x=\"38.5\" y=\"158\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Fulkrum</text><line x1=\"119.6\" y1=\"58\" x2=\"119.6\" y2=\"100\" stroke=\"var(--arteri)\" stroke-width=\"2.2\" marker-end=\"url(#panah)\"></line><text x=\"119.6\" y=\"50\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--arteri)\" text-anchor=\"middle\">Beban</text><line x1=\"221.5\" y1=\"100\" x2=\"221.5\" y2=\"58\" stroke=\"var(--vena)\" stroke-width=\"2.2\" marker-end=\"url(#panah)\"></line><text x=\"221.5\" y=\"50\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--vena)\" text-anchor=\"middle\">Daya</text></svg><figcaption>Rajah 1 · Kereta sorong: fulkrum pada roda, beban di tengah, daya pada pemegang.</figcaption></figure>",
   "tuas": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Situasi</th><th class=\"n\">Beban (N)</th><th class=\"n\">Jarak beban dari fulkrum (m)</th><th class=\"n\">Jarak daya dari fulkrum (m)</th></tr></thead><tbody><tr><td>A: Jongkang-jongket</td><td class=\"n\">400</td><td class=\"n\">1.5</td><td class=\"n\">2.0</td></tr><tr><td>B: Kereta sorong</td><td class=\"n\">600</td><td class=\"n\">0.4</td><td class=\"n\">1.2</td></tr><tr><td>C: Batang pengungkit batu</td><td class=\"n\">900</td><td class=\"n\">0.2</td><td class=\"n\">1.8</td></tr></tbody></table></div><p class=\"qnote\">Beban &times; jarak beban dari fulkrum = daya &times; jarak daya dari fulkrum. Abaikan berat tuas.</p>",
   "apung": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Objek</th><th class=\"n\">Berat di udara (N)</th><th class=\"n\">Berat ketara di dalam air (N)</th></tr></thead><tbody><tr><td>Blok aluminium</td><td class=\"n\">5.4</td><td class=\"n\">3.4</td></tr><tr><td>Blok besi, saiz sama</td><td class=\"n\">15.8</td><td class=\"n\">13.8</td></tr><tr><td>Batu</td><td class=\"n\">6.0</td><td class=\"n\">3.5</td></tr><tr><td>Blok kayu</td><td class=\"n\">1.2</td><td class=\"n\">0 (terapung)</td></tr></tbody></table></div><p class=\"qnote\">Berat diukur dengan neraca spring. Daya apungan = berat di udara &minus; berat ketara di dalam air.</p>",
   "tayar": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Kenderaan</th><th class=\"n\">Berat (N)</th><th class=\"n\">Jumlah luas sentuhan tayar dengan tanah (m&sup2;)</th><th class=\"n\">Harga sewa sehari (RM)</th></tr></thead><tbody><tr><td>Traktor biasa</td><td class=\"n\">30 000</td><td class=\"n\">0.3</td><td class=\"n\">200</td></tr><tr><td>Traktor tayar lebar</td><td class=\"n\">32 000</td><td class=\"n\">0.8</td><td class=\"n\">280</td></tr><tr><td>Jentera berantai</td><td class=\"n\">60 000</td><td class=\"n\">3.0</td><td class=\"n\">500</td></tr></tbody></table></div><p class=\"qnote\">Tekanan = daya &divide; luas permukaan. Tanah sawah yang lembut hanya boleh menampung tekanan kira-kira 50 000 Pa tanpa jentera terbenam. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t2b8"] =
    "n": 1,
    "tempat": "Taman Permainan",
    "sk": "8.1 Jenis daya dan cirinya",
-   "lampiran": null,
+   "lampiran": "dayabuku",
    "kadNama": "Newton",
    "kadEm": "🍎",
    "kadFakta": "Unit daya dinamakan sempena Isaac Newton. Daya 1 N lebih kurang berat sebiji epal kecil.",
@@ -126,7 +128,7 @@ window.BANK["t2b8"] =
     },
     {
      "j": "pilih",
-     "t": "Buku yang diletakkan di atas meja tidak jatuh kerana:",
+     "t": "Berdasarkan Rajah 1, buku yang diletakkan di atas meja tidak jatuh kerana:",
      "p": [
       "Buku itu tiada berat langsung",
       "Daya normal meja mengimbangi berat buku",
@@ -171,7 +173,7 @@ window.BANK["t2b8"] =
    "n": 2,
    "tempat": "Bengkel Kereta",
    "sk": "8.2 Kesan daya, tuas, momen dan tekanan",
-   "lampiran": null,
+   "lampiran": "tuassorong",
    "kadNama": "Spanar",
    "kadEm": "🔧",
    "kadFakta": "Spanar yang panjang memudahkan nat longgar kerana momen daya bertambah apabila jarak dari pangsi bertambah.",
@@ -181,7 +183,7 @@ window.BANK["t2b8"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Kereta sorong ialah tuas kelas:",
+     "t": "Berdasarkan Rajah 1, kereta sorong ialah tuas kelas:",
      "p": [
       "Pertama",
       "Ketiga",
