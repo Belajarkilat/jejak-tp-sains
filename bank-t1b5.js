@@ -39,6 +39,8 @@ window.BANK["t1b5"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Jirim. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "lengkung": "<figure class=\"figure\"><svg viewBox=\"0 0 260 194\" role=\"img\" aria-label=\"Graf suhu melawan masa: suhu naik dari negatif dua puluh ke sifar darjah, kekal sifar antara minit dua dan minit enam, naik semula ke seratus darjah, kemudian kekal seratus\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><line x1=\"40\" y1=\"150\" x2=\"248\" y2=\"150\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"154\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">-20</text><line x1=\"40\" y1=\"127.7\" x2=\"248\" y2=\"127.7\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"131.7\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">0</text><line x1=\"40\" y1=\"105.3\" x2=\"248\" y2=\"105.3\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"109.3\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">20</text><line x1=\"40\" y1=\"83\" x2=\"248\" y2=\"83\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"87\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">40</text><line x1=\"40\" y1=\"60.7\" x2=\"248\" y2=\"60.7\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"64.7\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">60</text><line x1=\"40\" y1=\"38.3\" x2=\"248\" y2=\"38.3\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"42.3\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">80</text><line x1=\"40\" y1=\"16\" x2=\"248\" y2=\"16\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"20\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">100</text><line x1=\"40\" y1=\"16\" x2=\"40\" y2=\"150\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><line x1=\"40\" y1=\"150\" x2=\"248\" y2=\"150\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><text x=\"40\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">0</text><text x=\"69.7\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">2</text><text x=\"99.4\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">4</text><text x=\"129.1\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">6</text><text x=\"158.9\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">8</text><text x=\"188.6\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">10</text><text x=\"218.3\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">12</text><text x=\"248\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">14</text><text x=\"144\" y=\"181\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Masa pemanasan (minit)</text><path d=\"M40 150 L54.9 138.8 L69.7 127.7 L84.6 127.7 L99.4 127.7 L114.3 127.7 L129.1 114.3 L144 89.7 L158.9 65.1 L173.7 40.6 L188.6 16 L203.4 16 L218.3 16 L233.1 16 L248 16\" fill=\"none\" stroke=\"var(--arteri)\" stroke-width=\"2.2\" stroke-linejoin=\"round\"></path></svg><figcaption>Rajah 1 · Ketulan ais dipanaskan sehingga mendidih.</figcaption></figure>",
+  "zarah": "<figure class=\"figure\"><svg viewBox=\"0 0 260 178\" role=\"img\" aria-label=\"Tiga bekas sama saiz: bekas P zarah tersusun rapat dan teratur, bekas Q zarah rapat tetapi tidak teratur, bekas R hanya tiga zarah yang berjauhan\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"15.8\" y=\"11.2\" width=\"114.4\" height=\"38.4\" rx=\"3\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><circle cx=\"36.6\" cy=\"22.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"57.4\" cy=\"22.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"78.2\" cy=\"22.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"99\" cy=\"22.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"38.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"67.8\" cy=\"38.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"88.6\" cy=\"38.4\" r=\"5.2\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><rect x=\"15.8\" y=\"68.8\" width=\"114.4\" height=\"38.4\" rx=\"3\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><circle cx=\"34\" cy=\"80\" r=\"5.2\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><circle cx=\"60\" cy=\"83.2\" r=\"5.2\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><circle cx=\"83.4\" cy=\"78.4\" r=\"5.2\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"96\" r=\"5.2\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><circle cx=\"75.6\" cy=\"97.6\" r=\"5.2\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><circle cx=\"101.6\" cy=\"92.8\" r=\"5.2\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><rect x=\"15.8\" y=\"126.4\" width=\"114.4\" height=\"38.4\" rx=\"3\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><circle cx=\"28.8\" cy=\"136\" r=\"5.2\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"70.4\" cy=\"152\" r=\"5.2\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"112\" cy=\"137.6\" r=\"5.2\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><line x1=\"128.9\" y1=\"30.4\" x2=\"150\" y2=\"18\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"128.9\" cy=\"30.4\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"22\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Bekas P</text><line x1=\"128.9\" y1=\"88\" x2=\"150\" y2=\"40\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"128.9\" cy=\"88\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"44\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Bekas Q</text><line x1=\"128.9\" y1=\"145.6\" x2=\"150\" y2=\"62\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"128.9\" cy=\"145.6\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"66\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Bekas R</text></svg><figcaption>Rajah 1 · Susunan zarah dalam tiga bekas tertutup yang sama saiz.</figcaption></figure>",
   "takat": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Bahan</th><th class=\"n\">Takat lebur (&deg;C)</th><th class=\"n\">Takat didih (&deg;C)</th></tr></thead><tbody><tr><td>P</td><td class=\"n\">&minus;218</td><td class=\"n\">&minus;183</td></tr><tr><td>Q</td><td class=\"n\">&minus;39</td><td class=\"n\">357</td></tr><tr><td>R</td><td class=\"n\">80</td><td class=\"n\">218</td></tr><tr><td>S</td><td class=\"n\">0</td><td class=\"n\">100</td></tr></tbody></table></div><p class=\"qnote\">Suhu bilik diambil sebagai 27 &deg;C. Sesuatu bahan ialah pepejal di bawah takat leburnya, cecair antara takat lebur dan takat didih, dan gas di atas takat didihnya.</p>",
   "panas": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th class=\"n\">Masa (min)</th><th class=\"n\">0</th><th class=\"n\">2</th><th class=\"n\">4</th><th class=\"n\">6</th><th class=\"n\">8</th><th class=\"n\">10</th><th class=\"n\">12</th><th class=\"n\">14</th></tr></thead><tbody><tr><td>Suhu (&deg;C)</td><td class=\"n\">&minus;10</td><td class=\"n\">0</td><td class=\"n\">0</td><td class=\"n\">0</td><td class=\"n\">40</td><td class=\"n\">80</td><td class=\"n\">100</td><td class=\"n\">100</td></tr></tbody></table></div><p class=\"qnote\">Ketulan ais dipanaskan secara berterusan dengan kadar yang sama di dalam bikar. Data rekaan.</p>",
   "resap": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Ujian</th><th>Bahan</th><th>Medium</th><th>Masa untuk sampai 5 cm</th></tr></thead><tbody><tr><td>1</td><td>Hablur kuprum(II) sulfat</td><td>Air (cecair)</td><td>Kira-kira 1 hari</td></tr><tr><td>2</td><td>Hablur kuprum(II) sulfat</td><td>Agar-agar (pepejal)</td><td>Kira-kira 5 hari</td></tr><tr><td>3</td><td>Minyak wangi</td><td>Udara (gas)</td><td>Kurang daripada 1 minit</td></tr></tbody></table></div><p class=\"qnote\">Ujian 1 dan 2 dijalankan di dalam tabung uji tertutup pada suhu bilik. Ujian 3 dijalankan di dalam bilik yang tertutup. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t1b5"] =
    "n": 1,
    "tempat": "Dapur Rumah",
    "sk": "5.1 / 5.2 Jirim dan tiga keadaan jirim",
-   "lampiran": null,
+   "lampiran": "lengkung",
    "kadNama": "Zarah",
    "kadEm": "⚛",
    "kadFakta": "Setitik air mengandungi lebih daripada satu sekstilion (10²¹) zarah air.",
@@ -130,15 +132,15 @@ window.BANK["t1b5"] =
     },
     {
      "j": "pilih",
-     "t": "Contoh sifat kimia jirim ialah:",
+     "t": "Berdasarkan Rajah 1, suhu bahan kekal pada 0 °C antara minit 2 dan minit 6. Apakah yang berlaku ketika itu?",
      "p": [
-      "Takat didih",
-      "Warna",
-      "Kebolehbakaran",
-      "Ketumpatan"
+      "Suhu dapur sedang turun perlahan-lahan",
+      "Haba berhenti dibekalkan kepada bahan itu",
+      "Ais sedang melebur",
+      "Air sedang bertukar menjadi wap sepenuhnya"
      ],
      "b": 2,
-     "u": "Sifat kimia hanya kelihatan apabila bahan berubah menjadi bahan baharu."
+     "u": "Semasa melebur, haba digunakan untuk merenggangkan zarah, bukan untuk menaikkan suhu."
     },
     {
      "j": "banyak",
@@ -175,7 +177,7 @@ window.BANK["t1b5"] =
    "n": 2,
    "tempat": "Makmal Zarah",
    "sk": "5.2 Teori kinetik dan perubahan keadaan jirim",
-   "lampiran": null,
+   "lampiran": "zarah",
    "kadNama": "Teori Kinetik",
    "kadEm": "🏃",
    "kadFakta": "Menurut teori kinetik, zarah jirim sentiasa bergerak. Semakin tinggi suhu, semakin laju zarah bergerak.",
@@ -269,18 +271,18 @@ window.BANK["t1b5"] =
     },
     {
      "j": "susun",
-     "t": "Susun keadaan jirim mengikut jarak antara zarah, bermula daripada yang PALING rapat.",
+     "t": "Berdasarkan Rajah 1, susun bekas mengikut jarak antara zarah, bermula daripada yang PALING rapat.",
      "p": [
-      "Pepejal",
-      "Cecair",
-      "Gas"
+      "Bekas P",
+      "Bekas Q",
+      "Bekas R"
      ],
      "b": [
       0,
       1,
       2
      ],
-     "u": "Zarah gas paling jauh antara satu sama lain."
+     "u": "Zarah dalam P tersusun rapat dan teratur, Q rapat tetapi bebas bergerak, R paling renggang."
     }
    ],
    "bos": {

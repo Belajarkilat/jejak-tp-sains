@@ -20,6 +20,31 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_LIHAT = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Sumber cahaya",
+    "Cahaya mengenai objek",
+    "Cahaya dipantulkan",
+    "Mata",
+    "Otak mentafsir imej"
+  ],
+  "kapsyen": "Rajah 1 · Bagaimana kita melihat sesuatu objek.",
+  "alt": "Rajah aliran menegak: sumber cahaya, cahaya mengenai objek, cahaya dipantulkan, mata, kemudian otak mentafsir imej"
+};
+
+const R_SINARBIAS = {
+  "jenis": "sinar",
+  "mod": "pembiasan",
+  "sudutTuju": 50,
+  "indeks": 1.5,
+  "atas": "Udara",
+  "bawah": "Kaca",
+  "kapsyen": "Rajah 1 · Sinar cahaya bergerak dari udara ke dalam kaca.",
+  "alt": "Rajah sinar: cahaya dari udara memasuki kaca pada sudut tuju lima puluh darjah dan terbias pada sudut lebih kecil, lebih hampir kepada garis normal"
+};
+
 const T_PANTUL =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Percubaan</th>'+
 '<th class="n">Sudut tuju, i (&deg;)</th><th class="n">Sudut pantulan, r (&deg;)</th></tr></thead><tbody>'+
@@ -51,12 +76,12 @@ const T_WARNA =
 
 const ARAS = [
 
-{n:1, tempat:"Bilik Cermin", sk:"8.1 / 8.2 Cermin dan sifat cahaya",
+{n:1, tempat:"Bilik Cermin", sk:"8.1 / 8.2 Cermin dan sifat cahaya", lampiran:"lihat",
  kadNama:"Laju Cahaya", kadEm:"\u{26A1}", kadFakta:"Cahaya bergerak kira-kira 300 000 km setiap saat, cukup untuk mengelilingi Bumi lebih 7 kali dalam satu saat.",
  bosKadNama:"Cermin Cembung", bosKadEm:"\u{1F697}", bosKadFakta:"Cermin di selekoh tajam ialah cermin cembung kerana ia memberi pandangan yang lebih luas.",
  soalan:[
  {j:"pilih",t:"Cahaya bergerak dalam:",p:["Garis lurus","Garis bengkang-bengkok","Bulatan","Lengkung sahaja"],b:0,u:"Sebab itu bayang-bayang terbentuk apabila objek legap menghalang cahaya."},
- {j:"pilih",t:"Kita nampak kilat sebelum mendengar guruh kerana:",p:["Cahaya lebih laju daripada bunyi","Bunyi lebih laju daripada cahaya","Kilat berlaku lebih awal daripada guruh","Telinga lebih lambat daripada mata"],b:0,u:"Kilat dan guruh berlaku serentak, tetapi cahaya sampai dahulu."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah kita tidak nampak apa-apa dalam bilik yang gelap gelita?",p:["Tiada cahaya dipantulkan ke mata","Mata manusia berhenti berfungsi dalam gelap","Otak tidak dapat mentafsir imej pada waktu malam","Objek dalam bilik itu berhenti memantulkan cahaya"],b:0,u:"Tanpa sumber cahaya, tiada cahaya boleh dipantulkan objek kepada mata."},
  {j:"pilih",t:"Imej yang boleh dibentuk pada skrin dipanggil:",p:["Imej sahih","Imej maya","Imej tegak","Imej songsang sisi"],b:0,u:"Imej maya tidak boleh ditangkap pada skrin."},
  {j:"pilih",t:"Cermin yang membesarkan imej objek yang dekat ialah:",p:["Cermin cekung","Cermin cembung","Cermin satah","Cermin berwarna"],b:0,u:"Cermin solek dan cermin doktor gigi ialah cermin cekung."},
  {j:"pilih",t:"Cermin sisi kenderaan ialah cermin cembung kerana ia:",p:["Memberi pandangan luas","Membesarkan imej","Menghasilkan imej sahih","Menyerap cahaya"],b:0,u:"Imej lebih kecil tetapi kawasan yang dilihat lebih luas."},
@@ -65,14 +90,14 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA kegunaan cermin cekung.",p:["Cermin solek","Pemantul lampu suluh","Cermin doktor gigi","Cermin di selekoh tajam","Cermin sisi motosikal"],b:[0,1,2],u:"Cermin di selekoh tajam dan cermin sisi ialah cermin cembung."}],
  bos:{j:"pilih",t:"Pekedai memasang cermin besar melengkung di sudut kedai untuk mengawasi pelanggan. Cermin itu ialah:",p:["Cermin cembung","Cermin cekung","Cermin satah","Cermin dua muka"],b:0,u:"Cermin cembung menunjukkan kawasan yang luas dalam satu pandangan."}},
 
-{n:2, tempat:"Kolam Renang", sk:"8.3 / 8.4 / 8.5 / 8.6 Pantulan, pembiasan, penyebaran dan penyerakan",
+{n:2, tempat:"Kolam Renang", sk:"8.3 / 8.4 / 8.5 / 8.6 Pantulan, pembiasan, penyebaran dan penyerakan", lampiran:"sinarbias",
  kadNama:"Pelangi", kadEm:"\u{1F308}", kadFakta:"Pelangi terbentuk apabila titisan air hujan menyebarkan cahaya matahari kepada tujuh warna.",
  bosKadNama:"Langit Biru", bosKadEm:"\u{1F30C}", bosKadFakta:"Langit kelihatan biru kerana cahaya biru diserakkan lebih banyak oleh zarah udara berbanding warna lain.",
  soalan:[
  {j:"pilih",t:"Hukum pantulan menyatakan bahawa:",p:["Sudut tuju sama dengan sudut pantulan","Sudut tuju dua kali sudut pantulan","Sudut pantulan sentiasa 90°","Sudut tuju lebih kecil daripada sudut pantulan"],b:0,u:"Sinar tuju, sinar pantulan dan normal juga berada pada satah yang sama."},
  {j:"pilih",t:"Pembiasan cahaya berlaku apabila cahaya:",p:["Merentasi medium berbeza ketumpatan","Terkena cermin yang sangat licin","Bergerak di dalam ruang vakum","Dihalang oleh objek legap"],b:0,u:"Laju cahaya berubah apabila memasuki medium lain, jadi arahnya berubah."},
  {j:"pilih",t:"Mengapakah dasar kolam kelihatan lebih cetek daripada sebenar?",p:["Cahaya terbias semasa keluar dari air","Air memantulkan semua cahaya","Mata tidak dapat fokus di dalam air","Cahaya bergerak lebih laju di dalam air"],b:0,u:"Cahaya terbias menjauhi normal apabila keluar dari air ke udara."},
- {j:"pilih",t:"Apabila cahaya bergerak dari udara ke kaca, ia terbias:",p:["Mendekati normal","Menjauhi normal","Sepanjang normal","Kembali ke udara"],b:0,u:"Kaca lebih tumpat daripada udara."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, apabila cahaya bergerak dari udara ke kaca, ia terbias:",p:["Mendekati normal","Menjauhi normal","Sepanjang normal","Kembali ke udara"],b:0,u:"Kaca lebih tumpat daripada udara."},
  {j:"pilih",t:"Penyebaran cahaya berlaku apabila cahaya putih:",p:["Terurai kepada spektrum warna melalui prisma","Dipantulkan oleh cermin satah","Diserap sepenuhnya oleh objek hitam","Bergerak lurus di udara"],b:0,u:"Spektrumnya ialah merah, jingga, kuning, hijau, biru, indigo dan ungu."},
  {j:"pilih",t:"Mengapakah matahari terbenam kelihatan kemerahan?",p:["Cahaya melalui lebih banyak udara, jadi biru diserakkan dan merah sampai","Matahari menjadi lebih sejuk pada waktu petang","Awan menukar cahaya putih kepada merah","Matahari memancarkan cahaya merah sahaja pada waktu petang"],b:0,u:"Pada waktu petang, cahaya menempuh laluan atmosfera yang lebih panjang."},
  {j:"pilih",t:"Bintang kelihatan berkelip pada waktu malam kerana:",p:["Cahayanya terbias oleh lapisan udara yang bergerak","Bintang menyala dan padam berulang kali","Awan menghalang cahaya bintang setiap saat","Bintang bergerak sangat laju di angkasa"],b:0,u:"Lapisan udara berbeza suhu dan ketumpatan membiaskan cahaya bintang secara berubah-ubah."},
@@ -153,6 +178,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk alat atau penyelesaian optik yang selamat dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Cahaya dan Optik. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ pantul:T_PANTUL, bias:T_BIAS, warna:T_WARNA },
+  lampiran:{ lihat:R_LIHAT, sinarbias:R_SINARBIAS, pantul:T_PANTUL, bias:T_BIAS, warna:T_WARNA },
   aras:ARAS
 };

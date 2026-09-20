@@ -39,6 +39,8 @@ window.BANK["t1b4"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Pembiakan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "biak": "<figure class=\"figure\"><svg viewBox=\"0 0 260 178\" role=\"img\" aria-label=\"Dua lajur bersebelahan: pembiakan seks perlukan dua induk dan menghasilkan anak yang berbeza, pembiakan aseks perlukan satu induk dan menghasilkan anak yang serupa induk\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Pembiakan seks</text><rect x=\"135\" y=\"4\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"17.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Pembiakan</text><text x=\"194.5\" y=\"32.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">aseks</text><rect x=\"6\" y=\"72\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Dua induk</text><rect x=\"135\" y=\"72\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Satu induk</text><rect x=\"6\" y=\"140\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"65.5\" y=\"161.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Anak berbeza</text><rect x=\"135\" y=\"140\" width=\"119\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"194.5\" y=\"153.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Anak serupa</text><text x=\"194.5\" y=\"168.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">induk</text><line x1=\"65.5\" y1=\"40\" x2=\"65.5\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"65.5\" y1=\"108\" x2=\"65.5\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"194.5\" y1=\"40\" x2=\"194.5\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line><line x1=\"194.5\" y1=\"108\" x2=\"194.5\" y2=\"134\" stroke=\"var(--vena)\" stroke-width=\"1.8\" marker-end=\"url(#panah)\"></line></svg><figcaption>Rajah 1 · Dua cara organisma membiak.</figcaption></figure>",
+  "uri": "<figure class=\"figure\"><svg viewBox=\"0 0 260 210\" role=\"img\" aria-label=\"Rajah aliran menegak: darah ibu, uri atau plasenta, tali pusat, kemudian darah fetus\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Darah ibu</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><text x=\"138\" y=\"53\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\">oksigen</text><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Uri (plasenta)</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Tali pusat</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Darah fetus</text></svg><figcaption>Rajah 1 · Laluan oksigen dan nutrien daripada ibu kepada fetus.</figcaption></figure>",
   "haid": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Hari dalam kitar</th><th>Perkara yang berlaku</th></tr></thead><tbody><tr><td>1 hingga 5</td><td>Haid: lapisan dinding uterus luruh dan keluar bersama darah</td></tr><tr><td>6 hingga 13</td><td>Dinding uterus dibaiki dan menebal semula</td></tr><tr><td>14</td><td>Ovulasi: ovum dibebaskan daripada ovari</td></tr><tr><td>15 hingga 28</td><td>Dinding uterus kekal tebal dan kaya dengan salur darah</td></tr></tbody></table></div><p class=\"qnote\">Kitar haid biasa selama 28 hari. Tempoh kitar berbeza sedikit bagi setiap individu.</p>",
   "cambah": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Tabung</th><th>Keadaan</th><th>Keputusan selepas 4 hari</th></tr></thead><tbody><tr><td>A</td><td>Kapas lembap, suhu bilik, cahaya</td><td>Bercambah</td></tr><tr><td>B</td><td>Kapas kering, suhu bilik, cahaya</td><td>Tidak bercambah</td></tr><tr><td>C</td><td>Kapas lembap, dalam peti sejuk (5 &deg;C), gelap</td><td>Tidak bercambah</td></tr><tr><td>D</td><td>Air suling yang telah dididih dan dilitupi minyak, suhu bilik</td><td>Tidak bercambah</td></tr><tr><td>E</td><td>Kapas lembap, suhu bilik, dalam kotak gelap</td><td>Bercambah</td></tr></tbody></table></div><p class=\"qnote\">Setiap tabung mengandungi 10 biji kacang hijau. Air yang dididih kehilangan udara terlarut, dan lapisan minyak menghalang udara larut semula.</p>",
   "kebun": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Kaedah</th><th>Masa hingga anak pokok sedia dijual</th><th>Anak pokok sama seperti induk?</th><th class=\"n\">Kos seanak pokok (RM)</th></tr></thead><tbody><tr><td>Biji benih daripada pendebungaan kacuk</td><td>18 bulan</td><td>Tidak, ada variasi</td><td class=\"n\">2</td></tr><tr><td>Keratan batang (vegetatif)</td><td>4 bulan</td><td>Ya</td><td class=\"n\">3</td></tr><tr><td>Kultur tisu</td><td>6 bulan</td><td>Ya</td><td class=\"n\">8</td></tr></tbody></table></div><p class=\"qnote\">Data sebuah nurseri orkid. Kultur tisu boleh menghasilkan ribuan anak pokok daripada sedikit tisu induk. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t1b4"] =
    "n": 1,
    "tempat": "Taman Bunga",
    "sk": "4.1 / 4.7 Pembiakan seks, aseks dan bunga",
-   "lampiran": null,
+   "lampiran": "biak",
    "kadNama": "Bunga Raya",
    "kadEm": "🌺",
    "kadFakta": "Bunga raya ialah bunga kebangsaan Malaysia, dan setiap kuntumnya mempunyai bahagian jantan dan betina.",
@@ -70,15 +72,15 @@ window.BANK["t1b4"] =
     },
     {
      "j": "pilih",
-     "t": "Amoeba membiak dengan membahagi kepada dua. Kaedah ini dipanggil:",
+     "t": "Berdasarkan Rajah 1, anak yang serupa dengan induknya terhasil daripada:",
      "p": [
-      "Pertunasan",
-      "Belahan dedua",
-      "Pembentukan spora",
-      "Penjanaan semula"
+      "Percantuman dua gamet",
+      "Pembiakan aseks",
+      "Pendebungaan silang bunga",
+      "Pembiakan seks dua induk"
      ],
      "b": 1,
-     "u": "Satu sel induk menjadi dua sel anak."
+     "u": "Satu induk sahaja, jadi anak mewarisi baka yang sama."
     },
     {
      "j": "pilih",
@@ -175,7 +177,7 @@ window.BANK["t1b4"] =
    "n": 2,
    "tempat": "Klinik Ibu dan Anak",
    "sk": "4.2 / 4.4 / 4.5 Gamet, kehamilan dan perkembangan fetus",
-   "lampiran": null,
+   "lampiran": "uri",
    "kadNama": "Plasenta",
    "kadEm": "🤰",
    "kadFakta": "Darah ibu dan darah fetus tidak bercampur. Bahan bertukar melalui plasenta.",
@@ -209,7 +211,7 @@ window.BANK["t1b4"] =
     },
     {
      "j": "pilih",
-     "t": "Fungsi tali pusat ialah:",
+     "t": "Berdasarkan Rajah 1, fungsi tali pusat ialah:",
      "p": [
       "Menghasilkan darah untuk fetus",
       "Menapis semua kuman daripada darah ibu",

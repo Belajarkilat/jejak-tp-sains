@@ -23,7 +23,15 @@ function sunting(fail, tugas){
     `\nconst ${r.nama} = ${JSON.stringify(r.spek, null, 2)};`).join("\n");
   s = s.replace(penanda, penanda + "\n" + blok);
 
-  /* 2. daftar dalam objek lampiran bab */
+  /* 2. daftar dalam objek lampiran bab.
+     Kunci yang sudah wujud akan DITIMPA senyap-senyap oleh JavaScript, dan
+     hentian itu akan memaparkan lampiran yang salah sambil soalannya tetap
+     berkata "Berdasarkan Rajah 1". Jadi pertembungan nama dihentikan di sini. */
+  const sediaAda = require(p);
+  for(const r of tugas.rajah){
+    if(sediaAda.lampiran && Object.prototype.hasOwnProperty.call(sediaAda.lampiran, r.kunci))
+      throw new Error(`${fail}: kunci lampiran "${r.kunci}" sudah wujud; pilih nama lain`);
+  }
   const daftar = tugas.rajah.map(r => `${r.kunci}:${r.nama}`).join(", ");
   const m = s.match(/\n(\s*)lampiran:\{([^}]*)\},/);
   if(m){

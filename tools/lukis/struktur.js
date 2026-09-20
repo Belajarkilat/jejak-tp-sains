@@ -72,9 +72,13 @@ function berlabel(spec){
   let yLalu = -1;
   const titik = [];
   bhg.forEach((b, i) => {
+    /* Hanya bahagian berlabel perlu disusun: bahagian tanpa label (zarah,
+       hiasan) tiada garis penunjuk, jadi ia bebas diletak di mana-mana. */
     const anc = b.anchorY == null ? b.y : b.anchorY;
-    if(anc < yLalu - 0.5) throw new Error(`bahagian "${b.label}" tidak disusun dari atas ke bawah; garis penunjuk akan bersilang`);
-    yLalu = anc;
+    if(b.label){
+      if(anc < yLalu - 0.5) throw new Error(`bahagian "${b.label}" tidak disusun dari atas ke bawah; garis penunjuk akan bersilang`);
+      yLalu = anc;
+    }
     const x = px(b.x), y = py(b.y);
     if(b.bentuk === "bulat"){
       const r = (b.r / 100) * lukisLebar;
@@ -91,15 +95,20 @@ function berlabel(spec){
       isi += A.teks(x, y + 4, b.dalam, { saiz: 11.5, tengah: true, warna: "tinta3" });
     }
   });
+  /* Baris label dikira daripada bahagian BERLABEL sahaja. Kalau indeks
+     bahagian digunakan, zarah tanpa label akan meninggalkan baris kosong
+     dan rajah menjadi terlalu tinggi untuk skrin telefon. */
+  let baris = 0;
   bhg.forEach((b, i) => {
     if(!b.label) return;
     if(b.label.length > muat) throw new Error(`label "${b.label}" terlalu panjang (maksimum ${muat} aksara)`);
-    const y = 22 + i * 22;
+    const y = 22 + baris * 22;
+    baris++;
     isi += A.garis(titik[i][0], titik[i][1], xLabel - 6, y - 4, { warna: "tinta3", tebal: 1 });
     isi += A.bulatan(titik[i][0], titik[i][1], 2.4, { isi: "tinta3", garis: "tinta3" });
     isi += A.teks(xLabel, y, b.label, { saiz: SAIZ, warna: "tinta2" });
   });
-  return { isi, lebar: LEBAR, tinggi: Math.max(atas + lukisTinggi + 10, 22 + bhg.length * 22 + 10) };
+  return { isi, lebar: LEBAR, tinggi: Math.max(atas + lukisTinggi + 10, 22 + baris * 22 + 10) };
 }
 
 function lukis(spec){

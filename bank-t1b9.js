@@ -39,6 +39,8 @@ window.BANK["t1b9"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Bumi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "strukturbumi": "<figure class=\"figure\"><svg viewBox=\"0 0 260 150\" role=\"img\" aria-label=\"Keratan Bumi menunjukkan empat lapisan dari tengah ke luar: teras dalam, teras luar, mantel yang paling tebal, dan kerak yang paling nipis\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><circle cx=\"68\" cy=\"76\" r=\"62\" fill=\"var(--teal-soft)\" stroke=\"var(--line2)\" stroke-width=\"1.4\"></circle><circle cx=\"68\" cy=\"76\" r=\"59.6\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.4\"></circle><circle cx=\"68\" cy=\"76\" r=\"32.4\" fill=\"var(--arteri-soft)\" stroke=\"var(--line2)\" stroke-width=\"1.4\"></circle><circle cx=\"68\" cy=\"76\" r=\"11.7\" fill=\"var(--amber-soft)\" stroke=\"var(--line2)\" stroke-width=\"1.4\"></circle><line x1=\"73.9\" y1=\"75.5\" x2=\"144\" y2=\"22\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73.9\" cy=\"76\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"150\" y=\"26\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Teras dalam</text><line x1=\"90\" y1=\"75.5\" x2=\"144\" y2=\"44\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"90\" cy=\"76\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"150\" y=\"48\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Teras luar</text><line x1=\"114\" y1=\"75.5\" x2=\"144\" y2=\"66\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"114\" cy=\"76\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"150\" y=\"70\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Mantel</text><line x1=\"128.8\" y1=\"75.5\" x2=\"144\" y2=\"88\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"128.8\" cy=\"76\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"150\" y=\"92\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Kerak</text></svg><figcaption>Rajah 1 · Keratan Bumi. Tebal kerak dibesarkan supaya kelihatan.</figcaption></figure>",
+  "kitarbatu": "<figure class=\"figure\"><svg viewBox=\"0 0 260 230\" role=\"img\" aria-label=\"Rajah kitaran empat kotak: magma, batuan igneus, batuan enapan, batuan metamorf, kemudian kembali kepada magma\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><path d=\"M130 43 Q183 58.8 198 115\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M198 115 Q183 171.2 130 187\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M130 187 Q77 171.2 62 115\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><path d=\"M62 115 Q77 58.8 130 43\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"1.8\" stroke-linejoin=\"round\" marker-end=\"url(#panah)\"></path><rect x=\"78\" y=\"23\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"47.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Magma</text><rect x=\"146\" y=\"95\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"198\" y=\"111.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Batuan</text><text x=\"198\" y=\"126.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">igneus</text><rect x=\"78\" y=\"167\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"183.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Batuan</text><text x=\"130\" y=\"198.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">enapan</text><rect x=\"10\" y=\"95\" width=\"104\" height=\"40\" rx=\"8\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"62\" y=\"111.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Batuan</text><text x=\"62\" y=\"126.8\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">metamorf</text></svg><figcaption>Rajah 1 · Kitar batuan.</figcaption></figure>",
   "batu": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Sampel</th><th>Saiz hablur</th><th>Berlapis?</th><th>Ada fosil?</th><th>Catatan</th></tr></thead><tbody><tr><td>E</td><td>Besar, jelas kelihatan</td><td>Tidak</td><td>Tidak</td><td>Keras, dari kawasan pergunungan</td></tr><tr><td>F</td><td>Tiada hablur</td><td>Ya</td><td>Ya, cengkerang</td><td>Berbuih apabila dititis asid cair</td></tr><tr><td>G</td><td>Sangat kecil</td><td>Tidak</td><td>Tidak</td><td>Gelap, dari aliran lava lama</td></tr><tr><td>H</td><td>Hablur tersusun semula</td><td>Tidak</td><td>Tidak</td><td>Putih berkilat, terbentuk daripada batu kapur</td></tr></tbody></table></div><p class=\"qnote\">Pemerhatian empat sampel batuan di makmal sekolah.</p>",
   "cerun": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Cerun</th><th class=\"n\">Kecuraman (&deg;)</th><th>Litupan tumbuhan</th><th class=\"n\">Hujan tahunan (mm)</th><th>Tanah runtuh dalam 10 tahun</th></tr></thead><tbody><tr><td>J</td><td class=\"n\">15</td><td>Hutan tebal</td><td class=\"n\">2500</td><td>Tiada</td></tr><tr><td>K</td><td class=\"n\">40</td><td>Hutan tebal</td><td class=\"n\">2500</td><td>1 kali</td></tr><tr><td>L</td><td class=\"n\">40</td><td>Ditarah, tiada pokok</td><td class=\"n\">2500</td><td>6 kali</td></tr><tr><td>M</td><td class=\"n\">40</td><td>Ditarah, tiada pokok</td><td class=\"n\">1200</td><td>2 kali</td></tr></tbody></table></div><p class=\"qnote\">Rekod empat cerun di sebuah daerah tanah tinggi. Data rekaan.</p>",
   "air": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Sumber air</th><th class=\"n\">Kos pemasangan (RM ribu)</th><th>Bekalan musim kemarau</th><th>Risiko utama</th></tr></thead><tbody><tr><td>Sungai berhampiran</td><td class=\"n\">80</td><td>Berkurang banyak</td><td>Tercemar oleh ladang dan kilang di hulu</td></tr><tr><td>Telaga tiub ke akuifer</td><td class=\"n\">150</td><td>Stabil</td><td>Tanah mendap jika dipam berlebihan</td></tr><tr><td>Tangki tadahan hujan</td><td class=\"n\">40</td><td>Hampir kering</td><td>Nyamuk membiak jika tidak ditutup</td></tr></tbody></table></div><p class=\"qnote\">Pilihan sumber air untuk sebuah kampung baharu berpenduduk 500 orang. Air daripada semua sumber perlu dirawat sebelum diminum. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t1b9"] =
    "n": 1,
    "tempat": "Puncak Gunung",
    "sk": "9.1 / 9.2 Sistem Bumi, struktur Bumi dan batuan",
-   "lampiran": null,
+   "lampiran": "strukturbumi",
    "kadNama": "Teras Bumi",
    "kadEm": "🌍",
    "kadFakta": "Suhu teras dalam Bumi dianggarkan melebihi 5000 °C, hampir sepanas permukaan Matahari.",
@@ -70,7 +72,7 @@ window.BANK["t1b9"] =
     },
     {
      "j": "pilih",
-     "t": "Lapisan Bumi yang paling nipis ialah:",
+     "t": "Berdasarkan Rajah 1, lapisan Bumi yang paling nipis ialah:",
      "p": [
       "Mantel",
       "Kerak",
@@ -175,7 +177,7 @@ window.BANK["t1b9"] =
    "n": 2,
    "tempat": "Gua Batu Kapur",
    "sk": "9.2 / 9.3 / 9.4 / 9.6 Proses Bumi, geobencana dan sumber Bumi",
-   "lampiran": null,
+   "lampiran": "kitarbatu",
    "kadNama": "Gua Batu Kapur",
    "kadEm": "🦇",
    "kadFakta": "Gua Batu Kapur seperti Gua Niah dan Gua Tempurung terbentuk apabila air hujan berasid melarutkan batu kapur selama ribuan tahun.",
@@ -209,7 +211,7 @@ window.BANK["t1b9"] =
     },
     {
      "j": "pilih",
-     "t": "Bagaimanakah batuan metamorfik terbentuk?",
+     "t": "Berdasarkan Rajah 1, bagaimanakah batuan metamorfik terbentuk?",
      "p": [
       "Magma menyejuk dengan cepat di permukaan Bumi",
       "Lapisan pasir dan lumpur dimampatkan di dasar sungai",

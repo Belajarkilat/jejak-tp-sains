@@ -39,6 +39,8 @@ window.BANK["t1b8"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Cahaya dan Optik. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "lihat": "<figure class=\"figure\"><svg viewBox=\"0 0 260 266\" role=\"img\" aria-label=\"Rajah aliran menegak: sumber cahaya, cahaya mengenai objek, cahaya dipantulkan, mata, kemudian otak mentafsir imej\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Sumber cahaya</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Cahaya mengenai objek</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Cahaya dipantulkan</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Mata</text><line x1=\"130\" y1=\"209\" x2=\"130\" y2=\"224\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><rect x=\"6\" y=\"228\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"249.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Otak mentafsir imej</text></svg><figcaption>Rajah 1 · Bagaimana kita melihat sesuatu objek.</figcaption></figure>",
+  "sinarbias": "<figure class=\"figure\"><svg viewBox=\"0 0 260 232\" role=\"img\" aria-label=\"Rajah sinar: cahaya dari udara memasuki kaca pada sudut tuju lima puluh darjah dan terbias pada sudut lebih kecil, lebih hampir kepada garis normal\"><defs><marker id=\"panah\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"context-stroke\"></path></marker></defs><rect x=\"12\" y=\"112\" width=\"236\" height=\"92\" rx=\"4\" fill=\"var(--surface2)\" stroke=\"var(--line)\" stroke-width=\"1.5\"></rect><line x1=\"12\" y1=\"112\" x2=\"248\" y2=\"112\" stroke=\"var(--ink2)\" stroke-width=\"2\"></line><line x1=\"130\" y1=\"12\" x2=\"130\" y2=\"204\" stroke=\"var(--ink3)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"></line><text x=\"135\" y=\"8\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\">Normal</text><line x1=\"64.1\" y1=\"56.7\" x2=\"130\" y2=\"112\" stroke=\"var(--arteri)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><line x1=\"130\" y1=\"112\" x2=\"173.9\" y2=\"185.9\" stroke=\"var(--vena)\" stroke-width=\"2\" marker-end=\"url(#panah)\"></line><path d=\"M104 90.1 A34 34 0 0 1 130 78\" fill=\"none\" stroke=\"var(--ink3)\" stroke-width=\"1\"></path><text x=\"110.6\" y=\"70.3\" font-family=\"DM Mono,monospace\" font-size=\"13\" fill=\"var(--arteri)\" text-anchor=\"middle\" font-weight=\"700\">i</text><path d=\"M130 142 A30 30 0 0 0 145.3 137.8\" fill=\"none\" stroke=\"var(--ink3)\" stroke-width=\"1\"></path><text x=\"141.7\" y=\"158.4\" font-family=\"DM Mono,monospace\" font-size=\"13\" fill=\"var(--vena)\" text-anchor=\"middle\" font-weight=\"700\">r</text><text x=\"18\" y=\"104\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">Udara</text><text x=\"18\" y=\"130\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">Kaca</text><text x=\"244\" y=\"222\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">i = 50° · r = 31°</text></svg><figcaption>Rajah 1 · Sinar cahaya bergerak dari udara ke dalam kaca.</figcaption></figure>",
   "pantul": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Percubaan</th><th class=\"n\">Sudut tuju, i (&deg;)</th><th class=\"n\">Sudut pantulan, r (&deg;)</th></tr></thead><tbody><tr><td>1</td><td class=\"n\">20</td><td class=\"n\">20</td></tr><tr><td>2</td><td class=\"n\">35</td><td class=\"n\">35</td></tr><tr><td>3</td><td class=\"n\">50</td><td class=\"n\">50</td></tr><tr><td>4</td><td class=\"n\">65</td><td class=\"n\">?</td></tr></tbody></table></div><p class=\"qnote\">Sinar cahaya dari kotak sinar ditujukan ke cermin satah. Sudut diukur dari garis normal.</p>",
   "bias": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th class=\"n\">Sudut tuju di udara (&deg;)</th><th class=\"n\">Sudut biasan dalam air (&deg;)</th><th class=\"n\">Sudut biasan dalam kaca (&deg;)</th></tr></thead><tbody><tr><td class=\"n\">0</td><td class=\"n\">0</td><td class=\"n\">0</td></tr><tr><td class=\"n\">30</td><td class=\"n\">22</td><td class=\"n\">19</td></tr><tr><td class=\"n\">45</td><td class=\"n\">32</td><td class=\"n\">28</td></tr><tr><td class=\"n\">60</td><td class=\"n\">41</td><td class=\"n\">35</td></tr></tbody></table></div><p class=\"qnote\">Sinar cahaya bergerak dari udara ke dalam air dan ke dalam blok kaca. Nilai dibundarkan kepada darjah terdekat.</p>",
   "warna": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Baju</th><th>Di bawah cahaya putih</th><th>Di bawah cahaya merah</th><th>Di bawah cahaya biru</th></tr></thead><tbody><tr><td>1</td><td>Putih</td><td>Merah</td><td>Biru</td></tr><tr><td>2</td><td>Merah</td><td>Merah</td><td>Hitam</td></tr><tr><td>3</td><td>Biru</td><td>Hitam</td><td>Biru</td></tr><tr><td>4</td><td>Kuning</td><td>Merah</td><td>Hitam</td></tr></tbody></table></div><p class=\"qnote\">Warna baju yang dilihat di atas pentas di bawah lampu berlainan warna. Objek kuning memantulkan cahaya merah dan hijau.</p>"
@@ -48,7 +50,7 @@ window.BANK["t1b8"] =
    "n": 1,
    "tempat": "Bilik Cermin",
    "sk": "8.1 / 8.2 Cermin dan sifat cahaya",
-   "lampiran": null,
+   "lampiran": "lihat",
    "kadNama": "Laju Cahaya",
    "kadEm": "⚡",
    "kadFakta": "Cahaya bergerak kira-kira 300 000 km setiap saat, cukup untuk mengelilingi Bumi lebih 7 kali dalam satu saat.",
@@ -70,15 +72,15 @@ window.BANK["t1b8"] =
     },
     {
      "j": "pilih",
-     "t": "Kita nampak kilat sebelum mendengar guruh kerana:",
+     "t": "Berdasarkan Rajah 1, mengapakah kita tidak nampak apa-apa dalam bilik yang gelap gelita?",
      "p": [
-      "Bunyi lebih laju daripada cahaya",
-      "Cahaya lebih laju daripada bunyi",
-      "Kilat berlaku lebih awal daripada guruh",
-      "Telinga lebih lambat daripada mata"
+      "Mata manusia berhenti berfungsi dalam gelap",
+      "Tiada cahaya dipantulkan ke mata",
+      "Otak tidak dapat mentafsir imej pada waktu malam",
+      "Objek dalam bilik itu berhenti memantulkan cahaya"
      ],
      "b": 1,
-     "u": "Kilat dan guruh berlaku serentak, tetapi cahaya sampai dahulu."
+     "u": "Tanpa sumber cahaya, tiada cahaya boleh dipantulkan objek kepada mata."
     },
     {
      "j": "pilih",
@@ -175,7 +177,7 @@ window.BANK["t1b8"] =
    "n": 2,
    "tempat": "Kolam Renang",
    "sk": "8.3 / 8.4 / 8.5 / 8.6 Pantulan, pembiasan, penyebaran dan penyerakan",
-   "lampiran": null,
+   "lampiran": "sinarbias",
    "kadNama": "Pelangi",
    "kadEm": "🌈",
    "kadFakta": "Pelangi terbentuk apabila titisan air hujan menyebarkan cahaya matahari kepada tujuh warna.",
@@ -221,7 +223,7 @@ window.BANK["t1b8"] =
     },
     {
      "j": "pilih",
-     "t": "Apabila cahaya bergerak dari udara ke kaca, ia terbias:",
+     "t": "Berdasarkan Rajah 1, apabila cahaya bergerak dari udara ke kaca, ia terbias:",
      "p": [
       "Menjauhi normal",
       "Sepanjang normal",

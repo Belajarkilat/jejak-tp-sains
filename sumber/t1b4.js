@@ -22,6 +22,85 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_BIAK = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "s1",
+      "label": "Pembiakan seks",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "a1",
+      "label": "Pembiakan aseks",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "s2",
+      "label": "Dua induk",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "a2",
+      "label": "Satu induk",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "s3",
+      "label": "Anak berbeza",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "a3",
+      "label": "Anak serupa induk",
+      "x": 1,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "s1",
+      "s2"
+    ],
+    [
+      "s2",
+      "s3"
+    ],
+    [
+      "a1",
+      "a2"
+    ],
+    [
+      "a2",
+      "a3"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Dua cara organisma membiak.",
+  "alt": "Dua lajur bersebelahan: pembiakan seks perlukan dua induk dan menghasilkan anak yang berbeza, pembiakan aseks perlukan satu induk dan menghasilkan anak yang serupa induk"
+};
+
+const R_URI = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    {
+      "label": "Darah ibu",
+      "nota": "oksigen"
+    },
+    "Uri (plasenta)",
+    "Tali pusat",
+    "Darah fetus"
+  ],
+  "kapsyen": "Rajah 1 · Laluan oksigen dan nutrien daripada ibu kepada fetus.",
+  "alt": "Rajah aliran menegak: darah ibu, uri atau plasenta, tali pusat, kemudian darah fetus"
+};
+
 const T_HAID =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Hari dalam kitar</th>'+
 '<th>Perkara yang berlaku</th></tr></thead><tbody>'+
@@ -53,12 +132,12 @@ const T_KEBUN =
 
 const ARAS = [
 
-{n:1, tempat:"Taman Bunga", sk:"4.1 / 4.7 Pembiakan seks, aseks dan bunga",
+{n:1, tempat:"Taman Bunga", sk:"4.1 / 4.7 Pembiakan seks, aseks dan bunga", lampiran:"biak",
  kadNama:"Bunga Raya", kadEm:"\u{1F33A}", kadFakta:"Bunga raya ialah bunga kebangsaan Malaysia, dan setiap kuntumnya mempunyai bahagian jantan dan betina.",
  bosKadNama:"Hydra", bosKadEm:"\u{1F9EC}", bosKadFakta:"Hydra membiak secara pertunasan: tunas kecil tumbuh pada badan induk dan tertanggal menjadi individu baharu.",
  soalan:[
  {j:"pilih",t:"Pembiakan seks melibatkan:",p:["Gamet jantan dan betina bercantum","Satu induk sahaja tanpa gamet","Pembahagian satu sel kepada dua","Pertumbuhan tunas pada badan induk"],b:0,u:"Pembiakan aseks hanya melibatkan satu induk."},
- {j:"pilih",t:"Amoeba membiak dengan membahagi kepada dua. Kaedah ini dipanggil:",p:["Belahan dedua","Pertunasan","Pembentukan spora","Penjanaan semula"],b:0,u:"Satu sel induk menjadi dua sel anak."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, anak yang serupa dengan induknya terhasil daripada:",p:["Pembiakan aseks","Percantuman dua gamet","Pendebungaan silang bunga","Pembiakan seks dua induk"],b:0,u:"Satu induk sahaja, jadi anak mewarisi baka yang sama."},
  {j:"pilih",t:"Bahagian bunga yang menghasilkan debunga ialah:",p:["Anter","Stigma","Ovari","Sepal"],b:0,u:"Anter terletak di hujung filamen."},
  {j:"pilih",t:"Bahagian bunga yang menerima debunga ialah:",p:["Stigma","Anter","Filamen","Petal"],b:0,u:"Stigma biasanya melekit supaya debunga melekat."},
  {j:"pilih",t:"Fungsi petal yang berwarna terang ialah:",p:["Menarik serangga","Menghasilkan debunga","Melindungi ovari","Menyerap air"],b:0,u:"Serangga membantu memindahkan debunga."},
@@ -67,13 +146,13 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA contoh pembiakan aseks.",p:["Keratan batang ubi kayu tumbuh menjadi pokok baharu","Yis membentuk tunas","Cendawan membebaskan spora","Ikan bertelur dan telurnya disenyawakan","Katak bertelur di dalam air"],b:[0,1,2],u:"Ikan dan katak membiak secara seks melalui persenyawaan luar."}],
  bos:{j:"pilih",t:"Tempat persenyawaan berlaku dalam sistem pembiakan perempuan ialah:",p:["Tiub Falopio","Uterus","Ovari","Serviks"],b:0,u:"Zigot kemudian bergerak ke uterus dan menempel pada dindingnya."}},
 
-{n:2, tempat:"Klinik Ibu dan Anak", sk:"4.2 / 4.4 / 4.5 Gamet, kehamilan dan perkembangan fetus",
+{n:2, tempat:"Klinik Ibu dan Anak", sk:"4.2 / 4.4 / 4.5 Gamet, kehamilan dan perkembangan fetus", lampiran:"uri",
  kadNama:"Plasenta", kadEm:"\u{1F930}", kadFakta:"Darah ibu dan darah fetus tidak bercampur. Bahan bertukar melalui plasenta.",
  bosKadNama:"Susu Ibu", bosKadEm:"\u{1F37C}", bosKadFakta:"Susu ibu mengandungi antibodi yang membantu melindungi bayi daripada jangkitan.",
  soalan:[
  {j:"pilih",t:"Sperma mempunyai ekor. Fungsinya ialah:",p:["Berenang menuju ovum","Menyimpan makanan","Melindungi nukleus","Menghasilkan hormon"],b:0,u:"Ovum tidak berekor dan tidak bergerak sendiri."},
  {j:"pilih",t:"Beza utama antara sperma dengan ovum ialah:",p:["Sperma kecil dan bergerak; ovum besar dan tidak bergerak","Sperma besar dan tidak bergerak, ovum kecil dan berekor","Kedua-duanya sama saiz tetapi berbeza warna","Sperma tiada nukleus, ovum ada dua nukleus"],b:0,u:"Ovum lebih besar kerana mengandungi simpanan makanan."},
- {j:"pilih",t:"Fungsi tali pusat ialah:",p:["Menghubungkan fetus dengan plasenta","Menghasilkan darah untuk fetus","Menapis semua kuman daripada darah ibu","Menyokong berat uterus"],b:0,u:"Salur darah dalam tali pusat membawa bahan antara fetus dan plasenta."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, fungsi tali pusat ialah:",p:["Menghubungkan fetus dengan plasenta","Menghasilkan darah untuk fetus","Menapis semua kuman daripada darah ibu","Menyokong berat uterus"],b:0,u:"Salur darah dalam tali pusat membawa bahan antara fetus dan plasenta."},
  {j:"pilih",t:"Mengapakah ibu mengandung dinasihatkan tidak merokok?",p:["Bahan dalam asap rokok boleh sampai ke fetus","Rokok menjadikan fetus terlalu besar untuk dilahirkan","Asap rokok hanya menjejaskan paru-paru ibu sahaja","Rokok menjadikan tali pusat lebih pendek"],b:0,u:"Nikotin dan karbon monoksida boleh menyebabkan bayi lahir kurang berat atau keguguran."},
  {j:"pilih",t:"Apakah yang berlaku kepada dinding uterus jika persenyawaan tidak berlaku?",p:["Lapisannya luruh semasa haid","Ia terus menebal sehingga setahun","Ia bertukar menjadi plasenta","Ia menghasilkan ovum baharu"],b:0,u:"Kitar baharu kemudian bermula."},
  {j:"pilih",t:"Mengapakah ibu mengandung perlu mengambil makanan yang kaya dengan zat besi dan kalsium?",p:["Supaya darah dan tulang fetus terbentuk dengan baik","Supaya fetus tidak bergerak di dalam uterus","Supaya ibu tidak perlu berehat","Supaya tempoh kehamilan menjadi lebih singkat"],b:0,u:"Zat besi diperlukan untuk hemoglobin dan kalsium untuk tulang dan gigi."},
@@ -155,6 +234,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk projek menggunakan pengetahuan pendebungaan dan pembiakan secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Pembiakan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ haid:T_HAID, cambah:T_CAMBAH, kebun:T_KEBUN },
+  lampiran:{ biak:R_BIAK, uri:R_URI, haid:T_HAID, cambah:T_CAMBAH, kebun:T_KEBUN },
   aras:ARAS
 };

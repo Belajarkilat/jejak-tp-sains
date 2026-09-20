@@ -16,6 +16,48 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_BUMI = {
+  "jenis": "struktur",
+  "mod": "lapisan",
+  "lapisan": [
+    {
+      "label": "Teras dalam",
+      "tebal": 1250,
+      "isi": "kuningLembut"
+    },
+    {
+      "label": "Teras luar",
+      "tebal": 2200,
+      "isi": "merahLembut"
+    },
+    {
+      "label": "Mantel",
+      "tebal": 2900,
+      "isi": "kertas2"
+    },
+    {
+      "label": "Kerak",
+      "tebal": 260,
+      "isi": "hijauLembut"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Keratan Bumi. Tebal kerak dibesarkan supaya kelihatan.",
+  "alt": "Keratan Bumi menunjukkan empat lapisan dari tengah ke luar: teras dalam, teras luar, mantel yang paling tebal, dan kerak yang paling nipis"
+};
+
+const R_BATU = {
+  "jenis": "aliran",
+  "mod": "kitar",
+  "nod": [
+    "Magma",
+    "Batuan igneus",
+    "Batuan enapan",
+    "Batuan metamorf"
+  ],
+  "kapsyen": "Rajah 1 · Kitar batuan.",
+  "alt": "Rajah kitaran empat kotak: magma, batuan igneus, batuan enapan, batuan metamorf, kemudian kembali kepada magma"
+};
+
 const T_BATU =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Sampel</th>'+
 '<th>Saiz hablur</th><th>Berlapis?</th><th>Ada fosil?</th><th>Catatan</th></tr></thead><tbody>'+
@@ -46,12 +88,12 @@ const T_AIR =
 
 const ARAS = [
 
-{n:1, tempat:"Puncak Gunung", sk:"9.1 / 9.2 Sistem Bumi, struktur Bumi dan batuan",
+{n:1, tempat:"Puncak Gunung", sk:"9.1 / 9.2 Sistem Bumi, struktur Bumi dan batuan", lampiran:"strukturbumi",
  kadNama:"Teras Bumi", kadEm:"\u{1F30D}", kadFakta:"Suhu teras dalam Bumi dianggarkan melebihi 5000 °C, hampir sepanas permukaan Matahari.",
  bosKadNama:"Granit", bosKadEm:"\u{1FAA8}", bosKadFakta:"Banyak bukit di Semenanjung Malaysia, termasuk Banjaran Titiwangsa, terdiri daripada batuan granit.",
  soalan:[
  {j:"pilih",t:"Komponen sistem Bumi yang merangkumi semua air di Bumi ialah:",p:["Hidrosfera","Atmosfera","Biosfera","Geosfera"],b:0,u:"Hidrosfera termasuk lautan, sungai, glasier, awan dan air bawah tanah."},
- {j:"pilih",t:"Lapisan Bumi yang paling nipis ialah:",p:["Kerak","Mantel","Teras luar","Teras dalam"],b:0,u:"Kerak ialah lapisan luar tempat kita tinggal."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, lapisan Bumi yang paling nipis ialah:",p:["Kerak","Mantel","Teras luar","Teras dalam"],b:0,u:"Kerak ialah lapisan luar tempat kita tinggal."},
  {j:"pilih",t:"Lapisan Bumi yang paling tebal ialah:",p:["Mantel","Kerak","Teras dalam","Teras luar"],b:0,u:"Mantel kira-kira 2900 km tebal."},
  {j:"pilih",t:"Batuan yang terbentuk apabila magma atau lava menyejuk dan membeku ialah:",p:["Batuan igneus","Batuan sedimen","Batuan metamorfik","Batu kapur"],b:0,u:"Contohnya granit dan basalt."},
  {j:"pilih",t:"Lapisan atmosfera yang mengandungi lapisan ozon ialah:",p:["Stratosfera","Troposfera","Mesosfera","Termosfera"],b:0,u:"Ozon menyerap sinaran ultraungu yang berbahaya."},
@@ -60,13 +102,13 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA contoh geobencana.",p:["Gempa bumi","Tsunami","Tanah runtuh","Gerhana bulan","Pelangi"],b:[0,1,2],u:"Gerhana dan pelangi bukan bencana."}],
  bos:{j:"pilih",t:"Kebanyakan fosil ditemui dalam batuan:",p:["Sedimen","Igneus","Metamorfik","Lava"],b:0,u:"Batuan sedimen terbentuk perlahan-lahan daripada lapisan enapan yang boleh menimbus sisa organisma."}},
 
-{n:2, tempat:"Gua Batu Kapur", sk:"9.2 / 9.3 / 9.4 / 9.6 Proses Bumi, geobencana dan sumber Bumi",
+{n:2, tempat:"Gua Batu Kapur", sk:"9.2 / 9.3 / 9.4 / 9.6 Proses Bumi, geobencana dan sumber Bumi", lampiran:"kitarbatu",
  kadNama:"Gua Batu Kapur", kadEm:"\u{1F987}", kadFakta:"Gua Batu Kapur seperti Gua Niah dan Gua Tempurung terbentuk apabila air hujan berasid melarutkan batu kapur selama ribuan tahun.",
  bosKadNama:"Kolam Air Panas", bosKadEm:"\u{2668}", bosKadFakta:"Kolam air panas Poring di Sabah dipanaskan oleh batuan panas di bawah tanah.",
  soalan:[
  {j:"pilih",t:"Luluhawa dan hakisan dikelaskan sebagai proses:",p:["Eksogen","Endogen","Metamorfik","Magma"],b:0,u:"Proses eksogen berlaku di permukaan Bumi."},
  {j:"pilih",t:"Pergerakan kepingan kerak Bumi dikenali sebagai:",p:["Tektonik keping","Luluhawa kimia","Pengenapan","Susutan jisim"],b:0,u:"Ini proses endogen yang digerakkan oleh olakan mantel."},
- {j:"pilih",t:"Bagaimanakah batuan metamorfik terbentuk?",p:["Batuan sedia ada diubah oleh haba dan tekanan tinggi","Magma menyejuk dengan cepat di permukaan Bumi","Lapisan pasir dan lumpur dimampatkan di dasar sungai","Sisa tumbuhan tertimbus di kawasan paya"],b:0,u:"Contohnya batu kapur berubah menjadi marmar."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bagaimanakah batuan metamorfik terbentuk?",p:["Batuan sedia ada diubah oleh haba dan tekanan tinggi","Magma menyejuk dengan cepat di permukaan Bumi","Lapisan pasir dan lumpur dimampatkan di dasar sungai","Sisa tumbuhan tertimbus di kawasan paya"],b:0,u:"Contohnya batu kapur berubah menjadi marmar."},
  {j:"pilih",t:"Tsunami biasanya berpunca daripada:",p:["Gempa bumi di dasar laut","Angin kencang di pantai","Hujan lebat berterusan","Air pasang besar bulanan"],b:0,u:"Gempa bumi menolak air laut dalam jumlah yang sangat besar."},
  {j:"pilih",t:"Petroleum terbentuk daripada:",p:["Sisa organisma laut yang tertimbus","Lava yang menyejuk di dasar laut","Air hujan yang meresap ke dalam batu","Batu kapur yang dilarutkan oleh asid"],b:0,u:"Haba dan tekanan menukar sisa itu kepada minyak dan gas."},
  {j:"pilih",t:"Mengapakah lubang benam sering berlaku di kawasan batu kapur?",p:["Batu kapur larut dalam air berasid","Batu kapur ialah batuan paling keras di Bumi","Kawasan batu kapur tidak pernah menerima hujan","Batu kapur mengembang apabila panas"],b:0,u:"Rongga di bawah tanah boleh runtuh secara tiba-tiba."},
@@ -148,6 +190,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk pelan menghadapi geobencana dan mengurus sumber Bumi secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Bumi. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ batu:T_BATU, cerun:T_CERUN, air:T_AIR },
+  lampiran:{ strukturbumi:R_BUMI, kitarbatu:R_BATU, batu:T_BATU, cerun:T_CERUN, air:T_AIR },
   aras:ARAS
 };

@@ -19,6 +19,86 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_PANAS_H1 = {
+  "jenis": "graf",
+  "setiap": 2,
+  "grid": 6,
+  "x": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "y": null,
+  "yMin": -20,
+  "yMaks": 100,
+  "siri": [
+    {
+      "label": "Suhu bahan",
+      "warna": "merah",
+      "y": [
+        -20,
+        -10,
+        0,
+        0,
+        0,
+        0,
+        12,
+        34,
+        56,
+        78,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    }
+  ],
+  "xLabel": "Masa pemanasan (minit)",
+  "kapsyen": "Rajah 1 · Ketulan ais dipanaskan sehingga mendidih.",
+  "alt": "Graf suhu melawan masa: suhu naik dari negatif dua puluh ke sifar darjah, kekal sifar antara minit dua dan minit enam, naik semula ke seratus darjah, kemudian kekal seratus"
+};
+
+const R_ZARAH = {
+  "jenis": "struktur", "mod": "label", "tinggiLukis": 160,
+  "bahagian": [
+    { "label": "Bekas P", "bentuk": "kotak", "x": 50, "y": 14, "l": 88, "t": 24, "bulat": 3, "isi": "kertas2", "anchorX": 93, "anchorY": 14 },
+    { "bentuk": "bulat", "x": 22, "y": 9, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "bentuk": "bulat", "x": 38, "y": 9, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "bentuk": "bulat", "x": 54, "y": 9, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "bentuk": "bulat", "x": 70, "y": 9, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "bentuk": "bulat", "x": 30, "y": 19, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "bentuk": "bulat", "x": 46, "y": 19, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "bentuk": "bulat", "x": 62, "y": 19, "r": 4, "isi": "ungu", "garis": "ungu" },
+    { "label": "Bekas Q", "bentuk": "kotak", "x": 50, "y": 50, "l": 88, "t": 24, "bulat": 3, "isi": "kertas2", "anchorX": 93, "anchorY": 50 },
+    { "bentuk": "bulat", "x": 20, "y": 45, "r": 4, "isi": "hijau", "garis": "hijau" },
+    { "bentuk": "bulat", "x": 40, "y": 47, "r": 4, "isi": "hijau", "garis": "hijau" },
+    { "bentuk": "bulat", "x": 58, "y": 44, "r": 4, "isi": "hijau", "garis": "hijau" },
+    { "bentuk": "bulat", "x": 30, "y": 55, "r": 4, "isi": "hijau", "garis": "hijau" },
+    { "bentuk": "bulat", "x": 52, "y": 56, "r": 4, "isi": "hijau", "garis": "hijau" },
+    { "bentuk": "bulat", "x": 72, "y": 53, "r": 4, "isi": "hijau", "garis": "hijau" },
+    { "label": "Bekas R", "bentuk": "kotak", "x": 50, "y": 86, "l": 88, "t": 24, "bulat": 3, "isi": "kertas2", "anchorX": 93, "anchorY": 86 },
+    { "bentuk": "bulat", "x": 16, "y": 80, "r": 4, "isi": "merah", "garis": "merah" },
+    { "bentuk": "bulat", "x": 48, "y": 90, "r": 4, "isi": "merah", "garis": "merah" },
+    { "bentuk": "bulat", "x": 80, "y": 81, "r": 4, "isi": "merah", "garis": "merah" }
+  ],
+  "kapsyen": "Rajah 1 · Susunan zarah dalam tiga bekas tertutup yang sama saiz.",
+  "alt": "Tiga bekas sama saiz: bekas P zarah tersusun rapat dan teratur, bekas Q zarah rapat tetapi tidak teratur, bekas R hanya tiga zarah yang berjauhan"
+};
+
+
 const T_TAKAT =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Bahan</th>'+
 '<th class="n">Takat lebur (&deg;C)</th><th class="n">Takat didih (&deg;C)</th></tr></thead><tbody>'+
@@ -46,7 +126,7 @@ const T_RESAP =
 
 const ARAS = [
 
-{n:1, tempat:"Dapur Rumah", sk:"5.1 / 5.2 Jirim dan tiga keadaan jirim",
+{n:1, tempat:"Dapur Rumah", sk:"5.1 / 5.2 Jirim dan tiga keadaan jirim", lampiran:"lengkung",
  kadNama:"Zarah", kadEm:"\u{269B}", kadFakta:"Setitik air mengandungi lebih daripada satu sekstilion (10²¹) zarah air.",
  bosKadNama:"Ais Kering", bosKadEm:"\u{1F9CA}", bosKadFakta:"Ais kering ialah karbon dioksida pepejal. Ia terus bertukar menjadi gas tanpa menjadi cecair.",
  soalan:[
@@ -56,11 +136,11 @@ const ARAS = [
  {j:"pilih",t:"Keadaan jirim yang mempunyai bentuk dan isi padu tetap ialah:",p:["Pepejal","Cecair","Gas","Wap"],b:0,u:"Zarah pepejal tersusun rapat dan hanya bergetar di kedudukan tetap."},
  {j:"pilih",t:"Perubahan keadaan daripada cecair kepada pepejal dipanggil:",p:["Pembekuan","Peleburan","Kondensasi","Penyejatan"],b:0,u:"Haba dibebaskan semasa pembekuan."},
  {j:"pilih",t:"Titisan air terbentuk pada dinding luar gelas berisi air sejuk. Proses ini dipanggil:",p:["Kondensasi","Penyejatan","Peleburan","Pemejalwapan"],b:0,u:"Wap air dalam udara menyejuk dan bertukar menjadi cecair."},
- {j:"pilih",t:"Contoh sifat kimia jirim ialah:",p:["Kebolehbakaran","Takat didih","Warna","Ketumpatan"],b:0,u:"Sifat kimia hanya kelihatan apabila bahan berubah menjadi bahan baharu."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, suhu bahan kekal pada 0 °C antara minit 2 dan minit 6. Apakah yang berlaku ketika itu?",p:["Ais sedang melebur","Suhu dapur sedang turun perlahan-lahan","Haba berhenti dibekalkan kepada bahan itu","Air sedang bertukar menjadi wap sepenuhnya"],b:0,u:"Semasa melebur, haba digunakan untuk merenggangkan zarah, bukan untuk menaikkan suhu."},
  {j:"banyak",t:"Pilih SEMUA contoh jirim.",p:["Udara di dalam belon","Wap air","Sebatang pensel","Bunyi guruh","Haba matahari"],b:[0,1,2],u:"Bunyi dan haba ialah tenaga, bukan jirim."}],
  bos:{j:"pilih",t:"Ubat gegat di dalam almari semakin mengecil tanpa meninggalkan cecair. Proses ini dipanggil:",p:["Pemejalwapan","Pendidihan","Peleburan","Kondensasi"],b:0,u:"Pepejal bertukar terus menjadi gas."}},
 
-{n:2, tempat:"Makmal Zarah", sk:"5.2 Teori kinetik dan perubahan keadaan jirim",
+{n:2, tempat:"Makmal Zarah", sk:"5.2 Teori kinetik dan perubahan keadaan jirim", lampiran:"zarah",
  kadNama:"Teori Kinetik", kadEm:"\u{1F3C3}", kadFakta:"Menurut teori kinetik, zarah jirim sentiasa bergerak. Semakin tinggi suhu, semakin laju zarah bergerak.",
  bosKadNama:"Takat Didih", bosKadEm:"\u{2668}", bosKadFakta:"Di puncak Gunung Kinabalu, air mendidih di bawah 100 °C kerana tekanan udara lebih rendah.",
  soalan:[
@@ -71,7 +151,7 @@ const ARAS = [
  {j:"pilih",t:"Beza utama antara penyejatan dan pendidihan ialah penyejatan:",p:["Berlaku pada sebarang suhu di permukaan cecair","Hanya berlaku pada suhu 100 °C","Berlaku di seluruh cecair dengan gelembung","Membebaskan haba ke persekitaran"],b:0,u:"Pendidihan berlaku pada takat didih di seluruh cecair."},
  {j:"pilih",t:"Sebiji ais berjisim 50 g melebur sepenuhnya. Berapakah jisim air yang terhasil?",p:["50 g","Kurang daripada 50 g","Lebih daripada 50 g","Tidak dapat ditentukan"],b:0,u:"Jisim kekal semasa perubahan fizik."},
  {j:"pilih",t:"Mengapakah kain yang dijemur cepat kering pada hari panas dan berangin?",p:["Penyejatan berlaku dengan lebih cepat","Air di dalam kain mendidih pada 100 °C","Angin menukar air menjadi pepejal","Cahaya matahari memusnahkan air"],b:0,u:"Suhu tinggi dan angin mempercepat penyejatan."},
- {j:"susun",t:"Susun keadaan jirim mengikut jarak antara zarah, bermula daripada yang PALING rapat.",p:["Pepejal","Cecair","Gas"],b:[0,1,2],u:"Zarah gas paling jauh antara satu sama lain."}],
+ {j:"susun",t:"Berdasarkan Rajah 1, susun bekas mengikut jarak antara zarah, bermula daripada yang PALING rapat.",p:["Bekas P","Bekas Q","Bekas R"],b:[0,1,2],u:"Zarah dalam P tersusun rapat dan teratur, Q rapat tetapi bebas bergerak, R paling renggang."}],
  bos:{j:"banyak",t:"Pilih SEMUA perubahan keadaan yang MENYERAP haba.",p:["Peleburan","Pendidihan","Penyejatan","Pembekuan","Kondensasi"],b:[0,1,2],u:"Pembekuan dan kondensasi membebaskan haba."}},
 
 {n:3, tempat:"Kedai Kimia", sk:"5.1 / 5.2 Mengelaskan bahan mengikut takat lebur dan takat didih", lampiran:"takat",
@@ -148,6 +228,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk alat yang menggunakan perubahan keadaan jirim secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Jirim. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ takat:T_TAKAT, panas:T_PANAS, resap:T_RESAP },
+  lampiran:{ lengkung:R_PANAS_H1, zarah:R_ZARAH, takat:T_TAKAT, panas:T_PANAS, resap:T_RESAP },
   aras:ARAS
 };

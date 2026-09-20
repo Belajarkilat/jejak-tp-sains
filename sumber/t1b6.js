@@ -18,6 +18,107 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_ATOM = {
+  "jenis": "struktur",
+  "mod": "lapisan",
+  "lapisan": [
+    {
+      "label": "Nukleus",
+      "tebal": 1.1,
+      "isi": "merahLembut"
+    },
+    {
+      "label": "Petala pertama",
+      "tebal": 1.3,
+      "isi": "kertas2"
+    },
+    {
+      "label": "Petala kedua",
+      "tebal": 1.6,
+      "isi": "kertas"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Model atom (rajah skematik, bukan mengikut skala).",
+  "alt": "Rajah lapisan sepusat: nukleus di tengah, dikelilingi petala pertama dan petala kedua"
+};
+
+const R_JIRIM = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "j",
+      "label": "Jirim",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "u",
+      "label": "Unsur",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "s",
+      "label": "Sebatian",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "c",
+      "label": "Campuran",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "id": "u2",
+      "label": "Besi",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "s2",
+      "label": "Air",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "id": "c2",
+      "label": "Udara",
+      "x": 2,
+      "y": 2
+    }
+  ],
+  "panah": [
+    [
+      "j",
+      "u"
+    ],
+    [
+      "j",
+      "s"
+    ],
+    [
+      "j",
+      "c"
+    ],
+    [
+      "u",
+      "u2"
+    ],
+    [
+      "s",
+      "s2"
+    ],
+    [
+      "c",
+      "c2"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Carta pengelasan jirim dengan satu contoh bagi setiap kumpulan.",
+  "alt": "Carta pengelasan: jirim terbahagi kepada unsur dengan contoh besi, sebatian dengan contoh air, dan campuran dengan contoh udara"
+};
+
 const T_UNSUR =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Unsur</th>'+
 '<th>Permukaan</th><th>Mengkonduksi elektrik</th><th>Apabila diketuk</th><th class="n">Takat lebur (&deg;C)</th></tr></thead><tbody>'+
@@ -49,7 +150,7 @@ const T_ASING =
 
 const ARAS = [
 
-{n:1, tempat:"Dinding Jadual", sk:"6.1 Atom, molekul, unsur dan sebatian",
+{n:1, tempat:"Dinding Jadual", sk:"6.1 Atom, molekul, unsur dan sebatian", lampiran:"atom",
  kadNama:"Atom", kadEm:"\u{269B}", kadFakta:"Atom sangat kecil: kira-kira 500 000 atom karbon yang disusun sebaris hanya selebar sehelai rambut.",
  bosKadNama:"Jadual Berkala", bosKadEm:"\u{1F5C2}", bosKadFakta:"Dmitri Mendeleev menyusun jadual berkala pada tahun 1869 dan meninggalkan ruang kosong untuk unsur yang belum ditemui.",
  soalan:[
@@ -58,19 +159,19 @@ const ARAS = [
  {j:"pilih",t:"Bahan yang terdiri daripada satu jenis atom sahaja dipanggil:",p:["Unsur","Sebatian","Campuran","Larutan"],b:0,u:"Contohnya besi, oksigen dan karbon."},
  {j:"pilih",t:"Air (H₂O) dikelaskan sebagai:",p:["Sebatian","Unsur","Campuran","Atom"],b:0,u:"Hidrogen dan oksigen bergabung secara kimia."},
  {j:"pilih",t:"Dua atau lebih atom yang bergabung secara kimia membentuk:",p:["Molekul","Proton","Elektron","Unsur baharu"],b:0,u:"Contohnya molekul oksigen (O₂) mengandungi dua atom oksigen."},
- {j:"pilih",t:"Dalam jadual berkala, gas nadir terletak di:",p:["Lajur paling kanan","Lajur paling kiri","Baris paling atas","Bahagian tengah"],b:0,u:"Gas nadir seperti helium, neon dan argon berada di Kumpulan 18."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, elektron sesuatu atom bergerak di bahagian:",p:["Petala","Nukleus di tengah atom","Ruang di luar atom itu","Teras bercas positif"],b:0,u:"Elektron bergerak dalam petala yang mengelilingi nukleus."},
  {j:"pilih",t:"Kebanyakan unsur dalam jadual berkala ialah:",p:["Logam","Bukan logam","Gas nadir","Cecair"],b:0,u:"Logam memenuhi bahagian kiri dan tengah jadual."},
  {j:"banyak",t:"Pilih SEMUA contoh sebatian.",p:["Garam biasa (natrium klorida)","Karbon dioksida","Air","Emas","Oksigen"],b:[0,1,2],u:"Emas dan oksigen ialah unsur."}],
  bos:{j:"pilih",t:"Gas nadir yang digunakan dalam lampu iklan berwarna ialah:",p:["Neon","Oksigen","Nitrogen","Klorin"],b:0,u:"Neon bercahaya jingga-merah apabila elektrik mengalir melaluinya."}},
 
-{n:2, tempat:"Bengkel Logam", sk:"6.1 / 6.2 / 6.3 Logam, bukan logam, campuran dan sebatian",
+{n:2, tempat:"Bengkel Logam", sk:"6.1 / 6.2 / 6.3 Logam, bukan logam, campuran dan sebatian", lampiran:"kelasjirim",
  kadNama:"Kuprum", kadEm:"\u{1F50C}", kadFakta:"Kuprum digunakan dalam dawai elektrik kerana ia konduktor yang baik dan mudah ditarik menjadi dawai halus.",
  bosKadNama:"Helium", bosKadEm:"\u{1F388}", bosKadFakta:"Helium digunakan dalam belon kerana ia kurang tumpat daripada udara dan tidak mudah terbakar.",
  soalan:[
  {j:"pilih",t:"Logam boleh ditarik menjadi dawai. Sifat ini dipanggil:",p:["Kemuluran","Kebolehtempaan","Kekonduksian","Kerapuhan"],b:0,u:"Kebolehtempaan pula ialah sifat boleh diketuk menjadi kepingan."},
  {j:"pilih",t:"Mengapakah periuk dibuat daripada logam tetapi pemegangnya daripada plastik?",p:["Logam konduktor haba, plastik penebat haba","Logam penebat haba, plastik konduktor haba","Plastik lebih berkilat daripada logam","Logam lebih ringan daripada plastik"],b:0,u:"Haba cepat sampai ke makanan tetapi tangan tidak melecur."},
  {j:"pilih",t:"Mengapakah gas nadir digunakan dalam mentol lampu?",p:["Ia tidak reaktif","Ia sangat berat","Ia mudah terbakar","Ia berwarna terang"],b:0,u:"Argon tidak bertindak balas dengan filamen yang panas."},
- {j:"pilih",t:"Beza utama campuran dengan sebatian ialah campuran:",p:["Boleh diasingkan dengan kaedah fizik","Terbentuk melalui tindak balas kimia","Mempunyai komposisi yang tetap","Menghasilkan bahan baharu"],b:0,u:"Sebatian hanya boleh diasingkan dengan kaedah kimia."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, udara berada dalam kumpulan yang sama dengan bahan yang:",p:["Boleh diasingkan dengan kaedah fizik","Terbentuk melalui tindak balas kimia","Mempunyai komposisi yang tetap","Menghasilkan bahan baharu"],b:0,u:"Sebatian hanya boleh diasingkan dengan kaedah kimia."},
  {j:"pilih",t:"Serbuk besi dan serbuk sulfur dicampur tanpa dipanaskan. Bagaimanakah besi boleh diasingkan?",p:["Guna magnet","Penurasan","Penyulingan","Kromatografi"],b:0,u:"Dalam campuran, besi masih bersifat magnet."},
  {j:"pilih",t:"Kaedah paling sesuai untuk mengasingkan pewarna dalam dakwat ialah:",p:["Kromatografi","Penurasan","Pengenapan","Pemisahan magnet"],b:0,u:"Pewarna bergerak pada kadar berbeza di atas kertas turas."},
  {j:"pilih",t:"Mengapakah perubahan besi berkarat dikelaskan sebagai perubahan kimia?",p:["Bahan baharu terbentuk","Bentuk besi berubah","Besi menjadi lebih ringan","Warnanya boleh dicuci"],b:0,u:"Karat ialah ferum oksida, bahan yang berbeza daripada besi."},
@@ -151,6 +252,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk sistem atau alat menggunakan sifat unsur dan kaedah pengasingan secara kreatif dan praktikal. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Jadual Berkala. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ unsur:T_UNSUR, jisim:T_JISIM, asing:T_ASING },
+  lampiran:{ atom:R_ATOM, kelasjirim:R_JIRIM, unsur:T_UNSUR, jisim:T_JISIM, asing:T_ASING },
   aras:ARAS
 };

@@ -21,6 +21,46 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_UDARA = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 4,
+  "yMaks": 80,
+  "bar": [
+    {
+      "label": "Nitrogen",
+      "nilai": 78,
+      "warna": "ungu"
+    },
+    {
+      "label": "Oksigen",
+      "nilai": 21,
+      "warna": "merah"
+    },
+    {
+      "label": "Lain-lain",
+      "nilai": 1,
+      "warna": "kuning"
+    }
+  ],
+  "xLabel": "Peratus isi padu udara kering",
+  "kapsyen": "Rajah 1 · Komposisi udara kering.",
+  "alt": "Graf palang: nitrogen 78 peratus, oksigen 21 peratus, gas lain 1 peratus daripada isi padu udara kering"
+};
+
+const R_KARBON = {
+  "jenis": "aliran",
+  "mod": "kitar",
+  "nod": [
+    "Karbon dioksida di udara",
+    "Fotosintesis",
+    "Karbon dalam hidupan",
+    "Respirasi & pembakaran"
+  ],
+  "kapsyen": "Rajah 1 · Kitar karbon.",
+  "alt": "Rajah kitaran empat kotak: karbon dioksida di udara, fotosintesis, karbon dalam hidupan, respirasi dan pembakaran"
+};
+
 const T_LILIN =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Balang</th>'+
 '<th class="n">Isi padu udara (cm&sup3;)</th><th class="n">Masa lilin menyala (s)</th></tr></thead><tbody>'+
@@ -52,12 +92,12 @@ const T_PADAM =
 
 const ARAS = [
 
-{n:1, tempat:"Langit Biru", sk:"7.1 Komposisi udara dan kepentingan gas",
+{n:1, tempat:"Langit Biru", sk:"7.1 Komposisi udara dan kepentingan gas", lampiran:"komposisi",
  kadNama:"Nitrogen", kadEm:"\u{1F32C}", kadFakta:"Hampir empat perlima udara ialah nitrogen, gas yang tidak berwarna dan tidak berbau.",
  bosKadNama:"Karbon Dioksida", bosKadEm:"\u{1F964}", bosKadFakta:"Buih dalam minuman berkarbonat ialah karbon dioksida yang dilarutkan di bawah tekanan.",
  soalan:[
  {j:"pilih",t:"Gas yang paling banyak dalam udara ialah:",p:["Nitrogen","Oksigen","Karbon dioksida","Argon"],b:0,u:"Nitrogen kira-kira 78% udara."},
- {j:"pilih",t:"Peratus oksigen dalam udara ialah kira-kira:",p:["21%","78%","50%","1%"],b:0,u:"Kira-kira satu perlima udara ialah oksigen."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, peratus oksigen dalam udara kering ialah kira-kira:",p:["21%","78%","50%","1%"],b:0,u:"Kira-kira satu perlima udara ialah oksigen."},
  {j:"pilih",t:"Udara dikelaskan sebagai:",p:["Campuran","Sebatian","Unsur","Atom"],b:0,u:"Gas dalam udara tidak bergabung secara kimia, dan komposisinya boleh berubah."},
  {j:"pilih",t:"Gas yang diperlukan untuk respirasi dan pembakaran ialah:",p:["Oksigen","Nitrogen","Helium","Neon"],b:0,u:"Oksigen digunakan untuk membebaskan tenaga daripada glukosa dan bahan api."},
  {j:"pilih",t:"Gas yang digunakan oleh tumbuhan untuk fotosintesis ialah:",p:["Karbon dioksida","Oksigen","Nitrogen","Karbon monoksida"],b:0,u:"Karbon dioksida dan air digunakan untuk menghasilkan glukosa."},
@@ -66,14 +106,14 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA padanan gas dan kegunaan yang BETUL.",p:["Helium: mengisi belon","Karbon dioksida: pemadam api","Oksigen: rawatan pesakit di hospital","Nitrogen: bahan api kereta","Neon: bahan pengawet buah"],b:[0,1,2],u:"Nitrogen bukan bahan api, dan neon digunakan dalam lampu iklan."}],
  bos:{j:"pilih",t:"Dalam kitar karbon, proses yang MENGELUARKAN karbon dioksida daripada udara ialah:",p:["Fotosintesis","Respirasi sel","Pembakaran","Penguraian"],b:0,u:"Respirasi, pembakaran dan penguraian membebaskan karbon dioksida."}},
 
-{n:2, tempat:"Dapur Api", sk:"7.1 / 7.2 / 7.3 Kitar gas, pembakaran dan pencemaran",
+{n:2, tempat:"Dapur Api", sk:"7.1 / 7.2 / 7.3 Kitar gas, pembakaran dan pencemaran", lampiran:"kitarkarbon",
  kadNama:"Segi Tiga Api", kadEm:"\u{1F525}", kadFakta:"Api memerlukan tiga perkara: bahan api, oksigen dan haba. Buang satu, dan api akan padam.",
  bosKadNama:"Jerebu", bosKadEm:"\u{1F32B}", bosKadFakta:"Jerebu di Malaysia sering berpunca daripada pembakaran terbuka hutan dan tanah gambut, termasuk dari negara jiran.",
  soalan:[
  {j:"pilih",t:"Tiga syarat pembakaran ialah:",p:["Bahan api, oksigen dan haba","Air, oksigen dan cahaya","Nitrogen, haba dan bahan api","Karbon dioksida, air dan haba"],b:0,u:"Ini dikenali sebagai segi tiga api."},
  {j:"pilih",t:"Mengapakah air tidak boleh digunakan untuk memadam kebakaran minyak masak?",p:["Minyak terapung dan api merebak","Air bertukar menjadi minyak apabila panas","Api menyerap air dengan terlalu cepat","Air menambah oksigen kepada minyak"],b:0,u:"Air juga mendidih dengan cepat dan memercikkan minyak panas."},
  {j:"pilih",t:"Bagaimanakah selimut api memadamkan api?",p:["Menyekat bekalan oksigen","Menyejukkan bahan api dengan air","Menambah karbon dioksida ke dalam api","Menghilangkan bahan api terus"],b:0,u:"Tanpa oksigen, pembakaran tidak dapat diteruskan."},
- {j:"pilih",t:"Mengapakah penebangan hutan secara besar-besaran meningkatkan karbon dioksida di udara?",p:["Kurang pokok untuk menyerap karbon dioksida","Pokok yang ditebang membebaskan oksigen tambahan ke udara","Tanah yang terdedah menyerap lebih banyak nitrogen","Hutan yang ditebang menghasilkan lebih banyak wap air"],b:0,u:"Pembakaran sisa pokok turut membebaskan karbon dioksida."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah penebangan hutan secara besar-besaran meningkatkan karbon dioksida di udara?",p:["Kurang pokok untuk menyerap karbon dioksida","Pokok yang ditebang membebaskan oksigen tambahan ke udara","Tanah yang terdedah menyerap lebih banyak nitrogen","Hutan yang ditebang menghasilkan lebih banyak wap air"],b:0,u:"Pembakaran sisa pokok turut membebaskan karbon dioksida."},
  {j:"pilih",t:"Gas pencemar daripada ekzos kenderaan yang menghalang darah membawa oksigen ialah:",p:["Karbon monoksida","Nitrogen","Oksigen","Nitrogen dioksida"],b:0,u:"Karbon monoksida bergabung dengan hemoglobin lebih kuat daripada oksigen."},
  {j:"pilih",t:"Sulfur dioksida dari kilang boleh menyebabkan:",p:["Hujan asid","Penipisan salji","Gempa bumi","Air pasang besar"],b:0,u:"Sulfur dioksida larut dalam air hujan membentuk asid."},
  {j:"pilih",t:"Mengapakah peningkatan karbon dioksida di udara membimbangkan?",p:["Ia memerangkap haba dan menyebabkan pemanasan global","Ia menjadikan udara berwarna kelabu dan gelap","Ia menghalang semua tumbuhan daripada bernafas","Ia mengurangkan nitrogen dalam udara dengan banyak"],b:0,u:"Ini dikenali sebagai kesan rumah hijau yang dipertingkat."},
@@ -154,6 +194,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk projek atau kempen udara bersih yang praktikal dan disokong konsep sains. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Udara. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ lilin:T_LILIN, ipu:T_IPU, padam:T_PADAM },
+  lampiran:{ komposisi:R_UDARA, kitarkarbon:R_KARBON, lilin:T_LILIN, ipu:T_IPU, padam:T_PADAM },
   aras:ARAS
 };

@@ -18,6 +18,7 @@ const penjana = {
   skala: require("./skala"),
   graf: require("./graf"),
   struktur: require("./struktur"),
+  sinar: require("./sinar"),
 };
 
 function lukisLampiran(spec){

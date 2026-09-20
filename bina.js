@@ -40,10 +40,16 @@ function semak(bab){
        benar-benar merujuknya. Rajah yang tiada soalan bergantung padanya
        hanyalah hiasan yang melambatkan telefon murid. */
     const spekL = a.lampiran && bab.lampiran ? bab.lampiran[a.lampiran] : null;
+    const sebutRajah = (a.soalan || []).concat(a.bos ? [a.bos] : [])
+      .some(q => /\bRajah\b/.test(String(q.t) + " " + String(q.arahan || "")));
     if(spekL && typeof spekL === "object"){
-      const semuaQ = (a.soalan || []).concat(a.bos ? [a.bos] : []);
-      lihat(semuaQ.some(q => /\bRajah\b/.test(String(q.t) + " " + String(q.arahan || ""))),
-        `${di}: ada rajah tetapi tiada soalan yang merujuk "Rajah"`);
+      lihat(sebutRajah, `${di}: ada rajah tetapi tiada soalan yang merujuk "Rajah"`);
+    } else if(sebutRajah){
+      /* Arah bertentangan sama bahaya: soalan berkata "Berdasarkan Rajah 1"
+         tetapi hentian ini memaparkan jadual atau tiada apa-apa. Ini berlaku
+         apabila dua lampiran berkongsi nama kunci dan JavaScript menimpa
+         yang pertama tanpa sebarang amaran. */
+      lihat(false, `${di}: soalan merujuk "Rajah" tetapi lampiran hentian ini bukan rajah`);
     }
     lihat(Array.isArray(a.soalan) && a.soalan.length === 8,
       `${di}: ${a.soalan ? a.soalan.length : 0} soalan, sepatutnya 8`);
