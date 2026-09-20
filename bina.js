@@ -50,12 +50,14 @@ function semak(bab){
         lihat(Array.isArray(q.p) && q.p.length >= 3, `${id}: kurang daripada tiga pilihan`);
         lihat(Number.isInteger(q.b) && q.b >= 0 && q.b < (q.p||[]).length, `${id}: indeks jawapan luar julat`);
         lihat(new Set(q.p||[]).size === (q.p||[]).length, `${id}: ada pilihan berulang`);
+        lihat((q.p||[]).length <= 8, `${id}: lebih lapan pilihan, terlalu panjang untuk telefon`);
         lihat(q.u, `${id}: tiada penjelasan`);
       } else if(q.j === "banyak"){
         lihat(Array.isArray(q.b) && q.b.length >= 1, `${id}: tiada jawapan betul`);
         lihat(new Set(q.b||[]).size === (q.b||[]).length, `${id}: indeks jawapan berulang`);
         (q.b||[]).forEach(x => lihat(x >= 0 && x < q.p.length, `${id}: indeks ${x} luar julat`));
         lihat((q.b||[]).length < (q.p||[]).length, `${id}: semua pilihan ditanda betul`);
+        lihat((q.p||[]).length <= 8, `${id}: lebih lapan pilihan, terlalu panjang untuk telefon`);
         lihat(q.u, `${id}: tiada penjelasan`);
       } else if(q.j === "susun"){
         const urut = (q.b||[]).slice().sort((x,y)=>x-y).join(",");
@@ -212,7 +214,7 @@ senarai.forEach(id => {
   const taburan = imbang(bab);
   const fail = tulis(bab);
   const item = bab.aras.reduce((n, a) => n + a.soalan.length + 1, 0);
-  const kedudukan = Object.keys(taburan).sort().map(k => "ABCDEF"[k] + ":" + taburan[k]).join(" ");
+  const kedudukan = Object.keys(taburan).sort().map(k => ("ABCDEFGHIJKLMNOPQRSTUVWXYZ"[k] || k) + ":" + taburan[k]).join(" ");
   console.log(`✓ ${id}  ${item} item  ·  ${fail}  ${fs.statSync(fail).size} bait  ·  kedudukan ${kedudukan}`);
 });
 

@@ -366,3 +366,45 @@ revoke all on lo_maklum_balas from anon;
 -- 20 Sep 2026: semakan soalan kini meliputi Tingkatan 1 hingga 3.
 -- alter table lo_semakan drop constraint lo_semakan_item_check;
 -- alter table lo_semakan add constraint lo_semakan_item_check check (item ~ '^t[1-3]b[0-9]{1,2}:[1-6]:([0-9]{1,2}|bos|kad|boskad)$');
+
+-- ---------- ping tanpa nama (20 Sep 2026) ----------
+-- Pautan main bebas (?main) tidak menyimpan apa-apa rekod murid, jadi tiada
+-- cara untuk tahu sama ada ia langsung digunakan atau sama ada ada pepijat
+-- yang menghalang murid daripada bermain. Jadual ini menyimpan kiraan sahaja:
+-- tiada nama, tiada sekolah, tiada jawapan. `peranti` ialah 8 aksara rawak
+-- yang dijana dalam pelayar semata-mata untuk membezakan satu telefon
+-- daripada telefon lain; ia tidak boleh dikaitkan dengan sesiapa.
+create table if not exists lo_ping (
+  id      bigserial primary key,
+  jenis   text not null check (jenis in ('buka','hentian','ralat')),
+  bab     text check (bab ~ '^t[1-3]b[0-9]{1,2}$'),
+  aras    int check (aras between 1 and 6),
+  peranti text not null check (peranti ~ '^[a-z0-9]{8}$'),
+  nota    text not null default '' check (length(nota) <= 300),
+  masa    timestamptz not null default now()
+);
+create index if not exists lo_ping_masa on lo_ping (masa desc);
+alter table lo_ping enable row level security;
+revoke all on lo_ping from anon, authenticated;
+
+-- Satu-satunya jalan masuk. Had 300 ping sehari bagi setiap peranti supaya
+-- kunci awam tidak boleh digunakan untuk membanjiri jadual.
+create or replace function lo_ping(
+  p_jenis text, p_peranti text, p_bab text default null,
+  p_aras int default null, p_nota text default ''
+) returns void language plpgsql security definer set search_path = public as $$
+begin
+  if p_jenis not in ('buka','hentian','ralat') then return; end if;
+  if p_peranti !~ '^[a-z0-9]{8}$' then return; end if;
+  if p_bab is not null and p_bab !~ '^t[1-3]b[0-9]{1,2}$' then return; end if;
+  if (select count(*) from lo_ping
+      where peranti = p_peranti and masa > now() - interval '1 day') >= 300 then
+    return;
+  end if;
+  insert into lo_ping (jenis, bab, aras, peranti, nota)
+  values (p_jenis, p_bab,
+          case when p_aras between 1 and 6 then p_aras end,
+          p_peranti, left(coalesce(p_nota,''), 300));
+end $$;
+revoke all on function lo_ping(text, text, text, int, text) from public;
+grant execute on function lo_ping(text, text, text, int, text) to anon, authenticated;
