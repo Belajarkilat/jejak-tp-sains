@@ -18,6 +18,173 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_TEMBUSAN = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    {
+      "id": "a",
+      "label": "Alfa",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "b",
+      "label": "Beta",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "g",
+      "label": "Gama",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "a2",
+      "label": "Kertas",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "b2",
+      "label": "Aluminium",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "g2",
+      "label": "Plumbum",
+      "x": 2,
+      "y": 1
+    }
+  ],
+  "panah": [
+    [
+      "a",
+      "a2"
+    ],
+    [
+      "b",
+      "b2"
+    ],
+    [
+      "g",
+      "g2"
+    ]
+  ],
+  "kapsyen": "Rajah 1 · Bahan paling nipis yang dapat menghentikan setiap jenis sinaran.",
+  "alt": "Tiga lajur: zarah alfa dihentikan oleh kertas, zarah beta oleh aluminium, dan sinar gama hanya oleh plumbum"
+};
+
+const R_ATOM = {
+  "jenis": "struktur",
+  "mod": "label",
+  "bahagian": [
+    {
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 45,
+      "isi": "kertas2",
+      "garis": "garis"
+    },
+    {
+      "label": "Elektron (3)",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 11,
+      "r": 3.5,
+      "isi": "ungu",
+      "garis": "ungu"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 11,
+      "y": 69.5,
+      "r": 3.5,
+      "isi": "ungu",
+      "garis": "ungu"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 89,
+      "y": 69.5,
+      "r": 3.5,
+      "isi": "ungu",
+      "garis": "ungu"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 15,
+      "isi": "kertas",
+      "garis": "garis2"
+    },
+    {
+      "label": "Proton (3)",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 43.3,
+      "r": 3.5,
+      "isi": "merah",
+      "garis": "merah"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 43.1,
+      "y": 53.3,
+      "r": 3.5,
+      "isi": "merah",
+      "garis": "merah"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 56.9,
+      "y": 53.3,
+      "r": 3.5,
+      "isi": "merah",
+      "garis": "merah"
+    },
+    {
+      "label": "Neutron (4)",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 56.7,
+      "r": 3.5,
+      "isi": "tinta3",
+      "garis": "tinta3"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 43.1,
+      "y": 46.7,
+      "r": 3.5,
+      "isi": "tinta3",
+      "garis": "tinta3"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 56.9,
+      "y": 46.7,
+      "r": 3.5,
+      "isi": "tinta3",
+      "garis": "tinta3"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 3.5,
+      "isi": "tinta3",
+      "garis": "tinta3"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Model atom litium yang neutral.",
+  "alt": "Model atom: nukleus mengandungi tiga proton dan empat neutron, dikelilingi tiga elektron di luar nukleus"
+};
+
 const T_REPUT =
 '<div class="scrollx"><table class="datatable"><thead><tr><th class="n">Masa (jam)</th>'+
 '<th class="n">Aktiviti bahan X (Bq)</th></tr></thead><tbody>'+
@@ -51,7 +218,7 @@ const T_DOS =
 
 const ARAS = [
 
-{n:1, tempat:"Makmal Curie", sk:"8.1 Sejarah penemuan keradioaktifan",
+{n:1, tempat:"Makmal Curie", sk:"8.1 Sejarah penemuan keradioaktifan", lampiran:"tembusan",
  kadNama:"Marie Curie", kadEm:"\u{1F52C}", kadFakta:"Marie Curie ialah orang pertama yang memenangi Hadiah Nobel dalam dua bidang sains berbeza, iaitu fizik dan kimia.",
  bosKadNama:"Sinar-X", bosKadEm:"\u{1F9B4}", bosKadFakta:"Wilhelm Roentgen menemui sinar-X pada tahun 1895. Imej sinar-X pertamanya menunjukkan tulang tangan isterinya.",
  soalan:[
@@ -59,17 +226,17 @@ const ARAS = [
  {j:"pilih",t:"Saintis yang pertama menemui keradioaktifan melalui garam uranium ialah:",p:["Henri Becquerel","Wilhelm Roentgen","John Dalton","Isaac Newton"],b:0,u:"Becquerel mendapati garam uranium menggelapkan plat fotografi walaupun tanpa cahaya."},
  {j:"pilih",t:"Unit bagi keradioaktifan ialah:",p:["Becquerel (Bq)","Joule (J)","Watt (W)","Kilowatt jam (kWj)"],b:0,u:"Curie (Ci) juga ialah unit keradioaktifan."},
  {j:"pilih",t:"Zarah yang bercas positif dalam nukleus ialah:",p:["Proton","Neutron","Elektron","Foton"],b:0,u:"Neutron tidak bercas, dan elektron bercas negatif serta berada di luar nukleus."},
- {j:"pilih",t:"Sinaran yang paling tinggi kuasa penembusannya ialah:",p:["Sinar gama","Zarah alfa","Zarah beta","Gelombang radio"],b:0,u:"Sinar gama hanya dapat dikurangkan oleh plumbum atau konkrit tebal."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, sinaran yang paling tinggi kuasa penembusannya ialah:",p:["Sinar gama","Zarah alfa","Zarah beta","Gelombang radio"],b:0,u:"Sinar gama hanya dapat dikurangkan oleh plumbum atau konkrit tebal."},
  {j:"pilih",t:"Contoh bahan radioaktif ialah:",p:["Uranium-235","Karbon-12","Oksigen-16","Natrium klorida"],b:0,u:"Karbon-12 dan oksigen-16 ialah atom yang stabil."},
  {j:"banyak",t:"Pilih SEMUA sinaran mengion.",p:["Zarah alfa","Zarah beta","Sinar gama","Gelombang radio","Cahaya nampak"],b:[0,1,2],u:"Sinar-X juga sinaran mengion. Gelombang radio dan cahaya nampak ialah sinaran tidak mengion."},
  {j:"pilih",t:"Separuh hayat ialah masa yang diambil untuk:",p:["Separuh daripada nukleus radioaktif mereput","Semua nukleus radioaktif mereput","Bahan radioaktif menjadi dua kali lebih aktif","Separuh daripada elektron keluar dari atom"],b:0,u:"Selepas satu separuh hayat, aktiviti sampel menjadi separuh."}],
  bos:{j:"pilih",t:"Keradioaktifan ialah:",p:["Pereputan spontan nukleus tidak stabil yang memancarkan sinaran","Pembakaran bahan api yang membebaskan cahaya dan haba dengan cepat","Pergerakan elektron dalam dawai yang menghasilkan arus","Pantulan cahaya matahari oleh bahan logam berkilat"],b:0,u:"Spontan bermaksud ia berlaku dengan sendiri tanpa dipengaruhi suhu atau tekanan."}},
 
-{n:2, tempat:"Nukleus", sk:"8.2 / 8.3 Atom, ion dan jenis sinaran",
+{n:2, tempat:"Nukleus", sk:"8.2 / 8.3 Atom, ion dan jenis sinaran", lampiran:"atomlitium",
  kadNama:"Atom", kadEm:"\u{269B}", kadFakta:"Hampir semua jisim atom tertumpu dalam nukleus yang sangat kecil di tengahnya.",
  bosKadNama:"Ion", bosKadEm:"\u{2795}", bosKadFakta:"Atom yang kehilangan elektron menjadi ion positif, manakala atom yang menerima elektron menjadi ion negatif.",
  soalan:[
- {j:"pilih",t:"Mengapakah atom neutral secara keseluruhan?",p:["Bilangan proton sama dengan bilangan elektron","Bilangan proton sama dengan bilangan neutron dalam nukleus","Neutron meneutralkan semua cas elektron","Elektron tidak mempunyai sebarang cas"],b:0,u:"Cas positif proton diseimbangkan oleh cas negatif elektron."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah atom neutral secara keseluruhan?",p:["Bilangan proton sama dengan bilangan elektron","Bilangan proton sama dengan bilangan neutron dalam nukleus","Neutron meneutralkan semua cas elektron","Elektron tidak mempunyai sebarang cas"],b:0,u:"Cas positif proton diseimbangkan oleh cas negatif elektron."},
  {j:"pilih",t:"Bagaimanakah ion positif terbentuk?",p:["Atom kehilangan satu atau lebih elektron","Atom menerima satu atau lebih elektron daripada atom lain","Atom kehilangan satu atau lebih proton","Atom menerima satu atau lebih neutron"],b:0,u:"Selepas elektron hilang, bilangan proton melebihi bilangan elektron."},
  {j:"pilih",t:"Atom klorin menerima satu elektron. Apakah yang terbentuk?",p:["Ion negatif","Ion positif","Atom neutral","Nukleus baharu"],b:0,u:"Elektron kini melebihi proton sebanyak satu."},
  {j:"pilih",t:"Mengapakah zarah alfa dan zarah beta terpesong ke arah bertentangan dalam medan magnet?",p:["Kedua-duanya membawa cas yang berlawanan","Kedua-duanya tidak bercas","Zarah alfa lebih laju daripada zarah beta","Medan magnet menolak semua zarah ke kiri"],b:0,u:"Zarah alfa bercas positif, manakala zarah beta bercas negatif."},
@@ -154,6 +321,6 @@ module.exports = {
    6:"{n} berjaya mereka program atau bahan pendidikan tentang keradioaktifan yang tepat, selamat dan sesuai dengan masyarakat. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Keradioaktifan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ reput:T_REPUT, tembus:T_TEMBUS, dos:T_DOS },
+  lampiran:{ tembusan:R_TEMBUSAN, atomlitium:R_ATOM, reput:T_REPUT, tembus:T_TEMBUS, dos:T_DOS },
   aras:ARAS
 };

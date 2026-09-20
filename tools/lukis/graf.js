@@ -96,10 +96,51 @@ function garisan(spec){
   return { isi, lebar: LEBAR, tinggi: tinggi + 6 };
 }
 
+/* Palang mendatar: label di kiri, palang memanjang ke kanan.
+
+   Ini bentuk yang betul apabila label kategori ialah frasa Melayu penuh
+   seperti "Ventrikel kanan". Dalam palang menegak, setiap label dipusatkan
+   pada palangnya sendiri, jadi slot selebar 52px pada telefon tidak mungkin
+   memuatkan label 103px dan label itu melanggar label jirannya. Di sini
+   setiap label ada barisnya sendiri, jadi panjangnya tidak pernah
+   bertembung dengan label lain. */
+function mendatar(spec){
+  const bar = spec.bar || [];
+  if(bar.length < 2) throw new Error("graf palang perlu sekurang-kurangnya dua palang");
+  if(bar.length > 6) throw new Error("graf palang mendatar lebih enam palang jadi terlalu tinggi");
+  const SAIZ = 11.5;
+  const teksNilai = bar.map(b => String(b.nilai));
+  const x0 = Math.ceil(Math.max(...bar.map(b => A.lebarTeks(b.label, SAIZ)))) + 10;
+  const x1 = LEBAR - Math.ceil(Math.max(...teksNilai.map(t => A.lebarTeks(t, SAIZ)))) - 10;
+  if(x1 - x0 < 70)
+    throw new Error(`label graf palang mendatar terlalu panjang; tinggal ${Math.round(x1 - x0)}px untuk palang`);
+  const maks = spec.yMaks != null ? spec.yMaks : Math.max(...bar.map(b => b.nilai));
+  const tb = 20, jurang = 12, atas = 12;
+
+  let isi = "";
+  bar.forEach((b, i) => {
+    const y = atas + i * (tb + jurang);
+    const w = Math.max((b.nilai / maks) * (x1 - x0), 1.5);
+    isi += A.teks(x0 - 6, y + tb / 2 + 4, b.label, { saiz: SAIZ, kanan: true, warna: "tinta2" });
+    isi += A.kotak(x0, y, w, tb, { isi: b.warna || "ungu", garis: b.warna || "ungu", bulat: 3 });
+    isi += A.teks(x0 + w + 5, y + tb / 2 + 4, teksNilai[i], { saiz: SAIZ, warna: "tinta2" });
+  });
+  const bawah = atas + bar.length * tb + (bar.length - 1) * jurang;
+  isi += A.garis(x0, atas - 5, x0, bawah + 5, { warna: "garis2", tebal: 1.5 });
+  isi += A.teks(LEBAR / 2, bawah + 26, spec.xLabel || "", { saiz: SAIZ, tengah: true, warna: "tinta3" });
+  return { isi, lebar: LEBAR, tinggi: bawah + 36 };
+}
+
 function palang(spec){
   const bar = spec.bar || [];
   if(bar.length < 2) throw new Error("graf palang perlu sekurang-kurangnya dua palang");
   if(bar.length > 6) throw new Error("graf palang lebih enam palang jadi sempit pada telefon");
+  /* Label yang lebih lebar daripada slotnya akan melanggar label jiran. */
+  const slot = (LEBAR - 12 - 40) / bar.length;
+  for(const b of bar){
+    if(A.lebarTeks(b.label, 11.5) > slot)
+      throw new Error(`label palang "${b.label}" selebar ${Math.round(A.lebarTeks(b.label, 11.5))}px melebihi slot ${Math.round(slot)}px; guna mod:"mendatar"`);
+  }
   const [yMin, yMaks] = julat(bar.map(b => b.nilai), { yMin: 0, yMaks: spec.yMaks });
   const kiri = 40, kanan = LEBAR - 12, atas = 16, bawah = 150;
   const py = (v) => bawah - ((v - yMin) / (yMaks - yMin)) * (bawah - atas);
@@ -126,7 +167,9 @@ function palang(spec){
 }
 
 function lukis(spec){
-  const hasil = (spec.mod === "palang") ? palang(spec) : garisan(spec);
+  const hasil = (spec.mod === "mendatar") ? mendatar(spec)
+    : (spec.mod === "palang") ? palang(spec)
+    : garisan(spec);
   return A.figura({
     lebar: hasil.lebar, tinggi: hasil.tinggi, isi: hasil.isi,
     alt: spec.alt, kapsyen: spec.kapsyen,

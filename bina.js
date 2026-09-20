@@ -207,6 +207,7 @@ function semakRajah(bab){
          cukup: label paksi kanan bermula di dalam kotak tetapi hujungnya
          boleh terpotong, jadi lebar teks dianggarkan juga (DM Mono, lebar
          satu aksara lebih kurang 0.6 kali saiz fon). */
+      const kotakTeks = [];
       for(const t of html.match(/<text [^>]*>[^<]*<\/text>/g) || []){
         const x = parseFloat((t.match(/ x="([-0-9.]+)"/) || [])[1]);
         const y = parseFloat((t.match(/ y="([-0-9.]+)"/) || [])[1]);
@@ -217,8 +218,27 @@ function semakRajah(bab){
           : /text-anchor="end"/.test(t) ? x : x + w;
         const mula = /text-anchor="middle"/.test(t) ? x - w / 2
           : /text-anchor="end"/.test(t) ? x - w : x;
-        if(mula < -1 || hujung > lebar + 1 || y < 0 || y > tinggi)
+        /* y ialah garis dasar teks, jadi bahagian atas huruf berada kira-kira
+           0.8 x saiz fon lebih tinggi. Semakan y < 0 sahaja membiarkan label
+           "Normal" pada y = 8 lulus walaupun puncaknya terpotong. */
+        if(mula < -1 || hujung > lebar + 1 || y - saiz * 0.8 < -1 || y > tinggi)
           m.push(`rajah "${kunci}": teks "${isiTeks}" menjangkau ${Math.round(mula)}..${Math.round(hujung)} di luar viewBox ${lebar}x${tinggi}`);
+        if(isiTeks) kotakTeks.push({ isiTeks, mula, hujung, atas: y - saiz * 0.78, bawah: y + saiz * 0.24 });
+      }
+
+      /* Dua teks yang bertindih. Semakan sempadan viewBox sahaja tidak
+         menangkapnya: label graf palang boleh muat dalam viewBox tetapi
+         tetap melanggar label palang di sebelahnya, kerana setiap label
+         dipusatkan pada palangnya sendiri. Ia lolos audit kod sehingga
+         galeri dibuka dalam pelayar, jadi semakan itu dibawa masuk ke sini. */
+      for(let i = 0; i < kotakTeks.length; i++){
+        for(let j = i + 1; j < kotakTeks.length; j++){
+          const a = kotakTeks[i], b = kotakTeks[j];
+          const tindihX = Math.min(a.hujung, b.hujung) - Math.max(a.mula, b.mula);
+          const tindihY = Math.min(a.bawah, b.bawah) - Math.max(a.atas, b.atas);
+          if(tindihX > 1.5 && tindihY > 1.5)
+            m.push(`rajah "${kunci}": teks "${a.isiTeks}" bertindih dengan "${b.isiTeks}"`);
+        }
       }
 
       /* Bentuk juga tidak boleh keluar viewBox: kotak mod kitar pernah

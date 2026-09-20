@@ -18,6 +18,58 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_ANGKAT = {
+  "jenis": "daya",
+  "mod": "objek",
+  "objek": "Peti",
+  "daya": [
+    {
+      "arah": "atas",
+      "label": "Daya angkat 50 N",
+      "warna": "ungu"
+    },
+    {
+      "arah": "bawah",
+      "label": "Berat 50 N",
+      "warna": "merah"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Peti diangkat dengan daya 50 N sejauh 2 m ke atas.",
+  "alt": "Rajah daya: sebuah peti dengan anak panah daya angkat 50 newton ke atas dan anak panah berat 50 newton ke bawah"
+};
+
+const R_KINETIK = {
+  "jenis": "graf",
+  "titik": true,
+  "petunjuk": true,
+  "grid": 4,
+  "yMin": 0,
+  "yMaks": 200,
+  "x": [
+    0,
+    5,
+    10,
+    15,
+    20
+  ],
+  "siri": [
+    {
+      "label": "Tenaga kinetik (kJ)",
+      "warna": "ungu",
+      "y": [
+        0,
+        12.5,
+        50,
+        112.5,
+        200
+      ]
+    }
+  ],
+  "xLabel": "Laju kereta (m/s)",
+  "kapsyen": "Rajah 1 · Tenaga kinetik sebuah kereta berjisim 1000 kg pada laju berbeza.",
+  "alt": "Graf lengkung menaik: tenaga kinetik 12.5 kilojoule pada 5 meter sesaat dan 50 kilojoule pada 10 meter sesaat, jadi laju berganda memberi tenaga empat kali ganda"
+};
+
 const T_TANGGA =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Murid</th>'+
 '<th class="n">Jisim (kg)</th><th class="n">Tinggi tangga (m)</th><th class="n">Masa (s)</th></tr></thead><tbody>'+
@@ -47,13 +99,13 @@ const T_MOTOR =
 
 const ARAS = [
 
-{n:1, tempat:"Padang Kerja", sk:"7.1 Kerja, tenaga dan kuasa",
+{n:1, tempat:"Padang Kerja", sk:"7.1 Kerja, tenaga dan kuasa", lampiran:"dayaangkat",
  kadNama:"Joule", kadEm:"\u{2699}", kadFakta:"Satu joule ialah kerja yang dilakukan apabila daya 1 N menggerakkan objek sejauh 1 m dalam arah daya.",
  bosKadNama:"Keabadian Tenaga", bosKadEm:"\u{267E}", bosKadFakta:"Tenaga tidak dicipta atau dimusnahkan. Ia hanya bertukar daripada satu bentuk kepada bentuk lain.",
  soalan:[
  {j:"pilih",t:"Unit S.I. bagi kerja ialah:",p:["Joule (J)","Watt (W)","Newton (N)","Pascal (Pa)"],b:0,u:"1 N m = 1 J."},
  {j:"pilih",t:"Unit S.I. bagi kuasa ialah:",p:["Watt (W)","Joule (J)","Newton (N)","Meter (m)"],b:0,u:"1 J/s = 1 W."},
- {j:"pilih",t:"Kerja ditakrifkan sebagai:",p:["Hasil darab daya dan sesaran dalam arah daya","Hasil bahagi daya dengan masa yang diambil oleh objek","Hasil darab jisim dan pecutan graviti","Kadar tenaga ditukar kepada haba"],b:0,u:"W = F × s."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, kerja ditakrifkan sebagai:",p:["Hasil darab daya dan sesaran dalam arah daya","Hasil bahagi daya dengan masa yang diambil oleh objek","Hasil darab jisim dan pecutan graviti","Kadar tenaga ditukar kepada haba"],b:0,u:"W = F × s."},
  {j:"pilih",t:"Kuasa ditakrifkan sebagai:",p:["Kadar melakukan kerja","Jumlah kerja yang dilakukan","Daya yang dikenakan pada objek","Tenaga yang disimpan dalam spring"],b:0,u:"Kuasa = kerja ÷ masa."},
  {j:"pilih",t:"Tenaga yang dimiliki oleh objek yang sedang bergerak dipanggil:",p:["Tenaga kinetik","Tenaga keupayaan graviti","Tenaga keupayaan kenyal","Tenaga kimia"],b:0,u:"Tenaga kinetik = ½mv²."},
  {j:"pilih",t:"Tenaga yang disimpan dalam spring yang dimampatkan dipanggil:",p:["Tenaga keupayaan kenyal","Tenaga kinetik","Tenaga keupayaan graviti","Tenaga bunyi"],b:0,u:"Spring yang dimampat atau diregang menyimpan tenaga keupayaan kenyal."},
@@ -61,7 +113,7 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA situasi di mana kerja dilakukan dari segi sains.",p:["Menolak troli sejauh 5 m","Mengangkat beg dari lantai ke meja","Menarik baldi air ke atas perigi","Menolak dinding batu yang tidak bergerak","Memegang buku pegun selama 10 minit"],b:[0,1,2],u:"Kerja hanya dilakukan apabila objek bergerak dalam arah daya."}],
  bos:{j:"pilih",t:"Prinsip Keabadian Tenaga menyatakan bahawa tenaga:",p:["Tidak dicipta atau dimusnahkan, hanya bertukar bentuk","Boleh dicipta apabila objek bergerak dengan sangat laju","Akan musnah sepenuhnya apabila objek berhenti","Hanya wujud dalam bentuk tenaga kinetik"],b:0,u:"Tenaga yang kelihatan hilang sebenarnya bertukar kepada bentuk lain seperti haba dan bunyi."}},
 
-{n:2, tempat:"Buaian", sk:"7.2 / 7.3 Tenaga keupayaan, kinetik dan keabadian",
+{n:2, tempat:"Buaian", sk:"7.2 / 7.3 Tenaga keupayaan, kinetik dan keabadian", lampiran:"grafkinetik",
  kadNama:"Bandul", kadEm:"\u{1F570}", kadFakta:"Bandul yang berayun sentiasa menukar tenaga keupayaan graviti kepada tenaga kinetik dan sebaliknya.",
  bosKadNama:"Lastik", bosKadEm:"\u{1F3AF}", bosKadFakta:"Lastik menyimpan tenaga keupayaan kenyal apabila getahnya diregang.",
  soalan:[
@@ -72,7 +124,7 @@ const ARAS = [
  {j:"pilih",t:"Mengapakah bola yang dilepaskan tidak melantun semula ke ketinggian asalnya?",p:["Sebahagian tenaga bertukar kepada haba dan bunyi","Tenaga bola musnah apabila menyentuh lantai","Graviti bertambah kuat selepas lantunan pertama","Jisim bola berkurang selepas setiap lantunan"],b:0,u:"Jumlah tenaga kekal, tetapi bahagian yang menjadi haba dan bunyi tidak lagi mengangkat bola."},
  {j:"pilih",t:"Mengapakah lastik yang ditarik lebih jauh melontarkan batu dengan lebih laju?",p:["Lebih banyak tenaga kenyal disimpan dalam getah","Getah lastik menjadi lebih ringan apabila ditarik jauh","Batu menjadi lebih berat apabila getah ditarik jauh","Graviti berkurang apabila getah diregang"],b:0,u:"Tenaga keupayaan kenyal = ½Fx, dan kedua-dua F dan x bertambah."},
  {j:"pilih",t:"Mengapakah kerja untuk mengangkat kotak sama dengan tenaga keupayaan graviti yang diperoleh kotak itu?",p:["Tenaga yang digunakan untuk mengangkat disimpan dalam kotak","Kotak menghasilkan tenaga sendiri semasa diangkat","Kerja dan tenaga ialah dua perkara yang langsung tidak berkaitan","Tenaga keupayaan hanya wujud semasa kotak bergerak"],b:0,u:"Tenaga itu boleh dibebaskan semula jika kotak jatuh."},
- {j:"pilih",t:"Sebuah kereta bergerak dua kali lebih laju tanpa perubahan jisim. Apakah yang berlaku kepada tenaga kinetiknya?",p:["Menjadi empat kali ganda","Menjadi dua kali ganda","Kekal sama","Menjadi separuh"],b:0,u:"Tenaga kinetik berkadar dengan kuasa dua laju: 2² = 4."}],
+ {j:"pilih",t:"Berdasarkan Rajah 1, sebuah kereta bergerak dua kali lebih laju tanpa perubahan jisim. Apakah yang berlaku kepada tenaga kinetiknya?",p:["Menjadi empat kali ganda","Menjadi dua kali ganda","Kekal sama","Menjadi separuh"],b:0,u:"Tenaga kinetik berkadar dengan kuasa dua laju: 2² = 4."}],
  bos:{j:"banyak",t:"Pilih SEMUA contoh tenaga keupayaan kenyal ditukar kepada tenaga kinetik.",p:["Lastik melontarkan batu","Busur melepaskan anak panah","Kereta mainan berspring meluncur","Buah kelapa jatuh dari pokok","Kipas elektrik berputar"],b:[0,1,2],u:"Kelapa jatuh menukar tenaga keupayaan graviti, dan kipas menukar tenaga elektrik."}},
 
 {n:3, tempat:"Tangga Sekolah", sk:"7.1 / 7.2 Mengira kerja, kuasa dan tenaga", lampiran:"tangga",
@@ -150,6 +202,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta alat yang menggunakan perubahan tenaga secara selamat dan praktikal, disokong pengiraan yang sesuai. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Tenaga dan Kuasa. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ tangga:T_TANGGA, trek:T_TREK, motor:T_MOTOR },
+  lampiran:{ dayaangkat:R_ANGKAT, grafkinetik:R_KINETIK, tangga:T_TANGGA, trek:T_TREK, motor:T_MOTOR },
   aras:ARAS
 };

@@ -18,6 +18,51 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_KWJ = {
+  "jenis": "graf",
+  "mod": "mendatar",
+  "yMaks": 50,
+  "bar": [
+    {
+      "label": "Peti sejuk",
+      "nilai": 45,
+      "warna": "ungu"
+    },
+    {
+      "label": "Kipas",
+      "nilai": 18,
+      "warna": "ungu"
+    },
+    {
+      "label": "Seterika",
+      "nilai": 9,
+      "warna": "hijau"
+    },
+    {
+      "label": "Lampu LED",
+      "nilai": 4,
+      "warna": "hijau"
+    }
+  ],
+  "xLabel": "Tenaga digunakan sebulan (kWj)",
+  "kapsyen": "Rajah 1 · Tenaga elektrik yang digunakan empat peralatan rumah dalam sebulan.",
+  "alt": "Graf palang: peti sejuk 45, kipas 18, seterika 9 dan lampu LED 4 kilowatt jam sebulan"
+};
+
+const R_TERMAL = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Bahan api dibakar",
+    "Air mendidih menjadi stim",
+    "Stim memutarkan turbin",
+    "Turbin memutarkan generator",
+    "Tenaga elektrik dijana"
+  ],
+  "kapsyen": "Rajah 1 · Urutan penjanaan elektrik di stesen janakuasa termal.",
+  "alt": "Rajah aliran menegak: bahan api dibakar, air mendidih menjadi stim, stim memutarkan turbin, turbin memutarkan generator, tenaga elektrik dijana"
+};
+
 const T_ALAT =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Peralatan</th>'+
 '<th class="n">Kuasa (W)</th><th class="n">Masa digunakan sehari (jam)</th></tr></thead><tbody>'+
@@ -52,7 +97,7 @@ const T_BIL =
 
 const ARAS = [
 
-{n:1, tempat:"Sumber Tenaga", sk:"6.1 Penjanaan tenaga elektrik",
+{n:1, tempat:"Sumber Tenaga", sk:"6.1 Penjanaan tenaga elektrik", lampiran:"grafkwj",
  kadNama:"Tenaga Suria", kadEm:"\u{1F31E}", kadFakta:"Malaysia menerima cahaya matahari sepanjang tahun, jadi tenaga suria ialah sumber boleh baharu yang sesuai di sini.",
  bosKadNama:"Grid Nasional", bosKadEm:"\u{1F5FC}", bosKadFakta:"Rangkaian Grid Nasional menyambungkan banyak stesen janakuasa, jadi bekalan tidak terputus jika satu stesen rosak.",
  soalan:[
@@ -61,17 +106,17 @@ const ARAS = [
  {j:"pilih",t:"Arus yang mengalir dalam satu arah sahaja dipanggil:",p:["Arus terus","Arus ulang-alik","Arus aruhan","Arus bumi"],b:0,u:"Bateri dan sel suria membekalkan arus terus (a.t.)."},
  {j:"pilih",t:"Alat yang menaikkan atau menurunkan voltan arus ulang-alik ialah:",p:["Transformer","Generator","Fius","Pemutus litar"],b:0,u:"Transformer injak naik menaikkan voltan, manakala transformer injak turun menurunkannya."},
  {j:"pilih",t:"Dalam pendawaian rumah mengikut kod warna antarabangsa, dawai hidup berwarna:",p:["Perang","Biru","Hijau dan kuning","Hitam"],b:0,u:"Dawai neutral berwarna biru, dan dawai bumi berbelang hijau dan kuning."},
- {j:"pilih",t:"Unit tenaga elektrik yang digunakan dalam bil elektrik ialah:",p:["Kilowatt jam (kWj)","Kilowatt (kW)","Joule sesaat (J/s)","Volt ampere (VA)"],b:0,u:"Satu kWj ialah tenaga yang digunakan oleh alat 1 kW selama satu jam."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, unit tenaga elektrik yang digunakan dalam bil elektrik ialah:",p:["Kilowatt jam (kWj)","Kilowatt (kW)","Joule sesaat (J/s)","Volt ampere (VA)"],b:0,u:"Satu kWj ialah tenaga yang digunakan oleh alat 1 kW selama satu jam."},
  {j:"banyak",t:"Pilih SEMUA sumber tenaga boleh baharu.",p:["Hidro","Pasang surut","Geoterma","Nuklear","Arang batu"],b:[0,1,2],u:"Bahan api nuklear dan arang batu akan habis jika terus digunakan."},
  {j:"pilih",t:"Komponen yang memutuskan litar secara automatik apabila berlaku kebocoran arus ke bumi ialah:",p:["ELCB","MCB","Fius","Suis"],b:0,u:"ELCB ialah pemutus litar kebocoran ke bumi."}],
  bos:{j:"susun",t:"Susun aliran tenaga elektrik dari stesen janakuasa sehingga ke rumah.",p:["Stesen janakuasa","Transformer injak naik","Rangkaian Grid Nasional","Transformer injak turun","Pendawaian rumah"],b:[0,1,2,3,4],u:"Voltan dinaikkan untuk penghantaran jarak jauh, kemudian diturunkan sebelum sampai ke pengguna."}},
 
-{n:2, tempat:"Generator", sk:"6.1 / 6.3 Penjanaan dan keselamatan elektrik",
+{n:2, tempat:"Generator", sk:"6.1 / 6.3 Penjanaan dan keselamatan elektrik", lampiran:"stesenterma",
  kadNama:"Generator", kadEm:"\u{1F9F2}", kadFakta:"Arus hanya teraruh apabila medan magnet dipotong, jadi magnet yang pegun di dalam gegelung tidak menghasilkan arus.",
  bosKadNama:"MCB", bosKadEm:"\u{1F50C}", bosKadFakta:"Pemutus litar kecil (MCB) boleh dihidupkan semula selepas masalah dibaiki, tidak seperti fius yang perlu diganti.",
  soalan:[
  {j:"pilih",t:"Bagaimanakah generator ringkas menghasilkan arus elektrik?",p:["Magnet digerakkan dalam gegelung sehingga medan magnet dipotong","Magnet dibiarkan pegun di dalam gegelung dawai untuk sekian lama","Gegelung dawai dipanaskan sehingga elektron keluar daripadanya","Bateri dalam generator mengecas gegelung dawai secara berterusan"],b:0,u:"Pergerakan relatif antara magnet dan gegelung mengaruhkan arus."},
- {j:"pilih",t:"Di stesen janakuasa termal, apakah fungsi stim?",p:["Memutarkan turbin yang disambung kepada generator","Menyejukkan generator supaya tidak terlalu panas","Membersihkan asap sebelum dilepaskan ke udara","Menyimpan tenaga elektrik untuk digunakan waktu malam"],b:0,u:"Bahan api dibakar untuk mendidihkan air, dan stim bertekanan tinggi memutarkan turbin."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, di stesen janakuasa termal, apakah fungsi stim?",p:["Memutarkan turbin yang disambung kepada generator","Menyejukkan generator supaya tidak terlalu panas","Membersihkan asap sebelum dilepaskan ke udara","Menyimpan tenaga elektrik untuk digunakan waktu malam"],b:0,u:"Bahan api dibakar untuk mendidihkan air, dan stim bertekanan tinggi memutarkan turbin."},
  {j:"pilih",t:"Mengapakah sel suria boleh digunakan untuk mengecas bateri secara terus?",p:["Sel suria dan bateri kedua-duanya menggunakan arus terus","Sel suria menghasilkan arus ulang-alik yang sangat kuat","Bateri hanya boleh dicas dengan cahaya matahari","Sel suria menghasilkan voltan yang sentiasa berubah arah"],b:0,u:"Arus terus mengalir dalam satu arah, sama seperti yang diperlukan untuk mengecas bateri."},
  {j:"pilih",t:"Mengapakah transformer tidak berfungsi dengan bateri?",p:["Bateri membekalkan arus terus yang tidak berubah","Voltan bateri terlalu tinggi untuk transformer","Bateri tidak mempunyai terminal positif","Transformer hanya boleh digunakan di stesen janakuasa"],b:0,u:"Transformer memerlukan medan magnet yang sentiasa berubah, dan ini hanya dihasilkan oleh arus ulang-alik."},
  {j:"pilih",t:"Mengapakah tenaga elektrik dihantar pada voltan yang sangat tinggi melalui Rangkaian Grid Nasional?",p:["Arus menjadi kecil, jadi kurang tenaga hilang sebagai haba","Voltan tinggi menjadikan elektrik bergerak lebih laju ke rumah","Kabel voltan tinggi lebih murah kerana tidak perlu penebat","Pengguna di rumah memerlukan voltan setinggi itu"],b:0,u:"Bagi kuasa yang sama, voltan yang lebih tinggi bermakna arus yang lebih kecil dalam kabel."},
@@ -155,6 +200,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk sistem bekalan elektrik yang praktikal dan selamat untuk kawasan pedalaman, dengan mengambil kira kos, alam sekitar dan masyarakat. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Keelektrikan dan Kemagnetan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ alat:T_ALAT, trans:T_TRANS, bil:T_BIL },
+  lampiran:{ grafkwj:R_KWJ, stesenterma:R_TERMAL, alat:T_ALAT, trans:T_TRANS, bil:T_BIL },
   aras:ARAS
 };

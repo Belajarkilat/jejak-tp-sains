@@ -137,14 +137,24 @@ function kitar(spec){
     { x: cx - jejariX - lk / 2, y: cy - tk / 2 },
   ];
   let isi = "";
-  /* Lengkok penghubung dilukis dahulu supaya kotak berada di atasnya. */
+  /* Lengkok penghubung dilukis dahulu supaya kotak berada di atasnya.
+
+     Lengkok itu dipotong pada t = 0.28 hingga 0.72 supaya kedua-dua
+     hujungnya berada di ruang terbuka antara kotak. Kalau ia dibiar
+     bermula dan berakhir di tengah kotak, kepala anak panah tertimbus di
+     bawah kotak dan kitaran kehilangan arahnya. */
+  const lerp = (p, q, t) => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t];
   for(let i = 0; i < 4; i++){
     const a = pos[i], b = pos[(i + 1) % 4];
-    const ax = a.x + lk / 2, ay = a.y + tk / 2;
-    const bx = b.x + lk / 2, by = b.y + tk / 2;
-    const mx = cx + (ax + bx - 2 * cx) * 0.78;
-    const my = cy + (ay + by - 2 * cy) * 0.78;
-    isi += A.laluan(`M${A.bulat(ax)} ${A.bulat(ay)} Q${A.bulat(mx)} ${A.bulat(my)} ${A.bulat(bx)} ${A.bulat(by)}`,
+    const P0 = [a.x + lk / 2, a.y + tk / 2];
+    const P2 = [b.x + lk / 2, b.y + tk / 2];
+    const P1 = [cx + (P0[0] + P2[0] - 2 * cx) * 0.78, cy + (P0[1] + P2[1] - 2 * cy) * 0.78];
+    const t0 = 0.28, t1 = 0.72;
+    const pada = (t) => lerp(lerp(P0, P1, t), lerp(P1, P2, t), t);
+    const Q0 = pada(t0), Q2 = pada(t1);
+    /* Titik kawalan bagi keratan [t0, t1] sesuatu lengkung kuadratik. */
+    const Q1 = lerp(lerp(P0, P1, t0), lerp(P1, P2, t0), t1);
+    isi += A.laluan(`M${A.bulat(Q0[0])} ${A.bulat(Q0[1])} Q${A.bulat(Q1[0])} ${A.bulat(Q1[1])} ${A.bulat(Q2[0])} ${A.bulat(Q2[1])}`,
       { warna: "ungu", tebal: 1.8, panah: true });
   }
   nod.forEach((n, i) => {

@@ -39,6 +39,8 @@ window.BANK["t3b7"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Tenaga dan Kuasa. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "dayaangkat": "<figure class=\"figure\"><svg viewBox=\"0 0 260 216\" role=\"img\" aria-label=\"Rajah daya: sebuah peti dengan anak panah daya angkat 50 newton ke atas dan anak panah berat 50 newton ke bawah\"><rect x=\"91\" y=\"87\" width=\"78\" height=\"46\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"2\"></rect><text x=\"130\" y=\"114\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\" font-weight=\"700\">Peti</text><line x1=\"130\" y1=\"84\" x2=\"130\" y2=\"38\" stroke=\"var(--vena)\" stroke-width=\"2.2\"></line><path d=\"M130 38 L135.3 49 L124.7 49 z\" fill=\"var(--vena)\"></path><text x=\"130\" y=\"29\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--vena)\" text-anchor=\"middle\">Daya angkat 50 N</text><line x1=\"130\" y1=\"136\" x2=\"130\" y2=\"182\" stroke=\"var(--arteri)\" stroke-width=\"2.2\"></line><path d=\"M130 182 L124.7 171 L135.3 171 z\" fill=\"var(--arteri)\"></path><text x=\"130\" y=\"199\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--arteri)\" text-anchor=\"middle\">Berat 50 N</text></svg><figcaption>Rajah 1 · Peti diangkat dengan daya 50 N sejauh 2 m ke atas.</figcaption></figure>",
+  "grafkinetik": "<figure class=\"figure\"><svg viewBox=\"0 0 260 214\" role=\"img\" aria-label=\"Graf lengkung menaik: tenaga kinetik 12.5 kilojoule pada 5 meter sesaat dan 50 kilojoule pada 10 meter sesaat, jadi laju berganda memberi tenaga empat kali ganda\"><line x1=\"40\" y1=\"150\" x2=\"248\" y2=\"150\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"154\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">0</text><line x1=\"40\" y1=\"116.5\" x2=\"248\" y2=\"116.5\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"120.5\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">50</text><line x1=\"40\" y1=\"83\" x2=\"248\" y2=\"83\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"87\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">100</text><line x1=\"40\" y1=\"49.5\" x2=\"248\" y2=\"49.5\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"53.5\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">150</text><line x1=\"40\" y1=\"16\" x2=\"248\" y2=\"16\" stroke=\"var(--line)\" stroke-width=\"1\"></line><text x=\"35\" y=\"20\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"end\">200</text><line x1=\"40\" y1=\"16\" x2=\"40\" y2=\"150\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><line x1=\"40\" y1=\"150\" x2=\"248\" y2=\"150\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><text x=\"40\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">0</text><text x=\"92\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">5</text><text x=\"144\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">10</text><text x=\"196\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">15</text><text x=\"248\" y=\"165\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">20</text><text x=\"144\" y=\"181\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Laju kereta (m/s)</text><path d=\"M40 150 L92 141.6 L144 116.5 L196 74.6 L248 16\" fill=\"none\" stroke=\"var(--vena)\" stroke-width=\"2.2\" stroke-linejoin=\"round\"></path><circle cx=\"40\" cy=\"150\" r=\"2.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"92\" cy=\"141.6\" r=\"2.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"144\" cy=\"116.5\" r=\"2.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"196\" cy=\"74.6\" r=\"2.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"248\" cy=\"16\" r=\"2.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><line x1=\"40\" y1=\"192\" x2=\"62\" y2=\"192\" stroke=\"var(--vena)\" stroke-width=\"2.2\"></line><text x=\"68\" y=\"196\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">Tenaga kinetik (kJ)</text></svg><figcaption>Rajah 1 · Tenaga kinetik sebuah kereta berjisim 1000 kg pada laju berbeza.</figcaption></figure>",
   "tangga": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Murid</th><th class=\"n\">Jisim (kg)</th><th class=\"n\">Tinggi tangga (m)</th><th class=\"n\">Masa (s)</th></tr></thead><tbody><tr><td>Aina</td><td class=\"n\">50</td><td class=\"n\">3</td><td class=\"n\">10</td></tr><tr><td>Boon</td><td class=\"n\">60</td><td class=\"n\">3</td><td class=\"n\">12</td></tr><tr><td>Chandran</td><td class=\"n\">45</td><td class=\"n\">3</td><td class=\"n\">6</td></tr></tbody></table></div><p class=\"qnote\">Kerja = berat &times; tinggi = mgh. Kuasa = kerja &divide; masa. Ambil g = 10 N/kg.</p>",
   "trek": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Titik pada trek</th><th class=\"n\">Tinggi dari tanah (m)</th><th class=\"n\">Laju (m/s)</th></tr></thead><tbody><tr><td>A (bermula pegun)</td><td class=\"n\">20</td><td class=\"n\">0</td></tr><tr><td>B</td><td class=\"n\">0</td><td class=\"n\">?</td></tr><tr><td>C</td><td class=\"n\">15</td><td class=\"n\">?</td></tr><tr><td>D</td><td class=\"n\">5</td><td class=\"n\">?</td></tr></tbody></table></div><p class=\"qnote\">Kereta roller coaster berjisim 500 kg. Anggap tiada geseran dan g = 10 N/kg. Jumlah tenaga keupayaan graviti dan tenaga kinetik kekal sama di setiap titik.</p>",
   "motor": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Motor</th><th class=\"n\">Masa mengangkat (s)</th><th class=\"n\">Tenaga elektrik digunakan (J)</th><th class=\"n\">Harga (RM)</th></tr></thead><tbody><tr><td>P</td><td class=\"n\">40</td><td class=\"n\">25 000</td><td class=\"n\">800</td></tr><tr><td>Q</td><td class=\"n\">25</td><td class=\"n\">40 000</td><td class=\"n\">600</td></tr><tr><td>R</td><td class=\"n\">20</td><td class=\"n\">26 000</td><td class=\"n\">1500</td></tr></tbody></table></div><p class=\"qnote\">Setiap motor mengangkat beban 200 kg setinggi 10 m, iaitu kerja berguna sebanyak 20 000 J. Kecekapan = kerja berguna &divide; tenaga digunakan &times; 100%. Data rekaan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t3b7"] =
    "n": 1,
    "tempat": "Padang Kerja",
    "sk": "7.1 Kerja, tenaga dan kuasa",
-   "lampiran": null,
+   "lampiran": "dayaangkat",
    "kadNama": "Joule",
    "kadEm": "⚙",
    "kadFakta": "Satu joule ialah kerja yang dilakukan apabila daya 1 N menggerakkan objek sejauh 1 m dalam arah daya.",
@@ -82,7 +84,7 @@ window.BANK["t3b7"] =
     },
     {
      "j": "pilih",
-     "t": "Kerja ditakrifkan sebagai:",
+     "t": "Berdasarkan Rajah 1, kerja ditakrifkan sebagai:",
      "p": [
       "Hasil bahagi daya dengan masa yang diambil oleh objek",
       "Hasil darab jisim dan pecutan graviti",
@@ -175,7 +177,7 @@ window.BANK["t3b7"] =
    "n": 2,
    "tempat": "Buaian",
    "sk": "7.2 / 7.3 Tenaga keupayaan, kinetik dan keabadian",
-   "lampiran": null,
+   "lampiran": "grafkinetik",
    "kadNama": "Bandul",
    "kadEm": "🕰",
    "kadFakta": "Bandul yang berayun sentiasa menukar tenaga keupayaan graviti kepada tenaga kinetik dan sebaliknya.",
@@ -269,7 +271,7 @@ window.BANK["t3b7"] =
     },
     {
      "j": "pilih",
-     "t": "Sebuah kereta bergerak dua kali lebih laju tanpa perubahan jisim. Apakah yang berlaku kepada tenaga kinetiknya?",
+     "t": "Berdasarkan Rajah 1, sebuah kereta bergerak dua kali lebih laju tanpa perubahan jisim. Apakah yang berlaku kepada tenaga kinetiknya?",
      "p": [
       "Menjadi dua kali ganda",
       "Kekal sama",

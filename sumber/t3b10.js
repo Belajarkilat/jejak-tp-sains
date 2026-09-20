@@ -16,6 +16,72 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_GEO = {
+  "jenis": "struktur",
+  "mod": "label",
+  "bahagian": [
+    {
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 40,
+      "isi": "kertas2",
+      "garis": "garis"
+    },
+    {
+      "label": "Matahari",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 11,
+      "r": 6,
+      "isi": "kuning",
+      "garis": "kuning"
+    },
+    {
+      "label": "Bumi",
+      "bentuk": "bulat",
+      "x": 50,
+      "y": 50,
+      "r": 8,
+      "isi": "hijau",
+      "garis": "hijau"
+    },
+    {
+      "label": "Bulan",
+      "bentuk": "bulat",
+      "x": 11,
+      "y": 69.5,
+      "r": 4.5,
+      "isi": "kertas",
+      "garis": "garis2"
+    },
+    {
+      "label": "Planet",
+      "bentuk": "bulat",
+      "x": 89,
+      "y": 69.5,
+      "r": 5,
+      "isi": "ungu",
+      "garis": "ungu"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Model Sistem Suria yang diterima sebelum abad ke-16.",
+  "alt": "Bumi berada di tengah satu bulatan, manakala Matahari, Bulan dan sebuah planet terletak pada bulatan yang mengelilingi Bumi"
+};
+
+const R_ROKET = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Bahan api dibakar dalam enjin",
+    "Gas panas ditolak ke bawah",
+    "Gas menolak roket ke atas",
+    "Roket memecut ke angkasa"
+  ],
+  "kapsyen": "Rajah 1 · Urutan daya yang menaikkan sebuah roket.",
+  "alt": "Rajah aliran menegak: bahan api dibakar dalam enjin, gas panas ditolak ke bawah, gas menolak roket ke atas, roket memecut ke angkasa"
+};
+
 const T_ORBIT =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Planet</th>'+
 '<th class="n">Jarak purata dari Matahari (AU)</th><th class="n">Tempoh satu orbit (tahun Bumi)</th></tr></thead><tbody>'+
@@ -47,11 +113,11 @@ const T_MISI =
 
 const ARAS = [
 
-{n:1, tempat:"Planetarium", sk:"10.1 / 10.2 Sejarah astronomi dan penerokaan angkasa",
+{n:1, tempat:"Planetarium", sk:"10.1 / 10.2 Sejarah astronomi dan penerokaan angkasa", lampiran:"geosentrik",
  kadNama:"Planetarium Negara", kadEm:"\u{1F3DB}", kadFakta:"Planetarium Negara di Kuala Lumpur mempunyai teater kubah yang menayangkan langit malam serta pameran angkasa lepas.",
  bosKadNama:"Sputnik 1", bosKadEm:"\u{1F6F0}", bosKadFakta:"Sputnik 1 dilancarkan pada tahun 1957 dan menjadi satelit buatan manusia yang pertama.",
  soalan:[
- {j:"pilih",t:"Model Sistem Suria yang meletakkan Bumi di pusat ialah model:",p:["Geosentrik","Heliosentrik","Elips","Galaksi"],b:0,u:"Geo bermaksud Bumi, dan helio bermaksud Matahari."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, model Sistem Suria yang meletakkan Bumi di pusat ialah model:",p:["Geosentrik","Heliosentrik","Elips","Galaksi"],b:0,u:"Geo bermaksud Bumi, dan helio bermaksud Matahari."},
  {j:"pilih",t:"Ahli astronomi yang mencadangkan model geosentrik ialah:",p:["Ptolemy","Copernicus","Kepler","Newton"],b:0,u:"Model Ptolemy digunakan selama lebih seribu tahun."},
  {j:"pilih",t:"Ahli astronomi yang memperkenalkan model heliosentrik pada abad ke-16 ialah:",p:["Copernicus","Ptolemy","Aristotle","Newton"],b:0,u:"Copernicus meletakkan Matahari di pusat dengan planet mengorbit dalam bulatan."},
  {j:"pilih",t:"Kepler mendapati planet mengorbit Matahari dalam bentuk:",p:["Elips","Bulatan sempurna","Segi empat","Garis lurus"],b:0,u:"Matahari berada pada satu fokus elips itu."},
@@ -61,14 +127,14 @@ const ARAS = [
  {j:"banyak",t:"Pilih SEMUA contoh teknologi penerokaan angkasa lepas.",p:["Roket","Satelit","Kuar angkasa","Kapal selam","Kereta api laju"],b:[0,1,2],u:"Kapal selam dan kereta api laju digunakan di Bumi."}],
  bos:{j:"susun",t:"Susun peristiwa penerokaan angkasa lepas berikut mengikut urutan masa.",p:["Pelancaran Sputnik 1","Yuri Gagarin ke angkasa","Neil Armstrong mendarat di Bulan","Angkasawan Malaysia ke stesen angkasa"],b:[0,1,2,3],u:"1957, 1961, 1969 dan 2007."}},
 
-{n:2, tempat:"Model Suria", sk:"10.1 / 10.2 Memahami model dan teknologi angkasa",
+{n:2, tempat:"Model Suria", sk:"10.1 / 10.2 Memahami model dan teknologi angkasa", lampiran:"roketaliran",
  kadNama:"Kepler", kadEm:"\u{1FA90}", kadFakta:"Kepler mendapati planet bergerak lebih laju apabila berada lebih dekat dengan Matahari.",
  bosKadNama:"Galileo", bosKadEm:"\u{1F52D}", bosKadFakta:"Galileo menggunakan teleskop untuk menemui bulan-bulan Musytari, bukti bahawa bukan semua jasad mengorbit Bumi.",
  soalan:[
  {j:"pilih",t:"Mengapakah model geosentrik diterima selama lebih seribu tahun?",p:["Dari Bumi, langit kelihatan berputar mengelilingi kita","Model itu dibuktikan dengan teleskop moden","Semua planet memang mengorbit Bumi","Ptolemy mengambil gambar Sistem Suria dari angkasa lepas"],b:0,u:"Tanpa teleskop, pemerhatian harian kelihatan menyokong Bumi di pusat."},
  {j:"pilih",t:"Apakah kelebihan model Kepler berbanding model Copernicus?",p:["Model Kepler meramal kedudukan planet lebih tepat","Model Kepler meletakkan Bumi semula di pusat Sistem Suria","Model Kepler tidak memerlukan Matahari","Model Kepler menggunakan orbit segi empat"],b:0,u:"Ramalan orbit bulatan Copernicus tidak tepat sepenuhnya dengan pemerhatian."},
  {j:"pilih",t:"Mengapakah roket membawa oksigennya sendiri?",p:["Tiada oksigen di angkasa untuk membakar bahan api","Oksigen menjadikan roket lebih ringan","Angkasawan perlu bernafas melalui enjin roket","Oksigen menyejukkan badan roket semasa pelancaran"],b:0,u:"Pembakaran memerlukan oksigen, jadi roket membawa oksigen cecair."},
- {j:"pilih",t:"Bagaimanakah roket bergerak ke atas?",p:["Gas ditolak ke bawah, lalu gas menolak roket ke atas","Roket ditarik ke atas oleh graviti Bulan dan Matahari","Udara di atas roket menyedutnya ke atas","Roket menolak tanah dengan kaki besinya"],b:0,u:"Setiap tindakan mempunyai tindak balas yang sama besar dan bertentangan arah."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bagaimanakah roket bergerak ke atas?",p:["Gas ditolak ke bawah, lalu gas menolak roket ke atas","Roket ditarik ke atas oleh graviti Bulan dan Matahari","Udara di atas roket menyedutnya ke atas","Roket menolak tanah dengan kaki besinya"],b:0,u:"Setiap tindakan mempunyai tindak balas yang sama besar dan bertentangan arah."},
  {j:"pilih",t:"Mengapakah roket dibina dalam beberapa peringkat?",p:["Peringkat kosong dibuang supaya jisim roket berkurang","Setiap peringkat membawa angkasawan yang berbeza","Supaya roket kelihatan lebih tinggi dan menarik","Peringkat itu digunakan semula di angkasa sebagai rumah"],b:0,u:"Roket yang lebih ringan memerlukan kurang bahan api untuk terus memecut."},
  {j:"pilih",t:"Mengapakah satelit komunikasi geopegun kelihatan tidak bergerak dari Bumi?",p:["Satelit itu mengorbit seiring putaran Bumi","Satelit itu terapung pegun tanpa bergerak","Satelit itu terlalu jauh untuk dilihat bergerak","Satelit itu diikat pada Bumi dengan kabel"],b:0,u:"Satelit dan Bumi berputar bersama, jadi satelit kekal di atas titik yang sama."},
  {j:"pilih",t:"Bagaimanakah penderiaan jauh membantu pengurusan bencana banjir?",p:["Imej satelit menunjukkan kawasan banjir dengan cepat","Satelit menyerap air banjir dari angkasa","Satelit menghalang hujan daripada turun","Imej satelit hanya boleh digunakan selepas air banjir surut"],b:0,u:"Pasukan penyelamat boleh merancang laluan dan keutamaan dengan lebih cepat."},
@@ -150,6 +216,6 @@ module.exports = {
    6:"{n} berjaya mereka misi atau alat penerokaan angkasa yang praktikal, dengan mengambil kira kos, keselamatan dan manfaat kepada masyarakat. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Penerokaan Angkasa Lepas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ orbit:T_ORBIT, satelit:T_SATELIT, misi:T_MISI },
+  lampiran:{ geosentrik:R_GEO, roketaliran:R_ROKET, orbit:T_ORBIT, satelit:T_SATELIT, misi:T_MISI },
   aras:ARAS
 };

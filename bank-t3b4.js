@@ -39,6 +39,8 @@ window.BANK["t3b4"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Kereaktifan Logam. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "oksidalogam": "<figure class=\"figure\"><svg viewBox=\"0 0 260 154\" role=\"img\" aria-label=\"Rajah aliran menegak: logam dipanaskan dalam oksigen, logam bergabung dengan oksigen, lalu oksida logam terbentuk\"><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Logam dipanaskan dalam oksigen</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 56 L125.2 46 L134.8 46 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Logam bergabung dengan oksigen</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 112 L125.2 102 L134.8 102 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Oksida logam terbentuk</text></svg><figcaption>Rajah 1 · Corak umum tindak balas logam dengan oksigen.</figcaption></figure>",
+  "sirireaktif": "<figure class=\"figure\"><svg viewBox=\"0 0 260 168\" role=\"img\" aria-label=\"Tangga menegak lima logam dari atas ke bawah: kalium, magnesium, zink, ferum dan plumbum\"><rect x=\"78.2\" y=\"13.3\" width=\"104\" height=\"19.5\" rx=\"8\" fill=\"var(--arteri-soft)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></rect><text x=\"130.2\" y=\"27\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Kalium</text><rect x=\"78.2\" y=\"41.8\" width=\"104\" height=\"19.5\" rx=\"8\" fill=\"var(--arteri-soft)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></rect><text x=\"130.2\" y=\"55.5\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Magnesium</text><rect x=\"78.2\" y=\"70.3\" width=\"104\" height=\"19.5\" rx=\"8\" fill=\"var(--amber-soft)\" stroke=\"var(--amber)\" stroke-width=\"1.5\"></rect><text x=\"130.2\" y=\"84\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Zink</text><rect x=\"78.2\" y=\"98.8\" width=\"104\" height=\"19.5\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130.2\" y=\"112.5\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Ferum</text><rect x=\"78.2\" y=\"127.3\" width=\"104\" height=\"19.5\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130.2\" y=\"141\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Plumbum</text></svg><figcaption>Rajah 1 · Siri kereaktifan: logam di atas lebih reaktif daripada logam di bawahnya.</figcaption></figure>",
   "bakar": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Logam</th><th>Pemerhatian</th><th>Warna baki semasa panas</th><th>Warna baki apabila sejuk</th></tr></thead><tbody><tr><td>Magnesium</td><td>Terbakar dengan nyalaan putih yang sangat terang</td><td>Putih</td><td>Putih</td></tr><tr><td>Aluminium</td><td>Terbakar dengan terang</td><td>Putih</td><td>Putih</td></tr><tr><td>Zink</td><td>Berbara terang</td><td>Kuning</td><td>Putih</td></tr><tr><td>Ferum</td><td>Berbara malap</td><td>Perang</td><td>Perang</td></tr><tr><td>Plumbum</td><td>Berbara sangat malap</td><td>Perang</td><td>Kuning</td></tr></tbody></table></div><p class=\"qnote\">Serbuk logam dipanaskan dengan kuat. Oksigen dibekalkan dengan memanaskan kalium manganat(VII) di dasar tabung didih.</p>",
   "turun": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Set</th><th>Campuran yang dipanaskan</th><th>Pemerhatian</th></tr></thead><tbody><tr><td>1</td><td>Zink oksida + serbuk karbon</td><td>Berbara terang, baki kelabu terbentuk</td></tr><tr><td>2</td><td>Aluminium oksida + serbuk karbon</td><td>Tiada perubahan</td></tr><tr><td>3</td><td>Ferum oksida + serbuk karbon</td><td>Berbara, baki kelabu terbentuk</td></tr><tr><td>4</td><td>Zink oksida + gas hidrogen</td><td>Tiada perubahan</td></tr><tr><td>5</td><td>Ferum oksida + gas hidrogen</td><td>Berbara, baki kelabu dan titisan air terbentuk</td></tr><tr><td>6</td><td>Kuprum(II) oksida + gas hidrogen</td><td>Berbara, pepejal hitam menjadi perang, titisan air terbentuk</td></tr><tr><td>7</td><td>Oksida logam W + serbuk karbon</td><td>Tiada perubahan</td></tr></tbody></table></div><p class=\"qnote\">Jika unsur yang ditambah lebih reaktif daripada logam dalam oksida, ia menyingkirkan oksigen daripada oksida itu dan logam terbebas.</p>",
   "sungai": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Stesen</th><th>Kedudukan</th><th class=\"n\">Kekeruhan (NTU)</th><th class=\"n\">pH</th><th class=\"n\">Spesies ikan</th></tr></thead><tbody><tr><td>A</td><td>2 km di hulu lombong</td><td class=\"n\">8</td><td class=\"n\">6.9</td><td class=\"n\">15</td></tr><tr><td>B</td><td>Alur keluar air lombong</td><td class=\"n\">390</td><td class=\"n\">5.2</td><td class=\"n\">3</td></tr><tr><td>C</td><td>3 km di hilir lombong</td><td class=\"n\">150</td><td class=\"n\">6.1</td><td class=\"n\">7</td></tr><tr><td>D</td><td>8 km di hilir lombong</td><td class=\"n\">40</td><td class=\"n\">6.7</td><td class=\"n\">12</td></tr></tbody></table></div><p class=\"qnote\">Data rekaan untuk latihan. Nilai kekeruhan yang tinggi bermakna air lebih berlumpur.</p>"
@@ -48,7 +50,7 @@ window.BANK["t3b4"] =
    "n": 1,
    "tempat": "Kerak Bumi",
    "sk": "4.1 Kepelbagaian mineral",
-   "lampiran": null,
+   "lampiran": "oksidalogam",
    "kadNama": "Emas",
    "kadEm": "🪙",
    "kadFakta": "Emas sangat tidak reaktif, jadi ia ditemui sebagai unsur bebas dan kekal berkilat walaupun tertanam beratus-ratus tahun.",
@@ -125,7 +127,7 @@ window.BANK["t3b4"] =
     },
     {
      "j": "pilih",
-     "t": "Hasil tindak balas apabila magnesium dipanaskan dalam oksigen ialah:",
+     "t": "Berdasarkan Rajah 1, hasil tindak balas apabila magnesium dipanaskan dalam oksigen ialah:",
      "p": [
       "Magnesium oksida",
       "Magnesium karbonat",
@@ -186,7 +188,7 @@ window.BANK["t3b4"] =
    "n": 2,
    "tempat": "Siri Kereaktifan",
    "sk": "4.2 Siri kereaktifan logam",
-   "lampiran": null,
+   "lampiran": "sirireaktif",
    "kadNama": "Kalium",
    "kadEm": "🧪",
    "kadFakta": "Kalium begitu reaktif sehingga ia disimpan di dalam minyak parafin supaya tidak bertindak balas dengan udara dan wap air.",
@@ -208,7 +210,7 @@ window.BANK["t3b4"] =
     },
     {
      "j": "pilih",
-     "t": "Mengapakah magnesium terbakar lebih terang daripada ferum apabila dipanaskan dalam oksigen?",
+     "t": "Berdasarkan Rajah 1, mengapakah magnesium terbakar lebih terang daripada ferum apabila dipanaskan dalam oksigen?",
      "p": [
       "Magnesium lebih ringan, jadi ia lebih mudah terapung dalam api",
       "Ferum berwarna gelap, jadi ia menyerap cahaya nyalaan itu",

@@ -39,6 +39,8 @@ window.BANK["t3b6"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Keelektrikan dan Kemagnetan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "grafkwj": "<figure class=\"figure\"><svg viewBox=\"0 0 260 164\" role=\"img\" aria-label=\"Graf palang: peti sejuk 45, kipas 18, seterika 9 dan lampu LED 4 kilowatt jam sebulan\"><text x=\"73\" y=\"26\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Peti sejuk</text><rect x=\"79\" y=\"12\" width=\"141.3\" height=\"20\" rx=\"3\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></rect><text x=\"225.3\" y=\"26\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">45</text><text x=\"73\" y=\"58\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Kipas</text><rect x=\"79\" y=\"44\" width=\"56.5\" height=\"20\" rx=\"3\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></rect><text x=\"140.5\" y=\"58\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">18</text><text x=\"73\" y=\"90\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Seterika</text><rect x=\"79\" y=\"76\" width=\"28.3\" height=\"20\" rx=\"3\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></rect><text x=\"112.3\" y=\"90\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">9</text><text x=\"73\" y=\"122\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Lampu LED</text><rect x=\"79\" y=\"108\" width=\"12.6\" height=\"20\" rx=\"3\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></rect><text x=\"96.6\" y=\"122\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">4</text><line x1=\"79\" y1=\"7\" x2=\"79\" y2=\"133\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><text x=\"130\" y=\"154\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Tenaga digunakan sebulan (kWj)</text></svg><figcaption>Rajah 1 · Tenaga elektrik yang digunakan empat peralatan rumah dalam sebulan.</figcaption></figure>",
+  "stesenterma": "<figure class=\"figure\"><svg viewBox=\"0 0 260 266\" role=\"img\" aria-label=\"Rajah aliran menegak: bahan api dibakar, air mendidih menjadi stim, stim memutarkan turbin, turbin memutarkan generator, tenaga elektrik dijana\"><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Bahan api dibakar</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 56 L125.2 46 L134.8 46 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Air mendidih menjadi stim</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 112 L125.2 102 L134.8 102 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Stim memutarkan turbin</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 168 L125.2 158 L134.8 158 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Turbin memutarkan generator</text><line x1=\"130\" y1=\"209\" x2=\"130\" y2=\"224\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 224 L125.2 214 L134.8 214 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"228\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"249.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Tenaga elektrik dijana</text></svg><figcaption>Rajah 1 · Urutan penjanaan elektrik di stesen janakuasa termal.</figcaption></figure>",
   "alat": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Peralatan</th><th class=\"n\">Kuasa (W)</th><th class=\"n\">Masa digunakan sehari (jam)</th></tr></thead><tbody><tr><td>Peti sejuk</td><td class=\"n\">150</td><td class=\"n\">24</td></tr><tr><td>Penyaman udara</td><td class=\"n\">1000</td><td class=\"n\">6</td></tr><tr><td>Cerek elektrik</td><td class=\"n\">2000</td><td class=\"n\">0.5</td></tr><tr><td>Televisyen</td><td class=\"n\">100</td><td class=\"n\">5</td></tr><tr><td>6 lampu LED (jumlah)</td><td class=\"n\">60</td><td class=\"n\">5</td></tr></tbody></table></div><p class=\"qnote\">Voltan bekalan 240 V. Anggap kos elektrik 30 sen bagi setiap kWj. Tenaga (kWj) = kuasa (kW) &times; masa (jam).</p>",
   "trans": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Transformer</th><th class=\"n\">N<sub>p</sub></th><th class=\"n\">N<sub>s</sub></th><th>Input</th><th>Voltan output</th></tr></thead><tbody><tr><td>J</td><td class=\"n\">100</td><td class=\"n\">500</td><td>12 V a.u.</td><td>?</td></tr><tr><td>K</td><td class=\"n\">1000</td><td class=\"n\">50</td><td>240 V a.u.</td><td>12 V</td></tr><tr><td>L</td><td class=\"n\">400</td><td class=\"n\">200</td><td>240 V a.u.</td><td>?</td></tr><tr><td>N</td><td class=\"n\">100</td><td class=\"n\">1000</td><td>Bateri 12 V a.t.</td><td>0 V</td></tr></tbody></table></div><p class=\"qnote\">N<sub>p</sub> dan N<sub>s</sub> ialah bilangan lilitan gegelung primer dan sekunder. Rumus: N<sub>p</sub>/N<sub>s</sub> = V<sub>p</sub>/V<sub>s</sub>. Anggap transformer unggul.</p>",
   "bil": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Bulan</th><th class=\"n\">Penggunaan (kWj)</th><th class=\"n\">Bil (RM)</th><th>Catatan keluarga</th></tr></thead><tbody><tr><td>Januari</td><td class=\"n\">420</td><td class=\"n\">126.00</td><td>&mdash;</td></tr><tr><td>Februari</td><td class=\"n\">410</td><td class=\"n\">123.00</td><td>&mdash;</td></tr><tr><td>Mac</td><td class=\"n\">380</td><td class=\"n\">114.00</td><td>Semua mentol ditukar kepada LED</td></tr><tr><td>April</td><td class=\"n\">470</td><td class=\"n\">141.00</td><td>Cuti sekolah, semua ahli keluarga di rumah</td></tr><tr><td>Mei</td><td class=\"n\">300</td><td class=\"n\">90.00</td><td>Penyaman udara lama diganti model 5 bintang</td></tr><tr><td>Jun</td><td class=\"n\">310</td><td class=\"n\">93.00</td><td>&mdash;</td></tr></tbody></table></div><p class=\"qnote\">Data rekaan dengan kadar rata 30 sen bagi setiap kWj.</p>"
@@ -48,7 +50,7 @@ window.BANK["t3b6"] =
    "n": 1,
    "tempat": "Sumber Tenaga",
    "sk": "6.1 Penjanaan tenaga elektrik",
-   "lampiran": null,
+   "lampiran": "grafkwj",
    "kadNama": "Tenaga Suria",
    "kadEm": "🌞",
    "kadFakta": "Malaysia menerima cahaya matahari sepanjang tahun, jadi tenaga suria ialah sumber boleh baharu yang sesuai di sini.",
@@ -118,7 +120,7 @@ window.BANK["t3b6"] =
     },
     {
      "j": "pilih",
-     "t": "Unit tenaga elektrik yang digunakan dalam bil elektrik ialah:",
+     "t": "Berdasarkan Rajah 1, unit tenaga elektrik yang digunakan dalam bil elektrik ialah:",
      "p": [
       "Kilowatt (kW)",
       "Kilowatt jam (kWj)",
@@ -182,7 +184,7 @@ window.BANK["t3b6"] =
    "n": 2,
    "tempat": "Generator",
    "sk": "6.1 / 6.3 Penjanaan dan keselamatan elektrik",
-   "lampiran": null,
+   "lampiran": "stesenterma",
    "kadNama": "Generator",
    "kadEm": "🧲",
    "kadFakta": "Arus hanya teraruh apabila medan magnet dipotong, jadi magnet yang pegun di dalam gegelung tidak menghasilkan arus.",
@@ -204,7 +206,7 @@ window.BANK["t3b6"] =
     },
     {
      "j": "pilih",
-     "t": "Di stesen janakuasa termal, apakah fungsi stim?",
+     "t": "Berdasarkan Rajah 1, di stesen janakuasa termal, apakah fungsi stim?",
      "p": [
       "Memutarkan turbin yang disambung kepada generator",
       "Menyejukkan generator supaya tidak terlalu panas",

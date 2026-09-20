@@ -39,6 +39,8 @@ window.BANK["t3b3"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Pengangkutan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "ruangjantung": "<figure class=\"figure\"><svg viewBox=\"0 0 260 164\" role=\"img\" aria-label=\"Graf palang: ventrikel kiri 12 mm, ventrikel kanan 4 mm, atrium kanan 2 mm dan atrium kiri 3 mm\"><text x=\"108\" y=\"26\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Ventrikel kiri</text><rect x=\"114\" y=\"12\" width=\"104.6\" height=\"20\" rx=\"3\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></rect><text x=\"223.6\" y=\"26\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">12</text><text x=\"108\" y=\"58\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Ventrikel kanan</text><rect x=\"114\" y=\"44\" width=\"34.9\" height=\"20\" rx=\"3\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></rect><text x=\"153.9\" y=\"58\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">4</text><text x=\"108\" y=\"90\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Atrium kanan</text><rect x=\"114\" y=\"76\" width=\"17.4\" height=\"20\" rx=\"3\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></rect><text x=\"136.4\" y=\"90\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">2</text><text x=\"108\" y=\"122\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\" text-anchor=\"end\">Atrium kiri</text><rect x=\"114\" y=\"108\" width=\"26.1\" height=\"20\" rx=\"3\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></rect><text x=\"145.1\" y=\"122\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink2)\">3</text><line x1=\"114\" y1=\"7\" x2=\"114\" y2=\"133\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></line><text x=\"130\" y=\"154\" font-family=\"DM Mono,monospace\" font-size=\"11.5\" fill=\"var(--ink3)\" text-anchor=\"middle\">Ketebalan dinding otot (mm)</text></svg><figcaption>Rajah 1 · Ketebalan dinding otot bagi empat ruang jantung manusia.</figcaption></figure>",
+  "salurdarah": "<figure class=\"figure\"><svg viewBox=\"0 0 260 168\" role=\"img\" aria-label=\"Keratan rentas: arteri berdinding paling tebal, vena berdinding nipis dengan ruang dalam yang luas, dan kapilari yang jauh lebih kecil\"><circle cx=\"47\" cy=\"32\" r=\"16.9\" fill=\"var(--arteri-soft)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"32\" r=\"7.8\" fill=\"var(--surface)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"83\" r=\"16.9\" fill=\"var(--surface2)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"83\" r=\"13.7\" fill=\"var(--surface)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"134\" r=\"7.8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></circle><circle cx=\"47\" cy=\"134\" r=\"5.2\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></circle><line x1=\"59.4\" y1=\"32\" x2=\"150\" y2=\"18\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"59.4\" cy=\"32\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"22\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Arteri</text><line x1=\"62.3\" y1=\"83\" x2=\"150\" y2=\"40\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"62.3\" cy=\"83\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"44\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Vena</text><line x1=\"53.5\" y1=\"134\" x2=\"150\" y2=\"62\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"53.5\" cy=\"134\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"66\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Kapilari</text></svg><figcaption>Rajah 1 · Keratan rentas tiga jenis salur darah dan tebal dindingnya.</figcaption></figure>",
   "nadi": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Murid</th><th class=\"n\">Nadi rehat (min&#8315;&#185;)</th><th class=\"n\">Sejurus selepas 3 minit berlari</th><th class=\"n\">Selepas 5 minit rehat</th><th>Latar</th></tr></thead><tbody><tr><td>Farid</td><td class=\"n\">72</td><td class=\"n\">150</td><td class=\"n\">78</td><td>Bersukan tiga kali seminggu</td></tr><tr><td>Gayathri</td><td class=\"n\">88</td><td class=\"n\">168</td><td class=\"n\">126</td><td>Jarang bersenam</td></tr><tr><td>Hakim</td><td class=\"n\">58</td><td class=\"n\">140</td><td class=\"n\">64</td><td>Ahli pasukan olahraga sekolah</td></tr></tbody></table></div><p class=\"qnote\">Masa pemulihan ialah tempoh nadi kembali menghampiri bacaan rehat. Pemulihan yang lebih cepat menunjukkan kecergasan jantung yang lebih baik.</p>",
   "darah": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Kumpulan darah</th><th>Antigen pada sel darah merah</th><th>Antibodi dalam plasma</th><th>Boleh menderma kepada</th><th>Boleh menerima daripada</th></tr></thead><tbody><tr><td>A</td><td>A</td><td>anti-B</td><td>A, AB</td><td>A, O</td></tr><tr><td>B</td><td>B</td><td>anti-A</td><td>B, AB</td><td>B, O</td></tr><tr><td>AB</td><td>A dan B</td><td>tiada</td><td>AB</td><td>A, B, AB, O</td></tr><tr><td>O</td><td>tiada</td><td>anti-A dan anti-B</td><td>A, B, AB, O</td><td>O</td></tr></tbody></table></div><p class=\"qnote\">Penggumpalan berlaku apabila antibodi dalam plasma penerima bertemu antigen yang sepadan pada sel darah merah penderma.</p>",
   "transpirasi": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Keadaan</th><th class=\"n\">Suhu (&deg;C)</th><th class=\"n\">Kelembapan (%)</th><th>Angin</th><th class=\"n\">Kadar transpirasi (mm jam&#8315;&#185;)</th></tr></thead><tbody><tr><td>Kawalan</td><td class=\"n\">28</td><td class=\"n\">70</td><td>Tiada</td><td class=\"n\">12</td></tr><tr><td>Set A</td><td class=\"n\">28</td><td class=\"n\">70</td><td>Kipas dihidupkan</td><td class=\"n\">21</td></tr><tr><td>Set B</td><td class=\"n\">35</td><td class=\"n\">70</td><td>Tiada</td><td class=\"n\">19</td></tr><tr><td>Set C</td><td class=\"n\">28</td><td class=\"n\">95</td><td>Tiada</td><td class=\"n\">5</td></tr></tbody></table></div><p class=\"qnote\">Pucuk berdaun yang sama saiz digunakan bagi setiap set, diukur dengan fotometer selama satu jam.</p>"
@@ -48,7 +50,7 @@ window.BANK["t3b3"] =
    "n": 1,
    "tempat": "Jantung",
    "sk": "3.1 / 3.2 Sistem pengangkutan dan jantung",
-   "lampiran": null,
+   "lampiran": "ruangjantung",
    "kadNama": "Ventrikel Kiri",
    "kadEm": "🫀",
    "kadFakta": "Dinding ventrikel kiri kira-kira tiga kali lebih tebal daripada ventrikel kanan, kerana ia memam darah ke seluruh badan.",
@@ -70,7 +72,7 @@ window.BANK["t3b3"] =
     },
     {
      "j": "pilih",
-     "t": "Ruang jantung yang mempunyai dinding otot paling tebal ialah:",
+     "t": "Berdasarkan Rajah 1, ruang jantung yang mempunyai dinding otot paling tebal ialah:",
      "p": [
       "Ventrikel kanan",
       "Ventrikel kiri",
@@ -184,7 +186,7 @@ window.BANK["t3b3"] =
    "n": 2,
    "tempat": "Salur Darah",
    "sk": "3.2 Struktur dan fungsi salur darah",
-   "lampiran": null,
+   "lampiran": "salurdarah",
    "kadNama": "Kapilari",
    "kadEm": "🩸",
    "kadFakta": "Kapilari begitu halus sehingga sel darah merah terpaksa bergerak sebaris demi sebaris untuk melaluinya.",
@@ -194,7 +196,7 @@ window.BANK["t3b3"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Mengapakah dinding arteri lebih tebal dan lebih berotot berbanding vena?",
+     "t": "Berdasarkan Rajah 1, mengapakah dinding arteri lebih tebal dan lebih berotot berbanding vena?",
      "p": [
       "Arteri membawa darah yang lebih pekat dan lebih berat",
       "Arteri terletak lebih dekat dengan permukaan kulit badan",

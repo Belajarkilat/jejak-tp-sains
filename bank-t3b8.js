@@ -39,6 +39,8 @@ window.BANK["t3b8"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Keradioaktifan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "tembusan": "<figure class=\"figure\"><svg viewBox=\"0 0 260 110\" role=\"img\" aria-label=\"Tiga lajur: zarah alfa dihentikan oleh kertas, zarah beta oleh aluminium, dan sinar gama hanya oleh plumbum\"><rect x=\"6\" y=\"4\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"44\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Alfa</text><rect x=\"92\" y=\"4\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Beta</text><rect x=\"178\" y=\"4\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"216\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Gama</text><rect x=\"6\" y=\"72\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"44\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Kertas</text><rect x=\"92\" y=\"72\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Aluminium</text><rect x=\"178\" y=\"72\" width=\"76\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"216\" y=\"93.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Plumbum</text><line x1=\"44\" y1=\"40\" x2=\"44\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\"></line><path d=\"M44 66 L39.7 57 L48.3 57 z\" fill=\"var(--vena)\"></path><line x1=\"130\" y1=\"40\" x2=\"130\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\"></line><path d=\"M130 66 L125.7 57 L134.3 57 z\" fill=\"var(--vena)\"></path><line x1=\"216\" y1=\"40\" x2=\"216\" y2=\"66\" stroke=\"var(--vena)\" stroke-width=\"1.8\"></line><path d=\"M216 66 L211.7 57 L220.3 57 z\" fill=\"var(--vena)\"></path></svg><figcaption>Rajah 1 · Bahan paling nipis yang dapat menghentikan setiap jenis sinaran.</figcaption></figure>",
+  "atomlitium": "<figure class=\"figure\"><svg viewBox=\"0 0 260 168\" role=\"img\" aria-label=\"Model atom: nukleus mengandungi tiga proton dan empat neutron, dikelilingi tiga elektron di luar nukleus\"><circle cx=\"73\" cy=\"83\" r=\"58.5\" fill=\"var(--surface2)\" stroke=\"var(--line)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"24.5\" r=\"4.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"22.3\" cy=\"112.2\" r=\"4.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"123.7\" cy=\"112.2\" r=\"4.6\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"83\" r=\"19.5\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"73\" r=\"4.6\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"64\" cy=\"87.9\" r=\"4.6\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"82\" cy=\"87.9\" r=\"4.6\" fill=\"var(--arteri)\" stroke=\"var(--arteri)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"93.1\" r=\"4.6\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><circle cx=\"64\" cy=\"78.1\" r=\"4.6\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><circle cx=\"82\" cy=\"78.1\" r=\"4.6\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"83\" r=\"4.6\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><line x1=\"73\" y1=\"24.5\" x2=\"150\" y2=\"18\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73\" cy=\"24.5\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"22\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Elektron (3)</text><line x1=\"73\" y1=\"73\" x2=\"150\" y2=\"40\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73\" cy=\"73\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"44\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Proton (3)</text><line x1=\"73\" y1=\"93.1\" x2=\"150\" y2=\"62\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73\" cy=\"93.1\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"66\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Neutron (4)</text></svg><figcaption>Rajah 1 · Model atom litium yang neutral.</figcaption></figure>",
   "reput": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th class=\"n\">Masa (jam)</th><th class=\"n\">Aktiviti bahan X (Bq)</th></tr></thead><tbody><tr><td class=\"n\">0</td><td class=\"n\">800</td></tr><tr><td class=\"n\">2</td><td class=\"n\">400</td></tr><tr><td class=\"n\">4</td><td class=\"n\">200</td></tr><tr><td class=\"n\">6</td><td class=\"n\">100</td></tr><tr><td class=\"n\">8</td><td class=\"n\">50</td></tr></tbody></table></div><p class=\"qnote\">1 Bq bermaksud satu nukleus mereput setiap saat. Data rekaan untuk latihan.</p>",
   "tembus": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Sumber</th><th class=\"n\">Tanpa penghadang</th><th class=\"n\">Sehelai kertas</th><th class=\"n\">Aluminium 5 mm</th><th class=\"n\">Plumbum 5 cm</th></tr></thead><tbody><tr><td>P</td><td class=\"n\">900</td><td class=\"n\">20</td><td class=\"n\">20</td><td class=\"n\">20</td></tr><tr><td>Q</td><td class=\"n\">700</td><td class=\"n\">690</td><td class=\"n\">20</td><td class=\"n\">20</td></tr><tr><td>R</td><td class=\"n\">500</td><td class=\"n\">500</td><td class=\"n\">480</td><td class=\"n\">60</td></tr></tbody></table></div><p class=\"qnote\">Bacaan dalam bilangan seminit. Setiap sumber memancarkan satu jenis sinaran sahaja. Bacaan latar belakang ialah 20 bilangan seminit.</p>",
   "dos": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Lokasi</th><th class=\"n\">Kadar dos (&micro;Sv/j)</th></tr></thead><tbody><tr><td>Bilik darjah</td><td class=\"n\">0.10</td></tr><tr><td>Bilik menunggu klinik</td><td class=\"n\">0.12</td></tr><tr><td>Kawasan batuan granit</td><td class=\"n\">0.25</td></tr><tr><td>Tepi pagar tapak simpanan sisa radioaktif</td><td class=\"n\">0.35</td></tr><tr><td>Kabin kapal terbang pada ketinggian 11 km</td><td class=\"n\">3.0</td></tr></tbody></table></div><p class=\"qnote\">Kadar dos latar belakang semula jadi biasanya antara 0.05 dan 0.3 &micro;Sv/j, bergantung pada tempat. Had dos tambahan ialah 1 mSv (1000 &micro;Sv) setahun bagi orang awam dan 20 mSv setahun bagi pekerja sinaran. Data rekaan untuk latihan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t3b8"] =
    "n": 1,
    "tempat": "Makmal Curie",
    "sk": "8.1 Sejarah penemuan keradioaktifan",
-   "lampiran": null,
+   "lampiran": "tembusan",
    "kadNama": "Marie Curie",
    "kadEm": "🔬",
    "kadFakta": "Marie Curie ialah orang pertama yang memenangi Hadiah Nobel dalam dua bidang sains berbeza, iaitu fizik dan kimia.",
@@ -106,7 +108,7 @@ window.BANK["t3b8"] =
     },
     {
      "j": "pilih",
-     "t": "Sinaran yang paling tinggi kuasa penembusannya ialah:",
+     "t": "Berdasarkan Rajah 1, sinaran yang paling tinggi kuasa penembusannya ialah:",
      "p": [
       "Sinar gama",
       "Zarah alfa",
@@ -175,7 +177,7 @@ window.BANK["t3b8"] =
    "n": 2,
    "tempat": "Nukleus",
    "sk": "8.2 / 8.3 Atom, ion dan jenis sinaran",
-   "lampiran": null,
+   "lampiran": "atomlitium",
    "kadNama": "Atom",
    "kadEm": "⚛",
    "kadFakta": "Hampir semua jisim atom tertumpu dalam nukleus yang sangat kecil di tengahnya.",
@@ -185,7 +187,7 @@ window.BANK["t3b8"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Mengapakah atom neutral secara keseluruhan?",
+     "t": "Berdasarkan Rajah 1, mengapakah atom neutral secara keseluruhan?",
      "p": [
       "Bilangan proton sama dengan bilangan elektron",
       "Bilangan proton sama dengan bilangan neutron dalam nukleus",

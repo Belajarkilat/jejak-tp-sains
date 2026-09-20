@@ -39,6 +39,8 @@ window.BANK["t3b10"] =
   "tiada": "{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Penerokaan Angkasa Lepas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
  },
  "lampiran": {
+  "geosentrik": "<figure class=\"figure\"><svg viewBox=\"0 0 260 168\" role=\"img\" aria-label=\"Bumi berada di tengah satu bulatan, manakala Matahari, Bulan dan sebuah planet terletak pada bulatan yang mengelilingi Bumi\"><circle cx=\"73\" cy=\"83\" r=\"52\" fill=\"var(--surface2)\" stroke=\"var(--line)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"24.5\" r=\"7.8\" fill=\"var(--amber)\" stroke=\"var(--amber)\" stroke-width=\"1.5\"></circle><circle cx=\"73\" cy=\"83\" r=\"10.4\" fill=\"var(--teal)\" stroke=\"var(--teal)\" stroke-width=\"1.5\"></circle><circle cx=\"22.3\" cy=\"112.2\" r=\"5.9\" fill=\"var(--surface)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></circle><circle cx=\"123.7\" cy=\"112.2\" r=\"6.5\" fill=\"var(--vena)\" stroke=\"var(--vena)\" stroke-width=\"1.5\"></circle><line x1=\"73\" y1=\"24.5\" x2=\"150\" y2=\"18\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73\" cy=\"24.5\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"22\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Matahari</text><line x1=\"73\" y1=\"83\" x2=\"150\" y2=\"40\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"73\" cy=\"83\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"44\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Bumi</text><line x1=\"22.3\" y1=\"112.2\" x2=\"150\" y2=\"62\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"22.3\" cy=\"112.2\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"66\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Bulan</text><line x1=\"123.7\" y1=\"112.2\" x2=\"150\" y2=\"84\" stroke=\"var(--ink3)\" stroke-width=\"1\"></line><circle cx=\"123.7\" cy=\"112.2\" r=\"2.4\" fill=\"var(--ink3)\" stroke=\"var(--ink3)\" stroke-width=\"1.5\"></circle><text x=\"156\" y=\"88\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\">Planet</text></svg><figcaption>Rajah 1 · Model Sistem Suria yang diterima sebelum abad ke-16.</figcaption></figure>",
+  "roketaliran": "<figure class=\"figure\"><svg viewBox=\"0 0 260 210\" role=\"img\" aria-label=\"Rajah aliran menegak: bahan api dibakar dalam enjin, gas panas ditolak ke bawah, gas menolak roket ke atas, roket memecut ke angkasa\"><rect x=\"6\" y=\"4\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"25.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Bahan api dibakar dalam enjin</text><line x1=\"130\" y1=\"41\" x2=\"130\" y2=\"56\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 56 L125.2 46 L134.8 46 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"60\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"81.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Gas panas ditolak ke bawah</text><line x1=\"130\" y1=\"97\" x2=\"130\" y2=\"112\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 112 L125.2 102 L134.8 102 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"116\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"137.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Gas menolak roket ke atas</text><line x1=\"130\" y1=\"153\" x2=\"130\" y2=\"168\" stroke=\"var(--vena)\" stroke-width=\"2\"></line><path d=\"M130 168 L125.2 158 L134.8 158 z\" fill=\"var(--vena)\"></path><rect x=\"6\" y=\"172\" width=\"248\" height=\"34\" rx=\"8\" fill=\"var(--surface2)\" stroke=\"var(--line2)\" stroke-width=\"1.5\"></rect><text x=\"130\" y=\"193.3\" font-family=\"DM Mono,monospace\" font-size=\"12\" fill=\"var(--ink2)\" text-anchor=\"middle\">Roket memecut ke angkasa</text></svg><figcaption>Rajah 1 · Urutan daya yang menaikkan sebuah roket.</figcaption></figure>",
   "orbit": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Planet</th><th class=\"n\">Jarak purata dari Matahari (AU)</th><th class=\"n\">Tempoh satu orbit (tahun Bumi)</th></tr></thead><tbody><tr><td>Utarid</td><td class=\"n\">0.39</td><td class=\"n\">0.24</td></tr><tr><td>Zuhrah</td><td class=\"n\">0.72</td><td class=\"n\">0.62</td></tr><tr><td>Bumi</td><td class=\"n\">1.00</td><td class=\"n\">1.00</td></tr><tr><td>Marikh</td><td class=\"n\">1.52</td><td class=\"n\">1.88</td></tr><tr><td>Musytari</td><td class=\"n\">5.20</td><td class=\"n\">11.86</td></tr></tbody></table></div><p class=\"qnote\">1 AU (unit astronomi) ialah jarak purata Bumi ke Matahari, kira-kira 150 juta km.</p>",
   "satelit": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Jenis</th><th class=\"n\">Ketinggian orbit (km)</th><th>Tempoh satu orbit</th><th>Kegunaan utama</th></tr></thead><tbody><tr><td>Stesen Angkasa Antarabangsa</td><td class=\"n\">400</td><td>Kira-kira 90 minit</td><td>Makmal sains di angkasa</td></tr><tr><td>Satelit penderiaan jauh</td><td class=\"n\">700</td><td>Kira-kira 99 minit</td><td>Memantau tanaman, hutan dan banjir</td></tr><tr><td>Satelit GPS</td><td class=\"n\">20 200</td><td>Kira-kira 12 jam</td><td>Navigasi dan penentuan kedudukan</td></tr><tr><td>Satelit komunikasi geopegun</td><td class=\"n\">35 786</td><td>24 jam</td><td>Siaran TV dan telekomunikasi</td></tr></tbody></table></div><p class=\"qnote\">Nilai ketinggian dan tempoh ialah anggaran. Satelit geopegun ialah satelit yang mengorbit seiring putaran Bumi, jadi ia kelihatan kekal di atas tempat yang sama.</p>",
   "misi": "<div class=\"scrollx\"><table class=\"datatable\"><thead><tr><th>Misi</th><th class=\"n\">Kos (RM juta)</th><th>Manfaat utama</th><th>Risiko</th></tr></thead><tbody><tr><td>P: Satelit pemantau banjir dan jerebu</td><td class=\"n\">300</td><td>Amaran bencana untuk jutaan penduduk</td><td>Rendah</td></tr><tr><td>Q: Menghantar angkasawan ke stesen angkasa</td><td class=\"n\">100</td><td>Inspirasi dan penyelidikan mikrograviti</td><td>Sederhana</td></tr><tr><td>R: Kuar angkasa ke Marikh</td><td class=\"n\">2500</td><td>Pengetahuan saintifik baharu</td><td>Tinggi</td></tr></tbody></table></div><p class=\"qnote\">Sebuah agensi angkasa mempunyai bajet RM500 juta. Data rekaan untuk latihan.</p>"
@@ -48,7 +50,7 @@ window.BANK["t3b10"] =
    "n": 1,
    "tempat": "Planetarium",
    "sk": "10.1 / 10.2 Sejarah astronomi dan penerokaan angkasa",
-   "lampiran": null,
+   "lampiran": "geosentrik",
    "kadNama": "Planetarium Negara",
    "kadEm": "🏛",
    "kadFakta": "Planetarium Negara di Kuala Lumpur mempunyai teater kubah yang menayangkan langit malam serta pameran angkasa lepas.",
@@ -58,7 +60,7 @@ window.BANK["t3b10"] =
    "soalan": [
     {
      "j": "pilih",
-     "t": "Model Sistem Suria yang meletakkan Bumi di pusat ialah model:",
+     "t": "Berdasarkan Rajah 1, model Sistem Suria yang meletakkan Bumi di pusat ialah model:",
      "p": [
       "Geosentrik",
       "Heliosentrik",
@@ -180,7 +182,7 @@ window.BANK["t3b10"] =
    "n": 2,
    "tempat": "Model Suria",
    "sk": "10.1 / 10.2 Memahami model dan teknologi angkasa",
-   "lampiran": null,
+   "lampiran": "roketaliran",
    "kadNama": "Kepler",
    "kadEm": "🪐",
    "kadFakta": "Kepler mendapati planet bergerak lebih laju apabila berada lebih dekat dengan Matahari.",
@@ -226,7 +228,7 @@ window.BANK["t3b10"] =
     },
     {
      "j": "pilih",
-     "t": "Bagaimanakah roket bergerak ke atas?",
+     "t": "Berdasarkan Rajah 1, bagaimanakah roket bergerak ke atas?",
      "p": [
       "Roket ditarik ke atas oleh graviti Bulan dan Matahari",
       "Udara di atas roket menyedutnya ke atas",

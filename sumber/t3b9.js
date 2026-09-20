@@ -16,6 +16,87 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_TOMPOK = {
+  "jenis": "graf",
+  "petunjuk": true,
+  "grid": 4,
+  "yMin": 0,
+  "yMaks": 100,
+  "setiap": 2,
+  "x": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "siri": [
+    {
+      "label": "Bilangan tompok",
+      "warna": "kuning",
+      "y": [
+        98,
+        90,
+        70,
+        43,
+        19,
+        4,
+        4,
+        19,
+        43,
+        70,
+        90,
+        98,
+        90,
+        70,
+        43,
+        19,
+        4,
+        4,
+        19,
+        43,
+        70,
+        90,
+        98
+      ]
+    }
+  ],
+  "xLabel": "Tahun",
+  "kapsyen": "Rajah 1 · Bilangan tompok matahari yang direkod selama 22 tahun.",
+  "alt": "Graf gelombang: bilangan tompok matahari memuncak pada tahun sifar, tahun ke-11 dan tahun ke-22, dengan nilai terendah di pertengahan antara setiap puncak"
+};
+
+const R_AURORA = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Angin suria membawa zarah bercas",
+    "Zarah menghentam atom gas atmosfera",
+    "Atom gas memancarkan cahaya",
+    "Aurora kelihatan di langit"
+  ],
+  "kapsyen": "Rajah 1 · Urutan kejadian yang menghasilkan aurora.",
+  "alt": "Rajah aliran menegak: angin suria membawa zarah bercas, zarah menghentam atom gas atmosfera, atom gas memancarkan cahaya, lalu aurora kelihatan di langit"
+};
+
 const T_LAPISAN =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Lapisan (dari dalam)</th>'+
 '<th>Suhu anggaran (&deg;C)</th><th>Ciri</th></tr></thead><tbody>'+
@@ -50,7 +131,7 @@ const T_AMARAN =
 
 const ARAS = [
 
-{n:1, tempat:"Teras Matahari", sk:"9.1 Struktur dan fenomena Matahari",
+{n:1, tempat:"Teras Matahari", sk:"9.1 Struktur dan fenomena Matahari", lampiran:"graftompok",
  kadNama:"Teras Matahari", kadEm:"\u{2600}", kadFakta:"Suhu teras Matahari mencecah kira-kira 15 juta °C. Di situ hidrogen bergabung menjadi helium.",
  bosKadNama:"Kitaran Suria", bosKadEm:"\u{1F504}", bosKadFakta:"Bilangan tompok matahari naik dan turun dalam kitaran kira-kira 11 tahun.",
  soalan:[
@@ -62,9 +143,9 @@ const ARAS = [
  {j:"pilih",t:"Kawasan di sekeliling Bumi yang dikawal oleh medan magnet Bumi dipanggil:",p:["Magnetosfera","Stratosfera","Kromosfera","Fotosfera"],b:0,u:"Kromosfera dan fotosfera ialah lapisan Matahari, dan stratosfera ialah lapisan atmosfera Bumi."},
  {j:"banyak",t:"Pilih SEMUA fenomena yang berlaku di permukaan atau atmosfera Matahari.",p:["Nyalaan suria","Semarak suria","Lentingan jisim korona","Gerhana bulan","Pasang surut laut"],b:[0,1,2],u:"Gerhana bulan dan pasang surut melibatkan Bumi dan Bulan."},
  {j:"pilih",t:"Cahaya berwarna-warni yang kelihatan di langit kawasan kutub dipanggil:",p:["Aurora","Pelangi","Meteor","Komet"],b:0,u:"Aurora di hemisfera utara dipanggil aurora borealis."}],
- bos:{j:"pilih",t:"Kitaran suria berulang lebih kurang setiap:",p:["11 tahun","1 tahun","100 tahun","28 hari"],b:0,u:"Aktiviti suria mencapai puncak lebih kurang sekali setiap 11 tahun."}},
+ bos:{j:"pilih",t:"Berdasarkan Rajah 1, kitaran suria berulang lebih kurang setiap:",p:["11 tahun","1 tahun","100 tahun","28 hari"],b:0,u:"Aktiviti suria mencapai puncak lebih kurang sekali setiap 11 tahun."}},
 
-{n:2, tempat:"Magnetosfera", sk:"9.1.2 / 9.2 Magnetosfera dan cuaca angkasa",
+{n:2, tempat:"Magnetosfera", sk:"9.1.2 / 9.2 Magnetosfera dan cuaca angkasa", lampiran:"auroraaliran",
  kadNama:"Magnetosfera", kadEm:"\u{1F9F2}", kadFakta:"Magnetosfera memesongkan kebanyakan zarah bercas angin suria sebelum sampai ke permukaan Bumi.",
  bosKadNama:"Aurora", bosKadEm:"\u{1F30C}", bosKadFakta:"Warna hijau aurora biasanya dihasilkan oleh atom oksigen di atmosfera.",
  soalan:[
@@ -72,7 +153,7 @@ const ARAS = [
  {j:"pilih",t:"Mengapakah magnetosfera penting kepada hidupan di Bumi?",p:["Ia memesongkan zarah bercas angin suria daripada Bumi","Ia menghasilkan oksigen yang diperlukan untuk pernafasan","Ia memanaskan Bumi pada waktu malam","Ia menarik Bulan supaya terus mengorbit Bumi"],b:0,u:"Tanpa magnetosfera, angin suria boleh menghakis atmosfera dan membahayakan hidupan."},
  {j:"pilih",t:"Mengapakah bentuk magnetosfera tidak bulat sempurna?",p:["Angin suria menekan satu sisi dan memanjangkan sisi lain","Bumi berputar terlalu laju pada paksinya sehingga ia terherot","Bulan menarik magnetosfera ke satu arah semasa mengorbit","Atmosfera Bumi terlalu nipis di kawasan kutub utara"],b:0,u:"Sisi yang menghadap Matahari dimampatkan, manakala sisi malam memanjang seperti ekor."},
  {j:"pilih",t:"Mengapakah aurora lebih kerap kelihatan di kawasan kutub?",p:["Garis medan magnet menyalurkan zarah bercas ke kawasan kutub","Kawasan kutub lebih dekat dengan Matahari berbanding khatulistiwa","Ais di kutub memantulkan cahaya Matahari","Kutub mengalami malam sepanjang tahun"],b:0,u:"Garis medan magnet Bumi menumpu di kawasan berhampiran kutub."},
- {j:"pilih",t:"Bagaimanakah aurora terbentuk?",p:["Zarah bercas menghentam atom dan molekul gas di atmosfera","Cahaya Matahari dipantulkan oleh ais dan salji di kawasan kutub","Awan tebal memancarkan cahaya pada waktu malam","Kilat berlaku berterusan di kawasan kutub"],b:0,u:"Atom dan molekul yang dihentam memancarkan cahaya berwarna."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bagaimanakah aurora terbentuk?",p:["Zarah bercas menghentam atom dan molekul gas di atmosfera","Cahaya Matahari dipantulkan oleh ais dan salji di kawasan kutub","Awan tebal memancarkan cahaya pada waktu malam","Kilat berlaku berterusan di kawasan kutub"],b:0,u:"Atom dan molekul yang dihentam memancarkan cahaya berwarna."},
  {j:"pilih",t:"Mengapakah lentingan jisim korona boleh mengganggu isyarat GPS?",p:["Zarah bercasnya mengganggu atmosfera yang dilalui isyarat","Ia menghalang cahaya Matahari daripada sampai ke Bumi","Ia menyebabkan Bumi berhenti berputar seketika","Ia menukar arah medan graviti Bumi buat sementara waktu"],b:0,u:"Isyarat GPS dari satelit perlu melalui atmosfera atas yang terganggu itu."},
  {j:"pilih",t:"Apakah hubungan antara bilangan tompok matahari dengan aktiviti suria?",p:["Lebih banyak tompok, lebih kerap nyalaan dan lentingan jisim korona","Lebih banyak tompok, Matahari menjadi lebih sejuk dan kurang aktif selamanya","Bilangan tompok tidak berkaitan dengan aktiviti suria","Tompok hanya muncul semasa gerhana matahari"],b:0,u:"Tompok matahari menandakan kawasan bermedan magnet kuat yang menjadi punca letusan."},
  {j:"pilih",t:"Mengapakah kita tidak boleh melihat Matahari secara terus walaupun semasa aktiviti suria menarik?",p:["Sinaran kuat boleh merosakkan retina mata secara kekal","Matahari terlalu jauh untuk dilihat dengan mata","Tompok matahari memancarkan sinaran radioaktif","Mata manusia hanya boleh melihat Matahari dengan selamat pada waktu senja"],b:0,u:"Kerosakan retina berlaku tanpa rasa sakit, jadi mangsa selalunya tidak sedar."}],
@@ -153,6 +234,6 @@ module.exports = {
    6:"{n} berjaya mereka sistem amaran dan pendidikan cuaca angkasa yang praktikal dan sesuai dengan komuniti. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Cuaca Angkasa Lepas. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ lapisan:T_LAPISAN, kitaran:T_KITARAN, amaran:T_AMARAN },
+  lampiran:{ graftompok:R_TOMPOK, auroraaliran:R_AURORA, lapisan:T_LAPISAN, kitaran:T_KITARAN, amaran:T_AMARAN },
   aras:ARAS
 };

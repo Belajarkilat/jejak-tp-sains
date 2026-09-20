@@ -16,6 +16,100 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_RUANG = {
+  "jenis": "graf",
+  "mod": "mendatar",
+  "yMaks": 14,
+  "bar": [
+    {
+      "label": "Ventrikel kiri",
+      "nilai": 12,
+      "warna": "merah"
+    },
+    {
+      "label": "Ventrikel kanan",
+      "nilai": 4,
+      "warna": "merah"
+    },
+    {
+      "label": "Atrium kanan",
+      "nilai": 2,
+      "warna": "ungu"
+    },
+    {
+      "label": "Atrium kiri",
+      "nilai": 3,
+      "warna": "ungu"
+    }
+  ],
+  "xLabel": "Ketebalan dinding otot (mm)",
+  "kapsyen": "Rajah 1 · Ketebalan dinding otot bagi empat ruang jantung manusia.",
+  "alt": "Graf palang: ventrikel kiri 12 mm, ventrikel kanan 4 mm, atrium kanan 2 mm dan atrium kiri 3 mm"
+};
+
+const R_SALUR = {
+  "jenis": "struktur",
+  "mod": "label",
+  "bahagian": [
+    {
+      "label": "Arteri",
+      "bentuk": "bulat",
+      "x": 30,
+      "y": 16,
+      "r": 13,
+      "anchorX": 39.5,
+      "isi": "merahLembut",
+      "garis": "merah"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 30,
+      "y": 16,
+      "r": 6,
+      "isi": "kertas",
+      "garis": "merah"
+    },
+    {
+      "label": "Vena",
+      "bentuk": "bulat",
+      "x": 30,
+      "y": 50,
+      "r": 13,
+      "anchorX": 41.75,
+      "isi": "kertas2",
+      "garis": "ungu"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 30,
+      "y": 50,
+      "r": 10.5,
+      "isi": "kertas",
+      "garis": "ungu"
+    },
+    {
+      "label": "Kapilari",
+      "bentuk": "bulat",
+      "x": 30,
+      "y": 84,
+      "r": 6,
+      "anchorX": 35,
+      "isi": "kertas2",
+      "garis": "garis2"
+    },
+    {
+      "bentuk": "bulat",
+      "x": 30,
+      "y": 84,
+      "r": 4,
+      "isi": "kertas",
+      "garis": "garis2"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Keratan rentas tiga jenis salur darah dan tebal dindingnya.",
+  "alt": "Keratan rentas: arteri berdinding paling tebal, vena berdinding nipis dengan ruang dalam yang luas, dan kapilari yang jauh lebih kecil"
+};
+
 const T_NADI =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Murid</th>'+
 '<th class="n">Nadi rehat (min&#8315;&#185;)</th><th class="n">Sejurus selepas 3 minit berlari</th>'+
@@ -48,12 +142,12 @@ const T_TRANSPIRASI =
 
 const ARAS = [
 
-{n:1, tempat:"Jantung", sk:"3.1 / 3.2 Sistem pengangkutan dan jantung",
+{n:1, tempat:"Jantung", sk:"3.1 / 3.2 Sistem pengangkutan dan jantung", lampiran:"ruangjantung",
  kadNama:"Ventrikel Kiri", kadEm:"\u{1FAC0}", kadFakta:"Dinding ventrikel kiri kira-kira tiga kali lebih tebal daripada ventrikel kanan, kerana ia memam darah ke seluruh badan.",
  bosKadNama:"Injap Jantung", bosKadEm:"\u{1F6AA}", bosKadFakta:"Bunyi lub dub yang didengar melalui stetoskop ialah bunyi injap jantung menutup, bukan bunyi otot mengecut.",
  soalan:[
  {j:"pilih",t:"Apakah fungsi utama sistem pengangkutan dalam organisma?",p:["Mengangkut nutrien, gas dan bahan kumuh ke dan dari setiap sel","Menghasilkan tenaga yang diperlukan untuk semua pergerakan otot","Melindungi organ dalaman daripada kecederaan dan jangkitan kuman","Mengawal suhu badan dengan mengeluarkan peluh melalui kulit"],b:0,u:"Sel yang jauh dari permukaan badan tidak dapat bergantung pada resapan sahaja."},
- {j:"pilih",t:"Ruang jantung yang mempunyai dinding otot paling tebal ialah:",p:["Ventrikel kiri","Ventrikel kanan","Atrium kiri","Atrium kanan"],b:0,u:"Ia perlu menjana tekanan yang cukup untuk menghantar darah ke seluruh badan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, ruang jantung yang mempunyai dinding otot paling tebal ialah:",p:["Ventrikel kiri","Ventrikel kanan","Atrium kiri","Atrium kanan"],b:0,u:"Ia perlu menjana tekanan yang cukup untuk menghantar darah ke seluruh badan."},
  {j:"pilih",t:"Komponen darah yang mengangkut oksigen ialah:",p:["Sel darah merah","Sel darah putih","Platlet","Plasma"],b:0,u:"Hemoglobin dalam sel darah merah mengikat oksigen."},
  {j:"susun",t:"Susun laluan darah dalam peredaran pulmonari mengikut urutan yang betul.",p:["Ventrikel kanan","Arteri pulmonari","Kapilari dalam peparu","Vena pulmonari","Atrium kiri"],b:[0,1,2,3,4],u:"Peredaran pulmonari membawa darah ke peparu dan kembali semula ke jantung."},
  {j:"pilih",t:"Salur darah yang membawa darah keluar dari jantung ialah:",p:["Arteri","Vena","Kapilari","Salur limfa"],b:0,u:"Arteri keluar, vena masuk, tanpa mengira kandungan oksigennya."},
@@ -62,11 +156,11 @@ const ARAS = [
  {j:"pilih",t:"Apakah fungsi injap dalam jantung dan vena?",p:["Memastikan darah mengalir dalam satu arah sahaja","Menapis bahan kumuh daripada darah sebelum ke ginjal","Menambah tekanan darah supaya sampai ke hujung badan","Menukar darah terdeoksigen kepada darah beroksigen"],b:0,u:"Tanpa injap, darah akan mengalir semula ke belakang apabila tekanan turun."}],
  bos:{j:"banyak",t:"Pilih SEMUA yang merupakan bahan yang diangkut oleh darah manusia.",p:["Oksigen dari peparu","Nutrien yang telah dicerna","Hormon daripada kelenjar","Bahan kumuh seperti urea","Cahaya matahari dari kulit","Gelombang bunyi dari telinga"],b:[0,1,2,3],u:"Darah ialah sistem penghantaran badan bagi bahan, bukan bagi tenaga cahaya atau bunyi."}},
 
-{n:2, tempat:"Salur Darah", sk:"3.2 Struktur dan fungsi salur darah",
+{n:2, tempat:"Salur Darah", sk:"3.2 Struktur dan fungsi salur darah", lampiran:"salurdarah",
  kadNama:"Kapilari", kadEm:"\u{1FA78}", kadFakta:"Kapilari begitu halus sehingga sel darah merah terpaksa bergerak sebaris demi sebaris untuk melaluinya.",
  bosKadNama:"Organisma Ringkas", bosKadEm:"\u{1F9A0}", bosKadFakta:"Amoeba tidak mempunyai sistem pengangkutan langsung, kerana tiada satu pun bahagian selnya jauh daripada permukaan luarnya.",
  soalan:[
- {j:"pilih",t:"Mengapakah dinding arteri lebih tebal dan lebih berotot berbanding vena?",p:["Arteri menahan tekanan tinggi setiap kali jantung mengecut","Arteri membawa darah yang lebih pekat dan lebih berat","Arteri terletak lebih dekat dengan permukaan kulit badan","Arteri perlu menyimpan oksigen berlebihan untuk kecemasan"],b:0,u:"Denyutan nadi yang boleh dirasa pada pergelangan tangan ialah gelombang tekanan itu."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah dinding arteri lebih tebal dan lebih berotot berbanding vena?",p:["Arteri menahan tekanan tinggi setiap kali jantung mengecut","Arteri membawa darah yang lebih pekat dan lebih berat","Arteri terletak lebih dekat dengan permukaan kulit badan","Arteri perlu menyimpan oksigen berlebihan untuk kecemasan"],b:0,u:"Denyutan nadi yang boleh dirasa pada pergelangan tangan ialah gelombang tekanan itu."},
  {j:"pilih",t:"Mengapakah vena mempunyai injap tetapi kebanyakan arteri tidak?",p:["Tekanan darah vena rendah, jadi injap menghalang aliran balik","Tekanan darah vena tinggi, jadi injap mengurangkan tekanan itu","Vena membawa darah yang lebih berat kerana tiada oksigen","Injap dalam arteri akan pecah akibat tekanan darah yang tinggi"],b:0,u:"Pengecutan otot rangka di sekeliling vena membantu menolak darah kembali ke jantung."},
  {j:"pilih",t:"Mengapakah dinding kapilari setebal satu sel sahaja?",p:["Supaya jarak resapan pendek dan bahan cepat bertukar dengan sel","Supaya darah mengalir lebih laju tanpa geseran dinding tebal","Supaya kapilari mudah pecah untuk membebaskan sel darah putih","Supaya kapilari lebih ringan dan tidak membebankan jantung"],b:0,u:"Kapilari ialah satu-satunya tempat pertukaran bahan benar-benar berlaku."},
  {j:"pilih",t:"Mengapakah arteri pulmonari dikira pengecualian kepada peraturan biasa?",p:["Ia arteri tetapi membawa darah terdeoksigen","Ia vena tetapi membawa darah beroksigen","Ia arteri tetapi tidak mempunyai dinding berotot","Ia arteri tetapi darahnya mengalir dalam dua arah"],b:0,u:"Peraturan sebenar ialah arteri membawa darah keluar dari jantung, bukan bahawa arteri sentiasa beroksigen."},
@@ -151,6 +245,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta penyelesaian pengangkutan air yang praktikal untuk kebun sekolah, lengkap dengan pertimbangan kos dan siapa yang akan menjaganya. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Pengangkutan. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ nadi:T_NADI, darah:T_DARAH, transpirasi:T_TRANSPIRASI },
+  lampiran:{ ruangjantung:R_RUANG, salurdarah:R_SALUR, nadi:T_NADI, darah:T_DARAH, transpirasi:T_TRANSPIRASI },
   aras:ARAS
 };

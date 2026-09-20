@@ -19,6 +19,77 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_OKSIDA = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Logam dipanaskan dalam oksigen",
+    "Logam bergabung dengan oksigen",
+    "Oksida logam terbentuk"
+  ],
+  "kapsyen": "Rajah 1 · Corak umum tindak balas logam dengan oksigen.",
+  "alt": "Rajah aliran menegak: logam dipanaskan dalam oksigen, logam bergabung dengan oksigen, lalu oksida logam terbentuk"
+};
+
+const R_SIRI = {
+  "jenis": "struktur",
+  "mod": "label",
+  "bahagian": [
+    {
+      "bentuk": "kotak",
+      "x": 94,
+      "y": 10,
+      "l": 80,
+      "t": 13,
+      "dalam": "Kalium",
+      "isi": "merahLembut",
+      "garis": "merah"
+    },
+    {
+      "bentuk": "kotak",
+      "x": 94,
+      "y": 29,
+      "l": 80,
+      "t": 13,
+      "dalam": "Magnesium",
+      "isi": "merahLembut",
+      "garis": "merah"
+    },
+    {
+      "bentuk": "kotak",
+      "x": 94,
+      "y": 48,
+      "l": 80,
+      "t": 13,
+      "dalam": "Zink",
+      "isi": "kuningLembut",
+      "garis": "kuning"
+    },
+    {
+      "bentuk": "kotak",
+      "x": 94,
+      "y": 67,
+      "l": 80,
+      "t": 13,
+      "dalam": "Ferum",
+      "isi": "kertas2",
+      "garis": "garis2"
+    },
+    {
+      "bentuk": "kotak",
+      "x": 94,
+      "y": 86,
+      "l": 80,
+      "t": 13,
+      "dalam": "Plumbum",
+      "isi": "kertas2",
+      "garis": "garis2"
+    }
+  ],
+  "kapsyen": "Rajah 1 · Siri kereaktifan: logam di atas lebih reaktif daripada logam di bawahnya.",
+  "alt": "Tangga menegak lima logam dari atas ke bawah: kalium, magnesium, zink, ferum dan plumbum"
+};
+
 const T_BAKAR =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Logam</th><th>Pemerhatian</th>'+
 '<th>Warna baki semasa panas</th><th>Warna baki apabila sejuk</th></tr></thead><tbody>'+
@@ -53,7 +124,7 @@ const T_SUNGAI =
 
 const ARAS = [
 
-{n:1, tempat:"Kerak Bumi", sk:"4.1 Kepelbagaian mineral",
+{n:1, tempat:"Kerak Bumi", sk:"4.1 Kepelbagaian mineral", lampiran:"oksidalogam",
  kadNama:"Emas", kadEm:"\u{1FA99}", kadFakta:"Emas sangat tidak reaktif, jadi ia ditemui sebagai unsur bebas dan kekal berkilat walaupun tertanam beratus-ratus tahun.",
  bosKadNama:"Bauksit", bosKadEm:"\u{1FAA8}", bosKadFakta:"Bauksit selalunya berwarna kemerahan kerana mengandungi sedikit ferum oksida bersama aluminium oksida.",
  soalan:[
@@ -62,17 +133,17 @@ const ARAS = [
  {j:"pilih",t:"Nama saintifik bagi galena ialah:",p:["Plumbum(II) sulfida","Plumbum(II) oksida","Ferum(III) oksida","Stanum(IV) oksida"],b:0,u:"Galena ialah gabungan plumbum dan sulfur."},
  {j:"pilih",t:"Kasiterit ialah bijih yang dilombong di Malaysia untuk mendapatkan logam:",p:["Stanum (timah)","Aluminium","Ferum (besi)","Kuprum (tembaga)"],b:0,u:"Kasiterit ialah stanum(IV) oksida. Malaysia pernah menjadi pengeluar bijih timah terbesar di dunia."},
  {j:"susun",t:"Susun logam berikut mengikut kereaktifan terhadap oksigen, bermula daripada yang PALING reaktif.",p:["Magnesium","Aluminium","Zink","Ferum","Plumbum"],b:[0,1,2,3,4],u:"Magnesium terbakar paling terang, manakala plumbum hanya berbara dengan sangat malap."},
- {j:"pilih",t:"Hasil tindak balas apabila magnesium dipanaskan dalam oksigen ialah:",p:["Magnesium oksida","Magnesium karbonat","Magnesium sulfida","Magnesium hidroksida"],b:0,u:"Logam yang bergabung dengan oksigen membentuk oksida logam."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, hasil tindak balas apabila magnesium dipanaskan dalam oksigen ialah:",p:["Magnesium oksida","Magnesium karbonat","Magnesium sulfida","Magnesium hidroksida"],b:0,u:"Logam yang bergabung dengan oksigen membentuk oksida logam."},
  {j:"banyak",t:"Pilih SEMUA unsur yang terdapat dalam hematit, iaitu ferum(III) oksida.",p:["Ferum","Oksigen","Sulfur","Karbon","Aluminium"],b:[0,1],u:"Nama sebatian memberitahu unsurnya: ferum dan oksida, iaitu oksigen."},
  {j:"pilih",t:"Logam yang diekstrak daripada bijihnya melalui elektrolisis, bukan dengan karbon, ialah:",p:["Aluminium","Ferum","Stanum","Plumbum"],b:0,u:"Aluminium lebih reaktif daripada karbon, jadi karbon tidak dapat menyingkirkan oksigen daripada aluminium oksida."}],
  bos:{j:"banyak",t:"Pilih SEMUA mineral yang merupakan sebatian, iaitu gabungan dua atau lebih unsur.",p:["Bauksit","Galena","Kasiterit","Emas","Perak"],b:[0,1,2],u:"Emas dan perak ialah unsur. Bauksit, galena dan kasiterit ialah sebatian logam dengan oksigen atau sulfur."}},
 
-{n:2, tempat:"Siri Kereaktifan", sk:"4.2 Siri kereaktifan logam",
+{n:2, tempat:"Siri Kereaktifan", sk:"4.2 Siri kereaktifan logam", lampiran:"sirireaktif",
  kadNama:"Kalium", kadEm:"\u{1F9EA}", kadFakta:"Kalium begitu reaktif sehingga ia disimpan di dalam minyak parafin supaya tidak bertindak balas dengan udara dan wap air.",
  bosKadNama:"Elektrolisis", bosKadEm:"\u{26A1}", bosKadFakta:"Logam yang lebih reaktif daripada karbon, seperti aluminium, diekstrak menggunakan arus elektrik.",
  soalan:[
  {j:"pilih",t:"Mengapakah emas ditemui sebagai unsur bebas tetapi aluminium hanya ditemui sebagai sebatian?",p:["Emas sangat tidak reaktif, aluminium mudah bergabung dengan oksigen","Emas lebih berat, jadi ia tenggelam jauh ke dalam kerak bumi","Aluminium lebih lembut, jadi ia mudah pecah dan bercampur","Emas mempunyai takat lebur rendah, jadi ia mudah melebur semula jadi"],b:0,u:"Logam yang sangat reaktif sentiasa bergabung dengan unsur lain di alam semula jadi."},
- {j:"pilih",t:"Mengapakah magnesium terbakar lebih terang daripada ferum apabila dipanaskan dalam oksigen?",p:["Magnesium lebih reaktif, jadi tindak balasnya lebih cergas","Magnesium lebih ringan, jadi ia lebih mudah terapung dalam api","Ferum berwarna gelap, jadi ia menyerap cahaya nyalaan itu","Magnesium sudah mengandungi oksigen di dalam logamnya"],b:0,u:"Kecerahan nyalaan atau baraan menunjukkan betapa cergas logam itu bertindak balas dengan oksigen."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah magnesium terbakar lebih terang daripada ferum apabila dipanaskan dalam oksigen?",p:["Magnesium lebih reaktif, jadi tindak balasnya lebih cergas","Magnesium lebih ringan, jadi ia lebih mudah terapung dalam api","Ferum berwarna gelap, jadi ia menyerap cahaya nyalaan itu","Magnesium sudah mengandungi oksigen di dalam logamnya"],b:0,u:"Kecerahan nyalaan atau baraan menunjukkan betapa cergas logam itu bertindak balas dengan oksigen."},
  {j:"pilih",t:"Apakah maksud siri kereaktifan logam?",p:["Susunan logam mengikut kecergasan bertindak balas dengan oksigen","Susunan logam mengikut ketumpatan, dari paling berat ke paling ringan","Susunan logam mengikut harga pasaran semasa di seluruh dunia","Susunan logam mengikut tarikh logam itu mula-mula ditemui"],b:0,u:"Logam paling reaktif berada di atas siri, dan logam paling kurang reaktif di bawah."},
  {j:"pilih",t:"Mengapakah karbon dimasukkan dalam siri kereaktifan walaupun ia bukan logam?",p:["Karbon menentukan logam yang boleh diekstrak dengannya","Karbon bersifat seperti logam kerana ia mengalirkan haba dengan baik","Karbon terdapat dalam semua bijih logam yang dilombong di Malaysia","Karbon ialah unsur paling reaktif, jadi ia diletakkan di bahagian atas"],b:0,u:"Karbon murah dan mudah didapati, jadi penting untuk mengetahui logam mana yang dapat diturunkannya."},
  {j:"pilih",t:"Zink oksida dipanaskan dengan serbuk karbon dan menghasilkan zink. Apakah yang dapat disimpulkan?",p:["Karbon lebih reaktif daripada zink","Zink lebih reaktif daripada karbon","Karbon dan zink sama reaktif","Zink oksida tidak mengandungi oksigen"],b:0,u:"Unsur yang lebih reaktif dapat menyingkirkan oksigen daripada oksida unsur yang kurang reaktif."},
@@ -156,6 +227,6 @@ module.exports = {
    6:"{n} berjaya mereka cipta pelan pemulihan kawasan bekas lombong yang praktikal, dengan mengambil kira sains, kos dan keperluan masyarakat. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Kereaktifan Logam. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ bakar:T_BAKAR, turun:T_TURUN, sungai:T_SUNGAI },
+  lampiran:{ oksidalogam:R_OKSIDA, sirireaktif:R_SIRI, bakar:T_BAKAR, turun:T_TURUN, sungai:T_SUNGAI },
   aras:ARAS
 };

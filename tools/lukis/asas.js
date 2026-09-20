@@ -67,6 +67,27 @@ function teks(x, y, isi, o){
   return `<text ${bit.join(" ")}>${esc(isi)}</text>`;
 }
 
+/* Kepala anak panah dilukis sebagai segi tiga biasa, bukan <marker>.
+
+   Dulu setiap rajah membawa <marker id="panah"> sendiri. Sebaik sahaja dua
+   rajah muncul pada halaman yang sama - galeri audit, dan Mod Semak yang
+   memaparkan lampiran bagi setiap soalan - semua url(#panah) merujuk id
+   yang pertama dalam dokumen, dan Chrome langsung tidak melukis kepala
+   panah itu. Rajah tetap nampak kemas, cuma setiap panah bertukar menjadi
+   garis pendek tanpa arah, jadi rajah proses kehilangan maknanya tanpa
+   sebarang amaran. Segi tiga sebaris tidak boleh bertembung dengan apa-apa. */
+function kepalaPanah(x, y, dx, dy, o){
+  const jarak = Math.hypot(dx, dy) || 1;
+  const ux = dx / jarak, uy = dy / jarak;
+  const tebal = o.tebal || 1.5;
+  const panjang = tebal * 5, separuh = tebal * 2.4;
+  const bx = x - ux * panjang, by = y - uy * panjang;
+  return `<path d="M${bulat(x)} ${bulat(y)} ` +
+    `L${bulat(bx - uy * separuh)} ${bulat(by + ux * separuh)} ` +
+    `L${bulat(bx + uy * separuh)} ${bulat(by - ux * separuh)} z" ` +
+    `fill="${warna(o.warna || "garis2")}"></path>`;
+}
+
 function garis(x1, y1, x2, y2, o){
   o = o || {};
   const bit = [
@@ -74,9 +95,9 @@ function garis(x1, y1, x2, y2, o){
     `stroke="${warna(o.warna || "garis2")}"`, `stroke-width="${o.tebal || 1.5}"`,
   ];
   if(o.putus) bit.push(`stroke-dasharray="${o.putus}"`);
-  if(o.panah) bit.push('marker-end="url(#panah)"');
   if(o.hujungBulat) bit.push('stroke-linecap="round"');
-  return `<line ${bit.join(" ")}></line>`;
+  return `<line ${bit.join(" ")}></line>` +
+    (o.panah ? kepalaPanah(x2, y2, x2 - x1, y2 - y1, o) : "");
 }
 
 function kotak(x, y, l, t, o){
@@ -106,20 +127,22 @@ function laluan(d, o){
     'stroke-linejoin="round"',
   ];
   if(o.putus) bit.push(`stroke-dasharray="${o.putus}"`);
-  if(o.panah) bit.push('marker-end="url(#panah)"');
-  return `<path ${bit.join(" ")}></path>`;
+  let s = `<path ${bit.join(" ")}></path>`;
+  if(o.panah){
+    /* Arah di hujung lengkung ialah tangen, iaitu dari titik kawalan
+       terakhir ke titik akhir. Dua pasangan koordinat terakhir dalam d
+       sudah memberikannya, bagi garis lurus mahupun lengkung Q. */
+    const ttk = (d.match(/-?[0-9.]+\s+-?[0-9.]+/g) || []).map(t => t.split(/\s+/).map(Number));
+    if(ttk.length < 2) throw new Error("laluan berpanah perlu sekurang-kurangnya dua titik");
+    const [px, py] = ttk[ttk.length - 2], [x, y] = ttk[ttk.length - 1];
+    s += kepalaPanah(x, y, x - px, y - py, o);
+  }
+  return s;
 }
 
 function bulat(n){
   return Math.round(Number(n) * 10) / 10;
 }
-
-/* Hujung panah dikongsi semua rajah. Ia mewarisi warna garis melalui
-   context-stroke supaya panah merah kekal merah. */
-const TAKRIF =
-  '<defs><marker id="panah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" ' +
-  'markerHeight="6" orient="auto-start-reverse">' +
-  '<path d="M0 0 L10 5 L0 10 z" fill="context-stroke"></path></marker></defs>';
 
 /* Bungkus isi SVG menjadi <figure> yang sudah bergaya dalam index.html. */
 function figura(o){
@@ -127,12 +150,12 @@ function figura(o){
   if(!o.kapsyen) throw new Error("rajah perlu kapsyen");
   const svg =
     `<svg viewBox="0 0 ${o.lebar} ${o.tinggi}" role="img" aria-label="${esc(o.alt)}">` +
-    TAKRIF + o.isi + "</svg>";
+    o.isi + "</svg>";
   return `<figure class="figure">${svg}<figcaption>${esc(o.kapsyen)}</figcaption></figure>`;
 }
 
 module.exports = {
   WARNA, FON, FON_MIN,
-  esc, warna, teks, garis, kotak, bulatan, laluan, bulat,
+  esc, warna, teks, garis, kotak, bulatan, laluan, kepalaPanah, bulat,
   lebarTeks, figura,
 };

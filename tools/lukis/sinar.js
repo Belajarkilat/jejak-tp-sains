@@ -72,8 +72,10 @@ function pembiasan(spec){
   /* Medium kedua dilorek supaya sempadan jelas. */
   isi += A.kotak(12, py, LEBAR - 24, 92, { isi: "kertas2", garis: "garis", bulat: 4 });
   isi += A.garis(12, py, LEBAR - 12, py, { warna: "tinta2", tebal: 2 });
-  isi += A.garis(px, py - L - 14, px, py + L + 6, { warna: "tinta3", tebal: 1.2, putus: "5 4" });
-  isi += A.teks(px + 5, py - L - 18, "Normal", { saiz: SAIZ, warna: "tinta3" });
+  /* Garis normal bermula di bawah label, bukan di atasnya: pada y = 8 baseline
+     teks, bahagian atas huruf "N" keluar daripada viewBox dan terpotong. */
+  isi += A.garis(px, py - L - 2, px, py + L + 6, { warna: "tinta3", tebal: 1.2, putus: "5 4" });
+  isi += A.teks(px + 5, py - L - 6, "Normal", { saiz: SAIZ, warna: "tinta3" });
 
   isi += A.garis(mulaTuju[0], mulaTuju[1], px, py, { warna: "merah", tebal: 2, panah: true });
   isi += A.garis(px, py, hujungBias[0], hujungBias[1], { warna: "ungu", tebal: 2, panah: true });

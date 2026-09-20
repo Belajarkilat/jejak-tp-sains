@@ -16,6 +16,85 @@ const SPI = [
 
 /* ---------- lampiran ---------- */
 
+const R_EKSO = {
+  "jenis": "graf",
+  "titik": true,
+  "petunjuk": true,
+  "grid": 4,
+  "yMin": 25,
+  "yMaks": 45,
+  "x": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "siri": [
+    {
+      "label": "Suhu campuran (°C)",
+      "warna": "merah",
+      "y": [
+        28,
+        34,
+        39,
+        41,
+        41,
+        41
+      ]
+    }
+  ],
+  "xLabel": "Masa (minit)",
+  "kapsyen": "Rajah 1 · Suhu campuran diukur semasa satu tindak balas berlaku.",
+  "alt": "Graf garis: suhu campuran naik dari 28 darjah Celsius kepada 41 darjah Celsius dalam tiga minit pertama, kemudian mendatar"
+};
+
+const R_SEIMBANG = {
+  "jenis": "graf",
+  "titik": true,
+  "grid": 4,
+  "yMin": 20,
+  "yMaks": 80,
+  "x": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "siri": [
+    {
+      "label": "Air panas",
+      "warna": "merah",
+      "y": [
+        80,
+        62,
+        50,
+        43,
+        38,
+        36
+      ]
+    },
+    {
+      "label": "Air sejuk",
+      "warna": "ungu",
+      "y": [
+        28,
+        30,
+        32,
+        34,
+        35,
+        36
+      ]
+    }
+  ],
+  "xLabel": "Masa (minit)",
+  "kapsyen": "Rajah 1 · Suhu dua bekas air yang bersentuhan diukur setiap dua minit.",
+  "alt": "Graf dua garis: suhu air panas menurun dari 80 darjah Celsius manakala suhu air sejuk menaik dari 28 darjah Celsius sehingga kedua-duanya bertemu pada 36 darjah Celsius"
+};
+
 const T_SUHU =
 '<div class="scrollx"><table class="datatable"><thead><tr><th>Eksperimen</th><th>Bahan yang dicampurkan</th>'+
 '<th class="n">Suhu awal (&deg;C)</th><th class="n">Suhu akhir (&deg;C)</th></tr></thead><tbody>'+
@@ -49,13 +128,13 @@ const T_PRODUK =
 
 const ARAS = [
 
-{n:1, tempat:"Termometer", sk:"5.1 Tindak balas endotermik dan eksotermik",
+{n:1, tempat:"Termometer", sk:"5.1 Tindak balas endotermik dan eksotermik", lampiran:"grafekso",
  kadNama:"Api Unggun", kadEm:"\u{1F525}", kadFakta:"Pembakaran kayu ialah tindak balas eksotermik. Haba yang dibebaskan memanaskan kayu seterusnya supaya api terus menyala.",
  bosKadNama:"Fotosintesis", bosKadEm:"\u{1F33F}", bosKadFakta:"Fotosintesis ialah tindak balas endotermik yang menyerap tenaga cahaya untuk menghasilkan glukosa.",
  soalan:[
  {j:"pilih",t:"Tindak balas eksotermik ialah tindak balas yang:",p:["Membebaskan haba ke persekitaran","Menyerap haba dari persekitaran","Tidak melibatkan sebarang haba","Hanya berlaku pada suhu yang tinggi"],b:0,u:"Ekso bermaksud keluar. Haba keluar ke persekitaran."},
  {j:"pilih",t:"Tindak balas endotermik ialah tindak balas yang:",p:["Menyerap haba dari persekitaran","Membebaskan haba ke persekitaran","Menghasilkan nyalaan api yang terang","Hanya berlaku di dalam badan hidupan"],b:0,u:"Endo bermaksud ke dalam. Haba diserap masuk daripada persekitaran."},
- {j:"pilih",t:"Apakah yang berlaku kepada bacaan termometer semasa tindak balas eksotermik?",p:["Bacaan meningkat","Bacaan menurun","Bacaan tidak berubah","Bacaan naik kemudian menjadi sifar"],b:0,u:"Haba yang dibebaskan menaikkan suhu campuran."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, apakah yang berlaku kepada bacaan termometer semasa tindak balas eksotermik?",p:["Bacaan meningkat","Bacaan menurun","Bacaan tidak berubah","Bacaan naik kemudian menjadi sifar"],b:0,u:"Haba yang dibebaskan menaikkan suhu campuran."},
  {j:"pilih",t:"Contoh tindak balas eksotermik ialah:",p:["Pembakaran kertas","Fotosintesis","Membuat kek","Penguraian batu kapur"],b:0,u:"Pembakaran membebaskan haba dan cahaya."},
  {j:"pilih",t:"Contoh tindak balas endotermik ialah:",p:["Fotosintesis","Respirasi","Letupan bom","Pembakaran kayu"],b:0,u:"Fotosintesis menyerap tenaga cahaya matahari."},
  {j:"banyak",t:"Pilih SEMUA tindak balas eksotermik.",p:["Respirasi sel","Letupan bunga api","Pembakaran petrol dalam enjin","Fotosintesis dalam daun","Penguraian terma kalsium karbonat"],b:[0,1,2],u:"Fotosintesis dan penguraian terma perlu menyerap tenaga untuk berlaku."},
@@ -63,12 +142,12 @@ const ARAS = [
  {j:"pilih",t:"Keseimbangan terma tercapai apabila:",p:["Dua objek yang bersentuhan mencapai suhu yang sama","Objek panas terus menjadi lebih panas","Haba terus mengalir dari objek sejuk ke objek panas","Kedua-dua objek kehilangan semua haba"],b:0,u:"Pada keseimbangan terma, tiada lagi pengaliran haba bersih antara kedua-dua objek."}],
  bos:{j:"pilih",t:"Seorang murid memegang bikar semasa tindak balas berlaku dan mendapati bikar itu menjadi sejuk. Tindak balas itu ialah:",p:["Endotermik, kerana haba diserap daripada tangannya","Eksotermik, kerana haba dibebaskan ke tangannya","Endotermik, kerana haba dibebaskan ke tangannya","Eksotermik, kerana haba diserap daripada tangannya"],b:0,u:"Rasa sejuk bermakna haba sedang mengalir keluar dari tangan ke dalam bikar."}},
 
-{n:2, tempat:"Keseimbangan Terma", sk:"5.1 Menghubungkait haba dengan jenis tindak balas",
+{n:2, tempat:"Keseimbangan Terma", sk:"5.1 Menghubungkait haba dengan jenis tindak balas", lampiran:"grafseimbang",
  kadNama:"Keseimbangan Terma", kadEm:"\u{2696}", kadFakta:"Haba sentiasa mengalir dari objek panas ke objek sejuk sehingga suhu kedua-duanya sama.",
  bosKadNama:"Kapur Tohor", bosKadEm:"\u{1F9F1}", bosKadFakta:"Kapur tohor (kalsium oksida) menjadi sangat panas apabila terkena air, jadi ia mesti disimpan di tempat kering.",
  soalan:[
  {j:"pilih",t:"Mengapakah bacaan termometer naik semasa tindak balas eksotermik?",p:["Haba yang dibebaskan diserap oleh larutan dan termometer","Termometer menghasilkan haba apabila menyentuh bahan kimia","Bahan tindak balas menyerap haba daripada termometer","Merkuri dalam termometer bertindak balas dengan larutan"],b:0,u:"Termometer menunjukkan suhu larutan yang menerima haba."},
- {j:"pilih",t:"Mengapakah tangan terasa sejuk apabila memegang bekas berisi tindak balas endotermik?",p:["Haba mengalir dari tangan ke bekas yang lebih sejuk","Tenaga sejuk mengalir keluar dari bekas ke dalam tangan","Tangan membebaskan air yang menyejat dengan cepat","Bekas itu menghasilkan ais yang sangat halus"],b:0,u:"Sejuk bukan sesuatu yang mengalir. Yang mengalir ialah haba, dan ia keluar dari tangan."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, mengapakah tangan terasa sejuk apabila memegang bekas berisi tindak balas endotermik?",p:["Haba mengalir dari tangan ke bekas yang lebih sejuk","Tenaga sejuk mengalir keluar dari bekas ke dalam tangan","Tangan membebaskan air yang menyejat dengan cepat","Bekas itu menghasilkan ais yang sangat halus"],b:0,u:"Sejuk bukan sesuatu yang mengalir. Yang mengalir ialah haba, dan ia keluar dari tangan."},
  {j:"pilih",t:"Respirasi sel ialah tindak balas eksotermik. Apakah buktinya dalam kehidupan harian?",p:["Badan menjadi panas semasa bersenam","Badan menjadi sejuk semasa tidur","Kulit menjadi kering pada waktu panas","Nafas menjadi berwap pada waktu pagi"],b:0,u:"Semasa bersenam kadar respirasi meningkat, jadi lebih banyak haba dibebaskan."},
  {j:"pilih",t:"Apakah persamaan antara tindak balas eksotermik dan endotermik?",p:["Kedua-duanya melibatkan perubahan haba","Kedua-duanya meningkatkan suhu persekitaran","Kedua-duanya menurunkan suhu persekitaran","Kedua-duanya tidak melibatkan tenaga"],b:0,u:"Perbezaannya hanyalah arah pengaliran haba."},
  {j:"pilih",t:"Semasa kek dibakar di dalam ketuhar, adunan menyerap haba dan bertukar menjadi kek. Mengapakah proses ini endotermik?",p:["Adunan perlu terus menyerap haba untuk berubah","Kek membebaskan haba ke dalam ketuhar semasa dimasak","Ketuhar menjadi lebih panas selepas kek siap dibakar","Adunan kek mengandungi gula yang membebaskan haba"],b:0,u:"Jika ketuhar dimatikan, perubahan itu berhenti kerana tiada lagi haba diserap."},
@@ -152,6 +231,6 @@ module.exports = {
    6:"{n} berjaya mereka bentuk produk berasaskan tindak balas eksotermik dan endotermik yang selamat dan praktikal, dengan mengambil kira kos dan pengguna. Pencapaian cemerlang bagi bab ini.",
    tiada:"{n} belum menunjukkan bukti penguasaan yang mencukupi bagi bab Termokimia. Cadangan: ulang aktiviti hentian pertama dengan bimbingan rakan sebaya."
   },
-  lampiran:{ suhu:T_SUHU, pek:T_PEK, produk:T_PRODUK },
+  lampiran:{ grafekso:R_EKSO, grafseimbang:R_SEIMBANG, suhu:T_SUHU, pek:T_PEK, produk:T_PRODUK },
   aras:ARAS
 };
