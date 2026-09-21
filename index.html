@@ -4097,7 +4097,7 @@ function butiranMurid(kelas,no,auto,lapor){
         '<td class="n">'+tarikhPendek(c.pertama.masa)+'</td></tr>';
   }
   th+='</tbody>';
-  if(ada){ tb.innerHTML=th; w.appendChild(tb); }
+  if(ada){ tb.innerHTML=th; var sx=el("div","scrollx"); sx.style.marginTop="0"; sx.style.border="0"; sx.style.borderRadius="0"; sx.appendChild(tb); w.appendChild(sx); }
   else { var kos=el("div"); kos.style.padding="12px 14px"; kos.className="note"; kos.textContent="Belum ada percubaan direkod."; w.appendChild(kos); }
 
   var kar=adaKarangan(kelas,no);
@@ -4160,6 +4160,7 @@ function butiranMurid(kelas,no,auto,lapor){
   var ta=el("textarea"); ta.id=idUl; ta.value=ulasanUntuk(namaMurid(kelas,no),lapor);
   ta.onclick=function(ev){ev.stopPropagation();};
   w.appendChild(ta);
+  tandaLeret(w);
   return w;
 }
 
@@ -4705,6 +4706,7 @@ function paneSenarai(){
       tb.appendChild(tr);
     });
     t.appendChild(tb); sx.appendChild(t); p.appendChild(sx);
+    tandaLeret(p);
     p.appendChild(el("p","note","Ketik nama untuk membetulkan ejaan. Setiap murid perlu PIN sendiri untuk masuk; cetak slip PIN dan beri kepada murid."));
   }
 
