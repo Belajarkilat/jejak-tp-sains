@@ -30,6 +30,8 @@ const WARNA = {
   hijauLembut: "var(--teal-soft)",
   kuning: "var(--amber)",
   kuningLembut: "var(--amber-soft)",
+  lembayung: "var(--gen)",
+  lembayungLembut: "var(--gen-soft)",
 };
 
 const FON = "DM Mono,monospace";

@@ -159,7 +159,8 @@ function kitar(spec){
   }
   nod.forEach((n, i) => {
     const label = typeof n === "string" ? n : n.label;
-    isi += kotakBerlabel(pos[i].x, pos[i].y, lk, tk, label, { isi: "kertas" });
+    const warnaIsi = typeof n === "string" ? "kertas" : (n.isi || "kertas");
+    isi += kotakBerlabel(pos[i].x, pos[i].y, lk, tk, label, { isi: warnaIsi });
   });
   return { isi, lebar: LEBAR, tinggi };
 }

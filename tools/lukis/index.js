@@ -20,6 +20,7 @@ const penjana = {
   struktur: require("./struktur"),
   sinar: require("./sinar"),
   daya: require("./daya"),
+  kanta: require("./kanta"),
 };
 
 function lukisLampiran(spec){
