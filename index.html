@@ -38,6 +38,8 @@
   --teal-soft:#DFF2EF;
   --amber:#B07208;
   --amber-soft:#FBF0DB;
+  --gen:#5B3DE0;
+  --gen-soft:#EEE9FB;
   --shadow:0 1px 2px rgba(13,27,46,.06),0 8px 24px -14px rgba(13,27,46,.22);
   --shadow-lift:0 2px 6px rgba(13,27,46,.10),0 20px 44px -20px rgba(13,27,46,.34);
   --r:15px;
@@ -48,6 +50,7 @@
     --ground:#070D18;--surface:#0F1A2B;--surface2:#16243A;--ink:#E8EEF8;--ink2:#AABCD3;
     --ink3:#7B8EA8;--line:#1E2D45;--line2:#2B3E5B;--arteri:#FF6068;--arteri-soft:#2B1620;
     --vena:#8AA3CC;--teal:#2FC2AE;--teal-soft:#0C2B29;--amber:#F0B255;--amber-soft:#2A2013;
+    --gen:#B29DFF;--gen-soft:#241D3D;
     --shadow:0 1px 2px rgba(0,0,0,.45),0 8px 24px -14px rgba(0,0,0,.8);
     --shadow-lift:0 2px 6px rgba(0,0,0,.55),0 20px 44px -20px rgba(0,0,0,.9);
     color-scheme:dark;
@@ -57,6 +60,7 @@
   --ground:#070D18;--surface:#0F1A2B;--surface2:#16243A;--ink:#E8EEF8;--ink2:#AABCD3;
   --ink3:#7B8EA8;--line:#1E2D45;--line2:#2B3E5B;--arteri:#FF6068;--arteri-soft:#2B1620;
   --vena:#8AA3CC;--teal:#2FC2AE;--teal-soft:#0C2B29;--amber:#F0B255;--amber-soft:#2A2013;
+  --gen:#B29DFF;--gen-soft:#241D3D;
   --shadow:0 1px 2px rgba(0,0,0,.45),0 8px 24px -14px rgba(0,0,0,.8);
   --shadow-lift:0 2px 6px rgba(0,0,0,.55),0 20px 44px -20px rgba(0,0,0,.9);
   color-scheme:dark;
@@ -856,8 +860,12 @@ body.zon-murid{color:var(--tinta)}
 /* 44px: chip tingkatan ialah navigasi utama peta, bukan hiasan. */
 .tingpilih button{font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;border:2px solid var(--garis,var(--line2));background:transparent;color:inherit;cursor:pointer;min-height:44px}
 .tingpilih button[aria-pressed="true"]{background:var(--dunia,var(--vena));border-color:var(--dunia,var(--vena));color:#fff}
-.babpilih button.akan-datang{opacity:.55;cursor:default;border-style:dashed}
+.babpilih button.akan-datang,.babpilih button.terkunci,.kbtn.terkunci{opacity:.55;cursor:default;border-style:dashed}
 .akan-datang-guru{align-self:center;margin:0}
+.kadpremium{border:2px solid var(--gen);background:var(--gen-soft)}
+.kadpremium h3{margin:0 0 4px}
+.kadpremium .status{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13px;margin-bottom:6px}
+.kadpremium .status.aktif{color:var(--teal)}
 .mb-skor{display:flex;gap:8px;margin-top:8px}
 .mb-skor .kbtn{min-width:48px;min-height:48px;justify-content:center;font-weight:700}
 .mb-skor .kbtn[aria-pressed="true"]{background:var(--vena);color:#fff;border-color:var(--vena)}
@@ -1001,15 +1009,57 @@ body.zon-murid{color:var(--tinta)}
 
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
 <script src="konfig.js?v=20260914"></script>
-<script src="bank-t1b1.js?v=2026092001"></script>
-<script src="bank-t1b2.js?v=2026092001"></script>
-<script src="bank-t1b3.js?v=2026092001"></script>
-<script src="bank-t2b1.js?v=2026092001"></script>
-<script src="bank-t2b2.js?v=2026092001"></script>
-<script src="bank-t2b3.js?v=2026092001"></script>
-<script src="bank-t3b1.js?v=2026092001"></script>
-<script src="bank-t3b2.js?v=2026092001"></script>
-<script src="bank-t3b3.js?v=2026092001"></script>
+<script src="bank-t1b1.js?v=2026092301"></script>
+<script src="bank-t1b2.js?v=2026092301"></script>
+<script src="bank-t1b3.js?v=2026092301"></script>
+<script src="bank-t1b4.js?v=2026092301"></script>
+<script src="bank-t1b5.js?v=2026092301"></script>
+<script src="bank-t1b6.js?v=2026092301"></script>
+<script src="bank-t1b7.js?v=2026092301"></script>
+<script src="bank-t1b8.js?v=2026092301"></script>
+<script src="bank-t1b9.js?v=2026092301"></script>
+<script src="bank-t2b1.js?v=2026092301"></script>
+<script src="bank-t2b2.js?v=2026092301"></script>
+<script src="bank-t2b3.js?v=2026092301"></script>
+<script src="bank-t2b4.js?v=2026092301"></script>
+<script src="bank-t2b5.js?v=2026092301"></script>
+<script src="bank-t2b6.js?v=2026092301"></script>
+<script src="bank-t2b7.js?v=2026092301"></script>
+<script src="bank-t2b8.js?v=2026092301"></script>
+<script src="bank-t2b9.js?v=2026092301"></script>
+<script src="bank-t2b10.js?v=2026092301"></script>
+<script src="bank-t2b11.js?v=2026092301"></script>
+<script src="bank-t2b12.js?v=2026092301"></script>
+<script src="bank-t2b13.js?v=2026092301"></script>
+<script src="bank-t3b1.js?v=2026092301"></script>
+<script src="bank-t3b2.js?v=2026092301"></script>
+<script src="bank-t3b3.js?v=2026092301"></script>
+<script src="bank-t3b4.js?v=2026092301"></script>
+<script src="bank-t3b5.js?v=2026092301"></script>
+<script src="bank-t3b6.js?v=2026092301"></script>
+<script src="bank-t3b7.js?v=2026092301"></script>
+<script src="bank-t3b8.js?v=2026092301"></script>
+<script src="bank-t3b9.js?v=2026092301"></script>
+<script src="bank-t3b10.js?v=2026092301"></script>
+<script src="bank-t4b1.js?v=2026092301"></script>
+<script src="bank-t4b2.js?v=2026092301"></script>
+<script src="bank-t4b3.js?v=2026092301"></script>
+<script src="bank-t4b4.js?v=2026092301"></script>
+<script src="bank-t4b5.js?v=2026092301"></script>
+<script src="bank-t4b6.js?v=2026092301"></script>
+<script src="bank-t4b7.js?v=2026092301"></script>
+<script src="bank-t4b8.js?v=2026092301"></script>
+<script src="bank-t4b9.js?v=2026092301"></script>
+<script src="bank-t4b10.js?v=2026092301"></script>
+<script src="bank-t5b1.js?v=2026092301"></script>
+<script src="bank-t5b2.js?v=2026092301"></script>
+<script src="bank-t5b3.js?v=2026092301"></script>
+<script src="bank-t5b4.js?v=2026092301"></script>
+<script src="bank-t5b5.js?v=2026092301"></script>
+<script src="bank-t5b6.js?v=2026092301"></script>
+<script src="bank-t5b7.js?v=2026092301"></script>
+<script src="bank-t5b8.js?v=2026092301"></script>
+<script src="bank-t5b9.js?v=2026092301"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -1096,18 +1146,20 @@ body.zon-murid{color:var(--tinta)}
 (function(){
 "use strict";
 
-/* Bab yang dibuka, mengikut urutan paparan. Membuka bab bermakna
-   menambah skrip bank dan id di sini. Bab 4-10 siap tetapi ditutup
-   sehingga Bab 1-3 mendapat maklum balas cikgu. */
-var BAB_TERSEDIA=["t1b1","t1b2","t1b3","t2b1","t2b2","t2b3","t3b1","t3b2","t3b3"];
-/* Bilangan bab setiap tingkatan dalam DSKP. Bab selepas yang dibuka
-   dipaparkan sebagai "akan datang". */
-var JUMLAH_BAB={1:9,2:13,3:10};
-function babAkanDatang(t){
-  var buka=BAB_TERSEDIA.filter(function(x){ return x.indexOf("t"+t+"b")===0; }).length;
-  var n=JUMLAH_BAB[t]||0;
-  if(buka>=n) return "";
-  return buka+1===n ? ("Bab "+n+".0") : ("Bab "+(buka+1)+".0 hingga "+n+".0");
+/* Semua 51 bab (Tingkatan 1-5) sedia dimainkan. Bab 1-3 setiap tingkatan
+   percuma; Bab 4 ke atas memerlukan kelas milik guru Premium (RM23/tahun).
+   Lihat bebasBab() dan premiumAktif(). */
+var JUMLAH_BAB={1:9,2:13,3:10,4:10,5:9};
+var BAB_TERSEDIA=[];
+Object.keys(JUMLAH_BAB).forEach(function(t){
+  for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("t"+t+"b"+i);
+});
+function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=3; }
+/* Murid: premium ikut kelas (KM.premium, daripada lo_kelas_buka).
+   Guru: premium ikut akaun sendiri (PROFIL.premium). Mod latihan/main
+   bebas tiada kelas sebenar, jadi sentiasa percuma sahaja. */
+function premiumAktif(){
+  return !!(PROFIL&&PROFIL.premium) || !!(KM&&KM.premium);
 }
 function tingkatanBab(id){ var m=/^t(\d)b/.exec(id||""); return m?+m[1]:3; }
 var BAB_ID=null;
@@ -1275,6 +1327,7 @@ function senaraiBab(){
    dikosongkan dan rekod bab baharu dikira semula. */
 function tukarBab(id){
   if(id===BAB_ID) return;
+  if(!bebasBab(id)&&!premiumAktif()) return;
   if(!pasangBab(id)) return;
   S.aras=1; S.salah=[]; S.kad={}; S.lulus={}; S.skrin="peta";
   CUBAAN={}; GURU={};
@@ -2157,12 +2210,14 @@ function bukaKelas(kod){
 }
 function pasangKM(d){
   if(KM&&KM.id!==d.id){ S.no=null; S.kod=""; S.lulus={}; S.kad={}; }
-  KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||""};
+  KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||"",premium:!!d.premium};
   S.kelasId=d.id;
   NOMBOR[d.id]=(d.murid||[]).map(function(m){ return {no:m.no}; });
   NAMA[d.id]={};
   (d.murid||[]).forEach(function(m){ NAMA[d.id][m.no]=m.nama; });
   try{ localStorage.setItem("cn-km",JSON.stringify({v:SKEMA,km:KM,murid:d.murid||[]})); }catch(e){}
+  /* Langganan mungkin dah luput sejak kali terakhir bab ini dibuka. */
+  if(!bebasBab(BAB_ID)&&!premiumAktif()) pasangBab("t"+tingkatanBab(BAB_ID)+"b1");
   simpanDiri();
 }
 function lupaKM(){
@@ -2360,8 +2415,8 @@ function renderPeta(){
   st.appendChild(w);
 
   /* pilih bab: kemajuan setiap bab dikira berasingan */
-  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID);
-  var tingAda=[1,2,3].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
+  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif();
+  var tingAda=[1,2,3,4,5].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
   if(tingAda.length>1){
     var tp=el("div","tingpilih"); tp.setAttribute("role","group"); tp.setAttribute("aria-label","Pilih tingkatan");
     tingAda.forEach(function(t){
@@ -2380,19 +2435,13 @@ function renderPeta(){
   if(babs.length>1){
     var bp=el("div","babpilih"); bp.setAttribute("role","group"); bp.setAttribute("aria-label","Pilih bab");
     babs.forEach(function(b){
-      var dd=duniaBab(b.id);
-      var t=el("button"); t.type="button"; t.title=b.kod;
+      var dd=duniaBab(b.id), kunci=!bebasBab(b.id)&&!premium;
+      var t=el("button",kunci?"terkunci":null); t.type="button"; t.title=kunci?"Bab premium — naik taraf untuk buka":b.kod;
       t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
-      t.innerHTML='<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>'+esc(b.tajuk);
-      t.onclick=function(){ tukarBab(b.id); };
+      t.innerHTML=(kunci?'<span class="ik" aria-hidden="true">\u{1F512}</span>':'<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>')+esc(b.tajuk);
+      if(kunci) t.disabled=true; else t.onclick=function(){ tukarBab(b.id); };
       bp.appendChild(t);
     });
-    var ad=babAkanDatang(tingKini);
-    if(ad){
-      var kd=el("button","akan-datang"); kd.type="button"; kd.disabled=true;
-      kd.innerHTML='<span class="ik" aria-hidden="true">\u{1F512}</span>'+esc(ad)+' akan datang';
-      bp.appendChild(kd);
-    }
     st.appendChild(bungkusJalur(bp,'button[aria-pressed="true"]'));
   }
 
@@ -3402,7 +3451,7 @@ function normTelefon(v){
    pangkalan data tetapi belum diminta daripada guru buat masa ini. */
 function muatProfil(){
   var uid=SESI.user.id;
-  return SB.from("lo_guru").select("nama,sekolah,telefon,setuju_pemasaran").eq("id",uid).maybeSingle().then(function(r){
+  return SB.from("lo_guru").select("nama,sekolah,telefon,setuju_pemasaran,premium_tamat").eq("id",uid).maybeSingle().then(function(r){
     if(r.error) throw r.error;
     if(!SESI||SESI.user.id!==uid) return;
     var md=SESI.user.user_metadata||{}, d=r.data||{};
@@ -3410,7 +3459,9 @@ function muatProfil(){
             sekolah:d.sekolah||md.sekolah||"",
             telefon:d.telefon||normTelefon(md.telefon),
             setuju:r.data?!!d.setuju_pemasaran:!!md.setuju_pemasaran,
-            simpanan:r.data?!!d.setuju_pemasaran:null};
+            simpanan:r.data?!!d.setuju_pemasaran:null,
+            premium_tamat:d.premium_tamat||null,
+            premium:!!(d.premium_tamat&&new Date(d.premium_tamat)>new Date())};
     PROFIL.ada=!!d.nama;
     if(!PROFIL.ada&&md.nama&&md.sekolah)
       return simpanProfil(PROFIL.nama,PROFIL.sekolah,PROFIL.telefon,PROFIL.setuju);
@@ -3422,7 +3473,8 @@ function simpanProfil(nama,sekolah,telefon,setuju){
   if(!PROFIL||PROFIL.simpanan!==!!setuju) baris.setuju_masa=new Date().toISOString();
   return SB.from("lo_guru").upsert(baris).then(function(r){
     if(r.error) throw r.error;
-    PROFIL={nama:nama,sekolah:sekolah,telefon:telefon,setuju:!!setuju,simpanan:!!setuju,ada:true};
+    PROFIL={nama:nama,sekolah:sekolah,telefon:telefon,setuju:!!setuju,simpanan:!!setuju,ada:true,
+            premium_tamat:PROFIL?PROFIL.premium_tamat:null,premium:PROFIL?PROFIL.premium:false};
   });
 }
 var NOTIS_PRIVASI="E-mel cikgu digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Sains. "+
@@ -3574,7 +3626,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan mana satu kelas gagal",
    "Ulasan PBD sedia salin ke SPPB",
-   "32 bab Sains Tingkatan 1, 2 dan 3",
+   "51 bab Sains Tingkatan 1 hingga 5 (Bab 1-3 percuma, selebihnya Premium RM23/tahun)",
    "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);
@@ -3770,6 +3822,31 @@ function mainMingguIni(kelas,no){
   return false;
 }
 
+/* Kad status Premium. Bayaran ditampung secara manual (DuitNow/WhatsApp)
+   buat masa ini — cikgu hubungi terus, Umar tandakan premium_tamat dalam
+   lo_guru selepas resit disemak. Lihat jejak-tp-admin/premium.js. */
+function kadPremium(){
+  var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
+  if(PROFIL.premium){
+    var t=new Date(PROFIL.premium_tamat).toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"});
+    bd.appendChild(el("span","status aktif","✅ Premium aktif sehingga "+t));
+    bd.appendChild(el("p","note","Semua 51 bab, Tingkatan 1 hingga 5, terbuka untuk kelas cikgu."));
+    return p;
+  }
+  bd.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 hingga 3 setiap tingkatan"));
+  bd.appendChild(el("h3",null,"Naik taraf Premium — RM23/tahun"));
+  bd.appendChild(el("p","note","Buka semua 51 bab (Tingkatan 1-5) untuk semua kelas cikgu. Bayaran secara DuitNow/pindahan, aktif dalam masa 1 hari bekerja selepas resit disemak."));
+  var a=el("div","actions");
+  var bw=el("button","btn teal"); bw.type="button"; bw.textContent="Naik taraf melalui WhatsApp";
+  bw.onclick=function(){
+    var mesej="Salam, saya "+(PROFIL.nama||"cikgu")+(PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
+      ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium (RM23/tahun).";
+    window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
+  };
+  a.appendChild(bw); bd.appendChild(a);
+  return p;
+}
+
 function paneRumah(ak){
   var hd=el("div","guruhd");
   hd.appendChild(el("div","grow",'<p class="eyebrow">'+esc(PROFIL.sekolah)+'</p><h2>Selamat datang, '+esc(sapaan(PROFIL.nama))+'</h2><p>Pilih kelas untuk melihat keputusan murid.</p>'));
@@ -3783,6 +3860,7 @@ function paneRumah(ak){
   hd.appendChild(bb);
   ak.appendChild(hd);
 
+  ak.appendChild(kadPremium());
   var pb=el("div"); pilihBabGuru(pb); ak.appendChild(pb);
   if(RALAT_GURU){
     ak.appendChild(el("p","ralat",esc(RALAT_GURU)));
@@ -3948,6 +4026,7 @@ function kadTambah(){
 
 function tukarBabGuru(id){
   if(id===BAB_ID) return;
+  if(!bebasBab(id)&&!premiumAktif()) return;
   pasangBab(id);
   CUBAAN={}; GURU={};
   benihContohBab();
@@ -3959,9 +4038,9 @@ function tukarBabGuru(id){
   muatBabJauh();
 }
 function pilihBabGuru(p){
-  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID);
+  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif();
   if(semuaBab.length<2) return;
-  var tingAda=[1,2,3].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
+  var tingAda=[1,2,3,4,5].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
   if(tingAda.length>1){
     var tr=el("div","actions tingguru");
     tingAda.forEach(function(t){
@@ -3977,18 +4056,23 @@ function pilihBabGuru(p){
     p.appendChild(tr);
   }
   var babs=semuaBab.filter(function(b){ return tingkatanBab(b.id)===tingKini; });
+  var ada_terkunci=false;
   var row=el("div","actions");
   babs.forEach(function(b){
-    var t=el("button","kbtn"); t.type="button";
-    t.innerHTML="\u{1F4D8} "+esc(b.kod);
+    var kunci=!bebasBab(b.id)&&!premium;
+    if(kunci) ada_terkunci=true;
+    var t=el("button","kbtn"+(kunci?" terkunci":"")); t.type="button";
+    t.innerHTML=(kunci?"\u{1F512} ":"\u{1F4D8} ")+esc(b.kod);
     t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
-    if(b.id===BAB_ID){ t.style.borderColor="var(--vena)"; t.style.background="var(--surface)"; t.style.fontWeight="700"; }
-    t.onclick=function(){ tukarBabGuru(b.id); };
+    if(kunci){ t.disabled=true; t.title="Bab premium — naik taraf untuk buka"; }
+    else{
+      if(b.id===BAB_ID){ t.style.borderColor="var(--vena)"; t.style.background="var(--surface)"; t.style.fontWeight="700"; }
+      t.onclick=function(){ tukarBabGuru(b.id); };
+    }
     row.appendChild(t);
   });
-  var adg=babAkanDatang(tingKini);
-  if(adg) row.appendChild(el("span","note akan-datang-guru","\u{1F512} "+esc(adg)+" akan dibuka tidak lama lagi."));
   p.appendChild(row);
+  if(ada_terkunci&&!premium) row.parentNode.appendChild(el("span","note akan-datang-guru","\u{1F512} Bab premium dikunci. Naik taraf RM23/tahun untuk buka semua 51 bab, Tingkatan 1-5."));
 }
 
 /* ---------------- Satu kelas ---------------- */

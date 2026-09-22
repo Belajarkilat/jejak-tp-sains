@@ -367,6 +367,37 @@ revoke all on lo_maklum_balas from anon;
 -- alter table lo_semakan drop constraint lo_semakan_item_check;
 -- alter table lo_semakan add constraint lo_semakan_item_check check (item ~ '^t[1-3]b[0-9]{1,2}:[1-6]:([0-9]{1,2}|bos|kad|boskad)$');
 
+-- ---------- premium (23 Sep 2026) ----------
+-- Bab 1-3 setiap tingkatan kekal percuma; Bab 4 ke atas memerlukan guru
+-- Premium (RM23/tahun). Bayaran ditampung secara manual buat masa ini
+-- (DuitNow/WhatsApp) — tiada gateway automatik. Selepas resit disemak,
+-- jejak-tp-admin/premium.js menandakan premium_tamat pada baris guru.
+-- null = tiada langganan aktif.
+alter table lo_guru add column if not exists premium_tamat timestamptz;
+
+-- lo_kelas_buka kini turut memulangkan status premium guru pemilik kelas,
+-- supaya murid (yang tiada sesi log masuk) tahu sama ada bab berkunci
+-- patut dibuka, tanpa mendedahkan apa-apa lagi daripada lo_guru.
+create or replace function lo_kelas_buka(p_kod text)
+returns jsonb language plpgsql security definer set search_path = public as $$
+declare k lo_kelas%rowtype; bersih text;
+begin
+  bersih := upper(regexp_replace(coalesce(p_kod, ''), '[^A-Za-z0-9]', '', 'g'));
+  select * into k from lo_kelas where kod = bersih;
+  if k.id is null then
+    perform pg_sleep(0.5);
+    return null;
+  end if;
+  return jsonb_build_object(
+    'id', k.id, 'nama', k.nama, 'kod', k.kod,
+    'guru', coalesce((select nama from lo_guru where id = k.guru), ''),
+    'sekolah', coalesce((select sekolah from lo_guru where id = k.guru), ''),
+    'premium', coalesce((select premium_tamat > now() from lo_guru where id = k.guru), false),
+    'murid', coalesce((select jsonb_agg(jsonb_build_object('no', no, 'nama', nama)
+                        order by lpad(no, 3, '0')) from lo_murid where kelas = k.id), '[]'::jsonb)
+  );
+end $$;
+
 -- ---------- ping tanpa nama (20 Sep 2026) ----------
 -- Pautan main bebas (?main) tidak menyimpan apa-apa rekod murid, jadi tiada
 -- cara untuk tahu sama ada ia langsung digunakan atau sama ada ada pepijat
