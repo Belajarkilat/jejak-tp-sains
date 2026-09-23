@@ -5022,7 +5022,8 @@ function mula(){
     authUrl=u.searchParams.has("code")||u.searchParams.has("error_description")||/access_token|error_description/.test(u.hash);
     if(qk){ u.searchParams.delete("k"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
   }catch(e){}
-  try{ modLama=(new URL(location.href)).searchParams.has("cikgu")?"cikgu":null; }catch(e){ modLama=null; }
+  var qdaftar=false;
+  try{ var up=new URL(location.href); modLama=(up.searchParams.has("cikgu")||up.searchParams.has("daftar"))?"cikgu":null; qdaftar=up.searchParams.has("daftar"); }catch(e){ modLama=null; }
 
   if(S.no&&KM&&S.kod){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
   else if(S.latihan&&qdemo==="bebas"){ S.skrin="peta"; muatLatihan(); }
@@ -5055,7 +5056,10 @@ function mula(){
   muatJauh();
   if(qdemo==="cikgu"&&!qk&&!authUrl){ DEMO_GURU=true; S.gk="contoh"; S.tabCikgu="kelas"; tukarMod("cikgu"); }
   else if((qdemo==="murid"||qdemo==="bebas")&&!qk&&!authUrl) tukarMod("murid");
-  else if(authUrl||(modLama==="cikgu"&&!qk)) tukarMod("cikgu");
+  else if(authUrl||(modLama==="cikgu"&&!qk)){
+    if(qdaftar&&!SESI) S.authMod="daftar";
+    tukarMod("cikgu");
+  }
 }
 mula();
 
