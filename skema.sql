@@ -439,3 +439,31 @@ begin
 end $$;
 revoke all on function lo_ping(text, text, text, int, text) from public;
 grant execute on function lo_ping(text, text, text, int, text) to anon, authenticated;
+
+-- ---------- premium: dua tingkat berasingan (23 Sep 2026) ----------
+-- Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan, RM23
+-- setiap satu setahun. premium_tamat asal (dibuat lebih awal hari ini)
+-- ditukar nama supaya jelas ia hanya meliputi T1-3.
+alter table lo_guru rename column premium_tamat to premium_rendah_tamat;
+alter table lo_guru add column if not exists premium_atas_tamat timestamptz;
+
+create or replace function lo_kelas_buka(p_kod text)
+returns jsonb language plpgsql security definer set search_path = public as $$
+declare k lo_kelas%rowtype; bersih text;
+begin
+  bersih := upper(regexp_replace(coalesce(p_kod, ''), '[^A-Za-z0-9]', '', 'g'));
+  select * into k from lo_kelas where kod = bersih;
+  if k.id is null then
+    perform pg_sleep(0.5);
+    return null;
+  end if;
+  return jsonb_build_object(
+    'id', k.id, 'nama', k.nama, 'kod', k.kod,
+    'guru', coalesce((select nama from lo_guru where id = k.guru), ''),
+    'sekolah', coalesce((select sekolah from lo_guru where id = k.guru), ''),
+    'premium_rendah', coalesce((select premium_rendah_tamat > now() from lo_guru where id = k.guru), false),
+    'premium_atas', coalesce((select premium_atas_tamat > now() from lo_guru where id = k.guru), false),
+    'murid', coalesce((select jsonb_agg(jsonb_build_object('no', no, 'nama', nama)
+                        order by lpad(no, 3, '0')) from lo_murid where kelas = k.id), '[]'::jsonb)
+  );
+end $$;

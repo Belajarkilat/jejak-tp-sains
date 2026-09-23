@@ -864,8 +864,10 @@ body.zon-murid{color:var(--tinta)}
 .akan-datang-guru{align-self:center;margin:0}
 .kadpremium{border:2px solid var(--gen);background:var(--gen-soft)}
 .kadpremium h3{margin:0 0 4px}
-.kadpremium .status{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13px;margin-bottom:6px}
+.kadpremium .status{display:flex;align-items:center;gap:6px;font-weight:700;font-size:13px;margin-top:2px}
 .kadpremium .status.aktif{color:var(--teal)}
+.baris-premium{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:10px;border-top:1px solid var(--line)}
+.baris-premium:first-of-type{border-top:none}
 .mb-skor{display:flex;gap:8px;margin-top:8px}
 .mb-skor .kbtn{min-width:48px;min-height:48px;justify-content:center;font-weight:700}
 .mb-skor .kbtn[aria-pressed="true"]{background:var(--vena);color:#fff;border-color:var(--vena)}
@@ -1155,11 +1157,14 @@ Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("t"+t+"b"+i);
 });
 function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=3; }
-/* Murid: premium ikut kelas (KM.premium, daripada lo_kelas_buka).
-   Guru: premium ikut akaun sendiri (PROFIL.premium). Mod latihan/main
+/* Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan,
+   RM23/tahun setiap satu. Murid: premium ikut kelas (KM.premiumRendah/
+   KM.premiumAtas, daripada lo_kelas_buka). Guru: premium ikut akaun
+   sendiri (PROFIL.premiumRendah/PROFIL.premiumAtas). Mod latihan/main
    bebas tiada kelas sebenar, jadi sentiasa percuma sahaja. */
-function premiumAktif(){
-  return !!(PROFIL&&PROFIL.premium) || !!(KM&&KM.premium);
+function premiumAktif(t){
+  var k = t<=3 ? "premiumRendah" : "premiumAtas";
+  return !!(PROFIL&&PROFIL[k]) || !!(KM&&KM[k]);
 }
 function tingkatanBab(id){ var m=/^t(\d)b/.exec(id||""); return m?+m[1]:3; }
 var BAB_ID=null;
@@ -1327,7 +1332,7 @@ function senaraiBab(){
    dikosongkan dan rekod bab baharu dikira semula. */
 function tukarBab(id){
   if(id===BAB_ID) return;
-  if(!bebasBab(id)&&!premiumAktif()) return;
+  if(!bebasBab(id)&&!premiumAktif(tingkatanBab(id))) return;
   if(!pasangBab(id)) return;
   S.aras=1; S.salah=[]; S.kad={}; S.lulus={}; S.skrin="peta";
   CUBAAN={}; GURU={};
@@ -2210,14 +2215,15 @@ function bukaKelas(kod){
 }
 function pasangKM(d){
   if(KM&&KM.id!==d.id){ S.no=null; S.kod=""; S.lulus={}; S.kad={}; }
-  KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||"",premium:!!d.premium};
+  KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||"",
+      premiumRendah:!!d.premium_rendah,premiumAtas:!!d.premium_atas};
   S.kelasId=d.id;
   NOMBOR[d.id]=(d.murid||[]).map(function(m){ return {no:m.no}; });
   NAMA[d.id]={};
   (d.murid||[]).forEach(function(m){ NAMA[d.id][m.no]=m.nama; });
   try{ localStorage.setItem("cn-km",JSON.stringify({v:SKEMA,km:KM,murid:d.murid||[]})); }catch(e){}
   /* Langganan mungkin dah luput sejak kali terakhir bab ini dibuka. */
-  if(!bebasBab(BAB_ID)&&!premiumAktif()) pasangBab("t"+tingkatanBab(BAB_ID)+"b1");
+  if(!bebasBab(BAB_ID)&&!premiumAktif(tingkatanBab(BAB_ID))) pasangBab("t"+tingkatanBab(BAB_ID)+"b1");
   simpanDiri();
 }
 function lupaKM(){
@@ -2415,7 +2421,7 @@ function renderPeta(){
   st.appendChild(w);
 
   /* pilih bab: kemajuan setiap bab dikira berasingan */
-  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif();
+  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif(tingKini);
   var tingAda=[1,2,3,4,5].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
   if(tingAda.length>1){
     var tp=el("div","tingpilih"); tp.setAttribute("role","group"); tp.setAttribute("aria-label","Pilih tingkatan");
@@ -3451,17 +3457,19 @@ function normTelefon(v){
    pangkalan data tetapi belum diminta daripada guru buat masa ini. */
 function muatProfil(){
   var uid=SESI.user.id;
-  return SB.from("lo_guru").select("nama,sekolah,telefon,setuju_pemasaran,premium_tamat").eq("id",uid).maybeSingle().then(function(r){
+  return SB.from("lo_guru").select("nama,sekolah,telefon,setuju_pemasaran,premium_rendah_tamat,premium_atas_tamat").eq("id",uid).maybeSingle().then(function(r){
     if(r.error) throw r.error;
     if(!SESI||SESI.user.id!==uid) return;
-    var md=SESI.user.user_metadata||{}, d=r.data||{};
+    var md=SESI.user.user_metadata||{}, d=r.data||{}, kini=new Date();
     PROFIL={nama:d.nama||md.nama||md.full_name||md.name||"",
             sekolah:d.sekolah||md.sekolah||"",
             telefon:d.telefon||normTelefon(md.telefon),
             setuju:r.data?!!d.setuju_pemasaran:!!md.setuju_pemasaran,
             simpanan:r.data?!!d.setuju_pemasaran:null,
-            premium_tamat:d.premium_tamat||null,
-            premium:!!(d.premium_tamat&&new Date(d.premium_tamat)>new Date())};
+            premiumRendahTamat:d.premium_rendah_tamat||null,
+            premiumAtasTamat:d.premium_atas_tamat||null,
+            premiumRendah:!!(d.premium_rendah_tamat&&new Date(d.premium_rendah_tamat)>kini),
+            premiumAtas:!!(d.premium_atas_tamat&&new Date(d.premium_atas_tamat)>kini)};
     PROFIL.ada=!!d.nama;
     if(!PROFIL.ada&&md.nama&&md.sekolah)
       return simpanProfil(PROFIL.nama,PROFIL.sekolah,PROFIL.telefon,PROFIL.setuju);
@@ -3474,7 +3482,10 @@ function simpanProfil(nama,sekolah,telefon,setuju){
   return SB.from("lo_guru").upsert(baris).then(function(r){
     if(r.error) throw r.error;
     PROFIL={nama:nama,sekolah:sekolah,telefon:telefon,setuju:!!setuju,simpanan:!!setuju,ada:true,
-            premium_tamat:PROFIL?PROFIL.premium_tamat:null,premium:PROFIL?PROFIL.premium:false};
+            premiumRendahTamat:PROFIL?PROFIL.premiumRendahTamat:null,
+            premiumAtasTamat:PROFIL?PROFIL.premiumAtasTamat:null,
+            premiumRendah:PROFIL?PROFIL.premiumRendah:false,
+            premiumAtas:PROFIL?PROFIL.premiumAtas:false};
   });
 }
 var NOTIS_PRIVASI="E-mel cikgu digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Sains. "+
@@ -3822,28 +3833,38 @@ function mainMingguIni(kelas,no){
   return false;
 }
 
-/* Kad status Premium. Bayaran ditampung secara manual (DuitNow/WhatsApp)
-   buat masa ini — cikgu hubungi terus, Umar tandakan premium_tamat dalam
-   lo_guru selepas resit disemak. Lihat jejak-tp-admin/premium.js. */
-function kadPremium(){
-  var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
-  if(PROFIL.premium){
-    var t=new Date(PROFIL.premium_tamat).toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"});
-    bd.appendChild(el("span","status aktif","✅ Premium aktif sehingga "+t));
-    bd.appendChild(el("p","note","Semua 51 bab, Tingkatan 1 hingga 5, terbuka untuk kelas cikgu."));
-    return p;
+/* Kad status Premium. Menengah rendah (T1-3) dan menengah atas (T4-5)
+   dijual berasingan, RM23/tahun setiap satu. Bayaran ditampung secara
+   manual (DuitNow/WhatsApp) buat masa ini — cikgu hubungi terus, Umar
+   tandakan premium_rendah_tamat/premium_atas_tamat dalam lo_guru selepas
+   resit disemak. Lihat jejak-tp-admin/premium.js. */
+function barisPremium(nama, kod, aktif, tamat){
+  var d=el("div","baris-premium");
+  var kiri=el("div","grow");
+  kiri.appendChild(el("b",null,esc(nama)));
+  if(aktif){
+    var t=new Date(tamat).toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"});
+    kiri.appendChild(el("span","status aktif","✅ Premium aktif sehingga "+t));
+    d.appendChild(kiri);
+    return d;
   }
-  bd.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 hingga 3 setiap tingkatan"));
-  bd.appendChild(el("h3",null,"Naik taraf Premium — RM23/tahun"));
-  bd.appendChild(el("p","note","Buka semua 51 bab (Tingkatan 1-5) untuk semua kelas cikgu. Bayaran secara DuitNow/pindahan, aktif dalam masa 1 hari bekerja selepas resit disemak."));
-  var a=el("div","actions");
-  var bw=el("button","btn teal"); bw.type="button"; bw.textContent="Naik taraf melalui WhatsApp";
+  kiri.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 hingga 3"));
+  d.appendChild(kiri);
+  var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Naik taraf RM23/tahun";
   bw.onclick=function(){
     var mesej="Salam, saya "+(PROFIL.nama||"cikgu")+(PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
-      ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium (RM23/tahun).";
+      ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (RM23/tahun).";
     window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
   };
-  a.appendChild(bw); bd.appendChild(a);
+  d.appendChild(bw);
+  return d;
+}
+function kadPremium(){
+  var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
+  bd.appendChild(el("h3",null,"Premium"));
+  bd.appendChild(el("p","note","Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan, RM23/tahun setiap satu."));
+  bd.appendChild(barisPremium("Menengah rendah · Tingkatan 1–3","Menengah Rendah",PROFIL.premiumRendah,PROFIL.premiumRendahTamat));
+  bd.appendChild(barisPremium("Menengah atas · Tingkatan 4–5","Menengah Atas",PROFIL.premiumAtas,PROFIL.premiumAtasTamat));
   return p;
 }
 
@@ -4026,7 +4047,7 @@ function kadTambah(){
 
 function tukarBabGuru(id){
   if(id===BAB_ID) return;
-  if(!bebasBab(id)&&!premiumAktif()) return;
+  if(!bebasBab(id)&&!premiumAktif(tingkatanBab(id))) return;
   pasangBab(id);
   CUBAAN={}; GURU={};
   benihContohBab();
@@ -4038,7 +4059,7 @@ function tukarBabGuru(id){
   muatBabJauh();
 }
 function pilihBabGuru(p){
-  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif();
+  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif(tingKini);
   if(semuaBab.length<2) return;
   var tingAda=[1,2,3,4,5].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
   if(tingAda.length>1){
