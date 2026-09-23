@@ -102,6 +102,11 @@ a{color:inherit}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tunjuk-label{color:#CFEFE9}}
 .tunjuk-item h3{font-size:1.4rem;margin-top:12px}
 .tunjuk-item p{margin-top:8px;color:var(--ink2)}
+.contoh-ulasan{margin-top:16px;background:var(--mint);border-radius:14px;padding:16px 18px}
+.contoh-ulasan .cap{display:block;font:600 12.5px "Lexend",sans-serif;color:var(--teal-deep);margin-bottom:6px}
+:root[data-theme="dark"] .contoh-ulasan .cap{color:#CFEFE9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contoh-ulasan .cap{color:#CFEFE9}}
+.contoh-ulasan p{margin:0;color:var(--ink);font-size:.96rem;font-style:italic}
 
 .harga-sec{padding-block:56px}
 .harga{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
@@ -122,6 +127,8 @@ a{color:inherit}
 .cerita svg{width:46px;height:46px;flex:none;color:var(--teal-deep)}
 .cerita h2{font-size:1.55rem}
 .cerita p{margin-top:10px;color:var(--ink2);max-width:60ch}
+.cerita blockquote{margin:16px 0 0;padding-left:16px;border-left:3px solid var(--teal);font-style:italic;color:var(--ink);max-width:56ch}
+.cerita blockquote cite{display:block;margin-top:8px;font-style:normal;font:600 .88rem "Lexend",sans-serif;color:var(--ink2)}
 
 /* ---------- soalan ---------- */
 .soalan-sec{padding-block:12px 56px}
@@ -215,6 +222,10 @@ footer .ng b{color:var(--teal)}
         <span class="tunjuk-label">Keputusan murid</span>
         <h3>Ulasan PBD terus siap, tinggal salin</h3>
         <p>Setiap murid dapat cadangan TP dan ulasan PBD ditulis automatik ikut prestasi sebenar dia hentian demi hentian. Cikgu sahkan atau ubah, terus salin ke SPPB — tak payah karang sendiri untuk 40 orang murid.</p>
+        <div class="contoh-ulasan">
+          <span class="cap">Contoh ulasan sebenar — salin terus ke SPPB/IDME</span>
+          <p>"Aisyah mampu menganalisis data masa gerak balas, mengesan bacaan ganjil dan mengenal pasti bahagian sistem saraf yang terjejas. Seterusnya latih menimbang bukti untuk membuat keputusan."</p>
+        </div>
       </div>
     </div>
     <div class="tunjuk-item">
@@ -234,6 +245,10 @@ footer .ng b{color:var(--teal)}
     <div>
       <h2>Dibina bersama cikgu Sains sebenar</h2>
       <p>Jejak TP Sains bukan direka oleh jurutera meneka apa cikgu perlukan. Setiap soalan dan istilah disemak oleh cikgu Sains yang mengajar 21 tahun, supaya ia ikut tepat buku teks KSSM — bukan terjemahan atau tekaan. Bab yang belum disemak guru tidak dibuka kepada orang ramai.</p>
+      <blockquote>
+        "Selama ni, benda yang paling makan masa dalam PBD Sains ialah nak tulis TP untuk setiap murid. Jejak TP Sains selesaikan masalah tu terus."
+        <cite>— Cikgu Nani, 21 tahun pengalaman mengajar</cite>
+      </blockquote>
     </div>
   </div>
 </div>
