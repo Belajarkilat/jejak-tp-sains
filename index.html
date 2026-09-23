@@ -862,7 +862,8 @@ body.zon-murid{color:var(--tinta)}
 /* 44px: chip tingkatan ialah navigasi utama peta, bukan hiasan. */
 .tingpilih button{font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;border:2px solid var(--garis,var(--line2));background:transparent;color:inherit;cursor:pointer;min-height:44px}
 .tingpilih button[aria-pressed="true"]{background:var(--dunia,var(--vena));border-color:var(--dunia,var(--vena));color:#fff}
-.babpilih button.akan-datang,.babpilih button.terkunci,.kbtn.terkunci{opacity:.55;cursor:default;border-style:dashed}
+.babpilih button.akan-datang{opacity:.55;cursor:default;border-style:dashed}
+.babpilih button.terkunci,.kbtn.terkunci{opacity:.55;cursor:pointer;border-style:dashed}
 .akan-datang-guru{align-self:center;margin:0}
 .kadpremium{border:2px solid var(--gen);background:var(--gen-soft)}
 .kadpremium h3{margin:0 0 4px}
@@ -2447,7 +2448,8 @@ function renderPeta(){
       var t=el("button",kunci?"terkunci":null); t.type="button"; t.title=kunci?"Bab premium — naik taraf untuk buka":b.kod;
       t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
       t.innerHTML=(kunci?'<span class="ik" aria-hidden="true">\u{1F512}</span>':'<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>')+esc(b.tajuk);
-      if(kunci) t.disabled=true; else t.onclick=function(){ tukarBab(b.id); };
+      if(kunci) t.onclick=function(){ alert("\u{1F512} "+b.tajuk+" ialah bab premium.\n\nMinta cikgu awak naik taraf akaun (RM23/tahun) untuk buka bab ni dan bab premium lain."); };
+      else t.onclick=function(){ tukarBab(b.id); };
       bp.appendChild(t);
     });
     st.appendChild(bungkusJalur(bp,'button[aria-pressed="true"]'));
@@ -2708,6 +2710,9 @@ function renderSoalan(){
   bd.appendChild(top);
 
   if(q._ulang) bd.appendChild(el("p","chip-ulang","Ulangan dari hentian "+q.tp+". Latihan sahaja, tidak dikira dalam keputusan hentian ini."));
+
+  if(!S.modHarian&&!bos&&S.aras===1&&S.qi===0&&!Object.keys(S.lulus||{}).length)
+    bd.appendChild(el("p","qnote","Contoh soalan macam ni yang murid jawab sepanjang perjalanan. Pilih jawapan yang betul."));
 
   bd.appendChild(el("p","qtext",q.t));
   if(q.arahan) bd.appendChild(el("p","qnote",q.arahan));
@@ -3840,6 +3845,11 @@ function mainMingguIni(kelas,no){
    manual (DuitNow/WhatsApp) buat masa ini — cikgu hubungi terus, Umar
    tandakan premium_rendah_tamat/premium_atas_tamat dalam lo_guru selepas
    resit disemak. Lihat jejak-tp-admin/premium.js. */
+function bukaWaNaikTaraf(kod){
+  var mesej="Salam, saya "+(PROFIL&&PROFIL.nama||"cikgu")+(PROFIL&&PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
+    ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (RM23/tahun).";
+  window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
+}
 function barisPremium(nama, kod, aktif, tamat){
   var d=el("div","baris-premium");
   var kiri=el("div","grow");
@@ -3853,11 +3863,7 @@ function barisPremium(nama, kod, aktif, tamat){
   kiri.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 hingga 3"));
   d.appendChild(kiri);
   var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Naik taraf RM23/tahun";
-  bw.onclick=function(){
-    var mesej="Salam, saya "+(PROFIL.nama||"cikgu")+(PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
-      ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (RM23/tahun).";
-    window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
-  };
+  bw.onclick=function(){ bukaWaNaikTaraf(kod); };
   d.appendChild(bw);
   return d;
 }
@@ -4087,7 +4093,10 @@ function pilihBabGuru(p){
     var t=el("button","kbtn"+(kunci?" terkunci":"")); t.type="button";
     t.innerHTML=(kunci?"\u{1F512} ":"\u{1F4D8} ")+esc(b.kod);
     t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
-    if(kunci){ t.disabled=true; t.title="Bab premium — naik taraf untuk buka"; }
+    if(kunci){
+      t.title="Bab premium — naik taraf untuk buka";
+      t.onclick=function(){ bukaWaNaikTaraf(tingkatanBab(b.id)<=3?"Menengah Rendah":"Menengah Atas"); };
+    }
     else{
       if(b.id===BAB_ID){ t.style.borderColor="var(--vena)"; t.style.background="var(--surface)"; t.style.fontWeight="700"; }
       t.onclick=function(){ tukarBabGuru(b.id); };
