@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jejak TP Sains — murid main, PBD terus siap</title>
+<title>Jejak TP Sains — murid bermain, rekod PBD siap sendiri</title>
 <meta name="description" content="Permainan pentaksiran bilik darjah Sains KSSM Tingkatan 1 hingga 5. Murid jejak laluan sains, cikgu dapat rekod TP automatik tanpa isi manual.">
 <link rel="icon" href="ikon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,9 +55,11 @@ a{color:inherit}
 .hero-photo img{width:100%;max-width:184px;height:auto;display:block;border-radius:18px;border:6px solid var(--surface);box-shadow:var(--shadow);transform:rotate(-2.2deg)}
 .hero-badge{position:absolute;left:-10px;bottom:16px;background:var(--gold);color:var(--gold-ink);font:700 12px "Baloo 2",sans-serif;padding:7px 11px;border-radius:10px;transform:rotate(-4deg);box-shadow:0 10px 22px -12px rgba(0,0,0,.35)}
 .eyebrow-tag{display:inline-block;background:var(--mint);color:var(--teal-deep);font:600 14.5px "Lexend",sans-serif;padding:6px 14px;border-radius:99px;margin-bottom:16px}
-:root[data-theme="dark"] .eyebrow-tag{color:#CFEFE9}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow-tag{color:#CFEFE9}}
+:root[data-theme="dark"] .eyebrow-tag,:root[data-theme="dark"] .step i,:root[data-theme="dark"] .cerita svg{color:#CFEFE9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow-tag,:root:not([data-theme="light"]) .step i,:root:not([data-theme="light"]) .cerita svg{color:#CFEFE9}}
 .hero h1{font-size:clamp(2.1rem,4.6vw,3.2rem);font-weight:800}
+.hero .sorot{margin-top:18px;padding-left:16px;border-left:4px solid var(--teal);font:600 1.28rem/1.5 "Lexend",sans-serif;color:var(--ink);max-width:34ch}
+.hero .sorot mark{color:inherit;background:linear-gradient(transparent 58%,color-mix(in srgb,var(--gold) 55%,transparent) 58%);padding-inline:2px}
 .hero .lede{margin-top:16px;font-size:1.14rem;color:var(--ink2);max-width:46ch}
 .hero .ctas{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;justify-content:center;font:600 16px "Lexend",sans-serif;padding:13px 22px;border-radius:13px;text-decoration:none;min-height:48px}
@@ -171,7 +173,8 @@ footer .ng b{color:var(--teal)}
   </div>
   <div>
     <span class="eyebrow-tag">Sains Senang, TP Cemerlang</span>
-    <h1>Murid main, PBD Sains terus siap.</h1>
+    <h1>Murid bermain, rekod PBD Sains siap sendiri.</h1>
+    <p class="sorot">Murid melengkapkan peta laluan jejak sains, keputusan PBD dapat <mark>dinilai dengan segera dan tepat</mark>.</p>
     <p class="lede">Permainan pentaksiran bilik darjah untuk Sains KSSM Tingkatan 1 hingga 5. Murid jejak peta laluan sains ikut bab, cikgu dapat rekod TP automatik tanpa isi borang manual.</p>
     <div class="ctas">
       <a class="btn utama" href="index.html?demo=cikgu">Lihat kelas contoh</a>
