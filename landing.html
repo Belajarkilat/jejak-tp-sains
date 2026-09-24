@@ -46,7 +46,7 @@ a{color:inherit}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding-block:18px;gap:12px}
 .mark{display:flex;align-items:center;gap:9px;font:700 18px "Baloo 2",sans-serif}
 .mark svg{width:30px;height:30px;flex:none}
-.topbar .cta{font:600 14px "Lexend",sans-serif;background:var(--teal);color:#fff;border-radius:11px;padding:10px 18px;text-decoration:none;white-space:nowrap}
+.topbar .cta{font:600 14px "Lexend",sans-serif;background:var(--teal);color:#fff;border-radius:11px;padding:10px 18px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
 
 /* ---------- hero ---------- */
 .hero{padding-block:28px 56px;display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:36px;align-items:center}
@@ -63,7 +63,7 @@ a{color:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;font:600 16px "Lexend",sans-serif;padding:13px 22px;border-radius:13px;text-decoration:none;min-height:48px}
 .btn.utama{background:var(--teal-deep);color:#fff}
 .btn.kedua{background:var(--surface);color:var(--ink);border:2px solid var(--teal-line)}
-.hero .cuba-murid{margin-top:16px;display:inline-block;font:600 14.5px "Lexend",sans-serif;color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
+.hero .cuba-murid{margin-top:16px;display:inline-flex;align-items:center;min-height:44px;font:600 14.5px "Lexend",sans-serif;color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
 .hero .kod{margin-top:18px;font-size:.95rem;color:var(--ink2)}
 .hero .kod b{color:var(--ink);font-family:"Lexend",monospace}
 
@@ -135,7 +135,7 @@ a{color:inherit}
 .soalan{margin-top:26px;display:flex;flex-direction:column;gap:0}
 .soalan details{border-top:1px solid var(--teal-line);padding-block:16px}
 .soalan details:last-child{border-bottom:1px solid var(--teal-line)}
-.soalan summary{cursor:pointer;font:600 16px "Lexend",sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.soalan summary{cursor:pointer;font:600 16px "Lexend",sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:44px}
 .soalan summary::-webkit-details-marker{display:none}
 .soalan summary::after{content:"+";font-size:1.3rem;color:var(--teal);flex:none}
 .soalan details[open] summary::after{content:"–"}
