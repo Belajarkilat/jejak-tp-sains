@@ -1151,15 +1151,15 @@ body.zon-murid{color:var(--tinta)}
 (function(){
 "use strict";
 
-/* Semua 51 bab (Tingkatan 1-5) sedia dimainkan. Bab 1-3 setiap tingkatan
-   percuma; Bab 4 ke atas memerlukan kelas milik guru Premium (RM23/tahun).
+/* Semua 51 bab (Tingkatan 1-5) sedia dimainkan. Bab 1-2 setiap tingkatan
+   percuma; Bab 3 ke atas memerlukan kelas milik guru Premium (RM23/tahun).
    Lihat bebasBab() dan premiumAktif(). */
 var JUMLAH_BAB={1:9,2:13,3:10,4:10,5:9};
 var BAB_TERSEDIA=[];
 Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("t"+t+"b"+i);
 });
-function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=3; }
+function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=2; }
 /* Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan,
    RM23/tahun setiap satu. Murid: premium ikut kelas (KM.premiumRendah/
    KM.premiumAtas, daripada lo_kelas_buka). Guru: premium ikut akaun
@@ -3644,7 +3644,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan mana satu kelas gagal",
    "Ulasan PBD sedia salin ke SPPB",
-   "51 bab Sains Tingkatan 1 hingga 5 (Bab 1-3 percuma, selebihnya Premium RM23/tahun)",
+   "51 bab Sains Tingkatan 1 hingga 5 (Bab 1-2 percuma, selebihnya Premium RM23/tahun)",
    "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);
@@ -3860,7 +3860,7 @@ function barisPremium(nama, kod, aktif, tamat){
     d.appendChild(kiri);
     return d;
   }
-  kiri.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 hingga 3"));
+  kiri.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 dan 2"));
   d.appendChild(kiri);
   var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Naik taraf RM23/tahun";
   bw.onclick=function(){ bukaWaNaikTaraf(kod); };
@@ -4120,7 +4120,7 @@ function renderKelasGuru(){
   var dj=$("demoJalur"); dj.innerHTML=""; dj.classList.toggle("hidden",!k.contoh);
   if(k.contoh){
     dj.appendChild(el("p",null,"Kelas contoh dengan 6 murid rekaan. Beginilah rupa keputusan apabila murid cikgu bermain."));
-    dj.appendChild(el("p","note","Bab 1-3 setiap tingkatan percuma. RM23/tahun untuk buka semua bab satu peringkat (menengah rendah atau atas). "+
+    dj.appendChild(el("p","note","Bab 1-2 setiap tingkatan percuma. RM23/tahun untuk buka semua bab satu peringkat (menengah rendah atau atas). "+
       '<a href="landing.html#harga">Lihat harga penuh</a>'));
     var bm=el("button","btn ghost sm"); bm.type="button"; bm.textContent="Cuba sebagai murid"; bm.onclick=cubaSebagaiMurid;
     dj.appendChild(bm);
