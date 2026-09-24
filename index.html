@@ -1897,6 +1897,16 @@ function mulaHarian(){
    pilihan dan lampirannya, pada kira-kira dua setengah perkataan sesaat.
    Tanpa ini, soalan analisis yang ada jadual menghukum murid yang membaca
    dengan teliti, dan meter itu mengukur kelajuan membaca, bukan sains. */
+/* Rajah hanya dipaparkan bersama soalan yang menyebut "Rajah". Dahulu ia
+   melekat pada setiap soalan dalam hentian: 839 daripada 999 soalan berajah
+   memaparkan rajah yang tiada kena-mengena (soalan iris mata bersama rajah
+   neuron). Jadual kekal pada setiap soalan hentian kerana soalan analisis
+   merujuknya. Peraturan yang sama ada dalam semak.html. */
+function lampiranUntuk(q,lam){
+  if(!lam||lam.indexOf("<figure")<0) return lam;
+  var teks=[q.t,q.arahan].concat(q.p||[]).join(" ");
+  return /\brajah\b/i.test(teks) ? lam : "";
+}
 function bilPerkataan(teks){
   return String(teks||"").replace(/<[^>]*>/g," ").replace(/&[a-z#0-9]+;/gi," ")
     .split(/\s+/).filter(Boolean).length;
@@ -1906,7 +1916,7 @@ function masaBaca(q){
   var n=bilPerkataan(q.t)+bilPerkataan(q.arahan);
   (q.p||[]).forEach(function(x){ n+=bilPerkataan(x); });
   var a=ARAS[S.aras-1];
-  n+=bilPerkataan(S.modHarian ? q._lam : (a&&a.lampiran));
+  n+=bilPerkataan(lampiranUntuk(q, S.modHarian ? q._lam : (a&&a.lampiran)));
   return Math.max(6, Math.min(45, Math.round(n/2.5)));
 }
 function reset(){
@@ -2728,7 +2738,7 @@ function renderSoalan(){
     bd.appendChild(el("p","qnote","Soalan bos. "+Math.round(S.masaBosPenuh)+" saat untuk menjawab selepas masa membaca, markah tiga kali ganda."));
   }
 
-  var lam = S.modHarian ? q._lam : a.lampiran;
+  var lam = lampiranUntuk(q, S.modHarian ? q._lam : a.lampiran);
   if(lam){ var lf=el("div"); lf.innerHTML=lam; bd.appendChild(lf); tandaLeret(lf); }
 
   var body=el("div"); bd.appendChild(body);

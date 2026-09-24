@@ -300,9 +300,13 @@ function lukisItem(it,l){
   c.appendChild(kp);
   c.appendChild(el("p","eyebrow",esc(a.sk)));
 
-  if(a.lampiran&&b.lampiran&&b.lampiran[a.lampiran]&&q.j!=="kad"){
-    var d=el("details","lampiran"); d.appendChild(el("summary",null,"Data yang dilihat murid untuk hentian ini"));
-    d.appendChild(el("div",null,b.lampiran[a.lampiran])); c.appendChild(d);
+  /* Sama seperti index.html (lampiranUntuk): rajah hanya bersama soalan yang
+     menyebut "Rajah"; jadual kekal pada setiap soalan hentian. */
+  var lamMurid=(a.lampiran&&b.lampiran&&b.lampiran[a.lampiran])||"";
+  if(lamMurid.indexOf("<figure")>=0 && !/\brajah\b/i.test([q.t,q.arahan].concat(q.p||[]).join(" "))) lamMurid="";
+  if(lamMurid&&q.j!=="kad"){
+    var d=el("details","lampiran"); d.appendChild(el("summary",null,"Data yang dilihat murid untuk soalan ini"));
+    d.appendChild(el("div",null,lamMurid)); c.appendChild(d);
   }
 
   if(q.j==="kad"){
