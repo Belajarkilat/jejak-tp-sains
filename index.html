@@ -638,7 +638,7 @@ input.kodkelas:focus{border-color:var(--arteri);outline:none}
 .atau{display:flex;align-items:center;gap:10px;color:var(--ink3);font-size:12px;margin-top:16px}
 .atau::before,.atau::after{content:"";flex:1;height:1px;background:var(--line)}
 .btn.penuh{width:100%}
-.setuju{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;line-height:1.45;color:var(--ink2);cursor:pointer}
+.setuju{display:flex;gap:10px;align-items:flex-start;min-height:44px;margin-top:16px;font-size:14px;line-height:1.45;color:var(--ink2);cursor:pointer}
 .setuju input{width:20px;height:20px;flex:none;margin-top:1px}
 .setuju em{color:var(--ink3);font-style:normal}
 .note.privasi{font-size:12px;margin-top:10px}
@@ -3507,7 +3507,7 @@ function simpanProfil(nama,sekolah,telefon,setuju){
 }
 var NOTIS_PRIVASI="E-mel cikgu digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Sains. "+
   "Ia tidak dipaparkan kepada guru lain atau murid, dan tidak dijual kepada pihak ketiga. "+
-  "Anda boleh menukar atau menarik balik persetujuan tawaran bila-bila masa di halaman Akaun.";
+  "Cikgu boleh menukar atau menarik balik persetujuan tawaran bila-bila masa di halaman Akaun.";
 function kotakSetuju(nilai){
   var w=el("label","setuju");
   var cb=el("input"); cb.type="checkbox"; cb.checked=!!nilai; cb.name="setuju";
