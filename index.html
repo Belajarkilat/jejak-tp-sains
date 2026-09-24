@@ -3699,7 +3699,7 @@ function paneLogMasuk(ak){
   var fNama,fSekolah,fSetuju,fEmel,fKata;
   if(mod==="daftar"){
     fNama=medan("Nama (dipaparkan kepada murid)","text","nama","",{placeholder:"cth. Cikgu Aminah",maxlength:"80",autocomplete:"name"});
-    fSekolah=medan("Sekolah","text","sekolah","",{placeholder:"cth. SMK Taman Maluri",maxlength:"120",autocomplete:"organization"});
+    fSekolah=medan("Sekolah","text","sekolah","",{placeholder:"cth. SMK Convent Bukit Nanas",maxlength:"120",autocomplete:"organization"});
     f.appendChild(fNama); f.appendChild(fSekolah);
   }
   fEmel=medan("E-mel","email","emel",S.authEmel||"",{autocomplete:"email",inputmode:"email",placeholder:"nama@moe-dl.edu.my"});
@@ -3802,7 +3802,7 @@ function paneProfil(ak){
   if(baru) bd.appendChild(el("p","qnote","Nama cikgu dipaparkan kepada murid semasa mereka memilih kelas."));
   var f=el("form"); f.noValidate=true;
   var fn=medan("Nama (dipaparkan kepada murid)","text","pnama",PROFIL.nama,{placeholder:"cth. Cikgu Aminah",maxlength:"80"});
-  var fs=medan("Sekolah","text","psekolah",PROFIL.sekolah,{placeholder:"cth. SMK Taman Maluri",maxlength:"120"});
+  var fs=medan("Sekolah","text","psekolah",PROFIL.sekolah,{placeholder:"cth. SMK Convent Bukit Nanas",maxlength:"120"});
   var fsj=kotakSetuju(PROFIL.setuju);
   f.appendChild(fn); f.appendChild(fs); f.appendChild(fsj);
   f.appendChild(el("p","note privasi",esc(NOTIS_PRIVASI)));
