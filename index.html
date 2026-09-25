@@ -3941,7 +3941,8 @@ function mainMingguIni(kelas,no){
    resit disemak. Lihat jejak-tp-admin/premium.js. */
 function bukaWaNaikTaraf(kod){
   var mesej="Salam, saya "+(PROFIL&&PROFIL.nama||"cikgu")+(PROFIL&&PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
-    ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (harga perintis RM23/tahun).";
+    ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (harga perintis RM23/tahun)."+
+    (SESI&&SESI.user&&SESI.user.email?"\n\nE-mel akaun saya: "+SESI.user.email:"");
   window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
 }
 function barisPremium(nama, kod, aktif, tamat){
