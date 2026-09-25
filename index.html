@@ -2539,7 +2539,7 @@ function renderPeta(){
       var t=el("button",kunci?"terkunci":null); t.type="button"; t.title=kunci?"Bab premium — naik taraf untuk buka":b.kod;
       t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
       t.innerHTML=(kunci?'<span class="ik" aria-hidden="true">\u{1F512}</span>':'<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>')+esc(b.tajuk);
-      if(kunci) t.onclick=function(){ alert("\u{1F512} "+b.tajuk+" ialah bab premium.\n\nMinta cikgu awak naik taraf akaun (RM23/tahun) untuk buka bab ni dan bab premium lain."); };
+      if(kunci) t.onclick=function(){ alert("\u{1F512} "+b.tajuk+" ialah bab premium.\n\nMinta cikgu awak naik taraf akaun untuk buka bab ni dan bab premium lain."); };
       else t.onclick=function(){ tukarBab(b.id); };
       bp.appendChild(t);
     });
@@ -3738,7 +3738,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan mana satu kelas gagal",
    "Ulasan PBD sedia salin ke SPPB",
-   "51 bab Sains Tingkatan 1 hingga 5 (Bab 1-2 percuma, selebihnya Premium RM23/tahun)",
+   "51 bab Sains Tingkatan 1 hingga 5 (Bab 1-2 percuma, selebihnya Premium: harga perintis RM23/tahun hingga 31 Dis 2026)",
    "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);
@@ -3941,7 +3941,7 @@ function mainMingguIni(kelas,no){
    resit disemak. Lihat jejak-tp-admin/premium.js. */
 function bukaWaNaikTaraf(kod){
   var mesej="Salam, saya "+(PROFIL&&PROFIL.nama||"cikgu")+(PROFIL&&PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
-    ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (RM23/tahun).";
+    ". Saya nak naik taraf akaun Jejak TP Sains saya ke Premium "+kod+" (harga perintis RM23/tahun).";
   window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
 }
 function barisPremium(nama, kod, aktif, tamat){
@@ -3956,7 +3956,7 @@ function barisPremium(nama, kod, aktif, tamat){
   }
   kiri.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 dan 2"));
   d.appendChild(kiri);
-  var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Naik taraf RM23/tahun";
+  var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Naik taraf RM23/tahun \u{1F525}";
   bw.onclick=function(){ bukaWaNaikTaraf(kod); };
   d.appendChild(bw);
   return d;
@@ -3964,7 +3964,7 @@ function barisPremium(nama, kod, aktif, tamat){
 function kadPremium(){
   var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
   bd.appendChild(el("h3",null,"Premium"));
-  bd.appendChild(el("p","note","Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan, RM23/tahun setiap satu."));
+  bd.appendChild(el("p","note","Harga perintis RM23/tahun hingga 31 Dis 2026, kekal setiap tahun untuk cikgu perintis. Mulai 1 Jan 2027: RM33. T1-3 dan T4-5 dijual berasingan."));
   bd.appendChild(barisPremium("Menengah rendah · Tingkatan 1–3","Menengah Rendah",PROFIL.premiumRendah,PROFIL.premiumRendahTamat));
   bd.appendChild(barisPremium("Menengah atas · Tingkatan 4–5","Menengah Atas",PROFIL.premiumAtas,PROFIL.premiumAtasTamat));
   return p;
@@ -4199,7 +4199,7 @@ function pilihBabGuru(p){
   });
   p.appendChild(row);
   if(ada_terkunci&&!premium) row.parentNode.appendChild(el("span","note akan-datang-guru",
-    "\u{1F512} Bab premium dikunci. Naik taraf RM23/tahun untuk buka semua bab "+(tingKini<=3?"Menengah Rendah (T1-3)":"Menengah Atas (T4-5)")+"."));
+    "\u{1F512} Bab premium dikunci. Naik taraf pada harga perintis RM23/tahun (hingga 31 Dis) untuk buka semua bab "+(tingKini<=3?"Menengah Rendah (T1-3)":"Menengah Atas (T4-5)")+"."));
 }
 
 /* ---------------- Satu kelas ---------------- */
@@ -4214,7 +4214,7 @@ function renderKelasGuru(){
   var dj=$("demoJalur"); dj.innerHTML=""; dj.classList.toggle("hidden",!k.contoh);
   if(k.contoh){
     dj.appendChild(el("p",null,"Kelas contoh dengan 6 murid rekaan. Beginilah rupa keputusan apabila murid cikgu bermain."));
-    dj.appendChild(el("p","note","Bab 1-2 setiap tingkatan percuma. RM23/tahun untuk buka semua bab satu peringkat (menengah rendah atau atas). "+
+    dj.appendChild(el("p","note","Bab 1-2 setiap tingkatan percuma. Harga perintis RM23/tahun hingga 31 Dis 2026 untuk buka semua bab T1-3 atau T4-5. "+
       '<a href="landing.html#harga">Lihat harga penuh</a>'));
     var bm=el("button","btn ghost sm"); bm.type="button"; bm.textContent="Cuba sebagai murid"; bm.onclick=cubaSebagaiMurid;
     dj.appendChild(bm);

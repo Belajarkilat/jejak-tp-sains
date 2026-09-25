@@ -155,7 +155,10 @@ a{color:inherit}
 .plan .rm small{font:500 .95rem "Lexend",sans-serif;color:var(--ink2);white-space:nowrap}
 .plan p{color:var(--ink2);font-size:.95rem;margin-top:6px}
 .plan ul{margin:10px 0 0;padding-left:20px;color:var(--ink2);font-size:.92rem;display:flex;flex-direction:column;gap:4px}
-.harga-nota{margin-top:16px;color:var(--ink2);font-size:.92rem}
+.harga-nota{margin-top:16px;color:var(--ink2);font-size:.92rem;max-width:70ch}
+.plan .rm s{font:600 1.15rem "Lexend",sans-serif;color:var(--ink2);text-decoration-thickness:2px;text-decoration-color:#E0424B}
+.plan .perintis{align-self:flex-start;background:var(--gold);color:#3A2510;font:700 12.5px "Lexend",sans-serif;padding:4px 10px;border-radius:99px}
+.perintis-jalur{margin-top:14px;display:inline-block;background:color-mix(in srgb,var(--gold) 22%,var(--surface));border:1.5px solid var(--gold);border-radius:14px;padding:12px 16px;font-size:.98rem;color:var(--ink)}
 
 /* ---------- cerita ---------- */
 .cerita-sec{padding-block:12px 56px}
@@ -341,6 +344,7 @@ footer .ng b{color:var(--teal)}
 <div class="wrap harga-sec" id="harga">
   <h2>Harga</h2>
   <p class="narrow" style="margin-top:10px;color:var(--ink2)">Percuma untuk cuba. Bayar hanya bila cikgu nampak ia berbaloi.</p>
+  <p class="perintis-jalur">🔥 <b>Harga perintis sehingga 31 Dis 2026.</b> Langgan sebelum tarikh ni, harga RM23 kekal untuk cikgu setiap tahun.</p>
   <div class="harga">
     <div class="plan">
       <span class="siapa">Percuma</span>
@@ -349,16 +353,18 @@ footer .ng b{color:var(--teal)}
     </div>
     <div class="plan utama">
       <span class="siapa">Premium — Menengah rendah</span>
-      <span class="rm">RM23 <small>/ tahun</small></span>
+      <span class="rm"><s>RM33</s> RM23 <small>/ tahun</small></span>
+      <span class="perintis">Harga perintis hingga 31 Dis 2026</span>
       <p>Semua bab Tingkatan 1, 2 dan 3. Ciri lain sama seperti akaun percuma.</p>
     </div>
     <div class="plan utama">
       <span class="siapa">Premium — Menengah atas</span>
-      <span class="rm">RM23 <small>/ tahun</small></span>
+      <span class="rm"><s>RM33</s> RM23 <small>/ tahun</small></span>
+      <span class="perintis">Harga perintis hingga 31 Dis 2026</span>
       <p>Semua bab Tingkatan 4 dan 5. Ciri lain sama seperti akaun percuma.</p>
     </div>
   </div>
-  <p class="harga-nota">Mengajar kedua-dua peringkat? Boleh langgan dua-dua — RM23 setiap satu, ikut apa yang cikgu perlukan sahaja.</p>
+  <p class="harga-nota">Mulai 1 Jan 2027, harga jadi RM33 setahun. Cikgu yang langgan sebelum 31 Dis 2026 kekal RM23 setiap tahun, selagi langganan tak terputus. Ajar dua-dua peringkat? Langgan dua-dua, RM23 setiap satu.</p>
 </div>
 
 <div class="wrap soalan-sec">
