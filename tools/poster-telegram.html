@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Poster Telegram Jejak TP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF6; --mint:#E4F5F1; --ink:#12302C; --ink2:#4B6D67;
+  --teal:#1C7A73; --teal-deep:#0B4A46; --teal-line:#CFE6E1;
+  --gold:#E8A33D; --gold-ink:#7A4E0E; --hl:#F0C98A;
+}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1080px;overflow:hidden;background:var(--paper)}
+body{font-family:"Lexend",sans-serif;color:var(--ink);position:relative}
+.band{position:absolute;inset:0 auto 0 0;width:300px;background:var(--mint)}
+.mark{position:absolute;left:390px;top:80px;display:flex;align-items:center;gap:14px;font:700 32px "Baloo 2",sans-serif;color:var(--teal-deep)}
+.mark svg{width:48px;height:48px}
+.foto{position:absolute;left:52px;top:250px;width:270px}
+.foto img{width:100%;display:block;border-radius:20px;border:8px solid #fff;box-shadow:0 22px 44px -22px rgba(11,74,70,.45);transform:rotate(-2.5deg)}
+.isi{position:absolute;left:390px;right:60px;top:190px}
+h1{font:800 74px/1.06 "Baloo 2",sans-serif;letter-spacing:-.5px}
+h1 span{background:linear-gradient(transparent 58%,var(--hl) 58%);padding-inline:4px}
+ul{list-style:none;padding:0;margin-top:56px;display:flex;flex-direction:column;gap:40px}
+li{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;font:600 33px/1.25 "Lexend",sans-serif}
+li i{width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center}
+li i svg{width:28px;height:28px}
+li small{display:block;font:400 24px/1.35 "Lexend",sans-serif;color:var(--ink2);margin-top:4px}
+.bawah{position:absolute;left:56px;right:64px;bottom:56px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.pil{display:flex;gap:14px}
+.pil b{font:600 24px "Lexend",sans-serif;padding:14px 24px;border-radius:99px;background:#fff;border:2px solid var(--teal-line);color:var(--teal-deep)}
+.pil b.emas{background:var(--gold);border-color:var(--gold);color:#3A2510}
+.url{font:700 25px "Lexend",sans-serif;color:var(--teal-deep);text-align:right}
+.url small{display:block;font:400 19px "Lexend",sans-serif;color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="band"></div>
+
+<div class="mark">
+  <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="#1C7A73" stroke-width="4"/><circle cx="26" cy="32" r="7" fill="#E0424B"/><circle cx="38" cy="32" r="7" fill="#1C7A73"/></svg>
+  Jejak TP Sains
+</div>
+
+<div class="foto"><img src="../promo-hero-2.jpg" alt=""></div>
+
+<div class="isi">
+  <h1>Cikgu Sains, <span>penat isi TP</span> satu-satu?</h1>
+  <ul>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>
+      <div>Murid main, TP dicadang terus
+        <small>Tak payah tanda kertas satu-satu</small></div></li>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>
+      <div>Ulasan PBD 40 murid siap ditulis
+        <small>Cikgu semak, salin terus ke SPPB</small></div></li>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>
+      <div>Nampak terus soalan kelas tersasar
+        <small>Esok cikgu tahu nak ajar semula yang mana</small></div></li>
+  </ul>
+</div>
+
+<div class="bawah">
+  <div class="pil"><b>Sains KSSM T1–T5</b><b class="emas">Bab 1 &amp; 2 percuma</b></div>
+  <div class="url">jejaktpsains.naikgred.com<small>Cuba kelas contoh, tak perlu daftar</small></div>
+</div>
+</body>
+</html>

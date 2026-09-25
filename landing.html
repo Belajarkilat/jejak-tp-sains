@@ -81,6 +81,29 @@ a{color:inherit}
 .hero .kod{margin-top:18px;font-size:.95rem;color:var(--ink2)}
 .hero .kod b{color:var(--ink);font-family:"Lexend",monospace}
 
+/* ---------- video demo ---------- */
+.video-sec{padding-block:8px 64px;scroll-margin-top:16px}
+.video-kotak{background:var(--mint);border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:44px;align-items:center}
+@media (max-width:760px){.video-kotak{grid-template-columns:1fr;padding:24px 18px;gap:28px}}
+.telefon{position:relative;justify-self:center;width:100%;max-width:300px;background:#0B1815;border-radius:34px;padding:9px;box-shadow:0 30px 60px -28px rgba(11,74,70,.55)}
+@media (max-width:760px){.telefon{max-width:270px}}
+.telefon video{display:block;width:100%;height:auto;aspect-ratio:720/1558;border-radius:26px;background:#0d3a33;object-fit:cover}
+.main-btn{position:absolute;inset:9px;border:0;border-radius:26px;background:rgba(11,24,21,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;color:#fff;font:700 15px "Lexend",sans-serif}
+.main-btn .label{background:rgba(11,24,21,.78);padding:7px 14px;border-radius:99px}
+.main-btn .bulat{width:76px;height:76px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -10px rgba(0,0,0,.5);transition:transform .15s}
+.main-btn:hover .bulat,.main-btn:focus-visible .bulat{transform:scale(1.07)}
+.main-btn svg{width:30px;height:30px;margin-left:4px}
+.main-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.telefon.sedang-main .main-btn{display:none}
+.video-sec .eyebrow-tag{background:var(--surface)}
+.video-sec h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.video-sec .lede{margin-top:10px;color:var(--ink2);max-width:46ch}
+.babak{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:6px}
+.babak button{width:100%;display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;text-align:left;background:var(--surface);border:1.5px solid var(--teal-line);border-radius:14px;padding:10px 14px;min-height:48px;cursor:pointer;color:var(--ink);font:500 15.5px/1.35 "Lexend",sans-serif;transition:border-color .12s,background .12s}
+.babak button:hover{border-color:var(--teal)}
+.babak button[aria-current="true"]{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 10%,var(--surface))}
+.babak time{font:700 14px "Lexend",monospace;color:var(--teal);background:var(--mint);border-radius:8px;padding:4px 0;text-align:center}
+.video-sec .ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
 /* ---------- pillars ---------- */
 .pillar-sec{padding-block:12px 56px}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
@@ -189,11 +212,59 @@ footer .ng b{color:var(--teal)}
     <p class="lede">Permainan pentaksiran bilik darjah untuk Sains KSSM Tingkatan 1 hingga 5. Murid jejak peta laluan sains ikut bab, cikgu dapat rekod TP automatik tanpa isi borang manual.</p>
     <div class="ctas">
       <a class="btn utama" href="index.html?demo=cikgu">Lihat kelas contoh</a>
+      <a class="btn kedua" href="#video">&#9654;&nbsp; Tengok video 1 minit</a>
     </div>
     <a class="cuba-murid" href="index.html?demo=murid">Atau cuba sebagai murid →</a>
     <p class="kod">Dah ada kod kelas daripada cikgu? Masukkan terus di <b>jejaktpsains.naikgred.com</b></p>
   </div>
 </div>
+
+<div class="wrap video-sec" id="video">
+  <div class="video-kotak">
+    <div class="telefon" id="telefon">
+      <video id="vidDemo" src="video-demo.mp4" poster="video-demo-poster.jpg" preload="none" playsinline width="720" height="1558" aria-label="Video demo Jejak TP Sains, satu minit"></video>
+      <button class="main-btn" id="mainBtn" type="button" aria-label="Main video demo">
+        <span class="bulat"><svg viewBox="0 0 24 24" fill="#12302C" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></span>
+        <span class="label">Tengok 1 minit</span>
+      </button>
+    </div>
+    <div>
+      <span class="eyebrow-tag">Video demo · 1 minit</span>
+      <h2>Murid bermain aktiviti, TP auto dijana</h2>
+      <p class="lede">Rakaman sebenar app, bukan animasi. Tekan mana-mana babak untuk lompat terus ke bahagian yang cikgu nak tengok.</p>
+      <ol class="babak" id="babak">
+        <li><button type="button" data-t="5.5"><time>0:06</time>Murid main di telefon, macam game</button></li>
+        <li><button type="button" data-t="36.5"><time>0:37</time>Hentian lulus, TP murid dijana secara automatik</button></li>
+        <li><button type="button" data-t="41.5"><time>0:42</time>Cikgu terus nampak TP setiap murid</button></li>
+        <li><button type="button" data-t="47.5"><time>0:48</time>Ulasan PBD siap, salin terus ke SPPB</button></li>
+        <li><button type="button" data-t="56.5"><time>0:57</time>Kelas yang lemah dikenal pasti dengan pantas</button></li>
+        <li><button type="button" data-t="60.5"><time>1:01</time>Standard Prestasi DSKP, kata demi kata</button></li>
+      </ol>
+      <div class="ctas">
+        <a class="btn utama" href="index.html?demo=cikgu">Cuba sendiri kelas contoh</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var v=document.getElementById('vidDemo'),t=document.getElementById('telefon'),b=document.getElementById('mainBtn');
+  var bb=[].slice.call(document.querySelectorAll('#babak button'));
+  function main(dari){ if(dari!=null){ try{v.currentTime=dari}catch(e){} } var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+  b.addEventListener('click',function(){ main(null); });
+  v.addEventListener('play',function(){ t.classList.add('sedang-main'); v.controls=true; });
+  bb.forEach(function(x){ x.addEventListener('click',function(){
+    var dari=+x.getAttribute('data-t');
+    if(v.readyState<1){ v.preload='auto'; v.addEventListener('loadedmetadata',function f(){ v.removeEventListener('loadedmetadata',f); main(dari); }); v.load(); main(null); }
+    else main(dari);
+    if(window.matchMedia('(max-width:760px)').matches) t.scrollIntoView({behavior:'smooth',block:'center'});
+  }); });
+  v.addEventListener('timeupdate',function(){
+    var k=-1; bb.forEach(function(x,i){ if(v.currentTime>=+x.getAttribute('data-t')-0.2) k=i; });
+    bb.forEach(function(x,i){ x.setAttribute('aria-current',i===k?'true':'false'); });
+  });
+})();
+</script>
 
 <div class="wrap pillar-sec">
   <h2>Apa yang murid dan cikgu dapat</h2>

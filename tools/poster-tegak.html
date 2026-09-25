@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Poster Tegak Jejak TP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@700;800&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF6; --mint:#E4F5F1; --card:#DCEFEB; --ink:#12302C; --ink2:#3F625C;
+  --teal:#1C7A73; --teal-deep:#0B4A46; --teal-line:#BFDDD7;
+  --gold:#E8A33D; --hl:#F0C98A;
+}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper)}
+body{font-family:"Lexend",sans-serif;color:var(--ink);position:relative}
+
+.atas{position:absolute;top:60px;left:0;right:0;text-align:center}
+.jenama{font:400 160px/1 "Anton",sans-serif;color:var(--jenama,var(--teal-deep));letter-spacing:2px}
+.sub{margin-top:22px;font:600 36px "Lexend",sans-serif;color:var(--sub,var(--teal))}
+.sub span{opacity:.45;margin-inline:14px}
+
+.soalan{position:absolute;top:345px;left:60px;right:60px;text-align:center;font:800 84px/1.05 "Baloo 2",sans-serif;color:var(--soalan,var(--ink))}
+.soalan mark{color:var(--mark-ink,inherit);background:linear-gradient(transparent 58%,var(--hl) 58%);padding-inline:6px}
+
+.kad-kad{position:absolute;top:565px;left:50px;right:50px;display:flex;flex-direction:column;gap:20px}
+.kad{background:var(--card);box-shadow:var(--kad-bayang,none);border-radius:30px;padding:28px 36px;display:grid;grid-template-columns:90px 1fr;gap:28px;align-items:center}
+.kad svg{width:90px;height:90px;color:var(--ikon,var(--teal))}
+.kad:nth-child(2){background:var(--card2,var(--card))}.kad:nth-child(2) svg{color:var(--ikon2,var(--ikon,var(--teal)))}
+.kad:nth-child(3){background:var(--card3,var(--card))}.kad:nth-child(3) svg{color:var(--ikon3,var(--ikon,var(--teal)))}
+.kad h2{font:800 56px/1.04 "Baloo 2",sans-serif;color:var(--h2,var(--teal-deep))}
+.kad p{margin-top:8px;font:400 31px/1.3 "Lexend",sans-serif;color:var(--ink2)}
+
+.foto{position:absolute;left:50px;bottom:165px;width:255px}
+.foto img{width:100%;display:block;border-radius:26px;border:9px solid #fff;box-shadow:0 26px 50px -24px rgba(11,74,70,.5);transform:rotate(-3deg)}
+
+.tawaran{position:absolute;left:360px;right:50px;bottom:200px}
+.lencana{display:inline-block;background:var(--lencana,var(--gold));color:var(--lencana-ink,#3A2510);font:800 60px/1 "Baloo 2",sans-serif;padding:26px 32px 20px;white-space:nowrap;border-radius:24px;transform:rotate(-2deg);box-shadow:0 18px 36px -18px rgba(122,78,14,.6)}
+.tawaran p{margin-top:30px;font:600 36px/1.3 "Lexend",sans-serif;color:var(--tawaran,var(--ink))}
+.tawaran .url{margin-top:18px;font:700 36px "Lexend",sans-serif;color:var(--url,var(--teal-deep))}
+
+.pita{position:absolute;left:0;right:0;bottom:0;height:130px;background:var(--pita,var(--teal-deep));display:flex;align-items:center;justify-content:center;font:800 58px "Baloo 2",sans-serif;color:#fff;white-space:nowrap}
+.pita b{color:var(--pita-hl,var(--hl));margin-left:16px}
+
+/* Latar Jalur Gemilang lembut */
+.bendera{position:absolute;inset:0;overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 45%,transparent 78%);
+          mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 45%,transparent 78%)}
+.bendera svg{position:absolute;left:-140px;top:-90px;width:1800px;height:900px;transform:rotate(-9deg);opacity:var(--bendera-op,.16)}
+
+/* Tema ceria: pilih dengan #kuning, #biru atau #pastel pada URL */
+body.kuning{--bendera-op:.2;--paper:#FFE14D;--jenama:#0B4A46;--sub:#0B4A46;--soalan:#12302C;--hl:#fff;
+  --card:#fff;--kad-bayang:0 14px 0 -4px rgba(11,74,70,.18);--ikon:#1C9A8F;--ikon2:#FF5A5F;--ikon3:#7B5CFF;
+  --h2:#12302C;--ink2:#4B5A57;--lencana:#FF5A5F;--lencana-ink:#fff;--url:#0B4A46;--pita:#0B4A46;--pita-hl:#FFE14D}
+body.biru{--paper:#2F4BFF;--jenama:#fff;--sub:#D8FF4F;--soalan:#fff;--hl:#D8FF4F;--mark-ink:#141A4D;
+  --card:#fff;--ikon:#2F4BFF;--ikon2:#FF5CA8;--ikon3:#12B886;--h2:#141A4D;--ink2:#4A5080;
+  --lencana:#D8FF4F;--lencana-ink:#141A4D;--tawaran:#fff;--url:#D8FF4F;--pita:#141A4D;--pita-hl:#D8FF4F}
+body.pastel{--bendera-op:.16;--paper:#FFF4E8;--jenama:#FF5A36;--sub:#6C4BD8;--hl:#9FECC9;
+  --card:#FFDCCD;--card2:#E3DBFF;--card3:#C9F2DF;--ikon:#FF5A36;--ikon2:#6C4BD8;--ikon3:#10957A;
+  --h2:#2A1F4D;--ink2:#54496E;--lencana:#6C4BD8;--lencana-ink:#fff;--url:#6C4BD8;--pita:#2A1F4D;--pita-hl:#FFC94A}
+</style>
+</head>
+<body>
+<div class="bendera"><svg viewBox="0 0 280 140" preserveAspectRatio="none" id="jalur">
+  <defs><linearGradient id="kibar" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#000" stop-opacity=".12"/><stop offset=".8" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#000" stop-opacity=".1"/></linearGradient></defs>
+  <g id="jalur-isi"></g>
+  <rect width="280" height="140" fill="url(#kibar)"/>
+</svg></div>
+<script>
+(function(){
+  var g=document.getElementById('jalur-isi'),ns='http://www.w3.org/2000/svg',h=140/14,out='';
+  for(var i=0;i<14;i++) out+='<rect y="'+(i*h)+'" width="280" height="'+(h+.2)+'" fill="'+(i%2?'#fff':'#CC0001')+'"/>';
+  out+='<rect width="140" height="'+(8*h)+'" fill="#010066"/>';
+  out+='<circle cx="52" cy="40" r="30" fill="#FC0"/><circle cx="60" cy="40" r="25.5" fill="#010066"/>';
+  var pts=[],cx=104,cy=40,R=28,r=13;
+  for(var k=0;k<28;k++){var a=-Math.PI/2+k*Math.PI/14,rr=k%2?r:R;pts.push((cx+rr*Math.cos(a)).toFixed(2)+','+(cy+rr*Math.sin(a)).toFixed(2));}
+  out+='<polygon points="'+pts.join(' ')+'" fill="#FC0"/>';
+  g.innerHTML=out;
+})();
+</script>
+
+<div class="atas">
+  <div class="jenama">JEJAK TP SAINS</div>
+  <div class="sub">Sains KSSM T1–T5<span>|</span>PBD Automatik<span>|</span>Evidens Digital</div>
+</div>
+
+<h1 class="soalan">Cikgu Sains, <mark>penat isi TP</mark> satu-satu?</h1>
+
+<div class="kad-kad">
+  <div class="kad">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="32" height="38" rx="4"/><path d="M17 6v5h14V6"/><path d="M15 25l5 5 12-12"/></svg>
+    <div><h2>TP murid dijana secara automatik</h2><p>Murid bermain jawab penilaian, guru tak perlu tanda kertas</p></div>
+  </div>
+  <div class="kad">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 40h28"/><path d="M28 8l8 8-18 18-10 2 2-10z"/><path d="M24 12l8 8"/></svg>
+    <div><h2>Ulasan PBD siap ditulis</h2><p>40 murid, cikgu semak &amp; salin ke SPPB</p></div>
+  </div>
+  <div class="kad">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3" fill="currentColor"/><path d="M34 14l8-8M36 6h6v6"/></svg>
+    <div><h2>Kelas yang lemah dikenal pasti dengan pantas</h2></div>
+  </div>
+</div>
+
+<div class="foto"><img src="../promo-hero-2.jpg" alt=""></div>
+
+<div class="tawaran">
+  <div class="lencana">Bab 1 &amp; 2 PERCUMA</div>
+  <p>Cuba kelas contoh dulu,<br>tak perlu daftar</p>
+  <div class="url">jejaktpsains.naikgred.com</div>
+</div>
+
+<div class="pita">Murid bermain aktiviti,<b>TP auto dijana</b></div>
+<script>document.body.className=location.hash.slice(1)||'kuning'</script>
+</body>
+</html>
