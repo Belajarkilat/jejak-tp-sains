@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="robots" content="noindex">
 <link rel="icon" href="ikon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="ikon.svg">
+<link rel="apple-touch-icon" href="ikon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
 <title>Jejak TP Sains</title>
 <style>
@@ -696,6 +696,7 @@ input.kodkelas::placeholder{opacity:.3}
    ketik di sini mahal. */
 .btnkecil{border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:5px 11px;font-size:12px;cursor:pointer;color:var(--ink2);min-height:44px}
 .btnkecil.bahaya{color:var(--arteri)}
+a.btnkecil{display:inline-flex;align-items:center;text-decoration:none}
 /* Kotak semak 18px terlalu kecil untuk jari, tetapi labelnya boleh diketik
    juga, jadi sasaran sebenar ialah label ini. */
 .suis{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);cursor:pointer;min-height:44px}
@@ -938,6 +939,8 @@ body.zon-murid{color:var(--tinta)}
 .kotakmain .d{font-size:13.5px;color:var(--lembut)}
 .kotakmain.harian{background:#FFF1C9;color:#2B2200}
 .kotakmain.harian .d{color:#5E4E1C}
+.kotakmain.pasang .tutup{background:none;border:0;color:var(--lembut);font-size:13.5px;text-decoration:underline;cursor:pointer;min-height:44px;padding:0 6px}
+.kotakmain.pasang .langkah{margin:4px 0 0;padding-left:18px;font-size:13.5px;color:var(--lembut)}
 .alat{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;align-items:center}
 .suisbesar{
   display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:2px solid var(--garis);
@@ -2350,6 +2353,84 @@ function renderPin(){
   document.addEventListener("keydown",pinKekunci);
 }
 
+/* Pautan peribadi: buka kelas, semak PIN di pelayan, kemudian terus ke peta.
+   Jika PIN sudah ditukar cikgu, murid dibawa ke skrin PIN namanya sendiri. */
+function masukPautanPeribadi(kod,no,pin){
+  if(KM&&KM.kod===kod&&S.no===no&&S.kod===pin) return;
+  S.latihan=false; S.kodDraf=kod; S.skrin="kodkelas";
+  var buka=(KM&&KM.kod===kod)?Promise.resolve(true):bukaKelas(kod);
+  buka.then(function(ok){
+    if(!ok){ S.mesej="Kod kelas dalam pautan itu tidak dijumpai. Semak dengan cikgu."; render(); return; }
+    S.kodDraf="";
+    if(!(NAMA[KM.id]||{})[no]){ S.no=null; S.kod=""; S.skrin="nama"; render(); return; }
+    return rpc("lo_masuk",{p_kelas:KM.id,p_no:no,p_pin:pin}).then(function(sah){
+      if(!sah){ S.no=null; S.kod=""; S.noPilih=no; S.pinDraf=""; S.skrin="pin"; render(); return; }
+      S.kod=pin; S.pinDraf="";
+      masukMurid(no);
+      muatBabJauh();
+    });
+  }).catch(function(){
+    S.mesej="Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi."; render();
+  });
+}
+function urlPeribadi(kod,no,pin){ return urlKelas(kod)+"&m="+encodeURIComponent(no)+"&p="+pin; }
+
+/* ---------- letak di skrin telefon ----------
+   Pautan kelas mudah tenggelam dalam group WhatsApp. Ikon di skrin utama
+   dibuka terus ke peta, kerana peranti sudah ingat murid (cn-diri).
+   Android/Chrome: guna gesaan pasang sebenar jika pelayar menawarkannya.
+   iPhone: Safari tiada gesaan, jadi tunjuk langkah. Disembunyikan jika sudah
+   dipasang, atau 14 hari selepas murid tekan "Nanti". */
+var GESA_PASANG=null;
+window.addEventListener("beforeinstallprompt",function(e){
+  e.preventDefault(); GESA_PASANG=e;
+  if(S.skrin==="peta"&&!$("murid").classList.contains("hidden")) render();
+});
+window.addEventListener("appinstalled",function(){
+  GESA_PASANG=null;
+  try{ localStorage.setItem("cn-pasang","dipasang"); }catch(e){}
+  if(S.skrin==="peta") render();
+});
+function kadPasang(){
+  var ua=navigator.userAgent||"";
+  var sendiri=(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches)||navigator.standalone;
+  if(sendiri) return null;
+  var tanda=null; try{ tanda=localStorage.getItem("cn-pasang"); }catch(e){}
+  if(tanda==="dipasang") return null;
+  if(tanda&&Date.now()-Number(tanda)<14*864e5) return null;
+  var dalamApp=/FBAN|FBAV|Instagram|Line\/|TikTok|musical_ly|Snapchat/i.test(ua);
+  var ios=/iPhone|iPad|iPod/.test(ua)&&!dalamApp&&!/CriOS|FxiOS|EdgiOS/.test(ua);
+  var android=/Android/.test(ua)&&!dalamApp;
+  if(!GESA_PASANG&&!ios&&!android) return null;
+
+  var k=el("div","kotakmain pasang");
+  k.appendChild(el("span","em","\u{1F4F2}"));
+  var d=GESA_PASANG
+    ? "Sekali tekan, terus main. Tak payah cari pautan dalam group lagi."
+    : ios
+    ? '<ol class="langkah"><li>Tekan butang <b>Kongsi</b> (petak dengan anak panah ke atas) di bawah skrin.</li>'+
+      '<li>Pilih <b>Add to Home Screen</b>.</li></ol>'
+    : '<ol class="langkah"><li>Tekan <b>&#8942;</b> di penjuru atas kanan Chrome.</li>'+
+      '<li>Pilih <b>Tambah ke skrin utama</b> (Add to Home screen).</li></ol>';
+  k.appendChild(el("div","txt",'<div class="t">Letak Jejak TP di skrin telefon</div><div class="d">'+d+'</div>'));
+  if(GESA_PASANG){
+    var b=el("button","btn sm"); b.type="button"; b.textContent="Letak";
+    b.onclick=function(){
+      var g=GESA_PASANG; GESA_PASANG=null;
+      g.prompt();
+      (g.userChoice||Promise.resolve({})).then(function(r){
+        if(r&&r.outcome==="accepted"){ try{ localStorage.setItem("cn-pasang","dipasang"); }catch(e){} }
+        render();
+      });
+    };
+    k.appendChild(b);
+  }
+  var t=el("button","tutup"); t.type="button"; t.textContent="Nanti";
+  t.onclick=function(){ try{ localStorage.setItem("cn-pasang",String(Date.now())); }catch(e){} k.remove(); };
+  k.appendChild(t);
+  return k;
+}
+
 function masukMurid(no){
   S.no=no; S.latihan=false;
   S.lulus=kiraLulus();
@@ -2544,6 +2625,9 @@ function renderPeta(){
   hb.onclick=mulaHarian;
   hr.appendChild(hb);
   st.appendChild(hr);
+
+  var kp=kadPasang();
+  if(kp) st.appendChild(kp);
 
   /* papan skor kelas */
   if(berekod){
@@ -4464,10 +4548,34 @@ function kotakKongsi(k){
 }
 
 /* Satu kelas atau senarai kelas. Setiap kelas bermula pada halaman baharu. */
+var QR_SKRIP="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js";
+var QR_JANJI=null;
+function muatQr(){
+  if(window.qrcode) return Promise.resolve(window.qrcode);
+  if(QR_JANJI) return QR_JANJI;
+  QR_JANJI=new Promise(function(ok,gagal){
+    var s=document.createElement("script"); s.src=QR_SKRIP; s.async=true;
+    s.onload=function(){ ok(window.qrcode); };
+    s.onerror=function(){ QR_JANJI=null; s.remove(); gagal(new Error("Failed to fetch")); };
+    document.head.appendChild(s);
+  });
+  return QR_JANJI;
+}
+function svgQr(qr,teks){
+  try{ var q=qr(0,"M"); q.addData(teks); q.make(); return q.createSvgTag({cellSize:2,margin:4,scalable:true}); }
+  catch(e){ return ""; }
+}
+/* Tetingkap dibuka serta-merta (pop-up hanya dibenarkan terus daripada
+   ketikan), kemudian diisi selepas penjana QR dimuat. Jika penjana gagal
+   dimuat, slip tetap dicetak tanpa QR. */
 function cetakSlip(kelas){
-  var senarai=Array.isArray(kelas)?kelas:[kelas];
   var w=window.open("","_blank");
   if(!w){ alert("Benarkan tetingkap timbul (pop-up) untuk mencetak slip."); return; }
+  w.document.write("<p style='font-family:system-ui;padding:20px'>Menyediakan slip...</p>");
+  muatQr().then(function(qr){ tulisSlip(w,kelas,qr); },function(){ tulisSlip(w,kelas,null); });
+}
+function tulisSlip(w,kelas,qr){
+  var senarai=Array.isArray(kelas)?kelas:[kelas];
   var tajuk=senarai.length===1?senarai[0].nama:(senarai.length+" kelas");
   var html='<!doctype html><html lang="ms"><head><meta charset="utf-8"><title>Slip PIN '+esc(tajuk)+'</title>'+
     '<style>body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;margin:10mm;color:#111}'+
@@ -4475,6 +4583,8 @@ function cetakSlip(kelas){
     '.s{border:1px dashed #888;padding:9px 11px;break-inside:avoid;font-size:11.5px;line-height:1.5}'+
     '.s b{font-size:13.5px;display:block;margin-bottom:3px}.k{font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.12em;font-weight:700}'+
     '.u{font-size:9px;color:#555;word-break:break-all;margin-top:3px}.np{margin-bottom:10px}'+
+    '.s.ada-qr{display:flex;gap:9px;align-items:center}.s .qr{flex:none;width:22mm;height:22mm}.s .qr svg{width:100%;height:100%;display:block}'+
+    '.s .i{min-width:0}.s .q{font-size:9.5px;color:#333;margin-top:2px}'+
     '.hal+.hal{break-before:page;margin-top:14px}'+
     '@media print{.np{display:none}}</style></head><body>'+
     '<div class="np"><button onclick="print()">Cetak</button> Gunting setiap slip dan beri kepada murid.</div>';
@@ -4482,8 +4592,10 @@ function cetakSlip(kelas){
     var url=urlKelas(k.kod);
     html+='<div class="hal"><h1>'+esc(k.nama)+' &middot; Jejak TP Sains &middot; Sains</h1><div class="g">';
     nomborKelas(k.id).forEach(function(m){
-      html+='<div class="s"><b>'+esc(NAMA[k.id][m.no])+'</b>Kod kelas: <span class="k">'+esc(k.kod)+'</span><br>'+
-        'PIN saya: <span class="k">'+esc(PIN[k.id][m.no])+'</span><div class="u">'+esc(url)+'</div></div>';
+      var qs=qr?svgQr(qr,urlPeribadi(k.kod,m.no,PIN[k.id][m.no])):"";
+      html+='<div class="s'+(qs?' ada-qr':'')+'">'+(qs?'<div class="qr">'+qs+'</div>':'')+'<div class="i"><b>'+esc(NAMA[k.id][m.no])+'</b>Kod kelas: <span class="k">'+esc(k.kod)+'</span><br>'+
+        'PIN saya: <span class="k">'+esc(PIN[k.id][m.no])+'</span>'+
+        (qs?'<div class="q">Imbas QR dengan kamera telefon: terus masuk tanpa PIN.</div>':'<div class="u">'+esc(url)+'</div>')+'</div></div>';
     });
     html+='</div></div>';
   });
@@ -4818,6 +4930,14 @@ function paneSenarai(){
       tdn.appendChild(inp); tr.appendChild(tdn);
       tr.appendChild(el("td","pinsel",esc(m.pin)));
       var ops=el("td","ops");
+      if(!k.contoh){
+        var bw=el("a","btnkecil"); bw.textContent="WhatsApp";
+        bw.href="https://wa.me/?text="+encodeURIComponent("Hai "+namaPendek(kelas,m.no)+"! Ini pautan Jejak TP Sains untuk awak seorang. "+
+          "Tekan sekali, terus masuk, tak perlu taip PIN:\n"+urlPeribadi(k.kod,m.no,m.pin)+"\n\nJangan kongsi pautan ni dengan kawan ya.");
+        bw.target="_blank"; bw.rel="noopener";
+        bw.title="Hantar pautan masuk terus kepada "+m.nama+" sahaja";
+        ops.appendChild(bw); ops.appendChild(document.createTextNode(" "));
+      }
       var bp=el("button","btnkecil"); bp.type="button"; bp.textContent="PIN baharu";
       bp.onclick=function(){
         if(!confirm("Beri PIN baharu kepada "+m.nama+"? PIN lama tidak boleh digunakan lagi.")) return;
@@ -4836,7 +4956,8 @@ function paneSenarai(){
     });
     t.appendChild(tb); sx.appendChild(t); p.appendChild(sx);
     tandaLeret(p);
-    p.appendChild(el("p","note","Ketik nama untuk membetulkan ejaan. Setiap murid perlu PIN sendiri untuk masuk; cetak slip PIN dan beri kepada murid."));
+    p.appendChild(el("p","note","Ketik nama untuk membetulkan ejaan. Setiap murid perlu PIN sendiri untuk masuk; cetak slip PIN dan beri kepada murid. "+
+      "Murid yang belum main? Tekan <b>WhatsApp</b> untuk hantar pautan peribadi: murid tekan sekali dan terus masuk tanpa PIN. Hantar kepada murid itu sahaja, jangan ke group."));
   }
 
   p.appendChild(el("h3",null,murid.length?"Tambah murid":"Masukkan nama murid")).style.marginTop="22px";
@@ -5028,10 +5149,16 @@ function mula(){
 
   /* ?k=KOD daripada pautan cikgu; ?code=... daripada log masuk Google atau
      pautan tetapan semula kata laluan */
-  var qk=null, authUrl=false, modLama=null, qdemo=null;
+  var qk=null, authUrl=false, modLama=null, qdemo=null, qm=null, qp=null;
   try{
     var u=new URL(location.href);
     qk=u.searchParams.get("k");
+    /* Pautan peribadi ?k=KOD&m=NO&p=PIN (QR pada slip, atau WhatsApp daripada
+       cikgu): murid terus masuk tanpa cari nama dan taip PIN. PIN dibuang
+       dari bar alamat serta-merta supaya tidak tertinggal dalam sejarah. */
+    qm=u.searchParams.get("m"); qp=u.searchParams.get("p");
+    if(!/^[0-9]{4}$/.test(qp||"")||!qm){ qm=null; qp=null; }
+    u.searchParams.delete("m"); u.searchParams.delete("p");
     qdemo=u.searchParams.get("demo");
     /* ?main dikekalkan dalam URL supaya keluarga yang simpan pautan ini
        kekal dalam mod main bebas. Pautan biasa (tanpa ?main) sentiasa
@@ -5039,7 +5166,8 @@ function mula(){
     if(u.searchParams.has("main")) qdemo="bebas";
     if(qdemo&&qdemo!=="bebas"){ u.searchParams.delete("demo"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
     authUrl=u.searchParams.has("code")||u.searchParams.has("error_description")||/access_token|error_description/.test(u.hash);
-    if(qk){ u.searchParams.delete("k"); history.replaceState(null,"",u.pathname+u.search+u.hash); }
+    if(qk) u.searchParams.delete("k");
+    if(u.search!==location.search) history.replaceState(null,"",u.pathname+u.search+u.hash);
   }catch(e){}
   var qdaftar=false;
   try{ var up=new URL(location.href); modLama=(up.searchParams.has("cikgu")||up.searchParams.has("daftar"))?"cikgu":null; qdaftar=up.searchParams.has("daftar"); }catch(e){ modLama=null; }
@@ -5050,7 +5178,8 @@ function mula(){
   else if(KM) S.skrin="nama";
   else S.skrin="kodkelas";
 
-  if(qk){
+  if(qk&&qm){ masukPautanPeribadi(normKod(qk),qm,qp); }
+  else if(qk){
     var kod=normKod(qk);
     if(!KM||KM.kod!==kod){
       S.latihan=false; S.kodDraf=kod; S.skrin="kodkelas";
