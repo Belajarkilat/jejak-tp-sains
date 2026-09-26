@@ -16,3 +16,6 @@ sumber/_*.js
 _dbg.html
 _galeri.html
 .playwright-mcp/
+
+# Supabase CLI (tempatan)
+supabase/.temp/
