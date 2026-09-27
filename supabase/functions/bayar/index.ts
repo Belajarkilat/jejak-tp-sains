@@ -147,6 +147,8 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string) {
        jadi guna nombor sokongan jika guru belum isi. */
     billPhone: String(profil.telefon ?? "").replace(/\D/g, "") || env("TOYYIB_TELEFON", "60193686146"),
     billPaymentChannel: "0",
+    /* "0" = caj FPX (RM1) dibayar oleh pembeli, ditunjuk oleh toyyibPay di halaman bayar. */
+    billChargeToCustomer: "0",
     billExpiryDays: "1",
   }).catch((e) => ({ ralat: String(e.message ?? e) }));
 
