@@ -143,7 +143,9 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string) {
     billExternalReferenceNo: baris.id,
     billTo: String(profil.nama).slice(0, 100),
     billEmail: guru.email ?? "",
-    billPhone: String(profil.telefon ?? "").replace(/\D/g, ""),
+    /* toyyibPay live menolak billPhone kosong; telefon guru adalah pilihan,
+       jadi guna nombor sokongan jika guru belum isi. */
+    billPhone: String(profil.telefon ?? "").replace(/\D/g, "") || env("TOYYIB_TELEFON", "60193686146"),
     billPaymentChannel: "0",
     billExpiryDays: "1",
   }).catch((e) => ({ ralat: String(e.message ?? e) }));
