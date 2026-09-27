@@ -12,5 +12,5 @@ window.CN_AWAN = {
   kunci: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxb2tvd3p6Z3NldXZoY2dwa3RqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NzE5MDgsImV4cCI6MjEwMjU0NzkwOH0.AjFtow8RscN0KpIrWNrHCQu-cztcjd_ojTKZyY5GTg8",
   /* Butang bayar toyyibPay (FPX). Hidupkan selepas Edge Function "bayar"
      di-deploy dan rahsia TOYYIB_* live ditetapkan. */
-  bayarOnline: false
+  bayarOnline: true
 };
