@@ -4781,8 +4781,16 @@ function namaDalamBaris(row){
 }
 function kiraRupaNama(baris){
   var n=0;
-  (baris||[]).forEach(function(row){ (row||[]).forEach(function(c){ if(bersihNama(c)&&String(c).trim().split(/\s+/).length>=2) n++; }); });
+  /* kira selepas nombor giliran dibuang: "1 Semangat" ialah satu perkataan */
+  (baris||[]).forEach(function(row){ (row||[]).forEach(function(c){ if(bersihNama(c).split(" ").length>=2) n++; }); });
   return n;
+}
+/* Nama murid sebenar hampir selalu dua perkataan atau lebih. Kumpulan yang
+   kebanyakannya satu perkataan biasanya helaian ringkasan (senarai nama kelas,
+   bilangan murid), bukan senarai murid. */
+function kumpulanRagu(nama){
+  var satu=nama.filter(function(n){ return n.split(" ").length<2; }).length;
+  return satu*2>=nama.length;
 }
 /* -> [{kelas:"3 Amanah" atau "", nama:[...]}] */
 function kenalSenarai(helaian){
@@ -4792,7 +4800,8 @@ function kenalSenarai(helaian){
   var ikutHelaian=berisi.length>1;
   helaian.forEach(function(h){
     var baris=h.baris||[]; if(!baris.length) return;
-    if(ikutHelaian&&berisi.indexOf(h)<0) return;
+    /* langkau helaian tanpa rupa nama (ringkasan, carta) jika ada helaian lain yang berisi nama */
+    if(berisi.length&&berisi.indexOf(h)<0) return;
     var t=tajukLajur(baris), mula=0, nc=-1, kc=-1;
     if(t){ mula=t.r+1; nc=t.nama; kc=t.kelas; }
     for(var r=mula;r<baris.length;r++){
@@ -4803,7 +4812,11 @@ function kenalSenarai(helaian){
       tambah(k,n);
     }
   });
-  return susunan.map(function(k){ return {kelas:k,nama:kump[k]}; });
+  return susunan.map(function(k){
+    var g={kelas:k,nama:kump[k]};
+    if(kumpulanRagu(g.nama)){ g.ragu=true; g.pilih=false; }
+    return g;
+  });
 }
 
 function kuncinama(s){ return String(s||"").toLowerCase().replace(/\s+/g," ").trim(); }
@@ -4909,6 +4922,7 @@ function paneImport(ak){
       cth.style.whiteSpace="normal";
       cth.textContent=g.nama.slice(0,6).join(", ")+(g.nama.length>6?", dan "+(g.nama.length-6)+" lagi":"");
       w.appendChild(cth);
+      if(g.ragu){ var rg=el("p","ralat","Kumpulan ini nampaknya bukan senarai murid kerana kebanyakan namanya satu perkataan sahaja. Kumpulan ini tidak dipilih. Tandakan kotaknya jika memang senarai murid."); rg.style.padding="0 14px 10px"; w.appendChild(rg); }
       if(g.nama.length>60){ var ra=el("p","ralat","Lebih 60 nama. Setiap kelas boleh ada sehingga 60 murid; semak lajur Kelas dalam fail."); ra.style.padding="0 14px 10px"; w.appendChild(ra); }
       bd.appendChild(w);
     });
