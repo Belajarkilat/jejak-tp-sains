@@ -545,3 +545,40 @@ revoke all on function lo_harga(uuid, text) from public, anon, authenticated;
 revoke all on function lo_bayaran_berjaya(text, text, text, int) from public, anon, authenticated;
 grant execute on function lo_harga(uuid, text) to service_role;
 grant execute on function lo_bayaran_berjaya(text, text, text, int) to service_role;
+
+-- ---------- sumber pendaftaran (3 Okt 2026) ----------
+-- Pautan promosi membawa ?dari=<kod kumpulan> (cth. ?dari=tc). Pelayar
+-- menyimpan kod itu dan menghantar ping 'lawat'. Apabila guru mendaftar,
+-- kod direkod pada lo_guru.sumber sekali sahaja dan tidak boleh ditukar.
+alter table lo_guru add column if not exists sumber text not null default ''
+  check (sumber = '' or sumber ~ '^[a-z0-9-]{1,30}$');
+
+create or replace function lo_guru_tanda_sumber(p_sumber text)
+returns void language sql security definer set search_path = public as $$
+  update lo_guru set sumber = p_sumber
+  where id = auth.uid() and sumber = '' and p_sumber ~ '^[a-z0-9-]{1,30}$';
+$$;
+revoke all on function lo_guru_tanda_sumber(text) from public, anon;
+grant execute on function lo_guru_tanda_sumber(text) to authenticated;
+
+alter table lo_ping drop constraint if exists lo_ping_jenis_check;
+alter table lo_ping add constraint lo_ping_jenis_check
+  check (jenis in ('buka','hentian','ralat','lawat'));
+
+create or replace function lo_ping(
+  p_jenis text, p_peranti text, p_bab text default null,
+  p_aras int default null, p_nota text default ''
+) returns void language plpgsql security definer set search_path = public as $$
+begin
+  if p_jenis not in ('buka','hentian','ralat','lawat') then return; end if;
+  if p_peranti !~ '^[a-z0-9]{8}$' then return; end if;
+  if p_bab is not null and p_bab !~ '^t[1-3]b[0-9]{1,2}$' then return; end if;
+  if (select count(*) from lo_ping
+      where peranti = p_peranti and masa > now() - interval '1 day') >= 300 then
+    return;
+  end if;
+  insert into lo_ping (jenis, bab, aras, peranti, nota)
+  values (p_jenis, p_bab,
+          case when p_aras between 1 and 6 then p_aras end,
+          p_peranti, left(coalesce(p_nota,''), 300));
+end $$;
