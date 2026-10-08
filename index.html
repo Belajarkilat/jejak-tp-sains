@@ -3612,14 +3612,30 @@ function kotakSetuju(nilai){
   return w;
 }
 
+/* Supabase memulangkan paling banyak 1000 baris setiap pertanyaan (max_rows).
+   Guru dengan lebih kurang 166 murid yang bermain bab yang sama sudah melepasi
+   had itu, dan baris selebihnya hilang tanpa ralat. Ambil berperingkat.
+   buat() mesti mencipta pertanyaan baharu yang bertertib supaya halaman stabil. */
+var HAD_BARIS=1000;
+function semuaBaris(buat){
+  var semua=[];
+  function ambil(dari){
+    return buat().range(dari,dari+HAD_BARIS-1).then(function(r){
+      if(r.error) return r;
+      var d=r.data||[]; semua=semua.concat(d);
+      return d.length<HAD_BARIS?{data:semua,error:null}:ambil(dari+HAD_BARIS);
+    });
+  }
+  return ambil(0);
+}
 function muatGuru(){
   if(!SB||!SESI) return Promise.resolve();
   var bab=BAB_ID;
   return Promise.all([
     SB.from("lo_kelas").select("id,nama,kod,dicipta").order("dicipta"),
-    SB.from("lo_murid").select("kelas,no,nama,pin"),
-    SB.from("lo_cubaan").select("*").eq("bab",bab),
-    SB.from("lo_tp").select("*").eq("bab",bab)
+    semuaBaris(function(){ return SB.from("lo_murid").select("kelas,no,nama,pin").order("kelas").order("no"); }),
+    semuaBaris(function(){ return SB.from("lo_cubaan").select("*").eq("bab",bab).order("kelas").order("no").order("aras"); }),
+    semuaBaris(function(){ return SB.from("lo_tp").select("*").eq("bab",bab).order("kelas").order("no"); })
   ]).then(function(r){
     for(var i=0;i<r.length;i++) if(r[i].error) throw r[i].error;
     if(bab!==BAB_ID) return;
@@ -4638,10 +4654,10 @@ function noSeterusnya(kelas){
   nomborKelas(kelas).forEach(function(m){ ambil(m.no); });
   Object.keys(CUBAAN).forEach(function(k){ var c=CUBAAN[k]; if(c&&c.kelas===kelas) ambil(c.no); });
   if(kelas==="contoh") return Promise.resolve(max+1);
-  return SB.from("lo_cubaan").select("no").eq("kelas",kelas).then(function(r){
+  return semuaBaris(function(){ return SB.from("lo_cubaan").select("no").eq("kelas",kelas).order("bab").order("no").order("aras"); }).then(function(r){
     if(r.error) throw r.error;
     (r.data||[]).forEach(function(x){ ambil(x.no); });
-    return SB.from("lo_tp").select("no").eq("kelas",kelas);
+    return semuaBaris(function(){ return SB.from("lo_tp").select("no").eq("kelas",kelas).order("bab").order("no"); });
   }).then(function(r){
     if(r.error) throw r.error;
     (r.data||[]).forEach(function(x){ ambil(x.no); });
