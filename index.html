@@ -4897,6 +4897,27 @@ function kenalSenarai(helaian){
   });
 }
 
+/* Kotak "Tambah murid": tanpa tab, setiap baris ialah satu nama yang ditaip
+   atau disemak sendiri oleh cikgu. Jangan guna tapisan tajuk dan perkataan
+   kenalSenarai di sini; ia menolak nama sebenar seperti "Guru Prasad" atau
+   nama yang mengandungi "Nama" apabila hanya satu nama ditampal. Tampalan
+   berlajur (ada tab) masih melalui kenalSenarai. -> {nama:[], tolak:[]} */
+function namaTampalan(teks){
+  var baris=String(teks||"").replace(/^﻿/,"").split(/\r?\n/), nama=[], tolak=[];
+  if(baris.some(function(b){ return b.indexOf("\t")>=0; })){
+    kenalSenarai([{nama:null,baris:huraiTampal(teks)}]).forEach(function(g){ nama=nama.concat(g.nama); });
+    return {nama:nama,tolak:tolak};
+  }
+  baris.forEach(function(b){
+    var asal=b.replace(/ /g," ").replace(/\s+/g," ").trim();
+    if(!asal) return;
+    var s=asal.replace(/^\d+\s*[\.\)\-:]?\s+/,"").trim();
+    if(/^(nama|name|nama murid|nama pelajar|bil|no)$/i.test(s)) return;
+    if(s.length<2||s.length>120||!/[A-Za-zÀ-ɏ一-鿿]/.test(s)||/^\d{6}-?\d{2}-?\d{4}$/.test(s)||/@/.test(s)){ tolak.push(asal); return; }
+    nama.push(hurufNama(s));
+  });
+  return {nama:nama,tolak:tolak};
+}
 function kuncinama(s){ return String(s||"").toLowerCase().replace(/\s+/g," ").trim(); }
 function cariKelasGuru(nama){
   var k=kuncinama(nama).replace(/\s/g,"");
@@ -5154,11 +5175,11 @@ function paneSenarai(){
   var labelBs=murid.length?"Tambah ke kelas":"Simpan nama murid";
   var bs=el("button","btn"); bs.type="button"; bs.textContent=labelBs;
   bs.onclick=function(){
-    /* pembaca yang sama dengan import fail: kenal tajuk, nombor giliran,
-       lajur tambahan dan nama HURUF BESAR */
-    var baru=[];
-    kenalSenarai([{nama:null,baris:huraiTampal(ta.value)}]).forEach(function(g){ baru=baru.concat(g.nama); });
-    if(!baru.length){ papar("Tampal sekurang-kurangnya satu nama."); return; }
+    /* satu baris satu nama; tampalan berlajur dari Excel masih dikenal
+       tajuk, nombor giliran dan nama HURUF BESARnya */
+    var t=namaTampalan(ta.value), baru=t.nama;
+    if(!baru.length){ papar(t.tolak.length?"Nama ini tidak dapat dibaca: "+t.tolak.join(", ")+". Semak ejaan, kemudian cuba lagi.":"Tampal sekurang-kurangnya satu nama."); return; }
+    if(t.tolak.length&&!confirm("Baris ini bukan nama murid dan akan dilangkau:\n\n"+t.tolak.join("\n")+"\n\nTeruskan dengan "+baru.length+" nama?")) return;
     bs.disabled=true; bs.textContent="Menyimpan...";
     tambahMurid(kelas,baru).then(function(r){
       S.drafNama=null;
