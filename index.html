@@ -4779,7 +4779,18 @@ function bacaFail(fail){
     return fail.arrayBuffer().then(function(buf){
       var wb=X.read(buf,{type:"array"});
       return wb.SheetNames.map(function(n){
-        return {nama:n,baris:X.utils.sheet_to_json(wb.Sheets[n],{header:1,raw:false,defval:"",blankrows:false})};
+        var ws=wb.Sheets[n];
+        /* Sesetengah sistem (cth. eksport APDM) menulis julat helaian yang
+           terlalu pendek; SheetJS mematuhinya lalu murid terakhir tercicir.
+           Kira semula julat daripada sel yang benar-benar wujud. */
+        var r=ws["!ref"]?X.utils.decode_range(ws["!ref"]):{s:{r:0,c:0},e:{r:0,c:0}};
+        Object.keys(ws).forEach(function(a){
+          if(a.charAt(0)==="!") return;
+          var c=X.utils.decode_cell(a);
+          if(c.r>r.e.r) r.e.r=c.r; if(c.c>r.e.c) r.e.c=c.c;
+        });
+        ws["!ref"]=X.utils.encode_range(r);
+        return {nama:n,baris:X.utils.sheet_to_json(ws,{header:1,raw:false,defval:"",blankrows:false})};
       });
     });
   });
