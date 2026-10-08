@@ -3972,9 +3972,31 @@ function panggilBayar(isi){
       });
     });
 }
+/* toyyibPay mengunci medan telefon yang dihantar, jadi minta nombor guru
+   sebelum bil dicipta. Tanpanya nombor sokongan kami yang terpapar. */
+function pastikanTelefon(){
+  if(PROFIL&&PROFIL.telefon) return Promise.resolve(true);
+  var v="", ralat="";
+  for(;;){
+    v=prompt(ralat+"Masukkan nombor telefon cikgu untuk resit bayaran (cth. 012-345 6789):",v);
+    if(v===null) return Promise.resolve(false);
+    var t=normTelefon(v);
+    if(t) return simpanProfil(PROFIL.nama,PROFIL.sekolah,t,PROFIL.setuju).then(function(){ return true; });
+    ralat="Nombor tidak sah. ";
+  }
+}
 function naikTarafOnline(peringkat, btn){
   btn.disabled=true; var asal=btn.textContent; btn.textContent="Membuka halaman bayaran...";
-  panggilBayar({aksi:"cipta",peringkat:peringkat}).then(function(j){
+  pastikanTelefon().then(function(ok){
+    if(!ok){ btn.disabled=false; btn.textContent=asal; return; }
+    return bukaBayaran(peringkat, btn, asal);
+  }).catch(function(e){
+    btn.disabled=false; btn.textContent=asal;
+    alert("Tak dapat simpan nombor telefon.\n\n"+e.message);
+  });
+}
+function bukaBayaran(peringkat, btn, asal){
+  return panggilBayar({aksi:"cipta",peringkat:peringkat}).then(function(j){
     if(!j.url) throw new Error(j.ralat||"Tiada pautan bayaran");
     try{ localStorage.setItem("cn-bil",j.billcode); }catch(e){}
     location.href=j.url;
