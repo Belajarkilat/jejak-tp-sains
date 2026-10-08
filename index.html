@@ -2236,7 +2236,15 @@ function bukaKelas(kod){
     return true;
   });
 }
+/* Tingkatan daripada nama kelas: "1m", "1 LUHUR", "3a1", "T2 Cerdik",
+   "Tingkatan 4 Sains". Nama tanpa nombor di hadapan ("Kelas Tambahan")
+   memulangkan 0, jadi bab semasa tidak diusik. */
+function tingkatanKelas(nama){
+  var m=/^\s*(?:ting(?:katan|\.)?\s*|t\.?\s*|form\s*|f\.?\s*)?([1-5])(?!\d)/i.exec(nama||"");
+  return m?+m[1]:0;
+}
 function pasangKM(d){
+  var kelasBaru=!KM||KM.id!==d.id;
   if(KM&&KM.id!==d.id){ S.no=null; S.kod=""; S.lulus={}; S.kad={}; }
   KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||"",
       premiumRendah:!!d.premium_rendah,premiumAtas:!!d.premium_atas};
@@ -2245,6 +2253,13 @@ function pasangKM(d){
   NAMA[d.id]={};
   (d.murid||[]).forEach(function(m){ NAMA[d.id][m.no]=m.nama; });
   try{ localStorage.setItem("cn-km",JSON.stringify({v:SKEMA,km:KM,murid:d.murid||[]})); }catch(e){}
+  /* Kali pertama kelas ini dibuka pada peranti ini: mulakan di Bab 1
+     tingkatan kelas, bukan bab lalai Tingkatan 3. Selepas itu pilihan
+     murid sendiri dikekalkan (segar semula kelas yang sama tidak masuk sini). */
+  if(kelasBaru){
+    var tk=tingkatanKelas(d.nama);
+    if(tk&&tk!==tingkatanBab(BAB_ID)) pasangBab("t"+tk+"b1");
+  }
   /* Langganan mungkin dah luput sejak kali terakhir bab ini dibuka. */
   if(!bebasBab(BAB_ID)&&!premiumAktif(tingkatanBab(BAB_ID))) pasangBab("t"+tingkatanBab(BAB_ID)+"b1");
   simpanDiri();
