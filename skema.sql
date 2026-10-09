@@ -103,6 +103,7 @@ create table lo_cubaan (
   kali      int not null default 0,
   karangan  jsonb,
   akhir     bigint,
+  dikemas   timestamptz not null default now(),  -- masa pelayan, kursor papan skor
   primary key (bab, kelas, no, aras)
 );
 
@@ -220,7 +221,9 @@ returns boolean language sql security definer set search_path = public as $$
 $$;
 
 -- Rekod kelas untuk papan skor murid. Karangan murid lain tidak dipulangkan.
-create or replace function lo_papan(p_bab text, p_kelas text, p_no text, p_pin text)
+-- Dengan p_sejak (kursor jawapan sebelumnya), hanya baris yang berubah.
+create or replace function lo_papan(p_bab text, p_kelas text, p_no text, p_pin text,
+                                    p_sejak timestamptz default null)
 returns jsonb language plpgsql security definer set search_path = public as $$
 begin
   if not lo_pin_betul(p_kelas, p_no, p_pin) then return null; end if;
@@ -230,8 +233,10 @@ begin
         'pertama', case when no = p_no then pertama else null end,
         'terbaik', terbaik, 'kali', kali, 'akhir', akhir,
         'karangan', case when no = p_no then karangan else null end))
-      from lo_cubaan where bab = p_bab and kelas = p_kelas), '[]'::jsonb),
-    'tp', (select to_jsonb(t) from lo_tp t where bab = p_bab and kelas = p_kelas and no = p_no)
+      from lo_cubaan where bab = p_bab and kelas = p_kelas
+        and (p_sejak is null or dikemas > p_sejak)), '[]'::jsonb),
+    'tp', (select to_jsonb(t) from lo_tp t where bab = p_bab and kelas = p_kelas and no = p_no),
+    'kursor', now() - interval '15 seconds'
   );
 end $$;
 
@@ -271,7 +276,8 @@ begin
                  end,
       kali     = ada.kali + 1,
       karangan = coalesce(p_karangan, ada.karangan),
-      akhir    = (p_kini->>'masa')::bigint
+      akhir    = (p_kini->>'masa')::bigint,
+      dikemas  = now()
       where bab = p_bab and kelas = p_kelas and no = p_no and aras = p_aras
       returning * into hasil;
   end if;
@@ -318,7 +324,7 @@ grant execute on function lo_milik(text) to authenticated;
 
 grant execute on function lo_kelas_buka(text) to anon, authenticated;
 grant execute on function lo_masuk(text, text, text) to anon, authenticated;
-grant execute on function lo_papan(text, text, text, text) to anon, authenticated;
+grant execute on function lo_papan(text, text, text, text, timestamptz) to anon, authenticated;
 grant execute on function lo_simpan_cubaan(text, text, text, text, int, jsonb, jsonb) to anon, authenticated;
 revoke all on function lo_guru_simpan_murid(text, jsonb) from public, anon;
 grant execute on function lo_guru_simpan_murid(text, jsonb) to authenticated;

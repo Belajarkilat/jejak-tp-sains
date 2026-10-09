@@ -3408,13 +3408,20 @@ function muatJauh(){
 }
 
 /* Rekod kelas bagi bab semasa, untuk papan skor dan kemajuan murid sendiri.
-   Pelayan hanya memulangkannya jika PIN murid masih betul. */
+   Pelayan hanya memulangkannya jika PIN murid masih betul. Panggilan
+   pertama menarik seluruh rekod kelas; selepas itu kursor daripada pelayan
+   dihantar supaya hanya baris yang berubah dipulangkan. Kursor disimpan
+   dalam memori sahaja, jadi muat semula halaman sentiasa bermula penuh. */
+var KURSOR_PAPAN={};
 function muatBabJauh(){
   if(!AWAN||!KM||!S.no||!S.kod||S.latihan) return;
-  var bab=BAB_ID, kelas=KM.id;
-  rpc("lo_papan",{p_bab:bab,p_kelas:kelas,p_no:S.no,p_pin:S.kod}).then(function(d){
+  var bab=BAB_ID, kelas=KM.id, kk=bab+"|"+kelas+"|"+S.no;
+  var hujah={p_bab:bab,p_kelas:kelas,p_no:S.no,p_pin:S.kod};
+  if(KURSOR_PAPAN[kk]) hujah.p_sejak=KURSOR_PAPAN[kk];
+  rpc("lo_papan",hujah).then(function(d){
     if(bab!==BAB_ID||!KM||KM.id!==kelas) return;
     if(!d){ pinBerubah(); return; }
+    if(d.kursor) KURSOR_PAPAN[kk]=d.kursor;
     (d.cubaan||[]).forEach(function(r){
       letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
         pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir});
