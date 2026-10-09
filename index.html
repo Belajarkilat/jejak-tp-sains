@@ -4905,11 +4905,38 @@ function kenalSenarai(helaian){
       tambah(k,n);
     }
   });
-  return susunan.map(function(k){
+  var gabung=gabungTarikanExcel(susunan,kump);
+  return susunan.filter(function(k){ return kump[k]; }).map(function(k){
     var g={kelas:k,nama:kump[k]};
+    if(gabung[k]) g.gabung=gabung[k];
     if(kumpulanRagu(g.nama)){ g.ragu=true; g.pilih=false; }
     return g;
   });
+}
+/* Sel "3 Kindi" yang ditarik ke bawah dalam Excel menjadi 4 Kindi, 5 Kindi,
+   6 Kindi... lalu setiap murid mendapat kelasnya sendiri. Kesan kumpulan yang
+   namanya sama kecuali nombor dan kebanyakannya seorang murid sahaja, lalu
+   gabungkan ke dalam kumpulan pertama. Kelas sebenar seperti 1 Amanah,
+   2 Amanah dan 3 Amanah tidak terjejas kerana setiap satunya ramai murid.
+   Mengubah kump di tempatnya. -> {kelasPertama:[label yang digabung]} */
+function gabungTarikanExcel(susunan,kump){
+  var ikutAcuan={}, hasil={};
+  susunan.forEach(function(k){
+    if(!/\d/.test(k)) return;
+    var a=k.toLowerCase().replace(/\d+/g,"#");
+    (ikutAcuan[a]=ikutAcuan[a]||[]).push(k);
+  });
+  Object.keys(ikutAcuan).forEach(function(a){
+    var ks=ikutAcuan[a];
+    if(ks.length<3) return;
+    /* kumpulan pertama mungkin beberapa baris yang ditaip sebelum ditarik */
+    var lain=ks.slice(1), seorang=lain.filter(function(k){ return kump[k].length===1; }).length;
+    if(seorang*5<lain.length*4) return;
+    var induk=ks[0];
+    ks.slice(1).forEach(function(k){ kump[induk]=kump[induk].concat(kump[k]); delete kump[k]; });
+    hasil[induk]=ks;
+  });
+  return hasil;
 }
 
 /* Kotak "Tambah murid": tanpa tab, setiap baris ialah satu nama yang ditaip
@@ -5036,6 +5063,7 @@ function paneImport(ak){
       cth.style.whiteSpace="normal";
       cth.textContent=g.nama.slice(0,6).join(", ")+(g.nama.length>6?", dan "+(g.nama.length-6)+" lagi":"");
       w.appendChild(cth);
+      if(g.gabung){ var gb=el("p","qnote","Lajur Kelas dalam fail ini nampaknya ditarik ke bawah dalam Excel, jadi nombornya bertambah sendiri ("+esc(g.gabung.slice(0,3).join(", "))+", hingga "+esc(g.gabung[g.gabung.length-1])+"). "+g.gabung.length+" kumpulan itu sudah digabungkan menjadi satu kelas. Tukar nama kelas di atas jika perlu."); gb.style.padding="0 14px 10px"; w.appendChild(gb); }
       if(g.ragu){ var rg=el("p","ralat","Kumpulan ini nampaknya bukan senarai murid kerana kebanyakan namanya satu perkataan sahaja. Kumpulan ini tidak dipilih. Tandakan kotaknya jika memang senarai murid."); rg.style.padding="0 14px 10px"; w.appendChild(rg); }
       if(g.nama.length>60){ var ra=el("p","ralat","Lebih 60 nama. Setiap kelas boleh ada sehingga 60 murid; semak lajur Kelas dalam fail."); ra.style.padding="0 14px 10px"; w.appendChild(ra); }
       bd.appendChild(w);
