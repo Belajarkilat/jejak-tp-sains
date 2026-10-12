@@ -50,6 +50,8 @@ const json = (data: unknown, status = 200) =>
 const PERINGKAT: Record<string, string> = {
   rendah: "Premium Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
   atas: "Premium Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
+  /* Paket kelas (Sains sahaja): RM23 = 5 kelas tambahan, tiada tarikh tamat */
+  kelas: "Tambahan 5 kelas guru",
 };
 
 /* toyyibPay: billName/billDescription hanya huruf, nombor, ruang dan '_'. */
@@ -108,7 +110,7 @@ async function sahkan(billcode: string) {
 }
 
 async function cipta(guru: { id: string; email?: string }, peringkat: string) {
-  if (!PERINGKAT[peringkat]) return json({ ralat: "Peringkat tidak sah" }, 400);
+  if (!PERINGKAT[peringkat] || (peringkat === "kelas" && P !== "lo")) return json({ ralat: "Peringkat tidak sah" }, 400);
   if (!RAHSIA || !KATEGORI || !APP_URL) return json({ ralat: "Bayaran dalam talian belum dibuka" }, 503);
 
   const { data: profil } = await sb.from(P + "_guru").select("nama, telefon").eq("id", guru.id).maybeSingle();
@@ -133,7 +135,7 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string) {
   const hasil = await toyyib("createBill", {
     userSecretKey: RAHSIA,
     categoryCode: KATEGORI,
-    billName: bersih(PRODUK + " Premium", 30),
+    billName: bersih(PRODUK + (peringkat === "kelas" ? " Kelas" : " Premium"), 30),
     billDescription: bersih(PERINGKAT[peringkat], 100),
     billPriceSetting: "1",
     billPayorInfo: "1",
