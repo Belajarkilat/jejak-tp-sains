@@ -3687,7 +3687,7 @@ function pesanRalat(e){
   if(/valid email|invalid.*email|Unable to validate email/i.test(m)) return "Alamat e-mel tidak sah.";
   if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk cikgu.";
   if(/Failed to fetch|NetworkError|Load failed|network/i.test(m)) return "Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi.";
-  if(/had (5|20) kelas/.test(m)) return "Setiap akaun boleh ada sehingga 5 kelas. Hubungi kami jika sekolah anda memerlukan lebih.";
+  if(/had (5 |20 )?kelas/.test(m)) return "Setiap akaun termasuk 5 kelas. Untuk kelas tambahan, setiap RM23 memberi 5 kelas lagi. Hubungi kami di WhatsApp untuk menambah.";
   if(/had 60 murid/.test(m)) return "Setiap kelas boleh ada sehingga 60 murid.";
   if(/JWT expired|not authenticated/i.test(m)) return "Sesi log masuk tamat. Sila log masuk semula.";
   if(/permission denied|row-level security|bukan kelas anda/i.test(m)) return "Tiada kebenaran untuk tindakan ini. Muat semula halaman dan cuba lagi.";
