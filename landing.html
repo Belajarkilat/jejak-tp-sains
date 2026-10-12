@@ -5,7 +5,7 @@
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jejak TP Sains — cadangan TP dan ulasan PBD siap serta-merta</title>
-<meta name="description" content="Permainan pentaksiran bilik darjah Sains KSSM Tingkatan 1 hingga 5. Murid menjawab soalan mengikut bab, dan guru memperoleh cadangan TP secara automatik tanpa perlu mengisi borang secara manual.">
+<meta name="description" content="Permainan pentaksiran bilik darjah Sains KSSM Tingkatan 1 hingga 5. Murid menjawab soalan mengikut bab, dan guru memperoleh cadangan TP secara automatik tanpa perlu mengisi borang secara manual. Termasuk 51 bab dan 2,754 soalan.">
 <link rel="canonical" href="https://jejaktpsains.naikgred.com/landing.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ms_MY">
@@ -214,6 +214,14 @@ footer .ng-logo.gelap{display:none}
 :root[data-theme="dark"] footer .ng-logo.terang{display:none}
 :root[data-theme="dark"] footer .ng-logo.gelap{display:block}
 
+/* Bar tindakan melekat (telefon sahaja): muncul selepas pelawat melepasi hero, hilang di bahagian penutup. */
+.bar-lekat{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--teal-line);box-shadow:0 -8px 24px -12px rgba(11,74,70,.35)}
+.bar-lekat a{flex:1;display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:12px;font:600 15px "Lexend",sans-serif;text-decoration:none}
+.bar-lekat .utama{background:var(--teal-deep);color:#fff}
+.bar-lekat .kedua{border:1.5px solid var(--teal-line);color:var(--teal-deep);background:transparent;flex:0 0 auto;padding:0 18px}
+@media (max-width:700px){.bar-lekat.nampak{display:flex}body{padding-bottom:72px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar-lekat .kedua{color:var(--teal)}}
+:root[data-theme="dark"] .bar-lekat .kedua{color:var(--teal)}
 </style>
 </head>
 <body>
@@ -232,7 +240,7 @@ footer .ng-logo.gelap{display:none}
   <div class="hero-photo">
     <img src="promo-hero-2.jpg" alt="Ilustrasi guru Sains berhijab memegang kelalang makmal berisi cecair kuning" width="440" height="801">
     <div class="lencana-pink" title="Pinktober" role="img" aria-label="Pita Pinktober"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 5.5C8.5 2 15.5 2 15.5 5.5 15.5 10.5 8.6 15.5 6.5 21.5"/><path d="M8.5 5.5C8.5 10.5 15.4 15.5 17.5 21.5"/></svg></div>
-    <div class="hero-badge">51 bab, T1–T5</div>
+    <div class="hero-badge">51 bab · 2,754 soalan · T1–T5</div>
   </div>
   <div>
     <span class="eyebrow-tag"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-2px;margin-right:6px" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 5.5C8.5 2 15.5 2 15.5 5.5 15.5 10.5 8.6 15.5 6.5 21.5"/><path d="M8.5 5.5C8.5 10.5 15.4 15.5 17.5 21.5"/></svg>Pinktober · Bab 1 dan 2 percuma</span>
@@ -301,7 +309,7 @@ footer .ng-logo.gelap{display:none}
     <div class="pillar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5C2 4.7 2.7 4 3.5 4H10a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H2z"/><path d="M22 5.5c0-.8-.7-1.5-1.5-1.5H14a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H22z"/><path d="m8 9 2 1.8L8 12.6"/></svg>
       <h3>Latihan topikal lengkap</h3>
-      <p>51 bab mengikut DSKP Tingkatan 1 hingga 5, tersedia dalam talian. Tiada modul yang perlu dicetak atau difotostat.</p>
+      <p>51 bab dan 2,754 soalan mengikut DSKP Tingkatan 1 hingga 5, tersedia dalam talian. Tiada modul yang perlu dicetak atau difotostat.</p>
     </div>
     <div class="pillar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/><path d="M3 20h18"/></svg>
@@ -375,13 +383,13 @@ footer .ng-logo.gelap{display:none}
     <div class="plan">
       <span class="siapa">Percuma</span>
       <span class="rm">RM0</span>
-      <p>Bab 1 dan 2 bagi setiap tingkatan. Sehingga 20 kelas, termasuk rekod TP dan eksport PBD ke Excel.</p>
+      <p>Bab 1 dan 2 bagi setiap tingkatan. Sehingga 5 kelas (60 murid setiap kelas), termasuk rekod TP dan eksport PBD ke Excel.</p>
     </div>
     <div class="plan utama">
       <span class="siapa">Premium — Menengah rendah</span>
       <span class="rm">RM23 <small>/ tahun</small></span>
       <span class="perintis">Harga <i>Early Bird</i> hingga 31 Dis 2026 · selepas itu RM59</span>
-      <p>Membuka <b>26 bab</b>: Bab 3 hingga akhir bagi Tingkatan 1 (9 bab), Tingkatan 2 (13 bab) dan Tingkatan 3 (10 bab). Ciri-ciri lain sama seperti akaun percuma.</p>
+      <p>Membuka <b>26 bab</b> (1,404 soalan): Bab 3 hingga akhir bagi Tingkatan 1 (9 bab), Tingkatan 2 (13 bab) dan Tingkatan 3 (10 bab). Ciri-ciri lain sama seperti akaun percuma.</p>
       <a class="btn utama langgan" href="index.html?cikgu&amp;naik=rendah">Langgan RM23</a>
       <span class="plan-bayar"><b>RM23 + RM1 caj FPX.</b> Bayaran balik penuh dalam 7 hari, tanpa sebab. Log masuk atau daftar dahulu, kemudian bayar melalui FPX.</span>
     </div>
@@ -389,17 +397,21 @@ footer .ng-logo.gelap{display:none}
       <span class="siapa">Premium — Menengah atas</span>
       <span class="rm">RM23 <small>/ tahun</small></span>
       <span class="perintis">Harga <i>Early Bird</i> hingga 31 Dis 2026 · selepas itu RM59</span>
-      <p>Membuka <b>15 bab</b>: Bab 3 hingga akhir bagi Tingkatan 4 (10 bab) dan Tingkatan 5 (9 bab). Ciri-ciri lain sama seperti akaun percuma.</p>
+      <p>Membuka <b>15 bab</b> (810 soalan): Bab 3 hingga akhir bagi Tingkatan 4 (10 bab) dan Tingkatan 5 (9 bab). Ciri-ciri lain sama seperti akaun percuma.</p>
       <a class="btn utama langgan" href="index.html?cikgu&amp;naik=atas">Langgan RM23</a>
       <span class="plan-bayar"><b>RM23 + RM1 caj FPX.</b> Bayaran balik penuh dalam 7 hari, tanpa sebab. Log masuk atau daftar dahulu, kemudian bayar melalui FPX.</span>
     </div>
   </div>
-  <p class="harga-nota">Mulai 1 Januari 2027, harga akan naik kepada RM59 setahun. Guru yang melanggan sebelum 31 Disember 2026 kekal membayar RM23 setiap tahun, selagi langganan tidak terputus. Mengajar kedua-dua peringkat? Langgan kedua-duanya pada harga RM23 setiap satu.</p>
+  <p class="harga-nota"><b>Kurang daripada RM2 sebulan</b>, kira-kira RM0.15 bagi setiap murid untuk 150 murid. Mulai 1 Januari 2027, harga akan naik kepada RM59 setahun. Guru yang melanggan sebelum 31 Disember 2026 kekal membayar RM23 setiap tahun, selagi langganan tidak terputus. Mengajar kedua-dua peringkat? Langgan kedua-duanya pada harga RM23 setiap satu. Perlukan lebih daripada 5 kelas? Setiap RM23 tambahan membuka 5 kelas lagi.</p>
 </div>
 
 <div class="wrap soalan-sec">
   <h2>Soalan lazim</h2>
   <div class="soalan">
+    <details>
+      <summary>Bab apakah yang sudah tersedia?</summary>
+      <p>Sains KSSM Tingkatan 1 (9 bab), Tingkatan 2 (13 bab), Tingkatan 3 (10 bab), Tingkatan 4 (10 bab) dan Tingkatan 5 (9 bab). Jumlahnya 51 bab dan 2,754 soalan. Bab 1 dan 2 bagi setiap tingkatan disediakan secara percuma.</p>
+    </details>
     <details>
       <summary>Adakah data murid selamat?</summary>
       <p>Murid log masuk menggunakan kod kelas rawak enam aksara dan PIN empat angka. Tiada e-mel atau nombor telefon murid yang direkodkan. Data tidak dikongsi atau dijual kepada pihak ketiga.</p>
@@ -410,7 +422,7 @@ footer .ng-logo.gelap{display:none}
     </details>
     <details>
       <summary>Berapa ramai murid yang boleh bermain?</summary>
-      <p>Sehingga 60 orang murid bagi setiap kelas dan 20 kelas bagi setiap akaun guru. Jumlah ini mencukupi untuk semua kelas yang diajar oleh guru.</p>
+      <p>Sehingga 60 orang murid bagi setiap kelas dan 5 kelas bagi setiap akaun guru. Setiap RM23 tambahan membuka 5 kelas lagi, jadi guru yang mengajar banyak kelas boleh menambahnya mengikut keperluan.</p>
     </details>
     <details>
       <summary>Adakah internet diperlukan sepanjang masa?</summary>
@@ -422,7 +434,7 @@ footer .ng-logo.gelap{display:none}
     </details>
     <details>
       <summary>Berapa lama masa yang diperlukan untuk satu bab?</summary>
-      <p>Berdasarkan data murid sebenar, satu hentian mengambil masa kira-kira empat minit. Satu bab yang lengkap (enam hentian) mengambil masa lebih kurang 25 minit dan boleh disiapkan dalam satu waktu PdP. Murid juga boleh berhenti selepas mana-mana hentian dan menyambungnya kemudian.</p>
+      <p>Setiap bab mempunyai enam hentian. Setiap hentian mengandungi lapan soalan dan satu soalan bos, jadi satu bab mempunyai 54 soalan. Berdasarkan data murid sebenar, satu hentian mengambil masa kira-kira empat minit. Satu bab yang lengkap (enam hentian) mengambil masa lebih kurang 25 minit dan boleh disiapkan dalam satu waktu PdP. Murid juga boleh berhenti selepas mana-mana hentian dan menyambungnya kemudian.</p>
     </details>
   </div>
 </div>
@@ -430,7 +442,7 @@ footer .ng-logo.gelap{display:none}
 <div class="wrap">
   <div class="penutup">
     <h2>Cuba dahulu dengan kelas guru sendiri</h2>
-    <p>Hanya lima minit untuk mengimport senarai murid, dan guru terus mendapat kod kelas untuk dikongsi. Kad kredit tidak diperlukan.</p>
+    <p>Mengimport senarai murid hanya mengambil masa lima minit, dan guru terus mendapat kod kelas untuk dikongsi. Kad kredit tidak diperlukan.</p>
     <div class="ctas">
       <a class="btn utama" href="index.html?daftar">Daftar percuma</a>
       <a class="btn kedua" href="index.html?demo=cikgu">Lihat kelas contoh dahulu</a>
@@ -441,11 +453,25 @@ footer .ng-logo.gelap{display:none}
 <div class="wrap">
   <footer>
     <span>Jejak TP Sains · Sains KSSM Tingkatan 1–5</span>
-    <span><a href="terma.html">Terma &amp; bayaran balik</a> · <a href="privasi.html">Privasi</a></span>
+    <span><a href="terma.html">Terma dan bayaran balik</a> · <a href="privasi.html">Privasi</a></span>
     <span class="ng">By <img class="ng-logo terang" src="naikgred-logo.svg" alt="NaikGred" width="107" height="24"><img class="ng-logo gelap" src="naikgred-logo-gelap.svg" alt="NaikGred" width="107" height="24"></span>
   </footer>
 </div>
 
+<nav class="bar-lekat" id="barLekat" aria-label="Tindakan pantas">
+  <a class="utama" href="index.html?demo=cikgu">Lihat kelas contoh</a>
+  <a class="kedua" href="#harga">Harga</a>
+</nav>
+<script>
+(function(){
+  var bar=document.getElementById("barLekat"), hero=document.querySelector(".hero .ctas"), tutup=document.querySelector(".penutup");
+  if(!bar||!hero||!("IntersectionObserver" in window)) return;
+  var heroNampak=true, tutupNampak=false;
+  function kemas(){ bar.classList.toggle("nampak", !heroNampak && !tutupNampak); }
+  new IntersectionObserver(function(e){ heroNampak=e[0].isIntersecting; kemas(); }).observe(hero);
+  if(tutup) new IntersectionObserver(function(e){ tutupNampak=e[0].isIntersecting; kemas(); }).observe(tutup);
+})();
+</script>
 <script src="konfig.js?v=20260927"></script>
 <script src="sumber.js?v=20261003"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "11ad551346a4473697a70261a5a56fb1"}'></script><!-- End Cloudflare Web Analytics -->
