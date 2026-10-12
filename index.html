@@ -4297,7 +4297,7 @@ function kadTambah(){
   w.appendChild(a); w.appendChild(msg);
   w.onsubmit=function(ev){
     ev.preventDefault();
-    var nama=fm.querySelector("input").value.trim();
+    var nama=bersihKelas(fm.querySelector("input").value);
     if(!nama){ msg.hidden=false; msg.textContent="Beri nama kelas."; return; }
     bs.disabled=true; bs.textContent="Mencipta...";
     SB.from("lo_kelas").insert({nama:nama}).select("id,nama,kod").single().then(function(r){
@@ -4843,6 +4843,8 @@ function hurufNama(s){
     return w.replace(/(^|[-'’(@])([a-z])/g,function(m,a,b){ return a+b.toUpperCase(); });
   }).join(" ");
 }
+/* Buang watak tak kelihatan (U+2000-200F, U+00AD, BOM) yang terbawa daripada salinan Excel/WhatsApp */
+function bersihKelas(v){ return String(v==null?"":v).replace(/[\u00AD\u2000-\u200F\u2060\uFEFF]/g,"").replace(/[\u00A0\u202F\u205F\u3000]/g," ").replace(/\s+/g," ").trim(); }
 function bersihNama(v){
   var s=String(v==null?"":v).replace(/\u00A0/g," ").replace(/^\s*\d+\s*[\.\)\-:]?\s+/,"").replace(/\s+/g," ").trim();
   if(s.length<2||s.length>120) return "";
@@ -4988,6 +4990,7 @@ function tambahMurid(kelas,senarai){
   }).then(function(){ return {baru:baru.length,langkau:senarai.length-baru.length}; });
 }
 function ciptaKelas(nama){
+  nama=bersihKelas(nama);
   return SB.from("lo_kelas").insert({nama:nama}).select("id,nama,kod").single().then(function(r){
     if(r.error) throw r.error;
     var k={id:r.data.id,nama:r.data.nama,kod:r.data.kod};
@@ -5252,7 +5255,7 @@ function paneSenarai(){
   nk.style.cssText="font:inherit;font-size:15px;padding:9px 11px;border-radius:9px;border:1.5px solid var(--line2);background:var(--surface);color:var(--ink);min-height:42px;flex:1 1 180px";
   var bn=el("button","btn sm"); bn.type="button"; bn.textContent="Tukar nama";
   bn.onclick=function(){
-    var v=nk.value.trim(); if(!v||v===k.nama) return;
+    var v=bersihKelas(nk.value); if(!v||v===k.nama) return;
     SB.from("lo_kelas").update({nama:v}).eq("id",kelas).then(function(r){
       if(r.error) return gagal(r.error);
       k.nama=v; renderCikgu();
