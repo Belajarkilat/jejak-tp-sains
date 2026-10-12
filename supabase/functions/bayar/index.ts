@@ -50,10 +50,10 @@ const json = (data: unknown, status = 200) =>
 const PERINGKAT: Record<string, string> = {
   rendah: "Premium Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
   atas: "Premium Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
-  /* Paket kelas (Sains sahaja): RM23 = 5 kelas tambahan, tiada tarikh tamat */
+  /* Paket kelas: RM23 = 5 kelas tambahan, tiada tarikh tamat */
   kelas: "Tambahan 5 kelas guru",
-  "panitia-rendah": "Pakej Panitia Sains Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
-  "panitia-atas": "Pakej Panitia Sains Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
+  "panitia-rendah": "Pakej Panitia Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
+  "panitia-atas": "Pakej Panitia Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
 };
 const PAKEJ = ["kecil", "standard", "besar"];
 
@@ -114,7 +114,7 @@ async function sahkan(billcode: string) {
 
 async function cipta(guru: { id: string; email?: string }, peringkat: string, pakej = "") {
   const panitia = peringkat.startsWith("panitia-");
-  if (!PERINGKAT[peringkat] || ((peringkat === "kelas" || panitia) && P !== "lo")) return json({ ralat: "Peringkat tidak sah" }, 400);
+  if (!PERINGKAT[peringkat]) return json({ ralat: "Peringkat tidak sah" }, 400);
   if (!RAHSIA || !KATEGORI || !APP_URL) return json({ ralat: "Bayaran dalam talian belum dibuka" }, 503);
 
   const { data: profil } = await sb.from(P + "_guru").select("nama, telefon").eq("id", guru.id).maybeSingle();
@@ -122,7 +122,7 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string, pa
 
   if (panitia && !PAKEJ.includes(pakej)) return json({ ralat: "Pakej tidak sah" }, 400);
   const { data: harga, error: eh } = panitia
-    ? await sb.rpc("lo_harga_panitia", { p_guru: guru.id, p_pakej: pakej, p_peringkat: peringkat.slice(8) })
+    ? await sb.rpc(P + "_harga_panitia", { p_guru: guru.id, p_pakej: pakej, p_peringkat: peringkat.slice(8) })
     : await sb.rpc(P + "_harga", { p_guru: guru.id, p_peringkat: peringkat });
   if (eh || !harga) return json({ ralat: "Harga tidak dapat dikira" }, 500);
 
