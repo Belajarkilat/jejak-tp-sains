@@ -3679,6 +3679,8 @@ function muatGuru(){
   });
 }
 
+/* Had murid setiap kelas: percuma 40, Premium 60. Dikuatkuasakan juga dalam pangkalan data (<awalan>_murid_maks). */
+function maksMurid(){ return PROFIL&&(PROFIL.premiumRendah||PROFIL.premiumAtas)?60:40; }
 function pesanRalat(e){
   var m=String((e&&(e.message||e.error_description||e.msg))||e||"");
   if(/Invalid login credentials/i.test(m)) return "E-mel atau kata laluan salah.";
@@ -3689,8 +3691,8 @@ function pesanRalat(e){
   if(/valid email|invalid.*email|Unable to validate email/i.test(m)) return "Alamat e-mel tidak sah.";
   if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk cikgu.";
   if(/Failed to fetch|NetworkError|Load failed|network/i.test(m)) return "Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi.";
-  if(/had (5 |20 )?kelas/.test(m)) return "Setiap akaun termasuk 5 kelas. Untuk kelas tambahan, setiap RM23 memberi 5 kelas lagi. Atau sertai/beli Pakej Panitia sekolah.";
-  if(/had 60 murid/.test(m)) return "Setiap kelas boleh ada sehingga 60 murid.";
+  if(/had (5 |20 )?kelas/.test(m)) return "Akaun percuma boleh ada 2 kelas, akaun Premium 5 kelas. Setiap RM23 tambahan membuka 5 kelas lagi.";
+  if(/had (60 )?murid/.test(m)) return "Akaun percuma boleh ada 40 murid setiap kelas, akaun Premium 60 murid.";
   if(/JWT expired|not authenticated/i.test(m)) return "Sesi log masuk tamat. Sila log masuk semula.";
   if(/permission denied|row-level security|bukan kelas anda/i.test(m)) return "Tiada kebenaran untuk tindakan ini. Muat semula halaman dan cuba lagi.";
   if(/provider is not enabled/i.test(m)) return "Log masuk Google belum diaktifkan.";
@@ -4130,11 +4132,11 @@ function barisPremium(nama, kod, aktif, tamat){
    Had sebenar dikuatkuasakan oleh pencetus lo_had_kelas dalam pangkalan data. */
 function kadKelas5(){
   if(!GURU_DIMUAT) return el("div");
-  var had=5*(1+(PROFIL.paketKelas||0)), guna=KELAS_GURU.length;
+  var had=((PROFIL.premiumRendah||PROFIL.premiumAtas)?5:2)+5*(PROFIL.paketKelas||0), guna=KELAS_GURU.length;
   var d=el("div","baris-premium");
   var kiri=el("div","grow");
   kiri.appendChild(el("b",null,"Kelas: "+guna+" daripada "+had));
-  kiri.appendChild(el("span","status"+(guna>=had?"":" aktif"),guna>=had?"Had kelas dicapai. Tambah 5 kelas untuk daftar kelas baharu.":"Setiap akaun termasuk 5 kelas."));
+  kiri.appendChild(el("span","status"+(guna>=had?"":" aktif"),guna>=had?"Had kelas dicapai. Tambah 5 kelas untuk daftar kelas baharu.":((PROFIL.premiumRendah||PROFIL.premiumAtas)?"Akaun Premium termasuk 5 kelas, 60 murid setiap kelas.":"Akaun percuma termasuk 2 kelas, 40 murid setiap kelas.")));
   d.appendChild(kiri);
   if(!bayarOnline()) return d;
   var kanan=el("div","bayar-pilih");
@@ -5070,7 +5072,7 @@ function tambahMurid(kelas,senarai){
   sedia.forEach(function(m){ ada[kuncinama(m.nama)]=1; });
   var baru=senarai.filter(function(n){ return !ada[kuncinama(n)]; });
   if(!baru.length) return Promise.resolve({baru:0,langkau:senarai.length});
-  if(sedia.length+baru.length>60) return Promise.reject(new Error("had 60 murid"));
+  if(sedia.length+baru.length>maksMurid()) return Promise.reject(new Error("had murid"));
   return noSeterusnya(kelas).then(function(mula){
     var list=sedia.concat(baru.map(function(n,i){ return {no:String(mula+i),nama:n,pin:pinRawak()}; }));
     return simpanMurid(kelas,list);
@@ -5162,7 +5164,7 @@ function paneImport(ak){
       w.appendChild(cth);
       if(g.gabung){ var gb=el("p","qnote","Lajur Kelas dalam fail ini nampaknya ditarik ke bawah dalam Excel, jadi nombornya bertambah sendiri ("+esc(g.gabung.slice(0,3).join(", "))+", hingga "+esc(g.gabung[g.gabung.length-1])+"). "+g.gabung.length+" kumpulan itu sudah digabungkan menjadi satu kelas. Tukar nama kelas di atas jika perlu."); gb.style.padding="0 14px 10px"; w.appendChild(gb); }
       if(g.ragu){ var rg=el("p","ralat","Kumpulan ini nampaknya bukan senarai murid kerana kebanyakan namanya satu perkataan sahaja. Kumpulan ini tidak dipilih. Tandakan kotaknya jika memang senarai murid."); rg.style.padding="0 14px 10px"; w.appendChild(rg); }
-      if(g.nama.length>60){ var ra=el("p","ralat","Lebih 60 nama. Setiap kelas boleh ada sehingga 60 murid; semak lajur Kelas dalam fail."); ra.style.padding="0 14px 10px"; w.appendChild(ra); }
+      if(g.nama.length>maksMurid()){ var ra=el("p","ralat","Lebih "+maksMurid()+" nama. Setiap kelas boleh ada sehingga "+maksMurid()+" murid ("+(maksMurid()===40?"akaun percuma":"akaun Premium")+"); semak lajur Kelas dalam fail."); ra.style.padding="0 14px 10px"; w.appendChild(ra); }
       bd.appendChild(w);
     });
     var a3=el("div","actions");
@@ -5173,7 +5175,7 @@ function paneImport(ak){
       if(!dipilih.length){ msg.hidden=false; msg.textContent="Pilih sekurang-kurangnya satu kumpulan."; return; }
       for(var i=0;i<dipilih.length;i++){
         if(!String(dipilih[i].kelas||"").trim()){ msg.hidden=false; msg.textContent="Beri nama kelas bagi setiap kumpulan."; return; }
-        if(dipilih[i].nama.length>60){ msg.hidden=false; msg.textContent="Kumpulan "+dipilih[i].kelas+" melebihi 60 murid."; return; }
+        if(dipilih[i].nama.length>maksMurid()){ msg.hidden=false; msg.textContent="Kumpulan "+dipilih[i].kelas+" melebihi "+maksMurid()+" murid."; return; }
       }
       bc.disabled=true; bc.textContent="Mencipta...";
       var hasil=[];
