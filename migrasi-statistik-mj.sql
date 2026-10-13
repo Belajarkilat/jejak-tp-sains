@@ -1,0 +1,2 @@
+-- Projek noaeagitwklnpmyhhhtn (Matematik + Sejarah): jumlah murid bermain untuk landing Sains (13 Okt 2026).
+-- create or replace function mj_statistik_awam() ... jumlah js_cubaan + jm_cubaan, tanpa data murid.

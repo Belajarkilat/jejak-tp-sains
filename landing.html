@@ -516,13 +516,15 @@ footer .ng-logo.gelap{display:none}
 <script src="konfig.js?v=20260927"></script>
 <script src="sumber.js?v=20261013"></script>
 <script>
-/* Pengira hidup: nombor sebenar daripada lo_statistik_awam. Jika gagal, ayat asal kekal. */
+/* Pengira hidup: Sains (lo_statistik_awam) + Matematik/Sejarah (mj_statistik_awam). Jika gagal, kotak kekal tersembunyi. */
 (function(){try{var a=window.CN_AWAN,e=document.getElementById("bukti");if(!a||!e)return;
-fetch(a.url+"/rest/v1/rpc/lo_statistik_awam",{method:"POST",headers:{"apikey":a.kunci,"Authorization":"Bearer "+a.kunci,"Content-Type":"application/json"},body:"{}"})
-.then(function(r){return r.ok?r.json():null}).then(function(d){
-if(!d||!(d.bermain_semua>=1))return;
+var MJ={url:"https://noaeagitwklnpmyhhhtn.supabase.co",kunci:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vYWVhZ2l0d2tsbnBteWhoaHRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNTU4MDEsImV4cCI6MjEwNTczMTgwMX0.Z7ltdqSgxAlVVSlzDuPvUnFdpStY5UWHbdOqXS8BtB0"};
+var ambil=function(c,fn){return fetch(c.url+"/rest/v1/rpc/"+fn,{method:"POST",headers:{"apikey":c.kunci,"Authorization":"Bearer "+c.kunci,"Content-Type":"application/json"},body:"{}"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})};
+Promise.all([ambil(a,"lo_statistik_awam"),ambil(MJ,"mj_statistik_awam")]).then(function(h){
+var s=h[0],m=h[1];if(!s||!(s.bermain_semua>=1))return;
+var semua=s.bermain_semua+(m?m.semua:0),j24=s.bermain_24j+(m?m.j24:0);
 var f=function(n){return n.toLocaleString("ms-MY")};
-e.innerHTML="<div><b>"+f(d.bermain_semua)+"</b><span>murid sudah bermain sejak dilancarkan</span></div>"+(d.bermain_24j>=20?"<div><b>"+f(d.bermain_24j)+"</b><span>bermain dalam 24 jam lepas</span></div>":"");e.hidden=false;}).catch(function(){})}catch(x){}})();
+e.innerHTML="<div><b>"+f(semua)+"</b><span>murid sudah bermain sejak dilancarkan</span></div>"+(j24>=20?"<div><b>"+f(j24)+"</b><span>bermain dalam 24 jam lepas</span></div>":"");e.hidden=false})}catch(x){}})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "11ad551346a4473697a70261a5a56fb1"}'></script><!-- End Cloudflare Web Analytics -->
 <script>
