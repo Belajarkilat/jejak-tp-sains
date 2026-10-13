@@ -4400,7 +4400,10 @@ function kadLangganKeluarga(){
   if(BAYAR_MESEJ) bd.appendChild(el("p","bayar-mesej "+BAYAR_MESEJ.jenis,esc(BAYAR_MESEJ.teks)));
   if(PROFIL.premiumRendah||PROFIL.premiumAtas){
     bd.appendChild(el("h3",null,"Anak NaikGred Keluarga aktif"));
-    bd.appendChild(el("p","note","Semua bab Sains Tingkatan 1 hingga 5 dibuka untuk anak anda sehingga "+tarikhPanjang(PROFIL.premiumRendahTamat||PROFIL.premiumAtasTamat)+"."));
+    bd.appendChild(el("p","note","Semua bab Sains Tingkatan 1 hingga 5 dibuka untuk anak anda sehingga "+tarikhPanjang(PROFIL.premiumRendahTamat||PROFIL.premiumAtasTamat)+". Langganan ini turut membuka Sejarah dan Matematik: log masuk dengan e-mel yang sama di aplikasi itu."));
+    var ln=el("div","actions");
+    var bsj=el("a","btn ghost sm"); bsj.href="https://jejaktpsejarah.naikgred.com/?keluarga=1"; bsj.textContent="Buka Sejarah";
+    ln.appendChild(bsj); bd.appendChild(ln);
     return p;
   }
   var awal=Date.now()<new Date("2027-01-01T00:00:00+08:00").getTime();

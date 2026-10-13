@@ -78,11 +78,32 @@ async function guruDaripada(req: Request) {
   return data.user ?? null;
 }
 
+/* Anak NaikGred: langganan keluarga di Sains turut membuka Sejarah (dan Matematik) kerana
+   satu harga untuk tiga subjek. Projek Matematik/Sejarah ialah projek Supabase lain, jadi
+   e-mel + tarikh tamat dihantar kepada fungsi mj_keluarga_sinkron (idempotent). Gagal tidak
+   menggagalkan bayaran; ia dicuba semula bila guru menyemak bil lagi. */
+const SEJ_URL = env("SEJARAH_URL"), SEJ_KUNCI = env("SEJARAH_KEY");
+async function sinkronKeluarga(emel: string, tamat: string | null) {
+  if (!SEJ_URL || !SEJ_KUNCI || !emel || !tamat) return;
+  try {
+    const r = await fetch(SEJ_URL + "/rest/v1/rpc/mj_keluarga_sinkron", {
+      method: "POST",
+      headers: { apikey: SEJ_KUNCI, Authorization: "Bearer " + SEJ_KUNCI, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_emel: emel, p_tamat: tamat }),
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!r.ok) console.error("sinkron keluarga gagal", r.status, (await r.text()).slice(0, 200));
+  } catch (e) { console.error("sinkron keluarga ralat", String((e as Error).message ?? e)); }
+}
+
 /* Sumber kebenaran: getBillTransactions. Pulangkan status bil selepas dikemas kini. */
 async function sahkan(billcode: string) {
   const { data: bil } = await sb.from(P + "_bayaran").select("*").eq("billcode", billcode).maybeSingle();
   if (!bil) return { status: "tiada" };
-  if (bil.status === "berjaya") return { status: "berjaya", tamat: bil.premium_tamat_baru, peringkat: bil.peringkat };
+  if (bil.status === "berjaya") {
+    if (bil.peringkat === "keluarga") await sinkronKeluarga(bil.emel, bil.premium_tamat_baru);
+    return { status: "berjaya", tamat: bil.premium_tamat_baru, peringkat: bil.peringkat };
+  }
 
   const senarai = await toyyib("getBillTransactions", { billCode: billcode });
   const tx = Array.isArray(senarai) ? senarai : [];
@@ -103,6 +124,7 @@ async function sahkan(billcode: string) {
       console.error("aktifkan gagal", billcode, error ?? data);
       return { status: "ralat" };
     }
+    if (bil.peringkat === "keluarga") await sinkronKeluarga(bil.emel, data.tamat);
     return { status: "berjaya", tamat: data.tamat, peringkat: bil.peringkat };
   }
   const menunggu = tx.some((t: any) => ["2", "4"].includes(String(t.billpaymentStatus)));
