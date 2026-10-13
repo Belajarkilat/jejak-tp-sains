@@ -1,0 +1,3 @@
+-- Rekod klik butang landing (13 Okt 2026): jenis ping baharu 'klik' (nota = daftar|contoh|murid|video).
+-- Dijalankan pada lo_ping (Sains), jm_ping dan js_ping: kekangan *_jenis_check dan badan fungsi
+-- menerima 'klik' bersama 'buka','hentian','ralat','lawat'.
