@@ -1357,7 +1357,7 @@ function pasangJenama(){
   tulis(".brand span", BAB.subtajuk);
   var ge=document.getElementById("guruEyebrow");
   if(ge) ge.textContent="Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
-  document.title = BAB.tajuk ? ("Jejak TP Sains · "+BAB.tajuk) : "Jejak TP Sains";
+  document.title = BAB.tajuk ? (namaApp()+" · "+BAB.tajuk) : namaApp();
 }
 function senaraiBab(){
   return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]; })
@@ -2417,7 +2417,7 @@ function masukPautanPeribadi(kod,no,pin){
     S.mesej="Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi."; render();
   });
 }
-function urlPeribadi(kod,no,pin){ return urlKelas(kod)+"&m="+encodeURIComponent(no)+"&p="+pin; }
+function urlPeribadi(kod,no,pin){ return urlKelas(kod)+"&m="+encodeURIComponent(no)+"&p="+pin+(untukKeluarga()?"&ank=1":""); }
 
 /* ---------- letak di skrin telefon ----------
    Pautan kelas mudah tenggelam dalam group WhatsApp. Ikon di skrin utama
@@ -2456,7 +2456,7 @@ function kadPasang(){
       '<li>Pilih <b>Add to Home Screen</b>.</li></ol>'
     : '<ol class="langkah"><li>Tekan <b>&#8942;</b> di penjuru atas kanan Chrome.</li>'+
       '<li>Pilih <b>Tambah ke skrin utama</b> (Add to Home screen).</li></ol>';
-  k.appendChild(el("div","txt",'<div class="t">Letak Jejak TP di skrin telefon</div><div class="d">'+d+'</div>'));
+  k.appendChild(el("div","txt",'<div class="t">Letak '+(untukKeluarga()?"Anak NaikGred":"Jejak TP")+' di skrin telefon</div><div class="d">'+d+'</div>'));
   if(GESA_PASANG){
     var b=el("button","btn sm"); b.type="button"; b.textContent="Letak";
     b.onclick=function(){
@@ -3757,7 +3757,7 @@ function medan(label,jenis,nama,nilai,atr){
 }
 function kadMudah(tajuk,teks,butang){
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(untukKeluarga()?"Anak NaikGred · Untuk ibu bapa":"Jejak TP Sains · Untuk guru")+'</p><h2>'+esc(tajuk)+'</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(untukKeluarga()?"Anak NaikGred Sains · Untuk ibu bapa":"Jejak TP Sains · Untuk guru")+'</p><h2>'+esc(tajuk)+'</h2></div>'));
   var bd=el("div","panel-bd");
   if(teks) bd.appendChild(el("p","qnote",esc(teks)));
   if(butang){ var a=el("div","actions"); a.appendChild(butang); bd.appendChild(a); }
@@ -3772,13 +3772,18 @@ function salin(teks,btn){
 }
 
 /* Akaun/laluan keluarga (Anak NaikGred): penanda setempat, metadata akaun, atau profil bertanda keluarga. */
+function namaApp(){ return untukKeluarga()?"Anak NaikGred Sains":"Jejak TP Sains"; }
+function pasangNama(){
+  var b=document.querySelector(".brand b"); if(b) b.textContent=namaApp();
+  if(untukKeluarga()&&/^Jejak TP/.test(document.title)) document.title=document.title.replace(/^Jejak TP Sains/,namaApp());
+}
 function untukKeluarga(){
   if(PROFIL&&PROFIL.keluarga) return true;
   try{ if(localStorage.getItem("cn-keluarga")==="1") return true; }catch(e){}
   var md=SESI&&SESI.user&&SESI.user.user_metadata;
   return !!(md&&md.keluarga);
 }
-function renderCikgu(){
+function renderCikgu(){ pasangNama();
   var ak=$("guruAkaun"), kl=$("guruKelas");
   var untukKel=untukKeluarga();
   $("btnCikgu").textContent=untukKel?"Ibu bapa":"Cikgu";
@@ -3849,7 +3854,7 @@ function paneLogMasuk(ak){
   if(mod==="masuk"&&!kel) ak.appendChild(kadNilai());
   var tajuk=(kel?{masuk:"Log masuk keluarga",daftar:"Daftar akaun keluarga",lupa:"Lupa kata laluan"}:{masuk:"Log masuk guru",daftar:"Daftar akaun guru",lupa:"Lupa kata laluan"})[mod];
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(kel?"Anak NaikGred · Untuk ibu bapa":"Jejak TP Sains · Untuk guru")+'</p><h2>'+tajuk+'</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(kel?"Anak NaikGred Sains · Untuk ibu bapa":"Jejak TP Sains · Untuk guru")+'</p><h2>'+tajuk+'</h2></div>'));
   var bd=el("div","panel-bd");
   bd.appendChild(el("p","qnote",
     mod==="daftar" ? (kel?"Percuma untuk bermula. Tambah anak anda, mereka bermain, dan anda nampak bab yang sudah dikuasai dan bab yang masih lemah. Bab 1 dan 2 percuma.":"Percuma. Setiap guru ada kelas, senarai nama dan rekod murid sendiri. Guru lain tidak dapat melihatnya.") :
@@ -3947,7 +3952,7 @@ function paneLogMasuk(ak){
 
 function paneKataBaru(ak){
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(untukKeluarga()?"Anak NaikGred · Untuk ibu bapa":"Jejak TP Sains · Untuk guru")+'</p><h2>Tetapkan kata laluan baharu</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(untukKeluarga()?"Anak NaikGred Sains · Untuk ibu bapa":"Jejak TP Sains · Untuk guru")+'</p><h2>Tetapkan kata laluan baharu</h2></div>'));
   var bd=el("div","panel-bd");
   var f=el("form"); f.noValidate=true;
   var fk=medan("Kata laluan baharu (sekurang-kurangnya 8 aksara)","password","katabaru","",{autocomplete:"new-password",minlength:"8"});
@@ -5017,7 +5022,7 @@ function kotakKongsi(k){
   bs.onclick=function(){ salin(url,bs); };
   a.appendChild(bs);
   var wa=el("a","btn sm ghost");
-  wa.href="https://wa.me/?text="+encodeURIComponent("Kelas Sains "+k.nama+" (Jejak TP Sains). Buka pautan ini, pilih nama awak dan masukkan PIN daripada cikgu:\n"+url);
+  wa.href="https://wa.me/?text="+encodeURIComponent("Kelas Sains "+k.nama+" ("+namaApp()+"). Buka pautan ini, pilih nama awak dan masukkan PIN daripada cikgu:\n"+url);
   wa.target="_blank"; wa.rel="noopener"; wa.textContent="Kongsi di WhatsApp";
   wa.style.textDecoration="none"; wa.style.display="inline-flex"; wa.style.alignItems="center";
   a.appendChild(wa);
@@ -5492,7 +5497,7 @@ function paneSenarai(){
       var ops=el("td","ops");
       if(!k.contoh){
         var bw=el("a","btnkecil"); bw.textContent="WhatsApp";
-        bw.href="https://wa.me/?text="+encodeURIComponent("Hai "+namaPendek(kelas,m.no)+"! Ini pautan Jejak TP Sains untuk awak seorang. "+
+        bw.href="https://wa.me/?text="+encodeURIComponent("Hai "+namaPendek(kelas,m.no)+"! Ini pautan "+namaApp()+" untuk awak seorang. "+
           "Tekan sekali, terus masuk, tak perlu taip PIN:\n"+urlPeribadi(k.kod,m.no,m.pin)+"\n\nJangan kongsi pautan ni dengan kawan ya.");
         bw.target="_blank"; bw.rel="noopener";
         bw.title="Hantar pautan masuk terus kepada "+m.nama+" sahaja";
@@ -5719,6 +5724,8 @@ function mula(){
     qm=u.searchParams.get("m"); qp=u.searchParams.get("p");
     if(!/^[0-9]{4}$/.test(qp||"")||!qm){ qm=null; qp=null; }
     u.searchParams.delete("m"); u.searchParams.delete("p");
+    if(u.searchParams.get("ank")==="1"){ try{ localStorage.setItem("cn-keluarga","1"); }catch(e){} }
+    u.searchParams.delete("ank");
     qdemo=u.searchParams.get("demo");
     /* ?main dikekalkan dalam URL supaya keluarga yang simpan pautan ini
        kekal dalam mod main bebas. Pautan biasa (tanpa ?main) sentiasa
@@ -5729,7 +5736,7 @@ function mula(){
     if(qk) u.searchParams.delete("k");
     if(u.search!==location.search) history.replaceState(null,"",u.pathname+u.search+u.hash);
   }catch(e){}
-  simpanNiatNaik();
+  simpanNiatNaik(); pasangNama();
   var qdaftar=false;
   try{ var up=new URL(location.href); var qkel=up.searchParams.has("keluarga"); if(qkel){ try{ localStorage.setItem("cn-keluarga","1"); }catch(e){} } modLama=(up.searchParams.has("cikgu")||up.searchParams.has("daftar")||qkel)?"cikgu":null; qdaftar=up.searchParams.has("daftar")||qkel; }catch(e){ modLama=null; }
 

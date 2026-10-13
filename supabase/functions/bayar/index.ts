@@ -166,7 +166,7 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string, pa
   const hasil = await toyyib("createBill", {
     userSecretKey: RAHSIA,
     categoryCode: KATEGORI,
-    billName: bersih(PRODUK + (peringkat === "kelas" ? " Kelas" : peringkat === "keluarga" ? " Keluarga" : panitia ? " Panitia " + pakej : " Premium"), 30),
+    billName: bersih((peringkat === "keluarga" ? "Anak NaikGred " + PRODUK.replace(/^Jejak TP /, "") : PRODUK) + (peringkat === "kelas" ? " Kelas" : peringkat === "keluarga" ? " Keluarga" : panitia ? " Panitia " + pakej : " Premium"), 30),
     billDescription: bersih(PERINGKAT[peringkat], 100),
     billPriceSetting: "1",
     billPayorInfo: "1",

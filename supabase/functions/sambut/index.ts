@@ -54,6 +54,39 @@ const html = `<div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;
 <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0">
 <p style="color:#6b7280;font-size:13px">E-mel ini dihantar sekali sahaja kerana anda baru mendaftar akaun guru.<br>Jejak TP Sains oleh NaikGred</p></div>`;
 
+/* Ibu bapa (akaun keluarga, penanda user_metadata.keluarga): jangan guna bahasa guru. */
+const waK = "https://wa.me/" + WA + "?text=" + encodeURIComponent(
+  "Salam, saya baru mendaftar di Anak NaikGred Sains. Saya ada soalan:");
+const subjekK = "Akaun Anak NaikGred anda sudah sedia";
+const teksK = `Salam sejahtera,
+
+Terima kasih kerana mendaftar di Anak NaikGred Sains. Akaun keluarga anda sudah sedia. Untuk mula, ikut tiga langkah ini:
+
+1. Tambah anak. Buka ${APP_URL}, log masuk, kemudian tambah nama dan tingkatan anak. Setiap anak mendapat kod kelas dan PIN sendiri.
+2. Anak bermain. Beri pautan anak kepada anak anda. Anak boleh bermain di telefon tanpa mendaftar e-mel.
+3. Lihat kemajuan. Kad setiap anak menunjukkan tahap penguasaan (TP) setiap bab dan bab yang masih lemah.
+
+Bab 1 dan Bab 2 percuma untuk dicuba. Bayaran balik penuh dalam 7 hari jika anda melanggan dan tidak berpuas hati.
+
+Ada soalan? Hantar mesej WhatsApp kepada kami: ${waK}
+Kami akan membalas secepat mungkin pada waktu bekerja.
+
+E-mel ini dihantar sekali sahaja kerana anda baru mendaftar.
+Anak NaikGred oleh NaikGred`;
+const htmlK = `<div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.55;color:#1f2937;max-width:560px">
+<p>Salam sejahtera,</p>
+<p>Terima kasih kerana mendaftar di <b>Anak NaikGred Sains</b>. Akaun keluarga anda sudah sedia. Untuk mula, ikut tiga langkah ini:</p>
+<ol style="padding-left:20px">
+<li><b>Tambah anak.</b> Buka <a href="${APP_URL}">${APP_URL.replace(/^https?:\/\//, "")}</a>, log masuk, kemudian tambah nama dan tingkatan anak. Setiap anak mendapat kod kelas dan PIN sendiri.</li>
+<li><b>Anak bermain.</b> Beri pautan anak kepada anak anda. Anak boleh bermain di telefon tanpa mendaftar e-mel.</li>
+<li><b>Lihat kemajuan.</b> Kad setiap anak menunjukkan tahap penguasaan (TP) setiap bab dan bab yang masih lemah.</li>
+</ol>
+<p>Bab 1 dan Bab 2 percuma untuk dicuba. Bayaran balik penuh dalam 7 hari jika anda melanggan dan tidak berpuas hati.</p>
+<p><a href="${waK}" style="display:inline-block;background:#C2185B;color:#fff;text-decoration:none;padding:11px 18px;border-radius:8px;font-weight:bold">Ada soalan? WhatsApp kami</a></p>
+<p style="color:#4b5563;font-size:14px">Kami akan membalas secepat mungkin pada waktu bekerja.</p>
+<hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0">
+<p style="color:#6b7280;font-size:13px">E-mel ini dihantar sekali sahaja kerana anda baru mendaftar.<br>Anak NaikGred oleh NaikGred</p></div>`;
+
 Deno.serve(async (req) => {
   if (req.headers.get("x-sambut-rahsia") !== env("SAMBUT_RAHSIA") || !env("SAMBUT_RAHSIA")) {
     return new Response("tidak dibenarkan", { status: 401 });
@@ -68,6 +101,7 @@ Deno.serve(async (req) => {
 
   const { data: u } = await sb.auth.admin.getUserById(guru);
   const emel = u?.user?.email;
+  const kel = !!(u?.user?.user_metadata as Record<string, unknown> | undefined)?.keluarga;
   if (!emel) {
     await sb.from("lo_guru").update({ sambut_hantar: null }).eq("id", guru);
     console.error("sambut: tiada e-mel untuk", guru);
@@ -80,8 +114,8 @@ Deno.serve(async (req) => {
       auth: { user: env("SMTP_USER"), pass: env("SMTP_PASS") },
     });
     await t.sendMail({
-      from: `"Jejak TP Sains" <${env("SMTP_USER")}>`,
-      to: emel, subject: subjek, text: teks, html,
+      from: `"${kel ? "Anak NaikGred" : "Jejak TP Sains"}" <${env("SMTP_USER")}>`,
+      to: emel, subject: kel ? subjekK : subjek, text: kel ? teksK : teks, html: kel ? htmlK : html,
     });
     return new Response("dihantar", { status: 200 });
   } catch (e) {
