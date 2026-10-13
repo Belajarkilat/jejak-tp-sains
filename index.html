@@ -3770,6 +3770,9 @@ function salin(teks,btn){
 
 function renderCikgu(){
   var ak=$("guruAkaun"), kl=$("guruKelas");
+  var untukKel=!!(PROFIL&&PROFIL.keluarga);
+  if(!untukKel&&!SESI){ try{ untukKel=localStorage.getItem("cn-keluarga")==="1"; }catch(e){} }
+  $("btnCikgu").textContent=untukKel?"Ibu bapa":"Cikgu";
   var dalamKelas=!!(SESI&&PROFIL&&PROFIL.ada&&S.guruSkrin!=="katabaru"&&S.guruSkrin!=="profil"&&kelasGuruKini())||
                  (!SESI&&DEMO_GURU&&S.gk==="contoh");
   ak.classList.toggle("hidden",dalamKelas);
