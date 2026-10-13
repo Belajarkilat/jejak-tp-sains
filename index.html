@@ -4406,10 +4406,10 @@ function kadLangganKeluarga(){
   var awal=Date.now()<new Date("2027-01-01T00:00:00+08:00").getTime();
   bd.appendChild(el("h3",null,"Buka semua bab"));
   bd.appendChild(el("p","note",awal?
-    "Bab 1 dan 2 percuma. Harga <i>Early Bird</i> RM68 sekali bayar sehingga 31 Dis 2026, untuk sehingga 5 anak dan akses sehingga anak tamat Tingkatan 5. Mulai 1 Januari 2027, harga biasa RM59 setahun.":
+    "Bab 1 dan 2 percuma. Harga <i>Early Bird</i> RM32 setahun sehingga 31 Dis 2026, untuk sehingga 5 anak dan semua bab Tingkatan 1 hingga 5. Keluarga yang melanggan sebelum 31 Dis 2026 kekal RM32 setiap tahun selagi langganan tidak terputus. Mulai 1 Januari 2027, harga biasa RM59 setahun.":
     "Bab 1 dan 2 percuma. RM59 setahun untuk sehingga 5 anak, semua bab Tingkatan 1 hingga 5."));
   var a=el("div","actions");
-  var b=el("button","btn"); b.type="button"; b.textContent=awal?"Langgan RM68 sekali bayar":"Langgan RM59 setahun";
+  var b=el("button","btn"); b.type="button"; b.textContent=awal?"Langgan RM32 setahun":"Langgan RM59 setahun";
   b.onclick=function(){ if(!bayarOnline()){ alert("Bayaran dalam talian belum dibuka."); return; } naikTarafOnline("keluarga",b); };
   a.appendChild(b); bd.appendChild(a);
   return p;
