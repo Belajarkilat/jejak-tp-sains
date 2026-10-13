@@ -53,6 +53,8 @@ const PERINGKAT: Record<string, string> = {
   /* Paket kelas: RM23 = 5 kelas tambahan, tiada tarikh tamat */
   kelas: "Tambahan 5 kelas guru",
   panitia: "Pakej Panitia Tingkatan 1 hingga 5 selama 365 hari",
+  /* Anak NaikGred: satu keluarga, sehingga 5 anak, Tingkatan 1 hingga 5 */
+  keluarga: "Anak NaikGred Keluarga sehingga 5 anak Tingkatan 1 hingga 5",
 };
 const PAKEJ = ["kecil", "standard", "besar"];
 
@@ -142,7 +144,7 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string, pa
   const hasil = await toyyib("createBill", {
     userSecretKey: RAHSIA,
     categoryCode: KATEGORI,
-    billName: bersih(PRODUK + (peringkat === "kelas" ? " Kelas" : panitia ? " Panitia " + pakej : " Premium"), 30),
+    billName: bersih(PRODUK + (peringkat === "kelas" ? " Kelas" : peringkat === "keluarga" ? " Keluarga" : panitia ? " Panitia " + pakej : " Premium"), 30),
     billDescription: bersih(PERINGKAT[peringkat], 100),
     billPriceSetting: "1",
     billPayorInfo: "1",
