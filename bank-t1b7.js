@@ -352,7 +352,7 @@ window.BANK["t1b7"] =
      "j": "nombor",
      "t": "Ramalkan masa lilin menyala di dalam balang 2000 cm³, dalam saat.",
      "b": 66,
-     "tol": 0.1,
+     "tol": 3,
      "suf": "s",
      "u": "Masa lebih kurang berganda apabila isi padu berganda: 33 × 2 = 66 s."
     },

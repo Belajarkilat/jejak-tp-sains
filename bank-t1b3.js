@@ -647,7 +647,7 @@ window.BANK["t1b3"] =
       "Air hilang lebih cepat daripada diserap, kemudian seimbang semula"
      ],
      "b": 3,
-     "u": "Apabila transpirasi berkurang pada petang, sel daun kembali segah."
+     "u": "Apabila transpirasi berkurang pada petang, sel daun kembali segar."
     },
     {
      "j": "pilih",

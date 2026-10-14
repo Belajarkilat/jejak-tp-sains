@@ -128,7 +128,7 @@ window.BANK["t1b2"] =
       "Dinding sel di luar"
      ],
      "b": 1,
-     "u": "Sel bawang biasanya diwarnakan dengan larutan iodin."
+     "u": "Vakuol ialah ruang besar di tengah sel tumbuhan yang menyimpan air dan bahan terlarut."
     },
     {
      "j": "pilih",

@@ -10,6 +10,14 @@ const path = require("path");
 const { lukisLampiran } = require("./tools/lukis");
 
 const KKO = ["Mengingat","Memahami","Mengaplikasi","Menganalisis","Menilai","Mereka cipta"];
+/* Mod Bahasa Inggeris (DLP): `node bina.js --en t1b1` membaca sumber-en/<id>.js
+   dan menulis bank-en-<id>.js. Sumber BI ialah salinan sumber BM dengan teks
+   diterjemah. Struktur (jenis soalan, bilangan pilihan, indeks jawapan, nilai
+   berangka, kunci lampiran) mesti SAMA, supaya imbang() menghasilkan susunan
+   yang sama dan murid boleh bertukar bahasa tanpa kemajuan terjejas. */
+const MOD_EN = process.argv.includes("--en");
+const DIR_SUMBER = MOD_EN ? "sumber-en" : "sumber";
+const KKO_EN = ["Recall","Understand","Apply","Analyse","Evaluate","Create"];
 
 function semak(bab){
   const m = [];
@@ -41,7 +49,7 @@ function semak(bab){
        hanyalah hiasan yang melambatkan telefon murid. */
     const spekL = a.lampiran && bab.lampiran ? bab.lampiran[a.lampiran] : null;
     const sebutRajah = (a.soalan || []).concat(a.bos ? [a.bos] : [])
-      .some(q => /\bRajah\b/.test(String(q.t) + " " + String(q.arahan || "")));
+      .some(q => /\b(Rajah|Figure)\b/.test(String(q.t) + " " + String(q.arahan || "")));
     if(spekL && typeof spekL === "object"){
       lihat(sebutRajah, `${di}: ada rajah tetapi tiada soalan yang merujuk "Rajah"`);
     } else if(sebutRajah){
@@ -49,7 +57,7 @@ function semak(bab){
          tetapi hentian ini memaparkan jadual atau tiada apa-apa. Ini berlaku
          apabila dua lampiran berkongsi nama kunci dan JavaScript menimpa
          yang pertama tanpa sebarang amaran. */
-      lihat(false, `${di}: soalan merujuk "Rajah" tetapi lampiran hentian ini bukan rajah`);
+      lihat(false, `${di}: soalan merujuk "Rajah"/"Figure" tetapi lampiran hentian ini bukan rajah`);
     }
     lihat(Array.isArray(a.soalan) && a.soalan.length === 8,
       `${di}: ${a.soalan ? a.soalan.length : 0} soalan, sepatutnya 8`);
@@ -92,6 +100,59 @@ function semak(bab){
       }
     });
   });
+  return m;
+}
+
+/* Padanan sumber BI dengan sumber BM. Terjemahan hanya boleh mengubah
+   perkataan. Jenis soalan, bilangan dan kedudukan pilihan, jawapan, toleransi
+   dan setiap nombor mesti sama, kerana fail BI menggantikan fail BM apabila
+   murid memilih bahasa dan kemajuannya dikira daripada id soalan yang sama. */
+function semakSepadan(en, ms){
+  const m = [];
+  const lihat = (ok, mesej) => { if(!ok) m.push("sepadan BM: " + mesej); };
+  const nombor = s => (String(s == null ? "" : s).replace(/&[a-z]+;/g, "").match(/\d+(?:\.\d+)?/g) || []).join("|");
+  const sama = (a, b, di) => lihat(nombor(a) === nombor(b), `${di}: nombor berbeza [${nombor(a)}] lawan BM [${nombor(b)}]`);
+  try {
+    lihat(en.id === ms.id, "id berbeza");
+    lihat(en.tingkatan === ms.tingkatan, "tingkatan berbeza");
+    lihat(Array.isArray(en.aras) && Array.isArray(ms.aras) && en.aras.length === ms.aras.length, "bilangan hentian berbeza");
+    if(m.length) return m;
+    ms.aras.forEach((a, i) => {
+      const e = en.aras[i], di = `H${i+1}`;
+      lihat((e.lampiran || null) === (a.lampiran || null), `${di}: kunci lampiran berbeza`);
+      lihat(e.soalan.length === a.soalan.length, `${di}: bilangan soalan berbeza`);
+      sama(e.sk, a.sk, di + " sk");
+      a.soalan.concat([a.bos]).forEach((q, k) => {
+        const f = e.soalan.concat([e.bos])[k], id = `${di} item ${k+1}`;
+        if(!f){ m.push(`sepadan BM: ${id} tiada`); return; }
+        lihat(f.j === q.j, `${id}: jenis soalan ${f.j} lawan BM ${q.j}`);
+        lihat(JSON.stringify(f.b) === JSON.stringify(q.b), `${id}: jawapan ${JSON.stringify(f.b)} lawan BM ${JSON.stringify(q.b)}`);
+        lihat(f.tol === q.tol, `${id}: toleransi berbeza`);
+        lihat((f.p || []).length === (q.p || []).length, `${id}: bilangan pilihan berbeza`);
+        sama(f.t, q.t, id + " soalan");
+        (q.p || []).forEach((x, n) => sama((f.p || [])[n], x, `${id} pilihan ${n+1}`));
+      });
+    });
+    const kl = Object.keys(ms.lampiran || {}), kk = Object.keys(en.lampiran || {});
+    lihat(kl.sort().join() === kk.sort().join(), "kunci lampiran berbeza");
+    kl.forEach(k => {
+      const a = ms.lampiran[k], e = (en.lampiran || {})[k];
+      if(typeof a === "string"){ lihat(typeof e === "string", `lampiran ${k}: BM jadual, BI bukan`); sama(e, a, `lampiran ${k}`); }
+      else {
+        lihat(e && typeof e === "object" && e.jenis === a.jenis, `lampiran ${k}: jenis rajah berbeza`);
+        const nomborSpek = (o, laluan, keluar) => {
+          if(typeof o === "number") keluar.push(laluan + "=" + o);
+          else if(Array.isArray(o)) o.forEach((x, i) => nomborSpek(x, laluan + "[" + i + "]", keluar));
+          else if(o && typeof o === "object") Object.keys(o).sort().forEach(x => nomborSpek(o[x], laluan + "." + x, keluar));
+          return keluar;
+        };
+        lihat(JSON.stringify(nomborSpek(e, "", [])) === JSON.stringify(nomborSpek(a, "", [])), `lampiran ${k}: nilai berangka rajah berbeza`);
+        const bentuk = o => Array.isArray(o) ? o.map(bentuk) : (o && typeof o === "object")
+          ? Object.keys(o).sort().reduce((r, x) => (r[x] = bentuk(o[x]), r), {}) : typeof o;
+        lihat(JSON.stringify(bentuk(e)) === JSON.stringify(bentuk(a)), `lampiran ${k}: bentuk spesifikasi rajah berbeza (kunci atau panjang senarai)`);
+      }
+    });
+  } catch(x){ m.push("sepadan BM: struktur rosak (" + x.message + ")"); }
   return m;
 }
 
@@ -260,7 +321,7 @@ function semakRajah(bab){
 
     if(!/aria-label="[^"]{15,}"/.test(html)) m.push(`rajah "${kunci}": aria-label tiada atau terlalu pendek`);
     if(!/<figcaption>/.test(html)) m.push(`rajah "${kunci}": tiada kapsyen`);
-    if(!/^Rajah \d/.test(spek.kapsyen || "")) m.push(`rajah "${kunci}": kapsyen mesti bermula "Rajah <n>"`);
+    if(!/^(Rajah|Figure) \d/.test(spek.kapsyen || "")) m.push(`rajah "${kunci}": kapsyen mesti bermula "Rajah <n>"`);
   }
   return m;
 }
@@ -271,7 +332,7 @@ function tulis(bab){
   const keluar = {
     id: bab.id, tingkatan: bab.tingkatan, kod: bab.kod,
     tajuk: bab.tajuk, subtajuk: bab.subtajuk,
-    spi: bab.spi, kko: KKO, ulasan: bab.ulasan,
+    spi: bab.spi, kko: MOD_EN ? KKO_EN : KKO, ulasan: bab.ulasan,
     lampiran: lampiran,
     aras: bab.aras.map(a => ({
       n: a.n, tempat: a.tempat, sk: a.sk, lampiran: a.lampiran || null,
@@ -280,7 +341,14 @@ function tulis(bab){
       soalan: a.soalan, bos: a.bos,
     })),
   };
-  const kepala =
+  const kepala = MOD_EN ?
+`/* English question bank (DLP) — ${bab.subtajuk}.
+   GENERATED. Do not edit this file directly; edit sumber-en/${bab.id}.js
+   then run: node bina.js --en ${bab.id}
+*/
+window.BANK_EN = window.BANK_EN || {};
+window.BANK_EN[${JSON.stringify(bab.id)}] =
+` :
 `/* Bank soalan — ${bab.subtajuk}.
    DIJANA. Jangan sunting fail ini terus; sunting sumber/${bab.id}.js
    kemudian jalankan: node bina.js ${bab.id}
@@ -291,7 +359,7 @@ function tulis(bab){
 window.BANK = window.BANK || {};
 window.BANK[${JSON.stringify(bab.id)}] =
 `;
-  const fail = `bank-${bab.id}.js`;
+  const fail = MOD_EN ? `bank-en-${bab.id}.js` : `bank-${bab.id}.js`;
   fs.writeFileSync(fail, kepala + JSON.stringify(keluar, null, 1) + ";\n", "utf8");
   return fail;
 }
@@ -300,12 +368,13 @@ const hujah = process.argv.slice(2);
 const laporan = hujah.includes("--laporan");
 const minta = hujah.filter(x => !x.startsWith("--"));
 const senarai = minta.length ? minta
-  : fs.readdirSync("sumber").filter(f => f.endsWith(".js") && !f.startsWith("_")).map(f => path.basename(f, ".js"));
+  : fs.readdirSync(DIR_SUMBER).filter(f => f.endsWith(".js") && !f.startsWith("_")).map(f => path.basename(f, ".js"));
 
 let gagal = 0;
 senarai.forEach(id => {
-  const bab = require(path.resolve("sumber", id + ".js"));
+  const bab = require(path.resolve(DIR_SUMBER, id + ".js"));
   const masalah = semak(bab);
+  if(MOD_EN) masalah.push(...semakSepadan(bab, require(path.resolve("sumber", id + ".js"))));
   if(!masalah.length){
     const butiran = laporan ? [] : null;
     const p = semakPetunjuk(bab, butiran);

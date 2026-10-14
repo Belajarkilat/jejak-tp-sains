@@ -1,0 +1,194 @@
+/* English source (DLP) — Science KSSM Form 1, Chapter 7.0 Air.
+   Translation of sumber/t1b7.js.
+   Run `node bina.js --en t1b7` to check it and generate bank-en-t1b7.js.
+   Structure must match sumber/t1b7.js exactly. Correct answer at index 0.
+
+   The percentage of carbon dioxide is not asked as an exact number because
+   older textbooks write 0.03% while the current value is above 0.04%. */
+
+const SPI = [
+"Recall knowledge and skills about air.",
+"Understand air and be able to explain this understanding.",
+"Apply knowledge of air to explain natural events or phenomena and carry out simple tasks.",
+"Analyse knowledge about the structure of air in the context of solving problems about natural events or phenomena.",
+"Evaluate knowledge about air in the context of problem solving and decision making to carry out a task.",
+"Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about air in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."];
+
+/* ---------- attachments ---------- */
+
+const R_UDARA = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 4,
+  "yMaks": 80,
+  "bar": [
+    {
+      "label": "Nitrogen",
+      "nilai": 78,
+      "warna": "ungu"
+    },
+    {
+      "label": "Oxygen",
+      "nilai": 21,
+      "warna": "merah"
+    },
+    {
+      "label": "Others",
+      "nilai": 1,
+      "warna": "kuning"
+    }
+  ],
+  "xLabel": "Percentage by volume of dry air",
+  "kapsyen": "Figure 1 · Composition of dry air.",
+  "alt": "Bar graph: nitrogen 78 percent, oxygen 21 percent, other gases 1 percent of the volume of dry air"
+};
+
+const R_KARBON = {
+  "jenis": "aliran",
+  "mod": "kitar",
+  "nod": [
+    "Carbon dioxide in air",
+    "Plants make food",
+    "Carbon in living things",
+    "Respiration & combustion"
+  ],
+  "kapsyen": "Figure 1 · The carbon cycle.",
+  "alt": "Cycle diagram of four boxes: carbon dioxide in the air, photosynthesis, carbon in living things, respiration and combustion"
+};
+
+const T_LILIN =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Jar</th>'+
+'<th class="n">Volume of air (cm&sup3;)</th><th class="n">Time candle burns (s)</th></tr></thead><tbody>'+
+'<tr><td>A</td><td class="n">250</td><td class="n">8</td></tr>'+
+'<tr><td>B</td><td class="n">500</td><td class="n">16</td></tr>'+
+'<tr><td>C</td><td class="n">1000</td><td class="n">33</td></tr>'+
+'</tbody></table></div><p class="qnote">Candles of the same size are lit, then covered with jars of different sizes. Fictional data.</p>';
+
+const T_IPU =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Day</th>'+
+'<th class="n">API reading</th><th>Event in the area</th></tr></thead><tbody>'+
+'<tr><td>Monday</td><td class="n">45</td><td>Normal day, strong wind</td></tr>'+
+'<tr><td>Tuesday</td><td class="n">60</td><td>Traffic jam</td></tr>'+
+'<tr><td>Wednesday</td><td class="n">130</td><td>Open burning on nearby farmland</td></tr>'+
+'<tr><td>Thursday</td><td class="n">185</td><td>Continuous burning, no wind</td></tr>'+
+'<tr><td>Friday</td><td class="n">70</td><td>Heavy rain in the morning</td></tr>'+
+'</tbody></table></div><p class="qnote">Air Pollutant Index (API): 0&ndash;50 good, 51&ndash;100 moderate, 101&ndash;200 unhealthy, 201&ndash;300 very unhealthy, above 300 hazardous. Fictional data.</p>';
+
+const T_PADAM =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Type of extinguisher</th>'+
+'<th>How it puts out fire</th><th>Suitable for</th><th>Not suitable for</th></tr></thead><tbody>'+
+'<tr><td>Water</td><td>Cools the fuel</td><td>Paper, wood, cloth</td><td>Oil, electrical equipment</td></tr>'+
+'<tr><td>Carbon dioxide</td><td>Removes oxygen</td><td>Electrical equipment, flammable liquids</td><td>Open, windy spaces</td></tr>'+
+'<tr><td>Dry powder</td><td>Coats the fuel</td><td>Most types of fire</td><td>Leaves powder on equipment</td></tr>'+
+'<tr><td>Fire blanket</td><td>Removes oxygen</td><td>Small oil pan fires, burning clothes</td><td>Big fires</td></tr>'+
+'</tbody></table></div><p class="qnote">A summary of fire extinguishers commonly found in schools and homes.</p>';
+
+/* ---------- stops ---------- */
+
+const ARAS = [
+
+{n:1, tempat:"Blue Sky", sk:"7.1 Composition of air and the importance of gases", lampiran:"komposisi",
+ kadNama:"Nitrogen", kadEm:"\u{1F32C}", kadFakta:"Almost four-fifths of air is nitrogen, a colourless and odourless gas.",
+ bosKadNama:"Carbon Dioxide", bosKadEm:"\u{1F964}", bosKadFakta:"The bubbles in a fizzy drink are carbon dioxide dissolved under pressure.",
+ soalan:[
+ {j:"pilih",t:"The gas that is most abundant in air is:",p:["Nitrogen","Oxygen","Carbon dioxide","Argon"],b:0,u:"Nitrogen is about 78% of air."},
+ {j:"pilih",t:"Based on Figure 1, the percentage of oxygen in dry air is about:",p:["21%","78%","50%","1%"],b:0,u:"About one-fifth of air is oxygen."},
+ {j:"pilih",t:"Air is classified as a:",p:["Mixture","Compound","Element","Atom"],b:0,u:"The gases in air are not chemically combined, and its composition can change."},
+ {j:"pilih",t:"The gas needed for respiration and combustion is:",p:["Oxygen","Nitrogen","Helium","Neon"],b:0,u:"Oxygen is used to release energy from glucose and fuels."},
+ {j:"pilih",t:"The gas used by plants for photosynthesis is:",p:["Carbon dioxide","Oxygen","Nitrogen","Carbon monoxide"],b:0,u:"Carbon dioxide and water are used to make glucose."},
+ {j:"pilih",t:"Why are packets of crackers filled with nitrogen gas?",p:["Nitrogen does not spoil the food","Nitrogen makes the crackers sweeter","Nitrogen gives colour to the crackers","Nitrogen makes the packet heavier"],b:0,u:"Without oxygen, the crackers do not turn rancid easily. The gas also protects the crackers from being crushed."},
+ {j:"pilih",t:"Besides gases, air also contains:",p:["Water vapour and dust","River water and beach sand","Salt and sugar","Oil and fat"],b:0,u:"The amount of water vapour and dust changes with place and time."},
+ {j:"banyak",t:"Choose ALL the CORRECT matches of gas and use.",p:["Helium: filling balloons","Carbon dioxide: fire fighting","Oxygen: treating patients","Nitrogen: fuel for cars","Neon: preserving fresh fruit"],b:[0,1,2],u:"Nitrogen is not a fuel, and neon is used in advertising lights."}],
+ bos:{j:"pilih",t:"In the carbon cycle, the process that REMOVES carbon dioxide from the air is:",p:["Photosynthesis","Cell respiration","Combustion","Decay"],b:0,u:"Respiration, combustion and decay release carbon dioxide."}},
+
+{n:2, tempat:"Fire Kitchen", sk:"7.1 / 7.2 / 7.3 Gas cycles, combustion and pollution", lampiran:"kitarkarbon",
+ kadNama:"Fire Triangle", kadEm:"\u{1F525}", kadFakta:"Fire needs three things: fuel, oxygen and heat. Remove one, and the fire goes out.",
+ bosKadNama:"Haze", bosKadEm:"\u{1F32B}", bosKadFakta:"Haze in Malaysia is often caused by open burning of forests and peatland, including from neighbouring countries.",
+ soalan:[
+ {j:"pilih",t:"The three conditions for combustion are:",p:["Fuel, oxygen and heat","Water, oxygen and light","Nitrogen, heat and fuel","Carbon dioxide, water and heat"],b:0,u:"This is known as the fire triangle."},
+ {j:"pilih",t:"Why must water not be used to put out a cooking oil fire?",p:["The oil floats and the fire spreads","Water turns into oil when hot","The fire absorbs water too quickly","Water adds oxygen to the oil"],b:0,u:"Water also boils quickly and splashes hot oil."},
+ {j:"pilih",t:"How does a fire blanket put out a fire?",p:["It cuts off the oxygen supply","It cools the fuel with water","It adds carbon dioxide to the fire","It removes the fuel completely"],b:0,u:"Without oxygen, combustion cannot continue."},
+ {j:"pilih",t:"Based on Figure 1, why does large-scale deforestation increase carbon dioxide in the air?",p:["Fewer trees to absorb carbon dioxide","Felled trees release extra oxygen into the air","Exposed soil absorbs more nitrogen","Felled forests produce more water vapour"],b:0,u:"Burning the tree waste also releases carbon dioxide."},
+ {j:"pilih",t:"The polluting gas from vehicle exhausts that stops blood from carrying oxygen is:",p:["Carbon monoxide","Nitrogen","Oxygen","Nitrogen dioxide"],b:0,u:"Carbon monoxide combines with haemoglobin more strongly than oxygen does."},
+ {j:"pilih",t:"Sulphur dioxide from factories can cause:",p:["Acid rain","Melting of snow","Earthquakes","High tides"],b:0,u:"Sulphur dioxide dissolves in rainwater to form acid."},
+ {j:"pilih",t:"Why is the increase in carbon dioxide in the air worrying?",p:["It traps heat and causes global warming","It makes the air grey and dark","It stops all plants from breathing","It greatly reduces the nitrogen in the air"],b:0,u:"This is known as the enhanced greenhouse effect."},
+ {j:"pilih",t:"Incomplete combustion in a gas stove with too little oxygen produces:",p:["Carbon monoxide and soot","Oxygen and clean water vapour","Nitrogen and helium","Glucose and oxygen"],b:0,u:"A yellow, sooty flame is a sign of incomplete combustion."}],
+ bos:{j:"banyak",t:"Choose ALL the steps that REDUCE air pollution.",p:["Using public transport","Fitting filters to factory chimneys","Not doing open burning","Burning rubbish behind the house","Leaving the car engine running during a long wait"],b:[0,1,2],u:"Burning rubbish and idling engines release pollutants."}},
+
+{n:3, tempat:"Candle Jar", sk:"7.1 / 7.2 Oxygen and combustion", lampiran:"lilin",
+ kadNama:"Candle", kadEm:"\u{1F56F}", kadFakta:"A candle goes out in a closed jar because the oxygen needed for combustion runs low.",
+ bosKadNama:"Glowing Splinter", bosKadEm:"\u{1FAB5}", bosKadFakta:"A glowing splinter relights in pure oxygen. This is the test for the presence of oxygen.",
+ soalan:[
+ {j:"pilih",t:"Why does the candle go out after a few seconds?",p:["The oxygen in the jar runs low","The candle runs out of wax completely","The jar becomes too cold","Nitrogen puts out the candle"],b:0,u:"Combustion uses up oxygen."},
+ {j:"pilih",t:"What relationship is shown by the data?",p:["The bigger the jar, the longer the candle burns","The bigger the jar, the faster the candle goes out","The volume of air does not affect the burning time","The candle burns for the same time in all the jars"],b:0,u:"A big jar contains more oxygen."},
+ {j:"pilih",t:"What is the manipulated variable in this experiment?",p:["Volume of air","Time the candle burns","Size of the candle","Type of candle"],b:0,u:"The size of the candle is kept constant."},
+ {j:"nombor",t:"Predict the time the candle burns in a 2000 cm³ jar, in seconds.",b:66,tol:3,suf:"s",u:"The time roughly doubles when the volume doubles: 33 × 2 = 66 s."},
+ {j:"pilih",t:"If jar A were filled with pure oxygen, what is most likely to happen?",p:["The candle burns longer and brighter","The candle goes out immediately","The candle burns the same as in air","The candle cannot be lit at all"],b:0,u:"Pure oxygen has about five times as much oxygen as air."},
+ {j:"pilih",t:"A jar is placed upside down over water. The water rises about one-fifth of the way into the jar after the candle goes out and cools. This shows that:",p:["One-fifth of air is oxygen","Water absorbs all the nitrogen","The candle produces a lot of water","The air in the jar increases"],b:0,u:"The water fills the space of the oxygen that has been used."},
+ {j:"pilih",t:"A fire in a metal rubbish bin goes out when its lid is closed. The condition for combustion that is removed is:",p:["Oxygen","Fuel","Heat","Light"],b:0,u:"The lid stops air from entering."},
+ {j:"banyak",t:"Choose ALL the ways that successfully remove one condition for combustion.",p:["Pouring water on burning wood","Covering a burning pan with a lid","Making a firebreak in a forest","Fanning a campfire strongly","Adding dry twigs to a fire"],b:[0,1,2],u:"Water cools, a lid cuts off oxygen, and a firebreak removes fuel."}],
+ bos:{j:"pilih",t:"A student claims that the candle goes out because the carbon dioxide produced 'kills' the flame. Evaluate the claim based on the data.",p:["Not accurate enough; the burning time is proportional to the volume of oxygen","Accurate; carbon dioxide always puts out a flame immediately","Accurate; small jars produce more carbon dioxide","Not accurate enough; the candle goes out because the jar becomes too hot"],b:0,u:"Carbon dioxide does help, but the main cause is the oxygen running low."}},
+
+{n:4, tempat:"Weather Station", sk:"7.3 Analysing air pollution data", lampiran:"ipu",
+ kadNama:"API", kadEm:"\u{1F4CA}", kadFakta:"The Air Pollutant Index (API) in Malaysia is monitored by the Department of Environment and can be viewed online every hour.",
+ bosKadNama:"N95 Mask", bosKadEm:"\u{1F637}", bosKadFakta:"An N95 mask filters out fine haze particles more effectively than an ordinary cloth mask.",
+ soalan:[
+ {j:"pilih",t:"On which day is the air quality at the 'good' level?",p:["Monday","Tuesday","Wednesday","Friday"],b:0,u:"Only the reading of 45 is in the range 0 to 50."},
+ {j:"pilih",t:"The API status on Thursday is:",p:["Unhealthy","Good","Moderate","Hazardous"],b:0,u:"185 is in the range 101 to 200."},
+ {j:"pilih",t:"The main cause of the high API readings on Wednesday and Thursday is:",p:["Open burning","Heavy rain","Strong wind","A public holiday"],b:0,u:"Smoke from burning contains fine particles and polluting gases."},
+ {j:"pilih",t:"Why was the reading on Thursday higher than on Wednesday even though the source was the same?",p:["There was no wind to spread the pollutants","The burning had stopped on Thursday","Rain brought the pollutants down","More trees were planted on Thursday"],b:0,u:"Without wind, pollutants build up in the area."},
+ {j:"pilih",t:"Why did the API reading go down on Friday?",p:["Rain cleaned the particles from the air","Friday is a holiday, so there are no cars","Open burning became worse","The high temperature destroyed the smoke"],b:0,u:"Raindrops carry particles and some polluting gases down to the ground."},
+ {j:"nombor",t:"What is the rise in API reading from Monday to Thursday?",b:140,tol:0.5,suf:"points",u:"185 − 45 = 140."},
+ {j:"pilih",t:"Which group is most at risk on Thursday?",p:["Students with asthma","Students who wear glasses","Tall students","Students who like reading"],b:0,u:"Fine particles irritate the airways."},
+ {j:"banyak",t:"Choose ALL the conclusions that are supported by the data.",p:["Open burning increases the API","Wind helps to spread pollutants","Rain helps to reduce the API","Traffic jams do not add to pollution at all","The API is the same every day"],b:[0,1,2],u:"The API rose from 45 to 60 during the traffic jam, so vehicles also contribute."}],
+ bos:{j:"pilih",t:"The principal must decide on outdoor sports activities on Thursday. What is the most appropriate decision?",p:["Move the activities into the hall","Continue because students need to exercise","Continue but extend the activity time","Cancel school for the whole week"],b:0,u:"At the unhealthy level, outdoor physical activity should be reduced."}},
+
+{n:5, tempat:"Fire Drill", sk:"7.2 Evaluating the choice of fire extinguishers", lampiran:"padam",
+ kadNama:"Fire Extinguisher", kadEm:"\u{1F9EF}", kadFakta:"How to use a fire extinguisher: pull the pin, aim the nozzle at the base of the fire, squeeze the handle, and sweep from side to side.",
+ bosKadNama:"Fire Brigade", bosKadEm:"\u{1F692}", bosKadFakta:"The emergency number 999 in Malaysia connects the caller to the fire brigade, police and ambulance.",
+ soalan:[
+ {j:"pilih",t:"A computer in the ICT lab catches fire. Which extinguisher is most suitable?",p:["Carbon dioxide","Water","Fire blanket","Wet sand"],b:0,u:"Carbon dioxide does not conduct electricity and leaves no residue."},
+ {j:"pilih",t:"A small pan of oil in the canteen catches fire. What is the safest action?",p:["Cover it with a fire blanket","Pour a bucket of water on it","Lift the pan and carry it outside","Fan the fire to put it out"],b:0,u:"Water makes hot oil splash and the fire spread."},
+ {j:"pilih",t:"A pile of paper in the storeroom catches fire. Which extinguisher is the cheapest and effective?",p:["Water","Carbon dioxide","Fire blanket","Dry powder"],b:0,u:"Water cools the paper below its ignition temperature."},
+ {j:"pilih",t:"Why is a carbon dioxide extinguisher less effective in an open, windy space?",p:["The wind spreads the gas before it can remove the oxygen","Carbon dioxide becomes a fuel when blown by the wind","The wind changes carbon dioxide into oxygen","Carbon dioxide works only in water"],b:0,u:"The gas must stay around the fire to cut off the oxygen."},
+ {j:"pilih",t:"A guard suggests replacing all the extinguishers in the school with dry powder because it is suitable for most fires. Evaluate the suggestion.",p:["Reasonable, except for the computer lab","Wrong, because dry powder does not work at all","Completely correct, because it has no weaknesses","Wrong, because water is always the best choice"],b:0,u:"The powder leaves residue that can damage electronic equipment."},
+ {j:"pilih",t:"A student's clothes catch fire during a practical. What is the most appropriate action?",p:["Wrap with a fire blanket and tell them to roll","Tell the student to run to the sink to find water","Spray a dry powder extinguisher straight at the student's face","Let the fire go out by itself"],b:0,u:"Running adds oxygen to the fire."},
+ {j:"pilih",t:"A fire in the workshop has already spread to the ceiling. What is the most appropriate action?",p:["Get out immediately and call 999","Try to put it out yourself with a fire blanket","Collect valuables first","Open all the windows and wait"],b:0,u:"A fire blanket is only for small fires; lives matter more than property."},
+ {j:"pilih",t:"The new science laboratory needs one more type of fire extinguisher. Based on the table, what is the most appropriate choice?",p:["Carbon dioxide","Water","Fire blanket only","No need"],b:0,u:"The laboratory has electrical equipment and flammable liquids such as alcohol."}],
+ bos:{j:"pilih",t:"Your family wants to buy a fire extinguisher for the home kitchen. What is the most appropriate choice?",p:["A fire blanket and a small dry powder extinguisher","A big bucket of water beside the stove","A giant industrial carbon dioxide extinguisher","None needed because houses rarely catch fire"],b:0,u:"A fire blanket is for pans, and dry powder is for most types of fire."}},
+
+{n:6, tempat:"Clean Air Campaign", sk:"7.1 / 7.2 / 7.3 Designing using knowledge of air",
+ kadNama:"Green Wall", kadEm:"\u{1F33F}", kadFakta:"Plants on the walls of buildings absorb carbon dioxide, filter out some dust and cool the building.",
+ bosKadNama:"Electric Car", bosKadEm:"\u{1F697}", bosKadFakta:"Electric cars give off no exhaust smoke while moving, but generating the electricity can still pollute the air.",
+ soalan:[
+ {j:"pilih",t:"You design a campaign to reduce vehicle smoke in front of the school at going-home time. Which idea is most effective?",p:["Switch off engines while waiting","Add car parking spaces in front of the gate","Ask parents to come early and wait a long time","Plant grass beside the road only"],b:0,u:"An engine left running while waiting releases carbon monoxide and other pollutants."},
+ {j:"pilih",t:"You design a simple haze detector for the classroom. Which material is most suitable for collecting particles?",p:["White paper coated with Vaseline outside the window","A tightly closed glass jar in the class cupboard","A mirror wiped every hour","Black cloth washed every day"],b:0,u:"Particles stick to the Vaseline and show up clearly on the white paper."},
+ {j:"pilih",t:"You plan a fire evacuation plan for the class. What is the most important feature?",p:["Exit routes and an assembly point","The full names of all the students in the class","A list of textbooks to carry out","The colour of the paint on the walls and floor"],b:0,u:"A good plan helps everyone get out quickly and safely."},
+ {j:"pilih",t:"Farmers in your village burn rice straw after harvesting. What is the most practical alternative?",p:["Turn the straw into compost or animal feed","Burn the straw at night so it is not seen","Throw the straw into the nearby river","Leave the straw on the road"],b:0,u:"Compost returns nutrients to the soil without smoke."},
+ {j:"pilih",t:"You design a poster for a haze day. Which advice is most accurate?",p:["Reduce outdoor activities and drink plenty of water","Open the windows so fresh air comes in","Exercise longer outside so the lungs get stronger","Burn mosquito coils to filter the air"],b:0,u:"On a haze day, close the windows and reduce exposure."},
+ {j:"pilih",t:"The environment club wants to plant trees to absorb carbon dioxide. Which location is most effective?",p:["Beside the busy road at school","In a dark storeroom","On a roof with no water","In an air-conditioned classroom"],b:0,u:"Trees need light and water, and are most useful near the source of pollution."},
+ {j:"pilih",t:"You design a low-smoke cooking stove for camping. What is the most important feature?",p:["Air holes for complete combustion","Tightly closed walls with no holes","Use wet wood so the fire is small","Put the stove inside the tent"],b:0,u:"A sufficient supply of oxygen reduces soot and carbon monoxide."},
+ {j:"pilih",t:"How would you measure the effectiveness of the 'switch off your engine' campaign at the school?",p:["Count the cars that switch off their engines before and after the campaign","Ask the principal whether the campaign is good or not","Count the number of posters printed","Measure the temperature in front of the school gate once"],b:0,u:"Data before and after shows the change in behaviour."}],
+ bos:{j:"buka",
+  t:"The area around your school is often hit by haze and vehicle smoke. Design a project or campaign to improve the air quality at the school and the surrounding area.",
+  arahan:"Describe your project or campaign, the pollutants and their causes, how the project uses knowledge about the composition of air, the carbon cycle or combustion, how its effectiveness is measured (for example API readings), and the cost and community involvement.",
+  u:"A strong TP6 answer names the correct pollutants and their causes, links the solution to science concepts, and plans a realistic way of measuring."}}
+];
+
+module.exports = {
+  id:"t1b7", tingkatan:1, kod:"7.0 Air",
+  tajuk:"Air Trail",
+  subtajuk:"Science Form 1 · Chapter 7 Air",
+  spi:SPI,
+  ulasan:{
+   1:"{n} can recall the composition of air, the uses of gases and the conditions for combustion. The next step is to explain the oxygen cycle and the carbon cycle.",
+   2:"{n} understands gas cycles, the principles of fire extinguishers and the causes of air pollution, and can explain them. More practice is needed in interpreting experimental data.",
+   3:"{n} can interpret the candle experiment to link oxygen with combustion and make simple predictions. Encourage stating the variables clearly.",
+   4:"{n} is able to analyse API data to identify the causes and factors that affect air pollution. Next, practise making decisions based on data.",
+   5:"{n} can evaluate the choice of fire extinguishers for different situations and make safe decisions. Ready for a design task.",
+   6:"{n} successfully designed a clean air project or campaign that is practical and supported by science concepts. Excellent achievement for this chapter.",
+   tiada:"{n} has not yet shown enough evidence of mastery for the chapter Air. Suggestion: repeat the first stop activities with guidance from a peer."
+  },
+  lampiran:{ komposisi:R_UDARA, kitarkarbon:R_KARBON, lilin:T_LILIN, ipu:T_IPU, padam:T_PADAM },
+  aras:ARAS
+};

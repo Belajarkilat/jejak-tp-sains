@@ -1,0 +1,179 @@
+/* English source (DLP) — Science KSSM Form 1, Chapter 2.0 The Cell as the Basic
+   Unit of Life. Translation of sumber/t1b2.js.
+   Run `node bina.js --en t1b2` to check it and generate bank-en-t1b2.js.
+   Structure must match sumber/t1b2.js exactly. Correct answer at index 0. */
+
+const SPI = [
+"Recall knowledge and skills about the cell as the basic unit of life.",
+"Understand the cell as the basic unit of life and be able to explain this understanding.",
+"Apply knowledge and skills about the cell as the basic unit of life to carry out simple tasks.",
+"Analyse knowledge about the cell as the basic unit of life in the context of solving problems about natural events or phenomena.",
+"Evaluate knowledge about the cell as the basic unit of life in the context of problem solving and decision making to carry out a task.",
+"Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about the cell as the basic unit of life in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."];
+
+/* ---------- attachments ---------- */
+
+const R_SEL = {
+  "jenis": "struktur",
+  "mod": "label",
+  "tinggiLukis": 150,
+  "bahagian": [
+    { "label": "Cell wall", "bentuk": "kotak", "x": 50, "y": 50, "l": 94, "t": 94,
+      "bulat": 4, "isi": "hijauLembut", "garis": "hijau", "anchorX": 50, "anchorY": 3 },
+    { "label": "Nucleus", "bentuk": "bulat", "x": 28, "y": 24, "r": 9, "isi": "ungu", "garis": "ungu" },
+    { "label": "Vacuole", "bentuk": "bulat", "x": 52, "y": 56, "r": 24, "isi": "kertas", "garis": "garis2" },
+    { "label": "Chloroplast", "bentuk": "bulat", "x": 24, "y": 76, "r": 7, "isi": "hijau", "garis": "hijau" }
+  ],
+  "kapsyen": "Figure 1 · A plant cell (schematic diagram).",
+  "alt": "Schematic diagram of a plant cell: the cell wall on the outside, a small round nucleus at the top, a large vacuole in the middle, and a small chloroplast at the bottom"
+};
+
+const R_KITARSEL = {
+  "jenis": "aliran",
+  "mod": "kitar",
+  "nod": [
+    "Leaves make glucose",
+    "Glucose stored",
+    "Cell respiration",
+    "Energy for cells"
+  ],
+  "kapsyen": "Figure 1 · The relationship between photosynthesis and cell respiration.",
+  "alt": "Cycle diagram of four boxes: photosynthesis in leaves, glucose is stored, cell respiration, and energy for cells"
+};
+
+const T_SEL =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Cell</th>'+
+'<th>Cell wall</th><th>Chloroplasts</th><th>Vacuole</th><th>Nucleus</th><th>Shape</th></tr></thead><tbody>'+
+'<tr><td>J</td><td>Present</td><td>Many</td><td>Large</td><td>Present</td><td>Fixed, long</td></tr>'+
+'<tr><td>K</td><td>Absent</td><td>Absent</td><td>Absent or small</td><td>Present</td><td>Not fixed</td></tr>'+
+'<tr><td>L</td><td>Present</td><td>Absent</td><td>Large</td><td>Present</td><td>Fixed, with a long projection</td></tr>'+
+'<tr><td>M</td><td>Absent</td><td>Absent</td><td>Absent</td><td>Absent</td><td>Biconcave disc</td></tr>'+
+'</tbody></table></div><p class="qnote">Observations of four types of cells under a microscope. All cells have a cell membrane and cytoplasm.</p>';
+
+const T_KANJI =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Leaf</th>'+
+'<th>Condition of the plant for 2 days</th><th>Colour after testing with iodine</th></tr></thead><tbody>'+
+'<tr><td>A</td><td>In sunlight</td><td>Dark blue</td></tr>'+
+'<tr><td>B</td><td>Inside a dark cupboard</td><td>Brown</td></tr>'+
+'<tr><td>C</td><td>In light, in a container with sodium hydroxide</td><td>Brown</td></tr>'+
+'<tr><td>D (variegated leaf)</td><td>In sunlight</td><td>Green part dark blue, white part brown</td></tr>'+
+'</tbody></table></div><p class="qnote">All the plants were destarched first by keeping them in a dark place for 48 hours. Sodium hydroxide absorbs carbon dioxide. A dark blue colour shows the presence of starch.</p>';
+
+const T_HIDRILA =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Distance of the lamp from the plant (cm)</th>'+
+'<th class="n">Number of bubbles per minute</th></tr></thead><tbody>'+
+'<tr><td>10</td><td class="n">42</td></tr>'+
+'<tr><td>20</td><td class="n">25</td></tr>'+
+'<tr><td>30</td><td class="n">14</td></tr>'+
+'<tr><td>40</td><td class="n">6</td></tr>'+
+'</tbody></table></div><p class="qnote">A student places the aquatic plant Hydrilla in a boiling tube of water and counts the bubbles of gas released. One reading for each distance. The room is not darkened. Fictional data.</p>';
+
+/* ---------- stops ---------- */
+
+const ARAS = [
+
+{n:1, tempat:"Microscope Lens", sk:"2.1 The cell: structure and function", lampiran:"seltumbuhan",
+ kadNama:"Cell", kadEm:"\u{1F9EB}", kadFakta:"An adult human body is estimated to contain about 37 trillion cells.",
+ bosKadNama:"Robert Hooke", bosKadEm:"\u{1F52C}", bosKadFakta:"In 1665, Robert Hooke observed tiny compartments in cork and named them cells.",
+ soalan:[
+ {j:"pilih",t:"The basic unit that makes up all living things is the:",p:["Cell","Tissue","Organ","Atom"],b:0,u:"Living things are made up of one or many cells."},
+ {j:"pilih",t:"The part of a cell that controls all the activities of the cell is the:",p:["Nucleus","Cytoplasm","Vacuole","Cell wall"],b:0,u:"The nucleus contains chromosomes that carry genetic information (DNA)."},
+ {j:"pilih",t:"The structure that controls the movement of substances into and out of the cell is the:",p:["Cell membrane","Cell wall","Chloroplast","Mitochondrion"],b:0,u:"The cell wall is fully permeable; it is the cell membrane that selects the substances."},
+ {j:"pilih",t:"The structure that carries out cell respiration to release energy is the:",p:["Mitochondrion","Chloroplast","Nucleus","Vacuole"],b:0,u:"Mitochondria are often called the 'powerhouses' of the cell."},
+ {j:"pilih",t:"The part of a plant cell that contains chlorophyll is the:",p:["Chloroplast","Mitochondrion","Cytoplasm","Vacuole"],b:0,u:"Chlorophyll absorbs light for photosynthesis."},
+ {j:"pilih",t:"Based on Figure 1, the structure that is the largest and stores water and dissolved substances is the:",p:["Vacuole","Nucleus at the edge of the cell","Green-coloured chloroplast","Cell wall on the outside"],b:0,u:"The vacuole is the large space in the middle of a plant cell that stores water and dissolved substances."},
+ {j:"pilih",t:"An example of a unicellular organism is:",p:["Amoeba sp.","Hydra sp.","Spirogyra sp.","Oyster mushroom"],b:0,u:"An amoeba consists of only one cell."},
+ {j:"banyak",t:"Choose ALL the structures that are present in a plant cell but ABSENT in an animal cell.",p:["Cell wall","Chloroplast","Large vacuole","Nucleus","Cell membrane","Mitochondrion"],b:[0,1,2],u:"The nucleus, cell membrane and mitochondria are present in both types of cells."}],
+ bos:{j:"susun",t:"Arrange the levels of organisation of living things starting from the SIMPLEST.",p:["Cell","Tissue","Organ","System","Organism"],b:[0,1,2,3,4],u:"Example: muscle cell → muscle tissue → heart → circulatory system → human."}},
+
+{n:2, tempat:"Cell Factory", sk:"2.1 / 2.2 Types of cells, cell respiration and photosynthesis", lampiran:"kitarsel",
+ kadNama:"Nerve Cell", kadEm:"\u{26A1}", kadFakta:"Some human nerve cells can be more than a metre long, from the spinal cord to the tip of the foot.",
+ bosKadNama:"Photosynthesis", bosKadEm:"\u{1F33F}", bosKadFakta:"Almost all the oxygen in the atmosphere is produced by the photosynthesis of plants and algae.",
+ soalan:[
+ {j:"pilih",t:"Why do plant cells have a fixed shape?",p:["The strong cell wall supports them","Their nucleus is larger than in animal cells","Their cytoplasm is thicker","They do not have a cell membrane"],b:0,u:"The cell wall is made of strong cellulose."},
+ {j:"pilih",t:"Red blood cells have no nucleus. The advantage of this feature is that:",p:["The cell has more space to carry oxygen","The cell can reproduce faster","The cell can live longer than other cells","The cell can produce its own energy"],b:0,u:"That space is filled with haemoglobin, which binds oxygen."},
+ {j:"pilih",t:"Root hair cells are long and thin. This feature helps them to:",p:["Absorb more water","Carry out photosynthesis","Support the plant stem","Store food"],b:0,u:"The long shape increases the surface area for absorbing water and mineral salts."},
+ {j:"pilih",t:"Why do the palisade cells of a leaf contain many chloroplasts?",p:["To absorb more light for photosynthesis","To control the opening of the stomata on the leaf surface","To absorb water from the soil","To transport food to the whole plant"],b:0,u:"Palisade cells are located in the upper part of the leaf, which receives the most light."},
+ {j:"pilih",t:"The products of cell respiration are:",p:["Energy, carbon dioxide and water","Glucose, oxygen and sunlight","Oxygen, water and energy","Starch and carbon dioxide"],b:0,u:"Glucose + oxygen → carbon dioxide + water + energy."},
+ {j:"pilih",t:"The requirements for photosynthesis are:",p:["Light, chlorophyll, carbon dioxide and water","Oxygen, glucose, sunlight and soil","Carbon dioxide and oxygen only","Water, oxygen and chlorophyll"],b:0,u:"The products are glucose and oxygen."},
+ {j:"pilih",t:"Cancer cells differ from normal cells because they:",p:["Divide without control","Do not have a nucleus","Cannot divide at all","Exist only in plants"],b:0,u:"Uncontrolled cell division forms a tumour."},
+ {j:"pilih",t:"Based on Figure 1, why are cell respiration and photosynthesis said to complement each other?",p:["The product of one process is the raw material of the other","Both take place only during the day","Photosynthesis and respiration both produce oxygen","Both take place in the chloroplast"],b:0,u:"Photosynthesis produces the glucose and oxygen that are used in respiration, and vice versa."}],
+ bos:{j:"banyak",t:"Choose ALL the CORRECT matches of cell and function.",p:["Nerve cell: transmits impulses","Muscle cell: contracts for movement","Guard cell: controls the opening of stomata","Red blood cell: fights germs","Root hair cell: carries out photosynthesis"],b:[0,1,2],u:"It is the white blood cells that fight germs. Root hair cells absorb water and have no chloroplasts."}},
+
+{n:3, tempat:"Slide Lab", sk:"2.1 Identifying animal cells and plant cells", lampiran:"sel",
+ kadNama:"Slide", kadEm:"\u{1F9EA}", kadFakta:"The cover slip is lowered slowly at a slant so that air bubbles are not trapped over the cells.",
+ bosKadNama:"Biconcave Disc", bosKadEm:"\u{1FA78}", bosKadFakta:"The biconcave disc shape increases the surface area of the red blood cell for absorbing oxygen.",
+ soalan:[
+ {j:"pilih",t:"Based on the table, which cell is most likely a palisade cell of a leaf?",p:["J","K","L","M"],b:0,u:"J has a cell wall, a large vacuole and many chloroplasts."},
+ {j:"pilih",t:"Cell L has a cell wall but no chloroplasts. This cell is most likely a:",p:["Root hair cell","Leaf palisade cell","Muscle cell","Red blood cell"],b:0,u:"Roots in the soil do not receive light, so they have no chloroplasts."},
+ {j:"pilih",t:"Which cells in the table are animal cells?",p:["K and M","J and L","J and K","L and M"],b:0,u:"K and M have no cell wall."},
+ {j:"pilih",t:"Cell M has no nucleus and is shaped like a biconcave disc. This cell is a:",p:["Red blood cell","Nerve cell","Epithelial cell","Guard cell"],b:0,u:"Human red blood cells have no nucleus."},
+ {j:"pilih",t:"When preparing a slide of onion cells, many black circles are seen. The most likely cause is:",p:["Air bubbles under the cover slip","Too much iodine solution was used","The objective lens is too dirty","The onion cells are already dead"],b:0,u:"Lower the cover slip slowly with a needle at a slant."},
+ {j:"pilih",t:"The image of the cells is too small under the 4× objective lens. The correct next step is to:",p:["Change to the 10× objective lens and refocus","Move the slide closer to your eye","Add more stain to the slide","Close the diaphragm of the microscope completely"],b:0,u:"Magnification is increased step by step so that the image stays in focus."},
+ {j:"pilih",t:"Why must cheek cells be stained before they are observed?",p:["So that the nucleus is seen more clearly","So that the cells do not die on the slide","So that the cells become bigger","So that the cells stick to the glass slide"],b:0,u:"The cells are almost transparent. Stain makes structures such as the nucleus clearer."},
+ {j:"banyak",t:"Choose ALL the CORRECT statements about cell K.",p:["It is an animal cell","It does not carry out photosynthesis","It has a nucleus","It has a cell wall","It is a red blood cell"],b:[0,1,2],u:"K has no cell wall or chloroplasts but has a nucleus, so it is not a red blood cell."}],
+ bos:{j:"susun",t:"Arrange the steps of preparing a slide of onion cells in the correct order.",p:["Peel off a thin layer of onion epidermis","Place the epidermis on a drop of water on the slide","Lower the cover slip at a slant","Drop iodine solution at the edge of the cover slip","Observe under the microscope, starting with the 4× lens"],b:[0,1,2,3,4],u:"The iodine is drawn under the cover slip with filter paper on the opposite side."}},
+
+{n:4, tempat:"Greenhouse", sk:"2.2 Analysing photosynthesis experiments", lampiran:"kanji",
+ kadNama:"Starch Test", kadEm:"\u{1F7E6}", kadFakta:"A leaf is boiled in alcohol over a water bath to remove the chlorophyll so that the colour change of the iodine is easy to see.",
+ bosKadNama:"Variegated Leaf", bosKadEm:"\u{1F343}", bosKadFakta:"The white part of a variegated leaf has no chlorophyll, so no starch is produced there.",
+ soalan:[
+ {j:"pilih",t:"Why were all the plants destarched first?",p:["So that all the starch detected is new starch","So that the plants photosynthesise faster afterwards","So that the leaves become softer for boiling","So that the chlorophyll in the leaves disappears"],b:0,u:"Old starch from before the experiment would confuse the results."},
+ {j:"pilih",t:"Compare leaves A and B. What is the conclusion?",p:["Light is needed for photosynthesis","Water is needed for photosynthesis","Chlorophyll is needed for photosynthesis","Oxygen is needed for photosynthesis"],b:0,u:"The only difference between A and B is light."},
+ {j:"pilih",t:"Compare leaves A and C. What is the function of sodium hydroxide?",p:["To absorb carbon dioxide","To supply water to the leaf","To absorb light from the lamp","To kill germs on the leaf"],b:0,u:"Without carbon dioxide, leaf C cannot produce starch."},
+ {j:"pilih",t:"Leaf D shows that photosynthesis needs:",p:["Chlorophyll","Light","Carbon dioxide","High temperature"],b:0,u:"The white part receives the same light and carbon dioxide, but has no chlorophyll."},
+ {j:"pilih",t:"Why is the leaf boiled in alcohol over a water bath, not directly over a flame?",p:["Alcohol is flammable","Alcohol must stay cold","The leaf will burn if it touches the flame","The water bath speeds up the iodine test"],b:0,u:"Alcohol vapour can catch fire if it touches a direct flame."},
+ {j:"pilih",t:"If plant B had not been destarched first, the result for leaf B might be:",p:["Dark blue even though there was no light","Brown because there was no photosynthesis","Unchanged from the original result","White because the chlorophyll had gone"],b:0,u:"Old starch would give a false positive result."},
+ {j:"pilih",t:"A student makes the conclusion: \"Leaf C has no starch because it lacked light.\" Why is this conclusion wrong?",p:["Leaf C received light but had no carbon dioxide","Leaf C did not receive water during the experiment","Leaf C has no chlorophyll at all","Sodium hydroxide stops light from reaching the leaf"],b:0,u:"The variable that is different for leaf C is carbon dioxide."},
+ {j:"banyak",t:"Choose ALL the conclusions that are supported by the data.",p:["Light is needed to produce starch","Carbon dioxide is needed to produce starch","Chlorophyll is needed to produce starch","Oxygen is needed to produce starch","Starch is produced at night"],b:[0,1,2],u:"This experiment did not test oxygen, and leaf B in the dark did not produce starch."}],
+ bos:{j:"pilih",t:"A vegetable farmer in the Cameron Highlands wants the crops in a greenhouse to grow faster. What is the most scientific suggestion?",p:["Add more lighting and make sure the air has enough carbon dioxide","Close the greenhouse completely so that oxygen builds up","Reduce watering so that the roots are stronger","Paint the walls black so that the greenhouse is hotter"],b:0,u:"Light and carbon dioxide are raw materials for photosynthesis that can be increased."}},
+
+{n:5, tempat:"Class Aquarium", sk:"2.2 Evaluating a photosynthesis investigation", lampiran:"hidrila",
+ kadNama:"Hydrilla", kadEm:"\u{1FAB4}", kadFakta:"The gas bubbles released from Hydrilla during photosynthesis are mostly oxygen.",
+ bosKadNama:"Balanced Aquarium", bosKadEm:"\u{1F420}", bosKadFakta:"Aquatic plants supply oxygen to the fish, while the fish release carbon dioxide for the plants.",
+ soalan:[
+ {j:"pilih",t:"What relationship is shown by the data?",p:["The closer the lamp, the faster the photosynthesis","The farther the lamp, the faster the photosynthesis","The distance of the lamp does not affect photosynthesis","The closer the lamp, the less oxygen is released"],b:0,u:"The bubbles increase from 6 to 42 per minute as the lamp is brought closer."},
+ {j:"pilih",t:"The room is not darkened. What is the effect of this weakness?",p:["Other light also affects the number of bubbles","The Hydrilla will die faster","The bubbles become bigger and easier to count","There is no effect because the lamp is bright enough"],b:0,u:"Light from the window is an uncontrolled variable."},
+ {j:"pilih",t:"A lamp that is close also warms the water. Why does this affect the validity of the experiment?",p:["Temperature changes as well as light intensity","Hot water stops all photosynthesis","Hot water makes the bubbles smaller","Heat has no effect at all"],b:0,u:"Place a beaker of water between the lamp and the tube as a heat filter, or use an LED lamp."},
+ {j:"pilih",t:"What is the best way to make the results more reliable?",p:["Repeat each distance three times and calculate the average","Count the bubbles for only five seconds","Use different Hydrilla for each distance","Add more distances without repeating"],b:0,u:"Repeating reduces the effect of random error."},
+ {j:"pilih",t:"A student claims that the gas released is carbon dioxide. Evaluate the claim.",p:["Wrong, the gas is oxygen and can be tested with a glowing splinter","Correct, because plants release carbon dioxide in the daytime","Correct, because the bubbles come out of the water","Wrong, the gas is water vapour because the water is heated"],b:0,u:"Oxygen relights a glowing splinter."},
+ {j:"pilih",t:"The teacher wants to use this data to make a conclusion for the class. What is the most appropriate decision?",p:["Use it carefully because there are no repeats","Accept it fully because the trend is very clear","Reject it fully because there are too few distances","Accept it because Hydrilla always gives accurate results"],b:0,u:"The trend is clear, but without repeats and control of light, this data is only early evidence."},
+ {j:"pilih",t:"The class aquarium is placed in a dark corner and the fish often gasp at the surface. What is the most appropriate action?",p:["Move the aquarium to a place with moderate light","Remove all the aquatic plants from the aquarium","Add more fish so that the water moves","Cover the aquarium with a cloth so that it is calmer"],b:0,u:"Plants need light to photosynthesise and release oxygen. Direct sunlight can warm the water."},
+ {j:"pilih",t:"At night, the aquatic plants in the aquarium:",p:["Only carry out respiration","Only carry out photosynthesis","Carry out no processes at all","Release more oxygen"],b:0,u:"Respiration takes place all the time, but photosynthesis needs light."}],
+ bos:{j:"pilih",t:"The Science Club wants to show photosynthesis to visitors within 10 minutes. What is the most effective setup?",p:["Hydrilla, an LED lamp at 10 cm and a little sodium hydrogencarbonate","Hydrilla in a dim corner of the hall with no extra lamp","Hydrilla with a very hot filament lamp at 2 cm","A flowering plant in a big pot under the normal classroom light"],b:0,u:"A close LED lamp gives light without too much heat, and sodium hydrogencarbonate supplies carbon dioxide."}},
+
+{n:6, tempat:"Cell Exhibition", sk:"2.1 / 2.2 Design using knowledge of cells",
+ kadNama:"Cell Model", kadEm:"\u{1F3A8}", kadFakta:"A good cell model shows the relative sizes of the structures, for example the plant vacuole which can fill most of the cell.",
+ bosKadNama:"Vertical Garden", bosKadEm:"\u{1F3E2}", bosKadFakta:"Vertical gardens on city buildings absorb carbon dioxide and cool the building naturally.",
+ soalan:[
+ {j:"pilih",t:"You build a plant cell model from recycled materials. Which material is most suitable to represent the cell wall?",p:["Hard cardboard box","Soft transparent plastic","Small rubber ball","Long thread"],b:0,u:"The cell wall is strong and gives the cell a fixed shape."},
+ {j:"pilih",t:"In the same cell model, what is most suitable to represent the chloroplasts?",p:["Green beans","One big marble","A balloon filled with water","Black string"],b:0,u:"Chloroplasts are small, oval and green, and there are many in the cell."},
+ {j:"pilih",t:"You want to explain the levels of organisation to a Year 4 pupil. Which analogy is most accurate?",p:["Brick → wall → room → house → housing estate","Pencil → book → bag → table → school","Apple → banana → papaya → pineapple → market","Dot → line → circle → triangle → box"],b:0,u:"Each level is built from a combination of the previous level, just like cell → tissue → organ → system → organism."},
+ {j:"pilih",t:"Your school area is hot and has few trees. Based on photosynthesis, what is the most practical suggestion?",p:["Plant shade trees around the school","Install more fans in the corridors","Paint the school roof a dark colour","Cut down trees so that the wind is stronger"],b:0,u:"Trees absorb carbon dioxide, release oxygen and give shade."},
+ {j:"pilih",t:"You design a poster about cancer for health day. Which message is most accurate scientifically?",p:["Cancer can be triggered by cigarette smoke","Cancer is spread by touching a patient","Cancer only happens to senior citizens","Cancer can be completely prevented by drinking water"],b:0,u:"Chemicals in cigarette smoke can damage the DNA of cells."},
+ {j:"pilih",t:"You design a closed terrarium for an exhibition. What is the most important requirement for the plants to stay alive for months?",p:["Suitable plants, moist soil and moderate light","Dry sand and a lamp that is always bright","Big plants so that the jar looks full and attractive","A dark jar so that the water does not evaporate"],b:0,u:"Water and gases are recycled inside the terrarium, but light must come from outside."},
+ {j:"pilih",t:"A village wants to reduce the cost of fish feed in its pond. What is the most appropriate suggestion?",p:["Plant aquatic plants that fish can eat","Add more fish so that they help each other","Cover the pond with canvas so the water does not get hot","Drain the pond every week to clean it"],b:0,u:"Aquatic plants become food and produce oxygen through photosynthesis."},
+ {j:"pilih",t:"How do you test whether your cell model is easy to understand?",p:["Ask a friend to label the model without looking at notes","Ask the teacher whether the model is pretty","Compare the colour of the model with other groups' models","Measure the weight of the model with a balance"],b:0,u:"If a friend can identify the structures correctly, the model is effective."}],
+ bos:{j:"buka",
+  t:"Your school will hold an open day. Design a presentation or an interactive model that explains how plant cells and animal cells depend on each other through photosynthesis and cell respiration.",
+  arahan:"Describe the form of the presentation or model, the materials used and why, the cell structures shown, how visitors interact with it, and how you take cost and visitors of different ages into account.",
+  u:"A strong TP6 answer shows the cell structures correctly, links the products of photosynthesis with the raw materials of respiration, and is practical in terms of cost and audience."}}
+];
+
+module.exports = {
+  id:"t1b2", tingkatan:1, kod:"2.0 The Cell as the Basic Unit of Life",
+  tajuk:"Cell Trail",
+  subtajuk:"Science Form 1 · Chapter 2 The Cell as the Basic Unit of Life",
+  spi:SPI,
+  ulasan:{
+   1:"{n} can recall the structures of the cell and their functions, and examples of unicellular and multicellular organisms. The next step is to explain the differences between animal cells and plant cells.",
+   2:"{n} understands the types of cells and their functions, and the processes of cell respiration and photosynthesis. More practice is needed in identifying cells from microscope observations.",
+   3:"{n} can identify animal cells and plant cells based on their structural features and prepare slides following the procedure. Encourage drawing and labelling cells accurately.",
+   4:"{n} is able to analyse the results of photosynthesis experiments and identify the variables tested. Next, practise evaluating weaknesses in an investigation.",
+   5:"{n} can evaluate a photosynthesis investigation and make sound decisions about caring for plants and aquariums. Ready for a design task.",
+   6:"{n} successfully designed a presentation or model that explains cells, photosynthesis and cell respiration in a creative and practical way. Excellent achievement for this chapter.",
+   tiada:"{n} has not yet shown enough evidence of mastery for the chapter The Cell as the Basic Unit of Life. Suggestion: repeat the first stop activities with guidance from a peer."
+  },
+  lampiran:{ seltumbuhan:R_SEL, kitarsel:R_KITARSEL, sel:T_SEL, kanji:T_KANJI, hidrila:T_HIDRILA },
+  aras:ARAS
+};

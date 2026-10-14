@@ -51,11 +51,11 @@ const R_BATU = {
   "nod": [
     "Magma",
     "Batuan igneus",
-    "Batuan enapan",
-    "Batuan metamorf"
+    "Batuan sedimen",
+    "Batuan metamorfik"
   ],
   "kapsyen": "Rajah 1 · Kitar batuan.",
-  "alt": "Rajah kitaran empat kotak: magma, batuan igneus, batuan enapan, batuan metamorf, kemudian kembali kepada magma"
+  "alt": "Rajah kitaran empat kotak: magma, batuan igneus, batuan sedimen, batuan metamorfik, kemudian kembali kepada magma"
 };
 
 const T_BATU =

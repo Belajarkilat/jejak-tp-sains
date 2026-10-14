@@ -135,6 +135,7 @@ p{margin:0}
 .seg button{border:0;background:transparent;padding:9px 15px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink3);white-space:nowrap;min-height:44px}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
 .icon-btn{border:1px solid var(--line);background:var(--surface);width:42px;height:42px;border-radius:999px;cursor:pointer;display:grid;place-items:center;font-size:16px;flex:none}
+@media (max-width:400px){.topbar .icon-btn{width:34px;height:34px}.topbar .seg button{padding:9px 8px}.topbar .brand svg{display:none}.topbar .brand b{font-size:14.5px}}
 
 /* ---------- meter nafas ---------- */
 .hud{
@@ -1046,57 +1047,67 @@ body.zon-murid{color:var(--tinta)}
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
 <script src="konfig.js?v=20260927"></script>
 <script src="sumber.js?v=20261003"></script>
-<script src="bank-t1b1.js?v=2026092301"></script>
-<script src="bank-t1b2.js?v=2026092301"></script>
-<script src="bank-t1b3.js?v=2026092301"></script>
-<script src="bank-t1b4.js?v=2026092301"></script>
-<script src="bank-t1b5.js?v=2026092301"></script>
-<script src="bank-t1b6.js?v=2026092301"></script>
-<script src="bank-t1b7.js?v=2026092301"></script>
-<script src="bank-t1b8.js?v=2026092301"></script>
-<script src="bank-t1b9.js?v=2026092301"></script>
-<script src="bank-t2b1.js?v=2026092301"></script>
-<script src="bank-t2b2.js?v=2026092301"></script>
-<script src="bank-t2b3.js?v=2026092301"></script>
-<script src="bank-t2b4.js?v=2026092301"></script>
-<script src="bank-t2b5.js?v=2026092301"></script>
-<script src="bank-t2b6.js?v=2026092301"></script>
-<script src="bank-t2b7.js?v=2026092301"></script>
-<script src="bank-t2b8.js?v=2026092301"></script>
-<script src="bank-t2b9.js?v=2026092301"></script>
-<script src="bank-t2b10.js?v=2026092301"></script>
-<script src="bank-t2b11.js?v=2026092301"></script>
-<script src="bank-t2b12.js?v=2026092301"></script>
-<script src="bank-t2b13.js?v=2026092301"></script>
-<script src="bank-t3b1.js?v=2026092301"></script>
-<script src="bank-t3b2.js?v=2026092301"></script>
-<script src="bank-t3b3.js?v=2026092301"></script>
-<script src="bank-t3b4.js?v=2026092301"></script>
-<script src="bank-t3b5.js?v=2026092301"></script>
-<script src="bank-t3b6.js?v=2026092301"></script>
-<script src="bank-t3b7.js?v=2026092301"></script>
-<script src="bank-t3b8.js?v=2026092301"></script>
-<script src="bank-t3b9.js?v=2026092301"></script>
-<script src="bank-t3b10.js?v=2026092301"></script>
-<script src="bank-t4b1.js?v=2026092301"></script>
-<script src="bank-t4b2.js?v=2026092301"></script>
-<script src="bank-t4b3.js?v=2026092301"></script>
-<script src="bank-t4b4.js?v=2026092301"></script>
-<script src="bank-t4b5.js?v=2026092301"></script>
-<script src="bank-t4b6.js?v=2026092301"></script>
-<script src="bank-t4b7.js?v=2026092301"></script>
-<script src="bank-t4b8.js?v=2026092301"></script>
-<script src="bank-t4b9.js?v=2026092301"></script>
-<script src="bank-t4b10.js?v=2026092301"></script>
-<script src="bank-t5b1.js?v=2026092301"></script>
-<script src="bank-t5b2.js?v=2026092301"></script>
-<script src="bank-t5b3.js?v=2026092301"></script>
-<script src="bank-t5b4.js?v=2026092301"></script>
-<script src="bank-t5b5.js?v=2026092301"></script>
-<script src="bank-t5b6.js?v=2026092301"></script>
-<script src="bank-t5b7.js?v=2026092301"></script>
-<script src="bank-t5b8.js?v=2026092301"></script>
-<script src="bank-t5b9.js?v=2026092301"></script>
+<script src="bank-t1b1.js?v=2026101401"></script>
+<script src="bank-t1b2.js?v=2026101401"></script>
+<script src="bank-t1b3.js?v=2026101401"></script>
+<script src="bank-t1b4.js?v=2026101401"></script>
+<script src="bank-t1b5.js?v=2026101401"></script>
+<script src="bank-t1b6.js?v=2026101401"></script>
+<script src="bank-t1b7.js?v=2026101401"></script>
+<script src="bank-t1b8.js?v=2026101401"></script>
+<script src="bank-t1b9.js?v=2026101401"></script>
+<script src="bank-t2b1.js?v=2026101401"></script>
+<script src="bank-t2b2.js?v=2026101401"></script>
+<script src="bank-t2b3.js?v=2026101401"></script>
+<script src="bank-t2b4.js?v=2026101401"></script>
+<script src="bank-t2b5.js?v=2026101401"></script>
+<script src="bank-t2b6.js?v=2026101401"></script>
+<script src="bank-t2b7.js?v=2026101401"></script>
+<script src="bank-t2b8.js?v=2026101401"></script>
+<script src="bank-t2b9.js?v=2026101401"></script>
+<script src="bank-t2b10.js?v=2026101401"></script>
+<script src="bank-t2b11.js?v=2026101401"></script>
+<script src="bank-t2b12.js?v=2026101401"></script>
+<script src="bank-t2b13.js?v=2026101401"></script>
+<script src="bank-t3b1.js?v=2026101401"></script>
+<script src="bank-t3b2.js?v=2026101401"></script>
+<script src="bank-t3b3.js?v=2026101401"></script>
+<script src="bank-t3b4.js?v=2026101401"></script>
+<script src="bank-t3b5.js?v=2026101401"></script>
+<script src="bank-t3b6.js?v=2026101401"></script>
+<script src="bank-t3b7.js?v=2026101401"></script>
+<script src="bank-t3b8.js?v=2026101401"></script>
+<script src="bank-t3b9.js?v=2026101401"></script>
+<script src="bank-t3b10.js?v=2026101401"></script>
+<script src="bank-t4b1.js?v=2026101401"></script>
+<script src="bank-t4b2.js?v=2026101401"></script>
+<script src="bank-t4b3.js?v=2026101401"></script>
+<script src="bank-t4b4.js?v=2026101401"></script>
+<script src="bank-t4b5.js?v=2026101401"></script>
+<script src="bank-t4b6.js?v=2026101401"></script>
+<script src="bank-t4b7.js?v=2026101401"></script>
+<script src="bank-t4b8.js?v=2026101401"></script>
+<script src="bank-t4b9.js?v=2026101401"></script>
+<script src="bank-t4b10.js?v=2026101401"></script>
+<script src="bank-t5b1.js?v=2026101401"></script>
+<script src="bank-t5b2.js?v=2026101401"></script>
+<script src="bank-t5b3.js?v=2026101401"></script>
+<script src="bank-t5b4.js?v=2026101401"></script>
+<script src="bank-t5b5.js?v=2026101401"></script>
+<script src="bank-t5b6.js?v=2026101401"></script>
+<script src="bank-t5b7.js?v=2026101401"></script>
+<script src="bank-t5b8.js?v=2026101401"></script>
+<script src="bank-t5b9.js?v=2026101401"></script>
+<script src="bank-en-t1b1.js?v=2026101401"></script>
+<script src="bank-en-t1b2.js?v=2026101401"></script>
+<script src="bank-en-t1b3.js?v=2026101401"></script>
+<script src="bank-en-t1b4.js?v=2026101401"></script>
+<script src="bank-en-t1b5.js?v=2026101401"></script>
+<script src="bank-en-t1b6.js?v=2026101401"></script>
+<script src="bank-en-t1b7.js?v=2026101401"></script>
+<script src="bank-en-t1b8.js?v=2026101401"></script>
+<script src="bank-en-t1b9.js?v=2026101401"></script>
+<script src="bi-ui.js?v=2026101401"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -1119,6 +1130,7 @@ body.zon-murid{color:var(--tinta)}
         <button id="btnCikgu" aria-pressed="false">Cikgu</button>
       </div>
       <span class="talian" id="talian" role="status" aria-live="polite"></span>
+      <button class="icon-btn" id="btnBahasa" hidden title="Language / Bahasa" aria-label="Language / Bahasa" style="font-size:11px;font-weight:800;width:34px;height:34px"></button>
       <button class="icon-btn" id="btnBunyi" title="Bunyi dan getaran" aria-label="Hidup atau matikan bunyi dan getaran">&#9834;</button>
       <button class="icon-btn" id="btnTema" title="Tema" aria-label="Tukar tema">&#9680;</button>
     </div>
@@ -1202,16 +1214,32 @@ function premiumAktif(t){
   return !!(PROFIL&&PROFIL[k]) || !!(KM&&KM[k]);
 }
 function tingkatanBab(id){ var m=/^t(\d)b/.exec(id||""); return m?+m[1]:3; }
+/* Bahasa kandungan: "ms" (lalai) atau "en" (DLP). Disimpan dalam peranti, dan
+   boleh ditetapkan oleh guru melalui pautan ...?bhs=en (atau ?bhs=ms).
+   Bank BI (window.BANK_EN) ialah bank lengkap dengan struktur yang sama
+   seperti bank BM, jadi id soalan dan kemajuan murid tidak berubah apabila
+   bahasa bertukar. Bab tanpa bank BI jatuh balik ke BM. */
+var BHS="ms";
+try{
+  var pbhs=new URL(location.href).searchParams.get("bhs");
+  if(pbhs==="en"||pbhs==="ms") localStorage.setItem("cn-bhs",pbhs);
+  BHS=localStorage.getItem("cn-bhs")==="en"?"en":"ms";
+}catch(e){}
+function adaBI(id){ return !!(window.BANK_EN&&window.BANK_EN[id]); }
+function ambilBank(id){
+  return (BHS==="en"&&adaBI(id)&&window.BANK_EN[id])||(window.BANK&&window.BANK[id])||null;
+}
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("cn-bab"); }catch(e){}
 if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID="t3b1";
+if(BHS==="en"&&!adaBI(BAB_ID)) BAB_ID="t1b1";
 
 /* ============================================================
    KANDUNGAN — dimuatkan daripada fail bank yang berasingan.
    Aplikasi ini tidak tahu apa-apa tentang respirasi. Ia hanya pemain
    bagi mana-mana bab yang mendaftar dirinya dalam window.BANK.
    ============================================================ */
-var BAB = (window.BANK && window.BANK[BAB_ID]) || null;
+var BAB = ambilBank(BAB_ID);
 if(!BAB){
   var kotakRalat=document.getElementById("stage");
   if(kotakRalat) kotakRalat.innerHTML=
@@ -1226,7 +1254,7 @@ if(!BAB){
 var SPI=BAB.spi, KKO=BAB.kko, ARAS=[];
 
 function pasangBab(id){
-  var b=window.BANK[id];
+  var b=ambilBank(id);
   if(!b) return false;
   BAB_ID=id; BAB=b; SPI=b.spi; KKO=b.kko;
   ARAS=b.aras.map(function(a){
@@ -1359,9 +1387,9 @@ function pasangJenama(){
   if(ge) ge.textContent="Sains · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
   document.title = BAB.tajuk ? (namaApp()+" · "+BAB.tajuk) : namaApp();
 }
-function senaraiBab(){
-  return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]; })
-    .map(function(x){ return window.BANK[x]; });
+function senaraiBab(untukMurid){
+  return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]&&(!untukMurid||BHS!=="en"||adaBI(x)); })
+    .map(function(x){ return ambilBank(x); });
 }
 /* Tukar bab: kemajuan setiap bab berasingan, jadi keadaan permainan
    dikosongkan dan rekod bab baharu dikira semula. */
@@ -2559,7 +2587,7 @@ function renderPeta(){
   st.appendChild(w);
 
   /* pilih bab: kemajuan setiap bab dikira berasingan */
-  var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif(tingKini);
+  var semuaBab=senaraiBab(true), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif(tingKini);
   var tingAda=[1,2,3,4,5].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
   if(tingAda.length>1){
     var tp=el("div","tingpilih"); tp.setAttribute("role","group"); tp.setAttribute("aria-label","Pilih tingkatan");
@@ -5693,6 +5721,24 @@ $("btnBunyi").onclick=function(){
   $("btnBunyi").setAttribute("aria-label",S.senyap?"Hidupkan bunyi dan getaran":"Matikan bunyi dan getaran");
   aturDegup(); simpanDiri();
 };
+/* Butang bahasa: tunjuk bahasa yang akan DIPILIH (BM atau EN), hanya jika
+   ada bank BI. Muat semula halaman supaya kandungan, UI dan peta dibina
+   semula dalam satu bahasa. Kemajuan tidak hilang kerana id soalan sama;
+   hanya hentian yang sedang dimainkan dibatalkan, jadi murid ditanya dulu. */
+(function(){
+  var bt=$("btnBahasa");
+  if(!bt||!window.BANK_EN||!Object.keys(window.BANK_EN).length) return;
+  bt.hidden=false;
+  bt.textContent=BHS==="en"?"BM":"EN";
+  bt.title=BHS==="en"?"Tukar ke Bahasa Melayu":"Switch to English";
+  bt.setAttribute("aria-label",bt.title);
+  bt.onclick=function(){
+    if(S.skrin==="main"&&!confirm(BHS==="en"?"Tukar bahasa? Hentian yang sedang dimainkan akan dibatalkan.":"Switch language? The stop you are playing will be cancelled.")) return;
+    try{ localStorage.setItem("cn-bhs",BHS==="en"?"ms":"en"); }catch(e){}
+    try{ var u=new URL(location.href); u.searchParams.delete("bhs"); history.replaceState(null,"",u.pathname+u.search+u.hash); }catch(e){}
+    location.reload();
+  };
+})();
 $("btnTema").onclick=function(){
   var r=document.documentElement,k=r.getAttribute("data-theme");
   if(!k){var g=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;r.setAttribute("data-theme",g?"light":"dark");}

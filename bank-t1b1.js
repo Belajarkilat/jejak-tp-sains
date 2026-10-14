@@ -140,7 +140,7 @@ window.BANK["t1b1"] =
       "Membuat kesimpulan tentang hipotesis"
      ],
      "b": 2,
-     "u": "Bahan mengakis merosakkan tisu hidup dan bahan lain apabila bersentuhan."
+     "u": "Selepas hipotesis dibentuk, eksperimen dijalankan untuk menguji sama ada hipotesis itu benar."
     },
     {
      "j": "banyak",
