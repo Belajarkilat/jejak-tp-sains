@@ -5,7 +5,7 @@
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jejak TP Sains — cadangan TP dan ulasan PBD siap serta-merta</title>
-<meta name="description" content="Permainan pentaksiran bilik darjah Sains KSSM Tingkatan 1 hingga 5. Murid menjawab soalan mengikut bab, dan guru memperoleh cadangan TP secara automatik tanpa perlu mengisi borang satu demi satu. Termasuk 51 bab dan 2,754 soalan.">
+<meta name="description" content="Permainan pentaksiran bilik darjah Sains KSSM Tingkatan 1 hingga 5. Murid menjawab soalan mengikut bab, dan guru memperoleh cadangan TP secara automatik tanpa perlu mengisi borang satu demi satu. Termasuk 51 bab dan 2,754 soalan, serta versi DLP (Bahasa Inggeris) bagi Tingkatan 1 hingga 3.">
 <link rel="canonical" href="https://jejaktpsains.naikgred.com/landing.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ms_MY">
@@ -123,6 +123,29 @@ a{color:inherit}
 .babak button[aria-current="true"]{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 10%,var(--surface))}
 .babak time{font:700 14px "Lexend",monospace;color:var(--teal);background:var(--mint);border-radius:8px;padding:4px 0;text-align:center}
 .video-sec .ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+/* ---------- DLP ---------- */
+.dlp-pil{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--surface);border:2px solid var(--teal);border-radius:14px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px/1.35 "Lexend",sans-serif;min-height:48px;box-shadow:var(--shadow)}
+.dlp-pil b{background:var(--teal-deep);color:#fff;font:700 12.5px "Lexend",sans-serif;padding:4px 9px;border-radius:8px;letter-spacing:.04em}
+.dlp-pil span{text-decoration:underline;text-underline-offset:3px}
+.dlp-sec{padding-block:8px 56px;scroll-margin-top:16px}
+.dlp-kotak{background:var(--surface);border:2px solid var(--teal);border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr minmax(240px,340px);gap:32px;align-items:center;box-shadow:var(--shadow)}
+@media (max-width:760px){.dlp-kotak{grid-template-columns:1fr;padding:24px 18px;gap:22px}}
+.dlp-kotak h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.dlp-kotak .lede{margin-top:10px;color:var(--ink2);max-width:52ch}
+.dlp-kotak ul{margin:16px 0 0;padding-left:20px;color:var(--ink2);display:flex;flex-direction:column;gap:6px}
+.dlp-kotak ul b{color:var(--ink)}
+.dlp-kotak .ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+.dlp-contoh{background:var(--mint);border-radius:16px;padding:18px;font-size:.95rem}
+.dlp-contoh .cap{display:block;font:600 12.5px "Lexend",sans-serif;color:var(--teal-deep);margin-bottom:8px}
+.dlp-contoh p{color:var(--ink);font-weight:600}
+.dlp-contoh ol{margin:10px 0 0;padding-left:22px;color:var(--ink2);display:flex;flex-direction:column;gap:4px}
+.dlp-contoh ol li:first-child{color:var(--ink);font-weight:600}
+:root[data-theme="dark"] .dlp-contoh .cap{color:#FAD4E4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dlp-contoh .cap{color:#FAD4E4}}
+.plan .dlp-tanda{align-self:flex-start;background:var(--mint);color:var(--teal-deep);font:700 12.5px "Lexend",sans-serif;padding:4px 10px;border-radius:99px}
+:root[data-theme="dark"] .plan .dlp-tanda{color:#FAD4E4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .plan .dlp-tanda{color:#FAD4E4}}
+
 /* ---------- pillars ---------- */
 .pillar-sec{padding-block:12px 56px}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
@@ -253,6 +276,7 @@ footer .ng-logo.gelap{display:none}
   </div>
   <div>
     <span class="eyebrow-tag"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-2px;margin-right:6px" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 5.5C8.5 2 15.5 2 15.5 5.5 15.5 10.5 8.6 15.5 6.5 21.5"/><path d="M8.5 5.5C8.5 10.5 15.4 15.5 17.5 21.5"/></svg>Pinktober · Bab 1 dan 2 percuma</span>
+    <div style="margin:-4px 0 18px"><a class="dlp-pil" href="#dlp"><b>DLP</b>Sains menengah rendah kini ada versi Bahasa Inggeris <span>Lihat →</span></a></div>
     <h1>Tidak perlu lagi mengisi TP murid <mark>satu demi satu</mark>.</h1>
     <p class="lede">Murid menjawab soalan Sains KSSM Tingkatan 1 hingga 5 melalui telefon atau komputer. Sistem mencadangkan TP setiap murid berdasarkan Standard Prestasi DSKP dan menyediakan ulasan PBD untuk disalin ke SPPB. Keputusan akhir tetap di tangan guru.</p>
     <div class="ctas">
@@ -311,6 +335,31 @@ footer .ng-logo.gelap{display:none}
   });
 })();
 </script>
+
+<div class="wrap dlp-sec" id="dlp">
+  <div class="dlp-kotak">
+    <div>
+      <span class="eyebrow-tag">Baharu · Program Dwibahasa (DLP)</span>
+      <h2>Sains DLP untuk Tingkatan 1, 2 dan 3</h2>
+      <p class="lede">Guru yang mengajar kelas DLP boleh menggunakan Jejak TP Sains dalam Bahasa Inggeris. Semua soalan, rajah, kad dan ulasan PBD dipaparkan dalam Bahasa Inggeris, dengan Standard Prestasi disalin daripada DSKP Science versi Bahasa Inggeris.</p>
+      <ul>
+        <li><b>32 bab menengah rendah</b>: Tingkatan 1 (9 bab), Tingkatan 2 (13 bab) dan Tingkatan 3 (10 bab).</li>
+        <li><b>Satu butang BM / EN</b> di bahagian atas skrin murid. Rekod TP tetap sama walaupun murid menukar bahasa.</li>
+        <li><b>Tiada bayaran tambahan.</b> Versi DLP termasuk dalam Premium Menengah rendah RM23, dan Bab 1 dan 2 percuma.</li>
+        <li>Guru boleh memberi pautan <b>jejaktpsains.naikgred.com/?bhs=en</b> supaya murid terus bermula dalam Bahasa Inggeris.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn utama" href="index.html?demo=murid&amp;bhs=en">Cuba versi DLP sebagai murid</a>
+        <a class="btn kedua" href="index.html?daftar">Daftar percuma</a>
+      </div>
+    </div>
+    <div class="dlp-contoh" aria-label="Contoh soalan versi DLP">
+      <span class="cap">Contoh soalan versi DLP · Tingkatan 3, Bab 6</span>
+      <p>The device that raises or lowers the voltage of an alternating current is the:</p>
+      <ol type="A"><li>Transformer</li><li>Generator</li><li>Fuse</li><li>Circuit breaker</li></ol>
+    </div>
+  </div>
+</div>
 
 <div class="wrap pillar-sec">
   <h2>Apa yang diperoleh murid dan guru</h2>
@@ -398,7 +447,8 @@ footer .ng-logo.gelap{display:none}
       <span class="siapa">Premium — Menengah rendah</span>
       <span class="rm">RM23 <small>/ tahun</small></span>
       <span class="perintis">Harga <i>Early Bird</i> sehingga 31 Dis 2026, kemudian RM59</span>
-      <p>Akses kepada <b>26 bab</b> (1,404 soalan): Bab 3 hingga bab terakhir bagi Tingkatan 1 (9 bab), Tingkatan 2 (13 bab) dan Tingkatan 3 (10 bab). Akaun Premium boleh mempunyai 5 kelas dengan 60 murid setiap kelas. Ciri lain sama seperti akaun percuma.</p>
+      <span class="dlp-tanda">Termasuk versi DLP (Bahasa Inggeris)</span>
+      <p>Akses kepada <b>26 bab</b> (1,404 soalan): Bab 3 hingga bab terakhir bagi Tingkatan 1 (9 bab), Tingkatan 2 (13 bab) dan Tingkatan 3 (10 bab), dalam Bahasa Melayu dan Bahasa Inggeris (DLP). Akaun Premium boleh mempunyai 5 kelas dengan 60 murid setiap kelas. Ciri lain sama seperti akaun percuma.</p>
       <a class="btn utama langgan" href="index.html?cikgu&amp;naik=rendah">Langgan RM23</a>
       <span class="plan-bayar"><b>RM23 + RM1 caj FPX.</b> Bayaran balik penuh dalam 7 hari tanpa perlu memberi sebab. Log masuk atau daftar dahulu, kemudian bayar melalui FPX.</span>
     </div>
@@ -448,6 +498,10 @@ footer .ng-logo.gelap{display:none}
     <details>
       <summary>Bab apakah yang sudah tersedia?</summary>
       <p>Sains KSSM Tingkatan 1 (9 bab), Tingkatan 2 (13 bab), Tingkatan 3 (10 bab), Tingkatan 4 (10 bab) dan Tingkatan 5 (9 bab). Jumlahnya 51 bab dan 2,754 soalan. Bab 1 dan 2 bagi setiap tingkatan disediakan secara percuma.</p>
+    </details>
+    <details>
+      <summary>Adakah versi DLP (Bahasa Inggeris) tersedia?</summary>
+      <p>Ya, bagi Sains menengah rendah (Tingkatan 1 hingga 3, 32 bab). Murid menekan butang BM / EN di bahagian atas skrin untuk menukar bahasa, atau guru memberi pautan jejaktpsains.naikgred.com/?bhs=en. Rekod TP murid kekal sama dalam kedua-dua bahasa. Versi DLP termasuk dalam Premium Menengah rendah tanpa bayaran tambahan. Versi Bahasa Inggeris bagi Tingkatan 4 dan 5 belum tersedia.</p>
     </details>
     <details>
       <summary>Adakah data murid selamat?</summary>
