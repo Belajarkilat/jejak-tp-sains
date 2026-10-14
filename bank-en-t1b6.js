@@ -635,7 +635,7 @@ window.BANK_EN["t1b6"] =
      "j": "pilih",
      "t": "Well water is cloudy with fine mud. What is the most appropriate first step before filtration?",
      "p": [
-      "Boil the water until it dries",
+      "Boil the water until it dries up",
       "Let the mud settle",
       "Add a magnet to the water",
       "Freeze the water in the refrigerator"

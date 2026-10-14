@@ -136,7 +136,7 @@ window.BANK["t2b8"] =
       "Geseran menarik buku ke atas"
      ],
      "b": 1,
-     "u": "Berat (tindakan) sama dengan daya normal (tindak balas)."
+     "u": "Berat buku (ke bawah) dan daya normal meja (ke atas) sama besar dan bertentangan arah, jadi daya bersih ialah sifar."
     },
     {
      "j": "banyak",
@@ -509,15 +509,15 @@ window.BANK["t2b8"] =
    ],
    "bos": {
     "j": "pilih",
-    "t": "Mengapakah had muatan kapal dalam air tawar tropika lebih rendah pada garis Plimsoll?",
+    "t": "Pada badan kapal, garis Plimsoll bagi air tawar terletak lebih tinggi daripada garis bagi air laut. Sebabnya ialah:",
     "p": [
-     "Air tawar hangat lebih tumpat dan menolak kapal ke atas",
+     "Air tawar lebih tumpat dan menolak kapal ke atas",
      "Kapal lebih ringan dalam air tawar",
      "Garis Plimsoll hanya untuk hiasan",
-     "Air tawar hangat kurang tumpat, jadi kapal tenggelam lebih dalam"
+     "Air tawar kurang tumpat, jadi kapal tenggelam lebih dalam"
     ],
     "b": 3,
-    "u": "Kapal mesti dimuatkan lebih sedikit supaya tidak tenggelam melepasi paras selamat."
+    "u": "Berat kapal sama, tetapi air tawar kurang tumpat. Kapal menyesarkan lebih banyak air, jadi tenggelam lebih dalam."
    }
   },
   {

@@ -500,7 +500,7 @@ window.BANK["t2b13"] =
     },
     {
      "j": "pilih",
-     "t": "Berdasarkan data, peristiwa kecil seperti Chelyabinsk berlaku:",
+     "t": "Secara umum, peristiwa kecil seperti Chelyabinsk berlaku:",
      "p": [
       "Kurang kerap daripada peristiwa besar",
       "Tidak pernah berlaku lagi",

@@ -105,7 +105,7 @@ const T_KITAR =
 '<th class="n">Jisim (kali jisim Matahari)</th><th>Peringkat semasa</th></tr></thead><tbody>'+
 '<tr><td>X</td><td class="n">1</td><td>Bintang jujukan utama</td></tr>'+
 '<tr><td>Y</td><td class="n">15</td><td>Supergergasi merah</td></tr>'+
-'<tr><td>Z</td><td class="n">0.8</td><td>Gergasi merah</td></tr>'+
+'<tr><td>Z</td><td class="n">1.2</td><td>Gergasi merah</td></tr>'+
 '</tbody></table></div><p class="qnote">Bintang sederhana seperti Matahari: gergasi merah &rarr; nebula planet &rarr; kerdil putih. Bintang yang sangat besar: supergergasi merah &rarr; supernova &rarr; bintang neutron atau lohong hitam.</p>';
 
 const T_CERAP =

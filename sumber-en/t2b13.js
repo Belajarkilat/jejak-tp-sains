@@ -1,0 +1,186 @@
+/* English source (DLP) — Science KSSM Form 2, Chapter 13.0 Meteoroids,
+   Asteroids, Comets. Translation of sumber/t2b13.js.
+   Run `node bina.js --en t2b13` to check it and generate bank-en-t2b13.js.
+   Structure must match sumber/t2b13.js exactly. Correct answer at index 0. */
+
+const SPI = [
+"Recall knowledge and skills about meteoroids, asteroids and comets.",
+"Understand meteoroids, asteroids and comets and be able to explain this understanding.",
+"Apply knowledge of meteoroids, asteroids and comets and be able to carry out simple tasks.",
+"Analyse knowledge about meteoroids, asteroids and comets in the context of solving problems about natural events or phenomena.",
+"Evaluate knowledge about meteoroids, asteroids and comets in the context of problem solving and decision making to carry out a task.",
+"Create using scientific knowledge and skills about meteoroids, asteroids and comets in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+
+/* ---------- attachments ---------- */
+
+const R_METEOR = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    {
+      "label": "Meteoroid in outer space",
+      "nota": "enters atmosphere"
+    },
+    "Meteor: burns and glows",
+    "Meteorite: reaches the Earth's surface"
+  ],
+  "kapsyen": "Figure 1 · One piece of space rock changes its name according to where it is.",
+  "alt": "Vertical flow diagram: a meteoroid in outer space, a meteor when it burns and glows in the atmosphere, a meteorite when it reaches the surface of the Earth"
+};
+
+const R_JASADBEZA = {
+  "jenis": "aliran",
+  "mod": "siratan",
+  "nod": [
+    { "id": "a", "label": "Asteroid", "x": 0, "y": 0 },
+    { "id": "k", "label": "Comet", "x": 1, "y": 0 },
+    { "id": "a2", "label": "Rock and metal", "x": 0, "y": 1 },
+    { "id": "k2", "label": "Ice and dust", "x": 1, "y": 1 },
+    { "id": "a3", "label": "No tail", "x": 0, "y": 2 },
+    { "id": "k3", "label": "Has a tail", "x": 1, "y": 2 }
+  ],
+  "panah": [
+    ["a", "a2"],
+    ["a2", "a3"],
+    ["k", "k2"],
+    ["k2", "k3"]
+  ],
+  "kapsyen": "Figure 1 · Comparison of an asteroid with a comet.",
+  "alt": "Two columns: an asteroid is made of rock and metal and has no tail, a comet is made of ice and dust and has a tail"
+};
+
+const T_JASAD =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Body</th>'+
+'<th>Size</th><th>Main material</th><th>Other features</th></tr></thead><tbody>'+
+'<tr><td>E</td><td>A grain of sand to a lump of rock</td><td>Rock or metal</td><td>Glows when entering the atmosphere</td></tr>'+
+'<tr><td>F</td><td>A few metres to hundreds of kilometres</td><td>Rock and metal</td><td>Mostly between the orbits of Mars and Jupiter</td></tr>'+
+'<tr><td>G</td><td>Nucleus of a few kilometres</td><td>Ice, dust and rock</td><td>Has a long tail when approaching the Sun</td></tr>'+
+'<tr><td>H</td><td>A few grams to a few tonnes</td><td>Rock or metal</td><td>Found on the surface of the Earth</td></tr>'+
+'</tbody></table></div><p class="qnote">Features of four types of small bodies in the Solar System.</p>';
+
+const T_HENTAMAN =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Event</th>'+
+'<th class="n">Estimated size of body (m)</th><th>Effect</th></tr></thead><tbody>'+
+'<tr><td>Chelyabinsk, Russia (2013)</td><td class="n">20</td><td>Exploded in the air; window glass broke, more than 1000 people were slightly injured</td></tr>'+
+'<tr><td>Tunguska, Russia (1908)</td><td class="n">50</td><td>Exploded in the air; about 80 million trees were flattened in a forest area</td></tr>'+
+'<tr><td>Barringer Crater, United States (about 50 000 years ago)</td><td class="n">50</td><td>Hit the ground; a crater more than 1 km wide</td></tr>'+
+'<tr><td>Chicxulub, Mexico (about 66 million years ago)</td><td class="n">10 000</td><td>Giant crater; linked to the extinction of the dinosaurs</td></tr>'+
+'</tbody></table></div><p class="qnote">Estimates from scientific studies. The size of the body is an estimate of its diameter.</p>';
+
+const T_PERTAHANAN =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Method</th>'+
+'<th>Warning time needed</th><th>Suitability</th><th>Risk</th></tr></thead><tbody>'+
+'<tr><td>Kinetic impactor (a spacecraft hits the asteroid)</td><td>A few years</td><td>Small to medium asteroids</td><td>Low; tested by the DART mission in 2022</td></tr>'+
+'<tr><td>Gravity tractor (a spacecraft flies beside the asteroid)</td><td>Decades</td><td>Small asteroids</td><td>Very low but very slow</td></tr>'+
+'<tr><td>Blowing the asteroid up into fragments</td><td>A few months</td><td>Last resort</td><td>High; fragments can still hit the Earth</td></tr>'+
+'</tbody></table></div><p class="qnote">Methods suggested for stopping a dangerous asteroid from hitting the Earth.</p>';
+
+/* ---------- stops ---------- */
+
+const ARAS = [
+
+{n:1, tempat:"Night Sky", sk:"13.1 Meteoroids, meteors, meteorites, asteroids and comets", lampiran:"meteor",
+ kadNama:"Shooting Star", kadEm:"\u{1F320}", kadFakta:"A 'shooting star' is actually a meteor, a small meteoroid that burns up in the atmosphere because of friction.",
+ bosKadNama:"Halley's Comet", bosKadEm:"\u{2604}", bosKadFakta:"Halley's Comet can be seen from the Earth about every 76 years. It is expected to appear again around the year 2061.",
+ soalan:[
+ {j:"pilih",t:"Based on Figure 1, a meteoroid that burns and glows in the Earth's atmosphere is called a:",p:["Meteor","Meteorite","Asteroid","Comet"],b:0,u:"It is also known as a shooting star."},
+ {j:"pilih",t:"A meteoroid that reaches the surface of the Earth is called a:",p:["Meteorite","Meteor","Comet","Nebula"],b:0,u:"Meteorites can be studied to understand the origin of the Solar System."},
+ {j:"pilih",t:"Most asteroids are located:",p:["Between Mars and Jupiter","Between the Earth and the Moon","In the middle of the Sun","Outside the galaxy"],b:0,u:"This region is known as the asteroid belt."},
+ {j:"pilih",t:"Comets are made up mainly of:",p:["Ice, dust and rock","Hot molten metal","Hydrogen gas only","Frozen seawater"],b:0,u:"Comets are often called 'dirty snowballs'."},
+ {j:"pilih",t:"The tail of a comet forms when the comet:",p:["Approaches the Sun","Moves away from the Sun","Collides with a planet","Enters a black hole"],b:0,u:"The Sun's heat evaporates the ice and releases gas and dust."},
+ {j:"pilih",t:"The tail of a comet always points:",p:["Away from the Sun","Towards the Sun","Towards the Earth","Towards Jupiter"],b:0,u:"The solar wind pushes the gas and dust away from the Sun."},
+ {j:"pilih",t:"Which of the following is generally the biggest?",p:["Asteroid","Meteoroid","Meteor","A dust grain of a comet"],b:0,u:"An asteroid can be hundreds of kilometres across."},
+ {j:"banyak",t:"Choose ALL the bodies that go round the Sun.",p:["Asteroids","Comets","Meteoroids","Andromeda galaxy","Orion Nebula"],b:[0,1,2],u:"Andromeda and the Orion Nebula are far outside the Solar System."}],
+ bos:{j:"pilih",t:"A meteor shower happens when:",p:["The Earth passes through debris from a comet","The Moon collides with an asteroid","The Sun shoots out rocks","Rain clouds become too hot"],b:0,u:"An example is the Perseid meteor shower every August."}},
+
+{n:2, tempat:"Meteorite Museum", sk:"13.1 The movement and effects of space bodies on the Earth", lampiran:"jasadbeza",
+ kadNama:"Meteorite", kadEm:"\u{1FAA8}", kadFakta:"An iron meteorite is usually heavier than an ordinary rock of the same size because it contains a lot of iron and nickel.",
+ bosKadNama:"Crater", bosKadEm:"\u{1F573}", bosKadFakta:"The surface of the Moon is full of craters because there is no atmosphere to burn up meteoroids.",
+ soalan:[
+ {j:"pilih",t:"Why do most meteoroids not reach the surface of the Earth?",p:["They burn up in the atmosphere","They are pushed away by the Moon","They are too light to fall","They are pulled by Jupiter"],b:0,u:"Friction with the air produces very high heat."},
+ {j:"pilih",t:"Why does the Moon have more craters than the Earth?",p:["The Moon has no atmosphere or erosion","The Moon is bigger than the Earth","The Moon is closer to the asteroid belt","The Moon has more volcanoes"],b:0,u:"On the Earth, erosion and the rock cycle wipe out most old craters."},
+ {j:"pilih",t:"Why are the orbits of comets usually very elongated?",p:["They come from far away","They only go round the Earth","They are pushed by rocky planets","They are not affected by gravity"],b:0,u:"That is why comets are only seen from time to time."},
+ {j:"pilih",t:"Based on Figure 1, the main difference between an asteroid and a comet is that:",p:["An asteroid is rocky, a comet is icy","An asteroid is icy, a comet is rocky","Both are the same","An asteroid has a long tail"],b:0,u:"A comet grows a tail when its ice evaporates."},
+ {j:"pilih",t:"The extinction of the dinosaurs is linked to:",p:["The impact of a large asteroid","The explosion of a nearby star","A great flood over the whole world","A long solar eclipse"],b:0,u:"The dust produced blocked sunlight for a long time."},
+ {j:"pilih",t:"Meteorites are important to scientists because:",p:["They preserve material from the early Solar System","They can be used as rocket fuel","They contain life from other planets","They show the weather in the future"],b:0,u:"Most meteorites have hardly changed since the Solar System formed."},
+ {j:"pilih",t:"What is most likely to happen if a large asteroid hits the ocean?",p:["A huge tsunami","The sea dries up at once","The seawater becomes fresh","No effect at all"],b:0,u:"The energy of the impact pushes a very large amount of water."},
+ {j:"pilih",t:"Why do astronomers keep monitoring near-Earth asteroids?",p:["To detect threats early","To find asteroids to sell","Because asteroids give out light","So that asteroids stop moving"],b:0,u:"Early warning gives time to act."}],
+ bos:{j:"banyak",t:"Choose ALL the possible effects if a large asteroid hits the Earth.",p:["A big crater forms","Dust blocks sunlight","The global temperature falls for a while","The Earth stops going round the Sun","All the oceans vanish at once"],b:[0,1,2],u:"An asteroid impact does not stop the Earth's orbit."}},
+
+{n:3, tempat:"Body Identification Station", sk:"13.1 Telling the small bodies of the Solar System apart", lampiran:"jasad",
+ kadNama:"Asteroid Belt", kadEm:"\u{1F311}", kadFakta:"The asteroid belt contains millions of asteroids, but the distances between them are very great.",
+ bosKadNama:"Solar Wind", bosKadEm:"\u{1F32C}", bosKadFakta:"The solar wind is a stream of charged particles from the Sun that pushes the tails of comets.",
+ soalan:[
+ {j:"pilih",t:"Based on the table, body E is a:",p:["Meteoroid","Asteroid","Comet","Meteorite"],b:0,u:"Small, and glows when it enters the atmosphere as a meteor."},
+ {j:"pilih",t:"Based on the table, body F is an:",p:["Asteroid","Comet","Meteor","Meteorite"],b:0,u:"Big, rocky, between the orbits of Mars and Jupiter."},
+ {j:"pilih",t:"Based on the table, body G is a:",p:["Comet","Asteroid","Meteoroid","Planet"],b:0,u:"Icy and has a tail when approaching the Sun."},
+ {j:"pilih",t:"Based on the table, body H is a:",p:["Meteorite","Meteor","Comet","Asteroid"],b:0,u:"Found on the surface of the Earth."},
+ {j:"pilih",t:"What is the similarity between E and H?",p:["Both are rock or metal","Both have long tails","Both are icy","Both are dwarf planets"],b:0,u:"H is an E that has managed to reach the surface of the Earth."},
+ {j:"pilih",t:"Why does G have no tail when it is far from the Sun?",p:["Ice does not evaporate at a low temperature","Its tail broke off while moving","The solar wind is too strong","It turns into an asteroid"],b:0,u:"A tail forms only when the Sun's heat evaporates the ice."},
+ {j:"pilih",t:"A student finds a very heavy rock that is attracted to a magnet. What is the most reasonable possibility?",p:["An iron meteorite","A fragment of a comet","Limestone","A brick"],b:0,u:"An iron meteorite contains iron and nickel."},
+ {j:"banyak",t:"Choose ALL the CORRECT pairs.",p:["E: can become a meteor","F: in the asteroid belt","G: has a tail near the Sun","H: burns up completely in the atmosphere","F: made of ice only"],b:[0,1,2],u:"H reaches the surface, and F is rocky."}],
+ bos:{j:"susun",t:"Arrange the journey of a piece of space rock that is finally found in a paddy field.",p:["Meteoroid in space","Meteor glowing in the atmosphere","Meteorite on the Earth's surface"],b:[0,1,2],u:"The name of the body changes with its location."}},
+
+{n:4, tempat:"Impact Research Centre", sk:"13.1 Analysing data on the impacts of space bodies", lampiran:"hentaman",
+ kadNama:"Chelyabinsk", kadEm:"\u{1F4A5}", kadFakta:"In 2013, a meteor exploded over Chelyabinsk, Russia. The shock wave broke the window glass of thousands of buildings.",
+ bosKadNama:"Chicxulub", bosKadEm:"\u{1F996}", bosKadFakta:"The Chicxulub crater in Mexico is now buried under land and sea, but it was detected through geological studies.",
+ soalan:[
+ {j:"pilih",t:"Which event involved the biggest body?",p:["Chicxulub","Tunguska","Chelyabinsk","Barringer Crater"],b:0,u:"About 10 km across."},
+ {j:"pilih",t:"What is the general relationship between the size of a body and its effect?",p:["The bigger the body, the bigger the effect","The smaller the body, the bigger the effect","Size is not related to the effect","All bodies have the same effect"],b:0,u:"A bigger body carries more energy."},
+ {j:"pilih",t:"Tunguska and Barringer involved bodies of the same size but only Barringer formed a crater. What is the most reasonable reason?",p:["Tunguska exploded in the air","Tunguska fell into the sea","Barringer was lighter than Tunguska","Tunguska happened at night"],b:0,u:"An explosion in the air does not leave a big crater, but still damages a forest."},
+ {j:"nombor",t:"How many times bigger is the Chicxulub body than the Chelyabinsk body?",b:500,tol:0.5,suf:"times",u:"10 000 ÷ 20 = 500 times."},
+ {j:"pilih",t:"Why were most of the injuries in Chelyabinsk caused by broken glass?",p:["Many people were looking out of windows","A meteorite fell right on every house","Glass attracts meteorites","An earthquake happened at the same time"],b:0,u:"The shock wave arrived after the light, when many people were watching."},
+ {j:"pilih",t:"In general, small events like Chelyabinsk happen:",p:["More often than big events","Less often than big events","Never again","Only in the United States"],b:0,u:"Small bodies are far more numerous than big ones."},
+ {j:"pilih",t:"The most important safety lesson from the Chelyabinsk event is to:",p:["Stay away from windows after seeing a bright flash","Run outside to watch the meteor","Stand near glass to get a clear view","Ignore it because meteors are not dangerous"],b:0,u:"Like lightning and thunder, the shock wave arrives later than the light."},
+ {j:"banyak",t:"Choose ALL the conclusions that are supported by the data.",p:["Bigger bodies cause bigger effects","An explosion in the air can also cause damage","Big impacts have happened in the history of the Earth","All space bodies form craters","Impacts only happened millions of years ago"],b:[0,1,2],u:"Chelyabinsk and Tunguska did not form big craters, and Chelyabinsk happened in 2013."}],
+ bos:{j:"pilih",t:"A social media user claims that small asteroids do not need to be monitored. Evaluate the claim based on the data.",p:["Wrong; even a 20 m body is dangerous","Correct; only 10 km asteroids are dangerous","Correct; small bodies never reach the Earth","Wrong; small asteroids are bigger than the Earth"],b:0,u:"Chelyabinsk was only 20 m but injured more than 1000 people."}},
+
+{n:5, tempat:"Planetary Defence Room", sk:"13.1 Evaluating ways to avoid asteroid collisions", lampiran:"pertahanan",
+ kadNama:"DART Mission", kadEm:"\u{1F680}", kadFakta:"In 2022, the DART spacecraft deliberately crashed into the asteroid Dimorphos and successfully changed its orbit.",
+ bosKadNama:"Survey Telescope", bosKadEm:"\u{1F52D}", bosKadFakta:"Survey telescopes scan the sky every night to detect near-Earth asteroids that have not yet been discovered.",
+ soalan:[
+ {j:"pilih",t:"Which method has been tested for real in space?",p:["Kinetic impactor","Gravity tractor","Blowing the asteroid up","No method"],b:0,u:"The DART mission in 2022."},
+ {j:"pilih",t:"Why is blowing up an asteroid considered the last resort?",p:["Fragments can still hit the Earth","It is the slowest method","It needs decades","It needs no rockets"],b:0,u:"One big asteroid can become many dangerous fragments."},
+ {j:"pilih",t:"A small asteroid is detected 30 years before impact. What is the safest method?",p:["Gravity tractor","Blowing the asteroid up","No action","A kinetic impactor again and again every month"],b:0,u:"The long time allows the safest method even though it is slow."},
+ {j:"pilih",t:"A medium-sized asteroid is detected 5 years before impact. What is the most appropriate method?",p:["Kinetic impactor","Gravity tractor","No action","Wait until it is close"],b:0,u:"A gravity tractor needs decades."},
+ {j:"pilih",t:"What is the most important factor for all the defence methods?",p:["Early detection","The colour of the asteroid","The name of the asteroid","The temperature of the asteroid"],b:0,u:"Without early warning, the options are very limited."},
+ {j:"pilih",t:"A country suggests that all countries share asteroid monitoring data. Evaluate the suggestion.",p:["Reasonable; the asteroid threat involves the whole world","Not reasonable, because each country must keep its data secret","Not reasonable, because asteroids only hit big countries","Reasonable but only for countries that have rockets"],b:0,u:"Asteroids do not recognise national borders."},
+ {j:"pilih",t:"Why can a small change in the orbit of a distant asteroid avoid an impact?",p:["A small change becomes big after a long time","The asteroid stops moving after being hit","The Earth moves aside when the asteroid is hit","The asteroid goes straight back to the asteroid belt"],b:0,u:"The earlier it is pushed, the farther off course the asteroid goes."},
+ {j:"pilih",t:"Malaysia wants to contribute to planetary defence at a low cost. What is the most realistic contribution?",p:["Observations and sharing asteroid data","Building its own impactor rocket in a year","Ignoring the asteroid issue completely","Building underground bunkers for all citizens"],b:0,u:"Observatories can help international monitoring networks."}],
+ bos:{j:"pilih",t:"A 300 m asteroid is expected to approach the Earth in 15 years with a small chance of impact. What is the most appropriate decision by the space agency?",p:["Monitor it and prepare an impactor mission","Blow the asteroid up straight away","Ignore it because the chance is small","Announce the evacuation of the whole world"],b:0,u:"Monitoring improves predictions, and a mission can be launched if the risk rises."}},
+
+{n:6, tempat:"Earth Defence Workshop", sk:"13.1 Creating ideas to reduce the risk of collisions",
+ kadNama:"Meteor Shower", kadEm:"\u{1F320}", kadFakta:"The Geminid meteor shower in December can produce more than 100 meteors an hour in a dark place.",
+ bosKadNama:"Planetary Defence", bosKadEm:"\u{1F6E1}", bosKadFakta:"Planetary defence is an international effort to detect and avoid impacts by asteroids and comets.",
+ soalan:[
+ {j:"pilih",t:"You design a meteorite impact simulation in class. Which material is most suitable?",p:["A tray of flour and marbles of different sizes","A swimming pool and bricks","Paper and pencils only","Hard clay with no objects dropped"],b:0,u:"Craters in flour show the effect of the size and speed of the object."},
+ {j:"pilih",t:"In that simulation, the variable that is manipulated to test the effect of size is:",p:["The size of the marble","The depth of the flour","The type of tray","The colour of the marble"],b:0,u:"The height of the drop and the flour must be kept constant."},
+ {j:"pilih",t:"You plan a meteor shower viewing night for the science club. What is the most important requirement?",p:["A dark place far from city lights","The most expensive telescope","A very bright torch","A closed air-conditioned room"],b:0,u:"Meteors are easiest to see with the naked eye in a dark place."},
+ {j:"pilih",t:"You design a safety poster for when a bright meteor is seen and explodes. What is the most accurate advice?",p:["Stay away from windows and take cover","Go outside to see it up close","Film a video beside the window","Touch the hot meteorite"],b:0,u:"The shock wave can break glass."},
+ {j:"pilih",t:"You make a model of a comet for an exhibition. What is the most accurate way to show its tail?",p:["The tail points away from the Sun","The tail is always behind the comet","The tail points towards the Sun","A comet with no tail at all"],b:0,u:"The tail is pushed by the solar wind, not by the direction of motion."},
+ {j:"pilih",t:"You design an app to report observations of bright meteors. What data is most useful?",p:["Time, location and direction of movement","The colour of the observer's shirt","The observer's school name only","The price of the observer's phone"],b:0,u:"Data from many observers helps to calculate the path of the meteor."},
+ {j:"pilih",t:"You suggest a way to find a fallen meteorite. What is the most suitable method?",p:["Use a magnet in the fall area","Dig at random places","Wait for the meteorite to come again","Search in river water only"],b:0,u:"Many meteorites contain iron and are attracted to a magnet."},
+ {j:"pilih",t:"How would you evaluate your meteorite impact simulation design?",p:["Repeat each size and measure the crater","Drop a marble once only","Use a different drop height each time","Just take photos with no measurements"],b:0,u:"Repeating and measuring make the results reliable."}],
+ bos:{j:"buka",
+  t:"An international space agency asks students for ideas to detect and avoid dangerous asteroids. Design a planetary defence system or mission.",
+  arahan:"Describe the difference between meteoroids, asteroids and comets that is relevant to your design, how early detection is carried out, the method chosen to change the path of the asteroid and why, the risks and safety steps, and how countries can cooperate at a reasonable cost.",
+  u:"A strong TP6 answer tells the bodies apart correctly, stresses early detection, chooses a method suited to the warning time, and takes international cooperation into account."}}
+];
+
+module.exports = {
+  id:"t2b13", tingkatan:2, kod:"13.0 Meteoroids, Asteroids, Comets",
+  tajuk:"Comet Trail",
+  subtajuk:"Science Form 2 · Chapter 13 Meteoroids, Asteroids, Comets",
+  spi:SPI,
+  ulasan:{
+   1:"{n} can recall the meaning of meteoroid, meteor, meteorite, asteroid and comet. The next step is to explain their movement and effects on the Earth.",
+   2:"{n} understands the movement of the small bodies of the Solar System and their effects on the Earth and can explain them. More practice is needed in telling bodies apart by their features.",
+   3:"{n} can identify meteoroids, asteroids, comets and meteorites based on their features. Encourage explaining the reason for each classification.",
+   4:"{n} is able to analyse impact data to link the size of a body with its effects. Next, practise evaluating planetary defence methods.",
+   5:"{n} can evaluate methods of avoiding asteroid collisions based on warning time and risk. Ready for a creative task.",
+   6:"{n} successfully created a planetary defence system or mission that is creative and realistic. Excellent achievement for this chapter.",
+   tiada:"{n} has not yet shown enough evidence of mastery for the chapter Meteoroids, Asteroids, Comets. Suggestion: repeat the first stop activities with guidance from a peer."
+  },
+  lampiran:{ meteor:R_METEOR, jasadbeza:R_JASADBEZA, jasad:T_JASAD, hentaman:T_HENTAMAN, pertahanan:T_PERTAHANAN },
+  aras:ARAS
+};

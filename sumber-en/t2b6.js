@@ -1,0 +1,179 @@
+/* English source (DLP) — Science KSSM Form 2, Chapter 6.0 Acids and Alkalis.
+   Translation of sumber/t2b6.js.
+   Run `node bina.js --en t2b6` to check it and generate bank-en-t2b6.js.
+   Structure must match sumber/t2b6.js exactly. Correct answer at index 0. */
+
+const SPI = [
+"Recall knowledge and skills about acids and alkalis.",
+"Understand acids and alkalis and be able to explain this understanding.",
+"Apply knowledge of acids and alkalis and be able to carry out simple tasks.",
+"Analyse knowledge about acids and alkalis in the context of solving problems about natural events or phenomena.",
+"Evaluate knowledge about acids and alkalis in the context of problem solving and decision making to carry out a task.",
+"Create using scientific knowledge and skills about acids and alkalis in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+
+/* ---------- attachments ---------- */
+
+const R_SKALAPH = {
+  "jenis": "graf",
+  "mod": "palang",
+  "grid": 7,
+  "yMaks": 14,
+  "bar": [
+    { "label": "Vinegar", "nilai": 3, "warna": "merah" },
+    { "label": "Milk", "nilai": 6, "warna": "kuning" },
+    { "label": "Water", "nilai": 7, "warna": "ungu" },
+    { "label": "Soap", "nilai": 10, "warna": "hijau" }
+  ],
+  "xLabel": "pH of kitchen substances",
+  "kapsyen": "Figure 1 · The pH of four substances commonly found in the kitchen.",
+  "alt": "Bar graph of pH values: vinegar 3, milk 6, water 7, soap 10"
+};
+
+const R_NEUTRAL = {
+  "jenis": "aliran",
+  "mod": "turun",
+  "nod": [
+    "Excess acid in stomach",
+    "Alkali in antacid added",
+    "Salt and water form",
+    "Stomach contents become neutral"
+  ],
+  "kapsyen": "Figure 1 · Neutralisation of stomach acid by an antacid.",
+  "alt": "Vertical flow diagram: excess acid in the stomach, the alkali in the antacid is added, salt and water form, the stomach contents become neutral"
+};
+
+const T_PH =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Substance</th>'+
+'<th class="n">pH value</th><th>Colour of blue litmus paper</th></tr></thead><tbody>'+
+'<tr><td>Lemon juice</td><td class="n">2</td><td>Red</td></tr>'+
+'<tr><td>Vinegar</td><td class="n">3</td><td>Red</td></tr>'+
+'<tr><td>Distilled water</td><td class="n">7</td><td>Blue</td></tr>'+
+'<tr><td>Toothpaste</td><td class="n">9</td><td>Blue</td></tr>'+
+'<tr><td>Soapy water</td><td class="n">10</td><td>Blue</td></tr>'+
+'<tr><td>Drain cleaner</td><td class="n">14</td><td>Blue</td></tr>'+
+'</tbody></table></div><p class="qnote">pH values are measured with a pH meter. Blue litmus paper turns red in an acid.</p>';
+
+const T_TITRAT =
+'<div class="scrollx"><table class="datatable"><thead><tr><th class="n">Volume of sodium hydroxide added (ml)</th>'+
+'<th class="n">0</th><th class="n">5</th><th class="n">10</th><th class="n">15</th><th class="n">20</th><th class="n">25</th></tr></thead><tbody>'+
+'<tr><td>pH of the mixture</td><td class="n">1</td><td class="n">1.5</td><td class="n">2</td><td class="n">3</td><td class="n">7</td><td class="n">12</td></tr>'+
+'<tr><td>Colour of phenolphthalein</td><td>Colourless</td><td>Colourless</td><td>Colourless</td><td>Colourless</td><td>Colourless</td><td>Pink</td></tr>'+
+'</tbody></table></div><p class="qnote">Sodium hydroxide solution is added little by little from a burette into 20 ml of hydrochloric acid. Phenolphthalein is colourless in acid and neutral solutions, and pink in alkali.</p>';
+
+const T_TANAH =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Plot</th>'+
+'<th class="n">Soil pH</th><th>Treatment</th><th class="n">Vegetable yield (kg)</th></tr></thead><tbody>'+
+'<tr><td>1</td><td class="n">4.5</td><td>None</td><td class="n">12</td></tr>'+
+'<tr><td>2</td><td class="n">4.5 &rarr; 6.5</td><td>Agricultural lime</td><td class="n">30</td></tr>'+
+'<tr><td>3</td><td class="n">4.5 &rarr; 8.5</td><td>Excess agricultural lime</td><td class="n">15</td></tr>'+
+'</tbody></table></div><p class="qnote">Three plots of mustard greens of the same size on peat soil. Most vegetables grow best at pH 6 to 7. Fictional data.</p>';
+
+/* ---------- stops ---------- */
+
+const ARAS = [
+
+{n:1, tempat:"Home Kitchen", sk:"6.1 Properties of acids and alkalis", lampiran:"skalaph",
+ kadNama:"pH Scale", kadEm:"\u{1F308}", kadFakta:"The pH scale runs from 0 to 14. pH 7 is neutral, below 7 is acidic and above 7 is alkaline.",
+ bosKadNama:"Stomach Acid", bosKadEm:"\u{1F9EA}", bosKadFakta:"The human stomach produces hydrochloric acid, which helps to kill germs in food.",
+ soalan:[
+ {j:"pilih",t:"A substance with a pH value of less than 7 is an:",p:["Acid","Alkali","Neutral substance","Salt"],b:0,u:"The lower the pH, the stronger the acid."},
+ {j:"pilih",t:"An acid changes the colour of blue litmus paper to:",p:["Red","Blue","Green","Yellow"],b:0,u:"An alkali changes red litmus paper to blue."},
+ {j:"pilih",t:"A property of alkalis is that they:",p:["Taste bitter and feel soapy","Taste sour","Have a pH of less than 7","Turn blue litmus red"],b:0,u:"Never taste chemicals in the laboratory."},
+ {j:"pilih",t:"Based on Figure 1, the MOST acidic substance is:",p:["Vinegar","Soap","Water","Milk"],b:0,u:"Vinegar has the lowest pH value, which is 3. Milk (pH 6) is only slightly acidic."},
+ {j:"pilih",t:"An acid reacts with magnesium metal to produce:",p:["Hydrogen gas","Oxygen gas","Chlorine gas","Nitrogen gas"],b:0,u:"Hydrogen gas makes a 'pop' sound with a lighted splinter."},
+ {j:"pilih",t:"The colour of phenolphthalein in an alkali is:",p:["Pink","Colourless","Yellow","Blue"],b:0,u:"Phenolphthalein is colourless in acid and neutral solutions."},
+ {j:"pilih",t:"The reaction between an acid and an alkali is called:",p:["Neutralisation","Combustion","Rusting","Evaporation"],b:0,u:"Acid + alkali → salt + water."},
+ {j:"banyak",t:"Choose ALL the alkaline substances.",p:["Soap","Toothpaste","Limewater","Lemon juice","Vinegar"],b:[0,1,2],u:"Lemon juice and vinegar are acidic."}],
+ bos:{j:"pilih",t:"The products of neutralising hydrochloric acid with sodium hydroxide are:",p:["Sodium chloride and water","Hydrogen and oxygen","Carbon dioxide and water","Sodium and chlorine"],b:0,u:"Sodium chloride is common salt."}},
+
+{n:2, tempat:"Bathroom", sk:"6.1 / 6.2 Strength of acids and alkalis, and neutralisation", lampiran:"neutral",
+ kadNama:"Antacid", kadEm:"\u{1F48A}", kadFakta:"Antacids contain a weak base such as magnesium hydroxide that neutralises excess stomach acid.",
+ bosKadNama:"Agricultural Lime", bosKadEm:"\u{1F33E}", bosKadFakta:"Farmers spread lime on acidic soil to raise the pH of the soil.",
+ soalan:[
+ {j:"pilih",t:"An acid with a pH of 1 compared with an acid with a pH of 4 is:",p:["Stronger","Weaker","Equally strong","Neutral"],b:0,u:"The lower the pH, the stronger the acid."},
+ {j:"pilih",t:"Why does a dry acid not change the colour of dry blue litmus paper?",p:["Acids need water to work","Dry litmus is not really blue","A dry acid is a very weak alkali","Litmus reacts only with oxygen gas"],b:0,u:"Acids and alkalis need water to show their properties."},
+ {j:"pilih",t:"Based on Figure 1, why does an antacid relieve heartburn?",p:["It neutralises excess stomach acid","It adds acid to the stomach","It kills all the stomach cells","It changes food into water"],b:0,u:"An antacid is a weak alkali."},
+ {j:"pilih",t:"A bee sting is acidic. A suitable first-aid treatment is to apply:",p:["Baking soda solution","Lime juice","Cooking vinegar","Concentrated salt water"],b:0,u:"Baking soda is a weak alkali and neutralises the acid."},
+ {j:"pilih",t:"Why is toothpaste alkaline?",p:["To neutralise acids from food residue","So that teeth become whiter instantly","So that toothpaste tastes sour and fresh","To add acid that strengthens teeth"],b:0,u:"Bacteria in the mouth produce acids that damage tooth enamel."},
+ {j:"pilih",t:"The indicator that shows a range of colours for each pH value is:",p:["Universal indicator","Blue litmus paper","Phenolphthalein","Methyl orange"],b:0,u:"Universal indicator changes from red (strong acid) to purple (strong alkali)."},
+ {j:"pilih",t:"Acidic waste from a factory must be neutralised before it is released into a river because:",p:["Acid can kill aquatic life","Acid makes river water clearer","Acid adds oxygen to the water","Acid helps fish to breed"],b:0,u:"A big change in pH harms fish and water plants."},
+ {j:"pilih",t:"Fabric softener is used after washing clothes with soap. Its role is to:",p:["Neutralise the alkali residue of soap","Add alkali to the fabric","Kill all the bacteria on the fabric","Change the colour of the clothes"],b:0,u:"Fabric softener is weakly acidic."}],
+ bos:{j:"susun",t:"Arrange the substances by the strength of the acid, starting with the STRONGEST.",p:["pH 1","pH 3","pH 5","pH 7"],b:[0,1,2,3],u:"pH 7 is neutral."}},
+
+{n:3, tempat:"Indicator Lab", sk:"6.1 Determining acidic and alkaline substances", lampiran:"ph",
+ kadNama:"pH Meter", kadEm:"\u{1F4DF}", kadFakta:"A pH meter gives a more accurate pH reading than indicator paper.",
+ bosKadNama:"Red Cabbage", bosKadEm:"\u{1F96C}", bosKadFakta:"Red cabbage juice can be used as a natural indicator because its colour changes in acids and alkalis.",
+ soalan:[
+ {j:"pilih",t:"Based on the table, which substance is the most acidic?",p:["Lemon juice","Vinegar","Distilled water","Toothpaste"],b:0,u:"pH 2 is the lowest in the table."},
+ {j:"pilih",t:"Which substance is neutral?",p:["Distilled water","Toothpaste","Vinegar","Soapy water"],b:0,u:"pH 7 is neutral."},
+ {j:"pilih",t:"Which substance is the strongest alkali?",p:["Drain cleaner","Soapy water","Toothpaste","Distilled water"],b:0,u:"pH 14 is the highest."},
+ {j:"pilih",t:"Why must drain cleaner be handled with gloves?",p:["A strong alkali corrodes the skin","It has a strong pleasant smell","It is neutral","It is dark in colour"],b:0,u:"Strong alkalis such as sodium hydroxide are corrosive."},
+ {j:"pilih",t:"Red litmus paper is dipped into soapy water. The expected colour is:",p:["Blue","Red","Green","No change"],b:0,u:"Soapy water is alkaline."},
+ {j:"pilih",t:"Distilled water does not change the colour of blue litmus paper. The conclusion is that:",p:["Distilled water is not an acid","Distilled water is a strong acid","Distilled water is a strong alkali","The litmus paper is damaged"],b:0,u:"Blue litmus stays blue in neutral and alkaline solutions."},
+ {j:"pilih",t:"Blue litmus paper stays blue in toothpaste and soapy water. Why is blue litmus alone not enough to identify an alkali?",p:["It stays blue in neutral too","It turns red in an alkali","It does not work in water","It only detects gases"],b:0,u:"Use red litmus or universal indicator to confirm an alkali."},
+ {j:"banyak",t:"Choose ALL the substances that will react with magnesium to release hydrogen gas.",p:["Lemon juice","Vinegar","Dilute hydrochloric acid","Soapy water","Toothpaste"],b:[0,1,2],u:"Only acids react with reactive metals such as magnesium."}],
+ bos:{j:"pilih",t:"A bottle of unlabelled liquid gives a pH of 9. What is the most accurate conclusion?",p:["It is a weak alkali","It is a strong acid","It is neutral","It is the strongest alkali"],b:0,u:"A pH of 9 is a little above 7."}},
+
+{n:4, tempat:"Titration Station", sk:"6.2 Analysing the process of neutralisation", lampiran:"titrat",
+ kadNama:"Burette", kadEm:"\u{1F9EA}", kadFakta:"A burette is used in titration because it can add a solution drop by drop accurately.",
+ bosKadNama:"End Point", bosKadEm:"\u{1F3AF}", bosKadFakta:"The end point is the point at which the indicator changes colour, showing that the acid has been completely neutralised.",
+ soalan:[
+ {j:"pilih",t:"What volume of sodium hydroxide is needed to neutralise the acid?",p:["20 ml","10 ml","15 ml","25 ml"],b:0,u:"The pH reaches 7 at 20 ml."},
+ {j:"pilih",t:"What happens to the pH as the alkali is added?",p:["Rises","Goes down","Does not change","Stays at 1"],b:0,u:"The acid is increasingly neutralised, then there is excess alkali."},
+ {j:"pilih",t:"Why is phenolphthalein colourless at 20 ml even though the pH is 7?",p:["It is pink only in alkali","The solution is still very acidic at that point","The phenolphthalein was spoilt during use","No alkali was added to the flask"],b:0,u:"Phenolphthalein is colourless in a neutral solution."},
+ {j:"pilih",t:"At 25 ml, the solution turns pink. What does it mean?",p:["The alkali is now in excess","The acid is now in excess","The solution is completely neutral","The salt has evaporated"],b:0,u:"A pH of 12 means the solution is alkaline."},
+ {j:"pilih",t:"Why is the alkali added little by little near the end point?",p:["So that the end point is not missed","So that the solution heats up faster","So that more alkali is used","So that the colour of the indicator disappears"],b:0,u:"One extra drop can change the pH a lot."},
+ {j:"pilih",t:"What are the products of the reaction at 20 ml?",p:["Sodium chloride and water","Hydrochloric acid only","Sodium hydroxide only","Hydrogen gas"],b:0,u:"Acid + alkali → salt + water."},
+ {j:"pilih",t:"If the acid used were twice as concentrated, the volume of alkali needed would be about:",p:["40 ml","10 ml","20 ml","5 ml"],b:0,u:"A more concentrated acid needs more alkali to neutralise it."},
+ {j:"banyak",t:"Choose ALL the conclusions that are supported by the data.",p:["The pH rises as alkali is added","Neutralisation takes place at 20 ml","Phenolphthalein shows excess alkali","The acid is stronger after alkali is added","The pH falls as alkali is added"],b:[0,1,2],u:"The pH rises from 1 to 12."}],
+ bos:{j:"pilih",t:"A student suggests using methyl orange instead of phenolphthalein. Evaluate the suggestion.",p:["Possible; it also changes colour in acid and alkali","Not possible, because methyl orange is colourless","Not possible, because methyl orange is only for gases","Possible, but the solution will turn blue"],b:0,u:"Methyl orange is red in acid and yellow in alkali."}},
+
+{n:5, tempat:"Vegetable Farm", sk:"6.1 / 6.2 Evaluating the use of neutralisation in agriculture", lampiran:"tanah",
+ kadNama:"Peat Soil", kadEm:"\u{1F7EB}", kadFakta:"Peat soil is usually very acidic because of the slow decomposition of organic matter.",
+ bosKadNama:"Acid Rain", bosKadEm:"\u{1F327}", bosKadFakta:"Acid rain forms when sulphur dioxide and nitrogen dioxide gases dissolve in rainwater.",
+ soalan:[
+ {j:"pilih",t:"Which plot gives the highest yield?",p:["2","1","3","All the same"],b:0,u:"30 kg at pH 6.5."},
+ {j:"pilih",t:"Why is the yield of plot 1 low?",p:["The soil is too acidic","The soil is too alkaline","The soil is too dry","The mustard greens were not watered"],b:0,u:"A pH of 4.5 is far below the suitable range."},
+ {j:"pilih",t:"What is the effect of agricultural lime on soil?",p:["Raises soil pH","Lowers the pH of the soil","Does not change the pH","Makes the soil acidic"],b:0,u:"Lime is alkaline and neutralises acid."},
+ {j:"pilih",t:"Why is the yield of plot 3 lower than that of plot 2?",p:["Excess lime makes the soil alkaline","Excess lime makes the soil more acidic","Plot 3 was not given any lime","Plot 3 is bigger than plot 2"],b:0,u:"A pH of 8.5 is above the suitable range."},
+ {j:"nombor",t:"What is the increase in yield of plot 2 compared with plot 1, in kg?",b:18,tol:0.5,suf:"kg",u:"30 − 12 = 18 kg."},
+ {j:"pilih",t:"A farmer claims 'the more lime, the more yield'. Evaluate the claim.",p:["Wrong; excess lime reduces the yield","Correct, because plot 3 was given the most lime","Correct, because lime is the main fertiliser","Wrong, because lime has no effect"],b:0,u:"Plot 3 produced only 15 kg."},
+ {j:"pilih",t:"Before spreading lime on a new garden, what is the most appropriate first step?",p:["Test the pH of the soil first","Spread as much lime as possible","Plant vegetables straight away","Water the soil with vinegar"],b:0,u:"The amount of lime depends on the original pH of the soil."},
+ {j:"pilih",t:"The data come from one season only. The main weakness of this conclusion is that:",p:["Weather that season may affect yield","Too many plots were used","The pH cannot be measured","Mustard greens are not suitable to test"],b:0,u:"Repeating over several seasons gives a stronger conclusion."}],
+ bos:{j:"pilih",t:"A farmers' cooperative wants to recommend a peat soil treatment to its members. What is the most appropriate decision?",p:["Test the pH and add lime up to pH 6 to 7","Spread excess lime on all the gardens","Do not add any lime","Add vinegar to lower the pH"],b:0,u:"A treatment that follows the test gives the best yield at minimum cost."}},
+
+{n:6, tempat:"Design Lab", sk:"6.1 / 6.2 Creating using knowledge of acids and alkalis",
+ kadNama:"Natural Indicator", kadEm:"\u{1F33A}", kadFakta:"Butterfly pea petals and red cabbage contain pigments that change colour with pH.",
+ bosKadNama:"Homemade Soap", bosKadEm:"\u{1F9FC}", bosKadFakta:"Soap is made by reacting oil with a strong alkali. This process must be carried out under supervision.",
+ soalan:[
+ {j:"pilih",t:"You design a cheap pH indicator kit for a primary school. Which material is most suitable?",p:["Red cabbage juice","Ordinary tap water","Cooking oil","Fine salt"],b:0,u:"Natural pigments change colour in acids and alkalis."},
+ {j:"pilih",t:"You design a first-aid poster for an alkaline wasp sting. Which treatment is most suitable?",p:["Apply vinegar","Apply soap","Apply baking soda","Apply toothpaste"],b:0,u:"Vinegar is weakly acidic and neutralises the alkali."},
+ {j:"pilih",t:"You design a mouthwash to reduce tooth decay. Which property is most suitable?",p:["Slightly alkaline to neutralise acids","Very acidic so it feels fresher","Contains sugar for a sweet taste","Contains a strong acid to whiten teeth"],b:0,u:"Acids from bacteria damage tooth enamel."},
+ {j:"pilih",t:"A small village factory dumps acidic waste water. What is the most practical treatment suggestion?",p:["Neutralise with lime before dumping","Dump it straight into the river at night","Add more acid to dilute it","Keep it in open drums forever"],b:0,u:"Lime is cheap and neutralises acid."},
+ {j:"pilih",t:"You make a liquid fertiliser from kitchen waste and find its pH is 4. What is the most appropriate action before using it?",p:["Add lime","Add vinegar","Add lemon juice","Add battery acid"],b:0,u:"Vegetable plants grow well at a nearly neutral pH."},
+ {j:"pilih",t:"You want to show neutralisation to young pupils without hazardous materials. Which pair is safest?",p:["Vinegar and baking soda","Sodium hydroxide and concentrated hydrochloric acid","Drain cleaner and battery acid","Concentrated ammonia and sulphuric acid"],b:0,u:"Both are weak kitchen substances and safe if controlled."},
+ {j:"pilih",t:"You design a warning label for drain cleaner. What is the most important information?",p:["Corrosive; wear gloves","Fragrant and suitable for all uses","Safe to eat in small amounts","Can be mixed with all other cleaners"],b:0,u:"A strong alkali can cause chemical burns."},
+ {j:"pilih",t:"How would you test the effectiveness of your red cabbage indicator?",p:["Test with known-pH substances","Taste the substances to confirm the results","Test it with tap water only","Ask friends their favourite colour"],b:0,u:"Comparison with standard substances confirms the colour range of the indicator."}],
+ bos:{j:"buka",
+  t:"The river near your school has become acidic because of factory waste and acid rain, and the number of fish is falling. Design a solution using knowledge of acids, alkalis and neutralisation.",
+  arahan:"Describe the causes of the acidity, how to measure the pH of the river, the neutralising materials and method suggested, safety steps, how success is monitored, and the cost and the roles of the factory, residents and authorities.",
+  u:"A strong TP6 answer uses pH measurements, chooses suitable and safe neutralising materials, and plans monitoring and community cooperation."}}
+];
+
+module.exports = {
+  id:"t2b6", tingkatan:2, kod:"6.0 Acids and Alkalis",
+  tajuk:"pH Trail",
+  subtajuk:"Science Form 2 · Chapter 6 Acids and Alkalis",
+  spi:SPI,
+  ulasan:{
+   1:"{n} can recall the properties of acids and alkalis, the pH scale and indicators. The next step is to explain the strength of acids and alkalis.",
+   2:"{n} understands the relationship between pH and the strength of acids and alkalis and the uses of neutralisation. More practice is needed in interpreting indicator results.",
+   3:"{n} can classify everyday substances as acid, alkali or neutral based on pH and indicators. Encourage using more than one indicator.",
+   4:"{n} is able to analyse titration data to determine the point of neutralisation. Next, practise evaluating the use of neutralisation in daily life.",
+   5:"{n} can evaluate the treatment of acidic soil based on data and make sound decisions. Ready for a creative task.",
+   6:"{n} successfully created a safe and practical solution using neutralisation. Excellent achievement for this chapter.",
+   tiada:"{n} has not yet shown enough evidence of mastery for the chapter Acids and Alkalis. Suggestion: repeat the first stop activities with guidance from a peer."
+  },
+  lampiran:{ skalaph:R_SKALAPH, neutral:R_NEUTRAL, ph:T_PH, titrat:T_TITRAT, tanah:T_TANAH },
+  aras:ARAS
+};

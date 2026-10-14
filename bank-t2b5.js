@@ -271,7 +271,7 @@ window.BANK["t2b5"] =
     },
     {
      "j": "pilih",
-     "t": "Kerosin digunakan oleh mekanik untuk membersihkan tangan daripada gris kerana:",
+     "t": "Mekanik menggunakan kerosin untuk membersihkan gris pada alat ganti enjin kerana:",
      "p": [
       "Kerosin membunuh semua kuman",
       "Gris larut dengan cepat dalam air",
@@ -279,7 +279,7 @@ window.BANK["t2b5"] =
       "Gris larut dalam kerosin"
      ],
      "b": 3,
-     "u": "Gris ialah bahan berminyak yang tidak larut dalam air. Kerosin mudah terbakar, jadi berhati-hati."
+     "u": "Gris ialah bahan berminyak yang tidak larut dalam air. Kerosin mudah terbakar dan merengsakan kulit, jadi pakai sarung tangan dan basuh tangan dengan sabun."
     }
    ],
    "bos": {
@@ -299,7 +299,7 @@ window.BANK["t2b5"] =
      3,
      4
     ],
-    "u": "Pengoksidaan berlaku selepas penapisan, dan pengfluorinan selepas pengklorinan."
+    "u": "Penggumpalan menjadikan kotoran halus bergumpal supaya mengenap dan dituras; klorin ditambah di akhir untuk membunuh kuman."
    }
   },
   {

@@ -98,7 +98,7 @@ const ARAS = [
  {j:"pilih",t:"Bahan dengan nilai pH kurang daripada 7 ialah:",p:["Asid","Alkali","Neutral","Garam"],b:0,u:"Semakin rendah pH, semakin kuat asid."},
  {j:"pilih",t:"Asid menukarkan warna kertas litmus biru kepada:",p:["Merah","Biru","Hijau","Kuning"],b:0,u:"Alkali pula menukarkan litmus merah kepada biru."},
  {j:"pilih",t:"Sifat alkali ialah:",p:["Rasa pahit dan licin","Rasa masam","pH kurang daripada 7","Menukar litmus biru kepada merah"],b:0,u:"Jangan merasa bahan kimia di makmal."},
- {j:"pilih",t:"Berdasarkan Rajah 1, bahan yang bersifat berasid ialah:",p:["Cuka","Sabun","Air","Susu"],b:0,u:"Bahan berasid mempunyai pH kurang daripada 7, dan cuka paling rendah pada pH 3."},
+ {j:"pilih",t:"Berdasarkan Rajah 1, bahan yang PALING berasid ialah:",p:["Cuka","Sabun","Air","Susu"],b:0,u:"Cuka mempunyai nilai pH paling rendah, iaitu 3. Susu (pH 6) hanya sedikit berasid."},
  {j:"pilih",t:"Asid bertindak balas dengan logam magnesium untuk menghasilkan:",p:["Gas hidrogen","Gas oksigen","Gas klorin","Gas nitrogen"],b:0,u:"Gas hidrogen menghasilkan bunyi 'pop' dengan kayu uji menyala."},
  {j:"pilih",t:"Warna fenolftalein dalam alkali ialah:",p:["Merah jambu","Tidak berwarna","Kuning","Biru"],b:0,u:"Fenolftalein tidak berwarna dalam asid dan larutan neutral."},
  {j:"pilih",t:"Tindak balas antara asid dengan alkali dipanggil:",p:["Peneutralan","Pembakaran","Pengaratan","Penyejatan"],b:0,u:"Asid + alkali → garam + air."},

@@ -96,7 +96,7 @@ window.BANK["t2b6"] =
     },
     {
      "j": "pilih",
-     "t": "Berdasarkan Rajah 1, bahan yang bersifat berasid ialah:",
+     "t": "Berdasarkan Rajah 1, bahan yang PALING berasid ialah:",
      "p": [
       "Sabun",
       "Air",
@@ -104,7 +104,7 @@ window.BANK["t2b6"] =
       "Cuka"
      ],
      "b": 3,
-     "u": "Bahan berasid mempunyai pH kurang daripada 7, dan cuka paling rendah pada pH 3."
+     "u": "Cuka mempunyai nilai pH paling rendah, iaitu 3. Susu (pH 6) hanya sedikit berasid."
     },
     {
      "j": "pilih",

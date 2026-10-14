@@ -1,0 +1,157 @@
+/* English source (DLP) — Science KSSM Form 3, Chapter 1.0 Stimulus and Response.
+   Translation of sumber/t3b1.js.
+   Run `node bina.js --en t3b1` to check it and generate bank-en-t3b1.js.
+   Structure must match sumber/t3b1.js exactly. Correct answer at index 0. */
+
+const SPI = [
+"Recall knowledge and skills about stimulus and response.",
+"Understand stimulus and response and be able to explain this understanding.",
+"Apply knowledge of stimulus and response to explain natural events or phenomena and carry out simple tasks.",
+"Analyse knowledge about stimulus and response in the context of solving problems about natural events or phenomena.",
+"Evaluate knowledge about stimulus and response in the context of problem solving and decision making to carry out a task.",
+"Create using scientific knowledge and skills about stimulus and response in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+
+/* ---------- attachments ---------- */
+
+const R_NEURON = {
+  jenis:"aliran", mod:"turun",
+  nod:["Dendrite","Cell body","Axon","?"],
+  kapsyen:"Figure 1 · The direction of an impulse in one neuron.",
+  alt:"Vertical flow diagram: dendrite, cell body, axon, and the last part marked with a question mark"
+};
+
+const R_REFLEKS = {
+  jenis:"aliran", mod:"turun",
+  nod:["Skin receptor","Sensory neuron","Spinal cord","Motor neuron","Arm muscle"],
+  kapsyen:"Figure 1 · The path of the impulse when a hand touches a hot object.",
+  alt:"Vertical flow diagram of the path of the impulse from the skin receptor to the arm muscle through the spinal cord, without passing through the brain"
+};
+
+const T_PEMBARIS =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Student</th>'+
+'<th class="n">Trial 1 (cm)</th><th class="n">Trial 2 (cm)</th><th class="n">Trial 3 (cm)</th>'+
+'<th class="n">Average (cm)</th><th>Note</th></tr></thead><tbody>'+
+'<tr><td>Aiman</td><td class="n">19</td><td class="n">17</td><td class="n">18</td><td class="n">18.0</td><td>Slept 8 hours</td></tr>'+
+'<tr><td>Bella</td><td class="n">13</td><td class="n">12</td><td class="n">11</td><td class="n">12.0</td><td>Slept 8 hours</td></tr>'+
+'<tr><td>Chandran</td><td class="n">25</td><td class="n">27</td><td class="n">26</td><td class="n">26.0</td><td>Slept 4 hours</td></tr>'+
+'<tr><td>Damia</td><td class="n">12</td><td class="n">20</td><td class="n">13</td><td class="n">15.0</td><td>Slept 8 hours, noise during trial 2</td></tr>'+
+'</tbody></table></div><p class="qnote">Ruler drop test. The distance the ruler falls before being caught is measured. A shorter distance means a faster response.</p>';
+
+const T_DERIA =
+'<div class="scrollx"><table class="datatable"><thead><tr><th>Person</th><th>Complaint</th>'+
+'<th class="n">Vision test</th><th class="n">Hearing test</th></tr></thead><tbody>'+
+'<tr><td>Madam Salmah, 62</td><td>Has to hold a newspaper far away to read</td><td class="n">Lens +2.00 D</td><td class="n">Normal</td></tr>'+
+'<tr><td>Rajesh, 15</td><td>The whiteboard is blurred from the back row</td><td class="n">Lens &minus;1.50 D</td><td class="n">Normal</td></tr>'+
+'<tr><td>Mei Yin, 17</td><td>Cannot hear high-pitched sounds</td><td class="n">Normal</td><td class="n">45 dB loss</td></tr>'+
+'</tbody></table></div><p class="qnote">A lens with a positive value is a convex lens. A lens with a negative value is a concave lens. A hearing loss of more than 40 dB is considered moderate.</p>';
+
+/* ---------- stops ---------- */
+
+const ARAS = [
+
+{n:1, tempat:"Receptor", sk:"1.1 / 1.2 The nervous system and sense organs", lampiran:"neuron",
+ kadNama:"Rod Cell", kadEm:"\u{1F441}", kadFakta:"The human retina contains about 120 million rod cells, and they work even in very dim light.",
+ bosKadNama:"Neuron", bosKadEm:"\u{1FA7B}", bosKadFakta:"Nerve impulses travel at up to 120 metres per second, which is faster than a car on a highway.",
+ soalan:[
+ {j:"pilih",t:"The human nervous system consists of:",p:["The brain, the spinal cord and peripheral nerves","The brain, the heart and the spinal cord only","The spinal cord, skeletal muscles and glands","The brain, sense organs and motor nerves"],b:0,u:"The brain and spinal cord form the central nervous system, and the rest is the peripheral nervous system."},
+ {j:"pilih",t:"The light-receiving cells in the retina that work in dim light are:",p:["Rod cells","Cone cells","Taste buds","Smell receptor cells"],b:0,u:"Rod cells are sensitive to dim light but do not detect colour."},
+ {j:"pilih",t:"The part of the eye that controls the amount of light entering is the:",p:["Iris","Retina","Cornea","Optic nerve"],b:0,u:"The iris changes the size of the pupil according to the intensity of light."},
+ {j:"susun",t:"Arrange the path of the impulse in a voluntary action in the correct order.",p:["Receptor","Sensory neuron","Brain","Motor neuron","Effector"],b:[0,1,2,3,4],u:"In a voluntary action, the brain makes the decision before the instruction is sent to the effector."},
+ {j:"pilih",t:"Muscles and glands that respond to nerve instructions are called:",p:["Effectors","Receptors","Relay neurons","Stimuli"],b:0,u:"Receptors detect, effectors act."},
+ {j:"pilih",t:"Based on Figure 1, the part of the neuron marked ? passes the impulse to the next neuron. That part is the:",p:["Axon terminal","Myelin sheath wrapped around the axon","Nucleus inside the neuron's cell body","Finely branched dendrites"],b:0,u:"The impulse travels in one direction only: the dendrites receive, the axon carries, the axon terminal passes it on."},
+ {j:"pilih",t:"The response of a plant to a light stimulus is called:",p:["Phototropism","Geotropism","Hydrotropism","Thigmotropism"],b:0,u:"Photo means light, tropism means a directional response."},
+ {j:"pilih",t:"The part of the ear that changes vibrations into nerve impulses is the:",p:["Cochlea","Eardrum","Ear canal","Hammer bone"],b:0,u:"The cochlea is spiral-shaped and contains sensory hair cells."}],
+ bos:{j:"banyak",t:"Choose ALL the human sense organs.",p:["Eyes","Ears","Nose","Skin","Tongue","Lungs","Heart"],b:[0,1,2,3,4],u:"The lungs and the heart are organs, but they do not detect stimuli from the environment."}},
+
+{n:2, tempat:"Sensory Nerve", sk:"1.1 / 1.2 Mechanisms of response", lampiran:"refleks",
+ kadNama:"Reflex Action", kadEm:"\u{26A1}", kadFakta:"A reflex action does not go through the brain, so it takes place in less than a fifth of a second.",
+ bosKadNama:"Nastic Response", bosKadEm:"\u{1F33F}", bosKadFakta:"The leaves of the touch-me-not plant fold in one to two seconds after being touched, regardless of the direction of the touch.",
+ soalan:[
+ {j:"pilih",t:"Based on Figure 1, why does an involuntary action take place faster than a voluntary action?",p:["The impulse is processed in the spinal cord without having to reach the brain","The impulse travels through blood vessels that are faster than nerves","The muscle contracts first, and only then is the impulse sent to the brain","The receptor sends the impulse straight to the effector with no neuron at all"],b:0,u:"A shorter path means a shorter time."},
+ {j:"susun",t:"Arrange the mechanism of hearing in the correct order.",p:["Sound enters through the ear canal","The eardrum vibrates","The middle ear bones amplify the vibrations","The cochlea changes the vibrations into impulses","The auditory nerve carries the impulses to the brain"],b:[0,1,2,3,4],u:"Vibrations become impulses only when they reach the cochlea."},
+ {j:"pilih",t:"Why do humans have two eyes at the front of the head?",p:["So that the fields of view overlap and give depth perception","So that they can see backwards without turning the head","So that one eye can rest while the other works","So that each eye can detect different colours at the same time"],b:0,u:"This is called stereoscopic vision, common in predatory animals."},
+ {j:"pilih",t:"What is the function of the lens of the eye?",p:["To focus light so that the image falls exactly on the retina","To change light into nerve impulses to send to the brain","To control the size of the pupil according to the intensity of light","To protect the retina from dust and germs"],b:0,u:"The lens changes shape to focus on near and far objects."},
+ {j:"pilih",t:"Why does food taste bland when the nose is blocked?",p:["The sense of taste depends on the sense of smell to recognise flavours","The tongue stops producing saliva when a person has a fever","Mucus from the nose covers all the taste buds on the surface of the tongue","The brain switches off the sense of taste to save energy during illness"],b:0,u:"This is an example of the combined sensitivity of sense organs."},
+ {j:"pilih",t:"What is the main difference between rod cells and cone cells?",p:["Rods are sensitive to dim light, cones detect colour in bright light","Rods detect colour in bright light, cones are sensitive to dim light","Rods are on the cornea, while cones are on the retina","Rods detect high-pitched sounds, while cones detect light"],b:0,u:"That is why colours are hard to tell apart in a dark room."},
+ {j:"pilih",t:"What is the blind spot of the eye?",p:["Where the optic nerve leaves the retina; no photoreceptors","The area of the retina with the most and densest cone cells","The part of the lens that turns cloudy as a person gets older","The area of the iris that has no pigment and absorbs no light"],b:0,u:"The brain fills in that gap, so we do not notice it."},
+ {j:"pilih",t:"Why do plant roots grow downwards?",p:["Roots show positive geotropism, which is towards gravity","Roots show negative hydrotropism, which is away from soil water","The increasing weight of the roots pulls them down into the soil","Roots move away from air because root cells do not need oxygen"],b:0,u:"Shoots show negative geotropism, growing away from gravity."}],
+ bos:{j:"pilih",t:"What distinguishes a nastic response from a tropism?",p:["It does not depend on the direction of the stimulus","A nastic response only happens at night with no light","A nastic response happens in roots, a tropism in shoots only","A nastic response happens with no outside stimulus"],b:0,u:"The leaves of the touch-me-not fold in the same way no matter which direction they are touched from."}},
+
+{n:3, tempat:"Spinal Cord", sk:"1.2 / 1.3 Everyday responses",
+ kadNama:"Reaction Time", kadEm:"\u{23F1}", kadFakta:"A normal human reaction time is about 0.25 seconds, and it gets longer when tired or sleepy.",
+ bosKadNama:"Reflex Arc", bosKadEm:"\u{1F504}", bosKadFakta:"In a reflex arc, a relay neuron in the spinal cord connects the sensory neuron straight to the motor neuron.",
+ soalan:[
+ {j:"pilih",t:"Farah's hand touches a hot kettle and is pulled away at once, but she only feels the pain a moment later. Why?",p:["The spinal cord reflex happens first; pain reaches the brain later","The skin of the hand has no pain receptors, so the brain only guesses the pain afterwards","The brain deliberately delays the pain so that Farah does not panic and fall","The arm muscle moves by itself with no impulse, and the brain is only told later"],b:0,u:"Protecting the tissue is more important than being aware of the pain, so the reflex comes first."},
+ {j:"nombor",t:"In the ruler drop test, Aiman catches the ruler at 18 cm and Bella at 12 cm. How many cm shorter is Bella's distance?",b:6,tol:0.5,suf:"cm",u:"18 minus 12 equals 6 cm. A shorter distance means a faster response."},
+ {j:"pilih",t:"Why are drivers advised to stop and rest when they feel sleepy?",p:["Reaction time lengthens, so the car goes farther before braking","Sleepy eyes cannot tell the red traffic light apart","The spinal cord stops working completely when a person is sleepy","The leg muscles become too weak to press the brake pedal hard"],b:0,u:"Every tenth of a second of delay means a few extra metres at high speed."},
+ {j:"pilih",t:"Zaki can see the book in his hand clearly but the whiteboard looks blurred. What is the condition of his eyes and its correction?",p:["Short-sightedness, corrected with a concave lens","Long-sightedness, corrected with a convex lens","Short-sightedness, corrected with a convex lens","Long-sightedness, corrected with a concave lens"],b:0,u:"In short-sightedness, the image of a distant object forms in front of the retina."},
+ {j:"pilih",t:"Why are the lights in a cinema dimmed slowly, not switched off at once?",p:["To give time for the pupils to widen and the rod cells to adapt","To give time for the pupils to narrow so that eyes are not dazzled in the dark","To give the cone cells time to rest before the bright film starts","To prevent the bulbs from failing because of a sudden change in current"],b:0,u:"Dark adaptation takes a few minutes to complete."},
+ {j:"pilih",t:"A bean seedling beside a window bends towards the window. What is happening?",p:["The shoot shows positive phototropism towards the light","The shoot shows positive geotropism towards the window","Wind from the window gradually pushes the soft stem","The plant is moving towards air that is richer in oxygen"],b:0,u:"Cells on the dark side elongate faster, so the stem bends towards the light."},
+ {j:"pilih",t:"The tendrils of a long bean plant coil around a bamboo pole. This response is called:",p:["Thigmotropism","Phototropism","Hydrotropism","Geotropism"],b:0,u:"Thigmo means touch."},
+ {j:"pilih",t:"Why do people in their late forties start to hold a newspaper farther away to read?",p:["The lens loses elasticity, so near focus is difficult","The retina becomes thinner, so near images cannot be detected","The pupil can no longer narrow, so too much light enters","The eyeball lengthens with age, so the image falls in front of the retina"],b:0,u:"This condition is age-related long-sightedness and is corrected with a convex lens."}],
+ bos:{j:"susun",t:"Arrange the reflex action of pulling a hand away from a hot object in the correct order.",p:["A heat receptor in the skin detects the heat","A sensory neuron carries the impulse to the spinal cord","A relay neuron in the spinal cord connects the impulse","A motor neuron carries the impulse to the arm muscle","The arm muscle contracts and the hand is pulled away"],b:[0,1,2,3,4],u:"The brain is not involved in this path, and that is why it is fast."}},
+
+{n:4, tempat:"Brain", sk:"1.2 Analysing response data", lampiran:"pembaris",
+ kadNama:"Random Error", kadEm:"\u{1F4CF}", kadFakta:"Three repeats is the minimum practice in school practical work, because one reading cannot tell real performance apart from luck.",
+ bosKadNama:"Experimental Design", bosKadEm:"\u{1F9EA}", bosKadFakta:"A conclusion is only as strong as the design of its experiment, not as strong as the confidence of the person who makes it.",
+ soalan:[
+ {j:"banyak",t:"Based on the table, choose ALL the conclusions that are supported by the data.",p:["Bella has the shortest average distance of the four students","Chandran has the longest average distance","Damia's average is shorter than Aiman's average","Boys respond faster than girls","All the students get faster with every later trial"],b:[0,1,2],u:"Gender is not recorded as a variable, and Aiman's and Damia's readings do not fall steadily."},
+ {j:"pilih",t:"Why is each student tested three times and not just once?",p:["To reduce the effect of random error and spot odd readings","To give students the chance to choose the best reading to record","To get students used to the ruler so the third reading is the most accurate","To make sure the average is always lower than the first reading"],b:0,u:"Repeating reveals odd readings that a single test would hide."},
+ {j:"pilih",t:"Based on the note in the table, Damia's second trial is 20 cm while her other two trials are 12 cm and 13 cm. What is the best interpretation?",p:["Damia was disturbed by the noise, so that reading is an odd reading","Damia was tired after the first trial, then recovered in the third trial","Damia is really the slowest, and the other two trials were just good luck","Damia deliberately slowed her hand in the second trial to test the device"],b:0,u:"The note in the table gives a reasonable cause for the stray reading."},
+ {j:"nombor",t:"What is the difference in averages, in cm, between the fastest and the slowest student?",b:14,tol:0.5,suf:"cm",u:"26.0 for Chandran minus 12.0 for Bella equals 14.0 cm."},
+ {j:"pilih",t:"Which variable MUST be kept constant to make this comparison fair?",p:["The type of ruler and the position of the hand when catching","The distance the ruler falls before the student catches it","The number of hours each student slept the night before","The colour of the shirt the student wears during the test"],b:0,u:"The falling distance is the responding variable and the hours of sleep is the manipulated variable. Both are meant to change."},
+ {j:"pilih",t:"Why is Chandran's data not enough to prove that lack of sleep slows down response?",p:["Only one student slept little, so the sample is too small","The average of 26.0 cm is still within the normal range of reaction time","The ruler drop test is not suitable for measuring the effect of lack of sleep","Chandran was tested last, so he was already tired of waiting his turn"],b:0,u:"One case shows an interesting pattern, but it is not yet proof."},
+ {j:"pilih",t:"A patient cannot feel touch on his foot, but his foot muscles still contract when stimulated directly. Which part is damaged?",p:["The sensory neuron carrying impulses from the skin to the spinal cord","The motor neuron carrying impulses from the spinal cord to the muscle","The foot muscle that should contract when it receives an impulse","The light receptors in the retina that process touch information"],b:0,u:"The effector still works, so the damage is on the incoming path, not the outgoing path."},
+ {j:"pilih",t:"In a short-sighted eye, where does the image of a distant object form?",p:["In front of the retina","Exactly on the retina","Behind the retina","On the cornea"],b:0,u:"A concave lens spreads the light a little so that the focus falls farther back, exactly on the retina."}],
+ bos:{j:"banyak",t:"Choose ALL the improvements that would strengthen the conclusion of this experiment.",p:["Add more students to each sleep group","Match the ages of the students between the two groups","Run all the tests in a quiet, equally bright room","Take only the best reading of each student and discard the others","Use a longer ruler so the distances look bigger"],b:[0,1,2],u:"Discarding readings you do not like makes the data worse, and a longer ruler changes nothing that is measured."}},
+
+{n:5, tempat:"Effector", sk:"1.2 / 1.3 Evaluating and making decisions", lampiran:"deria",
+ kadNama:"Concave Lens", kadEm:"\u{1F453}", kadFakta:"A concave lens spreads light before it enters the eye, and that is how short-sightedness is corrected.",
+ bosKadNama:"Targeted Screening", bosKadEm:"\u{1F50D}", bosKadFakta:"Screening aimed at a high-risk group finds more cases than random screening at the same cost.",
+ soalan:[
+ {j:"pilih",t:"Based on the table, who needs a concave lens, and why?",p:["Rajesh, because the image of distant objects forms in front of his retina","Madam Salmah, because her eye lens is less elastic and the light must be spread","Rajesh, because the image of distant objects forms behind his retina","Madam Salmah, because the image of near objects forms in front of the retina"],b:0,u:"Rajesh's lens value is negative, which is a concave lens. Short-sightedness happens when the image of a distant object falls in front of the retina, and a concave lens spreads the light so that the image falls exactly on the retina."},
+ {j:"banyak",t:"Choose ALL the evidence from the table that supports the view that Madam Salmah has difficulty seeing near objects.",p:["She has to hold a newspaper far away to read","The lens she needs has a positive value","Her age is in the usual range for age-related long-sightedness","A lens with a positive value means a concave lens","She complains that the whiteboard looks blurred"],b:[0,1,2],u:"A lens with a positive value is a convex lens, not concave. The complaint about the blurred whiteboard is Rajesh's."},
+ {j:"pilih",t:"A teacher suggests that Mei Yin just sits at the front of the class with no further examination. Evaluate the suggestion based on the table.",p:["Not appropriate, because a loss of more than 40 dB is considered moderate","Appropriate, because high-pitched sounds are not important for understanding speech","Appropriate, because 45 dB is still below the moderate limit in the table","Not appropriate, because Mei Yin also needs a convex lens"],b:0,u:"The table says a loss of more than 40 dB is considered moderate. Consonants such as s and f are high-pitched, so this loss affects understanding of speech and she should be referred."},
+ {j:"pilih",t:"A student puts ONE pot of seedlings beside a window. The shoots bend towards the window, so he concludes that light is the cause. Evaluate the conclusion.",p:["Not yet; there is no control pot lit from all directions","Strong, because shoots do show positive phototropism","Not strong yet, because shoots should show positive geotropism","Strong, because the pot is watered with the same amount of water every day"],b:0,u:"Without a control pot, the bending could be caused by wind or heat from the window. Shoots actually show negative geotropism."},
+ {j:"pilih",t:"A 50-year-old school bus driver fails the near vision test but passes the distance vision test. What is the most appropriate decision?",p:["Give convex lenses for reading only","Ban him from driving because his eyes are no longer normal","Give concave lenses so that he can read clearly","Give convex lenses and require them to be worn while driving"],b:0,u:"Long-sightedness affects near vision only. Convex lenses for reading would blur distant objects if worn while driving."},
+ {j:"pilih",t:"Evaluate the claim that wearing glasses makes the eyes weaker.",p:["Without basis, because lenses only correct the focus and do not change the eyeball","With basis, because eye muscles become weak when they do not have to focus on their own","With basis for concave lenses, because the spread light damages the retina","Without basis, because short-sightedness stops getting worse after age 12"],b:0,u:"Short-sightedness can indeed get worse during adolescence even without glasses, and that is what is often mistaken for the effect of glasses."},
+ {j:"pilih",t:"A sprinter wants to shorten his reaction time to the starting pistol. What is the most science-based suggestion?",p:["Practise starting repeatedly to the sound of a real pistol","Train to act purely by reflex through the spinal cord","Drink energy drinks so that nerve impulses travel faster","Cover one ear so that sound is more focused into the cochlea"],b:0,u:"Starting after the sound of the pistol is a voluntary action through the brain, not a reflex. Repeated practice shortens the time the brain takes to decide."},
+ {j:"pilih",t:"Which data is the strongest for testing whether screen time affects the vision of teenagers?",p:["A follow-up over many years of many teenagers with regular eye tests","A survey of 1000 teenagers on whether their eyes feel tired","A single eye test on 30 teenagers who use phones a lot","The experience of an eye specialist with patients who come to the clinic"],b:0,u:"Feeling tired is not a measure of vision, 30 teenagers with no comparison group is too few, and clinic patients are not representative of all teenagers."}],
+ bos:{j:"pilih",t:"A mobile clinic can screen only 40 students out of 800. What is the most appropriate selection criterion?",p:["Those with blurred vision or a sudden drop in performance","Forty names chosen at random from the school list","First-year students only because short-sightedness starts young","Students who already wear glasses because they surely have problems"],b:0,u:"Random screening suits research, but with limited places, a high-risk group finds more cases. Students with glasses are already being treated."}},
+
+{n:6, tempat:"Action", sk:"1.2 / 1.4 Creating sensory aids",
+ kadNama:"Inclusive Design", kadEm:"\u{1F91D}", kadFakta:"A design that helps one hearing-impaired student often makes things easier for the whole class, for example a teacher who always faces the class while speaking.",
+ bosKadNama:"Animal Senses", bosKadEm:"\u{1F99C}", bosKadFakta:"Fish detect vibrations in the water through the lateral line along their bodies, a sense that humans do not have at all.",
+ soalan:[
+ {j:"pilih",t:"You design a warning device so that a deaf friend knows when the teacher is calling him. Which signal is most effective?",p:["A vibration on the wrist or a flashing light in his view","A very loud siren sound near his ears","A high-pitched sound because it is easier for the cochlea to detect","A voice message repeated twice through the loudspeaker"],b:0,u:"A good sensory aid uses the other sense organs that still work, which are the skin and the eyes."},
+ {j:"pilih",t:"Your vibrating device is placed on the fingertip. Why is that location suitable?",p:["The fingertip is rich in touch receptors","The fingertip is closest to the spinal cord","The skin of the fingertip is thickest, so the vibration does not hurt","The fingertip has no pain receptors, so the vibration feels comfortable"],b:0,u:"The sensitivity of skin depends on the number of receptors. The fingertips and the lips are among the most sensitive parts."},
+ {j:"pilih",t:"Your classmate is red-green colour blind. What is the most appropriate correction for a chart in the class project poster?",p:["Add text labels and different patterns, not depending on colour alone","Change red to orange because cone cells detect orange better","Make the red and green brighter so the difference is clearer","Use more shades of green so he only has to read one colour"],b:0,u:"Red-green colour blindness comes from cone cells that do not work well, so orange and different shades of green are also hard to tell apart."},
+ {j:"pilih",t:"You want to prove that the warning device really helps your friend. What is the most convincing way?",p:["Count missed instructions before and after the device","Ask your classmates whether they feel the device is useful","Test the device on students whose hearing is normal","Measure the strength of the device's vibration using a phone app"],b:0,u:"The best evidence comes from real users, measured before and after. A strong vibration does not necessarily mean instructions are not missed."},
+ {j:"pilih",t:"You design cheap reading glasses for senior citizens in a village. Which lens should be used?",p:["A convex lens, because it focuses light before it enters the eye","A concave lens, because it magnifies near writing","A convex lens, because it spreads light towards the retina","Flat tinted glass, because it reduces glare when reading"],b:0,u:"Long-sightedness in senior citizens happens when the eye lens loses elasticity. A convex lens focuses the light before it reaches the eye."},
+ {j:"pilih",t:"You design a ruler drop test station for sports day. Which modification makes the readings fairer?",p:["Drop the ruler without warning; fingers start at the same place","Students are allowed to watch the hand of the person who drops the ruler","Each student uses a ruler of a different length","Only the best reading of five trials is recorded"],b:0,u:"A warning and a hand signal let students guess rather than respond. Recording only the best reading hides random error."},
+ {j:"pilih",t:"Your friend is deaf in the right ear only. What is the most suitable seating position in class?",p:["At the front row, with the left ear facing the teacher","At the front, with the right ear facing the teacher","At the back, so that sound has time to echo and get louder","Beside the window, so that outside sound covers the noise"],b:0,u:"The ear that still works should receive the sound directly. Echoes and outside sound make hearing even harder."},
+ {j:"pilih",t:"You want the other students to accept the device without making your friend feel left out. What is the most appropriate approach?",p:["Design it to look ordinary and be useful to anyone in the class","Put your friend's name on the device so it does not get mixed up","Explain your friend's condition to the whole school first","Only bring out the device when the teacher gives an important instruction"],b:0,u:"An invention that takes social values into account respects the dignity of its user, not just its function."}],
+ bos:{j:"buka",
+  t:"A classmate of yours has partial hearing loss in one ear and often misses the teacher's instructions, especially when the teacher writes on the board while talking. Design a solution that your class can really carry out.",
+  arahan:"Explain how it works, the materials or devices needed, who will carry it out, and how you take cost and your friend's feelings into account so that he does not feel left out.",
+  u:"A strong TP6 answer combines the science of the senses, real costs, and social acceptance in the class."}}
+];
+
+module.exports = {
+  id:"t3b1", tingkatan:3, kod:"1.0 Stimulus and Response",
+  tajuk:"Impulse Trail",
+  subtajuk:"Science Form 3 · Chapter 1 Stimulus & Response",
+  spi:SPI,
+  /* PBD comments by performance level. {n} is replaced with the student's first name. */
+  ulasan:{
+   1:"{n} can recall the structure of the nervous system and the human sense organs and the basic terms of this chapter. The next step is to explain how an impulse travels, not just to name its parts.",
+   2:"{n} understands the path of the impulse in voluntary and involuntary actions and the mechanisms of vision and hearing. More practice is needed in linking these concepts to everyday events before moving on to TP3.",
+   3:"{n} can apply knowledge of response to explain everyday phenomena such as reflex actions and the correction of eyesight using lenses. Encourage interpreting reaction time experiment data.",
+   4:"{n} is able to analyse reaction time data, spot odd readings and identify which part of the nervous system is affected. Next, practise weighing evidence to make decisions.",
+   5:"{n} can evaluate the validity of experiments and choose suitable actions for individuals with sensory impairments, supported by evidence from data. Ready for a creative task.",
+   6:"{n} successfully created a practical solution to help a friend with a sensory problem, complete with consideration of cost and social acceptance in the class. Excellent achievement for this chapter.",
+   tiada:"{n} has not yet shown enough evidence of mastery for the chapter Stimulus and Response. Suggestion: repeat the first stop activities with guidance from a peer."
+  },
+  lampiran:{ neuron:R_NEURON, refleks:R_REFLEKS, pembaris:T_PEMBARIS, deria:T_DERIA },
+  aras:ARAS
+};

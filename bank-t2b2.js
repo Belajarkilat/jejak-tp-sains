@@ -202,12 +202,12 @@ window.BANK["t2b2"] =
      "t": "Dalam rantai makanan padi → tikus → ular → helang, helang ialah:",
      "p": [
       "Pengguna primer",
-      "Karnivor sekunder",
+      "Pengguna tersier",
       "Pengeluar",
       "Pengurai"
      ],
      "b": 1,
-     "u": "Ular ialah karnivor primer yang memakan herbivor; helang yang memakan ular ialah karnivor sekunder."
+     "u": "Tikus ialah pengguna primer, ular pengguna sekunder, dan helang yang memakan ular ialah pengguna tersier."
     },
     {
      "j": "pilih",
@@ -348,9 +348,9 @@ window.BANK["t2b2"] =
      "j": "pilih",
      "t": "Dalam rantai padi → tikus → helang, helang ialah:",
      "p": [
-      "Karnivor sekunder",
+      "Pengguna tersier",
       "Pengguna primer",
-      "Karnivor primer",
+      "Pengguna sekunder",
       "Pengurai"
      ],
      "b": 2,
