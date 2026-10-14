@@ -1995,7 +1995,7 @@ function mulaHarian(){
 function lampiranUntuk(q,lam){
   if(!lam||lam.indexOf("<figure")<0) return lam;
   var teks=[q.t,q.arahan].concat(q.p||[]).join(" ");
-  return /\brajah\b/i.test(teks) ? lam : "";
+  return /\b(rajah|figure)\b/i.test(teks) ? lam : "";
 }
 function bilPerkataan(teks){
   return String(teks||"").replace(/<[^>]*>/g," ").replace(/&[a-z#0-9]+;/gi," ")
@@ -2006,7 +2006,7 @@ function masaBaca(q){
   var n=bilPerkataan(q.t)+bilPerkataan(q.arahan);
   (q.p||[]).forEach(function(x){ n+=bilPerkataan(x); });
   var a=ARAS[S.aras-1];
-  n+=bilPerkataan(lampiranUntuk(q, S.modHarian ? q._lam : (a&&a.lampiran)));
+  n+=bilPerkataan(lampiranUntuk(q, (S.modHarian||q._ulang) ? q._lam : (a&&a.lampiran)));
   return Math.max(6, Math.min(45, Math.round(n/2.5)));
 }
 function reset(){
@@ -2924,7 +2924,8 @@ function renderSoalan(){
     bd.appendChild(el("p","qnote","Soalan bos. "+Math.round(S.masaBosPenuh)+" saat untuk menjawab selepas masa membaca, markah tiga kali ganda."));
   }
 
-  var lam = lampiranUntuk(q, S.modHarian ? q._lam : a.lampiran);
+  /* Soalan ulangan membawa rajah hentian asalnya, bukan rajah hentian ini. */
+  var lam = lampiranUntuk(q, (S.modHarian||q._ulang) ? q._lam : a.lampiran);
   if(lam){ var lf=el("div"); lf.innerHTML=lam; bd.appendChild(lf); tandaLeret(lf); }
 
   var body=el("div"); bd.appendChild(body);

@@ -34,7 +34,7 @@ const BAHASA = [
   [/\bmengenalpasti\b/i, "ejaan 'mengenal pasti'"],
   [/\bdiantara\b/i, "ejaan 'di antara'"],
 ];
-const RUJUK = /\b(jadual(?! berkala)|rajah|graf|data di atas|berdasarkan data|lihat data)\b/i;
+const RUJUK = /\b(jadual(?! berkala)|rajah|graf|data di atas|berdasarkan data|lihat data|table|figure|graph|the data above|based on the data)\b/i;
 
 function teksSoalan(q){
   return [q.t, ...(q.p || []), q.u || "", q.arahan || ""].join(" │ ");
