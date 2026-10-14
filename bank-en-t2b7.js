@@ -540,7 +540,7 @@ window.BANK_EN["t2b7"] =
       "All the same"
      ],
      "b": 2,
-     "u": "RM15."
+     "u": "Design P costs only RM15, compared with R (RM25) and Q (RM40)."
     },
     {
      "j": "pilih",

@@ -543,7 +543,7 @@ window.BANK["t2b7"] =
       "Semua sama"
      ],
      "b": 2,
-     "u": "RM15."
+     "u": "Reka bentuk P hanya RM15, berbanding R (RM25) dan Q (RM40)."
     },
     {
      "j": "pilih",

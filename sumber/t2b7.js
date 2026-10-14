@@ -201,7 +201,7 @@ const ARAS = [
  kadNama:"Lampu LED", kadEm:"\u{1F4A1}", kadFakta:"Mentol LED menggunakan jauh lebih sedikit tenaga elektrik berbanding mentol berfilamen untuk kecerahan yang sama.",
  bosKadNama:"Fius", bosKadEm:"\u{1F9EF}", bosKadFakta:"Fius mengandungi dawai halus yang lebur apabila arus terlalu besar, lalu memutuskan litar.",
  soalan:[
- {j:"pilih",t:"Reka bentuk manakah paling murah?",p:["P","Q","R","Semua sama"],b:0,u:"RM15."},
+ {j:"pilih",t:"Reka bentuk manakah paling murah?",p:["P","Q","R","Semua sama"],b:0,u:"Reka bentuk P hanya RM15, berbanding R (RM25) dan Q (RM40)."},
  {j:"pilih",t:"Reka bentuk manakah paling mudah dibaiki jika satu mentol rosak?",p:["Q","P","R","Semua sama"],b:0,u:"Hanya mentol yang rosak padam."},
  {j:"pilih",t:"Kelemahan utama reka bentuk P ialah:",p:["Satu mentol rosak, semuanya padam","Kosnya paling tinggi","Terlalu banyak dawai digunakan","Mentol terlalu terang"],b:0,u:"Mencari satu mentol rosak antara 60 memakan masa."},
  {j:"pilih",t:"Mengapakah reka bentuk R dianggap kompromi yang baik?",p:["Murah dan hanya sebahagian padam","Paling murah antara ketiga-tiga reka bentuk","Tiada mentol akan padam langsung","Semua mentol bersiri seperti P"],b:0,u:"RM25 berbanding RM40, dan hanya 10 mentol terjejas."},

@@ -156,7 +156,7 @@ const ARAS = [
  kadNama:"LED Bulb", kadEm:"\u{1F4A1}", kadFakta:"LED bulbs use much less electrical energy than filament bulbs for the same brightness.",
  bosKadNama:"Fuse", bosKadEm:"\u{1F9EF}", bosKadFakta:"A fuse contains a thin wire that melts when the current is too large, breaking the circuit.",
  soalan:[
- {j:"pilih",t:"Which design is the cheapest?",p:["P","Q","R","All the same"],b:0,u:"RM15."},
+ {j:"pilih",t:"Which design is the cheapest?",p:["P","Q","R","All the same"],b:0,u:"Design P costs only RM15, compared with R (RM25) and Q (RM40)."},
  {j:"pilih",t:"Which design is the easiest to repair if one bulb fails?",p:["Q","P","R","All the same"],b:0,u:"Only the faulty bulb goes off."},
  {j:"pilih",t:"The main weakness of design P is that:",p:["One bulb fails, and all go off","Its cost is the highest","Too much wire is used","The bulbs are too bright"],b:0,u:"Finding one faulty bulb among 60 takes time."},
  {j:"pilih",t:"Why is design R considered a good compromise?",p:["Cheap and only partly goes off","The cheapest of the three designs","No bulbs will go off at all","All the bulbs are in series like P"],b:0,u:"RM25 compared with RM40, and only 10 bulbs are affected."},
