@@ -1,5 +1,6 @@
 /* English source (DLP) — Science KSSM Form 1, Chapter 4.0 Reproduction.
-   Translation of sumber/t1b4.js.
+   Translation of sumber/t1b4.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t1b4` to check it and generate bank-en-t1b4.js.
    Structure must match sumber/t1b4.js exactly. Correct answer at index 0.
 
@@ -8,12 +9,12 @@
    recall level. Analysis and evaluation questions focus on plant reproduction. */
 
 const SPI = [
-"Recall knowledge and skills about reproduction.",
-"Understand reproduction and be able to explain this understanding.",
-"Apply knowledge and skills about reproduction to carry out simple tasks.",
-"Analyse knowledge about reproduction in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about reproduction in the context of problem solving and decision making to carry out a task.",
-"Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about reproduction in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on reproduction.",
+"Understand reproduction and able to explain their understanding.",
+"Apply knowledge of reproduction to accomplish simple task.",
+"Analyse knowledge of reproduction in context of problem solving about events or natural phenomena.",
+"Evaluate knowledge of reproduction in the context of problem solving and decision making to carry out a task.",
+"Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of reproduction; in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."];
 
 /* ---------- attachments ---------- */
 

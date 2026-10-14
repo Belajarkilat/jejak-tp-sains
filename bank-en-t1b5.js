@@ -11,12 +11,12 @@ window.BANK_EN["t1b5"] =
  "tajuk": "Particle Trail",
  "subtajuk": "Science Form 1 · Chapter 5 Matter",
  "spi": [
-  "Recall knowledge and skills about matter.",
-  "Understand matter and be able to explain this understanding.",
-  "Apply knowledge of matter to explain natural events or phenomena and carry out simple tasks.",
-  "Analyse knowledge about the structure of matter in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about matter in the context of problem solving and decision making to carry out a task.",
-  "Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about matter in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on matter.",
+  "Understand matter and able to explain their understanding.",
+  "Apply knowledge of matter to explain natural phenomena to accomplish simple task.",
+  "Analyse knowledge of matter in context of problem solving about events or natural phenomena.",
+  "Evaluate matter in the context of problem solving and decision making to carry out a task.",
+  "Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of matter in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."
  ],
  "kko": [
   "Recall",

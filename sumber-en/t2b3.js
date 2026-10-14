@@ -1,5 +1,6 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 3.0 Nutrition.
-   Translation of sumber/t2b3.js.
+   Translation of sumber/t2b3.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b3` to check it and generate bank-en-t2b3.js.
    Structure must match sumber/t2b3.js exactly. Correct answer at index 0.
 
@@ -7,12 +8,12 @@
    the colour of the Millon's test precipitate is not asked because textbooks differ. */
 
 const SPI = [
-"Recall knowledge and skills about nutrition.",
-"Understand nutrition and be able to explain this understanding.",
-"Apply knowledge of nutrition to explain natural events or phenomena and carry out simple tasks.",
-"Analyse knowledge about nutrition in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about nutrition in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about nutrition in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on nutrition.",
+"Understand and explain nutrition.",
+"Apply knowledge on nutrition and able to carry out simple tasks.",
+"Analyse knowledge on nutrition in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of nutrition in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on nutrition in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

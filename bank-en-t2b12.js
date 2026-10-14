@@ -11,12 +11,12 @@ window.BANK_EN["t2b12"] =
  "tajuk": "Planet Trail",
  "subtajuk": "Science Form 2 · Chapter 12 The Solar System",
  "spi": [
-  "Recall knowledge and skills about the Solar System.",
-  "Understand the Solar System and be able to explain this understanding.",
-  "Apply knowledge of the Solar System and be able to carry out simple tasks.",
-  "Analyse knowledge about the Solar System in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about the Solar System in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about the Solar System in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on the solar system.",
+  "Understand and explain the solar system.",
+  "Apply knowledge on the solar system and able to carry out simple tasks.",
+  "Analyse knowledge on the solar system in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge of the solar system in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills on the solar system in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

@@ -11,12 +11,12 @@ window.BANK_EN["t3b10"] =
  "tajuk": "Space Trail",
  "subtajuk": "Science Form 3 · Chapter 10 Space Exploration",
  "spi": [
-  "Recall knowledge and skills about space exploration.",
-  "Understand space exploration and be able to explain this understanding.",
-  "Apply knowledge of space exploration and be able to carry out simple tasks.",
-  "Analyse knowledge about space exploration in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about space exploration in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about space exploration in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills about space exploration.",
+  "Understand and explain about space exploration.",
+  "Apply knowledge about space exploration and able to carry out simple tasks.",
+  "Analyse knowledge about space exploration in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge about space exploration in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills about space exploration in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

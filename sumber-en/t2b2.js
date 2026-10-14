@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 2.0 Ecosystem.
-   Translation of sumber/t2b2.js.
+   Translation of sumber/t2b2.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b2` to check it and generate bank-en-t2b2.js.
    Structure must match sumber/t2b2.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about ecosystems.",
-"Understand ecosystems and be able to explain this understanding.",
-"Apply knowledge of ecosystems to explain natural events or phenomena and carry out simple tasks.",
-"Analyse knowledge about ecosystems in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about ecosystems in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about ecosystems in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on ecosystem.",
+"Understand and explain ecosystem.",
+"Apply knowledge on ecosystem and able to carry out simple tasks.",
+"Analyse knowledge on ecosystem in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of ecosystem in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on ecosystem in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

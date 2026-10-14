@@ -1,16 +1,17 @@
 /* English source (DLP) — Science KSSM Form 3, Chapter 6.0 Electricity and
-   Magnetism. Translation of sumber/t3b6.js.
+   Magnetism. Translation of sumber/t3b6.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t3b6` to check it and generate bank-en-t3b6.js.
    Structure must match sumber/t3b6.js exactly. Correct answer at index 0.
    The household supply voltage is taken as 240 V as in the textbook. */
 
 const SPI = [
-"Recall knowledge and skills about electricity and magnetism.",
-"Understand electricity and magnetism and be able to explain this understanding.",
-"Apply knowledge of electricity and magnetism and be able to carry out simple tasks.",
-"Analyse knowledge about electricity and magnetism in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about electricity and magnetism in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about electricity and magnetism in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills about electricity and magnetism.",
+"Understand and explain about electricity and magnetism.",
+"Apply knowledge about electricity and magnetism and able to carry out simple tasks.",
+"Analyse knowledge about electricity and magnetism in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge about electricity and magnetism in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills about electricity and magnetism in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

@@ -11,12 +11,12 @@ window.BANK_EN["t3b1"] =
  "tajuk": "Impulse Trail",
  "subtajuk": "Science Form 3 · Chapter 1 Stimulus & Response",
  "spi": [
-  "Recall knowledge and skills about stimulus and response.",
-  "Understand stimulus and response and be able to explain this understanding.",
-  "Apply knowledge of stimulus and response to explain natural events or phenomena and carry out simple tasks.",
-  "Analyse knowledge about stimulus and response in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about stimulus and response in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about stimulus and response in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills about stimuli and responses.",
+  "Understand and explain about stimuli and responses.",
+  "Apply knowledge about stimuli and responses and able to carry out simple tasks.",
+  "Analyse knowledge about stimuli and responses in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge about stimuli and responses in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills about stimuli and responses in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

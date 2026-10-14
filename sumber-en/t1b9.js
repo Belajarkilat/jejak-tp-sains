@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 1, Chapter 9.0 The Earth.
-   Translation of sumber/t1b9.js.
+   Translation of sumber/t1b9.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t1b9` to check it and generate bank-en-t1b9.js.
    Structure must match sumber/t1b9.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about the structure of the Earth / geohazards / Earth's resources.",
-"Understand the structure of the Earth / geohazards / Earth's resources and be able to explain this understanding.",
-"Apply knowledge and skills about the structure of the Earth / geohazards / Earth's resources to carry out simple tasks.",
-"Analyse knowledge about the structure of the Earth / geohazards / Earth's resources in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about the structure of the Earth / geohazards / Earth's resources in the context of problem solving and decision making to carry out a task.",
-"Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about the structure of the Earth / geohazards / Earth's resources in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on the Earth's structure/geo-disasters/Earth's resources.",
+"Understand the Earth's structure/geo-disasters/Earth's resources and able to explain their understanding.",
+"Apply knowledge on the Earth's structure/geo-disasters/Earth's resources to accomplish simple task.",
+"Analyse knowledge on the Earth's structure/geo-disasters/Earth's resources in context of problem solving about events or natural phenomena.",
+"Evaluate the Earth's structure/geo-disasters/Earth's resources in the context of problem solving and decision making to carry out a task.",
+"Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of the Earth's structure/geo-disasters/Earth's resources in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."];
 
 /* ---------- attachments ---------- */
 

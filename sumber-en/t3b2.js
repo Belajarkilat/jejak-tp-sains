@@ -1,17 +1,17 @@
 /* English source (DLP) — Science KSSM Form 3, Chapter 2.0 Respiration.
-   Translation of sumber/t3b2.js.
+   Translation of sumber/t3b2.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t3b2` to check it and generate bank-en-t3b2.js.
    Structure must match sumber/t3b2.js exactly, including the answer indices,
    which are already distributed in this chapter. */
 
 const SPI = [
- "Recall knowledge and skills about respiration.",
- "Understand respiration and be able to explain this understanding.",
- "Apply knowledge of respiration to explain natural events or phenomena and carry out simple tasks.",
- "Analyse knowledge about respiration in the context of solving problems about natural events or phenomena.",
- "Evaluate knowledge about respiration in the context of problem solving and decision making to carry out a task.",
- "Create using scientific knowledge and skills about respiration in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."
-];
+"Recall the knowledge and science skills about respiration.",
+"Understand and explain about respiration.",
+"Apply knowledge about respiration and able to carry out simple tasks.",
+"Analyse knowledge about respiration in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge about respiration in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills about respiration in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

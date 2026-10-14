@@ -11,12 +11,12 @@ window.BANK_EN["t2b1"] =
  "tajuk": "Rainforest Trail",
  "subtajuk": "Science Form 2 · Chapter 1 Biodiversity",
  "spi": [
-  "Recall knowledge and skills about biodiversity.",
-  "Understand biodiversity and be able to explain this understanding.",
-  "Apply knowledge of biodiversity to explain natural events or phenomena and carry out simple tasks.",
-  "Analyse knowledge about biodiversity in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about biodiversity in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about biodiversity in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on biodiversity.",
+  "Understand and explain biodiversity.",
+  "Apply knowledge on biodiversity and able to carry out simple tasks.",
+  "Analyse knowledge on biodiversity in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge of biodiversity in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills on biodiversity in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

@@ -11,12 +11,12 @@ window.BANK_EN["t1b2"] =
  "tajuk": "Cell Trail",
  "subtajuk": "Science Form 1 · Chapter 2 The Cell as the Basic Unit of Life",
  "spi": [
-  "Recall knowledge and skills about the cell as the basic unit of life.",
-  "Understand the cell as the basic unit of life and be able to explain this understanding.",
-  "Apply knowledge and skills about the cell as the basic unit of life to carry out simple tasks.",
-  "Analyse knowledge about the cell as the basic unit of life in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about the cell as the basic unit of life in the context of problem solving and decision making to carry out a task.",
-  "Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about the cell as the basic unit of life in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on cell as the basic unit of life.",
+  "Understand cell as the basic unit of life and able to explain their understanding.",
+  "Apply knowledge of cell as the basic unit of life to accomplish simple task.",
+  "Analyse knowledge of cell as the basic unit of life in context of problem solving about events or natural phenomena.",
+  "Evaluate knowledge of cell as the basic unit of life in the context of problem solving and decision making to carry out a task.",
+  "Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of cell as the basic unit of life; in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."
  ],
  "kko": [
   "Recall",

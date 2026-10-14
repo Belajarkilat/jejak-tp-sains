@@ -1,17 +1,18 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 12.0 The Solar System.
-   Translation of sumber/t2b12.js.
+   Translation of sumber/t2b12.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b12` to check it and generate bank-en-t2b12.js.
    Structure must match sumber/t2b12.js exactly. Correct answer at index 0.
    1 a.u. is taken as 150 million km. Planet values are rounded estimates. The
    number of moons of Jupiter and Saturn is not asked because it is often updated. */
 
 const SPI = [
-"Recall knowledge and skills about the Solar System.",
-"Understand the Solar System and be able to explain this understanding.",
-"Apply knowledge of the Solar System and be able to carry out simple tasks.",
-"Analyse knowledge about the Solar System in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about the Solar System in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about the Solar System in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on the solar system.",
+"Understand and explain the solar system.",
+"Apply knowledge on the solar system and able to carry out simple tasks.",
+"Analyse knowledge on the solar system in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of the solar system in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on the solar system in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

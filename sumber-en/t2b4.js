@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 4.0 Human Health.
-   Translation of sumber/t2b4.js.
+   Translation of sumber/t2b4.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b4` to check it and generate bank-en-t2b4.js.
    Structure must match sumber/t2b4.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about human health.",
-"Understand human health and be able to explain this understanding.",
-"Apply knowledge of human health to explain natural events or phenomena and carry out simple tasks.",
-"Analyse knowledge about human health in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about human health in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about human health in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on human health.",
+"Understand and explain human health.",
+"Apply knowledge on human health and able to carry out simple tasks.",
+"Analyse knowledge on human health in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of human health in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on human health in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

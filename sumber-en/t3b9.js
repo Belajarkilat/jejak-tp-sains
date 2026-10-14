@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 3, Chapter 9.0 Space Weather.
-   Translation of sumber/t3b9.js.
+   Translation of sumber/t3b9.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t3b9` to check it and generate bank-en-t3b9.js.
    Structure must match sumber/t3b9.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about space weather.",
-"Understand space weather and be able to explain this understanding.",
-"Apply knowledge of space weather and be able to carry out simple tasks.",
-"Analyse knowledge about space weather in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about space weather in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about space weather in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills about space weather.",
+"Understand and explain about space weather.",
+"Apply knowledge about space weather and able to carry out simple tasks.",
+"Analyse knowledge about space weather in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge about space weather in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills about space weather in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

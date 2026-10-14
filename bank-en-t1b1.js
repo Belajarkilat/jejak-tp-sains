@@ -11,12 +11,12 @@ window.BANK_EN["t1b1"] =
  "tajuk": "Laboratory Trail",
  "subtajuk": "Science Form 1 · Chapter 1 Introduction to Scientific Investigation",
  "spi": [
-  "Recall knowledge and skills about the definition of Science, the science laboratory, physical quantities and their units, the use of measuring instruments, density and the steps in a scientific investigation.",
-  "Understand the definition of Science, the science laboratory, physical quantities and their units, the use of measuring instruments, density and the steps in a scientific investigation, and be able to explain this understanding.",
-  "Apply the definition of Science, the science laboratory, physical quantities and their units, the use of measuring instruments, density and the steps in a scientific investigation to carry out simple tasks.",
-  "Analyse knowledge about the definition of Science, the science laboratory, physical quantities and their units, the use of measuring instruments, density and the steps in a scientific investigation in the context of solving problems about natural events or phenomena.",
-  "Evaluate the whole scientific investigation process that has been carried out to determine the steps that can be improved on the definition of Science, the science laboratory, physical quantities and their units, the use of measuring instruments, density and the steps in the context of problem solving and decision making to carry out a task.",
-  "Create a presentation using multimedia / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills on the definition of Science, the science laboratory, physical quantities and their units, the use of measuring instruments, density and the steps in a scientific investigation in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on the definition of science, science laboratory, physical quantities and units, the use of measuring instruments, density and steps in scientific investigation.",
+  "Understand the definition of science, science laboratory, physical quantities and units, the use of measuring instruments, density and steps in scientific investigation and able to explain their understanding.",
+  "Apply the definition of science, science laboratory, physical quantities and units, the use of measuring instruments, density and steps in scientific investigation to accomplish simple task.",
+  "Analyse the entire scientific investigation process conducted to determine the steps that can be improved, on the definition of science, science laboratory, physical quantities and units, the use of measuring instruments, density and steps in scientific investigation in context of problem solving about events or natural phenomena.",
+  "Evaluate the entire scientific investigation process conducted to determine the steps that can be improved, on the definition of science, science laboratory, physical quantities and units, the use of measuring instruments, density and steps in scientific investigation in the context of problem solving and decision making to carry out a task.",
+  "Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of the definition of science, science laboratory, physical quantities and units, the use of measuring instruments, density and steps in scientific investigation in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."
  ],
  "kko": [
   "Recall",

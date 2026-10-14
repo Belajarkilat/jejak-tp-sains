@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 7.0 Electricity and
-   Magnetism. Translation of sumber/t2b7.js.
+   Magnetism. Translation of sumber/t2b7.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b7` to check it and generate bank-en-t2b7.js.
    Structure must match sumber/t2b7.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about electricity and magnetism.",
-"Understand electricity and magnetism and be able to explain this understanding.",
-"Apply knowledge of electricity and magnetism and be able to carry out simple tasks.",
-"Analyse knowledge about electricity and magnetism in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about electricity and magnetism in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about electricity and magnetism in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on electricity and magnetism.",
+"Understand and explain magnetism.",
+"Apply knowledge on electricity and magnetism and able to carry out simple tasks.",
+"Analyse knowledge on electricity and magnetism in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of electricity and magnetism in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on electricity and magnetism in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

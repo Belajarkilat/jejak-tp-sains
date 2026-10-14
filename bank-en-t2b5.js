@@ -11,12 +11,12 @@ window.BANK_EN["t2b5"] =
  "tajuk": "Water Trail",
  "subtajuk": "Science Form 2 · Chapter 5 Water and Solutions",
  "spi": [
-  "Recall knowledge and skills about water and solutions.",
-  "Understand water and solutions and be able to explain this understanding.",
-  "Apply knowledge of water and solutions and be able to carry out simple tasks.",
-  "Analyse knowledge about water and solutions in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about water and solutions in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about water and solutions in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on water and solution.",
+  "Understand and explain water and solution.",
+  "Apply knowledge on water and solution and able to carry out simple tasks.",
+  "Analyse knowledge on water and solution in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge of water and solution in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills on water and solution in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

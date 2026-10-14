@@ -1,16 +1,17 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 11.0 Stars and Galaxies
-   in the Universe. Translation of sumber/t2b11.js.
+   in the Universe. Translation of sumber/t2b11.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b11` to check it and generate bank-en-t2b11.js.
    Structure must match sumber/t2b11.js exactly. Correct answer at index 0.
    Temperatures and distances of stars in the attachments are rounded estimates. */
 
 const SPI = [
-"Recall knowledge and skills about stars and galaxies in the universe.",
-"Understand stars and galaxies in the universe and be able to explain this understanding.",
-"Apply knowledge of stars and galaxies in the universe and be able to carry out simple tasks.",
-"Analyse knowledge about stars and galaxies in the universe in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about stars and galaxies in the universe in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about stars and galaxies in the universe in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on stars and galaxies in the universe.",
+"Understand and explain stars and galaxies in the universe.",
+"Apply knowledge on stars and galaxies in the universe and carry out simple tasks.",
+"Analyse knowledge on stars and galaxies in the universe in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of stars and galaxies in the universe in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on stars and galaxies in the universe in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

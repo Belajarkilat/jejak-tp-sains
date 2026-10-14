@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 6.0 Acids and Alkalis.
-   Translation of sumber/t2b6.js.
+   Translation of sumber/t2b6.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b6` to check it and generate bank-en-t2b6.js.
    Structure must match sumber/t2b6.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about acids and alkalis.",
-"Understand acids and alkalis and be able to explain this understanding.",
-"Apply knowledge of acids and alkalis and be able to carry out simple tasks.",
-"Analyse knowledge about acids and alkalis in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about acids and alkalis in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about acids and alkalis in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on acid and alkali.",
+"Understand and explain acid and alkali.",
+"Apply knowledge on acid and alkali and able to carry out simple tasks.",
+"Analyse knowledge on acid and alkali in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of acid and alkali in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on acid and alkali in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

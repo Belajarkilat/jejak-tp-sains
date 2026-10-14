@@ -11,12 +11,12 @@ window.BANK_EN["t2b8"] =
  "tajuk": "Force Trail",
  "subtajuk": "Science Form 2 · Chapter 8 Force and Motion",
  "spi": [
-  "Recall knowledge and skills about force and motion.",
-  "Understand force and motion and be able to explain this understanding.",
-  "Apply knowledge of force and motion and be able to carry out simple tasks.",
-  "Analyse knowledge about force and motion in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about force and motion in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about force and motion in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on force and motion.",
+  "Understand and explain force and motion.",
+  "Apply knowledge on force and motion and able to carry out simple tasks.",
+  "Analyse knowledge on force and motion in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge of force and motion in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills on force and motion in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

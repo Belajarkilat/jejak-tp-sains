@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 13.0 Meteoroids,
-   Asteroids, Comets. Translation of sumber/t2b13.js.
+   Asteroids, Comets. Translation of sumber/t2b13.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b13` to check it and generate bank-en-t2b13.js.
    Structure must match sumber/t2b13.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about meteoroids, asteroids and comets.",
-"Understand meteoroids, asteroids and comets and be able to explain this understanding.",
-"Apply knowledge of meteoroids, asteroids and comets and be able to carry out simple tasks.",
-"Analyse knowledge about meteoroids, asteroids and comets in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about meteoroids, asteroids and comets in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about meteoroids, asteroids and comets in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on meteoroid, asteroid and comet.",
+"Understand and explain meteoroid, asteroid and comet.",
+"Apply knowledge on meteoroid, asteroid and comet and able to carry out simple tasks.",
+"Analyse knowledge on meteoroid, asteroid and comet in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of meteoroid, asteroid and comet in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on meteoroid, asteroid and comet in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

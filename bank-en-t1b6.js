@@ -11,12 +11,12 @@ window.BANK_EN["t1b6"] =
  "tajuk": "Element Trail",
  "subtajuk": "Science Form 1 · Chapter 6 The Periodic Table",
  "spi": [
-  "Recall knowledge and skills about the periodic table.",
-  "Understand the periodic table and be able to explain this understanding.",
-  "Apply knowledge of the periodic table to explain natural events or phenomena and carry out simple tasks.",
-  "Analyse knowledge about the periodic table in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about the periodic table in the context of problem solving and decision making to carry out a task.",
-  "Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about the periodic table in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on the periodic table.",
+  "Understand the periodic table and able to explain their understanding.",
+  "Apply knowledge of the periodic table to explain natural phenomena to accomplish simple task.",
+  "Analyse knowledge of the periodic table in context of problem solving about events or natural phenomena.",
+  "Evaluate the periodic table in the context of problem solving and decision making to carry out a task.",
+  "Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of the periodic table in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."
  ],
  "kko": [
   "Recall",

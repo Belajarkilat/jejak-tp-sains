@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 3, Chapter 3.0 Transportation.
-   Translation of sumber/t3b3.js.
+   Translation of sumber/t3b3.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t3b3` to check it and generate bank-en-t3b3.js.
    Structure must match sumber/t3b3.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about the transport system.",
-"Understand the transport system and be able to explain this understanding.",
-"Apply knowledge of the transport system to explain natural events or phenomena and carry out simple tasks.",
-"Analyse knowledge about the transport system in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about the transport system in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about the transport system in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills about transportation.",
+"Understand and explain about transportation.",
+"Apply knowledge about transportation and able to carry out simple tasks.",
+"Analyse knowledge about transportation in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge about transportation in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills about transportation in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

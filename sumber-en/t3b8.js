@@ -1,17 +1,18 @@
 /* English source (DLP) — Science KSSM Form 3, Chapter 8.0 Radioactivity.
-   Translation of sumber/t3b8.js.
+   Translation of sumber/t3b8.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t3b8` to check it and generate bank-en-t3b8.js.
    Structure must match sumber/t3b8.js exactly. Correct answer at index 0.
    The safe background radiation level (less than 0.2 µSv/h) is taken from
    DSKP note 8.3.4. */
 
 const SPI = [
-"Recall knowledge and skills about radioactivity.",
-"Understand radioactivity and be able to explain this understanding.",
-"Apply knowledge of radioactivity and be able to carry out simple tasks.",
-"Analyse knowledge about radioactivity in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about radioactivity in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about radioactivity in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills about radioactivity.",
+"Understand and explain about radioactivity.",
+"Apply knowledge about radioactivity and able to carry out simple tasks.",
+"Analyse knowledge about radioactivity in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge about radioactivity in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills about radioactivity in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

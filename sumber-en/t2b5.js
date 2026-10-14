@@ -1,15 +1,16 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 5.0 Water and Solutions.
-   Translation of sumber/t2b5.js.
+   Translation of sumber/t2b5.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b5` to check it and generate bank-en-t2b5.js.
    Structure must match sumber/t2b5.js exactly. Correct answer at index 0. */
 
 const SPI = [
-"Recall knowledge and skills about water and solutions.",
-"Understand water and solutions and be able to explain this understanding.",
-"Apply knowledge of water and solutions and be able to carry out simple tasks.",
-"Analyse knowledge about water and solutions in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about water and solutions in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about water and solutions in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on water and solution.",
+"Understand and explain water and solution.",
+"Apply knowledge on water and solution and able to carry out simple tasks.",
+"Analyse knowledge on water and solution in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of water and solution in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on water and solution in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 

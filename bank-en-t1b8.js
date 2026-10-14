@@ -11,12 +11,12 @@ window.BANK_EN["t1b8"] =
  "tajuk": "Light Trail",
  "subtajuk": "Science Form 1 · Chapter 8 Light and Optics",
  "spi": [
-  "Recall knowledge and skills about the use of mirrors / characteristics of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light.",
-  "Understand the use of mirrors / characteristics of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light and be able to explain this understanding.",
-  "Apply the use of mirrors / characteristics of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light to carry out simple tasks.",
-  "Analyse knowledge about the use of mirrors / characteristics of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light in the context of solving problems about natural events or phenomena.",
-  "Evaluate the suitability of the use of mirrors / characteristics of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light in the context of problem solving and decision making to carry out a task.",
-  "Design a presentation using various media / visuals / a folio / a poster / role play / drama in a creative and innovative way, using scientific knowledge and skills about the use of mirrors / characteristics of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light in the context of problem solving and decision making, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills on mirrors / characteristic of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light.",
+  "Understand mirrors / characteristic of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light and able to explain their understanding.",
+  "Apply mirrors / characteristic of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light through a simple task.",
+  "Analyse knowledge of mirrors / characteristic of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light in context of problem solving about events or natural phenomena.",
+  "Evaluate mirrors / characteristic of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light in the context of problem solving and decision making to carry out a task.",
+  "Design a presentation using multi media / visual / folio / poster / role play / drama; with creative and innovative use of science knowledge and skills of mirrors / characteristic of light / reflection of light / refraction of light / dispersion of light / scattering of light / addition and subtraction of light in the context of problem solving and decision making; with regards to the social values/ economy / culture of the community."
  ],
  "kko": [
   "Recall",

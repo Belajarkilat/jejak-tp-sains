@@ -11,12 +11,12 @@ window.BANK_EN["t3b8"] =
  "tajuk": "Radiation Trail",
  "subtajuk": "Science Form 3 · Chapter 8 Radioactivity",
  "spi": [
-  "Recall knowledge and skills about radioactivity.",
-  "Understand radioactivity and be able to explain this understanding.",
-  "Apply knowledge of radioactivity and be able to carry out simple tasks.",
-  "Analyse knowledge about radioactivity in the context of solving problems about natural events or phenomena.",
-  "Evaluate knowledge about radioactivity in the context of problem solving and decision making to carry out a task.",
-  "Create using scientific knowledge and skills about radioactivity in the context of problem solving and decision making, or in carrying out a task in a new situation in a creative and innovative way, taking into account the social / economic / cultural values of society."
+  "Recall the knowledge and science skills about radioactivity.",
+  "Understand and explain about radioactivity.",
+  "Apply knowledge about radioactivity and able to carry out simple tasks.",
+  "Analyse knowledge about radioactivity in context of problem solving on events or natural phenomena.",
+  "Evaluate knowledge about radioactivity in context of problem solving and decision making to carry out a task.",
+  "Design a task using knowledge and science skills about radioactivity in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."
  ],
  "kko": [
   "Recall",

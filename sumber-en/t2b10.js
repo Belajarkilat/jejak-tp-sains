@@ -1,16 +1,17 @@
 /* English source (DLP) — Science KSSM Form 2, Chapter 10.0 Sound Waves.
-   Translation of sumber/t2b10.js.
+   Translation of sumber/t2b10.js. SPI copied from the official English DSKP
+   (Bahagian Pembangunan Kurikulum); only obvious typos corrected.
    Run `node bina.js --en t2b10` to check it and generate bank-en-t2b10.js.
    Structure must match sumber/t2b10.js exactly. Correct answer at index 0.
    The speed of sound in seawater is taken as 1500 m/s in the attachments. */
 
 const SPI = [
-"Recall knowledge and skills about sound waves.",
-"Understand sound waves and be able to explain this understanding.",
-"Apply knowledge of sound waves to explain natural events or phenomena and carry out simple tasks.",
-"Analyse knowledge about sound waves in the context of solving problems about natural events or phenomena.",
-"Evaluate knowledge about sound waves in the context of problem solving and decision making to carry out a task.",
-"Create using scientific knowledge and skills about sound waves in the context of problem solving or decision making, or in carrying out activities / tasks in new situations in a creative and innovative way, taking into account the social / economic / cultural values of society."];
+"Recall the knowledge and science skills on sound waves.",
+"Understand and explain sound waves.",
+"Apply knowledge on sound waves and able to carry out simple tasks.",
+"Analyse knowledge on sound waves in context of problem solving on events or natural phenomena.",
+"Evaluate knowledge of sound waves in context of problem solving and decision making to carry out a task.",
+"Design a task using knowledge and science skills on sound waves in a creative and innovative way in the context of problem solving and decision making or carry out a task in a new situation with regards to the social values/economy/culture of the community."];
 
 /* ---------- attachments ---------- */
 
