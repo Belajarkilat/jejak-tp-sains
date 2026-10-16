@@ -8,8 +8,11 @@
    membuka pautan kelas tidak dikira sebagai lawatan).
 
    Pendaftaran guru merekod kod ini melalui lo_guru_tanda_sumber (index.html). */
+/* Perayap (pratonton pautan Meta dsb.), pelayar automatik dan localhost tidak dikira sebagai lawatan (17 Okt 2026). */
+var NG_ROBOT=(function(){try{return !!navigator.webdriver||/bot|crawl|spider|slurp|facebookexternalhit|meta-externalagent|facebookcatalog|headlesschrome|lighthouse/i.test(navigator.userAgent||"")||/^(localhost|127.0.0.1)$/.test(location.hostname);}catch(e){return true;}})();
 (function(){
   try{
+    if(NG_ROBOT) return;
     var m=/[?&]dari=([^&#]*)/.exec(location.search), kod="";
     if(m) kod=decodeURIComponent(m[1]).toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,30);
     if(kod&&!localStorage.getItem("cn-dari")) localStorage.setItem("cn-dari",kod);
@@ -36,6 +39,7 @@
    nota = daftar | contoh | murid | video. Hanya di landing; sekali bagi setiap jenis setiap sesi. */
 (function(){
   try{
+    if(NG_ROBOT) return;
     if(!/landing(\.html)?$/.test(location.pathname)) return;
     var awan=window.CN_AWAN; if(!awan) return;
     document.addEventListener("click",function(e){
