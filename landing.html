@@ -254,10 +254,17 @@ footer .ng-logo.gelap{display:none}
 @media (max-width:700px){.bar-lekat.nampak{display:flex}body{padding-bottom:72px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar-lekat .kedua{color:var(--teal)}}
 :root[data-theme="dark"] .bar-lekat .kedua{color:var(--teal)}
+/* Jalur tarikh akhir PBD (sepadan dengan iklan Meta 19-21 Okt). Disembunyikan sendiri selepas 20 Nov 2026. */
+.jalur-pbd{background:var(--teal-deep);color:#fff;font-size:14px;line-height:1.45}
+.jalur-pbd .wrap{display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;padding-block:10px;text-align:center}
+.jalur-pbd b{color:#FFD9E6}
+.jalur-pbd a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
 </style>
 <script src="https://naikgred.com/aset/piksel.js" defer></script>
 </head>
 <body>
+<div class="jalur-pbd" id="jalurPbd"><div class="wrap"><span><b>PBD 20 November:</b> murid bermain, TP terjana, terus eksport ke SPPB. Masih sempat jika mula dengan satu kelas minggu ini.</span><a href="index.html?daftar">Daftar percuma →</a></div></div>
+<script>try{if(Date.now()>new Date("2026-11-21T00:00:00+08:00").getTime())document.getElementById("jalurPbd").remove();}catch(e){}</script>
 
 <div class="wrap">
   <div class="topbar">
