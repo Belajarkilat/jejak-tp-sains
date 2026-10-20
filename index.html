@@ -916,6 +916,16 @@ body.zon-murid{color:var(--tinta)}
 .mb-ting .setuju input{width:20px;height:20px;min-height:0;padding:0;margin-top:0}
 .mb-ting .setuju{align-items:center;font-size:15px;font-weight:600}
 .maklumbalas textarea.free{min-height:96px;margin-top:0}
+/* Planner Guru 2027 (20 Okt 2026): hadiah daftar dari post Telegram ?planner */
+.kadplanner{border:2px solid var(--teal);background:linear-gradient(135deg,var(--teal-soft),var(--surface) 70%)}
+.kadplanner .panel-bd{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.kadplanner .ikon{font-size:38px;line-height:1}
+.kadplanner .grow{flex:1 1 240px;min-width:0}
+.kadplanner h3{margin:0}
+.kadplanner a.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.kadplanner.kecil{border-width:1px;background:var(--surface)}
+.kadplanner.kecil .ikon{font-size:28px}
+.janji-planner{border:1.5px solid var(--teal);background:var(--teal-soft);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:14.5px;line-height:1.5}
 .mb-ok{color:var(--teal);font-weight:650}
 .babpilih button{
   flex:none;display:flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;
@@ -3934,6 +3944,9 @@ function paneLogMasuk(ak){
   function papar(t,baik){ msg.hidden=!t; msg.className=baik?"berjaya":"ralat"; msg.textContent=t||""; }
   if(RALAT_AUTH){ papar("Log masuk tidak berjaya: "+RALAT_AUTH); RALAT_AUTH=""; }
 
+  if(!kel&&mod!=="lupa"&&niatPlanner()) bd.appendChild(el("div","janji-planner",
+    "\u{1F381} <b>Planner Guru 2027 percuma</b> menanti cikgu. "+(mod==="daftar"?"Daftar dalam 1 minit":"Log masuk")+
+    " dan butang muat turun terus muncul di halaman pertama."));
   if(mod!=="lupa"&&GOOGLE_ADA){
     var bg=el("button","btn google"); bg.type="button"; bg.style.marginTop="16px";
     bg.innerHTML=SVG_G+'<span>Teruskan dengan Google</span>';
@@ -4245,6 +4258,31 @@ function semakBayaranKembali(cubaan){
     if(SEMAK_SENYAP){ BAYAR_MESEJ=null; return; }
     BAYAR_MESEJ={jenis:"gagal",teks:"Tak dapat semak status bayaran sekarang. Muat semula halaman sebentar lagi."};
   });
+}
+/* Planner Guru 2027 (20 Okt 2026). Post Telegram membawa ?planner&dari=tg: skrin
+   daftar memaparkan janji planner, dan selepas daftar/log masuk kad planner muncul
+   di atas papan guru. Niat disimpan dalam localStorage (14 hari) supaya bertahan
+   melalui log masuk Google. Guru lain melihat kad yang sama, lebih kecil, di bawah. */
+var PLANNER_URL="https://naikgred.com/planner/";
+function niatPlanner(){
+  try{ var t=+localStorage.getItem("cn-planner"); return !!t&&Date.now()-t<14*864e5; }catch(e){ return false; }
+}
+function plannerMasihSah(){ return Date.now()<Date.UTC(2027,11,31,16); }
+function kadPlanner(utama){
+  var p=el("div","panel kadplanner"+(utama?"":" kecil")), bd=el("div","panel-bd"); p.appendChild(bd);
+  bd.appendChild(el("div","ikon","\u{1F381}"));
+  bd.appendChild(el("div","grow",
+    '<h3>'+(utama?"Planner Guru 2027 cikgu sudah sedia":"Planner Guru 2027 percuma")+'</h3>'+
+    '<p class="note">16 halaman ikut Kalendar Akademik KPM 2027. Nama dan sekolah cikgu sudah diisi pada kulit. Pilih gaya, kemudian muat turun PDF.</p>'));
+  var a=el("a","btn teal"+(utama?"":" sm")); a.textContent="Muat turun planner";
+  var dari=null; try{ dari=localStorage.getItem("cn-dari"); }catch(e){}
+  /* nama/sekolah dihantar dalam # (tidak sampai ke pelayan); ?dari=jejaktp[-kod] untuk kiraan */
+  a.href=PLANNER_URL+"?dari=jejaktp"+(dari?"-"+dari:"")+
+    "#nama="+encodeURIComponent(sapaan(PROFIL.nama))+"&sekolah="+encodeURIComponent(PROFIL.sekolah||"")+"&subjek=Sains";
+  a.target="_blank"; a.rel="noopener";
+  a.onclick=function(){ try{ localStorage.removeItem("cn-planner"); }catch(e){} setTimeout(renderCikgu,300); };
+  bd.appendChild(a);
+  return p;
 }
 /* Butang "Langgan" di landing.html membuka ?cikgu&naik=rendah|atas. Niat itu
    disimpan dalam localStorage (bertahan melalui daftar dan log masuk Google)
@@ -4619,6 +4657,8 @@ function paneRumah(ak){
   hd.appendChild(bb);
   ak.appendChild(hd);
 
+  var plannerAtas=niatPlanner()&&plannerMasihSah();
+  if(plannerAtas) ak.appendChild(kadPlanner(true));
   ak.appendChild(kadPremium());
   teruskanNiatNaik();
   var pb=el("div"); pilihBabGuru(pb); ak.appendChild(pb);
@@ -4653,6 +4693,7 @@ function paneRumah(ak){
       '</ol><p class="note">Tiada fail Excel? Tekan <b>Tambah kelas</b> dan tampal nama murid. Buka <b>kelas contoh</b> untuk melihat rupa keputusan murid dahulu.</p></div>';
     ak.appendChild(p);
   }
+  if(!plannerAtas&&plannerMasihSah()) ak.appendChild(kadPlanner(false));
   ak.appendChild(panelMaklumBalas());
 }
 
@@ -5906,7 +5947,7 @@ function mula(){
   }catch(e){}
   simpanNiatNaik(); pasangNama();
   var qdaftar=false;
-  try{ var up=new URL(location.href); var qkel=up.searchParams.has("keluarga"); if(qkel){ try{ localStorage.setItem("cn-keluarga","1"); }catch(e){} } modLama=(up.searchParams.has("cikgu")||up.searchParams.has("daftar")||qkel)?"cikgu":null; qdaftar=up.searchParams.has("daftar")||qkel; }catch(e){ modLama=null; }
+  try{ var up=new URL(location.href); var qkel=up.searchParams.has("keluarga"); if(qkel){ try{ localStorage.setItem("cn-keluarga","1"); }catch(e){} } var qpl=up.searchParams.has("planner"); if(qpl){ try{ localStorage.setItem("cn-planner",String(Date.now())); }catch(e){} up.searchParams.delete("planner"); history.replaceState(null,"",up.pathname+up.search+up.hash); } modLama=(up.searchParams.has("cikgu")||up.searchParams.has("daftar")||qkel||qpl)?"cikgu":null; qdaftar=up.searchParams.has("daftar")||qkel||qpl; }catch(e){ modLama=null; }
 
   if(S.no&&KM&&S.kod){ S.lulus=kiraLulus(); var t=tpDicapai(S.lulus); S.aras=(t>0&&t<6)?t+1:(t===6?6:1); S.skrin="peta"; }
   else if(S.latihan&&qdemo==="bebas"){ S.skrin="peta"; muatLatihan(); }
