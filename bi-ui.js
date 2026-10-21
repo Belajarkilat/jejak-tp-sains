@@ -154,7 +154,7 @@
     ["Tidak perlu dalam mod tenang","Not needed in calm mode"],["Isi semula 40 nafas","Refill 40 breaths"],
     ["Buang dua pilihan yang salah","Remove two wrong options"],
     ["Tugasan reka cipta tidak dinilai oleh mesin. Cikgu akan membacanya dan memutuskan hentian 6.","The creative task is not marked by a machine. Your teacher will read it and decide stop 6."],
-    ["Percubaan pertama inilah yang dilihat cikgu sebagai bukti. Ulangan selepas ini untuk latihan dan skor sahaja.","This first attempt is what your teacher sees as evidence. Repeats after this are for practice and score only."],
+    ["Percubaan pertama ini direkod untuk cikgu. Jika belum lulus, ulang kaji dan cuba lagi: lulus pada percubaan seterusnya tetap dikira.","This first attempt is recorded for your teacher. If you have not passed yet, revise and try again: passing on a later attempt still counts."],
     ["Dihantar kepada cikgu untuk dinilai.","Sent to your teacher for assessment."],
     [". Cabaran harian tidak dikira sebagai bukti TP. Balik esok untuk set baharu.",". The daily challenge does not count as TP evidence. Come back tomorrow for a new set."],
     ["Awak pengsan sebelum sampai ke hentian seterusnya. Setiap jawapan betul beri awak satu tarikan nafas. Kalau meter ini mengganggu, hidupkan Mod tenang di peta.","You fainted before reaching the next stop. Every correct answer gives you one breath. If this meter bothers you, turn on Calm mode on the map."],

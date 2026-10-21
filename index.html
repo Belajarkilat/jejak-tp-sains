@@ -1146,7 +1146,7 @@ body.zon-murid{color:var(--tinta)}
 <script src="bank-en-t3b8.js?v=2026101406"></script>
 <script src="bank-en-t3b9.js?v=2026101406"></script>
 <script src="bank-en-t3b10.js?v=2026101406"></script>
-<script src="bi-ui.js?v=2026101406"></script>
+<script src="bi-ui.js?v=2026102101"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -1631,13 +1631,18 @@ function benihContohBab(){
 /* ============================================================
    KIRAAN TP
    ============================================================ */
-/* Cadangan automatik dikira daripada PERCUBAAN PERTAMA setiap hentian.
+/* Hentian dikira lulus jika murid lulus pada mana-mana percubaan.
+   Dahulu hanya percubaan pertama dikira, menyebabkan murid yang gagal
+   sekali di hentian 1 kekal TP0 walaupun lulus semua hentian selepasnya
+   (aduan guru 21 Okt 2026). Percubaan pertama tetap dipapar dalam butiran.
    TP6 tidak pernah automatik: tugasan reka cipta mesti dibaca guru. */
+function lulusHentian(c){
+  return !!(c&&((c.pertama&&c.pertama.lulus)||(c.terbaik&&c.terbaik.lulus)));
+}
 function tpAuto(kelas,no){
   var t=0;
   for(var i=1;i<=5;i++){
-    var c=CUBAAN[kunciC(kelas,no,i)];
-    if(c&&c.pertama&&c.pertama.lulus) t=i; else break;
+    if(lulusHentian(CUBAAN[kunciC(kelas,no,i)])) t=i; else break;
   }
   return t;
 }
@@ -3144,7 +3149,7 @@ function hasilAras(){
   kepil(S.tenang?"Mod tenang":"Nafas tinggal "+Math.ceil(S.nafas));
   kepil(S.no?("Percubaan ke-"+kaliKe):"Latihan, tidak direkod");
   b.appendChild(meta);
-  if(S.no&&kaliKe===1) b.appendChild(el("p","note","Percubaan pertama inilah yang dilihat cikgu sebagai bukti. Ulangan selepas ini untuk latihan dan skor sahaja."));
+  if(S.no&&kaliKe===1) b.appendChild(el("p","note","Percubaan pertama ini direkod untuk cikgu. Jika belum lulus, ulang kaji dan cuba lagi: lulus pada percubaan seterusnya tetap dikira."));
 
   /* Apa yang murid sebenarnya belajar dalam pusingan ini. */
   var pel=el("div","pelajaran");
@@ -4433,7 +4438,7 @@ function kadPremium(){
    MOD KELUARGA (Anak NaikGred). Akaun ibu bapa ialah akaun guru bertanda
    keluarga, dengan satu kelas "Keluarga" (sehingga 5 anak). Paparan ini
    mengira TP setiap bab daripada rekod cubaan: TP = hentian berturut-turut
-   (1 hingga 5) yang lulus pada percubaan pertama, sama seperti tpAuto().
+   (1 hingga 5) yang lulus, sama seperti tpAuto().
    ============================================================ */
 var KEL={dimuat:false,sibuk:false,data:{},ralat:"",tambah:false};
 function labelBab(id){
@@ -4964,7 +4969,7 @@ function paneKelas(){
   var be=el("button","btn"); be.textContent="Eksport untuk SPPB"; be.onclick=eksport;
   act.appendChild(be); p.appendChild(act);
   p.appendChild(el("div",null,'<div id="kotakEksport"></div>'));
-  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik dikira daripada percubaan PERTAMA setiap hentian sahaja, dan percubaan pertama itu ditulis sekali lalu tidak pernah ditindih oleh ulangan. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
+  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik ialah hentian tertinggi yang dilulusi berturut-turut, pada mana-mana percubaan. Lajur Lulus dalam butiran murid menunjukkan sama ada murid lulus pada kali pertama atau selepas ulangan, dan percubaan pertama tidak pernah ditindih. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
 }
 function butiranMurid(kelas,no,auto,lapor){
   var w=el("div","ulasan");
@@ -4974,7 +4979,7 @@ function butiranMurid(kelas,no,auto,lapor){
   w.appendChild(hd);
 
   var tb=el("table","cubtab");
-  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Terbaik</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
+  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Terbaik</th><th class="n">Lulus</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
   var ada=false;
   for(var a=1;a<=6;a++){
     var c=cubaanMurid(kelas,no,a);
@@ -4984,6 +4989,7 @@ function butiranMurid(kelas,no,auto,lapor){
         '<td class="n">'+c.pertama.betul+' / '+c.pertama.jumlah+'</td>'+
         '<td class="n">'+(c.pertama.bos?"✓":"✗")+'</td>'+
         '<td class="n">'+(c.terbaik?c.terbaik.betul+' / '+c.terbaik.jumlah:"—")+'</td>'+
+        '<td class="n">'+(a===6?"—":(c.pertama.lulus?"Kali pertama":(lulusHentian(c)?"Selepas ulangan":"Belum")))+'</td>'+
         '<td class="n">'+(c.kali||0)+'</td>'+
         '<td class="n">'+(c.pertama.mod==="tenang"?"tenang":"masa")+'</td>'+
         '<td class="n">'+tarikhPendek(c.pertama.masa)+'</td></tr>';
