@@ -26,9 +26,10 @@ var NG_RUJUK=(function(){try{
     if(NG_ROBOT) return;
     var m=/[?&]dari=([^&#]*)/.exec(location.search), kod="";
     if(m) kod=decodeURIComponent(m[1]).toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,30);
+    if(!kod&&/^\/bab\//.test(location.pathname)) kod="seo"; /* halaman SEO bab (27 Okt 2026) */
     if(kod&&!localStorage.getItem("cn-dari")) localStorage.setItem("cn-dari",kod);
 
-    var diLanding=/landing(\.html)?$/.test(location.pathname);
+    var diLanding=/landing(\.html)?$/.test(location.pathname)||/^\/bab\//.test(location.pathname);
     if(!(diLanding||kod)||sessionStorage.getItem("cn-lawat")) return;
     var awan=window.CN_AWAN; if(!awan) return;
     var p=localStorage.getItem("cn-peranti");
