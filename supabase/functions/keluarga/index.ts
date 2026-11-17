@@ -1,6 +1,6 @@
 /* Anak NaikGred: daftar sekali, anak ditambah sekali (6 Nov 2026).
 
-   POST {app:"lo"|"jm"|"js"|"je"}  dengan Authorization: Bearer <token sesi ibu bapa di app itu>
+   POST {app:"lo"|"jm"|"js"|"je"|"jk"}  dengan Authorization: Bearer <token sesi ibu bapa di app itu>
      1. Token disahkan dengan projek app itu sendiri (Sains = projek ini, lain = projek noaeag).
      2. Nama + senarai anak semasa dibaca terus dari DB app itu (kel_baca), bukan daripada badan
         permintaan, jadi ibu bapa hanya boleh menyebarkan data keluarga sendiri.
@@ -18,6 +18,7 @@ const NOAEAG = { url: env("SEJARAH_URL"), kunci: env("SEJARAH_KEY") };
 const ASAL = [
   "https://jejaktpsains.naikgred.com", "https://jejaktpmath.naikgred.com",
   "https://jejaktpsejarah.naikgred.com", "https://jejaktpenglish.naikgred.com",
+  "https://jejaktpkimia.naikgred.com",
 ];
 function cors(req: Request) {
   const o = req.headers.get("origin") ?? "";
@@ -48,7 +49,7 @@ Deno.serve(async (req) => {
   if (req.method !== "POST") return jawab(405, { ralat: "kaedah" });
   try {
     const { app } = await req.json().catch(() => ({}));
-    if (!["lo", "jm", "js", "je"].includes(app)) return jawab(400, { ralat: "app" });
+    if (!["lo", "jm", "js", "je", "jk"].includes(app)) return jawab(400, { ralat: "app" });
     const p = app === "lo" ? SAINS : NOAEAG;
     const token = (req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "");
     if (!token) return jawab(401, { ralat: "token" });
