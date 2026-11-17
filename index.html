@@ -4615,7 +4615,7 @@ function kadLangganKeluarga(){
   if(BAYAR_MESEJ) bd.appendChild(mesejBayar());
   if(PROFIL.premiumRendah||PROFIL.premiumAtas){
     bd.appendChild(el("h3",null,"Anak NaikGred Keluarga aktif"));
-    bd.appendChild(el("p","note","Semua bab Sains Tingkatan 1 hingga 5 dibuka untuk anak anda sehingga "+tarikhPanjang(PROFIL.premiumRendahTamat||PROFIL.premiumAtasTamat)+". Langganan ini turut membuka Matematik, Sejarah, English dan Kimia: log masuk dengan e-mel yang sama di aplikasi itu."));
+    bd.appendChild(el("p","note","Semua bab Sains Tingkatan 1 hingga 5 dibuka untuk anak anda sehingga "+tarikhPanjang(PROFIL.premiumRendahTamat||PROFIL.premiumAtasTamat)+". Langganan ini turut membuka Matematik, Sejarah, English, Kimia, Fizik dan Biologi: log masuk dengan e-mel yang sama di aplikasi itu."));
     var ln=el("div","actions");
     var bsj=el("a","btn ghost sm"); bsj.href="https://jejaktpsejarah.naikgred.com/?keluarga=1"; bsj.textContent="Buka Sejarah";
     var bmt=el("a","btn ghost sm"); bmt.href="https://jejaktpmath.naikgred.com/?keluarga=1"; bmt.textContent="Buka Matematik";
@@ -4637,7 +4637,7 @@ function kadLangganKeluarga(){
 function pilihSubjekKeluarga(){
   var SUB=[["lo","Sains","https://jejaktpsains.naikgred.com/?keluarga=1"],["jm","Matematik","https://jejaktpmath.naikgred.com/?keluarga=1"],
            ["js","Sejarah","https://jejaktpsejarah.naikgred.com/?keluarga=1"],["je","English","https://jejaktpenglish.naikgred.com/?keluarga=1"],
-           ["jk","Kimia","https://jejaktpkimia.naikgred.com/?keluarga=1"]];
+           ["jk","Kimia","https://jejaktpkimia.naikgred.com/?keluarga=1"],["jf","Fizik","https://jejaktpfizik.naikgred.com/?keluarga=1"],["jb","Biologi","https://jejaktpbiologi.naikgred.com/?keluarga=1"]];
   var w=el("div","kel-subjek"), n=el("nav"); n.setAttribute("aria-label","Pilih subjek");
   SUB.forEach(function(x){
     var a=el("a",x[0]===APP_KEL?"aktif":null); a.textContent=x[1];
@@ -4645,7 +4645,7 @@ function pilihSubjekKeluarga(){
     n.appendChild(a);
   });
   w.appendChild(n);
-  w.appendChild(el("p","note","Satu akaun untuk kelima-lima subjek. Anak dan PIN yang sama digunakan dalam setiap subjek; tambah atau padam anak di mana-mana subjek sahaja."));
+  w.appendChild(el("p","note","Satu akaun untuk ketujuh-tujuh subjek. Anak dan PIN yang sama digunakan dalam setiap subjek; tambah atau padam anak di mana-mana subjek sahaja."));
   return w;
 }
 function paneKeluarga(ak){
